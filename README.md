@@ -1,6 +1,8 @@
 # The Connected Data Knowledge Graph Challenge
 
-  
+![CDKG](https://github.com/user-attachments/assets/e24e7615-df1e-4dc7-a527-abc274c2a341)
+
+
 
 **Let’s build a curated Knowledge Graph based on the collective wisdom of 260+ experts**
 
