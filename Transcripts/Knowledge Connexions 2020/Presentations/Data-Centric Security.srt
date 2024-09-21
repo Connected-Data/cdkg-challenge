@@ -1,0 +1,9446 @@
+1
+00:00:00,060 --> 00:00:02,300
+Thank you. and it's
+great to be here.
+
+2
+00:00:02,300 --> 00:00:03,900
+So thanks for attending and
+
+3
+00:00:03,900 --> 00:00:06,175
+participating. Yeah.
+
+4
+00:00:06,175 --> 00:00:09,455
+We're gonna dive in,
+pretty quickly,
+
+5
+00:00:09,455 --> 00:00:10,895
+but I'd say at a pretty deep
+
+6
+00:00:10,895 --> 00:00:13,555
+level as to what data center
+
+7
+00:00:13,695 --> 00:00:15,695
+security and, in particular,
+
+8
+00:00:15,695 --> 00:00:17,055
+in a semantic graph model,
+
+9
+00:00:18,210 --> 00:00:18,850
+would look like.
+
+10
+00:00:18,850 --> 00:00:21,170
+In fact, what we
+will do let me
+
+11
+00:00:21,170 --> 00:00:22,850
+make sure I can
+advance my slides.
+
+12
+00:00:22,850 --> 00:00:23,750
+Here we go.
+
+13
+00:00:24,450 --> 00:00:25,970
+we'll first sort
+of define what
+
+14
+00:00:25,970 --> 00:00:27,910
+we mean by data
+centric security.
+
+15
+00:00:28,850 --> 00:00:32,185
+We'll talk about, why
+this is important.
+
+16
+00:00:32,185 --> 00:00:34,365
+So the what and
+the why and then how.
+
+17
+00:00:34,905 --> 00:00:36,905
+and of course, we'll
+use Flurry since,
+
+18
+00:00:37,225 --> 00:00:38,665
+it's one I'm
+familiar with, but,
+
+19
+00:00:39,065 --> 00:00:41,565
+Flurry is
+a implementation model
+
+20
+00:00:41,705 --> 00:00:44,125
+of enforcing that data
+centric security.
+
+21
+00:00:45,790 --> 00:00:47,710
+so first with
+the, what is it?
+
+22
+00:00:47,710 --> 00:00:48,910
+What are we talking about?
+
+23
+00:00:48,910 --> 00:00:51,470
+So this is a term
+I really enjoy,
+
+24
+00:00:51,470 --> 00:00:54,030
+this, data defending itself.
+
+25
+00:00:54,030 --> 00:00:54,930
+And ultimately,
+
+26
+00:00:55,070 --> 00:00:57,625
+we think that this is what we
+
+27
+00:00:57,625 --> 00:01:00,025
+are gonna need
+around a significant
+
+28
+00:01:00,025 --> 00:01:02,025
+part of data management
+as a whole,
+
+29
+00:01:02,025 --> 00:01:03,865
+especially as we
+start to connect
+
+30
+00:01:03,865 --> 00:01:05,945
+data more and more,
+connect it,
+
+31
+00:01:06,345 --> 00:01:08,105
+not only within our four walls
+
+32
+00:01:08,105 --> 00:01:09,005
+of our organization,
+
+33
+00:01:09,065 --> 00:01:10,605
+but outside our four walls.
+
+34
+00:01:11,480 --> 00:01:13,720
+And so data
+defending us itself
+
+35
+00:01:13,720 --> 00:01:17,180
+means at least three things in
+
+36
+00:01:17,880 --> 00:01:18,780
+our vernacular.
+
+37
+00:01:19,320 --> 00:01:20,840
+One is knowing that you can
+
+38
+00:01:20,840 --> 00:01:21,980
+trust the data.
+
+39
+00:01:22,280 --> 00:01:23,335
+And, you know,
+
+40
+00:01:23,335 --> 00:01:25,915
+as we see more and much more
+
+41
+00:01:25,975 --> 00:01:27,515
+machine to machine interaction
+
+42
+00:01:27,655 --> 00:01:29,755
+around data, effectively,
+
+43
+00:01:29,975 --> 00:01:31,415
+the machines need, you know,
+
+44
+00:01:31,415 --> 00:01:33,095
+the same thing
+us humans need.
+
+45
+00:01:33,415 --> 00:01:34,775
+when we're browsing the web,
+
+46
+00:01:34,775 --> 00:01:36,455
+we get the little lock icon
+
+47
+00:01:36,455 --> 00:01:38,110
+letting us know that the data
+
+48
+00:01:38,110 --> 00:01:39,810
+is secure and can be trusted
+
+49
+00:01:39,870 --> 00:01:41,090
+from where it came from.
+
+50
+00:01:42,190 --> 00:01:44,050
+that concept hasn't
+really existed
+
+51
+00:01:44,190 --> 00:01:45,710
+or needed to be pushed forward
+
+52
+00:01:45,710 --> 00:01:47,150
+in the data world
+because we've
+
+53
+00:01:47,150 --> 00:01:48,670
+never really had a truly
+
+54
+00:01:48,670 --> 00:01:50,210
+interconnected
+data ecosystem.
+
+55
+00:01:51,265 --> 00:01:52,785
+But I think we can draw a lot
+
+56
+00:01:52,785 --> 00:01:54,945
+of parallels to the world wide
+
+57
+00:01:54,945 --> 00:01:57,025
+web that we as humans need and
+
+58
+00:01:57,025 --> 00:01:58,785
+the tools we need around them
+
+59
+00:01:58,785 --> 00:02:01,365
+to the data web
+that ultimately
+
+60
+00:02:01,505 --> 00:02:02,645
+is where we're going.
+
+61
+00:02:02,705 --> 00:02:05,590
+So, cryptography, obviously,
+
+62
+00:02:05,590 --> 00:02:07,270
+and and we'll talk
+about, you know,
+
+63
+00:02:07,270 --> 00:02:08,570
+how that can be accomplished.
+
+64
+00:02:09,030 --> 00:02:13,210
+But, AI, you know,
+machine learning,
+
+65
+00:02:13,350 --> 00:02:14,870
+machines that are
+consuming this
+
+66
+00:02:14,870 --> 00:02:16,470
+data directly
+need to know that
+
+67
+00:02:16,470 --> 00:02:17,990
+the data they're
+they're making
+
+68
+00:02:17,990 --> 00:02:20,685
+decisions around,
+can be trusted.
+
+69
+00:02:21,945 --> 00:02:23,805
+secondly, that
+you can reproduce
+
+70
+00:02:23,945 --> 00:02:24,605
+the data.
+
+71
+00:02:24,825 --> 00:02:28,185
+So especially if
+we, arrive in a,
+
+72
+00:02:28,505 --> 00:02:29,965
+what I would say a multiple
+
+73
+00:02:30,185 --> 00:02:32,125
+observer world where multiple
+
+74
+00:02:32,345 --> 00:02:34,270
+parties are interacting with,
+
+75
+00:02:35,150 --> 00:02:36,510
+a single set of data,
+
+76
+00:02:36,510 --> 00:02:38,290
+trying to coordinate
+or collaborate
+
+77
+00:02:38,510 --> 00:02:40,050
+around a single
+source of truth.
+
+78
+00:02:40,670 --> 00:02:42,350
+They can't do
+that in a typical
+
+79
+00:02:42,350 --> 00:02:43,330
+database model.
+
+80
+00:02:43,550 --> 00:02:45,550
+A typical database model is
+
+81
+00:02:45,550 --> 00:02:46,850
+extraordinary historically,
+
+82
+00:02:47,150 --> 00:02:48,830
+it was designed this
+way for reasons,
+
+83
+00:02:48,830 --> 00:02:50,265
+but it's extraordinarily good
+
+84
+00:02:50,265 --> 00:02:51,485
+at destroying data.
+
+85
+00:02:52,025 --> 00:02:54,185
+So, when you update a piece of
+
+86
+00:02:54,185 --> 00:02:55,645
+information,
+you're effectively
+
+87
+00:02:55,865 --> 00:02:57,325
+throwing out the old
+information.
+
+88
+00:02:57,945 --> 00:02:59,625
+It might exist in
+a log for some
+
+89
+00:02:59,625 --> 00:03:00,345
+period of time,
+
+90
+00:03:00,345 --> 00:03:02,445
+but the old data is gone.
+
+91
+00:03:03,920 --> 00:03:05,620
+If we're having
+multiple parties
+
+92
+00:03:05,760 --> 00:03:07,220
+coordinating and
+making decisions
+
+93
+00:03:07,280 --> 00:03:08,800
+around data,
+the first thing we
+
+94
+00:03:08,800 --> 00:03:10,480
+really need is a common frame
+
+95
+00:03:10,480 --> 00:03:12,720
+of reference. I often draw
+
+96
+00:03:12,720 --> 00:03:14,480
+parallels to this
+with software
+
+97
+00:03:14,480 --> 00:03:15,300
+source control.
+
+98
+00:03:15,665 --> 00:03:17,505
+It was
+extraordinarily difficult
+
+99
+00:03:17,505 --> 00:03:19,265
+before we had things like Git
+
+100
+00:03:19,265 --> 00:03:21,905
+source control for multiple
+
+101
+00:03:21,905 --> 00:03:23,825
+developers to build code,
+
+102
+00:03:24,385 --> 00:03:25,665
+because there was no common
+
+103
+00:03:25,665 --> 00:03:26,465
+frame of reference.
+
+104
+00:03:26,465 --> 00:03:28,065
+They're constantly stomping on
+
+105
+00:03:28,065 --> 00:03:28,865
+top of each other.
+
+106
+00:03:28,865 --> 00:03:30,940
+There was no central
+truth to the world,
+
+107
+00:03:30,940 --> 00:03:32,480
+no reproducible truth.
+
+108
+00:03:33,180 --> 00:03:35,900
+Data needs that
+identical model,
+
+109
+00:03:35,900 --> 00:03:37,520
+especially when
+we're collaborating
+
+110
+00:03:37,660 --> 00:03:40,160
+around data, again,
+not only internally,
+
+111
+00:03:40,700 --> 00:03:42,000
+but possibly externally,
+
+112
+00:03:42,940 --> 00:03:44,320
+creating these data ecosystems
+
+113
+00:03:44,540 --> 00:03:45,440
+with other parties.
+
+114
+00:03:46,075 --> 00:03:48,075
+So the reproducibility of data
+
+115
+00:03:48,075 --> 00:03:49,935
+is gonna become very,
+very critical.
+
+116
+00:03:50,155 --> 00:03:52,075
+And, you know, the thing that
+
+117
+00:03:52,075 --> 00:03:53,835
+we reference here is this idea
+
+118
+00:03:53,835 --> 00:03:54,735
+of time travel.
+
+119
+00:03:55,035 --> 00:03:56,395
+Being able to issue a query,
+
+120
+00:03:56,395 --> 00:03:58,575
+not only for the current
+state of data,
+
+121
+00:03:58,760 --> 00:04:00,840
+but every historical moment of
+
+122
+00:04:00,840 --> 00:04:02,060
+data that existed.
+
+123
+00:04:02,120 --> 00:04:03,640
+And again, sitting
+on that first
+
+124
+00:04:03,640 --> 00:04:05,240
+foundation,
+knowing that we can
+
+125
+00:04:05,240 --> 00:04:06,760
+trust the data that
+we're getting,
+
+126
+00:04:06,760 --> 00:04:08,460
+that it hasn't been
+tampered with.
+
+127
+00:04:09,640 --> 00:04:10,380
+And lastly,
+
+128
+00:04:11,240 --> 00:04:13,340
+data defending
+itself means that
+
+129
+00:04:14,055 --> 00:04:16,235
+it is impossible to circumvent
+
+130
+00:04:16,615 --> 00:04:18,615
+the security that's
+been defined,
+
+131
+00:04:18,615 --> 00:04:20,635
+the business rules,
+whatever they are,
+
+132
+00:04:20,935 --> 00:04:23,495
+around who can update data and
+
+133
+00:04:23,495 --> 00:04:25,175
+what the shape
+of data needs to
+
+134
+00:04:25,175 --> 00:04:26,630
+look like. So, you know,
+
+135
+00:04:26,630 --> 00:04:28,810
+when we think
+about, semantic,
+
+136
+00:04:29,590 --> 00:04:31,190
+standards, we
+think about things
+
+137
+00:04:31,190 --> 00:04:33,590
+like OWL or Shackle
+giving some
+
+138
+00:04:33,590 --> 00:04:35,750
+degree of definition
+around how
+
+139
+00:04:35,750 --> 00:04:37,850
+data needs to look
+for it to be valid.
+
+140
+00:04:39,235 --> 00:04:41,235
+So we need to be able to take
+
+141
+00:04:41,235 --> 00:04:42,855
+this a bit further,
+
+142
+00:04:42,995 --> 00:04:44,935
+and we need to
+be able to layer
+
+143
+00:04:44,995 --> 00:04:46,435
+permissioning on top of it.
+
+144
+00:04:46,435 --> 00:04:49,635
+So not just data shape
+is being valid,
+
+145
+00:04:49,635 --> 00:04:50,995
+but who can change data,
+
+146
+00:04:50,995 --> 00:04:53,015
+and importantly,
+who can see data.
+
+147
+00:04:53,900 --> 00:04:55,580
+So this would be
+the last layer
+
+148
+00:04:55,580 --> 00:04:57,500
+of what we mean
+by data centric
+
+149
+00:04:57,500 --> 00:05:03,280
+security. So why, why
+is this important?
+
+150
+00:05:03,340 --> 00:05:07,040
+And what we see
+is for businesses
+
+151
+00:05:07,375 --> 00:05:08,515
+to really be competitive,
+
+152
+00:05:08,735 --> 00:05:11,395
+they are gonna
+have to be agile
+
+153
+00:05:12,095 --> 00:05:14,255
+and get value out of
+the data they have.
+
+154
+00:05:14,255 --> 00:05:15,375
+I mean, I think, you know,
+
+155
+00:05:15,375 --> 00:05:17,315
+a lot of organizations today
+
+156
+00:05:17,935 --> 00:05:18,835
+wouldn't necessarily,
+
+157
+00:05:20,380 --> 00:05:23,020
+consider themselves
+data poor,
+
+158
+00:05:23,020 --> 00:05:24,460
+but they'd probably consider
+
+159
+00:05:24,460 --> 00:05:26,380
+themselves insights poor or
+
+160
+00:05:26,380 --> 00:05:27,260
+knowledge poor.
+
+161
+00:05:27,260 --> 00:05:28,380
+So they have a lot of data.
+
+162
+00:05:28,380 --> 00:05:29,180
+It's just sitting there.
+
+163
+00:05:29,180 --> 00:05:30,240
+It's locked away.
+
+164
+00:05:30,460 --> 00:05:32,080
+It's very difficult
+to leverage.
+
+165
+00:05:32,535 --> 00:05:34,615
+And that's really a symptom of
+
+166
+00:05:34,615 --> 00:05:36,135
+how we have been building
+
+167
+00:05:36,135 --> 00:05:38,695
+applications for
+the last forty years.
+
+168
+00:05:38,695 --> 00:05:41,255
+So we have been
+developing things
+
+169
+00:05:41,255 --> 00:05:43,755
+in a very application
+centric model,
+
+170
+00:05:44,135 --> 00:05:46,215
+where the data we
+have is really
+
+171
+00:05:46,215 --> 00:05:48,075
+subservient to
+the application.
+
+172
+00:05:49,310 --> 00:05:51,230
+And as we've needed to expose
+
+173
+00:05:51,230 --> 00:05:52,690
+that data in other ways,
+
+174
+00:05:52,910 --> 00:05:55,970
+we develop what I
+consider workarounds.
+
+175
+00:05:56,350 --> 00:05:58,110
+I consider these flaws of our
+
+176
+00:05:58,110 --> 00:06:00,050
+current data model,
+which are APIs.
+
+177
+00:06:00,505 --> 00:06:01,945
+I don't think APIs should need
+
+178
+00:06:01,945 --> 00:06:03,885
+to exist to get
+access to data.
+
+179
+00:06:04,825 --> 00:06:06,505
+but what they are is a very
+
+180
+00:06:06,505 --> 00:06:10,025
+narrow pipe into
+that data that's
+
+181
+00:06:10,025 --> 00:06:11,945
+defined and then imposes costs
+
+182
+00:06:11,945 --> 00:06:14,205
+not only on the individuals
+
+183
+00:06:14,345 --> 00:06:15,885
+having to develop the APIs,
+
+184
+00:06:16,410 --> 00:06:17,790
+perhaps your own
+organization,
+
+185
+00:06:18,410 --> 00:06:20,650
+but it imposes a huge cost on
+
+186
+00:06:20,650 --> 00:06:22,010
+the consumers of that data.
+
+187
+00:06:22,010 --> 00:06:23,610
+Because now all they all have
+
+188
+00:06:23,610 --> 00:06:26,830
+to write custom code
+to your custom API,
+
+189
+00:06:27,210 --> 00:06:28,490
+and then importantly maintain
+
+190
+00:06:28,490 --> 00:06:29,395
+that over time.
+
+191
+00:06:29,555 --> 00:06:30,295
+And oftentimes,
+
+192
+00:06:30,595 --> 00:06:31,795
+it's the maintenance of these
+
+193
+00:06:31,795 --> 00:06:33,655
+APIs that also
+get us in trouble
+
+194
+00:06:34,275 --> 00:06:36,135
+that introduce
+security breaches.
+
+195
+00:06:36,995 --> 00:06:38,435
+Or we have the other
+workaround,
+
+196
+00:06:38,435 --> 00:06:40,035
+which is I need
+to aggregate or
+
+197
+00:06:40,035 --> 00:06:41,815
+look at this data
+across repositories.
+
+198
+00:06:42,340 --> 00:06:43,860
+I have no good way
+of doing that,
+
+199
+00:06:43,860 --> 00:06:46,020
+so I turn to data
+lights or data
+
+200
+00:06:46,020 --> 00:06:48,420
+warehouses. So I think most of
+
+201
+00:06:48,420 --> 00:06:50,120
+the people here are probably
+
+202
+00:06:51,620 --> 00:06:54,120
+familiar with and
+fans of semantic
+
+203
+00:06:54,340 --> 00:06:55,960
+web sort of technology.
+
+204
+00:06:56,180 --> 00:06:58,265
+But what it allows us to do is
+
+205
+00:06:58,265 --> 00:07:00,425
+it gives us a foundation
+to move into,
+
+206
+00:07:00,425 --> 00:07:02,425
+instead of an application
+centric world,
+
+207
+00:07:02,425 --> 00:07:04,045
+into a data centric world.
+
+208
+00:07:04,665 --> 00:07:06,905
+But this then brings this
+
+209
+00:07:06,905 --> 00:07:09,165
+additional set of
+problems around
+
+210
+00:07:09,225 --> 00:07:11,085
+trust of data, guaranteeing
+
+211
+00:07:11,225 --> 00:07:12,525
+integrity of data.
+
+212
+00:07:13,030 --> 00:07:14,230
+Because what it means is that
+
+213
+00:07:14,230 --> 00:07:16,170
+instead of just
+a single observer,
+
+214
+00:07:16,390 --> 00:07:17,990
+single pipe into these data
+
+215
+00:07:17,990 --> 00:07:19,530
+repositories
+where everything's
+
+216
+00:07:19,750 --> 00:07:22,010
+controlled, now we
+have an ecosystem
+
+217
+00:07:22,150 --> 00:07:22,890
+of applications,
+
+218
+00:07:23,190 --> 00:07:24,790
+which gives us
+tremendous leverage.
+
+219
+00:07:24,790 --> 00:07:26,330
+It gives us a lot
+of flexibility
+
+220
+00:07:26,630 --> 00:07:27,450
+around data.
+
+221
+00:07:28,315 --> 00:07:30,715
+but it also means that our
+
+222
+00:07:30,715 --> 00:07:32,635
+previous methods of trying to
+
+223
+00:07:32,635 --> 00:07:35,215
+secure data in the application
+
+224
+00:07:35,355 --> 00:07:37,435
+tier start to fall
+apart because
+
+225
+00:07:37,435 --> 00:07:39,275
+there is no such
+thing as a single
+
+226
+00:07:39,275 --> 00:07:41,500
+application with
+being the only
+
+227
+00:07:41,500 --> 00:07:43,420
+thing that has access
+to data anymore.
+
+228
+00:07:43,420 --> 00:07:44,640
+It's multiple applications,
+
+229
+00:07:45,180 --> 00:07:46,720
+but the data is more reusable
+
+230
+00:07:46,780 --> 00:07:47,820
+and can be leveraged.
+
+231
+00:07:47,820 --> 00:07:49,680
+So we need to start
+thinking about,
+
+232
+00:07:50,700 --> 00:07:54,465
+embedding security
+into the data
+
+233
+00:07:54,465 --> 00:07:56,305
+tier to make this
+world possible
+
+234
+00:07:56,305 --> 00:07:58,165
+and start connecting
+these data sources.
+
+235
+00:07:58,865 --> 00:08:00,145
+So that's why we think this is
+
+236
+00:08:00,145 --> 00:08:03,105
+important. So I'll tackle some
+
+237
+00:08:03,105 --> 00:08:04,965
+of the things we talked about
+
+238
+00:08:05,105 --> 00:08:06,865
+with some examples of some,
+
+239
+00:08:07,265 --> 00:08:10,630
+technologies that address some
+
+240
+00:08:10,630 --> 00:08:11,530
+of these concerns.
+
+241
+00:08:12,230 --> 00:08:13,930
+So the first thing
+that I mentioned,
+
+242
+00:08:15,030 --> 00:08:16,890
+we think data centric security
+
+243
+00:08:16,950 --> 00:08:19,110
+means is that you have to be
+
+244
+00:08:19,110 --> 00:08:20,870
+able to trust the data.
+
+245
+00:08:20,870 --> 00:08:22,070
+You have to know that the data
+
+246
+00:08:22,070 --> 00:08:23,975
+has integrity, and this has to
+
+247
+00:08:23,975 --> 00:08:25,995
+be done in a way
+that a machine
+
+248
+00:08:26,055 --> 00:08:28,315
+can even trust
+the integrity of data.
+
+249
+00:08:28,935 --> 00:08:31,015
+There's really
+exciting standard
+
+250
+00:08:31,015 --> 00:08:32,555
+here that is,
+
+251
+00:08:33,255 --> 00:08:35,655
+emerging W3C standard around
+
+252
+00:08:35,655 --> 00:08:37,035
+verifiable credentials.
+
+253
+00:08:37,895 --> 00:08:40,390
+I'm gonna extend
+how you typically
+
+254
+00:08:40,390 --> 00:08:42,150
+see it, but I'm gonna
+use the typical
+
+255
+00:08:42,150 --> 00:08:43,590
+use cases here for those not
+
+256
+00:08:43,590 --> 00:08:45,110
+familiar with it
+and and how it
+
+257
+00:08:45,110 --> 00:08:47,590
+works and how it
+guarantees data
+
+258
+00:08:47,590 --> 00:08:48,470
+integrity. In fact,
+
+259
+00:08:48,470 --> 00:08:49,990
+one of the things
+we talk about
+
+260
+00:08:49,990 --> 00:08:51,430
+these credentials is that it's
+
+261
+00:08:51,430 --> 00:08:52,570
+like data containers.
+
+262
+00:08:52,710 --> 00:08:54,685
+We we talk a lot about, like,
+
+263
+00:08:54,845 --> 00:08:57,345
+Docker and and
+computing containers
+
+264
+00:08:57,485 --> 00:09:00,785
+now a day, currently
+in our IT world.
+
+265
+00:09:01,245 --> 00:09:02,685
+And we think that,
+
+266
+00:09:03,565 --> 00:09:06,305
+these same principles
+can apply to data.
+
+267
+00:09:06,445 --> 00:09:08,125
+And verifiable credentials is
+
+268
+00:09:08,125 --> 00:09:09,425
+really the the preeminent,
+
+269
+00:09:10,660 --> 00:09:12,600
+standard that's
+coming around this.
+
+270
+00:09:12,980 --> 00:09:14,740
+So verifiable credentials is
+
+271
+00:09:14,740 --> 00:09:17,300
+under the W3C,
+the same, you know,
+
+272
+00:09:17,380 --> 00:09:19,380
+standards body
+holding the other
+
+273
+00:09:19,380 --> 00:09:21,300
+semantic web, standards.
+
+274
+00:09:21,300 --> 00:09:23,140
+And it's actually
+based on even
+
+275
+00:09:23,140 --> 00:09:24,995
+though a lot of people who are
+
+276
+00:09:24,995 --> 00:09:26,355
+using it don't
+necessarily know
+
+277
+00:09:26,355 --> 00:09:28,375
+it's based on semantic
+web technologies,
+
+278
+00:09:28,515 --> 00:09:30,115
+it's sitting
+entirely on top of
+
+279
+00:09:30,115 --> 00:09:31,255
+semantic web technologies.
+
+280
+00:09:32,435 --> 00:09:34,515
+So what is
+a verifiable credential
+
+281
+00:09:34,515 --> 00:09:36,835
+and what does it
+matter to data
+
+282
+00:09:36,835 --> 00:09:37,715
+centric security?
+
+283
+00:09:37,715 --> 00:09:39,740
+How is this going
+to solve some
+
+284
+00:09:39,740 --> 00:09:40,860
+of these problems that we've
+
+285
+00:09:40,860 --> 00:09:41,520
+talked about?
+
+286
+00:09:42,460 --> 00:09:44,220
+the classic example in an area
+
+287
+00:09:44,220 --> 00:09:45,420
+where we're spending a lot of
+
+288
+00:09:45,420 --> 00:09:46,700
+time on because there's a lot
+
+289
+00:09:46,700 --> 00:09:49,600
+of momentum is
+the university system.
+
+290
+00:09:50,220 --> 00:09:52,195
+anything that is a important
+
+291
+00:09:52,195 --> 00:09:53,875
+piece of information
+is what you
+
+292
+00:09:53,875 --> 00:09:54,935
+would call a credential.
+
+293
+00:09:55,395 --> 00:09:56,675
+We have a lot of physical
+
+294
+00:09:56,675 --> 00:09:58,035
+credentials today that would
+
+295
+00:09:58,035 --> 00:09:59,395
+include your
+driver's license,
+
+296
+00:09:59,395 --> 00:10:01,875
+your passport,
+and as it relates
+
+297
+00:10:01,875 --> 00:10:02,615
+to a university,
+
+298
+00:10:02,995 --> 00:10:05,415
+it would be your degree.
+
+299
+00:10:06,210 --> 00:10:07,570
+But of course,
+it's very difficult
+
+300
+00:10:07,570 --> 00:10:10,150
+to validate some of
+these mechanisms.
+
+301
+00:10:10,930 --> 00:10:12,690
+And of course,
+they're not digital,
+
+302
+00:10:12,690 --> 00:10:14,150
+they're mostly physical,
+
+303
+00:10:14,770 --> 00:10:16,070
+because they're
+very important.
+
+304
+00:10:16,530 --> 00:10:18,385
+So verifiable credentials is
+
+305
+00:10:18,385 --> 00:10:19,345
+designed to do this.
+
+306
+00:10:19,345 --> 00:10:20,245
+What it allows,
+
+307
+00:10:20,705 --> 00:10:23,445
+to happen is that
+an issuer can
+
+308
+00:10:23,585 --> 00:10:26,085
+create a digital, credential.
+
+309
+00:10:26,145 --> 00:10:28,465
+In this case, it's
+a university example.
+
+310
+00:10:28,465 --> 00:10:30,405
+We're creating
+a digital degree,
+
+311
+00:10:31,585 --> 00:10:33,125
+for out of a university.
+
+312
+00:10:33,990 --> 00:10:37,210
+And a holder, in this
+case the student,
+
+313
+00:10:37,510 --> 00:10:38,570
+gets that degree.
+
+314
+00:10:39,430 --> 00:10:41,450
+So blockchain often comes into
+
+315
+00:10:41,670 --> 00:10:42,410
+this conversation.
+
+316
+00:10:43,670 --> 00:10:45,350
+Flurry spends a lot
+of time, in fact,
+
+317
+00:10:45,350 --> 00:10:47,210
+its ledger is based
+on blockchain
+
+318
+00:10:47,350 --> 00:10:50,045
+technology, but
+it isn't actually
+
+319
+00:10:50,045 --> 00:10:51,805
+required to make
+all this work.
+
+320
+00:10:51,805 --> 00:10:53,965
+So there's some
+optionality to it.
+
+321
+00:10:53,965 --> 00:10:56,465
+But the benefit
+of a credential
+
+322
+00:10:57,245 --> 00:10:59,565
+is that the data does not need
+
+323
+00:10:59,565 --> 00:11:01,790
+to be published in a public
+
+324
+00:11:01,790 --> 00:11:03,310
+manner at all. So,
+
+325
+00:11:03,870 --> 00:11:05,890
+privacy around
+the data is always,
+
+326
+00:11:07,230 --> 00:11:08,370
+integral to this.
+
+327
+00:11:08,910 --> 00:11:11,070
+And in fact, in
+the coming years,
+
+328
+00:11:11,070 --> 00:11:12,910
+there's already
+examples coming out.
+
+329
+00:11:13,150 --> 00:11:14,270
+I'm sure Android,
+
+330
+00:11:14,270 --> 00:11:15,790
+I'm sure iOS will probably be
+
+331
+00:11:15,790 --> 00:11:17,485
+shipping out of
+the box with a out
+
+332
+00:11:17,485 --> 00:11:18,165
+of the box,
+
+333
+00:11:19,605 --> 00:11:21,605
+application for holding your
+
+334
+00:11:21,605 --> 00:11:22,985
+credentials in a wallet.
+
+335
+00:11:23,125 --> 00:11:26,965
+So in iOS, iPhone,
+
+336
+00:11:26,965 --> 00:11:28,405
+you already have a wallet for
+
+337
+00:11:28,405 --> 00:11:29,125
+your credit cards,
+
+338
+00:11:29,125 --> 00:11:31,490
+you will have
+a wallet for these
+
+339
+00:11:31,490 --> 00:11:32,610
+credentials, which will hold
+
+340
+00:11:32,610 --> 00:11:34,370
+things like your
+driver's license,
+
+341
+00:11:34,370 --> 00:11:35,730
+and they'll hold things like
+
+342
+00:11:35,730 --> 00:11:37,090
+your university degrees,
+
+343
+00:11:37,090 --> 00:11:39,030
+and potentially lots
+of other things.
+
+344
+00:11:39,890 --> 00:11:42,230
+And one of the benefits
+is, as a holder,
+
+345
+00:11:43,250 --> 00:11:44,770
+you determine who you disclose
+
+346
+00:11:44,770 --> 00:11:45,750
+the data to.
+
+347
+00:11:46,315 --> 00:11:48,155
+But whoever you
+disclose it to,
+
+348
+00:11:48,155 --> 00:11:49,515
+in this particular example,
+
+349
+00:11:49,515 --> 00:11:51,195
+would be an employer
+that you're
+
+350
+00:11:51,195 --> 00:11:53,375
+trying to prove you
+have this degree,
+
+351
+00:11:53,835 --> 00:11:56,155
+can independently verify that
+
+352
+00:11:56,155 --> 00:11:57,615
+that data has integrity,
+
+353
+00:11:57,675 --> 00:11:59,195
+that it was in fact issued by
+
+354
+00:11:59,195 --> 00:11:59,855
+the university,
+
+355
+00:12:00,320 --> 00:12:02,180
+that it's never been
+tampered with.
+
+356
+00:12:02,800 --> 00:12:04,240
+And they can prove
+that without
+
+357
+00:12:04,240 --> 00:12:05,760
+having to use
+something like a third
+
+358
+00:12:05,760 --> 00:12:07,040
+party background
+check provider
+
+359
+00:12:07,040 --> 00:12:09,140
+in order to validate
+information.
+
+360
+00:12:09,200 --> 00:12:10,660
+It can be directly proven.
+
+361
+00:12:12,240 --> 00:12:14,640
+So this starts to get into how
+
+362
+00:12:14,640 --> 00:12:15,700
+we prove identity.
+
+363
+00:12:16,275 --> 00:12:18,595
+And if we, you know,
+
+364
+00:12:18,595 --> 00:12:21,015
+just step back real quick to
+
+365
+00:12:21,235 --> 00:12:24,595
+this world where
+we have a these
+
+366
+00:12:24,595 --> 00:12:26,515
+these data pods that are
+
+367
+00:12:26,515 --> 00:12:29,075
+interconnected and
+multiple parties,
+
+368
+00:12:29,075 --> 00:12:30,810
+multiple applications might be
+
+369
+00:12:30,810 --> 00:12:31,950
+transacting data,
+
+370
+00:12:32,970 --> 00:12:34,430
+identity becomes critical.
+
+371
+00:12:34,490 --> 00:12:36,010
+Because how do we know we can
+
+372
+00:12:36,010 --> 00:12:37,050
+trust this person?
+
+373
+00:12:37,050 --> 00:12:38,890
+We no longer have
+a single pathway
+
+374
+00:12:38,890 --> 00:12:40,270
+into updating data,
+
+375
+00:12:40,410 --> 00:12:41,930
+which is
+the application sitting
+
+376
+00:12:41,930 --> 00:12:42,890
+in front of it.
+
+377
+00:12:42,890 --> 00:12:44,905
+There's multiple
+pathways to do it.
+
+378
+00:12:46,265 --> 00:12:47,645
+So, a very complimentary,
+
+379
+00:12:48,025 --> 00:12:49,865
+but independent standard is
+
+380
+00:12:49,865 --> 00:12:51,565
+around decentralized
+identifiers.
+
+381
+00:12:51,865 --> 00:12:54,105
+And these often goes
+hand in hand with,
+
+382
+00:12:54,585 --> 00:12:55,725
+verifiable credentials.
+
+383
+00:12:56,745 --> 00:12:58,990
+Decentralized
+identifiers allow
+
+384
+00:12:58,990 --> 00:13:01,570
+you to register
+identities, typically,
+
+385
+00:13:02,350 --> 00:13:03,650
+public, private,
+or asymmetric,
+
+386
+00:13:04,590 --> 00:13:05,090
+cryptography.
+
+387
+00:13:05,310 --> 00:13:06,990
+So you can release
+a public key
+
+388
+00:13:06,990 --> 00:13:09,310
+but keep a private
+key that you
+
+389
+00:13:09,310 --> 00:13:10,210
+never disclose.
+
+390
+00:13:10,605 --> 00:13:12,225
+So it's a much safer mechanism
+
+391
+00:13:12,445 --> 00:13:13,885
+for securing information or
+
+392
+00:13:13,885 --> 00:13:16,385
+proving identity than
+say a password,
+
+393
+00:13:16,445 --> 00:13:18,145
+which is what we mostly use.
+
+394
+00:13:19,005 --> 00:13:20,765
+these identities do need to be
+
+395
+00:13:20,765 --> 00:13:23,025
+registered somewhere
+where both parties,
+
+396
+00:13:23,405 --> 00:13:25,185
+the verifier and the issuer,
+
+397
+00:13:25,325 --> 00:13:27,210
+can jointly look them up.
+
+398
+00:13:27,750 --> 00:13:29,990
+And a blockchain
+is a very logical
+
+399
+00:13:29,990 --> 00:13:30,790
+place to put these,
+
+400
+00:13:30,790 --> 00:13:31,750
+although they don't have to go
+
+401
+00:13:31,750 --> 00:13:32,390
+on a blockchain.
+
+402
+00:13:32,390 --> 00:13:33,430
+I could email it to you.
+
+403
+00:13:33,430 --> 00:13:35,450
+I could put it up on
+our public website.
+
+404
+00:13:36,550 --> 00:13:38,150
+there's multiple ways of
+
+405
+00:13:38,150 --> 00:13:38,870
+representing them,
+
+406
+00:13:38,870 --> 00:13:41,050
+which is inherently
+what makes them,
+
+407
+00:13:41,945 --> 00:13:43,465
+decentralized and referred to
+
+408
+00:13:43,465 --> 00:13:44,925
+as decentralized identifiers.
+
+409
+00:13:45,065 --> 00:13:46,425
+So you're starting
+to see these
+
+410
+00:13:46,425 --> 00:13:47,885
+a lot more. You're
+gonna see them,
+
+411
+00:13:48,905 --> 00:13:49,885
+much more frequently,
+
+412
+00:13:50,025 --> 00:13:54,105
+these strings here
+that start with DID,
+
+413
+00:13:54,105 --> 00:13:55,405
+which stands for decentralized
+
+414
+00:13:55,705 --> 00:13:57,990
+identifier. So what you do is
+
+415
+00:13:57,990 --> 00:13:59,350
+you take this
+credential and you
+
+416
+00:13:59,350 --> 00:14:00,950
+wrap it in a digital
+signature.
+
+417
+00:14:00,950 --> 00:14:02,730
+That digital signature allows
+
+418
+00:14:02,790 --> 00:14:05,350
+the employer to
+verify that that
+
+419
+00:14:05,350 --> 00:14:07,270
+is impossible for anyone else
+
+420
+00:14:07,270 --> 00:14:09,690
+to have issued
+this information
+
+421
+00:14:10,395 --> 00:14:13,535
+except for the identifier
+of the issuer.
+
+422
+00:14:14,315 --> 00:14:16,175
+So that's the basics
+of verifiable
+
+423
+00:14:16,315 --> 00:14:17,915
+credentials, and that's kinda
+
+424
+00:14:17,915 --> 00:14:20,495
+how they work. What
+do they look like?
+
+425
+00:14:21,035 --> 00:14:23,170
+so if anyone here is familiar
+
+426
+00:14:23,170 --> 00:14:25,250
+with JSON LD, which is really
+
+427
+00:14:25,250 --> 00:14:27,910
+just a way of
+representing triples,
+
+428
+00:14:28,050 --> 00:14:29,590
+representing RDF data,
+
+429
+00:14:30,690 --> 00:14:33,350
+JSON LD is the main mechanism
+
+430
+00:14:33,650 --> 00:14:35,030
+to represent a credential.
+
+431
+00:14:36,235 --> 00:14:37,675
+And what we're able to do,
+
+432
+00:14:37,675 --> 00:14:38,875
+and this would be a sample
+
+433
+00:14:38,875 --> 00:14:40,895
+credential for
+a bachelor degree,
+
+434
+00:14:41,355 --> 00:14:43,135
+we're able to
+provide a context.
+
+435
+00:14:43,355 --> 00:14:45,035
+This is effectively,
+you know,
+
+436
+00:14:45,035 --> 00:14:47,295
+in a sparkle world,
+like a prefix,
+
+437
+00:14:48,155 --> 00:14:49,775
+except it's a set of prefixes
+
+438
+00:14:49,915 --> 00:14:50,735
+that are predefined,
+
+439
+00:14:51,610 --> 00:14:52,810
+and a payload of data.
+
+440
+00:14:52,810 --> 00:14:54,670
+And this is a data container.
+
+441
+00:14:54,890 --> 00:14:57,610
+It is self describing data in
+
+442
+00:14:57,610 --> 00:15:00,490
+a containerized
+package that can
+
+443
+00:15:00,490 --> 00:15:03,050
+also contain a proof
+that enables
+
+444
+00:15:03,050 --> 00:15:06,785
+us to validate that
+this data is valid,
+
+445
+00:15:06,785 --> 00:15:08,405
+that it's never been
+tampered with.
+
+446
+00:15:09,105 --> 00:15:13,285
+So, if we looked
+at, for example,
+
+447
+00:15:13,585 --> 00:15:15,525
+what this context points to,
+
+448
+00:15:15,585 --> 00:15:17,585
+this context is, you know,
+
+449
+00:15:17,585 --> 00:15:19,630
+setting up basically
+what you're
+
+450
+00:15:19,630 --> 00:15:20,990
+probably used to seeing is
+
+451
+00:15:20,990 --> 00:15:23,390
+prefixes for URIs and bringing
+
+452
+00:15:23,390 --> 00:15:25,230
+definition to all
+the data in here.
+
+453
+00:15:25,230 --> 00:15:27,150
+So if I wanted to
+know what a bachelor
+
+454
+00:15:27,150 --> 00:15:27,870
+degree, you know,
+
+455
+00:15:27,870 --> 00:15:29,970
+this degree is of type
+bachelor degree.
+
+456
+00:15:30,190 --> 00:15:31,885
+Well, that may mean a lot of
+
+457
+00:15:31,885 --> 00:15:32,925
+different things to a lot of
+
+458
+00:15:32,925 --> 00:15:33,745
+different people.
+
+459
+00:15:34,045 --> 00:15:35,965
+I can refer to
+the context here,
+
+460
+00:15:35,965 --> 00:15:38,545
+you know, look up,
+bachelor degree,
+
+461
+00:15:39,165 --> 00:15:40,765
+which I don't see
+it right now,
+
+462
+00:15:40,765 --> 00:15:42,205
+but I'm sure it's
+in here somewhere.
+
+463
+00:15:42,205 --> 00:15:43,485
+You all probably see it.
+
+464
+00:15:43,485 --> 00:15:44,785
+Here's bachelor degree.
+
+465
+00:15:45,120 --> 00:15:46,080
+And I can see that,
+
+466
+00:15:46,480 --> 00:15:48,560
+bachelor degree refers to this
+
+467
+00:15:48,560 --> 00:15:50,960
+formal definition
+of, you know,
+
+468
+00:15:50,960 --> 00:15:52,960
+example dot com slash
+bachelor degree.
+
+469
+00:15:52,960 --> 00:15:54,100
+But you see in here,
+
+470
+00:15:54,160 --> 00:15:55,520
+some of these definitions are
+
+471
+00:15:55,520 --> 00:15:57,380
+referring to schema
+dot org, etcetera.
+
+472
+00:15:57,600 --> 00:15:59,200
+So we have now global shared
+
+473
+00:15:59,200 --> 00:16:00,975
+schemas that I
+can containerize
+
+474
+00:16:01,195 --> 00:16:02,635
+this data. I can share it with
+
+475
+00:16:02,635 --> 00:16:04,735
+other people. They
+have the ability
+
+476
+00:16:04,795 --> 00:16:06,475
+to then reference,
+for example,
+
+477
+00:16:06,475 --> 00:16:08,335
+schema dot org and understand
+
+478
+00:16:08,555 --> 00:16:10,315
+what all these terms are that
+
+479
+00:16:10,315 --> 00:16:12,335
+I put in here with a globally
+
+480
+00:16:12,475 --> 00:16:13,995
+or a common shared,
+
+481
+00:16:14,235 --> 00:16:18,050
+understanding or
+vocabulary for that.
+
+482
+00:16:18,050 --> 00:16:18,393
+And it contains a proof that
+
+483
+00:16:18,393 --> 00:16:18,736
+allows me to verify
+the identity
+
+484
+00:16:18,736 --> 00:16:19,570
+and that this has never been
+
+485
+00:16:19,570 --> 00:16:21,110
+tampered with. So this,
+
+486
+00:16:21,730 --> 00:16:22,610
+university degrees is a pretty
+
+487
+00:16:22,610 --> 00:16:24,950
+simple but obvious use case,
+
+488
+00:16:29,005 --> 00:16:32,145
+but this concept
+is very powerful.
+
+489
+00:16:32,765 --> 00:16:34,205
+I'll dive into what a proof
+
+490
+00:16:34,205 --> 00:16:35,585
+looks like because
+we haven't,
+
+491
+00:16:36,285 --> 00:16:37,565
+sort of isolated here.
+
+492
+00:16:37,565 --> 00:16:39,405
+What a proof has
+is it's flexible.
+
+493
+00:16:39,405 --> 00:16:41,025
+You can use all
+kinds of different
+
+494
+00:16:41,165 --> 00:16:42,930
+mechanisms. This is using,
+
+495
+00:16:43,330 --> 00:16:45,970
+ECDSA elliptical curve
+digital signing,
+
+496
+00:16:45,970 --> 00:16:47,250
+you know, your typical public
+
+497
+00:16:47,250 --> 00:16:48,390
+private key pair,
+
+498
+00:16:49,330 --> 00:16:52,050
+and providing
+a verification and
+
+499
+00:16:52,050 --> 00:16:53,430
+information that would allow
+
+500
+00:16:53,650 --> 00:16:55,170
+anyone receiving this to
+
+501
+00:16:55,170 --> 00:16:57,215
+independently verify that this
+
+502
+00:16:57,215 --> 00:17:00,095
+credential is
+valid and that it
+
+503
+00:17:00,095 --> 00:17:01,535
+was in fact issued by,
+
+504
+00:17:01,855 --> 00:17:02,975
+who said they issued it.
+
+505
+00:17:02,975 --> 00:17:04,655
+And there's a couple
+ways of doing this.
+
+506
+00:17:04,975 --> 00:17:08,655
+JWT, which stands for JSON Web
+
+507
+00:17:08,655 --> 00:17:10,015
+Tokens for those
+not familiar,
+
+508
+00:17:10,015 --> 00:17:10,915
+is one way.
+
+509
+00:17:11,550 --> 00:17:14,110
+there's LD proofs as
+another common way.
+
+510
+00:17:14,430 --> 00:17:16,370
+LD proofs, one of
+the advantages
+
+511
+00:17:16,430 --> 00:17:18,830
+it has is it allows this data
+
+512
+00:17:18,830 --> 00:17:21,090
+to be signed by
+multiple parties.
+
+513
+00:17:21,470 --> 00:17:23,090
+So we call that
+multiple signature.
+
+514
+00:17:23,150 --> 00:17:24,905
+But if, say, three
+people needed
+
+515
+00:17:24,905 --> 00:17:26,185
+to sign a piece
+of data for you
+
+516
+00:17:26,185 --> 00:17:27,385
+to consider it valid,
+
+517
+00:17:27,385 --> 00:17:29,165
+you can actually
+embed the identity
+
+518
+00:17:29,305 --> 00:17:31,165
+of those three
+people signing it.
+
+519
+00:17:31,305 --> 00:17:32,425
+The other thing you can start
+
+520
+00:17:32,425 --> 00:17:33,805
+doing is you can encapsulate
+
+521
+00:17:34,105 --> 00:17:35,225
+credentials. So I could take
+
+522
+00:17:35,225 --> 00:17:35,965
+this credential,
+
+523
+00:17:36,265 --> 00:17:38,740
+wrap another
+credential around it,
+
+524
+00:17:39,780 --> 00:17:40,980
+and there's a lot of other
+
+525
+00:17:40,980 --> 00:17:41,880
+powerful things.
+
+526
+00:17:42,740 --> 00:17:44,920
+What problem does
+this end up solving?
+
+527
+00:17:45,300 --> 00:17:46,980
+It ends up solving this trust
+
+528
+00:17:46,980 --> 00:17:49,800
+problem in that you
+have the ability
+
+529
+00:17:50,020 --> 00:17:52,315
+to now have data
+submitted to you.
+
+530
+00:17:52,475 --> 00:17:55,915
+It no longer matters
+how it came to you.
+
+531
+00:17:55,915 --> 00:17:58,235
+Prior to this, we built custom
+
+532
+00:17:58,235 --> 00:18:01,355
+security mechanisms
+into a single
+
+533
+00:18:01,355 --> 00:18:03,215
+application, which
+has to control
+
+534
+00:18:03,275 --> 00:18:04,715
+everything. Again,
+
+535
+00:18:04,715 --> 00:18:06,610
+that model falls
+down very quickly
+
+536
+00:18:06,610 --> 00:18:08,210
+when you have
+multiple ways that
+
+537
+00:18:08,210 --> 00:18:10,370
+data can get updated
+from multiple
+
+538
+00:18:10,370 --> 00:18:13,090
+sources. So we need a way to
+
+539
+00:18:13,090 --> 00:18:15,410
+understand if we
+can trust the data
+
+540
+00:18:15,410 --> 00:18:17,410
+and authenticate
+the data without
+
+541
+00:18:17,410 --> 00:18:20,225
+having necessarily a single
+
+542
+00:18:20,225 --> 00:18:26,005
+gateway into our system.
+
+543
+00:18:27,745 --> 00:18:29,425
+So I'll start talking through
+
+544
+00:18:29,425 --> 00:18:31,205
+some specifics on
+how we implement
+
+545
+00:18:31,265 --> 00:18:33,205
+some of this trust
+and time travel,
+
+546
+00:18:34,400 --> 00:18:37,700
+and create data
+centric security
+
+547
+00:18:38,000 --> 00:18:39,920
+around semantic graph data.
+
+548
+00:18:39,920 --> 00:18:40,960
+And there's some things we'll
+
+549
+00:18:40,960 --> 00:18:43,040
+get into around
+here very quickly
+
+550
+00:18:43,040 --> 00:18:45,380
+around how we can
+extend semantic data,
+
+551
+00:18:45,600 --> 00:18:47,995
+or extend triples to
+be able to do this.
+
+552
+00:18:48,635 --> 00:18:49,675
+but at a high level,
+
+553
+00:18:49,675 --> 00:18:52,175
+this is how we view the stack
+
+554
+00:18:52,315 --> 00:18:53,695
+that needs to do this.
+
+555
+00:18:53,835 --> 00:18:55,355
+So the core is trust.
+
+556
+00:18:55,355 --> 00:18:57,615
+It's the idea that
+any data that
+
+557
+00:18:57,675 --> 00:18:58,655
+is in the system,
+
+558
+00:18:58,715 --> 00:19:01,270
+you can prove
+the origins of how
+
+559
+00:19:01,270 --> 00:19:02,570
+that data got there.
+
+560
+00:19:02,870 --> 00:19:04,390
+And you can represent that to
+
+561
+00:19:04,390 --> 00:19:05,670
+anyone who needs that,
+
+562
+00:19:05,670 --> 00:19:07,510
+including a machine
+or an algorithm
+
+563
+00:19:07,510 --> 00:19:08,870
+that might be
+making decisions.
+
+564
+00:19:08,870 --> 00:19:10,070
+They have the ability to
+
+565
+00:19:10,070 --> 00:19:11,510
+independently verify that this
+
+566
+00:19:11,510 --> 00:19:12,570
+data has integrity.
+
+567
+00:19:13,235 --> 00:19:14,135
+Of course, semantics,
+
+568
+00:19:14,195 --> 00:19:15,315
+which I think probably most
+
+569
+00:19:15,315 --> 00:19:16,595
+people here are
+familiar with,
+
+570
+00:19:16,595 --> 00:19:17,955
+so it provides a great way of
+
+571
+00:19:17,955 --> 00:19:19,555
+connecting data
+together through
+
+572
+00:19:19,555 --> 00:19:21,795
+linked data, in this other set
+
+573
+00:19:21,795 --> 00:19:22,455
+of standards.
+
+574
+00:19:23,475 --> 00:19:26,035
+We need to create
+business rules
+
+575
+00:19:26,035 --> 00:19:26,935
+around security,
+
+576
+00:19:27,440 --> 00:19:29,040
+and we do this
+in a way we call
+
+577
+00:19:29,040 --> 00:19:29,860
+smart functions.
+
+578
+00:19:29,920 --> 00:19:31,460
+You know, I mentioned before
+
+579
+00:19:31,520 --> 00:19:33,760
+shackle is a way
+of doing this,
+
+580
+00:19:33,760 --> 00:19:35,380
+but more specifically around,
+
+581
+00:19:35,760 --> 00:19:36,820
+shapes of data.
+
+582
+00:19:36,880 --> 00:19:38,320
+So there'll probably
+be multiple
+
+583
+00:19:38,320 --> 00:19:40,260
+mechanisms of
+wrapping the security
+
+584
+00:19:40,400 --> 00:19:41,780
+around who can modify,
+
+585
+00:19:41,920 --> 00:19:44,715
+who can do what
+with the system.
+
+586
+00:19:45,495 --> 00:19:47,575
+We need time. Again,
+
+587
+00:19:47,575 --> 00:19:49,015
+if we're collaborating around
+
+588
+00:19:49,015 --> 00:19:50,635
+data across multiple parties,
+
+589
+00:19:51,095 --> 00:19:52,635
+we're never gonna get anywhere
+
+590
+00:19:52,695 --> 00:19:54,615
+unless we can
+agree on a common
+
+591
+00:19:54,615 --> 00:19:55,655
+view of the world.
+
+592
+00:19:55,655 --> 00:19:56,875
+And current databases,
+
+593
+00:19:57,095 --> 00:19:59,195
+which destroy data
+with every update,
+
+594
+00:19:59,390 --> 00:20:00,670
+will never be able to give us
+
+595
+00:20:00,670 --> 00:20:01,730
+that common view.
+
+596
+00:20:02,030 --> 00:20:03,470
+So we need to be able to lock
+
+597
+00:20:03,470 --> 00:20:05,310
+in time and know
+that a version
+
+598
+00:20:05,310 --> 00:20:07,170
+of data will never
+ever change.
+
+599
+00:20:07,550 --> 00:20:09,410
+Again, much like
+source control,
+
+600
+00:20:09,470 --> 00:20:11,330
+where we can go
+back and actually
+
+601
+00:20:11,675 --> 00:20:13,195
+get to previous states of
+
+602
+00:20:13,195 --> 00:20:15,215
+information and
+issue additional
+
+603
+00:20:15,275 --> 00:20:16,875
+queries or find
+different things
+
+604
+00:20:16,875 --> 00:20:18,495
+at that moments in time.
+
+605
+00:20:18,955 --> 00:20:20,075
+And we need, you know,
+
+606
+00:20:20,075 --> 00:20:21,195
+open ways of sharing.
+
+607
+00:20:21,195 --> 00:20:22,735
+And that's what
+this whole stack
+
+608
+00:20:22,795 --> 00:20:24,575
+ultimately allows you to do,
+
+609
+00:20:24,820 --> 00:20:27,240
+is that instead of
+building custom APIs,
+
+610
+00:20:27,300 --> 00:20:29,080
+which are very
+limited, expensive,
+
+611
+00:20:29,220 --> 00:20:30,440
+and have all the issues,
+
+612
+00:20:30,900 --> 00:20:32,500
+we can now open up the data
+
+613
+00:20:32,500 --> 00:20:34,420
+repositories to very rich
+
+614
+00:20:34,420 --> 00:20:36,020
+interfaces that
+people know they
+
+615
+00:20:36,020 --> 00:20:37,800
+don't have to
+custom code to it,
+
+616
+00:20:37,940 --> 00:20:41,085
+like SPARQL, like
+SQL, like GraphQL,
+
+617
+00:20:41,785 --> 00:20:43,305
+different ways that they can
+
+618
+00:20:43,305 --> 00:20:44,665
+describe the data they want,
+
+619
+00:20:44,665 --> 00:20:45,965
+how they want it,
+
+620
+00:20:46,265 --> 00:20:49,165
+but are able to prove
+the integrity,
+
+621
+00:20:49,305 --> 00:20:51,145
+we're able to
+restrict the data
+
+622
+00:20:51,145 --> 00:20:52,985
+they can see, but still give
+
+623
+00:20:52,985 --> 00:20:53,805
+them the flexibility.
+
+624
+00:20:57,040 --> 00:20:59,600
+So, one of the big things we
+
+625
+00:20:59,600 --> 00:21:02,020
+talked about is how do we,
+
+626
+00:21:02,560 --> 00:21:04,740
+not only prove
+the origin of data,
+
+627
+00:21:04,960 --> 00:21:07,360
+but prove data and
+that it hasn't
+
+628
+00:21:07,360 --> 00:21:09,060
+changed over time
+while representing
+
+629
+00:21:09,200 --> 00:21:10,615
+this common view
+of the world.
+
+630
+00:21:12,535 --> 00:21:14,555
+And RDF, which
+sits at the bottom
+
+631
+00:21:14,615 --> 00:21:15,515
+of all of this,
+
+632
+00:21:16,295 --> 00:21:17,815
+was not designed to do this,
+
+633
+00:21:17,815 --> 00:21:19,755
+but it's very simple to extend
+
+634
+00:21:19,975 --> 00:21:21,755
+to enable this type
+of capability.
+
+635
+00:21:22,375 --> 00:21:24,370
+So I'll talk about how
+we approached it,
+
+636
+00:21:24,850 --> 00:21:26,390
+and I'm sure there's probably
+
+637
+00:21:26,450 --> 00:21:29,990
+other ways to approach
+this as well.
+
+638
+00:21:30,850 --> 00:21:32,930
+So, this is the, I think,
+
+639
+00:21:32,930 --> 00:21:36,710
+out of the box example
+of RDF from W3C.
+
+640
+00:21:37,170 --> 00:21:38,870
+Here's a set of triples.
+
+641
+00:21:38,930 --> 00:21:40,585
+These triples represent this
+
+642
+00:21:40,585 --> 00:21:41,945
+simple graph that we're taking
+
+643
+00:21:41,945 --> 00:21:44,185
+a look at. the first thing we
+
+644
+00:21:44,185 --> 00:21:45,625
+need to do is we need to layer
+
+645
+00:21:45,625 --> 00:21:46,425
+time on it.
+
+646
+00:21:46,425 --> 00:21:48,985
+And the way we layer time in
+
+647
+00:21:48,985 --> 00:21:51,305
+computing is we build a log.
+
+648
+00:21:51,305 --> 00:21:53,065
+We build an event stream of
+
+649
+00:21:53,065 --> 00:21:54,340
+changes over time,
+
+650
+00:21:54,740 --> 00:21:56,660
+An append only
+log that we don't
+
+651
+00:21:56,660 --> 00:21:58,340
+necessarily have
+the ability to
+
+652
+00:21:58,340 --> 00:22:00,260
+manipulate the prior
+pieces of data.
+
+653
+00:22:00,260 --> 00:22:01,700
+Now we do allow this because
+
+654
+00:22:01,700 --> 00:22:04,180
+sometimes regulation or other
+
+655
+00:22:04,180 --> 00:22:05,140
+issues come up.
+
+656
+00:22:05,140 --> 00:22:06,100
+But by default,
+
+657
+00:22:06,100 --> 00:22:08,280
+the data is never
+physically destroyed.
+
+658
+00:22:09,075 --> 00:22:10,775
+So in this
+particular example,
+
+659
+00:22:10,835 --> 00:22:13,395
+you know, Bob is
+a friend of Alice,
+
+660
+00:22:13,395 --> 00:22:15,555
+but what if, Bob and Alice are
+
+661
+00:22:15,555 --> 00:22:17,395
+no longer friends and now Bob
+
+662
+00:22:17,395 --> 00:22:19,255
+is a friend of Jane?
+
+663
+00:22:19,875 --> 00:22:22,330
+Well, when we update
+those triples,
+
+664
+00:22:22,390 --> 00:22:23,750
+what we want to do is we want
+
+665
+00:22:23,750 --> 00:22:25,450
+to append this
+new information,
+
+666
+00:22:25,590 --> 00:22:27,030
+but effectively we want it to
+
+667
+00:22:27,030 --> 00:22:27,670
+look like this.
+
+668
+00:22:27,670 --> 00:22:29,590
+We want to strike out that Bob
+
+669
+00:22:29,590 --> 00:22:31,350
+is a friend of
+Alice and we want
+
+670
+00:22:31,350 --> 00:22:33,510
+to add the triple that now Bob
+
+671
+00:22:33,510 --> 00:22:35,125
+is a friend of Jane.
+
+672
+00:22:37,045 --> 00:22:39,625
+so if we played
+this log forward,
+
+673
+00:22:40,245 --> 00:22:42,085
+what we end up with is a new
+
+674
+00:22:42,085 --> 00:22:44,325
+view of time, where Bob is now
+
+675
+00:22:44,325 --> 00:22:45,205
+a friend of Jane,
+
+676
+00:22:45,205 --> 00:22:46,665
+and I don't see this triple.
+
+677
+00:22:46,805 --> 00:22:48,565
+So every moment in time just
+
+678
+00:22:48,565 --> 00:22:49,465
+creates triples,
+
+679
+00:22:49,920 --> 00:22:51,760
+But when we bring
+it up to the log
+
+680
+00:22:51,760 --> 00:22:54,080
+format, which
+understands time,
+
+681
+00:22:54,080 --> 00:22:55,860
+we have to extend
+the triples.
+
+682
+00:22:56,080 --> 00:22:57,520
+So I think that's important is
+
+683
+00:22:57,520 --> 00:22:58,880
+what we're actually
+creating is
+
+684
+00:22:58,880 --> 00:22:59,860
+different versions,
+
+685
+00:23:00,560 --> 00:23:02,340
+of the same database,
+
+686
+00:23:02,635 --> 00:23:05,135
+but every version
+version itself
+
+687
+00:23:05,355 --> 00:23:06,575
+is its own database.
+
+688
+00:23:07,515 --> 00:23:10,335
+So how we extend this
+is quite simple.
+
+689
+00:23:10,395 --> 00:23:12,495
+We add a true false boolean.
+
+690
+00:23:12,555 --> 00:23:14,655
+True means this is
+data we're adding.
+
+691
+00:23:15,240 --> 00:23:16,840
+False means this is data that
+
+692
+00:23:16,840 --> 00:23:19,080
+used to be true, but
+is no longer true.
+
+693
+00:23:19,080 --> 00:23:20,140
+So in this case,
+
+694
+00:23:20,520 --> 00:23:22,440
+how we represent
+this as a triple
+
+695
+00:23:22,440 --> 00:23:24,540
+is we now have a four tuple,
+
+696
+00:23:25,000 --> 00:23:26,300
+four pieces of information.
+
+697
+00:23:26,965 --> 00:23:28,905
+And we're just saying
+here that false,
+
+698
+00:23:28,965 --> 00:23:30,805
+this is a fact that used to be
+
+699
+00:23:30,805 --> 00:23:32,905
+true as of this
+moment in time,
+
+700
+00:23:33,285 --> 00:23:34,485
+it's now false.
+
+701
+00:23:34,485 --> 00:23:36,085
+And as of this
+moment in time,
+
+702
+00:23:36,085 --> 00:23:38,425
+it's now true. This
+creates a transaction
+
+703
+00:23:38,565 --> 00:23:40,405
+, so all this happens
+at the identical
+
+704
+00:23:40,405 --> 00:23:42,345
+moment in time and represents
+
+705
+00:23:42,780 --> 00:23:43,680
+a new database,
+
+706
+00:23:44,140 --> 00:23:45,520
+which we see at the bottom.
+
+707
+00:23:47,260 --> 00:23:48,700
+So the other thing
+that we also
+
+708
+00:23:48,700 --> 00:23:50,720
+need to do is think about,
+
+709
+00:23:51,020 --> 00:23:52,780
+we talked about origins and
+
+710
+00:23:52,780 --> 00:23:54,380
+proving data. How do we know
+
+711
+00:23:54,380 --> 00:23:55,980
+that data hasn't
+been tampered with?
+
+712
+00:23:55,980 --> 00:23:57,920
+How do we know that
+it has integrity?
+
+713
+00:23:59,045 --> 00:24:00,485
+And in order to do that,
+
+714
+00:24:00,485 --> 00:24:02,405
+we can simply extend the RDF
+
+715
+00:24:02,405 --> 00:24:04,725
+model with one
+additional piece
+
+716
+00:24:04,725 --> 00:24:05,465
+of information,
+
+717
+00:24:06,165 --> 00:24:08,185
+which is we tag every triple
+
+718
+00:24:08,325 --> 00:24:10,565
+with the transaction that
+
+719
+00:24:10,565 --> 00:24:11,945
+generated that triple.
+
+720
+00:24:12,520 --> 00:24:15,260
+And it sits in the log with
+
+721
+00:24:15,320 --> 00:24:17,480
+the triple itself
+so that every
+
+722
+00:24:17,480 --> 00:24:19,560
+triple has
+traceability back to
+
+723
+00:24:19,560 --> 00:24:21,500
+the transaction that did it.
+
+724
+00:24:21,720 --> 00:24:23,160
+And what we do is we actually
+
+725
+00:24:23,160 --> 00:24:25,685
+take that
+transaction reference
+
+726
+00:24:25,985 --> 00:24:28,385
+and that can and
+should just be
+
+727
+00:24:28,385 --> 00:24:29,825
+represented as more triples.
+
+728
+00:24:29,825 --> 00:24:31,845
+I should be able to
+query that data.
+
+729
+00:24:32,065 --> 00:24:33,425
+I should be able
+to add a bunch
+
+730
+00:24:33,425 --> 00:24:35,265
+of metadata around
+that transaction,
+
+731
+00:24:35,265 --> 00:24:36,805
+how it got into the system.
+
+732
+00:24:37,200 --> 00:24:38,560
+So when we look back at that
+
+733
+00:24:38,560 --> 00:24:39,680
+verifiable credential,
+
+734
+00:24:39,680 --> 00:24:41,140
+which has things like proofs
+
+735
+00:24:41,200 --> 00:24:42,180
+embedded in it,
+
+736
+00:24:42,320 --> 00:24:44,660
+all that can sit
+as transactional
+
+737
+00:24:44,800 --> 00:24:47,540
+metadata. So now
+when I get a triple
+
+738
+00:24:47,600 --> 00:24:48,980
+as a result of a query,
+
+739
+00:24:49,200 --> 00:24:50,900
+I can trace it back
+to the transaction,
+
+740
+00:24:51,455 --> 00:24:53,135
+And then I can basically query
+
+741
+00:24:53,135 --> 00:24:54,115
+for that transaction,
+
+742
+00:24:54,255 --> 00:24:55,695
+which is just more triples and
+
+743
+00:24:55,695 --> 00:24:57,535
+get all the metadata
+about it,
+
+744
+00:24:57,535 --> 00:24:59,855
+including the proofs
+that originated it,
+
+745
+00:24:59,855 --> 00:25:01,475
+including perhaps the machine
+
+746
+00:25:01,615 --> 00:25:03,610
+or whatever else
+I wanna store.
+
+747
+00:25:04,090 --> 00:25:06,570
+Importantly, we store
+a wall clock time,
+
+748
+00:25:06,570 --> 00:25:08,890
+and this is
+convenient to allow
+
+749
+00:25:08,890 --> 00:25:10,750
+you to query the data at any
+
+750
+00:25:11,050 --> 00:25:12,410
+historical moment in time,
+
+751
+00:25:12,410 --> 00:25:14,170
+instead of having
+to query the data
+
+752
+00:25:14,170 --> 00:25:16,750
+as of time one, time
+two, time three.
+
+753
+00:25:16,965 --> 00:25:18,405
+We can now say we wanna query
+
+754
+00:25:18,405 --> 00:25:20,665
+the database as of
+the first of May.
+
+755
+00:25:20,725 --> 00:25:22,165
+And what we're able to do is
+
+756
+00:25:22,165 --> 00:25:24,085
+look up the triple of what
+
+757
+00:25:24,085 --> 00:25:26,485
+transaction ID were we at at
+
+758
+00:25:26,485 --> 00:25:27,525
+the first of May.
+
+759
+00:25:27,525 --> 00:25:30,340
+And then that is
+the version of
+
+760
+00:25:30,340 --> 00:25:32,100
+the data that we want to issue
+
+761
+00:25:32,100 --> 00:25:33,160
+a query against.
+
+762
+00:25:33,780 --> 00:25:37,380
+We can also hash
+the results of
+
+763
+00:25:37,380 --> 00:25:38,760
+every one of these
+transactions.
+
+764
+00:25:39,860 --> 00:25:41,780
+So what the hashes allow us to
+
+765
+00:25:41,780 --> 00:25:45,205
+do now is to prove
+every transaction
+
+766
+00:25:45,585 --> 00:25:47,925
+that it has never
+been tampered with,
+
+767
+00:25:49,425 --> 00:25:51,585
+even though we do not have to
+
+768
+00:25:51,585 --> 00:25:53,765
+disclose all the data
+in the database.
+
+769
+00:25:54,385 --> 00:25:56,225
+So if anyone ever demands or
+
+770
+00:25:56,225 --> 00:25:57,665
+needed to know or
+machine needed
+
+771
+00:25:57,665 --> 00:25:59,025
+to know that data had not been
+
+772
+00:25:59,025 --> 00:26:00,890
+manipulated, it
+becomes actually
+
+773
+00:26:00,890 --> 00:26:02,330
+quite trivial to be able to
+
+774
+00:26:02,330 --> 00:26:03,390
+provide that information.
+
+775
+00:26:05,530 --> 00:26:06,830
+And how we do that,
+
+776
+00:26:07,210 --> 00:26:08,490
+and just because
+we're starting
+
+777
+00:26:08,490 --> 00:26:09,290
+to run out of time,
+
+778
+00:26:09,290 --> 00:26:10,910
+I won't get into
+it in detail.
+
+779
+00:26:11,290 --> 00:26:13,745
+But, this,
+
+780
+00:26:14,225 --> 00:26:16,145
+we use the concept
+of Merkle roots.
+
+781
+00:26:16,145 --> 00:26:17,665
+And what Merkle
+roots allow you
+
+782
+00:26:17,665 --> 00:26:19,605
+to do is basically hash data.
+
+783
+00:26:19,825 --> 00:26:21,585
+So every one of
+these, a, b, c,
+
+784
+00:26:21,585 --> 00:26:23,685
+d, all the way up to p here,
+
+785
+00:26:24,225 --> 00:26:25,925
+you can think of
+as an individual
+
+786
+00:26:26,145 --> 00:26:28,750
+transaction. And
+all we need to
+
+787
+00:26:28,750 --> 00:26:30,830
+do is represent this tree that
+
+788
+00:26:30,830 --> 00:26:33,230
+ultimately represents a single
+
+789
+00:26:33,230 --> 00:26:35,090
+hash value at the tip
+of the tree.
+
+790
+00:26:35,310 --> 00:26:37,310
+So as long as I publish or
+
+791
+00:26:37,310 --> 00:26:38,670
+disclose this hash value,
+
+792
+00:26:38,670 --> 00:26:40,350
+which in no way discloses any
+
+793
+00:26:40,350 --> 00:26:41,810
+of the data within
+the system,
+
+794
+00:26:42,115 --> 00:26:44,295
+If I ever need to
+prove the transaction
+
+795
+00:26:44,835 --> 00:26:46,135
+integrity, for example,
+
+796
+00:26:46,195 --> 00:26:48,275
+around the triples
+within, you know,
+
+797
+00:26:48,275 --> 00:26:49,735
+transaction k here,
+
+798
+00:26:49,955 --> 00:26:51,555
+all I need is a couple other
+
+799
+00:26:51,555 --> 00:26:53,795
+hash values to be
+able to do that.
+
+800
+00:26:53,795 --> 00:26:55,495
+So I can actually prove,
+
+801
+00:26:56,400 --> 00:26:57,840
+any piece of
+information within
+
+802
+00:26:57,840 --> 00:26:58,960
+the system without actually
+
+803
+00:26:58,960 --> 00:27:00,640
+having to disclose
+all the data
+
+804
+00:27:00,640 --> 00:27:01,460
+in the system.
+
+805
+00:27:04,000 --> 00:27:05,440
+So the last piece
+of the puzzle
+
+806
+00:27:05,440 --> 00:27:07,600
+is how do we control
+the business logic?
+
+807
+00:27:07,600 --> 00:27:09,760
+So what our goal
+here is is not
+
+808
+00:27:09,760 --> 00:27:11,725
+only to have
+business logic that
+
+809
+00:27:11,725 --> 00:27:13,505
+guarantees the shape of data,
+
+810
+00:27:13,965 --> 00:27:15,985
+like if we add a customer,
+
+811
+00:27:16,045 --> 00:27:17,725
+that customer must
+have an address,
+
+812
+00:27:17,725 --> 00:27:19,005
+for example. And
+that's something
+
+813
+00:27:19,005 --> 00:27:20,445
+that like a shackle can,
+
+814
+00:27:20,765 --> 00:27:21,825
+help us accomplish.
+
+815
+00:27:22,285 --> 00:27:24,145
+But also who can
+update customers?
+
+816
+00:27:24,610 --> 00:27:26,050
+Perhaps customers can update
+
+817
+00:27:26,050 --> 00:27:26,850
+their own records.
+
+818
+00:27:26,850 --> 00:27:27,970
+I mean, that's one of the cool
+
+819
+00:27:27,970 --> 00:27:29,090
+things about getting to this
+
+820
+00:27:29,090 --> 00:27:30,690
+model is we actually bring our
+
+821
+00:27:30,690 --> 00:27:31,670
+data repositories.
+
+822
+00:27:32,210 --> 00:27:34,150
+Instead of behind
+layers of firewalls,
+
+823
+00:27:34,610 --> 00:27:36,610
+we bring them out
+where people,
+
+824
+00:27:36,610 --> 00:27:37,750
+if they have permission,
+
+825
+00:27:37,995 --> 00:27:39,595
+can independently update their
+
+826
+00:27:39,595 --> 00:27:42,095
+own data and even
+own their own data,
+
+827
+00:27:42,235 --> 00:27:43,435
+even though we're controlling
+
+828
+00:27:43,435 --> 00:27:44,095
+the repository.
+
+829
+00:27:45,435 --> 00:27:47,355
+And the quick
+answer to this is
+
+830
+00:27:47,355 --> 00:27:49,435
+we use a concept called
+smart functions.
+
+831
+00:27:49,435 --> 00:27:50,895
+What it is is it's a virtual
+
+832
+00:27:50,955 --> 00:27:53,170
+machine directly in the data
+
+833
+00:27:53,170 --> 00:27:54,850
+layer that you can
+write a series
+
+834
+00:27:54,850 --> 00:27:55,510
+of rules.
+
+835
+00:27:56,050 --> 00:27:57,730
+What makes it so powerful is
+
+836
+00:27:57,730 --> 00:27:59,250
+that those rules can actually
+
+837
+00:27:59,250 --> 00:28:01,010
+leverage the current state of
+
+838
+00:28:01,010 --> 00:28:03,010
+the data or the current graph
+
+839
+00:28:03,010 --> 00:28:03,990
+to answer those.
+
+840
+00:28:04,610 --> 00:28:06,755
+So perhaps I can
+see an employee
+
+841
+00:28:06,755 --> 00:28:08,375
+salary if I'm the employee,
+
+842
+00:28:08,675 --> 00:28:09,895
+or I'm the manager,
+
+843
+00:28:10,115 --> 00:28:11,635
+or the manager's manager all
+
+844
+00:28:11,635 --> 00:28:12,855
+the way up to the CEO,
+
+845
+00:28:13,395 --> 00:28:15,335
+or anyone who has
+a relationship
+
+846
+00:28:15,555 --> 00:28:18,160
+called HR
+responsibility for me.
+
+847
+00:28:18,400 --> 00:28:20,020
+That's a simple
+rule that can be,
+
+848
+00:28:20,880 --> 00:28:23,140
+described embedded in
+a smart function.
+
+849
+00:28:23,600 --> 00:28:25,760
+And dynamically, when
+someone queries,
+
+850
+00:28:25,760 --> 00:28:27,700
+you know, select
+star from from
+
+851
+00:28:27,920 --> 00:28:30,175
+salary for the employee base,
+
+852
+00:28:30,335 --> 00:28:31,715
+those rules are triggered,
+
+853
+00:28:31,775 --> 00:28:33,135
+and the data I do not have
+
+854
+00:28:33,135 --> 00:28:34,975
+permission to see is dropped.
+
+855
+00:28:34,975 --> 00:28:36,735
+It effectively
+doesn't exist in
+
+856
+00:28:36,735 --> 00:28:38,035
+my version of the database.
+
+857
+00:28:38,575 --> 00:28:40,575
+And this is what
+allows us to,
+
+858
+00:28:40,575 --> 00:28:42,115
+without having to build APIs,
+
+859
+00:28:42,575 --> 00:28:44,015
+open up these nice,
+
+860
+00:28:44,015 --> 00:28:47,240
+rich interfaces for
+individuals to use.
+
+861
+00:28:49,300 --> 00:28:50,980
+so I have a couple examples of
+
+862
+00:28:50,980 --> 00:28:52,360
+sort of using
+those relationships
+
+863
+00:28:52,740 --> 00:28:54,360
+and filtering out data.
+
+864
+00:28:54,900 --> 00:28:56,180
+the great thing is you can get
+
+865
+00:28:56,180 --> 00:28:57,475
+as crazy as you want.
+
+866
+00:28:57,635 --> 00:28:58,995
+You know, here's a rule that
+
+867
+00:28:58,995 --> 00:29:00,615
+says you can only
+see friends,
+
+868
+00:29:01,075 --> 00:29:01,875
+using, you know,
+
+869
+00:29:01,875 --> 00:29:02,995
+probably a silly example,
+
+870
+00:29:02,995 --> 00:29:04,835
+but you can only
+see friends if
+
+871
+00:29:04,835 --> 00:29:06,775
+those friends like
+art by Leonardo
+
+872
+00:29:06,915 --> 00:29:08,595
+da Vinci. And all you have to
+
+873
+00:29:08,595 --> 00:29:10,995
+do is represent the the crawl
+
+874
+00:29:10,995 --> 00:29:13,450
+of the graph in
+a smart function
+
+875
+00:29:13,450 --> 00:29:14,830
+that has to be valid.
+
+876
+00:29:15,290 --> 00:29:16,970
+And if it is valid,
+that data,
+
+877
+00:29:16,970 --> 00:29:18,410
+that triple exists for you.
+
+878
+00:29:18,410 --> 00:29:19,370
+If it's not valid,
+
+879
+00:29:19,370 --> 00:29:21,130
+that triple just
+simply doesn't
+
+880
+00:29:21,130 --> 00:29:22,990
+exist for you.
+You'll never see it.
+
+881
+00:29:23,050 --> 00:29:24,410
+And these same rules can be
+
+882
+00:29:24,410 --> 00:29:26,590
+expressed not only for
+read permissions,
+
+883
+00:29:26,730 --> 00:29:27,835
+but also write permissions.
+
+884
+00:29:28,075 --> 00:29:29,675
+Who is the ability to update
+
+885
+00:29:29,675 --> 00:29:31,055
+data and under
+what conditions?
+
+886
+00:29:31,835 --> 00:29:33,275
+And ultimately,
+by putting this,
+
+887
+00:29:33,275 --> 00:29:35,195
+I have a central
+source of truth
+
+888
+00:29:35,195 --> 00:29:36,235
+at the data layer.
+
+889
+00:29:36,235 --> 00:29:38,475
+I can open up, instead of in
+
+890
+00:29:38,475 --> 00:29:40,735
+multiple applications
+or multiple APIs,
+
+891
+00:29:41,275 --> 00:29:43,115
+I can open up richer access to
+
+892
+00:29:43,115 --> 00:29:44,500
+the data and and actually have
+
+893
+00:29:44,500 --> 00:29:46,120
+my data now truly participate
+
+894
+00:29:46,420 --> 00:29:49,560
+in a data web or
+linked data web.
+
+895
+00:29:50,340 --> 00:29:52,180
+And I create so
+much more value
+
+896
+00:29:52,180 --> 00:29:53,860
+and usability out of the data
+
+897
+00:29:53,860 --> 00:29:55,780
+because our only way of doing
+
+898
+00:29:55,780 --> 00:29:57,220
+this sort of thing today is to
+
+899
+00:29:57,220 --> 00:30:00,245
+build custom APIs and not only
+
+900
+00:30:00,245 --> 00:30:02,665
+put the effort
+into code them,
+
+901
+00:30:02,965 --> 00:30:04,885
+but put the effort
+into hopefully
+
+902
+00:30:04,885 --> 00:30:06,805
+maintain them
+properly over time.
+
+903
+00:30:06,805 --> 00:30:08,565
+And, as I mentioned before,
+
+904
+00:30:08,565 --> 00:30:10,645
+that imposes a cost
+not only on you,
+
+905
+00:30:10,645 --> 00:30:12,245
+but on every consumer of your
+
+906
+00:30:12,245 --> 00:30:13,120
+data as well.
+
+907
+00:30:13,200 --> 00:30:14,880
+So it gets us
+completely out of
+
+908
+00:30:14,880 --> 00:30:18,000
+that cycle. So that's it.
+
+909
+00:30:18,000 --> 00:30:20,560
+I, I know I'm out
+of time here.
+
+910
+00:30:20,560 --> 00:30:23,060
+I would love to be
+able to, take,
+
+911
+00:30:23,440 --> 00:30:25,540
+questions in the time
+we have remaining.
+
+912
+00:30:28,475 --> 00:30:31,035
+Hey. thank you
+very much, Brian.
+
+913
+00:30:31,355 --> 00:30:32,575
+this was a great
+presentation.
+
+914
+00:30:33,835 --> 00:30:36,015
+we do have a couple
+questions.
+
+915
+00:30:37,995 --> 00:30:42,750
+and, the first one
+is from Phil.
+
+916
+00:30:43,050 --> 00:30:46,830
+Phil is asking if,
+your technology task,
+
+917
+00:30:48,330 --> 00:30:49,790
+stack, sorry, flurry,
+
+918
+00:30:49,930 --> 00:30:51,770
+is it a good model to solve
+
+919
+00:30:51,770 --> 00:30:54,190
+tenancy and cross
+tenancy access,
+
+920
+00:30:54,935 --> 00:30:57,515
+versus graph partitioning,
+for example?
+
+921
+00:30:58,535 --> 00:31:01,015
+Yeah. absolutely. It is.
+
+922
+00:31:01,015 --> 00:31:02,775
+And, you know, it's
+also an effective
+
+923
+00:31:02,775 --> 00:31:04,555
+solution for segmenting,
+
+924
+00:31:05,895 --> 00:31:07,575
+different types
+of data as well.
+
+925
+00:31:07,575 --> 00:31:09,515
+For example, you may store,
+
+926
+00:31:10,240 --> 00:31:13,060
+PII data in
+a different repository
+
+927
+00:31:13,440 --> 00:31:14,340
+than you store,
+
+928
+00:31:15,760 --> 00:31:17,300
+data about the individual,
+
+929
+00:31:17,680 --> 00:31:19,860
+but without identifying
+information.
+
+930
+00:31:20,480 --> 00:31:21,760
+The reason you
+might do that is
+
+931
+00:31:21,760 --> 00:31:23,040
+you might want to be able to
+
+932
+00:31:23,040 --> 00:31:25,045
+offer proof these
+proofs around
+
+933
+00:31:25,045 --> 00:31:27,285
+the data integrity
+without linking
+
+934
+00:31:27,285 --> 00:31:29,205
+it directly to PII data.
+
+935
+00:31:29,205 --> 00:31:30,725
+You know, SPARQL
+gives us great
+
+936
+00:31:30,725 --> 00:31:32,565
+ways of combining data across
+
+937
+00:31:32,565 --> 00:31:34,425
+repositories,
+federated queries,
+
+938
+00:31:35,045 --> 00:31:37,065
+and, yeah, we can
+piece together
+
+939
+00:31:37,205 --> 00:31:38,585
+data with different
+characteristics.
+
+940
+00:31:39,660 --> 00:31:42,040
+We can piece
+together data across
+
+941
+00:31:42,300 --> 00:31:43,560
+multiple organizations.
+
+942
+00:31:43,820 --> 00:31:46,060
+And by having the data
+defend itself,
+
+943
+00:31:46,060 --> 00:31:47,500
+having the security in there,
+
+944
+00:31:47,500 --> 00:31:49,520
+we can really just
+more liberally
+
+945
+00:31:49,740 --> 00:31:51,740
+open up the data
+to those people
+
+946
+00:31:51,740 --> 00:31:53,020
+who need it that
+right now have
+
+947
+00:31:53,020 --> 00:31:54,655
+a hard time getting
+their hands on.
+
+948
+00:31:56,575 --> 00:31:58,435
+Great. thank you.
+
+949
+00:32:00,255 --> 00:32:02,895
+Emilio, Stani is asking if you
+
+950
+00:32:02,895 --> 00:32:06,595
+keep an eye on
+Solid technology
+
+951
+00:32:06,655 --> 00:32:09,950
+as a decentralized
+mechanism. Yeah.
+
+952
+00:32:10,490 --> 00:32:13,050
+so, yeah, we love
+what Solid is doing.
+
+953
+00:32:13,050 --> 00:32:14,890
+I think they're, you know,
+
+954
+00:32:14,890 --> 00:32:16,270
+from a vision standpoint,
+
+955
+00:32:16,330 --> 00:32:17,690
+I think we're
+really well aligned
+
+956
+00:32:17,690 --> 00:32:20,030
+with them. so absolutely.
+
+957
+00:32:20,970 --> 00:32:23,290
+our focus has always
+been a little
+
+958
+00:32:23,290 --> 00:32:25,265
+bit more on cryptography and
+
+959
+00:32:25,265 --> 00:32:27,185
+embedding business logic and
+
+960
+00:32:27,185 --> 00:32:29,445
+things like time travel for
+
+961
+00:32:29,585 --> 00:32:32,225
+enabling people
+in machines that
+
+962
+00:32:32,225 --> 00:32:34,625
+truly need to leverage data in
+
+963
+00:32:34,625 --> 00:32:38,050
+sort of a critical manner.
+
+964
+00:32:38,210 --> 00:32:40,850
+So, but absolutely, you know,
+
+965
+00:32:41,330 --> 00:32:43,330
+I think we have
+similar visions
+
+966
+00:32:43,330 --> 00:32:45,990
+for the world. Great.
+
+967
+00:32:47,010 --> 00:32:48,770
+One, one more question.
+
+968
+00:32:48,770 --> 00:32:51,010
+So, like,
+the the time travel,
+
+969
+00:32:51,010 --> 00:32:54,495
+the, the the the information,
+
+970
+00:32:54,495 --> 00:32:57,135
+the four triple,
+I I see there's,
+
+971
+00:32:57,135 --> 00:33:00,255
+like, added complexity
+over, like,
+
+972
+00:33:00,255 --> 00:33:01,935
+I would say, a standard basic
+
+973
+00:33:01,935 --> 00:33:04,335
+triple store. how is that
+
+974
+00:33:04,335 --> 00:33:05,635
+influencing the scalability,
+
+975
+00:33:06,640 --> 00:33:09,300
+and the the query
+performance,
+
+976
+00:33:10,320 --> 00:33:12,180
+time, of your database?
+
+977
+00:33:12,320 --> 00:33:14,960
+And, would you
+maybe give, like,
+
+978
+00:33:14,960 --> 00:33:16,560
+some, you know,
+
+979
+00:33:16,560 --> 00:33:19,460
+applications around
+that and, yeah.
+
+980
+00:33:20,765 --> 00:33:21,505
+Yeah. So,
+
+981
+00:33:23,085 --> 00:33:24,545
+there is additional
+complexity.
+
+982
+00:33:24,605 --> 00:33:26,845
+I think we do a really
+good job of,
+
+983
+00:33:27,405 --> 00:33:29,185
+not bothering you
+with it unless
+
+984
+00:33:29,325 --> 00:33:30,605
+you care about it.
+
+985
+00:33:30,605 --> 00:33:31,665
+So, you know,
+
+986
+00:33:32,045 --> 00:33:35,120
+if if you don't need to embed
+
+987
+00:33:35,120 --> 00:33:37,120
+the data security
+at the data layer,
+
+988
+00:33:37,120 --> 00:33:38,560
+you wanna do it
+like a traditional
+
+989
+00:33:38,560 --> 00:33:39,700
+app server, you can.
+
+990
+00:33:40,000 --> 00:33:41,760
+And you don't
+have to learn any
+
+991
+00:33:41,760 --> 00:33:43,440
+of that if that's
+not something
+
+992
+00:33:43,440 --> 00:33:44,980
+you're planning
+on doing today.
+
+993
+00:33:45,120 --> 00:33:46,735
+A lot of
+the cryptography happens
+
+994
+00:33:46,735 --> 00:33:47,407
+behind the scenes.
+
+995
+00:33:47,407 --> 00:33:47,935
+We have ways that
+allow you to,
+
+996
+00:33:47,935 --> 00:33:49,240
+you know, basically set up,
+
+997
+00:33:49,381 --> 00:33:50,089
+what we call authorities that
+
+998
+00:33:50,089 --> 00:33:51,215
+allow an entity,
+perhaps your app,
+
+999
+00:33:51,215 --> 00:33:53,235
+to transact on behalf of other
+
+1000
+00:33:53,615 --> 00:33:56,115
+individuals within
+their, a system.
+
+1001
+00:33:56,495 --> 00:34:02,940
+So we try and do
+
+1002
+00:34:02,940 --> 00:34:04,140
+a lot of things
+where you really
+
+1003
+00:34:04,140 --> 00:34:05,420
+don't need to
+think about these
+
+1004
+00:34:05,420 --> 00:34:08,060
+things unless you need them or
+
+1005
+00:34:08,060 --> 00:34:09,840
+until you're ready
+to use them.
+
+1006
+00:34:10,860 --> 00:34:12,400
+as far as query performance,
+
+1007
+00:34:12,540 --> 00:34:14,220
+I'm I'm glad you
+asked about it.
+
+1008
+00:34:14,220 --> 00:34:15,420
+One thing that is very,
+
+1009
+00:34:15,420 --> 00:34:17,520
+very different
+about how Flurry,
+
+1010
+00:34:19,155 --> 00:34:20,835
+established itself
+is it's a very
+
+1011
+00:34:20,835 --> 00:34:24,135
+cloud friendly architecture.
+
+1012
+00:34:24,675 --> 00:34:26,595
+And the query side is actually
+
+1013
+00:34:26,595 --> 00:34:28,115
+completely independent from
+
+1014
+00:34:28,115 --> 00:34:30,135
+the ledger side,
+the update side.
+
+1015
+00:34:30,460 --> 00:34:31,820
+Every database you've probably
+
+1016
+00:34:31,820 --> 00:34:33,660
+ever used has a single machine
+
+1017
+00:34:33,660 --> 00:34:35,100
+that always does both of those
+
+1018
+00:34:35,100 --> 00:34:35,600
+functions.
+
+1019
+00:34:36,060 --> 00:34:37,260
+By separating those,
+
+1020
+00:34:37,260 --> 00:34:39,840
+we now completely
+decouple the scalability
+
+1021
+00:34:40,060 --> 00:34:41,280
+of those two functions.
+
+1022
+00:34:42,060 --> 00:34:44,155
+So as weird as it sounds,
+
+1023
+00:34:44,155 --> 00:34:46,875
+the query database engine is
+
+1024
+00:34:46,875 --> 00:34:48,495
+actually a stateless
+database,
+
+1025
+00:34:48,635 --> 00:34:49,995
+which is kinda crazy because
+
+1026
+00:34:49,995 --> 00:34:51,515
+the whole reason
+you use a database
+
+1027
+00:34:51,515 --> 00:34:53,135
+is to maintain state.
+
+1028
+00:34:53,835 --> 00:34:55,355
+it's stateless in that it can
+
+1029
+00:34:55,355 --> 00:34:57,960
+sit in a container,
+it runs in memory.
+
+1030
+00:34:58,500 --> 00:35:00,660
+The way we handle
+immutable data,
+
+1031
+00:35:00,660 --> 00:35:01,620
+we don't change data,
+
+1032
+00:35:01,620 --> 00:35:03,380
+means that everything becomes
+
+1033
+00:35:03,380 --> 00:35:04,840
+very cacheable upstream.
+
+1034
+00:35:05,620 --> 00:35:07,700
+So, all of these nodes,
+
+1035
+00:35:07,700 --> 00:35:09,540
+you can scale
+from one query to
+
+1036
+00:35:09,540 --> 00:35:11,035
+a thousand query nodes,
+
+1037
+00:35:11,435 --> 00:35:12,715
+scale them back down again,
+
+1038
+00:35:12,715 --> 00:35:13,695
+linear scalability.
+
+1039
+00:35:13,835 --> 00:35:15,855
+We even have
+the entire database
+
+1040
+00:35:15,995 --> 00:35:17,615
+engine in JavaScript,
+
+1041
+00:35:17,835 --> 00:35:19,695
+and it can run-in
+a web browser
+
+1042
+00:35:19,835 --> 00:35:21,135
+inside of a web app.
+
+1043
+00:35:21,675 --> 00:35:23,935
+So, there's immense
+flexibility.
+
+1044
+00:35:24,475 --> 00:35:26,840
+And in many cases, in fact,
+
+1045
+00:35:26,840 --> 00:35:27,800
+a lot of cases,
+
+1046
+00:35:27,800 --> 00:35:31,400
+actually a huge boost in query
+
+1047
+00:35:31,400 --> 00:35:33,560
+performance and
+speed over other
+
+1048
+00:35:33,560 --> 00:35:35,340
+database, engines.
+
+1049
+00:35:37,160 --> 00:35:37,900
+Hi, everyone.
+
+1050
+00:35:38,440 --> 00:35:43,180
+welcome, to, this next talk.
+
+1051
+00:35:44,200 --> 00:35:47,000
+and we, are glad
+to have here,
+
+1052
+00:35:47,240 --> 00:35:49,435
+now, Brian Platz,
+
+1053
+00:35:49,815 --> 00:35:52,395
+and Brian is
+the CEO of Flurry.
+
+1054
+00:35:53,015 --> 00:35:55,515
+So, Brian,
+
+1055
+00:35:56,695 --> 00:35:58,775
+you're going to discuss data
+
+1056
+00:35:58,775 --> 00:35:59,915
+centric security,
+
+1057
+00:36:00,535 --> 00:36:02,960
+which is a very
+interesting topic.
+
+1058
+00:36:03,020 --> 00:36:05,440
+And, here is, the mic.
+
+1059
+00:36:06,540 --> 00:36:08,320
+we're ready for
+your presentation.
+
+1060
+00:36:09,580 --> 00:36:10,780
+Great. Thank you.
+
+1061
+00:36:11,180 --> 00:36:12,380
+and it's great to be here.
+
+1062
+00:36:12,380 --> 00:36:13,980
+So thanks for attending and
+
+1063
+00:36:13,980 --> 00:36:16,255
+participating. Yeah.
+
+1064
+00:36:16,255 --> 00:36:19,535
+We're gonna dive in,
+pretty quickly,
+
+1065
+00:36:19,535 --> 00:36:20,975
+but I'd say at a pretty deep
+
+1066
+00:36:20,975 --> 00:36:23,635
+level as to what data center
+
+1067
+00:36:23,775 --> 00:36:25,775
+security and, in particular,
+
+1068
+00:36:25,775 --> 00:36:27,135
+in a semantic graph model,
+
+1069
+00:36:28,290 --> 00:36:28,930
+would look like.
+
+1070
+00:36:28,930 --> 00:36:31,250
+In fact, what we
+will do let me
+
+1071
+00:36:31,250 --> 00:36:32,930
+make sure I can
+advance my slides.
+
+1072
+00:36:32,930 --> 00:36:33,830
+Here we go.
+
+1073
+00:36:34,530 --> 00:36:36,050
+we'll first sort
+of define what
+
+1074
+00:36:36,050 --> 00:36:37,990
+we mean by data
+centric security.
+
+1075
+00:36:38,930 --> 00:36:42,265
+We'll talk about, why
+this is important.
+
+1076
+00:36:42,265 --> 00:36:44,445
+So the what and
+the why and then how.
+
+1077
+00:36:44,985 --> 00:36:46,985
+and of course, we'll
+use Flurry since,
+
+1078
+00:36:47,305 --> 00:36:48,745
+it's one I'm
+familiar with, but,
+
+1079
+00:36:49,145 --> 00:36:51,645
+Flurry is
+a implementation model
+
+1080
+00:36:51,785 --> 00:36:54,205
+of enforcing that data
+centric security.
+
+1081
+00:36:55,870 --> 00:36:57,790
+so first with
+the, what is it?
+
+1082
+00:36:57,790 --> 00:36:58,990
+What are we talking about?
+
+1083
+00:36:58,990 --> 00:37:01,550
+So this is a term
+I really enjoy,
+
+1084
+00:37:01,550 --> 00:37:04,110
+this, data defending itself.
+
+1085
+00:37:04,110 --> 00:37:05,010
+And ultimately,
+
+1086
+00:37:05,150 --> 00:37:07,705
+we think that this is what we
+
+1087
+00:37:07,705 --> 00:37:10,105
+are gonna need
+around a significant
+
+1088
+00:37:10,105 --> 00:37:12,105
+part of data management
+as a whole,
+
+1089
+00:37:12,105 --> 00:37:13,945
+especially as we
+start to connect
+
+1090
+00:37:13,945 --> 00:37:16,025
+data more and more,
+connect it,
+
+1091
+00:37:16,425 --> 00:37:18,185
+not only within our four walls
+
+1092
+00:37:18,185 --> 00:37:19,085
+of our organization,
+
+1093
+00:37:19,145 --> 00:37:20,685
+but outside our four walls.
+
+1094
+00:37:21,560 --> 00:37:23,800
+And so data
+defending us itself
+
+1095
+00:37:23,800 --> 00:37:27,260
+means at least three things in
+
+1096
+00:37:27,960 --> 00:37:28,860
+our vernacular.
+
+1097
+00:37:29,400 --> 00:37:30,920
+One is knowing that you can
+
+1098
+00:37:30,920 --> 00:37:32,060
+trust the data.
+
+1099
+00:37:32,360 --> 00:37:33,415
+And, you know,
+
+1100
+00:37:33,415 --> 00:37:35,995
+as we see more and much more
+
+1101
+00:37:36,055 --> 00:37:37,595
+machine to machine interaction
+
+1102
+00:37:37,735 --> 00:37:39,835
+around data, effectively,
+
+1103
+00:37:40,055 --> 00:37:41,495
+the machines need, you know,
+
+1104
+00:37:41,495 --> 00:37:43,175
+the same thing
+us humans need.
+
+1105
+00:37:43,495 --> 00:37:44,855
+when we're browsing the web,
+
+1106
+00:37:44,855 --> 00:37:46,535
+we get the little lock icon
+
+1107
+00:37:46,535 --> 00:37:48,190
+letting us know that the data
+
+1108
+00:37:48,190 --> 00:37:49,890
+is secure and can be trusted
+
+1109
+00:37:49,950 --> 00:37:51,170
+from where it came from.
+
+1110
+00:37:52,270 --> 00:37:54,130
+that concept hasn't
+really existed
+
+1111
+00:37:54,270 --> 00:37:55,790
+or needed to be pushed forward
+
+1112
+00:37:55,790 --> 00:37:57,230
+in the data world
+because we've
+
+1113
+00:37:57,230 --> 00:37:58,750
+never really had a truly
+
+1114
+00:37:58,750 --> 00:38:00,290
+interconnected
+data ecosystem.
+
+1115
+00:38:01,345 --> 00:38:02,865
+But I think we can draw a lot
+
+1116
+00:38:02,865 --> 00:38:05,025
+of parallels to the world wide
+
+1117
+00:38:05,025 --> 00:38:07,105
+web that we as humans need and
+
+1118
+00:38:07,105 --> 00:38:08,865
+the tools we need around them
+
+1119
+00:38:08,865 --> 00:38:11,445
+to the data web
+that ultimately
+
+1120
+00:38:11,585 --> 00:38:12,725
+is where we're going.
+
+1121
+00:38:12,785 --> 00:38:15,670
+So, cryptography, obviously,
+
+1122
+00:38:15,670 --> 00:38:17,350
+and and we'll talk
+about, you know,
+
+1123
+00:38:17,350 --> 00:38:18,650
+how that can be accomplished.
+
+1124
+00:38:19,110 --> 00:38:23,290
+But, AI, you know,
+machine learning,
+
+1125
+00:38:23,430 --> 00:38:24,950
+machines that are
+consuming this
+
+1126
+00:38:24,950 --> 00:38:26,550
+data directly
+need to know that
+
+1127
+00:38:26,550 --> 00:38:28,070
+the data they're
+they're making
+
+1128
+00:38:28,070 --> 00:38:30,765
+decisions around,
+can be trusted.
+
+1129
+00:38:32,025 --> 00:38:33,885
+secondly, that
+you can reproduce
+
+1130
+00:38:34,025 --> 00:38:34,685
+the data.
+
+1131
+00:38:34,905 --> 00:38:38,265
+So especially if
+we, arrive in a,
+
+1132
+00:38:38,585 --> 00:38:40,045
+what I would say a multiple
+
+1133
+00:38:40,265 --> 00:38:42,205
+observer world where multiple
+
+1134
+00:38:42,425 --> 00:38:44,350
+parties are interacting with,
+
+1135
+00:38:45,230 --> 00:38:46,590
+a single set of data,
+
+1136
+00:38:46,590 --> 00:38:48,370
+trying to coordinate
+or collaborate
+
+1137
+00:38:48,590 --> 00:38:50,130
+around a single
+source of truth.
+
+1138
+00:38:50,750 --> 00:38:52,430
+They can't do
+that in a typical
+
+1139
+00:38:52,430 --> 00:38:53,410
+database model.
+
+1140
+00:38:53,630 --> 00:38:55,630
+A typical database model is
+
+1141
+00:38:55,630 --> 00:38:56,930
+extraordinary historically,
+
+1142
+00:38:57,230 --> 00:38:58,910
+it was designed this
+way for reasons,
+
+1143
+00:38:58,910 --> 00:39:00,345
+but it's extraordinarily good
+
+1144
+00:39:00,345 --> 00:39:01,565
+at destroying data.
+
+1145
+00:39:02,105 --> 00:39:04,265
+So, when you update a piece of
+
+1146
+00:39:04,265 --> 00:39:05,725
+information,
+you're effectively
+
+1147
+00:39:05,945 --> 00:39:07,405
+throwing out the old
+information.
+
+1148
+00:39:08,025 --> 00:39:09,705
+It might exist in
+a log for some
+
+1149
+00:39:09,705 --> 00:39:10,425
+period of time,
+
+1150
+00:39:10,425 --> 00:39:12,525
+but the old data is gone.
+
+1151
+00:39:14,000 --> 00:39:15,700
+If we're having
+multiple parties
+
+1152
+00:39:15,840 --> 00:39:17,300
+coordinating and
+making decisions
+
+1153
+00:39:17,360 --> 00:39:18,880
+around data,
+the first thing we
+
+1154
+00:39:18,880 --> 00:39:20,560
+really need is a common frame
+
+1155
+00:39:20,560 --> 00:39:22,800
+of reference. I often draw
+
+1156
+00:39:22,800 --> 00:39:24,560
+parallels to this
+with software
+
+1157
+00:39:24,560 --> 00:39:25,380
+source control.
+
+1158
+00:39:25,745 --> 00:39:27,585
+It was
+extraordinarily difficult
+
+1159
+00:39:27,585 --> 00:39:29,345
+before we had things like Git
+
+1160
+00:39:29,345 --> 00:39:31,985
+source control for multiple
+
+1161
+00:39:31,985 --> 00:39:33,905
+developers to build code,
+
+1162
+00:39:34,465 --> 00:39:35,745
+because there was no common
+
+1163
+00:39:35,745 --> 00:39:36,545
+frame of reference.
+
+1164
+00:39:36,545 --> 00:39:38,145
+They're constantly stomping on
+
+1165
+00:39:38,145 --> 00:39:38,945
+top of each other.
+
+1166
+00:39:38,945 --> 00:39:41,020
+There was no central
+truth to the world,
+
+1167
+00:39:41,020 --> 00:39:42,560
+no reproducible truth.
+
+1168
+00:39:43,260 --> 00:39:45,980
+Data needs that
+identical model,
+
+1169
+00:39:45,980 --> 00:39:47,600
+especially when
+we're collaborating
+
+1170
+00:39:47,740 --> 00:39:50,240
+around data, again,
+not only internally,
+
+1171
+00:39:50,780 --> 00:39:52,080
+but possibly externally,
+
+1172
+00:39:53,020 --> 00:39:54,400
+creating these data ecosystems
+
+1173
+00:39:54,620 --> 00:39:55,520
+with other parties.
+
+1174
+00:39:56,155 --> 00:39:58,155
+So the reproducibility of data
+
+1175
+00:39:58,155 --> 00:40:00,015
+is gonna become very,
+very critical.
+
+1176
+00:40:00,235 --> 00:40:02,155
+And, you know, the thing that
+
+1177
+00:40:02,155 --> 00:40:03,915
+we reference here is this idea
+
+1178
+00:40:03,915 --> 00:40:04,815
+of time travel.
+
+1179
+00:40:05,115 --> 00:40:06,475
+Being able to issue a query,
+
+1180
+00:40:06,475 --> 00:40:08,655
+not only for the current
+state of data,
+
+1181
+00:40:08,840 --> 00:40:10,920
+but every historical moment of
+
+1182
+00:40:10,920 --> 00:40:12,140
+data that existed.
+
+1183
+00:40:12,200 --> 00:40:13,720
+And again, sitting
+on that first
+
+1184
+00:40:13,720 --> 00:40:15,320
+foundation,
+knowing that we can
+
+1185
+00:40:15,320 --> 00:40:16,840
+trust the data that
+we're getting,
+
+1186
+00:40:16,840 --> 00:40:18,540
+that it hasn't been
+tampered with.
+
+1187
+00:40:19,720 --> 00:40:20,460
+And lastly,
+
+1188
+00:40:21,320 --> 00:40:23,420
+data defending
+itself means that
+
+1189
+00:40:24,135 --> 00:40:26,315
+it is impossible to circumvent
+
+1190
+00:40:26,695 --> 00:40:28,695
+the security that's
+been defined,
+
+1191
+00:40:28,695 --> 00:40:30,715
+the business rules,
+whatever they are,
+
+1192
+00:40:31,015 --> 00:40:33,575
+around who can update data and
+
+1193
+00:40:33,575 --> 00:40:35,255
+what the shape
+of data needs to
+
+1194
+00:40:35,255 --> 00:40:36,710
+look like. So, you know,
+
+1195
+00:40:36,710 --> 00:40:38,890
+when we think
+about, semantic,
+
+1196
+00:40:39,670 --> 00:40:41,270
+standards, we
+think about things
+
+1197
+00:40:41,270 --> 00:40:43,670
+like OWL or Shackle
+giving some
+
+1198
+00:40:43,670 --> 00:40:45,830
+degree of definition
+around how
+
+1199
+00:40:45,830 --> 00:40:47,930
+data needs to look
+for it to be valid.
+
+1200
+00:40:49,315 --> 00:40:51,315
+So we need to be able to take
+
+1201
+00:40:51,315 --> 00:40:52,935
+this a bit further,
+
+1202
+00:40:53,075 --> 00:40:55,015
+and we need to
+be able to layer
+
+1203
+00:40:55,075 --> 00:40:56,515
+permissioning on top of it.
+
+1204
+00:40:56,515 --> 00:40:59,715
+So not just data shape
+is being valid,
+
+1205
+00:40:59,715 --> 00:41:01,075
+but who can change data,
+
+1206
+00:41:01,075 --> 00:41:03,095
+and importantly,
+who can see data.
+
+1207
+00:41:03,980 --> 00:41:05,660
+So this would be
+the last layer
+
+1208
+00:41:05,660 --> 00:41:07,580
+of what we mean
+by data centric
+
+1209
+00:41:07,580 --> 00:41:13,360
+security. So why, why
+is this important?
+
+1210
+00:41:13,420 --> 00:41:17,120
+And what we see
+is for businesses
+
+1211
+00:41:17,455 --> 00:41:18,595
+to really be competitive,
+
+1212
+00:41:18,815 --> 00:41:21,475
+they are gonna
+have to be agile
+
+1213
+00:41:22,175 --> 00:41:24,335
+and get value out of
+the data they have.
+
+1214
+00:41:24,335 --> 00:41:25,455
+I mean, I think, you know,
+
+1215
+00:41:25,455 --> 00:41:27,395
+a lot of organizations today
+
+1216
+00:41:28,015 --> 00:41:28,915
+wouldn't necessarily,
+
+1217
+00:41:30,460 --> 00:41:33,100
+consider themselves
+data poor,
+
+1218
+00:41:33,100 --> 00:41:34,540
+but they'd probably consider
+
+1219
+00:41:34,540 --> 00:41:36,460
+themselves insights poor or
+
+1220
+00:41:36,460 --> 00:41:37,340
+knowledge poor.
+
+1221
+00:41:37,340 --> 00:41:38,460
+So they have a lot of data.
+
+1222
+00:41:38,460 --> 00:41:39,260
+It's just sitting there.
+
+1223
+00:41:39,260 --> 00:41:40,320
+It's locked away.
+
+1224
+00:41:40,540 --> 00:41:42,160
+It's very difficult
+to leverage.
+
+1225
+00:41:42,615 --> 00:41:44,695
+And that's really a symptom of
+
+1226
+00:41:44,695 --> 00:41:46,215
+how we have been building
+
+1227
+00:41:46,215 --> 00:41:48,775
+applications for
+the last forty years.
+
+1228
+00:41:48,775 --> 00:41:51,335
+So we have been
+developing things
+
+1229
+00:41:51,335 --> 00:41:53,835
+in a very application
+centric model,
+
+1230
+00:41:54,215 --> 00:41:56,295
+where the data we
+have is really
+
+1231
+00:41:56,295 --> 00:41:58,155
+subservient to
+the application.
+
+1232
+00:41:59,390 --> 00:42:01,310
+And as we've needed to expose
+
+1233
+00:42:01,310 --> 00:42:02,770
+that data in other ways,
+
+1234
+00:42:02,990 --> 00:42:06,050
+we develop what I
+consider workarounds.
+
+1235
+00:42:06,430 --> 00:42:08,190
+I consider these flaws of our
+
+1236
+00:42:08,190 --> 00:42:10,130
+current data model,
+which are APIs.
+
+1237
+00:42:10,585 --> 00:42:12,025
+I don't think APIs should need
+
+1238
+00:42:12,025 --> 00:42:13,965
+to exist to get
+access to data.
+
+1239
+00:42:14,905 --> 00:42:16,585
+but what they are is a very
+
+1240
+00:42:16,585 --> 00:42:20,105
+narrow pipe into
+that data that's
+
+1241
+00:42:20,105 --> 00:42:22,025
+defined and then imposes costs
+
+1242
+00:42:22,025 --> 00:42:24,285
+not only on the individuals
+
+1243
+00:42:24,425 --> 00:42:25,965
+having to develop the APIs,
+
+1244
+00:42:26,490 --> 00:42:27,870
+perhaps your own
+organization,
+
+1245
+00:42:28,490 --> 00:42:30,730
+but it imposes a huge cost on
+
+1246
+00:42:30,730 --> 00:42:32,090
+the consumers of that data.
+
+1247
+00:42:32,090 --> 00:42:33,690
+Because now all they all have
+
+1248
+00:42:33,690 --> 00:42:36,910
+to write custom code
+to your custom API,
+
+1249
+00:42:37,290 --> 00:42:38,570
+and then importantly maintain
+
+1250
+00:42:38,570 --> 00:42:39,475
+that over time.
+
+1251
+00:42:39,635 --> 00:42:40,375
+And oftentimes,
+
+1252
+00:42:40,675 --> 00:42:41,875
+it's the maintenance of these
+
+1253
+00:42:41,875 --> 00:42:43,735
+APIs that also
+get us in trouble
+
+1254
+00:42:44,355 --> 00:42:46,215
+that introduce
+security breaches.
+
+1255
+00:42:47,075 --> 00:42:48,515
+Or we have the other
+workaround,
+
+1256
+00:42:48,515 --> 00:42:50,115
+which is I need
+to aggregate or
+
+1257
+00:42:50,115 --> 00:42:51,895
+look at this data
+across repositories.
+
+1258
+00:42:52,420 --> 00:42:53,940
+I have no good way
+of doing that,
+
+1259
+00:42:53,940 --> 00:42:56,100
+so I turn to data
+lights or data
+
+1260
+00:42:56,100 --> 00:42:58,500
+warehouses. So I think most of
+
+1261
+00:42:58,500 --> 00:43:00,200
+the people here are probably
+
+1262
+00:43:01,700 --> 00:43:04,200
+familiar with and
+fans of semantic
+
+1263
+00:43:04,420 --> 00:43:06,040
+web sort of technology.
+
+1264
+00:43:06,260 --> 00:43:08,345
+But what it allows us to do is
+
+1265
+00:43:08,345 --> 00:43:10,505
+it gives us a foundation
+to move into,
+
+1266
+00:43:10,505 --> 00:43:12,505
+instead of an application
+centric world,
+
+1267
+00:43:12,505 --> 00:43:14,125
+into a data centric world.
+
+1268
+00:43:14,745 --> 00:43:16,985
+But this then brings this
+
+1269
+00:43:16,985 --> 00:43:19,245
+additional set of
+problems around
+
+1270
+00:43:19,305 --> 00:43:21,165
+trust of data, guaranteeing
+
+1271
+00:43:21,305 --> 00:43:22,605
+integrity of data.
+
+1272
+00:43:23,110 --> 00:43:24,310
+Because what it means is that
+
+1273
+00:43:24,310 --> 00:43:26,250
+instead of just
+a single observer,
+
+1274
+00:43:26,470 --> 00:43:28,070
+single pipe into these data
+
+1275
+00:43:28,070 --> 00:43:29,610
+repositories
+where everything's
+
+1276
+00:43:29,830 --> 00:43:32,090
+controlled, now we
+have an ecosystem
+
+1277
+00:43:32,230 --> 00:43:32,970
+of applications,
+
+1278
+00:43:33,270 --> 00:43:34,870
+which gives us
+tremendous leverage.
+
+1279
+00:43:34,870 --> 00:43:36,410
+It gives us a lot
+of flexibility
+
+1280
+00:43:36,710 --> 00:43:37,530
+around data.
+
+1281
+00:43:38,395 --> 00:43:40,795
+but it also means that our
+
+1282
+00:43:40,795 --> 00:43:42,715
+previous methods of trying to
+
+1283
+00:43:42,715 --> 00:43:45,295
+secure data in the application
+
+1284
+00:43:45,435 --> 00:43:47,515
+tier start to fall
+apart because
+
+1285
+00:43:47,515 --> 00:43:49,355
+there is no such
+thing as a single
+
+1286
+00:43:49,355 --> 00:43:51,580
+application with
+being the only
+
+1287
+00:43:51,580 --> 00:43:53,500
+thing that has access
+to data anymore.
+
+1288
+00:43:53,500 --> 00:43:54,720
+It's multiple applications,
+
+1289
+00:43:55,260 --> 00:43:56,800
+but the data is more reusable
+
+1290
+00:43:56,860 --> 00:43:57,900
+and can be leveraged.
+
+1291
+00:43:57,900 --> 00:43:59,760
+So we need to start
+thinking about,
+
+1292
+00:44:00,780 --> 00:44:04,545
+embedding security
+into the data
+
+1293
+00:44:04,545 --> 00:44:06,385
+tier to make this
+world possible
+
+1294
+00:44:06,385 --> 00:44:08,245
+and start connecting
+these data sources.
+
+1295
+00:44:08,945 --> 00:44:10,225
+So that's why we think this is
+
+1296
+00:44:10,225 --> 00:44:13,185
+important. So I'll tackle some
+
+1297
+00:44:13,185 --> 00:44:15,045
+of the things we talked about
+
+1298
+00:44:15,185 --> 00:44:16,945
+with some examples of some,
+
+1299
+00:44:17,345 --> 00:44:20,710
+technologies that address some
+
+1300
+00:44:20,710 --> 00:44:21,610
+of these concerns.
+
+1301
+00:44:22,310 --> 00:44:24,010
+So the first thing
+that I mentioned,
+
+1302
+00:44:25,110 --> 00:44:26,970
+we think data centric security
+
+1303
+00:44:27,030 --> 00:44:29,190
+means is that you have to be
+
+1304
+00:44:29,190 --> 00:44:30,950
+able to trust the data.
+
+1305
+00:44:30,950 --> 00:44:32,150
+You have to know that the data
+
+1306
+00:44:32,150 --> 00:44:34,055
+has integrity, and this has to
+
+1307
+00:44:34,055 --> 00:44:36,075
+be done in a way
+that a machine
+
+1308
+00:44:36,135 --> 00:44:38,395
+can even trust
+the integrity of data.
+
+1309
+00:44:39,015 --> 00:44:41,095
+There's really
+exciting standard
+
+1310
+00:44:41,095 --> 00:44:42,635
+here that is,
+
+1311
+00:44:43,335 --> 00:44:45,735
+emerging W3C standard around
+
+1312
+00:44:45,735 --> 00:44:47,115
+verifiable credentials.
+
+1313
+00:44:47,975 --> 00:44:50,470
+I'm gonna extend
+how you typically
+
+1314
+00:44:50,470 --> 00:44:52,230
+see it, but I'm gonna
+use the typical
+
+1315
+00:44:52,230 --> 00:44:53,670
+use cases here for those not
+
+1316
+00:44:53,670 --> 00:44:55,190
+familiar with it
+and and how it
+
+1317
+00:44:55,190 --> 00:44:57,670
+works and how it
+guarantees data
+
+1318
+00:44:57,670 --> 00:44:58,550
+integrity. In fact,
+
+1319
+00:44:58,550 --> 00:45:00,070
+one of the things
+we talk about
+
+1320
+00:45:00,070 --> 00:45:01,510
+these credentials is that it's
+
+1321
+00:45:01,510 --> 00:45:02,650
+like data containers.
+
+1322
+00:45:02,790 --> 00:45:04,765
+We we talk a lot about, like,
+
+1323
+00:45:04,925 --> 00:45:07,425
+Docker and and
+computing containers
+
+1324
+00:45:07,565 --> 00:45:10,865
+now a day, currently
+in our IT world.
+
+1325
+00:45:11,325 --> 00:45:12,765
+And we think that,
+
+1326
+00:45:13,645 --> 00:45:16,385
+these same principles
+can apply to data.
+
+1327
+00:45:16,525 --> 00:45:18,205
+And verifiable credentials is
+
+1328
+00:45:18,205 --> 00:45:19,505
+really the the preeminent,
+
+1329
+00:45:20,740 --> 00:45:22,680
+standard that's
+coming around this.
+
+1330
+00:45:23,060 --> 00:45:24,820
+So verifiable credentials is
+
+1331
+00:45:24,820 --> 00:45:27,380
+under the W3C,
+the same, you know,
+
+1332
+00:45:27,460 --> 00:45:29,460
+standards body
+holding the other
+
+1333
+00:45:29,460 --> 00:45:31,380
+semantic web, standards.
+
+1334
+00:45:31,380 --> 00:45:33,220
+And it's actually
+based on even
+
+1335
+00:45:33,220 --> 00:45:35,075
+though a lot of people who are
+
+1336
+00:45:35,075 --> 00:45:36,435
+using it don't
+necessarily know
+
+1337
+00:45:36,435 --> 00:45:38,455
+it's based on semantic
+web technologies,
+
+1338
+00:45:38,595 --> 00:45:40,195
+it's sitting
+entirely on top of
+
+1339
+00:45:40,195 --> 00:45:41,335
+semantic web technologies.
+
+1340
+00:45:42,515 --> 00:45:44,595
+So what is
+a verifiable credential
+
+1341
+00:45:44,595 --> 00:45:46,915
+and what does it
+matter to data
+
+1342
+00:45:46,915 --> 00:45:47,795
+centric security?
+
+1343
+00:45:47,795 --> 00:45:49,820
+How is this going
+to solve some
+
+1344
+00:45:49,820 --> 00:45:50,940
+of these problems that we've
+
+1345
+00:45:50,940 --> 00:45:51,600
+talked about?
+
+1346
+00:45:52,540 --> 00:45:54,300
+the classic example in an area
+
+1347
+00:45:54,300 --> 00:45:55,500
+where we're spending a lot of
+
+1348
+00:45:55,500 --> 00:45:56,780
+time on because there's a lot
+
+1349
+00:45:56,780 --> 00:45:59,680
+of momentum is
+the university system.
+
+1350
+00:46:00,300 --> 00:46:02,275
+anything that is a important
+
+1351
+00:46:02,275 --> 00:46:03,955
+piece of information
+is what you
+
+1352
+00:46:03,955 --> 00:46:05,015
+would call a credential.
+
+1353
+00:46:05,475 --> 00:46:06,755
+We have a lot of physical
+
+1354
+00:46:06,755 --> 00:46:08,115
+credentials today that would
+
+1355
+00:46:08,115 --> 00:46:09,475
+include your
+driver's license,
+
+1356
+00:46:09,475 --> 00:46:11,955
+your passport,
+and as it relates
+
+1357
+00:46:11,955 --> 00:46:12,695
+to a university,
+
+1358
+00:46:13,075 --> 00:46:15,495
+it would be your degree.
+
+1359
+00:46:16,290 --> 00:46:17,650
+But of course,
+it's very difficult
+
+1360
+00:46:17,650 --> 00:46:20,230
+to validate some of
+these mechanisms.
+
+1361
+00:46:21,010 --> 00:46:22,770
+And of course,
+they're not digital,
+
+1362
+00:46:22,770 --> 00:46:24,230
+they're mostly physical,
+
+1363
+00:46:24,850 --> 00:46:26,150
+because they're
+very important.
+
+1364
+00:46:26,610 --> 00:46:28,465
+So verifiable credentials is
+
+1365
+00:46:28,465 --> 00:46:29,425
+designed to do this.
+
+1366
+00:46:29,425 --> 00:46:30,325
+What it allows,
+
+1367
+00:46:30,785 --> 00:46:33,525
+to happen is that
+an issuer can
+
+1368
+00:46:33,665 --> 00:46:36,165
+create a digital, credential.
+
+1369
+00:46:36,225 --> 00:46:38,545
+In this case, it's
+a university example.
+
+1370
+00:46:38,545 --> 00:46:40,485
+We're creating
+a digital degree,
+
+1371
+00:46:41,665 --> 00:46:43,205
+for out of a university.
+
+1372
+00:46:44,070 --> 00:46:47,290
+And a holder, in this
+case the student,
+
+1373
+00:46:47,590 --> 00:46:48,650
+gets that degree.
+
+1374
+00:46:49,510 --> 00:46:51,530
+So blockchain often comes into
+
+1375
+00:46:51,750 --> 00:46:52,490
+this conversation.
+
+1376
+00:46:53,750 --> 00:46:55,430
+Flurry spends a lot
+of time, in fact,
+
+1377
+00:46:55,430 --> 00:46:57,290
+its ledger is based
+on blockchain
+
+1378
+00:46:57,430 --> 00:47:00,125
+technology, but
+it isn't actually
+
+1379
+00:47:00,125 --> 00:47:01,885
+required to make
+all this work.
+
+1380
+00:47:01,885 --> 00:47:04,045
+So there's some
+optionality to it.
+
+1381
+00:47:04,045 --> 00:47:06,545
+But the benefit
+of a credential
+
+1382
+00:47:07,325 --> 00:47:09,645
+is that the data does not need
+
+1383
+00:47:09,645 --> 00:47:11,870
+to be published in a public
+
+1384
+00:47:11,870 --> 00:47:13,390
+manner at all. So,
+
+1385
+00:47:13,950 --> 00:47:15,970
+privacy around
+the data is always,
+
+1386
+00:47:17,310 --> 00:47:18,450
+integral to this.
+
+1387
+00:47:18,990 --> 00:47:21,150
+And in fact, in
+the coming years,
+
+1388
+00:47:21,150 --> 00:47:22,990
+there's already
+examples coming out.
+
+1389
+00:47:23,230 --> 00:47:24,350
+I'm sure Android,
+
+1390
+00:47:24,350 --> 00:47:25,870
+I'm sure iOS will probably be
+
+1391
+00:47:25,870 --> 00:47:27,565
+shipping out of
+the box with a out
+
+1392
+00:47:27,565 --> 00:47:28,245
+of the box,
+
+1393
+00:47:29,685 --> 00:47:31,685
+application for holding your
+
+1394
+00:47:31,685 --> 00:47:33,065
+credentials in a wallet.
+
+1395
+00:47:33,205 --> 00:47:37,045
+So in iOS, iPhone,
+
+1396
+00:47:37,045 --> 00:47:38,485
+you already have a wallet for
+
+1397
+00:47:38,485 --> 00:47:39,205
+your credit cards,
+
+1398
+00:47:39,205 --> 00:47:41,570
+you will have
+a wallet for these
+
+1399
+00:47:41,570 --> 00:47:42,690
+credentials, which will hold
+
+1400
+00:47:42,690 --> 00:47:44,450
+things like your
+driver's license,
+
+1401
+00:47:44,450 --> 00:47:45,810
+and they'll hold things like
+
+1402
+00:47:45,810 --> 00:47:47,170
+your university degrees,
+
+1403
+00:47:47,170 --> 00:47:49,110
+and potentially lots
+of other things.
+
+1404
+00:47:49,970 --> 00:47:52,310
+And one of the benefits
+is, as a holder,
+
+1405
+00:47:53,330 --> 00:47:54,850
+you determine who you disclose
+
+1406
+00:47:54,850 --> 00:47:55,830
+the data to.
+
+1407
+00:47:56,395 --> 00:47:58,235
+But whoever you
+disclose it to,
+
+1408
+00:47:58,235 --> 00:47:59,595
+in this particular example,
+
+1409
+00:47:59,595 --> 00:48:01,275
+would be an employer
+that you're
+
+1410
+00:48:01,275 --> 00:48:03,455
+trying to prove you
+have this degree,
+
+1411
+00:48:03,915 --> 00:48:06,235
+can independently verify that
+
+1412
+00:48:06,235 --> 00:48:07,695
+that data has integrity,
+
+1413
+00:48:07,755 --> 00:48:09,275
+that it was in fact issued by
+
+1414
+00:48:09,275 --> 00:48:09,935
+the university,
+
+1415
+00:48:10,400 --> 00:48:12,260
+that it's never been
+tampered with.
+
+1416
+00:48:12,880 --> 00:48:14,320
+And they can prove
+that without
+
+1417
+00:48:14,320 --> 00:48:15,840
+having to use
+something like a third
+
+1418
+00:48:15,840 --> 00:48:17,120
+party background
+check provider
+
+1419
+00:48:17,120 --> 00:48:19,220
+in order to validate
+information.
+
+1420
+00:48:19,280 --> 00:48:20,740
+It can be directly proven.
+
+1421
+00:48:22,320 --> 00:48:24,720
+So this starts to get into how
+
+1422
+00:48:24,720 --> 00:48:25,780
+we prove identity.
+
+1423
+00:48:26,355 --> 00:48:28,675
+And if we, you know,
+
+1424
+00:48:28,675 --> 00:48:31,095
+just step back real quick to
+
+1425
+00:48:31,315 --> 00:48:34,675
+this world where
+we have a these
+
+1426
+00:48:34,675 --> 00:48:36,595
+these data pods that are
+
+1427
+00:48:36,595 --> 00:48:39,155
+interconnected and
+multiple parties,
+
+1428
+00:48:39,155 --> 00:48:40,890
+multiple applications might be
+
+1429
+00:48:40,890 --> 00:48:42,030
+transacting data,
+
+1430
+00:48:43,050 --> 00:48:44,510
+identity becomes critical.
+
+1431
+00:48:44,570 --> 00:48:46,090
+Because how do we know we can
+
+1432
+00:48:46,090 --> 00:48:47,130
+trust this person?
+
+1433
+00:48:47,130 --> 00:48:48,970
+We no longer have
+a single pathway
+
+1434
+00:48:48,970 --> 00:48:50,350
+into updating data,
+
+1435
+00:48:50,490 --> 00:48:52,010
+which is
+the application sitting
+
+1436
+00:48:52,010 --> 00:48:52,970
+in front of it.
+
+1437
+00:48:52,970 --> 00:48:54,985
+There's multiple
+pathways to do it.
+
+1438
+00:48:56,345 --> 00:48:57,725
+So, a very complimentary,
+
+1439
+00:48:58,105 --> 00:48:59,945
+but independent standard is
+
+1440
+00:48:59,945 --> 00:49:01,645
+around decentralized
+identifiers.
+
+1441
+00:49:01,945 --> 00:49:04,185
+And these often goes
+hand in hand with,
+
+1442
+00:49:04,665 --> 00:49:05,805
+verifiable credentials.
+
+1443
+00:49:06,825 --> 00:49:09,070
+Decentralized
+identifiers allow
+
+1444
+00:49:09,070 --> 00:49:11,650
+you to register
+identities, typically,
+
+1445
+00:49:12,430 --> 00:49:13,730
+public, private,
+or asymmetric,
+
+1446
+00:49:14,670 --> 00:49:15,170
+cryptography.
+
+1447
+00:49:15,390 --> 00:49:17,070
+So you can release
+a public key
+
+1448
+00:49:17,070 --> 00:49:19,390
+but keep a private
+key that you
+
+1449
+00:49:19,390 --> 00:49:20,290
+never disclose.
+
+1450
+00:49:20,685 --> 00:49:22,305
+So it's a much safer mechanism
+
+1451
+00:49:22,525 --> 00:49:23,965
+for securing information or
+
+1452
+00:49:23,965 --> 00:49:26,465
+proving identity than
+say a password,
+
+1453
+00:49:26,525 --> 00:49:28,225
+which is what we mostly use.
+
+1454
+00:49:29,085 --> 00:49:30,845
+these identities do need to be
+
+1455
+00:49:30,845 --> 00:49:33,105
+registered somewhere
+where both parties,
+
+1456
+00:49:33,485 --> 00:49:35,265
+the verifier and the issuer,
+
+1457
+00:49:35,405 --> 00:49:37,290
+can jointly look them up.
+
+1458
+00:49:37,830 --> 00:49:40,070
+And a blockchain
+is a very logical
+
+1459
+00:49:40,070 --> 00:49:40,870
+place to put these,
+
+1460
+00:49:40,870 --> 00:49:41,830
+although they don't have to go
+
+1461
+00:49:41,830 --> 00:49:42,470
+on a blockchain.
+
+1462
+00:49:42,470 --> 00:49:43,510
+I could email it to you.
+
+1463
+00:49:43,510 --> 00:49:45,530
+I could put it up on
+our public website.
+
+1464
+00:49:46,630 --> 00:49:48,230
+there's multiple ways of
+
+1465
+00:49:48,230 --> 00:49:48,950
+representing them,
+
+1466
+00:49:48,950 --> 00:49:51,130
+which is inherently
+what makes them,
+
+1467
+00:49:52,025 --> 00:49:53,545
+decentralized and referred to
+
+1468
+00:49:53,545 --> 00:49:55,005
+as decentralized identifiers.
+
+1469
+00:49:55,145 --> 00:49:56,505
+So you're starting
+to see these
+
+1470
+00:49:56,505 --> 00:49:57,965
+a lot more. You're
+gonna see them,
+
+1471
+00:49:58,985 --> 00:49:59,965
+much more frequently,
+
+1472
+00:50:00,105 --> 00:50:04,185
+these strings here
+that start with DID,
+
+1473
+00:50:04,185 --> 00:50:05,485
+which stands for decentralized
+
+1474
+00:50:05,785 --> 00:50:08,070
+identifier. So what you do is
+
+1475
+00:50:08,070 --> 00:50:09,430
+you take this
+credential and you
+
+1476
+00:50:09,430 --> 00:50:11,030
+wrap it in a digital
+signature.
+
+1477
+00:50:11,030 --> 00:50:12,810
+That digital signature allows
+
+1478
+00:50:12,870 --> 00:50:15,430
+the employer to
+verify that that
+
+1479
+00:50:15,430 --> 00:50:17,350
+is impossible for anyone else
+
+1480
+00:50:17,350 --> 00:50:19,770
+to have issued
+this information
+
+1481
+00:50:20,475 --> 00:50:23,615
+except for the identifier
+of the issuer.
+
+1482
+00:50:24,395 --> 00:50:26,255
+So that's the basics
+of verifiable
+
+1483
+00:50:26,395 --> 00:50:27,995
+credentials, and that's kinda
+
+1484
+00:50:27,995 --> 00:50:30,575
+how they work. What
+do they look like?
+
+1485
+00:50:31,115 --> 00:50:33,250
+so if anyone here is familiar
+
+1486
+00:50:33,250 --> 00:50:35,330
+with JSON LD, which is really
+
+1487
+00:50:35,330 --> 00:50:37,990
+just a way of
+representing triples,
+
+1488
+00:50:38,130 --> 00:50:39,670
+representing RDF data,
+
+1489
+00:50:40,770 --> 00:50:43,430
+JSON LD is the main mechanism
+
+1490
+00:50:43,730 --> 00:50:45,110
+to represent a credential.
+
+1491
+00:50:46,315 --> 00:50:47,755
+And what we're able to do,
+
+1492
+00:50:47,755 --> 00:50:48,955
+and this would be a sample
+
+1493
+00:50:48,955 --> 00:50:50,975
+credential for
+a bachelor degree,
+
+1494
+00:50:51,435 --> 00:50:53,215
+we're able to
+provide a context.
+
+1495
+00:50:53,435 --> 00:50:55,115
+This is effectively,
+you know,
+
+1496
+00:50:55,115 --> 00:50:57,375
+in a sparkle world,
+like a prefix,
+
+1497
+00:50:58,235 --> 00:50:59,855
+except it's a set of prefixes
+
+1498
+00:50:59,995 --> 00:51:00,815
+that are predefined,
+
+1499
+00:51:01,690 --> 00:51:02,890
+and a payload of data.
+
+1500
+00:51:02,890 --> 00:51:04,750
+And this is a data container.
+
+1501
+00:51:04,970 --> 00:51:07,690
+It is self describing data in
+
+1502
+00:51:07,690 --> 00:51:10,570
+a containerized
+package that can
+
+1503
+00:51:10,570 --> 00:51:13,130
+also contain a proof
+that enables
+
+1504
+00:51:13,130 --> 00:51:16,865
+us to validate that
+this data is valid,
+
+1505
+00:51:16,865 --> 00:51:18,485
+that it's never been
+tampered with.
+
+1506
+00:51:19,185 --> 00:51:23,365
+So, if we looked
+at, for example,
+
+1507
+00:51:23,665 --> 00:51:25,605
+what this context points to,
+
+1508
+00:51:25,665 --> 00:51:27,665
+this context is, you know,
+
+1509
+00:51:27,665 --> 00:51:29,710
+setting up basically
+what you're
+
+1510
+00:51:29,710 --> 00:51:31,070
+probably used to seeing is
+
+1511
+00:51:31,070 --> 00:51:33,470
+prefixes for URIs and bringing
+
+1512
+00:51:33,470 --> 00:51:35,310
+definition to all
+the data in here.
+
+1513
+00:51:35,310 --> 00:51:37,230
+So if I wanted to
+know what a bachelor
+
+1514
+00:51:37,230 --> 00:51:37,950
+degree, you know,
+
+1515
+00:51:37,950 --> 00:51:40,050
+this degree is of type
+bachelor degree.
+
+1516
+00:51:40,270 --> 00:51:41,965
+Well, that may mean a lot of
+
+1517
+00:51:41,965 --> 00:51:43,005
+different things to a lot of
+
+1518
+00:51:43,005 --> 00:51:43,825
+different people.
+
+1519
+00:51:44,125 --> 00:51:46,045
+I can refer to
+the context here,
+
+1520
+00:51:46,045 --> 00:51:48,625
+you know, look up,
+bachelor degree,
+
+1521
+00:51:49,245 --> 00:51:50,845
+which I don't see
+it right now,
+
+1522
+00:51:50,845 --> 00:51:52,285
+but I'm sure it's
+in here somewhere.
+
+1523
+00:51:52,285 --> 00:51:53,565
+You all probably see it.
+
+1524
+00:51:53,565 --> 00:51:54,865
+Here's bachelor degree.
+
+1525
+00:51:55,200 --> 00:51:56,160
+And I can see that,
+
+1526
+00:51:56,560 --> 00:51:58,640
+bachelor degree refers to this
+
+1527
+00:51:58,640 --> 00:52:01,040
+formal definition
+of, you know,
+
+1528
+00:52:01,040 --> 00:52:03,040
+example dot com slash
+bachelor degree.
+
+1529
+00:52:03,040 --> 00:52:04,180
+But you see in here,
+
+1530
+00:52:04,240 --> 00:52:05,600
+some of these definitions are
+
+1531
+00:52:05,600 --> 00:52:07,460
+referring to schema
+dot org, etcetera.
+
+1532
+00:52:07,680 --> 00:52:09,280
+So we have now global shared
+
+1533
+00:52:09,280 --> 00:52:11,055
+schemas that I
+can containerize
+
+1534
+00:52:11,275 --> 00:52:12,715
+this data. I can share it with
+
+1535
+00:52:12,715 --> 00:52:14,815
+other people. They
+have the ability
+
+1536
+00:52:14,875 --> 00:52:16,555
+to then reference,
+for example,
+
+1537
+00:52:16,555 --> 00:52:18,415
+schema dot org and understand
+
+1538
+00:52:18,635 --> 00:52:20,395
+what all these terms are that
+
+1539
+00:52:20,395 --> 00:52:22,415
+I put in here with a globally
+
+1540
+00:52:22,555 --> 00:52:24,075
+or a common shared,
+
+1541
+00:52:24,315 --> 00:52:28,130
+understanding or
+vocabulary for that.
+
+1542
+00:52:28,130 --> 00:52:28,473
+And it contains a proof that
+
+1543
+00:52:28,473 --> 00:52:28,816
+allows me to verify
+the identity
+
+1544
+00:52:28,816 --> 00:52:29,650
+and that this has never been
+
+1545
+00:52:29,650 --> 00:52:31,190
+tampered with. So this,
+
+1546
+00:52:31,810 --> 00:52:32,690
+university degrees is a pretty
+
+1547
+00:52:32,690 --> 00:52:35,030
+simple but obvious use case,
+
+1548
+00:52:39,085 --> 00:52:42,225
+but this concept
+is very powerful.
+
+1549
+00:52:42,845 --> 00:52:44,285
+I'll dive into what a proof
+
+1550
+00:52:44,285 --> 00:52:45,665
+looks like because
+we haven't,
+
+1551
+00:52:46,365 --> 00:52:47,645
+sort of isolated here.
+
+1552
+00:52:47,645 --> 00:52:49,485
+What a proof has
+is it's flexible.
+
+1553
+00:52:49,485 --> 00:52:51,105
+You can use all
+kinds of different
+
+1554
+00:52:51,245 --> 00:52:53,010
+mechanisms. This is using,
+
+1555
+00:52:53,410 --> 00:52:56,050
+ECDSA elliptical curve
+digital signing,
+
+1556
+00:52:56,050 --> 00:52:57,330
+you know, your typical public
+
+1557
+00:52:57,330 --> 00:52:58,470
+private key pair,
+
+1558
+00:52:59,410 --> 00:53:02,130
+and providing
+a verification and
+
+1559
+00:53:02,130 --> 00:53:03,510
+information that would allow
+
+1560
+00:53:03,730 --> 00:53:05,250
+anyone receiving this to
+
+1561
+00:53:05,250 --> 00:53:07,295
+independently verify that this
+
+1562
+00:53:07,295 --> 00:53:10,175
+credential is
+valid and that it
+
+1563
+00:53:10,175 --> 00:53:11,615
+was in fact issued by,
+
+1564
+00:53:11,935 --> 00:53:13,055
+who said they issued it.
+
+1565
+00:53:13,055 --> 00:53:14,735
+And there's a couple
+ways of doing this.
+
+1566
+00:53:15,055 --> 00:53:18,735
+JWT, which stands for JSON Web
+
+1567
+00:53:18,735 --> 00:53:20,095
+Tokens for those
+not familiar,
+
+1568
+00:53:20,095 --> 00:53:20,995
+is one way.
+
+1569
+00:53:21,630 --> 00:53:24,190
+there's LD proofs as
+another common way.
+
+1570
+00:53:24,510 --> 00:53:26,450
+LD proofs, one of
+the advantages
+
+1571
+00:53:26,510 --> 00:53:28,910
+it has is it allows this data
+
+1572
+00:53:28,910 --> 00:53:31,170
+to be signed by
+multiple parties.
+
+1573
+00:53:31,550 --> 00:53:33,170
+So we call that
+multiple signature.
+
+1574
+00:53:33,230 --> 00:53:34,985
+But if, say, three
+people needed
+
+1575
+00:53:34,985 --> 00:53:36,265
+to sign a piece
+of data for you
+
+1576
+00:53:36,265 --> 00:53:37,465
+to consider it valid,
+
+1577
+00:53:37,465 --> 00:53:39,245
+you can actually
+embed the identity
+
+1578
+00:53:39,385 --> 00:53:41,245
+of those three
+people signing it.
+
+1579
+00:53:41,385 --> 00:53:42,505
+The other thing you can start
+
+1580
+00:53:42,505 --> 00:53:43,885
+doing is you can encapsulate
+
+1581
+00:53:44,185 --> 00:53:45,305
+credentials. So I could take
+
+1582
+00:53:45,305 --> 00:53:46,045
+this credential,
+
+1583
+00:53:46,345 --> 00:53:48,820
+wrap another
+credential around it,
+
+1584
+00:53:49,860 --> 00:53:51,060
+and there's a lot of other
+
+1585
+00:53:51,060 --> 00:53:51,960
+powerful things.
+
+1586
+00:53:52,820 --> 00:53:55,000
+What problem does
+this end up solving?
+
+1587
+00:53:55,380 --> 00:53:57,060
+It ends up solving this trust
+
+1588
+00:53:57,060 --> 00:53:59,880
+problem in that you
+have the ability
+
+1589
+00:54:00,100 --> 00:54:02,395
+to now have data
+submitted to you.
+
+1590
+00:54:02,555 --> 00:54:05,995
+It no longer matters
+how it came to you.
+
+1591
+00:54:05,995 --> 00:54:08,315
+Prior to this, we built custom
+
+1592
+00:54:08,315 --> 00:54:11,435
+security mechanisms
+into a single
+
+1593
+00:54:11,435 --> 00:54:13,295
+application, which
+has to control
+
+1594
+00:54:13,355 --> 00:54:14,795
+everything. Again,
+
+1595
+00:54:14,795 --> 00:54:16,690
+that model falls
+down very quickly
+
+1596
+00:54:16,690 --> 00:54:18,290
+when you have
+multiple ways that
+
+1597
+00:54:18,290 --> 00:54:20,450
+data can get updated
+from multiple
+
+1598
+00:54:20,450 --> 00:54:23,170
+sources. So we need a way to
+
+1599
+00:54:23,170 --> 00:54:25,490
+understand if we
+can trust the data
+
+1600
+00:54:25,490 --> 00:54:27,490
+and authenticate
+the data without
+
+1601
+00:54:27,490 --> 00:54:30,305
+having necessarily a single
+
+1602
+00:54:30,305 --> 00:54:36,085
+gateway into our system.
+
+1603
+00:54:37,825 --> 00:54:39,505
+So I'll start talking through
+
+1604
+00:54:39,505 --> 00:54:41,285
+some specifics on
+how we implement
+
+1605
+00:54:41,345 --> 00:54:43,285
+some of this trust
+and time travel,
+
+1606
+00:54:44,480 --> 00:54:47,780
+and create data
+centric security
+
+1607
+00:54:48,080 --> 00:54:50,000
+around semantic graph data.
+
+1608
+00:54:50,000 --> 00:54:51,040
+And there's some things we'll
+
+1609
+00:54:51,040 --> 00:54:53,120
+get into around
+here very quickly
+
+1610
+00:54:53,120 --> 00:54:55,460
+around how we can
+extend semantic data,
+
+1611
+00:54:55,680 --> 00:54:58,075
+or extend triples to
+be able to do this.
+
+1612
+00:54:58,715 --> 00:54:59,755
+but at a high level,
+
+1613
+00:54:59,755 --> 00:55:02,255
+this is how we view the stack
+
+1614
+00:55:02,395 --> 00:55:03,775
+that needs to do this.
+
+1615
+00:55:03,915 --> 00:55:05,435
+So the core is trust.
+
+1616
+00:55:05,435 --> 00:55:07,695
+It's the idea that
+any data that
+
+1617
+00:55:07,755 --> 00:55:08,735
+is in the system,
+
+1618
+00:55:08,795 --> 00:55:11,350
+you can prove
+the origins of how
+
+1619
+00:55:11,350 --> 00:55:12,650
+that data got there.
+
+1620
+00:55:12,950 --> 00:55:14,470
+And you can represent that to
+
+1621
+00:55:14,470 --> 00:55:15,750
+anyone who needs that,
+
+1622
+00:55:15,750 --> 00:55:17,590
+including a machine
+or an algorithm
+
+1623
+00:55:17,590 --> 00:55:18,950
+that might be
+making decisions.
+
+1624
+00:55:18,950 --> 00:55:20,150
+They have the ability to
+
+1625
+00:55:20,150 --> 00:55:21,590
+independently verify that this
+
+1626
+00:55:21,590 --> 00:55:22,650
+data has integrity.
+
+1627
+00:55:23,315 --> 00:55:24,215
+Of course, semantics,
+
+1628
+00:55:24,275 --> 00:55:25,395
+which I think probably most
+
+1629
+00:55:25,395 --> 00:55:26,675
+people here are
+familiar with,
+
+1630
+00:55:26,675 --> 00:55:28,035
+so it provides a great way of
+
+1631
+00:55:28,035 --> 00:55:29,635
+connecting data
+together through
+
+1632
+00:55:29,635 --> 00:55:31,875
+linked data, in this other set
+
+1633
+00:55:31,875 --> 00:55:32,535
+of standards.
+
+1634
+00:55:33,555 --> 00:55:36,115
+We need to create
+business rules
+
+1635
+00:55:36,115 --> 00:55:37,015
+around security,
+
+1636
+00:55:37,520 --> 00:55:39,120
+and we do this
+in a way we call
+
+1637
+00:55:39,120 --> 00:55:39,940
+smart functions.
+
+1638
+00:55:40,000 --> 00:55:41,540
+You know, I mentioned before
+
+1639
+00:55:41,600 --> 00:55:43,840
+shackle is a way
+of doing this,
+
+1640
+00:55:43,840 --> 00:55:45,460
+but more specifically around,
+
+1641
+00:55:45,840 --> 00:55:46,900
+shapes of data.
+
+1642
+00:55:46,960 --> 00:55:48,400
+So there'll probably
+be multiple
+
+1643
+00:55:48,400 --> 00:55:50,340
+mechanisms of
+wrapping the security
+
+1644
+00:55:50,480 --> 00:55:51,860
+around who can modify,
+
+1645
+00:55:52,000 --> 00:55:54,795
+who can do what
+with the system.
+
+1646
+00:55:55,575 --> 00:55:57,655
+We need time. Again,
+
+1647
+00:55:57,655 --> 00:55:59,095
+if we're collaborating around
+
+1648
+00:55:59,095 --> 00:56:00,715
+data across multiple parties,
+
+1649
+00:56:01,175 --> 00:56:02,715
+we're never gonna get anywhere
+
+1650
+00:56:02,775 --> 00:56:04,695
+unless we can
+agree on a common
+
+1651
+00:56:04,695 --> 00:56:05,735
+view of the world.
+
+1652
+00:56:05,735 --> 00:56:06,955
+And current databases,
+
+1653
+00:56:07,175 --> 00:56:09,275
+which destroy data
+with every update,
+
+1654
+00:56:09,470 --> 00:56:10,750
+will never be able to give us
+
+1655
+00:56:10,750 --> 00:56:11,810
+that common view.
+
+1656
+00:56:12,110 --> 00:56:13,550
+So we need to be able to lock
+
+1657
+00:56:13,550 --> 00:56:15,390
+in time and know
+that a version
+
+1658
+00:56:15,390 --> 00:56:17,250
+of data will never
+ever change.
+
+1659
+00:56:17,630 --> 00:56:19,490
+Again, much like
+source control,
+
+1660
+00:56:19,550 --> 00:56:21,410
+where we can go
+back and actually
+
+1661
+00:56:21,755 --> 00:56:23,275
+get to previous states of
+
+1662
+00:56:23,275 --> 00:56:25,295
+information and
+issue additional
+
+1663
+00:56:25,355 --> 00:56:26,955
+queries or find
+different things
+
+1664
+00:56:26,955 --> 00:56:28,575
+at that moments in time.
+
+1665
+00:56:29,035 --> 00:56:30,155
+And we need, you know,
+
+1666
+00:56:30,155 --> 00:56:31,275
+open ways of sharing.
+
+1667
+00:56:31,275 --> 00:56:32,815
+And that's what
+this whole stack
+
+1668
+00:56:32,875 --> 00:56:34,655
+ultimately allows you to do,
+
+1669
+00:56:34,900 --> 00:56:37,320
+is that instead of
+building custom APIs,
+
+1670
+00:56:37,380 --> 00:56:39,160
+which are very
+limited, expensive,
+
+1671
+00:56:39,300 --> 00:56:40,520
+and have all the issues,
+
+1672
+00:56:40,980 --> 00:56:42,580
+we can now open up the data
+
+1673
+00:56:42,580 --> 00:56:44,500
+repositories to very rich
+
+1674
+00:56:44,500 --> 00:56:46,100
+interfaces that
+people know they
+
+1675
+00:56:46,100 --> 00:56:47,880
+don't have to
+custom code to it,
+
+1676
+00:56:48,020 --> 00:56:51,165
+like SPARQL, like
+SQL, like GraphQL,
+
+1677
+00:56:51,865 --> 00:56:53,385
+different ways that they can
+
+1678
+00:56:53,385 --> 00:56:54,745
+describe the data they want,
+
+1679
+00:56:54,745 --> 00:56:56,045
+how they want it,
+
+1680
+00:56:56,345 --> 00:56:59,245
+but are able to prove
+the integrity,
+
+1681
+00:56:59,385 --> 00:57:01,225
+we're able to
+restrict the data
+
+1682
+00:57:01,225 --> 00:57:03,065
+they can see, but still give
+
+1683
+00:57:03,065 --> 00:57:03,885
+them the flexibility.
+
+1684
+00:57:07,120 --> 00:57:09,680
+So, one of the big things we
+
+1685
+00:57:09,680 --> 00:57:12,100
+talked about is how do we,
+
+1686
+00:57:12,640 --> 00:57:14,820
+not only prove
+the origin of data,
+
+1687
+00:57:15,040 --> 00:57:17,440
+but prove data and
+that it hasn't
+
+1688
+00:57:17,440 --> 00:57:19,140
+changed over time
+while representing
+
+1689
+00:57:19,280 --> 00:57:20,695
+this common view
+of the world.
+
+1690
+00:57:22,615 --> 00:57:24,635
+And RDF, which
+sits at the bottom
+
+1691
+00:57:24,695 --> 00:57:25,595
+of all of this,
+
+1692
+00:57:26,375 --> 00:57:27,895
+was not designed to do this,
+
+1693
+00:57:27,895 --> 00:57:29,835
+but it's very simple to extend
+
+1694
+00:57:30,055 --> 00:57:31,835
+to enable this type
+of capability.
+
+1695
+00:57:32,455 --> 00:57:34,450
+So I'll talk about how
+we approached it,
+
+1696
+00:57:34,930 --> 00:57:36,470
+and I'm sure there's probably
+
+1697
+00:57:36,530 --> 00:57:40,070
+other ways to approach
+this as well.
+
+1698
+00:57:40,930 --> 00:57:43,010
+So, this is the, I think,
+
+1699
+00:57:43,010 --> 00:57:46,790
+out of the box example
+of RDF from W3C.
+
+1700
+00:57:47,250 --> 00:57:48,950
+Here's a set of triples.
+
+1701
+00:57:49,010 --> 00:57:50,665
+These triples represent this
+
+1702
+00:57:50,665 --> 00:57:52,025
+simple graph that we're taking
+
+1703
+00:57:52,025 --> 00:57:54,265
+a look at. the first thing we
+
+1704
+00:57:54,265 --> 00:57:55,705
+need to do is we need to layer
+
+1705
+00:57:55,705 --> 00:57:56,505
+time on it.
+
+1706
+00:57:56,505 --> 00:57:59,065
+And the way we layer time in
+
+1707
+00:57:59,065 --> 00:58:01,385
+computing is we build a log.
+
+1708
+00:58:01,385 --> 00:58:03,145
+We build an event stream of
+
+1709
+00:58:03,145 --> 00:58:04,420
+changes over time,
+
+1710
+00:58:04,820 --> 00:58:06,740
+An append only
+log that we don't
+
+1711
+00:58:06,740 --> 00:58:08,420
+necessarily have
+the ability to
+
+1712
+00:58:08,420 --> 00:58:10,340
+manipulate the prior
+pieces of data.
+
+1713
+00:58:10,340 --> 00:58:11,780
+Now we do allow this because
+
+1714
+00:58:11,780 --> 00:58:14,260
+sometimes regulation or other
+
+1715
+00:58:14,260 --> 00:58:15,220
+issues come up.
+
+1716
+00:58:15,220 --> 00:58:16,180
+But by default,
+
+1717
+00:58:16,180 --> 00:58:18,360
+the data is never
+physically destroyed.
+
+1718
+00:58:19,155 --> 00:58:20,855
+So in this
+particular example,
+
+1719
+00:58:20,915 --> 00:58:23,475
+you know, Bob is
+a friend of Alice,
+
+1720
+00:58:23,475 --> 00:58:25,635
+but what if, Bob and Alice are
+
+1721
+00:58:25,635 --> 00:58:27,475
+no longer friends and now Bob
+
+1722
+00:58:27,475 --> 00:58:29,335
+is a friend of Jane?
+
+1723
+00:58:29,955 --> 00:58:32,410
+Well, when we update
+those triples,
+
+1724
+00:58:32,470 --> 00:58:33,830
+what we want to do is we want
+
+1725
+00:58:33,830 --> 00:58:35,530
+to append this
+new information,
+
+1726
+00:58:35,670 --> 00:58:37,110
+but effectively we want it to
+
+1727
+00:58:37,110 --> 00:58:37,750
+look like this.
+
+1728
+00:58:37,750 --> 00:58:39,670
+We want to strike out that Bob
+
+1729
+00:58:39,670 --> 00:58:41,430
+is a friend of
+Alice and we want
+
+1730
+00:58:41,430 --> 00:58:43,590
+to add the triple that now Bob
+
+1731
+00:58:43,590 --> 00:58:45,205
+is a friend of Jane.
+
+1732
+00:58:47,125 --> 00:58:49,705
+so if we played
+this log forward,
+
+1733
+00:58:50,325 --> 00:58:52,165
+what we end up with is a new
+
+1734
+00:58:52,165 --> 00:58:54,405
+view of time, where Bob is now
+
+1735
+00:58:54,405 --> 00:58:55,285
+a friend of Jane,
+
+1736
+00:58:55,285 --> 00:58:56,745
+and I don't see this triple.
+
+1737
+00:58:56,885 --> 00:58:58,645
+So every moment in time just
+
+1738
+00:58:58,645 --> 00:58:59,545
+creates triples,
+
+1739
+00:59:00,000 --> 00:59:01,840
+But when we bring
+it up to the log
+
+1740
+00:59:01,840 --> 00:59:04,160
+format, which
+understands time,
+
+1741
+00:59:04,160 --> 00:59:05,940
+we have to extend
+the triples.
+
+1742
+00:59:06,160 --> 00:59:07,600
+So I think that's important is
+
+1743
+00:59:07,600 --> 00:59:08,960
+what we're actually
+creating is
+
+1744
+00:59:08,960 --> 00:59:09,940
+different versions,
+
+1745
+00:59:10,640 --> 00:59:12,420
+of the same database,
+
+1746
+00:59:12,715 --> 00:59:15,215
+but every version
+version itself
+
+1747
+00:59:15,435 --> 00:59:16,655
+is its own database.
+
+1748
+00:59:17,595 --> 00:59:20,415
+So how we extend this
+is quite simple.
+
+1749
+00:59:20,475 --> 00:59:22,575
+We add a true false boolean.
+
+1750
+00:59:22,635 --> 00:59:24,735
+True means this is
+data we're adding.
+
+1751
+00:59:25,320 --> 00:59:26,920
+False means this is data that
+
+1752
+00:59:26,920 --> 00:59:29,160
+used to be true, but
+is no longer true.
+
+1753
+00:59:29,160 --> 00:59:30,220
+So in this case,
+
+1754
+00:59:30,600 --> 00:59:32,520
+how we represent
+this as a triple
+
+1755
+00:59:32,520 --> 00:59:34,620
+is we now have a four tuple,
+
+1756
+00:59:35,080 --> 00:59:36,380
+four pieces of information.
+
+1757
+00:59:37,045 --> 00:59:38,985
+And we're just saying
+here that false,
+
+1758
+00:59:39,045 --> 00:59:40,885
+this is a fact that used to be
+
+1759
+00:59:40,885 --> 00:59:42,985
+true as of this
+moment in time,
+
+1760
+00:59:43,365 --> 00:59:44,565
+it's now false.
+
+1761
+00:59:44,565 --> 00:59:46,165
+And as of this
+moment in time,
+
+1762
+00:59:46,165 --> 00:59:48,505
+it's now true. This
+creates a transaction
+
+1763
+00:59:48,645 --> 00:59:50,485
+, so all this happens
+at the identical
+
+1764
+00:59:50,485 --> 00:59:52,425
+moment in time and represents
+
+1765
+00:59:52,860 --> 00:59:53,760
+a new database,
+
+1766
+00:59:54,220 --> 00:59:55,600
+which we see at the bottom.
+
+1767
+00:59:57,340 --> 00:59:58,780
+So the other thing
+that we also
+
+1768
+00:59:58,780 --> 01:60:00,800
+need to do is think about,
+
+1769
+01:60:01,100 --> 01:60:02,860
+we talked about origins and
+
+1770
+01:60:02,860 --> 01:60:04,460
+proving data. How do we know
+
+1771
+01:60:04,460 --> 01:60:06,060
+that data hasn't
+been tampered with?
+
+1772
+01:60:06,060 --> 01:60:08,000
+How do we know that
+it has integrity?
+
+1773
+01:60:09,125 --> 01:60:10,565
+And in order to do that,
+
+1774
+01:60:10,565 --> 01:60:12,485
+we can simply extend the RDF
+
+1775
+01:60:12,485 --> 01:60:14,805
+model with one
+additional piece
+
+1776
+01:60:14,805 --> 01:60:15,545
+of information,
+
+1777
+01:60:16,245 --> 01:60:18,265
+which is we tag every triple
+
+1778
+01:60:18,405 --> 01:60:20,645
+with the transaction that
+
+1779
+01:60:20,645 --> 01:60:22,025
+generated that triple.
+
+1780
+01:60:22,600 --> 01:60:25,340
+And it sits in the log with
+
+1781
+01:60:25,400 --> 01:60:27,560
+the triple itself
+so that every
+
+1782
+01:60:27,560 --> 01:60:29,640
+triple has
+traceability back to
+
+1783
+01:60:29,640 --> 01:60:31,580
+the transaction that did it.
+
+1784
+01:60:31,800 --> 01:60:33,240
+And what we do is we actually
+
+1785
+01:60:33,240 --> 01:60:35,765
+take that
+transaction reference
+
+1786
+01:60:36,065 --> 01:60:38,465
+and that can and
+should just be
+
+1787
+01:60:38,465 --> 01:60:39,905
+represented as more triples.
+
+1788
+01:60:39,905 --> 01:60:41,925
+I should be able to
+query that data.
+
+1789
+01:60:42,145 --> 01:60:43,505
+I should be able
+to add a bunch
+
+1790
+01:60:43,505 --> 01:60:45,345
+of metadata around
+that transaction,
+
+1791
+01:60:45,345 --> 01:60:46,885
+how it got into the system.
+
+1792
+01:60:47,280 --> 01:60:48,640
+So when we look back at that
+
+1793
+01:60:48,640 --> 01:60:49,760
+verifiable credential,
+
+1794
+01:60:49,760 --> 01:60:51,220
+which has things like proofs
+
+1795
+01:60:51,280 --> 01:60:52,260
+embedded in it,
+
+1796
+01:60:52,400 --> 01:60:54,740
+all that can sit
+as transactional
+
+1797
+01:60:54,880 --> 01:60:57,620
+metadata. So now
+when I get a triple
+
+1798
+01:60:57,680 --> 01:60:59,060
+as a result of a query,
+
+1799
+01:60:59,280 --> 01:61:00,980
+I can trace it back
+to the transaction,
+
+1800
+01:61:01,535 --> 01:61:03,215
+And then I can basically query
+
+1801
+01:61:03,215 --> 01:61:04,195
+for that transaction,
+
+1802
+01:61:04,335 --> 01:61:05,775
+which is just more triples and
+
+1803
+01:61:05,775 --> 01:61:07,615
+get all the metadata
+about it,
+
+1804
+01:61:07,615 --> 01:61:09,935
+including the proofs
+that originated it,
+
+1805
+01:61:09,935 --> 01:61:11,555
+including perhaps the machine
+
+1806
+01:61:11,695 --> 01:61:13,690
+or whatever else
+I wanna store.
+
+1807
+01:61:14,170 --> 01:61:16,650
+Importantly, we store
+a wall clock time,
+
+1808
+01:61:16,650 --> 01:61:18,970
+and this is
+convenient to allow
+
+1809
+01:61:18,970 --> 01:61:20,830
+you to query the data at any
+
+1810
+01:61:21,130 --> 01:61:22,490
+historical moment in time,
+
+1811
+01:61:22,490 --> 01:61:24,250
+instead of having
+to query the data
+
+1812
+01:61:24,250 --> 01:61:26,830
+as of time one, time
+two, time three.
+
+1813
+01:61:27,045 --> 01:61:28,485
+We can now say we wanna query
+
+1814
+01:61:28,485 --> 01:61:30,745
+the database as of
+the first of May.
+
+1815
+01:61:30,805 --> 01:61:32,245
+And what we're able to do is
+
+1816
+01:61:32,245 --> 01:61:34,165
+look up the triple of what
+
+1817
+01:61:34,165 --> 01:61:36,565
+transaction ID were we at at
+
+1818
+01:61:36,565 --> 01:61:37,605
+the first of May.
+
+1819
+01:61:37,605 --> 01:61:40,420
+And then that is
+the version of
+
+1820
+01:61:40,420 --> 01:61:42,180
+the data that we want to issue
+
+1821
+01:61:42,180 --> 01:61:43,240
+a query against.
+
+1822
+01:61:43,860 --> 01:61:47,460
+We can also hash
+the results of
+
+1823
+01:61:47,460 --> 01:61:48,840
+every one of these
+transactions.
+
+1824
+01:61:49,940 --> 01:61:51,860
+So what the hashes allow us to
+
+1825
+01:61:51,860 --> 01:61:55,285
+do now is to prove
+every transaction
+
+1826
+01:61:55,665 --> 01:61:58,005
+that it has never
+been tampered with,
+
+1827
+01:61:59,505 --> 01:62:01,665
+even though we do not have to
+
+1828
+01:62:01,665 --> 01:62:03,845
+disclose all the data
+in the database.
+
+1829
+01:62:04,465 --> 01:62:06,305
+So if anyone ever demands or
+
+1830
+01:62:06,305 --> 01:62:07,745
+needed to know or
+machine needed
+
+1831
+01:62:07,745 --> 01:62:09,105
+to know that data had not been
+
+1832
+01:62:09,105 --> 01:62:10,970
+manipulated, it
+becomes actually
+
+1833
+01:62:10,970 --> 01:62:12,410
+quite trivial to be able to
+
+1834
+01:62:12,410 --> 01:62:13,470
+provide that information.
+
+1835
+01:62:15,610 --> 01:62:16,910
+And how we do that,
+
+1836
+01:62:17,290 --> 01:62:18,570
+and just because
+we're starting
+
+1837
+01:62:18,570 --> 01:62:19,370
+to run out of time,
+
+1838
+01:62:19,370 --> 01:62:20,990
+I won't get into
+it in detail.
+
+1839
+01:62:21,370 --> 01:62:23,825
+But, this,
+
+1840
+01:62:24,305 --> 01:62:26,225
+we use the concept
+of Merkle roots.
+
+1841
+01:62:26,225 --> 01:62:27,745
+And what Merkle
+roots allow you
+
+1842
+01:62:27,745 --> 01:62:29,685
+to do is basically hash data.
+
+1843
+01:62:29,905 --> 01:62:31,665
+So every one of
+these, a, b, c,
+
+1844
+01:62:31,665 --> 01:62:33,765
+d, all the way up to p here,
+
+1845
+01:62:34,305 --> 01:62:36,005
+you can think of
+as an individual
+
+1846
+01:62:36,225 --> 01:62:38,830
+transaction. And
+all we need to
+
+1847
+01:62:38,830 --> 01:62:40,910
+do is represent this tree that
+
+1848
+01:62:40,910 --> 01:62:43,310
+ultimately represents a single
+
+1849
+01:62:43,310 --> 01:62:45,170
+hash value at the tip
+of the tree.
+
+1850
+01:62:45,390 --> 01:62:47,390
+So as long as I publish or
+
+1851
+01:62:47,390 --> 01:62:48,750
+disclose this hash value,
+
+1852
+01:62:48,750 --> 01:62:50,430
+which in no way discloses any
+
+1853
+01:62:50,430 --> 01:62:51,890
+of the data within
+the system,
+
+1854
+01:62:52,195 --> 01:62:54,375
+If I ever need to
+prove the transaction
+
+1855
+01:62:54,915 --> 01:62:56,215
+integrity, for example,
+
+1856
+01:62:56,275 --> 01:62:58,355
+around the triples
+within, you know,
+
+1857
+01:62:58,355 --> 01:62:59,815
+transaction k here,
+
+1858
+01:63:00,035 --> 01:63:01,635
+all I need is a couple other
+
+1859
+01:63:01,635 --> 01:63:03,875
+hash values to be
+able to do that.
+
+1860
+01:63:03,875 --> 01:63:05,575
+So I can actually prove,
+
+1861
+01:63:06,480 --> 01:63:07,920
+any piece of
+information within
+
+1862
+01:63:07,920 --> 01:63:09,040
+the system without actually
+
+1863
+01:63:09,040 --> 01:63:10,720
+having to disclose
+all the data
+
+1864
+01:63:10,720 --> 01:63:11,540
+in the system.
+
+1865
+01:63:14,080 --> 01:63:15,520
+So the last piece
+of the puzzle
+
+1866
+01:63:15,520 --> 01:63:17,680
+is how do we control
+the business logic?
+
+1867
+01:63:17,680 --> 01:63:19,840
+So what our goal
+here is is not
+
+1868
+01:63:19,840 --> 01:63:21,805
+only to have
+business logic that
+
+1869
+01:63:21,805 --> 01:63:23,585
+guarantees the shape of data,
+
+1870
+01:63:24,045 --> 01:63:26,065
+like if we add a customer,
+
+1871
+01:63:26,125 --> 01:63:27,805
+that customer must
+have an address,
+
+1872
+01:63:27,805 --> 01:63:29,085
+for example. And
+that's something
+
+1873
+01:63:29,085 --> 01:63:30,525
+that like a shackle can,
+
+1874
+01:63:30,845 --> 01:63:31,905
+help us accomplish.
+
+1875
+01:63:32,365 --> 01:63:34,225
+But also who can
+update customers?
+
+1876
+01:63:34,690 --> 01:63:36,130
+Perhaps customers can update
+
+1877
+01:63:36,130 --> 01:63:36,930
+their own records.
+
+1878
+01:63:36,930 --> 01:63:38,050
+I mean, that's one of the cool
+
+1879
+01:63:38,050 --> 01:63:39,170
+things about getting to this
+
+1880
+01:63:39,170 --> 01:63:40,770
+model is we actually bring our
+
+1881
+01:63:40,770 --> 01:63:41,750
+data repositories.
+
+1882
+01:63:42,290 --> 01:63:44,230
+Instead of behind
+layers of firewalls,
+
+1883
+01:63:44,690 --> 01:63:46,690
+we bring them out
+where people,
+
+1884
+01:63:46,690 --> 01:63:47,830
+if they have permission,
+
+1885
+01:63:48,075 --> 01:63:49,675
+can independently update their
+
+1886
+01:63:49,675 --> 01:63:52,175
+own data and even
+own their own data,
+
+1887
+01:63:52,315 --> 01:63:53,515
+even though we're controlling
+
+1888
+01:63:53,515 --> 01:63:54,175
+the repository.
+
+1889
+01:63:55,515 --> 01:63:57,435
+And the quick
+answer to this is
+
+1890
+01:63:57,435 --> 01:63:59,515
+we use a concept called
+smart functions.
+
+1891
+01:63:59,515 --> 01:64:00,975
+What it is is it's a virtual
+
+1892
+01:64:01,035 --> 01:64:03,250
+machine directly in the data
+
+1893
+01:64:03,250 --> 01:64:04,930
+layer that you can
+write a series
+
+1894
+01:64:04,930 --> 01:64:05,590
+of rules.
+
+1895
+01:64:06,130 --> 01:64:07,810
+What makes it so powerful is
+
+1896
+01:64:07,810 --> 01:64:09,330
+that those rules can actually
+
+1897
+01:64:09,330 --> 01:64:11,090
+leverage the current state of
+
+1898
+01:64:11,090 --> 01:64:13,090
+the data or the current graph
+
+1899
+01:64:13,090 --> 01:64:14,070
+to answer those.
+
+1900
+01:64:14,690 --> 01:64:16,835
+So perhaps I can
+see an employee
+
+1901
+01:64:16,835 --> 01:64:18,455
+salary if I'm the employee,
+
+1902
+01:64:18,755 --> 01:64:19,975
+or I'm the manager,
+
+1903
+01:64:20,195 --> 01:64:21,715
+or the manager's manager all
+
+1904
+01:64:21,715 --> 01:64:22,935
+the way up to the CEO,
+
+1905
+01:64:23,475 --> 01:64:25,415
+or anyone who has
+a relationship
+
+1906
+01:64:25,635 --> 01:64:28,240
+called HR
+responsibility for me.
+
+1907
+01:64:28,480 --> 01:64:30,100
+That's a simple
+rule that can be,
+
+1908
+01:64:30,960 --> 01:64:33,220
+described embedded in
+a smart function.
+
+1909
+01:64:33,680 --> 01:64:35,840
+And dynamically, when
+someone queries,
+
+1910
+01:64:35,840 --> 01:64:37,780
+you know, select
+star from from
+
+1911
+01:64:38,000 --> 01:64:40,255
+salary for the employee base,
+
+1912
+01:64:40,415 --> 01:64:41,795
+those rules are triggered,
+
+1913
+01:64:41,855 --> 01:64:43,215
+and the data I do not have
+
+1914
+01:64:43,215 --> 01:64:45,055
+permission to see is dropped.
+
+1915
+01:64:45,055 --> 01:64:46,815
+It effectively
+doesn't exist in
+
+1916
+01:64:46,815 --> 01:64:48,115
+my version of the database.
+
+1917
+01:64:48,655 --> 01:64:50,655
+And this is what
+allows us to,
+
+1918
+01:64:50,655 --> 01:64:52,195
+without having to build APIs,
+
+1919
+01:64:52,655 --> 01:64:54,095
+open up these nice,
+
+1920
+01:64:54,095 --> 01:64:57,320
+rich interfaces for
+individuals to use.
+
+1921
+01:64:59,380 --> 01:65:01,060
+so I have a couple examples of
+
+1922
+01:65:01,060 --> 01:65:02,440
+sort of using
+those relationships
+
+1923
+01:65:02,820 --> 01:65:04,440
+and filtering out data.
+
+1924
+01:65:04,980 --> 01:65:06,260
+the great thing is you can get
+
+1925
+01:65:06,260 --> 01:65:07,555
+as crazy as you want.
+
+1926
+01:65:07,715 --> 01:65:09,075
+You know, here's a rule that
+
+1927
+01:65:09,075 --> 01:65:10,695
+says you can only
+see friends,
+
+1928
+01:65:11,155 --> 01:65:11,955
+using, you know,
+
+1929
+01:65:11,955 --> 01:65:13,075
+probably a silly example,
+
+1930
+01:65:13,075 --> 01:65:14,915
+but you can only
+see friends if
+
+1931
+01:65:14,915 --> 01:65:16,855
+those friends like
+art by Leonardo
+
+1932
+01:65:16,995 --> 01:65:18,675
+da Vinci. And all you have to
+
+1933
+01:65:18,675 --> 01:65:21,075
+do is represent the the crawl
+
+1934
+01:65:21,075 --> 01:65:23,530
+of the graph in
+a smart function
+
+1935
+01:65:23,530 --> 01:65:24,910
+that has to be valid.
+
+1936
+01:65:25,370 --> 01:65:27,050
+And if it is valid,
+that data,
+
+1937
+01:65:27,050 --> 01:65:28,490
+that triple exists for you.
+
+1938
+01:65:28,490 --> 01:65:29,450
+If it's not valid,
+
+1939
+01:65:29,450 --> 01:65:31,210
+that triple just
+simply doesn't
+
+1940
+01:65:31,210 --> 01:65:33,070
+exist for you.
+You'll never see it.
+
+1941
+01:65:33,130 --> 01:65:34,490
+And these same rules can be
+
+1942
+01:65:34,490 --> 01:65:36,670
+expressed not only for
+read permissions,
+
+1943
+01:65:36,810 --> 01:65:37,915
+but also write permissions.
+
+1944
+01:65:38,155 --> 01:65:39,755
+Who is the ability to update
+
+1945
+01:65:39,755 --> 01:65:41,135
+data and under
+what conditions?
+
+1946
+01:65:41,915 --> 01:65:43,355
+And ultimately,
+by putting this,
+
+1947
+01:65:43,355 --> 01:65:45,275
+I have a central
+source of truth
+
+1948
+01:65:45,275 --> 01:65:46,315
+at the data layer.
+
+1949
+01:65:46,315 --> 01:65:48,555
+I can open up, instead of in
+
+1950
+01:65:48,555 --> 01:65:50,815
+multiple applications
+or multiple APIs,
+
+1951
+01:65:51,355 --> 01:65:53,195
+I can open up richer access to
+
+1952
+01:65:53,195 --> 01:65:54,580
+the data and and actually have
+
+1953
+01:65:54,580 --> 01:65:56,200
+my data now truly participate
+
+1954
+01:65:56,500 --> 01:65:59,640
+in a data web or
+linked data web.
+
+1955
+01:66:00,420 --> 01:66:02,260
+And I create so
+much more value
+
+1956
+01:66:02,260 --> 01:66:03,940
+and usability out of the data
+
+1957
+01:66:03,940 --> 01:66:05,860
+because our only way of doing
+
+1958
+01:66:05,860 --> 01:66:07,300
+this sort of thing today is to
+
+1959
+01:66:07,300 --> 01:66:10,325
+build custom APIs and not only
+
+1960
+01:66:10,325 --> 01:66:12,745
+put the effort
+into code them,
+
+1961
+01:66:13,045 --> 01:66:14,965
+but put the effort
+into hopefully
+
+1962
+01:66:14,965 --> 01:66:16,885
+maintain them
+properly over time.
+
+1963
+01:66:16,885 --> 01:66:18,645
+And, as I mentioned before,
+
+1964
+01:66:18,645 --> 01:66:20,725
+that imposes a cost
+not only on you,
+
+1965
+01:66:20,725 --> 01:66:22,325
+but on every consumer of your
+
+1966
+01:66:22,325 --> 01:66:23,200
+data as well.
+
+1967
+01:66:23,280 --> 01:66:24,960
+So it gets us
+completely out of
+
+1968
+01:66:24,960 --> 01:66:28,080
+that cycle. So that's it.
+
+1969
+01:66:28,080 --> 01:66:30,640
+I, I know I'm out
+of time here.
+
+1970
+01:66:30,640 --> 01:66:33,140
+I would love to be
+able to, take,
+
+1971
+01:66:33,520 --> 01:66:35,620
+questions in the time
+we have remaining.
+
+1972
+01:66:38,555 --> 01:66:41,115
+Hey. thank you
+very much, Brian.
+
+1973
+01:66:41,435 --> 01:66:42,655
+this was a great
+presentation.
+
+1974
+01:66:43,915 --> 01:66:46,095
+we do have a couple
+questions.
+
+1975
+01:66:48,075 --> 01:66:52,830
+and, the first one
+is from Phil.
+
+1976
+01:66:53,130 --> 01:66:56,910
+Phil is asking if,
+your technology task,
+
+1977
+01:66:58,410 --> 01:66:59,870
+stack, sorry, flurry,
+
+1978
+01:67:00,010 --> 01:67:01,850
+is it a good model to solve
+
+1979
+01:67:01,850 --> 01:67:04,270
+tenancy and cross
+tenancy access,
+
+1980
+01:67:05,015 --> 01:67:07,595
+versus graph partitioning,
+for example?
+
+1981
+01:67:08,615 --> 01:67:11,095
+Yeah. absolutely. It is.
+
+1982
+01:67:11,095 --> 01:67:12,855
+And, you know, it's
+also an effective
+
+1983
+01:67:12,855 --> 01:67:14,635
+solution for segmenting,
+
+1984
+01:67:15,975 --> 01:67:17,655
+different types
+of data as well.
+
+1985
+01:67:17,655 --> 01:67:19,595
+For example, you may store,
+
+1986
+01:67:20,320 --> 01:67:23,140
+PII data in
+a different repository
+
+1987
+01:67:23,520 --> 01:67:24,420
+than you store,
+
+1988
+01:67:25,840 --> 01:67:27,380
+data about the individual,
+
+1989
+01:67:27,760 --> 01:67:29,940
+but without identifying
+information.
+
+1990
+01:67:30,560 --> 01:67:31,840
+The reason you
+might do that is
+
+1991
+01:67:31,840 --> 01:67:33,120
+you might want to be able to
+
+1992
+01:67:33,120 --> 01:67:35,125
+offer proof these
+proofs around
+
+1993
+01:67:35,125 --> 01:67:37,365
+the data integrity
+without linking
+
+1994
+01:67:37,365 --> 01:67:39,285
+it directly to PII data.
+
+1995
+01:67:39,285 --> 01:67:40,805
+You know, SPARQL
+gives us great
+
+1996
+01:67:40,805 --> 01:67:42,645
+ways of combining data across
+
+1997
+01:67:42,645 --> 01:67:44,505
+repositories,
+federated queries,
+
+1998
+01:67:45,125 --> 01:67:47,145
+and, yeah, we can
+piece together
+
+1999
+01:67:47,285 --> 01:67:48,665
+data with different
+characteristics.
+
+2000
+01:67:49,740 --> 01:67:52,120
+We can piece
+together data across
+
+2001
+01:67:52,380 --> 01:67:53,640
+multiple organizations.
+
+2002
+01:67:53,900 --> 01:67:56,140
+And by having the data
+defend itself,
+
+2003
+01:67:56,140 --> 01:67:57,580
+having the security in there,
+
+2004
+01:67:57,580 --> 01:67:59,600
+we can really just
+more liberally
+
+2005
+01:67:59,820 --> 01:68:01,820
+open up the data
+to those people
+
+2006
+01:68:01,820 --> 01:68:03,100
+who need it that
+right now have
+
+2007
+01:68:03,100 --> 01:68:04,735
+a hard time getting
+their hands on.
+
+2008
+01:68:06,655 --> 01:68:08,515
+Great. thank you.
+
+2009
+01:68:10,335 --> 01:68:12,975
+Emilio, Stani is asking if you
+
+2010
+01:68:12,975 --> 01:68:16,675
+keep an eye on
+Solid technology
+
+2011
+01:68:16,735 --> 01:68:20,030
+as a decentralized
+mechanism. Yeah.
+
+2012
+01:68:20,570 --> 01:68:23,130
+so, yeah, we love
+what Solid is doing.
+
+2013
+01:68:23,130 --> 01:68:24,970
+I think they're, you know,
+
+2014
+01:68:24,970 --> 01:68:26,350
+from a vision standpoint,
+
+2015
+01:68:26,410 --> 01:68:27,770
+I think we're
+really well aligned
+
+2016
+01:68:27,770 --> 01:68:30,110
+with them. so absolutely.
+
+2017
+01:68:31,050 --> 01:68:33,370
+our focus has always
+been a little
+
+2018
+01:68:33,370 --> 01:68:35,345
+bit more on cryptography and
+
+2019
+01:68:35,345 --> 01:68:37,265
+embedding business logic and
+
+2020
+01:68:37,265 --> 01:68:39,525
+things like time travel for
+
+2021
+01:68:39,665 --> 01:68:42,305
+enabling people
+in machines that
+
+2022
+01:68:42,305 --> 01:68:44,705
+truly need to leverage data in
+
+2023
+01:68:44,705 --> 01:68:48,130
+sort of a critical manner.
+
+2024
+01:68:48,290 --> 01:68:50,930
+So, but absolutely, you know,
+
+2025
+01:68:51,410 --> 01:68:53,410
+I think we have
+similar visions
+
+2026
+01:68:53,410 --> 01:68:56,070
+for the world. Great.
+
+2027
+01:68:57,090 --> 01:68:58,850
+One, one more question.
+
+2028
+01:68:58,850 --> 01:69:01,090
+So, like,
+the the time travel,
+
+2029
+01:69:01,090 --> 01:69:04,575
+the, the the the information,
+
+2030
+01:69:04,575 --> 01:69:07,215
+the four triple,
+I I see there's,
+
+2031
+01:69:07,215 --> 01:69:10,335
+like, added complexity
+over, like,
+
+2032
+01:69:10,335 --> 01:69:12,015
+I would say, a standard basic
+
+2033
+01:69:12,015 --> 01:69:14,415
+triple store. how is that
+
+2034
+01:69:14,415 --> 01:69:15,715
+influencing the scalability,
+
+2035
+01:69:16,720 --> 01:69:19,380
+and the the query
+performance,
+
+2036
+01:69:20,400 --> 01:69:22,260
+time, of your database?
+
+2037
+01:69:22,400 --> 01:69:25,040
+And, would you
+maybe give, like,
+
+2038
+01:69:25,040 --> 01:69:26,640
+some, you know,
+
+2039
+01:69:26,640 --> 01:69:29,540
+applications around
+that and, yeah.
+
+2040
+01:69:30,845 --> 01:69:31,585
+Yeah. So,
+
+2041
+01:69:33,165 --> 01:69:34,625
+there is additional
+complexity.
+
+2042
+01:69:34,685 --> 01:69:36,925
+I think we do a really
+good job of,
+
+2043
+01:69:37,485 --> 01:69:39,265
+not bothering you
+with it unless
+
+2044
+01:69:39,405 --> 01:69:40,685
+you care about it.
+
+2045
+01:69:40,685 --> 01:69:41,745
+So, you know,
+
+2046
+01:69:42,125 --> 01:69:45,200
+if if you don't need to embed
+
+2047
+01:69:45,200 --> 01:69:47,200
+the data security
+at the data layer,
+
+2048
+01:69:47,200 --> 01:69:48,640
+you wanna do it
+like a traditional
+
+2049
+01:69:48,640 --> 01:69:49,780
+app server, you can.
+
+2050
+01:69:50,080 --> 01:69:51,840
+And you don't
+have to learn any
+
+2051
+01:69:51,840 --> 01:69:53,520
+of that if that's
+not something
+
+2052
+01:69:53,520 --> 01:69:55,060
+you're planning
+on doing today.
+
+2053
+01:69:55,200 --> 01:69:56,815
+A lot of
+the cryptography happens
+
+2054
+01:69:56,815 --> 01:69:57,487
+behind the scenes.
+
+2055
+01:69:57,487 --> 01:69:58,015
+We have ways that
+allow you to,
+
+2056
+01:69:58,015 --> 01:69:59,320
+you know, basically set up,
+
+2057
+01:69:59,461 --> 01:70:00,169
+what we call authorities that
+
+2058
+01:70:00,169 --> 01:70:01,295
+allow an entity,
+perhaps your app,
+
+2059
+01:70:01,295 --> 01:70:03,315
+to transact on behalf of other
+
+2060
+01:70:03,695 --> 01:70:06,195
+individuals within
+their, a system.
+
+2061
+01:70:06,575 --> 01:70:13,020
+So we try and do
+
+2062
+01:70:13,020 --> 01:70:14,220
+a lot of things
+where you really
+
+2063
+01:70:14,220 --> 01:70:15,500
+don't need to
+think about these
+
+2064
+01:70:15,500 --> 01:70:18,140
+things unless you need them or
+
+2065
+01:70:18,140 --> 01:70:19,920
+until you're ready
+to use them.
+
+2066
+01:70:20,940 --> 01:70:22,480
+as far as query performance,
+
+2067
+01:70:22,620 --> 01:70:24,300
+I'm I'm glad you
+asked about it.
+
+2068
+01:70:24,300 --> 01:70:25,500
+One thing that is very,
+
+2069
+01:70:25,500 --> 01:70:27,600
+very different
+about how Flurry,
+
+2070
+01:70:29,235 --> 01:70:30,915
+established itself
+is it's a very
+
+2071
+01:70:30,915 --> 01:70:34,215
+cloud friendly architecture.
+
+2072
+01:70:34,755 --> 01:70:36,675
+And the query side is actually
+
+2073
+01:70:36,675 --> 01:70:38,195
+completely independent from
+
+2074
+01:70:38,195 --> 01:70:40,215
+the ledger side,
+the update side.
+
+2075
+01:70:40,540 --> 01:70:41,900
+Every database you've probably
+
+2076
+01:70:41,900 --> 01:70:43,740
+ever used has a single machine
+
+2077
+01:70:43,740 --> 01:70:45,180
+that always does both of those
+
+2078
+01:70:45,180 --> 01:70:45,680
+functions.
+
+2079
+01:70:46,140 --> 01:70:47,340
+By separating those,
+
+2080
+01:70:47,340 --> 01:70:49,920
+we now completely
+decouple the scalability
+
+2081
+01:70:50,140 --> 01:70:51,360
+of those two functions.
+
+2082
+01:70:52,140 --> 01:70:54,235
+So as weird as it sounds,
+
+2083
+01:70:54,235 --> 01:70:56,955
+the query database engine is
+
+2084
+01:70:56,955 --> 01:70:58,575
+actually a stateless
+database,
+
+2085
+01:70:58,715 --> 01:71:00,075
+which is kinda crazy because
+
+2086
+01:71:00,075 --> 01:71:01,595
+the whole reason
+you use a database
+
+2087
+01:71:01,595 --> 01:71:03,215
+is to maintain state.
+
+2088
+01:71:03,915 --> 01:71:05,435
+it's stateless in that it can
+
+2089
+01:71:05,435 --> 01:71:08,040
+sit in a container,
+it runs in memory.
+
+2090
+01:71:08,580 --> 01:71:10,740
+The way we handle
+immutable data,
+
+2091
+01:71:10,740 --> 01:71:11,700
+we don't change data,
+
+2092
+01:71:11,700 --> 01:71:13,460
+means that everything becomes
+
+2093
+01:71:13,460 --> 01:71:14,920
+very cacheable upstream.
+
+2094
+01:71:15,700 --> 01:71:17,780
+So, all of these nodes,
+
+2095
+01:71:17,780 --> 01:71:19,620
+you can scale
+from one query to
+
+2096
+01:71:19,620 --> 01:71:21,115
+a thousand query nodes,
+
+2097
+01:71:21,515 --> 01:71:22,795
+scale them back down again,
+
+2098
+01:71:22,795 --> 01:71:23,775
+linear scalability.
+
+2099
+01:71:23,915 --> 01:71:25,935
+We even have
+the entire database
+
+2100
+01:71:26,075 --> 01:71:27,695
+engine in JavaScript,
+
+2101
+01:71:27,915 --> 01:71:29,775
+and it can run-in
+a web browser
+
+2102
+01:71:29,915 --> 01:71:31,215
+inside of a web app.
+
+2103
+01:71:31,755 --> 01:71:34,015
+So, there's immense
+flexibility.
+
+2104
+01:71:34,555 --> 01:71:36,920
+And in many cases, in fact,
+
+2105
+01:71:36,920 --> 01:71:37,880
+a lot of cases,
+
+2106
+01:71:37,880 --> 01:71:41,480
+actually a huge boost in query
+
+2107
+01:71:41,480 --> 01:71:43,640
+performance and
+speed over other
+
+2108
+01:71:43,640 --> 01:71:47,640
+database, engines. Great.
+
+2109
+01:71:47,640 --> 01:71:49,960
+Thank you very much, Brian.
+
+2110
+01:71:49,960 --> 01:71:51,660
+Thank you again
+for your talk.
+
+2111
+01:71:53,775 --> 01:71:55,235
+And, you know, looking forward
+
+2112
+01:71:55,375 --> 01:71:56,435
+to to hear more.
+
+2113
+01:71:56,815 --> 01:71:58,575
+you are, you have me,
+
+2114
+01:71:58,895 --> 01:72:01,295
+your as a your sponsor
+of the conference
+
+2115
+01:72:01,295 --> 01:72:03,055
+. So I invite everyone to keep
+
+2116
+01:72:03,055 --> 01:72:04,895
+the conversation going in,
+
+2117
+01:72:05,135 --> 01:72:07,055
+for this booth.
+Ask any question.
+
+2118
+01:72:07,055 --> 01:72:08,870
+I'm sure, you guys
+will be there,
+
+2119
+01:72:09,030 --> 01:72:10,950
+to answer. So, thank you.
+
+2120
+01:72:10,950 --> 01:72:13,510
+And, everyone, we are
+now moving to the,
+
+2121
+01:72:13,910 --> 01:72:16,070
+conference, closing party.
+
+2122
+01:72:16,070 --> 01:72:19,370
+So, see you all,
+there, in a minute.
+
+2123
+01:72:19,590 --> 01:72:20,090
+Goodbye.
+
+2124
+01:72:20,150 --> 01:72:22,330
+Thank you. Thank you,
+Brian. Bye bye.
+

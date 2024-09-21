@@ -1,0 +1,3745 @@
+1
+00:00:03,440 --> 00:00:04,800
+Hi. I'm Dave Duggal,
+
+2
+00:00:04,800 --> 00:00:06,820
+the founder and CEO
+of Enterprise Web.
+
+3
+00:00:07,040 --> 00:00:08,160
+I'm glad to be here with you
+
+4
+00:00:08,160 --> 00:00:10,080
+today at CDW twenty one,
+
+5
+00:00:10,400 --> 00:00:11,360
+to present my talk,
+
+6
+00:00:11,360 --> 00:00:12,980
+One Graph to Bind Them All,
+
+7
+00:00:13,255 --> 00:00:14,935
+Thinking Data and
+Apps for Venture
+
+8
+00:00:14,935 --> 00:00:17,115
+and Interoperability
+and Automation.
+
+9
+00:00:17,575 --> 00:00:18,615
+And I'll start
+by saying that,
+
+10
+00:00:18,615 --> 00:00:19,735
+you know, One
+Graph to Bind Them
+
+11
+00:00:19,735 --> 00:00:21,110
+All is a bit of clickbait,
+
+12
+00:00:21,110 --> 00:00:22,390
+and I hope it brought you to
+
+13
+00:00:22,390 --> 00:00:24,310
+this meeting, and
+created some,
+
+14
+00:00:24,550 --> 00:00:26,870
+curiosity. But I
+wanna, you know,
+
+15
+00:00:26,870 --> 00:00:27,750
+set the record straight.
+
+16
+00:00:27,750 --> 00:00:29,370
+I am I'm not here
+to talk about
+
+17
+00:00:29,455 --> 00:00:31,795
+a new form of,
+centralized monolith.
+
+18
+00:00:31,855 --> 00:00:34,175
+I'm not here to
+tell you to burn
+
+19
+00:00:34,175 --> 00:00:36,595
+down your, your
+legacy systems.
+
+20
+00:00:36,820 --> 00:00:38,020
+What I I am here,
+
+21
+00:00:38,420 --> 00:00:40,360
+to do is to propose the graph
+
+22
+00:00:40,580 --> 00:00:42,660
+is actually an ideal way to
+
+23
+00:00:42,660 --> 00:00:44,020
+coordinate end to end,
+
+24
+00:00:45,105 --> 00:00:47,365
+processes in
+a distributed system
+
+25
+00:00:47,665 --> 00:00:49,045
+in a way that traditional
+
+26
+00:00:49,105 --> 00:00:50,545
+middleware and
+even cloud native
+
+27
+00:00:50,545 --> 00:00:54,400
+tools are not capable.
+So let's start.
+
+28
+00:00:56,460 --> 00:00:57,820
+So the problem statement we're
+
+29
+00:00:57,820 --> 00:00:58,860
+going to address
+today might be
+
+30
+00:00:58,860 --> 00:00:59,860
+a little bit
+different than some
+
+31
+00:00:59,860 --> 00:01:01,200
+of the other talks at CDW.
+
+32
+00:01:01,675 --> 00:01:03,435
+We're gonna focus today on
+
+33
+00:01:03,435 --> 00:01:04,415
+business operations.
+
+34
+00:01:04,875 --> 00:01:06,555
+And I think it's fair
+to say that today,
+
+35
+00:01:06,555 --> 00:01:07,615
+in the world that's
+increasingly,
+
+36
+00:01:07,675 --> 00:01:09,275
+you know, dynamic,
+distributed,
+
+37
+00:01:09,275 --> 00:01:11,250
+and diverse,
+business operations
+
+38
+00:01:11,310 --> 00:01:12,770
+are increasingly fragmented.
+
+39
+00:01:13,630 --> 00:01:15,010
+It's difficult
+for businesses,
+
+40
+00:01:15,310 --> 00:01:16,510
+organizations to coordinate
+
+41
+00:01:16,510 --> 00:01:18,670
+across business
+silos, cloud hosts,
+
+42
+00:01:18,670 --> 00:01:19,745
+and ecosystem partners.
+
+43
+00:01:19,985 --> 00:01:21,265
+I don't think these are news
+
+44
+00:01:21,265 --> 00:01:22,145
+flashes for anybody.
+
+45
+00:01:22,145 --> 00:01:24,005
+I think this is
+a general experience.
+
+46
+00:01:25,105 --> 00:01:27,025
+And, again, graphs are well
+
+47
+00:01:27,025 --> 00:01:28,385
+suited for describing complex
+
+48
+00:01:28,385 --> 00:01:29,365
+real world relationships.
+
+49
+00:01:29,460 --> 00:01:31,300
+I think everyone
+at CDW already
+
+50
+00:01:31,300 --> 00:01:32,340
+recognizes that,
+
+51
+00:01:32,340 --> 00:01:33,540
+but their use has
+been generally
+
+52
+00:01:33,540 --> 00:01:35,380
+limited in visualization,
+analysis,
+
+53
+00:01:35,380 --> 00:01:37,480
+and interoperability of data.
+
+54
+00:01:38,305 --> 00:01:39,585
+What we're gonna explore is
+
+55
+00:01:39,585 --> 00:01:41,285
+the use of graphs
+to integrate data,
+
+56
+00:01:41,585 --> 00:01:43,745
+applications, services,
+cloud hosts,
+
+57
+00:01:43,745 --> 00:01:45,365
+networks, and
+physical devices.
+
+58
+00:01:45,745 --> 00:01:47,460
+Essentially, not just look at
+
+59
+00:01:47,460 --> 00:01:49,880
+data and properties, look at,
+
+60
+00:01:50,260 --> 00:01:51,560
+data and functions.
+
+61
+00:01:52,180 --> 00:01:54,520
+To look at, data
+and behaviors.
+
+62
+00:01:55,245 --> 00:01:56,785
+So we're going to
+look at building
+
+63
+00:01:56,845 --> 00:01:59,505
+information systems
+using graphs,
+
+64
+00:01:59,565 --> 00:02:00,785
+entirely on graphs.
+
+65
+00:02:01,885 --> 00:02:03,050
+So my company,
+
+66
+00:02:03,210 --> 00:02:04,910
+company's no code platform,
+
+67
+00:02:04,970 --> 00:02:05,930
+essentially makes it easy for
+
+68
+00:02:05,930 --> 00:02:07,850
+customers to rapidly
+model complex
+
+69
+00:02:07,850 --> 00:02:09,870
+distributed
+operational domains
+
+70
+00:02:10,170 --> 00:02:12,965
+as a graph knowledge
+base an enterprise
+
+71
+00:02:12,965 --> 00:02:14,905
+web. The scope is a bit bigger
+
+72
+00:02:14,965 --> 00:02:16,045
+than what you
+might think of as
+
+73
+00:02:16,045 --> 00:02:18,245
+a an a data fabric or a data
+
+74
+00:02:18,245 --> 00:02:20,345
+mesh or virtualization
+of data,
+
+75
+00:02:20,580 --> 00:02:21,940
+you many of you are gonna be
+
+76
+00:02:21,940 --> 00:02:23,060
+familiar with. Here,
+
+77
+00:02:23,060 --> 00:02:24,440
+we're talking
+about an umbrella
+
+78
+00:02:24,580 --> 00:02:26,600
+abstraction that
+provides a unified
+
+79
+00:02:26,660 --> 00:02:28,360
+interface for
+weaving distributed
+
+80
+00:02:28,580 --> 00:02:30,995
+data and functions
+to a logical
+
+81
+00:02:30,995 --> 00:02:32,995
+view with aggregated
+system wide
+
+82
+00:02:32,995 --> 00:02:35,635
+entities, the index catalog of
+
+83
+00:02:35,635 --> 00:02:36,775
+type domain objects.
+
+84
+00:02:37,210 --> 00:02:39,070
+So a a broader scope,
+
+85
+00:02:39,610 --> 00:02:41,310
+a a complete scope actually,
+
+86
+00:02:41,690 --> 00:02:43,870
+allows us to take use data,
+
+87
+00:02:44,305 --> 00:02:45,205
+to use graphs,
+
+88
+00:02:45,465 --> 00:02:47,825
+data and functions to generate
+
+89
+00:02:47,825 --> 00:02:48,645
+highly contextual,
+
+90
+00:02:49,985 --> 00:02:51,205
+processes and services.
+
+91
+00:02:52,870 --> 00:02:55,030
+So my thesis is
+that businesses
+
+92
+00:02:55,030 --> 00:02:56,410
+need an enterprise web,
+
+93
+00:02:56,470 --> 00:02:57,910
+a single source
+of truth across
+
+94
+00:02:57,910 --> 00:02:59,530
+a complex distributed system.
+
+95
+00:03:00,085 --> 00:03:01,205
+And what we're talking about
+
+96
+00:03:01,205 --> 00:03:02,885
+here is a graph that helps
+
+97
+00:03:02,885 --> 00:03:04,405
+organizations bring order to
+
+98
+00:03:04,405 --> 00:03:06,105
+increasingly fragmented
+operations,
+
+99
+00:03:06,565 --> 00:03:07,685
+higher level model,
+
+100
+00:03:07,685 --> 00:03:08,745
+higher level abstraction.
+
+101
+00:03:10,190 --> 00:03:11,970
+And this way they
+can share leverage,
+
+102
+00:03:12,350 --> 00:03:13,650
+leverage shared metadata,
+
+103
+00:03:14,190 --> 00:03:16,430
+relationships,
+and state to not
+
+104
+00:03:16,430 --> 00:03:18,450
+just drive human and
+system discovery,
+
+105
+00:03:19,415 --> 00:03:21,035
+but also declarative
+composition,
+
+106
+00:03:21,975 --> 00:03:23,115
+intelligent orchestration,
+
+107
+00:03:23,975 --> 00:03:25,115
+closed loop automation,
+
+108
+00:03:25,815 --> 00:03:27,275
+and policy based management.
+
+109
+00:03:27,820 --> 00:03:29,460
+So just think
+about how powerful
+
+110
+00:03:29,460 --> 00:03:31,340
+a system would be
+if you actually
+
+111
+00:03:31,340 --> 00:03:33,020
+had one pool of metadata and
+
+112
+00:03:33,020 --> 00:03:35,340
+relationships
+implemented in a cloud
+
+113
+00:03:35,340 --> 00:03:37,440
+native way that's
+fully distributable.
+
+114
+00:03:38,605 --> 00:03:40,145
+So it's not, you
+know, centralized.
+
+115
+00:03:40,205 --> 00:03:41,085
+It's not monolithic.
+
+116
+00:03:41,085 --> 00:03:42,065
+It's fully distributable.
+
+117
+00:03:42,205 --> 00:03:43,245
+And then you can actually have
+
+118
+00:03:43,245 --> 00:03:45,165
+common pools of metadata and
+
+119
+00:03:45,165 --> 00:03:47,265
+relationships and
+state information,
+
+120
+00:03:48,670 --> 00:03:50,850
+to manage your operations.
+
+121
+00:03:51,230 --> 00:03:52,830
+It would allow you
+to personalize
+
+122
+00:03:52,830 --> 00:03:53,810
+customer experiences.
+
+123
+00:03:54,110 --> 00:03:57,005
+It would allow you to
+synchronize your,
+
+124
+00:03:57,565 --> 00:03:59,725
+operations and optimize your
+
+125
+00:03:59,725 --> 00:04:00,625
+business transactions.
+
+126
+00:04:02,900 --> 00:04:04,660
+So at the heart of enterprise
+
+127
+00:04:04,660 --> 00:04:06,660
+web is our patented language.
+
+128
+00:04:06,660 --> 00:04:08,100
+It's called
+the Graph Object in
+
+129
+00:04:08,100 --> 00:04:09,640
+Action Language or BOAL,
+
+130
+00:04:09,825 --> 00:04:11,265
+and it is a common machine
+
+131
+00:04:11,265 --> 00:04:12,625
+readable language for non
+
+132
+00:04:12,785 --> 00:04:14,705
+normalizing
+heterogeneous solution
+
+133
+00:04:14,705 --> 00:04:16,225
+elements. And this is sort of
+
+134
+00:04:16,225 --> 00:04:19,100
+the fundamental
+problem of the twenty
+
+135
+00:04:19,100 --> 00:04:20,460
+first century, at least it's
+
+136
+00:04:20,460 --> 00:04:21,900
+the software. But actually,
+
+137
+00:04:21,900 --> 00:04:23,340
+since software is
+eating the world
+
+138
+00:04:23,340 --> 00:04:24,620
+and everybody wants
+to be a digital
+
+139
+00:04:24,620 --> 00:04:26,460
+business, it really applies to
+
+140
+00:04:26,460 --> 00:04:27,280
+almost everyone.
+
+141
+00:04:27,645 --> 00:04:29,645
+Is how do they connect their
+
+142
+00:04:29,645 --> 00:04:30,445
+disparate systems,
+
+143
+00:04:30,445 --> 00:04:31,645
+their disparate
+and distributed
+
+144
+00:04:31,645 --> 00:04:33,965
+systems that are also changing
+
+145
+00:04:33,965 --> 00:04:35,895
+very rapidly, evolving
+very rapidly?
+
+146
+00:04:35,895 --> 00:04:37,150
+How How do they manage?
+
+147
+00:04:37,150 --> 00:04:38,110
+How do they work across that?
+
+148
+00:04:38,110 --> 00:04:39,390
+How do they connect
+across silos?
+
+149
+00:04:39,390 --> 00:04:40,990
+How do they connect
+ecosystem partners?
+
+150
+00:04:40,990 --> 00:04:42,530
+How do they work
+across clouds?
+
+151
+00:04:43,070 --> 00:04:45,155
+How do you how do
+you work across
+
+152
+00:04:45,155 --> 00:04:47,255
+this very fragmented
+environment where,
+
+153
+00:04:47,315 --> 00:04:48,855
+you know, different endpoints
+
+154
+00:04:48,915 --> 00:04:50,195
+are using different protocols
+
+155
+00:04:50,195 --> 00:04:51,715
+and different formats and
+
+156
+00:04:51,715 --> 00:04:52,535
+different schemas?
+
+157
+00:04:53,250 --> 00:04:54,370
+And the answer really is high
+
+158
+00:04:54,370 --> 00:04:55,170
+level abstraction.
+
+159
+00:04:55,170 --> 00:04:57,010
+The user lies above this.
+
+160
+00:04:57,010 --> 00:04:58,770
+So our language
+provides a graph
+
+161
+00:04:58,770 --> 00:05:01,465
+data structure
+mapping properties,
+
+162
+00:05:01,465 --> 00:05:02,825
+behaviors, dependencies,
+
+163
+00:05:02,825 --> 00:05:06,505
+and constraints to a of of,
+
+164
+00:05:06,665 --> 00:05:08,345
+solution elements to a graph
+
+165
+00:05:08,345 --> 00:05:09,065
+knowledge base.
+
+166
+00:05:09,065 --> 00:05:10,400
+So we're talking about a very
+
+167
+00:05:10,400 --> 00:05:13,920
+rich graph, beyond
+data types,
+
+168
+00:05:13,920 --> 00:05:15,380
+it's also functional types,
+
+169
+00:05:16,080 --> 00:05:18,100
+which makes our language goal
+
+170
+00:05:18,635 --> 00:05:20,895
+more than just, you know,
+
+171
+00:05:21,275 --> 00:05:22,235
+a modeling tool,
+
+172
+00:05:22,235 --> 00:05:23,615
+a domain modeling capability.
+
+173
+00:05:23,915 --> 00:05:25,775
+It's a domain
+language, a DSL.
+
+174
+00:05:25,915 --> 00:05:27,690
+It's also also
+gonna be modeling
+
+175
+00:05:27,750 --> 00:05:29,590
+interfaces, so we can manage
+
+176
+00:05:29,590 --> 00:05:31,210
+interoperability.
+Configuration
+
+177
+00:05:31,270 --> 00:05:33,270
+language, so we
+can, you know,
+
+178
+00:05:33,270 --> 00:05:35,210
+connect and configure,
+distributed,
+
+179
+00:05:35,990 --> 00:05:38,855
+applications. And a workflow
+
+180
+00:05:38,855 --> 00:05:40,315
+language so that
+we can actually
+
+181
+00:05:40,375 --> 00:05:42,635
+use graphs to
+actually describe
+
+182
+00:05:43,095 --> 00:05:45,250
+sets of tasks that
+are very dynamic,
+
+183
+00:05:45,250 --> 00:05:47,030
+that they they have
+relationships,
+
+184
+00:05:47,090 --> 00:05:49,430
+and they bind on
+bind on events
+
+185
+00:05:49,650 --> 00:05:51,250
+and policies. So we're talking
+
+186
+00:05:51,250 --> 00:05:52,930
+about a single language
+that's a DSL,
+
+187
+00:05:52,930 --> 00:05:57,255
+an IDL, a CDL,
+and a WDL in one.
+
+188
+00:05:58,355 --> 00:06:00,455
+My picture there
+is blocking that.
+
+189
+00:06:03,730 --> 00:06:04,910
+So this is the conceptual
+
+190
+00:06:04,970 --> 00:06:06,250
+architecture of
+Enterprise Web.
+
+191
+00:06:06,250 --> 00:06:08,030
+We start with
+an upper ontology
+
+192
+00:06:08,410 --> 00:06:10,345
+of system concepts. Right?
+
+193
+00:06:10,345 --> 00:06:11,785
+And then enterprise
+web presents,
+
+194
+00:06:12,105 --> 00:06:14,505
+customers with
+a baseline model
+
+195
+00:06:14,505 --> 00:06:16,505
+that already
+understands, you know,
+
+196
+00:06:16,505 --> 00:06:18,850
+generic enterprise
+concepts and,
+
+197
+00:06:19,330 --> 00:06:22,710
+IT and cloud type
+or system types.
+
+198
+00:06:23,570 --> 00:06:24,690
+And so we we give that to
+
+199
+00:06:24,690 --> 00:06:25,650
+everybody out of
+the box. Right?
+
+200
+00:06:25,650 --> 00:06:26,770
+We understand what people are
+
+201
+00:06:26,770 --> 00:06:28,955
+and units are and
+facilities and
+
+202
+00:06:28,955 --> 00:06:31,855
+locations and
+various aspects of,
+
+203
+00:06:32,875 --> 00:06:35,455
+typical, enterprise
+operation.
+
+204
+00:06:36,240 --> 00:06:37,440
+We also, of course,
+understand,
+
+205
+00:06:37,440 --> 00:06:39,120
+you know, what,
+protocols are,
+
+206
+00:06:39,120 --> 00:06:40,720
+formats are, types are,
+
+207
+00:06:40,720 --> 00:06:43,060
+so that we can manage
+those as well.
+
+208
+00:06:44,265 --> 00:06:45,625
+Then we have an ability for
+
+209
+00:06:45,625 --> 00:06:47,225
+customers to model their own
+
+210
+00:06:47,225 --> 00:06:49,645
+domain as a graph
+knowledge base.
+
+211
+00:06:50,560 --> 00:06:52,080
+And, here what we're talking
+
+212
+00:06:52,080 --> 00:06:53,680
+about is a knowledge base that
+
+213
+00:06:53,680 --> 00:06:55,540
+not just describes
+their environment,
+
+214
+00:06:55,840 --> 00:06:57,280
+but connects it to this higher
+
+215
+00:06:57,280 --> 00:06:58,420
+level upper ontology,
+
+216
+00:06:59,365 --> 00:07:00,805
+which includes the types that
+
+217
+00:07:00,965 --> 00:07:02,165
+so they can actually generate
+
+218
+00:07:02,165 --> 00:07:03,445
+implementations out of them.
+
+219
+00:07:03,445 --> 00:07:04,565
+It can generate full blown
+
+220
+00:07:04,565 --> 00:07:05,685
+interfaces out of them.
+
+221
+00:07:05,685 --> 00:07:07,865
+It can actually,
+connect processes,
+
+222
+00:07:08,510 --> 00:07:10,190
+can, you know,
+
+223
+00:07:10,270 --> 00:07:12,590
+expose services
+using this system.
+
+224
+00:07:12,590 --> 00:07:14,030
+So now we're talking
+about a graph
+
+225
+00:07:14,030 --> 00:07:15,650
+knowledge base to
+model the domain
+
+226
+00:07:15,950 --> 00:07:18,725
+connected to a rich system
+
+227
+00:07:18,785 --> 00:07:20,565
+description of,
+distributed systems.
+
+228
+00:07:22,145 --> 00:07:23,345
+And then at the bottom of this
+
+229
+00:07:23,345 --> 00:07:24,865
+is a catalog of objects,
+
+230
+00:07:24,865 --> 00:07:26,145
+the objects of
+the domain. Right?
+
+231
+00:07:26,145 --> 00:07:27,630
+So you model your domain and
+
+232
+00:07:27,630 --> 00:07:29,070
+then you have objects
+of your domain.
+
+233
+00:07:29,070 --> 00:07:30,430
+These are actually
+the solution
+
+234
+00:07:30,430 --> 00:07:31,950
+elements that are relevant to
+
+235
+00:07:31,950 --> 00:07:33,010
+a particular customer.
+
+236
+00:07:33,790 --> 00:07:35,335
+It might be applications,
+artifacts,
+
+237
+00:07:35,395 --> 00:07:37,415
+systems, services,
+databases, devices.
+
+238
+00:07:37,555 --> 00:07:40,195
+It doesn't really
+matter what they are.
+
+239
+00:07:40,195 --> 00:07:41,515
+It's the things that that is
+
+240
+00:07:41,635 --> 00:07:42,915
+that matter to that business
+
+241
+00:07:42,915 --> 00:07:43,975
+that they need to connect.
+
+242
+00:07:45,030 --> 00:07:46,550
+And we create make
+it easier for
+
+243
+00:07:46,550 --> 00:07:47,830
+them to do that as well.
+
+244
+00:07:47,830 --> 00:07:50,390
+So we're talking
+about a single
+
+245
+00:07:50,790 --> 00:07:52,550
+a a graph approach
+to all three
+
+246
+00:07:52,550 --> 00:07:54,825
+layers upper ontology to graph
+
+247
+00:07:54,825 --> 00:07:55,545
+knowledge base,
+
+248
+00:07:55,545 --> 00:07:58,025
+to also describing objects as
+
+249
+00:07:58,425 --> 00:08:00,365
+so she abstract
+data types as,
+
+250
+00:08:00,665 --> 00:08:04,440
+as, objects with
+relationships,
+
+251
+00:08:04,980 --> 00:08:06,260
+concepts, types,
+and policies,
+
+252
+00:08:06,260 --> 00:08:07,540
+which essentially
+map them back
+
+253
+00:08:07,540 --> 00:08:08,520
+up to the domain,
+
+254
+00:08:08,820 --> 00:08:11,865
+then in turn up to
+the, upper ontology.
+
+255
+00:08:12,645 --> 00:08:14,565
+So but having
+a single language
+
+256
+00:08:14,565 --> 00:08:15,925
+means that this
+could be highly
+
+257
+00:08:15,925 --> 00:08:18,005
+efficient because at
+the end of the day,
+
+258
+00:08:18,005 --> 00:08:20,510
+an object is
+a solution element
+
+259
+00:08:20,650 --> 00:08:22,810
+that's mapped to graph
+knowledge base,
+
+260
+00:08:22,810 --> 00:08:24,010
+which is also a graph,
+
+261
+00:08:24,010 --> 00:08:25,130
+which is also match mapped up
+
+262
+00:08:25,130 --> 00:08:26,110
+to the upper ontology,
+
+263
+00:08:26,330 --> 00:08:27,625
+which is also a graph,
+
+264
+00:08:27,705 --> 00:08:29,065
+which means that
+the whole thing
+
+265
+00:08:29,065 --> 00:08:30,765
+is just a function of
+graph processing,
+
+266
+00:08:31,145 --> 00:08:32,425
+and we essentially have one
+
+267
+00:08:32,425 --> 00:08:33,785
+approach to graph processing
+
+268
+00:08:33,785 --> 00:08:34,765
+the whole thing.
+
+269
+00:08:34,990 --> 00:08:37,570
+That means we can
+do very efficient,
+
+270
+00:08:38,350 --> 00:08:39,550
+real time,
+
+271
+00:08:39,550 --> 00:08:41,790
+contextual processes where it
+
+272
+00:08:41,790 --> 00:08:43,070
+might be much
+more difficult to
+
+273
+00:08:43,070 --> 00:08:45,295
+do that given the latency with
+
+274
+00:08:45,295 --> 00:08:46,355
+cloud native toolchains,
+
+275
+00:08:46,655 --> 00:08:48,275
+which are middleware stacks.
+
+276
+00:08:49,775 --> 00:08:51,635
+So to get into that
+a little bit deeper,
+
+277
+00:08:51,775 --> 00:08:53,375
+for modeling
+the operational domain,
+
+278
+00:08:53,375 --> 00:08:54,920
+first I said, we
+give you a baseline
+
+279
+00:08:54,920 --> 00:08:55,560
+model out of the box.
+
+280
+00:08:55,560 --> 00:08:57,560
+It includes generic device
+
+281
+00:08:57,560 --> 00:08:58,440
+concepts and types.
+
+282
+00:08:58,440 --> 00:09:00,460
+It's fully inspectable
+and extensible.
+
+283
+00:09:01,315 --> 00:09:02,515
+Then customers can actually
+
+284
+00:09:02,515 --> 00:09:03,795
+start by they can jump start
+
+285
+00:09:03,795 --> 00:09:05,235
+their modeling by
+importing a model,
+
+286
+00:09:05,235 --> 00:09:07,395
+like an XML, RDF,
+JSON, etcetera.
+
+287
+00:09:07,395 --> 00:09:09,235
+They can even give
+us pseudo UML
+
+288
+00:09:09,235 --> 00:09:10,355
+that might be in
+a Word document
+
+289
+00:09:10,355 --> 00:09:11,570
+or a PDF document.
+
+290
+00:09:11,630 --> 00:09:13,550
+And we can import
+those through
+
+291
+00:09:13,550 --> 00:09:15,250
+algorithmic entity
+extraction,
+
+292
+00:09:16,110 --> 00:09:18,190
+and map those to
+concepts in our
+
+293
+00:09:18,190 --> 00:09:19,975
+upper ontology to essentially
+
+294
+00:09:19,975 --> 00:09:21,515
+see the graph knowledge base.
+
+295
+00:09:22,295 --> 00:09:23,515
+And we do that in seconds.
+
+296
+00:09:23,975 --> 00:09:25,095
+And, from there,
+
+297
+00:09:25,095 --> 00:09:26,635
+solution architects
+can continue
+
+298
+00:09:26,800 --> 00:09:28,560
+by manually curating the graph
+
+299
+00:09:28,560 --> 00:09:29,280
+knowledge base, right?
+
+300
+00:09:29,280 --> 00:09:30,960
+They can tune it,
+they can extend it,
+
+301
+00:09:30,960 --> 00:09:33,360
+they can modify it as need be
+
+302
+00:09:33,360 --> 00:09:35,540
+for their operational domain.
+
+303
+00:09:36,405 --> 00:09:38,005
+And another way to get model
+
+304
+00:09:38,005 --> 00:09:39,125
+information into the system is
+
+305
+00:09:39,125 --> 00:09:40,485
+actually by
+onboarding solution
+
+306
+00:09:40,485 --> 00:09:41,605
+elements themselves because as
+
+307
+00:09:41,605 --> 00:09:43,570
+you onboard more elements and
+
+308
+00:09:43,570 --> 00:09:45,710
+as your as your
+use cases expand,
+
+309
+00:09:46,090 --> 00:09:47,610
+you're effectively going to be
+
+310
+00:09:47,610 --> 00:09:49,230
+expanding your
+domain as well.
+
+311
+00:09:49,530 --> 00:09:51,770
+Right? So that
+leads to this row
+
+312
+00:09:51,770 --> 00:09:52,910
+as you go concept.
+
+313
+00:09:53,275 --> 00:09:54,655
+Because everything
+is done in graphs.
+
+314
+00:09:55,195 --> 00:09:56,815
+Graphs are optimally situated
+
+315
+00:09:56,875 --> 00:09:59,055
+not only for flexibly modeling
+
+316
+00:09:59,115 --> 00:10:01,110
+relationships, but, you know,
+
+317
+00:10:01,110 --> 00:10:02,310
+with graph, we all know that
+
+318
+00:10:02,310 --> 00:10:03,850
+graphs can actually
+be modified
+
+319
+00:10:03,910 --> 00:10:04,810
+much more easily.
+
+320
+00:10:05,030 --> 00:10:06,630
+Static hierarchical
+models, right,
+
+321
+00:10:06,630 --> 00:10:08,630
+they're easier to
+evolve over time.
+
+322
+00:10:08,630 --> 00:10:09,695
+In enterprise web,
+
+323
+00:10:09,695 --> 00:10:11,155
+everything also happens
+to be immutable,
+
+324
+00:10:11,295 --> 00:10:12,915
+so we version
+control everything.
+
+325
+00:10:12,975 --> 00:10:14,255
+We're actually
+version controlling
+
+326
+00:10:14,255 --> 00:10:15,795
+the the objects
+in the catalog.
+
+327
+00:10:16,170 --> 00:10:17,130
+Version controlling the graph
+
+328
+00:10:17,130 --> 00:10:17,690
+knowledge base.
+
+329
+00:10:17,690 --> 00:10:18,730
+We're also version controlling
+
+330
+00:10:18,730 --> 00:10:20,250
+the upper ontology
+as we put out
+
+331
+00:10:20,250 --> 00:10:22,010
+new releases. So everything is
+
+332
+00:10:22,010 --> 00:10:22,750
+version controlled.
+
+333
+00:10:23,050 --> 00:10:24,510
+Everything has audit history.
+
+334
+00:10:24,975 --> 00:10:26,415
+And this all allows you to
+
+335
+00:10:26,415 --> 00:10:28,015
+essentially model the use,
+
+336
+00:10:28,015 --> 00:10:30,115
+start with maybe
+a narrow use case,
+
+337
+00:10:30,415 --> 00:10:32,675
+implement that, and
+as you succeed,
+
+338
+00:10:33,230 --> 00:10:35,490
+expand the use case,
+add more use cases,
+
+339
+00:10:35,630 --> 00:10:37,970
+and evolve with your, domain.
+
+340
+00:10:38,590 --> 00:10:40,430
+These are all
+challenges in a hard
+
+341
+00:10:40,430 --> 00:10:41,765
+coded world that I think,
+
+342
+00:10:41,925 --> 00:10:43,305
+many of you probably
+recognize.
+
+343
+00:10:45,045 --> 00:10:47,445
+So, as we when
+we talk a little
+
+344
+00:10:47,445 --> 00:10:49,305
+bit deeper into object
+modeling itself,
+
+345
+00:10:49,640 --> 00:10:50,600
+now we're actually
+talking about
+
+346
+00:10:50,600 --> 00:10:53,480
+how we onboard
+a singular, you know,
+
+347
+00:10:53,480 --> 00:10:54,380
+it's an application,
+
+348
+00:10:54,440 --> 00:10:55,560
+maybe it's a service,
+
+349
+00:10:55,560 --> 00:10:56,700
+maybe we wanna onboard.
+
+350
+00:10:57,085 --> 00:10:58,125
+What we actually
+already have,
+
+351
+00:10:58,125 --> 00:10:59,725
+we give customers a catalog of
+
+352
+00:10:59,725 --> 00:11:01,105
+a couple hundred existing,
+
+353
+00:11:01,805 --> 00:11:03,745
+objects like
+mappings to Amazon
+
+354
+00:11:03,885 --> 00:11:07,260
+cloud or Google
+cloud, etcetera.
+
+355
+00:11:07,260 --> 00:11:09,040
+We have mappings for
+a lot of common,
+
+356
+00:11:09,100 --> 00:11:11,500
+you know, cloud
+native tools and,
+
+357
+00:11:11,740 --> 00:11:13,520
+etcetera, Kafka, MariaDB,
+
+358
+00:11:13,740 --> 00:11:15,100
+other things like that all out
+
+359
+00:11:15,100 --> 00:11:16,635
+of the box. But, you know,
+
+360
+00:11:16,635 --> 00:11:18,155
+customers can also
+model their own,
+
+361
+00:11:18,715 --> 00:11:20,015
+their own solution elements.
+
+362
+00:11:20,235 --> 00:11:21,035
+And essentially what they're
+
+363
+00:11:21,035 --> 00:11:22,555
+going to do is
+whether it's a code
+
+364
+00:11:22,555 --> 00:11:24,235
+package, it could
+be an application,
+
+365
+00:11:24,235 --> 00:11:25,375
+a function, an algorithm,
+
+366
+00:11:25,755 --> 00:11:27,100
+or it could be a third party
+
+367
+00:11:27,100 --> 00:11:29,420
+orchestrator,
+a controller, a system,
+
+368
+00:11:29,420 --> 00:11:31,680
+a database. We can
+model adapters
+
+369
+00:11:31,740 --> 00:11:33,040
+using enterprise web.
+
+370
+00:11:33,235 --> 00:11:34,995
+Or if it's an endpoint
+like an actual
+
+371
+00:11:34,995 --> 00:11:37,415
+service, that somebody
+wants to model.
+
+372
+00:11:37,555 --> 00:11:38,675
+All of those can be modeled in
+
+373
+00:11:38,675 --> 00:11:39,315
+enterprise web.
+
+374
+00:11:39,315 --> 00:11:40,035
+Essentially, they're going to
+
+375
+00:11:40,035 --> 00:11:41,095
+become typed objects,
+
+376
+00:11:41,500 --> 00:11:43,680
+and the method is
+effectively the same.
+
+377
+00:11:43,900 --> 00:11:45,260
+Essentially, there's
+an interactive
+
+378
+00:11:45,260 --> 00:11:47,040
+API or a dynamic form.
+
+379
+00:11:47,180 --> 00:11:48,380
+When you're looking to onboard
+
+380
+00:11:48,380 --> 00:11:50,045
+something,
+the system essentially
+
+381
+00:11:50,045 --> 00:11:51,825
+gonna present you
+with cyclically,
+
+382
+00:11:52,365 --> 00:11:54,445
+either a UI driven wizard or
+
+383
+00:11:54,445 --> 00:11:56,465
+interactive API that's gonna
+
+384
+00:11:56,760 --> 00:11:58,280
+look for you to
+enter information
+
+385
+00:11:58,280 --> 00:11:59,000
+that's gonna essentially
+
+386
+00:11:59,000 --> 00:12:01,980
+progressively type
+the, object,
+
+387
+00:12:02,040 --> 00:12:03,240
+the solution
+element that you're
+
+388
+00:12:03,240 --> 00:12:04,220
+looking to onboard.
+
+389
+00:12:04,440 --> 00:12:05,660
+And as you do that,
+
+390
+00:12:06,005 --> 00:12:07,225
+the system's gonna be,
+
+391
+00:12:07,685 --> 00:12:08,805
+in it's the type system that's
+
+392
+00:12:08,805 --> 00:12:10,005
+gonna be interacting
+with the graph
+
+393
+00:12:10,005 --> 00:12:10,885
+knowledge base in the upper
+
+394
+00:12:10,885 --> 00:12:13,045
+ontology to
+autofill properties
+
+395
+00:12:13,045 --> 00:12:14,485
+and behaviors that the system
+
+396
+00:12:14,485 --> 00:12:16,270
+already knows Because
+the presumption
+
+397
+00:12:16,270 --> 00:12:17,630
+is the graph knowledge
+base is in place,
+
+398
+00:12:17,630 --> 00:12:19,410
+the graph knowledge
+is already in place.
+
+399
+00:12:19,470 --> 00:12:20,510
+So we already know a lot of
+
+400
+00:12:20,510 --> 00:12:21,650
+things about this domain.
+
+401
+00:12:21,710 --> 00:12:22,830
+So we know a lot
+of things about
+
+402
+00:12:22,830 --> 00:12:23,735
+different kinds of types.
+
+403
+00:12:23,735 --> 00:12:25,095
+So we can auto fill
+the properties
+
+404
+00:12:25,095 --> 00:12:26,875
+and generate very
+rich interfaces.
+
+405
+00:12:27,575 --> 00:12:30,135
+So taking, thing
+things that might,
+
+406
+00:12:30,455 --> 00:12:32,235
+onboarding things that
+might have taken,
+
+407
+00:12:32,560 --> 00:12:33,940
+you know, days or weeks.
+
+408
+00:12:34,080 --> 00:12:34,880
+We can, you know,
+
+409
+00:12:34,880 --> 00:12:36,240
+even really complex things,
+
+410
+00:12:36,240 --> 00:12:38,500
+and we can do it
+in in its towers.
+
+411
+00:12:39,575 --> 00:12:41,275
+So we're really
+trying to simplify
+
+412
+00:12:41,735 --> 00:12:43,975
+the modeling
+exercise itself at
+
+413
+00:12:43,975 --> 00:12:45,495
+the graph knowledge base level
+
+414
+00:12:45,495 --> 00:12:47,750
+as well as the onboarding
+level as well.
+
+415
+00:12:48,630 --> 00:12:49,590
+Everything, like I said,
+
+416
+00:12:49,590 --> 00:12:51,510
+is persisted in
+a backing store.
+
+417
+00:12:51,510 --> 00:12:53,030
+It's an immutable log style
+
+418
+00:12:53,030 --> 00:12:53,990
+append only storage.
+
+419
+00:12:53,990 --> 00:12:55,350
+It's cloud native
+in its nature.
+
+420
+00:12:55,350 --> 00:12:56,995
+Right? All the objects in
+
+421
+00:12:56,995 --> 00:12:58,855
+Enterprise Web are
+dynamically indexed,
+
+422
+00:12:59,315 --> 00:13:00,615
+tagged in version control.
+
+423
+00:13:00,755 --> 00:13:02,515
+So all those things
+are just done as,
+
+424
+00:13:02,755 --> 00:13:04,115
+in the background
+for the customers.
+
+425
+00:13:04,115 --> 00:13:05,075
+You don't have to worry about
+
+426
+00:13:05,075 --> 00:13:05,815
+those concepts.
+
+427
+00:13:06,180 --> 00:13:06,740
+Essentially, we're,
+
+428
+00:13:07,140 --> 00:13:08,920
+abstracting storage
+from them.
+
+429
+00:13:09,220 --> 00:13:12,440
+So, we're also
+providing a process
+
+430
+00:13:12,500 --> 00:13:13,780
+that facilitates updates and
+
+431
+00:13:13,780 --> 00:13:15,675
+upgrades because
+all the objects
+
+432
+00:13:15,675 --> 00:13:16,315
+that you onboard,
+
+433
+00:13:16,315 --> 00:13:17,115
+all the solution elements that
+
+434
+00:13:17,115 --> 00:13:18,155
+you onboard are
+gonna be version
+
+435
+00:13:18,155 --> 00:13:19,915
+control, can anticipate that
+
+436
+00:13:19,915 --> 00:13:21,115
+they're gonna change over time
+
+437
+00:13:21,115 --> 00:13:22,875
+as different partners
+and vendors,
+
+438
+00:13:22,875 --> 00:13:25,070
+etcetera, update their service
+
+439
+00:13:25,070 --> 00:13:27,410
+endpoints or their
+application code or,
+
+440
+00:13:27,870 --> 00:13:29,170
+or you update a technology
+
+441
+00:13:29,230 --> 00:13:30,530
+somewhere or change
+a protocol.
+
+442
+00:13:31,390 --> 00:13:32,670
+When it's time
+to update that,
+
+443
+00:13:32,670 --> 00:13:34,015
+you just go back
+to that object,
+
+444
+00:13:34,015 --> 00:13:35,615
+you update it, the version
+
+445
+00:13:35,615 --> 00:13:37,055
+controlling it
+will take the new
+
+446
+00:13:37,055 --> 00:13:38,335
+information,
+we'll put that new
+
+447
+00:13:38,335 --> 00:13:40,095
+information, and
+yet we'll also
+
+448
+00:13:40,095 --> 00:13:41,810
+preserve the history
+so that we
+
+449
+00:13:41,810 --> 00:13:43,750
+know all changes
+to that object
+
+450
+00:13:44,130 --> 00:13:45,990
+is the time and who
+made those changes.
+
+451
+00:13:47,810 --> 00:13:49,170
+So this is what Enterprise Web
+
+452
+00:13:49,170 --> 00:13:50,565
+looks like as
+a platform. Right?
+
+453
+00:13:50,565 --> 00:13:51,945
+So we take that architecture,
+
+454
+00:13:52,165 --> 00:13:53,125
+which I thought would be most
+
+455
+00:13:53,125 --> 00:13:54,665
+familiar to many of you given
+
+456
+00:13:55,205 --> 00:13:56,585
+interest in the type of people
+
+457
+00:13:56,970 --> 00:13:58,590
+who attend a CDW meeting.
+
+458
+00:13:59,370 --> 00:14:01,450
+So we focused on
+the graph architecture,
+
+459
+00:14:01,450 --> 00:14:02,410
+but essentially we're wrapping
+
+460
+00:14:02,410 --> 00:14:04,090
+that with the capabilities of
+
+461
+00:14:04,090 --> 00:14:05,210
+an information system, right?
+
+462
+00:14:05,210 --> 00:14:06,375
+There's, you know,
+
+463
+00:14:06,375 --> 00:14:07,815
+object modeling as
+I just described.
+
+464
+00:14:07,815 --> 00:14:09,095
+This is a design
+environment for
+
+465
+00:14:09,095 --> 00:14:10,055
+declarative composition.
+
+466
+00:14:10,055 --> 00:14:11,275
+So once we have objects,
+
+467
+00:14:11,495 --> 00:14:13,015
+go to the catalog to carefully
+
+468
+00:14:13,015 --> 00:14:16,500
+compose objects
+into, services,
+
+469
+00:14:16,800 --> 00:14:18,160
+and then we can chain services
+
+470
+00:14:18,160 --> 00:14:19,540
+into event driven processes,
+
+471
+00:14:20,080 --> 00:14:21,120
+all with no code. Right?
+
+472
+00:14:21,120 --> 00:14:23,840
+We're using
+the metadata and the,
+
+473
+00:14:24,160 --> 00:14:27,175
+relationships, domain
+semantics as well,
+
+474
+00:14:27,495 --> 00:14:28,615
+from the graph knowledge base
+
+475
+00:14:28,615 --> 00:14:31,255
+and the upper ontology, to,
+
+476
+00:14:31,655 --> 00:14:33,015
+compose all of these things so
+
+477
+00:14:33,015 --> 00:14:34,875
+that we can do them
+with no code.
+
+478
+00:14:34,960 --> 00:14:36,240
+And of course, the system also
+
+479
+00:14:36,240 --> 00:14:37,280
+offers a runtime. Right?
+
+480
+00:14:37,280 --> 00:14:38,820
+It's a cloud native,
+asynchronous,
+
+481
+00:14:39,520 --> 00:14:41,780
+concurrent, so it's
+massively parallel,
+
+482
+00:14:42,800 --> 00:14:44,020
+event driven system.
+
+483
+00:14:44,335 --> 00:14:45,455
+It's reliable messaging,
+
+484
+00:14:45,455 --> 00:14:46,515
+transaction guarantees,
+
+485
+00:14:46,575 --> 00:14:48,495
+and state management all again
+
+486
+00:14:48,495 --> 00:14:50,015
+included just like we abstract
+
+487
+00:14:50,015 --> 00:14:51,875
+the storage we're actually
+
+488
+00:14:51,935 --> 00:14:53,395
+extracting a lot
+of the complexity
+
+489
+00:14:53,695 --> 00:14:55,680
+of being cloud native
+itself. Right?
+
+490
+00:14:55,680 --> 00:14:57,360
+And this is a real struggle,
+
+491
+00:14:57,360 --> 00:14:58,740
+even for advanced engineers.
+
+492
+00:14:59,200 --> 00:15:00,240
+They're largely doing these
+
+493
+00:15:00,320 --> 00:15:01,440
+implementing these ideas like
+
+494
+00:15:01,440 --> 00:15:02,320
+reliable messaging,
+
+495
+00:15:02,320 --> 00:15:03,220
+transaction guarantees,
+
+496
+00:15:03,655 --> 00:15:05,415
+state management
+on a per solution
+
+497
+00:15:05,415 --> 00:15:07,255
+basis. And here
+we're providing
+
+498
+00:15:07,255 --> 00:15:08,635
+it on a platform basis.
+
+499
+00:15:08,695 --> 00:15:11,335
+So it's available,
+you know, just as,
+
+500
+00:15:12,370 --> 00:15:13,250
+that's something
+that everybody
+
+501
+00:15:13,250 --> 00:15:15,270
+can rely on in
+the background.
+
+502
+00:15:16,370 --> 00:15:17,490
+We're also wrapping it with
+
+503
+00:15:17,490 --> 00:15:18,470
+platform services.
+
+504
+00:15:18,610 --> 00:15:19,890
+Essentially we're replacing if
+
+505
+00:15:19,890 --> 00:15:21,325
+you look at this and you'll,
+
+506
+00:15:21,565 --> 00:15:23,345
+see a lot of common
+terms here,
+
+507
+00:15:23,565 --> 00:15:24,765
+things that you
+would expect in
+
+508
+00:15:24,765 --> 00:15:26,205
+a common middleware stack.
+
+509
+00:15:26,205 --> 00:15:27,405
+We're essentially replacing
+
+510
+00:15:27,405 --> 00:15:28,925
+the middleware
+stack with a set
+
+511
+00:15:28,925 --> 00:15:31,040
+of serverless
+patterns. Right?
+
+512
+00:15:31,040 --> 00:15:31,920
+Serverless middleware.
+
+513
+00:15:31,920 --> 00:15:33,120
+That's what this really is.
+
+514
+00:15:33,120 --> 00:15:34,820
+Instead of having
+different components,
+
+515
+00:15:35,200 --> 00:15:36,400
+each have to
+implement and then
+
+516
+00:15:36,400 --> 00:15:37,300
+manually integrate,
+
+517
+00:15:37,600 --> 00:15:38,960
+and then then you
+have to write
+
+518
+00:15:38,960 --> 00:15:41,685
+your code your
+applications to the top.
+
+519
+00:15:41,745 --> 00:15:42,865
+Here, enterprise web says,
+
+520
+00:15:42,865 --> 00:15:43,845
+you know what? Actually, no.
+
+521
+00:15:44,305 --> 00:15:45,605
+Model everything
+declaratively,
+
+522
+00:15:46,145 --> 00:15:47,585
+and then either
+the type system
+
+523
+00:15:47,585 --> 00:15:49,285
+will attach behavior
+should background,
+
+524
+00:15:49,880 --> 00:15:51,400
+or, depending on
+the use case,
+
+525
+00:15:51,400 --> 00:15:53,240
+you might need to
+specify a certain
+
+526
+00:15:53,240 --> 00:15:54,520
+behavior, and you
+then can call
+
+527
+00:15:54,520 --> 00:15:55,580
+these functions directly.
+
+528
+00:15:55,880 --> 00:15:57,420
+But what you're
+getting is this
+
+529
+00:15:57,675 --> 00:15:59,135
+very lightweight,
+low latency,
+
+530
+00:15:59,195 --> 00:16:00,495
+high performance middleware
+
+531
+00:16:00,955 --> 00:16:02,315
+that's all served
+up in a cloud
+
+532
+00:16:02,315 --> 00:16:03,135
+native cloud.
+
+533
+00:16:04,155 --> 00:16:05,835
+So, this is, you know,
+
+534
+00:16:05,835 --> 00:16:07,035
+our enterprise web platform is
+
+535
+00:16:07,035 --> 00:16:09,230
+served at of fifteen
+awarded patents,
+
+536
+00:16:09,550 --> 00:16:11,150
+and is deployed around
+the world with,
+
+537
+00:16:11,150 --> 00:16:12,930
+you know, multiple variety of
+
+538
+00:16:13,310 --> 00:16:15,070
+industries from
+telecom to life
+
+539
+00:16:15,070 --> 00:16:16,565
+sciences. Now I'm gonna go to
+
+540
+00:16:16,565 --> 00:16:17,605
+a concrete use case.
+
+541
+00:16:17,765 --> 00:16:18,805
+It's an SAP use case.
+
+542
+00:16:18,805 --> 00:16:20,245
+It's the SAP is the world's
+
+543
+00:16:20,245 --> 00:16:21,525
+largest enterprise
+software company,
+
+544
+00:16:21,525 --> 00:16:22,885
+so I'm sure many of you are
+
+545
+00:16:22,885 --> 00:16:24,260
+familiar familiar
+with them or,
+
+546
+00:16:24,260 --> 00:16:26,100
+if not, directly experienced
+
+547
+00:16:26,100 --> 00:16:27,240
+with working for SAP.
+
+548
+00:16:27,300 --> 00:16:27,700
+And, of course,
+
+549
+00:16:27,700 --> 00:16:28,920
+they have great products,
+
+550
+00:16:29,140 --> 00:16:30,820
+but like with any
+large company
+
+551
+00:16:30,820 --> 00:16:32,965
+offering a wide
+variety of solutions,
+
+552
+00:16:32,965 --> 00:16:35,045
+whether that's Salesforce
+or Oracle or,
+
+553
+00:16:35,285 --> 00:16:37,285
+or Amazon or Google,
+for that matter,
+
+554
+00:16:37,285 --> 00:16:38,565
+it's not always easy to work
+
+555
+00:16:38,565 --> 00:16:39,820
+across all of these. Right?
+
+556
+00:16:39,820 --> 00:16:41,680
+It's, they weren't
+all architected
+
+557
+00:16:41,740 --> 00:16:42,940
+together. They have discrete
+
+558
+00:16:42,940 --> 00:16:44,240
+sets of tools and products.
+
+559
+00:16:44,700 --> 00:16:47,020
+And, you know, often today,
+
+560
+00:16:47,020 --> 00:16:48,080
+we're not just connecting,
+
+561
+00:16:48,825 --> 00:16:50,985
+one vendor's products
+and services.
+
+562
+00:16:50,985 --> 00:16:52,445
+We're actually
+connecting them with,
+
+563
+00:16:53,065 --> 00:16:54,765
+SAP and non SAP enterprise.
+
+564
+00:16:54,985 --> 00:16:57,405
+So this use case is
+gonna explore that.
+
+565
+00:16:59,210 --> 00:17:01,930
+So, SAP customers
+nowadays, like I said,
+
+566
+00:17:01,930 --> 00:17:03,050
+have to struggle
+when confronted
+
+567
+00:17:03,050 --> 00:17:04,430
+with an increasingly complex
+
+568
+00:17:04,490 --> 00:17:07,935
+array of SAP and
+non SAP endpoints.
+
+569
+00:17:07,995 --> 00:17:09,615
+So they need to
+integrate, orchestrate,
+
+570
+00:17:09,675 --> 00:17:11,835
+manage, and maintain
+across a set
+
+571
+00:17:11,835 --> 00:17:12,495
+of them.
+
+572
+00:17:13,490 --> 00:17:15,250
+Now SAP has a lot
+of great assets,
+
+573
+00:17:15,250 --> 00:17:16,530
+a lot of great
+development assets,
+
+574
+00:17:16,530 --> 00:17:17,250
+right? They have this,
+
+575
+00:17:18,530 --> 00:17:19,970
+thing called the Graph API,
+
+576
+00:17:19,970 --> 00:17:21,250
+which is the One Domain Model
+
+577
+00:17:21,250 --> 00:17:22,550
+with virtual data model.
+
+578
+00:17:22,965 --> 00:17:25,125
+They have these
+TIG files called
+
+579
+00:17:25,125 --> 00:17:27,125
+the IMG SCRO.
+They've got a lot
+
+580
+00:17:27,125 --> 00:17:28,985
+of great assets that
+we can leverage,
+
+581
+00:17:29,365 --> 00:17:30,665
+but in and of themselves,
+
+582
+00:17:31,880 --> 00:17:33,820
+those assets aren't
+fully connected.
+
+583
+00:17:33,880 --> 00:17:35,320
+Right? They lack the semantics
+
+584
+00:17:35,320 --> 00:17:36,920
+to fully connect a solution in
+
+585
+00:17:36,920 --> 00:17:38,200
+the kind of way
+that I'm describing
+
+586
+00:17:38,200 --> 00:17:40,565
+to you. And solution delivery
+
+587
+00:17:40,625 --> 00:17:42,865
+over SAP at this time still
+
+588
+00:17:42,865 --> 00:17:44,305
+requires a mix
+of custom code,
+
+589
+00:17:44,305 --> 00:17:45,205
+manual integration,
+
+590
+00:17:45,800 --> 00:17:47,240
+BPMN workflow modeling,
+
+591
+00:17:47,240 --> 00:17:48,120
+interface development,
+
+592
+00:17:48,120 --> 00:17:49,800
+and complex
+configurations that
+
+593
+00:17:49,800 --> 00:17:51,320
+are gonna be done
+with a mix of
+
+594
+00:17:51,320 --> 00:17:52,300
+model and code.
+
+595
+00:17:52,440 --> 00:17:53,000
+And, of course,
+
+596
+00:17:53,000 --> 00:17:54,200
+the problem is is once you've
+
+597
+00:17:54,200 --> 00:17:55,475
+done a mix of model and code,
+
+598
+00:17:55,475 --> 00:17:57,015
+the model's not
+driving everything,
+
+599
+00:17:57,155 --> 00:17:58,035
+and that means
+that you're gonna
+
+600
+00:17:58,035 --> 00:17:59,475
+have these black
+holes where you
+
+601
+00:17:59,475 --> 00:18:00,935
+don't know where
+things break,
+
+602
+00:18:01,555 --> 00:18:02,515
+and you're not gonna have end
+
+603
+00:18:02,515 --> 00:18:03,255
+to end transparency.
+
+604
+00:18:04,130 --> 00:18:04,850
+Distributed systems,
+
+605
+00:18:04,850 --> 00:18:06,130
+you really want that.
+
+606
+00:18:06,370 --> 00:18:07,890
+You wanna know where
+things go wrong.
+
+607
+00:18:07,890 --> 00:18:09,010
+You wanna know
+how your services
+
+608
+00:18:09,010 --> 00:18:10,130
+are being consumed. Right?
+
+609
+00:18:10,130 --> 00:18:11,170
+You wanna be able to analyze
+
+610
+00:18:11,170 --> 00:18:12,050
+that for security.
+
+611
+00:18:12,050 --> 00:18:14,365
+You wanna analyze that
+for optimization.
+
+612
+00:18:15,145 --> 00:18:16,265
+You want to make
+sure that your
+
+613
+00:18:16,265 --> 00:18:17,305
+customer is having great,
+
+614
+00:18:17,625 --> 00:18:18,825
+experiences and that you're
+
+615
+00:18:18,825 --> 00:18:19,965
+supporting your SLAs.
+
+616
+00:18:20,185 --> 00:18:22,285
+So transparency
+is non trivial.
+
+617
+00:18:23,390 --> 00:18:24,670
+So, let's look at
+a service, right?
+
+618
+00:18:24,670 --> 00:18:26,510
+This is sort of a, you know,
+
+619
+00:18:26,510 --> 00:18:27,310
+in the process world,
+
+620
+00:18:27,310 --> 00:18:28,350
+they would call
+something like this,
+
+621
+00:18:28,350 --> 00:18:30,030
+like a three byte
+kebab or a five
+
+622
+00:18:30,030 --> 00:18:31,925
+byte kebab, which
+is the industry
+
+623
+00:18:31,925 --> 00:18:34,185
+kind of jargon or
+describing a simplistic
+
+624
+00:18:34,245 --> 00:18:35,685
+process. But, you know,
+
+625
+00:18:35,685 --> 00:18:36,725
+there's gonna be a third party
+
+626
+00:18:36,725 --> 00:18:37,765
+customer portal
+where somebody's
+
+627
+00:18:37,765 --> 00:18:39,305
+gonna order a cloud
+application.
+
+628
+00:18:39,365 --> 00:18:41,990
+Right? So this is
+gonna be a a a
+
+629
+00:18:42,210 --> 00:18:43,970
+cloud native or
+a digital business
+
+630
+00:18:43,970 --> 00:18:45,090
+use case. Somebody's gonna
+
+631
+00:18:45,090 --> 00:18:46,130
+actually order something that
+
+632
+00:18:46,130 --> 00:18:48,530
+is in effect,
+a digital product,
+
+633
+00:18:48,530 --> 00:18:49,590
+a cloud application,
+
+634
+00:18:49,965 --> 00:18:51,485
+And the delivery
+will also then
+
+635
+00:18:51,485 --> 00:18:52,605
+be a system delivery. Right?
+
+636
+00:18:52,605 --> 00:18:54,205
+It's gonna be
+it's not it's not
+
+637
+00:18:54,205 --> 00:18:55,725
+selling jeans or a car.
+
+638
+00:18:55,725 --> 00:18:56,685
+We're selling
+something that's,
+
+639
+00:18:58,000 --> 00:18:59,360
+completely, like,
+visual end to end.
+
+640
+00:18:59,360 --> 00:19:01,460
+So and then delivery
+is gonna be done,
+
+641
+00:19:02,000 --> 00:19:04,900
+over, Google in this case.
+
+642
+00:19:04,960 --> 00:19:07,245
+And so we're gonna
+have a third
+
+643
+00:19:07,245 --> 00:19:09,405
+party product,
+and a third party
+
+644
+00:19:09,405 --> 00:19:10,845
+delivery system, but the,
+
+645
+00:19:11,325 --> 00:19:12,925
+ERP type services in between
+
+646
+00:19:12,925 --> 00:19:13,985
+will all be SAP.
+
+647
+00:19:15,110 --> 00:19:17,190
+So what we want
+is some sort of
+
+648
+00:19:17,190 --> 00:19:18,390
+model connect across those,
+
+649
+00:19:18,390 --> 00:19:19,930
+because without that model,
+
+650
+00:19:19,990 --> 00:19:21,030
+we're gonna be doing manually
+
+651
+00:19:21,030 --> 00:19:22,230
+integrating, and that's all we
+
+652
+00:19:22,230 --> 00:19:23,770
+have to do. And
+especially since,
+
+653
+00:19:24,225 --> 00:19:25,745
+you know, these
+aren't all fully
+
+654
+00:19:25,745 --> 00:19:27,185
+connected even
+the SAP products
+
+655
+00:19:27,185 --> 00:19:28,385
+aren't fully
+connected by a model
+
+656
+00:19:28,385 --> 00:19:29,985
+and let alone
+connecting across
+
+657
+00:19:29,985 --> 00:19:31,745
+the others. So instead
+of, you know,
+
+658
+00:19:31,745 --> 00:19:32,645
+writing interfaces,
+
+659
+00:19:32,705 --> 00:19:34,140
+doing manual integration,
+
+660
+00:19:34,140 --> 00:19:35,900
+doing manual code,
+and then, of course,
+
+661
+00:19:35,900 --> 00:19:38,620
+maintaining all
+that coding and
+
+662
+00:19:38,620 --> 00:19:39,820
+recoding, integrating and
+
+663
+00:19:39,820 --> 00:19:41,520
+reintegrating as
+things change,
+
+664
+00:19:41,835 --> 00:19:42,795
+because if any one of these
+
+665
+00:19:42,795 --> 00:19:44,495
+elements change,
+your solution grows.
+
+666
+00:19:44,715 --> 00:19:45,835
+We're gonna do this
+all in a model.
+
+667
+00:19:45,835 --> 00:19:47,035
+We're gonna do this
+with Enterprise Web.
+
+668
+00:19:47,035 --> 00:19:48,555
+So here now you see Enterprise
+
+669
+00:19:48,555 --> 00:19:49,275
+Web over the top.
+
+670
+00:19:49,275 --> 00:19:50,850
+It's providing the abstraction
+
+671
+00:19:50,850 --> 00:19:51,730
+layer I described,
+
+672
+00:19:51,730 --> 00:19:53,090
+the middleware
+services, right,
+
+673
+00:19:53,090 --> 00:19:54,710
+called the platform services,
+
+674
+00:19:55,330 --> 00:19:57,430
+and the cloud native
+platform runtime.
+
+675
+00:19:58,725 --> 00:20:00,565
+So we're not it's not gonna
+
+676
+00:20:00,565 --> 00:20:01,925
+happen magically, right,
+
+677
+00:20:01,925 --> 00:20:03,525
+we're gonna leverage those SAP
+
+678
+00:20:03,525 --> 00:20:04,805
+developer assets
+to begin with,
+
+679
+00:20:04,805 --> 00:20:06,280
+right? So we're
+gonna take those
+
+680
+00:20:06,280 --> 00:20:07,400
+assets that I told
+you that were
+
+681
+00:20:07,400 --> 00:20:08,520
+disconnected, and we're gonna
+
+682
+00:20:08,520 --> 00:20:09,640
+connect them.
+We're gonna create
+
+683
+00:20:09,640 --> 00:20:12,460
+one unified graph SAP domain,
+
+684
+00:20:13,055 --> 00:20:14,515
+and we're gonna do
+it in minutes,
+
+685
+00:20:14,735 --> 00:20:17,475
+and, we're gonna then
+show it to you.
+
+686
+00:20:17,855 --> 00:20:19,855
+And, we're gonna so we're we
+
+687
+00:20:19,855 --> 00:20:20,895
+don't have to throw
+away assets.
+
+688
+00:20:20,895 --> 00:20:21,535
+That would be silly.
+
+689
+00:20:21,535 --> 00:20:22,800
+We wanna leverage
+those assets,
+
+690
+00:20:23,280 --> 00:20:24,340
+because they're good,
+
+691
+00:20:24,560 --> 00:20:26,340
+so it it streamlines
+and accelerates
+
+692
+00:20:26,720 --> 00:20:27,860
+our solution delivery.
+
+693
+00:20:27,920 --> 00:20:29,200
+So we'd be fools not to,
+
+694
+00:20:29,520 --> 00:20:30,660
+leverage the existing,
+
+695
+00:20:31,040 --> 00:20:32,340
+documentation and models,
+
+696
+00:20:33,075 --> 00:20:35,815
+that partners provide.
+
+697
+00:20:37,315 --> 00:20:39,155
+So in this case, you know,
+
+698
+00:20:39,155 --> 00:20:40,790
+an architecture architect can
+
+699
+00:20:40,870 --> 00:20:41,770
+call these APIs,
+
+700
+00:20:41,990 --> 00:20:43,050
+call this documentation,
+
+701
+00:20:43,350 --> 00:20:44,150
+they're going to import them
+
+702
+00:20:44,150 --> 00:20:44,710
+into the system,
+
+703
+00:20:44,710 --> 00:20:45,990
+the system is going
+to do the entity
+
+704
+00:20:45,990 --> 00:20:47,510
+extraction, and
+it's essentially
+
+705
+00:20:47,510 --> 00:20:49,905
+going to set up
+that that initial,
+
+706
+00:20:51,885 --> 00:20:53,005
+graph knowledge base, right?
+
+707
+00:20:53,005 --> 00:20:53,885
+It's gonna set up your,
+
+708
+00:20:54,285 --> 00:20:55,565
+graph operational domain.
+
+709
+00:20:55,565 --> 00:20:57,500
+It's gonna generate
+generate a unified
+
+710
+00:20:57,500 --> 00:20:59,600
+graph connected
+SAP domain model
+
+711
+00:20:59,980 --> 00:21:01,340
+mapped to our upper ontology
+
+712
+00:21:01,340 --> 00:21:02,400
+just as I described.
+
+713
+00:21:02,780 --> 00:21:05,520
+And by that mapping
+of the SAP domain,
+
+714
+00:21:05,935 --> 00:21:07,055
+which by itself wouldn't be
+
+715
+00:21:07,055 --> 00:21:09,055
+connected to
+the enterprise web
+
+716
+00:21:09,055 --> 00:21:10,255
+of ontology,
+where it's getting
+
+717
+00:21:10,335 --> 00:21:11,635
+it's being wrapped essentially
+
+718
+00:21:12,015 --> 00:21:13,375
+in additional
+concepts, types,
+
+719
+00:21:13,375 --> 00:21:15,710
+and policies, which
+enable the declarative
+
+720
+00:21:15,770 --> 00:21:17,450
+composition and
+the intelligent
+
+721
+00:21:17,450 --> 00:21:20,410
+orchestration.
+From there, with,
+
+722
+00:21:20,650 --> 00:21:22,350
+now that we've
+onboarded the models,
+
+723
+00:21:22,485 --> 00:21:23,925
+we're gonna onboard
+these objects.
+
+724
+00:21:23,925 --> 00:21:25,465
+Right? We're gonna
+onboard these,
+
+725
+00:21:25,925 --> 00:21:26,645
+domain objects,
+
+726
+00:21:26,645 --> 00:21:28,025
+which is the service
+themselves.
+
+727
+00:21:28,565 --> 00:21:30,005
+Now at some level already,
+
+728
+00:21:30,005 --> 00:21:32,860
+since we have Graph
+Knowledge Base,
+
+729
+00:21:33,080 --> 00:21:34,860
+and we import when we imported
+
+730
+00:21:35,400 --> 00:21:36,620
+the SAP assets,
+
+731
+00:21:37,080 --> 00:21:38,680
+we learned about
+their objects,
+
+732
+00:21:38,680 --> 00:21:40,300
+their interfaces,
+their properties,
+
+733
+00:21:40,360 --> 00:21:42,025
+and behaviors. We're already
+
+734
+00:21:42,025 --> 00:21:43,145
+gonna be able to
+generate a lot
+
+735
+00:21:43,145 --> 00:21:44,345
+of this information
+here as far
+
+736
+00:21:44,345 --> 00:21:45,725
+as these three services
+are concerned.
+
+737
+00:21:45,945 --> 00:21:47,305
+So even a lot of that work is
+
+738
+00:21:47,305 --> 00:21:48,425
+gonna be done.
+We're even gonna
+
+739
+00:21:48,425 --> 00:21:51,580
+generate, configs and
+things, for these,
+
+740
+00:21:52,120 --> 00:21:53,320
+out of the documentation that
+
+741
+00:21:53,320 --> 00:21:54,540
+was provided by SAP.
+
+742
+00:21:54,680 --> 00:21:56,040
+So, again, we're
+always seeking
+
+743
+00:21:56,040 --> 00:21:57,500
+to leverage things that exist
+
+744
+00:21:57,725 --> 00:21:59,325
+so that we can
+accelerate solution
+
+745
+00:21:59,325 --> 00:22:00,925
+delivery and that
+put people in
+
+746
+00:22:00,925 --> 00:22:02,845
+this sort of very agile graph
+
+747
+00:22:02,845 --> 00:22:03,745
+domain model.
+
+748
+00:22:04,685 --> 00:22:05,610
+And the last step,
+
+749
+00:22:05,610 --> 00:22:06,890
+in this case was
+because we also
+
+750
+00:22:06,890 --> 00:22:07,790
+talked about processes.
+
+751
+00:22:08,170 --> 00:22:09,530
+Now, we could
+model from scratch
+
+752
+00:22:09,530 --> 00:22:10,910
+an enterprise web a process.
+
+753
+00:22:11,770 --> 00:22:13,825
+It's essentially
+an enterprise web.
+
+754
+00:22:13,905 --> 00:22:15,265
+Processes are data flows.
+
+755
+00:22:15,265 --> 00:22:17,285
+A data flow is, by
+the way, is a graph.
+
+756
+00:22:17,585 --> 00:22:19,185
+Right? It's a natural
+graph. Right?
+
+757
+00:22:19,185 --> 00:22:20,865
+An enterprise web, a process,
+
+758
+00:22:20,865 --> 00:22:22,710
+the definition of a process is
+
+759
+00:22:22,710 --> 00:22:24,970
+a set of tasks
+with relationships
+
+760
+00:22:25,430 --> 00:22:26,570
+to events and policies.
+
+761
+00:22:27,190 --> 00:22:29,190
+So there are
+the tasks then bind.
+
+762
+00:22:29,190 --> 00:22:30,570
+It's not a static flowchart.
+
+763
+00:22:31,995 --> 00:22:35,535
+This the tasks bind
+based on conditions,
+
+764
+00:22:35,915 --> 00:22:37,115
+which is very exciting.
+
+765
+00:22:37,115 --> 00:22:39,355
+It allows you to
+have, really,
+
+766
+00:22:39,515 --> 00:22:43,180
+creative, policy
+based, process,
+
+767
+00:22:43,420 --> 00:22:45,040
+processes, event
+driven processes
+
+768
+00:22:45,340 --> 00:22:47,360
+that can respond to
+a lot of variance,
+
+769
+00:22:47,820 --> 00:22:49,260
+a lot of what you
+would call in
+
+770
+00:22:49,260 --> 00:22:51,745
+a traditional flowchart
+exception paths,
+
+771
+00:22:51,885 --> 00:22:53,745
+which become very
+difficult to maintain,
+
+772
+00:22:53,805 --> 00:22:55,265
+will make that much easier.
+
+773
+00:22:55,405 --> 00:22:56,445
+In this case,
+actually, though,
+
+774
+00:22:56,445 --> 00:22:57,885
+we're just going to import SAP
+
+775
+00:22:57,885 --> 00:23:00,470
+actually had a log,
+called Action Logs.
+
+776
+00:23:00,470 --> 00:23:02,070
+We're going to import
+the Action Log,
+
+777
+00:23:02,070 --> 00:23:03,530
+extract the logic,
+
+778
+00:23:03,590 --> 00:23:05,210
+and map it back
+up to the objects
+
+779
+00:23:05,910 --> 00:23:07,615
+in the model,
+generate an event
+
+780
+00:23:07,615 --> 00:23:09,295
+driven data flow process with
+
+781
+00:23:09,295 --> 00:23:10,335
+all the service integration
+
+782
+00:23:10,335 --> 00:23:11,955
+points and
+the corresponding UIs
+
+783
+00:23:13,055 --> 00:23:15,150
+completed out of the box on
+
+784
+00:23:15,150 --> 00:23:16,770
+import within seconds.
+
+785
+00:23:17,550 --> 00:23:19,390
+Again, leveraging assets to
+
+786
+00:23:19,390 --> 00:23:21,090
+great effect to accelerate
+
+787
+00:23:21,150 --> 00:23:22,050
+solution delivery.
+
+788
+00:23:22,375 --> 00:23:23,495
+If you do everything manually
+
+789
+00:23:23,495 --> 00:23:24,635
+into enterprise web,
+
+790
+00:23:24,775 --> 00:23:25,975
+but where you have assets,
+
+791
+00:23:25,975 --> 00:23:26,715
+leverage them.
+
+792
+00:23:27,735 --> 00:23:30,135
+The point here
+at at its core,
+
+793
+00:23:30,135 --> 00:23:31,870
+enterprise web is a no code
+
+794
+00:23:31,870 --> 00:23:33,330
+integration
+automation platform.
+
+795
+00:23:33,630 --> 00:23:35,890
+It's completely
+open for federation
+
+796
+00:23:36,110 --> 00:23:38,030
+and extension,
+so we're creating
+
+797
+00:23:38,030 --> 00:23:39,150
+this environment
+so that you can
+
+798
+00:23:39,150 --> 00:23:40,110
+onboard whatever you need to
+
+799
+00:23:40,110 --> 00:23:41,865
+onboard into the domain as you
+
+800
+00:23:41,865 --> 00:23:43,065
+describe it, and we're just
+
+801
+00:23:43,065 --> 00:23:44,685
+trying to make it easy for you
+
+802
+00:23:44,825 --> 00:23:46,505
+to have that
+domain and use and
+
+803
+00:23:46,505 --> 00:23:47,405
+share that metadata.
+
+804
+00:23:49,660 --> 00:23:51,500
+So, we're gonna
+go to I'm gonna
+
+805
+00:23:51,500 --> 00:23:53,200
+pass the baton
+here into a demo.
+
+806
+00:23:53,580 --> 00:23:55,020
+And in a second,
+my colleague,
+
+807
+00:23:55,020 --> 00:23:56,540
+Bill, is a chief
+assistant architect.
+
+808
+00:23:56,540 --> 00:23:57,745
+He's gonna provide the demo.
+
+809
+00:23:57,745 --> 00:23:59,243
+He's gonna do that
+use case that
+
+810
+00:23:59,243 --> 00:23:59,885
+I just described.
+
+811
+00:23:59,885 --> 00:24:00,956
+He's essentially gonna walk it
+
+812
+00:24:00,956 --> 00:24:02,026
+backwards. He's gonna show you
+
+813
+00:24:02,026 --> 00:24:03,096
+the process that
+we generated.
+
+814
+00:24:03,096 --> 00:24:04,166
+He's gonna run the process,
+
+815
+00:24:04,166 --> 00:24:06,430
+which will be a mix
+of system steps.
+
+816
+00:24:06,650 --> 00:24:08,170
+And he's gonna drill
+into the process
+
+817
+00:24:08,170 --> 00:24:09,290
+tasks, and he's gonna show you
+
+818
+00:24:09,290 --> 00:24:11,390
+how it was connected
+by metadata.
+
+819
+00:24:11,530 --> 00:24:12,650
+You're gonna see the objects
+
+820
+00:24:12,650 --> 00:24:13,370
+being referenced.
+
+821
+00:24:13,370 --> 00:24:15,005
+He's Just gonna click
+into an object.
+
+822
+00:24:15,065 --> 00:24:16,525
+You're gonna see all
+of that metadata.
+
+823
+00:24:16,665 --> 00:24:17,705
+You're gonna see how the meta
+
+824
+00:24:17,785 --> 00:24:18,905
+that object is mapped up to
+
+825
+00:24:18,905 --> 00:24:21,165
+the knowledge base,
+to the SAP domain.
+
+826
+00:24:21,370 --> 00:24:22,650
+You're gonna see how the SAP
+
+827
+00:24:22,650 --> 00:24:24,410
+domain is actually
+mapped up to
+
+828
+00:24:24,410 --> 00:24:25,230
+the upper ontology,
+
+829
+00:24:25,290 --> 00:24:26,410
+and you're gonna be literally
+
+830
+00:24:26,410 --> 00:24:28,830
+be able to walk that
+graph seamlessly.
+
+831
+00:24:29,395 --> 00:24:30,595
+If you and if you
+have the right
+
+832
+00:24:30,595 --> 00:24:31,555
+permissions, you could just do
+
+833
+00:24:31,555 --> 00:24:33,075
+that as Bill Kent will do that
+
+834
+00:24:33,075 --> 00:24:34,755
+in the demo. So
+I hope you enjoy
+
+835
+00:24:34,755 --> 00:24:36,455
+the demo. I hope you
+enjoy the presentation
+
+836
+00:24:36,515 --> 00:24:38,135
+. Thank you very much,
+and have a great
+

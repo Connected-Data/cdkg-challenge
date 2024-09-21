@@ -1,0 +1,4625 @@
+1
+00:00:03,440 --> 00:00:04,340
+Hello, everyone.
+
+2
+00:00:07,600 --> 00:00:10,580
+I'm very happy to
+be with you today.
+
+3
+00:00:11,920 --> 00:00:13,220
+So I'm Caroline.
+
+4
+00:00:14,545 --> 00:00:17,285
+I'm one of the co
+founders of DataVise.
+
+5
+00:00:17,745 --> 00:00:19,585
+And DataVise, we are a small
+
+6
+00:00:19,585 --> 00:00:21,905
+studio specialized
+in human data
+
+7
+00:00:21,905 --> 00:00:24,465
+interactions. that means that
+
+8
+00:00:24,465 --> 00:00:26,865
+our job is to make visible and
+
+9
+00:00:26,865 --> 00:00:29,210
+usable information that is
+
+10
+00:00:29,210 --> 00:00:31,370
+contained in very large
+volumes of data.
+
+11
+00:00:31,370 --> 00:00:32,970
+So, we design and we develop
+
+12
+00:00:32,970 --> 00:00:35,310
+tools or softwares
+or application
+
+13
+00:00:35,610 --> 00:00:37,850
+that help people
+understand data
+
+14
+00:00:37,850 --> 00:00:40,730
+or interact with
+data or develop
+
+15
+00:00:40,730 --> 00:00:42,030
+new use with data.
+
+16
+00:00:42,705 --> 00:00:44,625
+And so we created that device
+
+17
+00:00:44,625 --> 00:00:46,385
+with my partners
+because we were
+
+18
+00:00:46,385 --> 00:00:47,905
+convinced that
+our brain doesn't
+
+19
+00:00:47,905 --> 00:00:49,205
+work like a computer.
+
+20
+00:00:49,745 --> 00:00:51,825
+And as humans, we need some
+
+21
+00:00:51,825 --> 00:00:52,965
+specific interfaces,
+
+22
+00:00:53,505 --> 00:00:55,425
+like visual interfaces,
+for example,
+
+23
+00:00:55,425 --> 00:00:56,805
+to understand the complexity
+
+24
+00:00:56,945 --> 00:00:57,780
+inside the data.
+
+25
+00:00:57,860 --> 00:00:59,460
+And that's why at DataVise,
+
+26
+00:00:59,460 --> 00:01:00,500
+we are doing a lot of data
+
+27
+00:01:00,500 --> 00:01:02,920
+visualization,
+like custom made,
+
+28
+00:01:03,060 --> 00:01:04,440
+tailor made data
+visualization,
+
+29
+00:01:04,660 --> 00:01:05,800
+advanced data visualization,
+
+30
+00:01:06,740 --> 00:01:09,380
+like the one you
+see, on the side,
+
+31
+00:01:09,620 --> 00:01:11,220
+which are projects we created
+
+32
+00:01:11,220 --> 00:01:12,600
+during the past years.
+
+33
+00:01:13,265 --> 00:01:15,525
+And so just to finish
+with the presentation
+
+34
+00:01:15,745 --> 00:01:17,505
+, we are a team
+of six people at
+
+35
+00:01:17,505 --> 00:01:19,265
+Dataverse with
+a mix of designers
+
+36
+00:01:19,265 --> 00:01:19,925
+and developers,
+
+37
+00:01:19,985 --> 00:01:22,725
+and we are based in
+Paris, in France.
+
+38
+00:01:24,225 --> 00:01:28,325
+So today I'm gonna
+talk about a tool,
+
+39
+00:01:28,590 --> 00:01:30,110
+we have been working on since
+
+40
+00:01:30,110 --> 00:01:32,930
+the last month and
+it's called Knowle.
+
+41
+00:01:33,710 --> 00:01:35,470
+It's a tool for mapping very
+
+42
+00:01:35,470 --> 00:01:37,070
+large corpus of documents,
+
+43
+00:01:37,070 --> 00:01:39,070
+a very large corpus
+of knowledge.
+
+44
+00:01:39,070 --> 00:01:40,990
+And it's just
+the first prototype
+
+45
+00:01:40,990 --> 00:01:42,930
+for the moment
+you are seeing.
+
+46
+00:01:43,495 --> 00:01:45,175
+it's first,
+the first prototype
+
+47
+00:01:45,175 --> 00:01:45,915
+that maps,
+
+48
+00:01:46,455 --> 00:01:49,195
+about fifty
+thousand scientific
+
+49
+00:01:49,255 --> 00:01:50,715
+publication about
+the coronavirus.
+
+50
+00:01:51,815 --> 00:01:53,115
+And with this tool,
+
+51
+00:01:53,255 --> 00:01:54,955
+we have a strong ambition,
+
+52
+00:01:55,800 --> 00:01:56,680
+really strong ambition.
+
+53
+00:01:56,680 --> 00:01:58,920
+We want to revolutionize
+the way we,
+
+54
+00:01:59,320 --> 00:02:01,160
+search for
+information in large
+
+55
+00:02:01,160 --> 00:02:02,220
+volumes of document.
+
+56
+00:02:02,760 --> 00:02:04,140
+And so that's the ambition,
+
+57
+00:02:04,440 --> 00:02:06,460
+and that's the talk
+we'll be about.
+
+58
+00:02:06,600 --> 00:02:08,520
+And now I'm gonna
+tell you a bit
+
+59
+00:02:08,520 --> 00:02:10,360
+more about how it goes in real
+
+60
+00:02:10,360 --> 00:02:12,885
+life and how we
+have been working
+
+61
+00:02:12,945 --> 00:02:16,485
+on this. So what
+was the trigger?
+
+62
+00:02:16,545 --> 00:02:19,445
+How did we start this
+patient for such?
+
+63
+00:02:19,585 --> 00:02:21,185
+So when when the,
+
+64
+00:02:21,505 --> 00:02:24,005
+health crisis happens
+in the spring,
+
+65
+00:02:24,450 --> 00:02:27,110
+we wondered what
+we could do as
+
+66
+00:02:27,330 --> 00:02:30,210
+data visualization
+experts because
+
+67
+00:02:30,210 --> 00:02:32,130
+we are not at all experts in
+
+68
+00:02:32,130 --> 00:02:34,390
+molecular biology
+nor in virology
+
+69
+00:02:34,450 --> 00:02:37,455
+and we didn't know
+how to produce mask.
+
+70
+00:02:38,095 --> 00:02:39,715
+But, we were good,
+
+71
+00:02:40,095 --> 00:02:41,715
+dealing with
+information overload
+
+72
+00:02:41,855 --> 00:02:42,835
+and that emulsification,
+
+73
+00:02:43,375 --> 00:02:45,055
+and we discovered
+that that was
+
+74
+00:02:45,055 --> 00:02:46,995
+a real problem
+during this crisis.
+
+75
+00:02:48,095 --> 00:02:50,355
+for example, we
+interviewed Ferdinand,
+
+76
+00:02:50,640 --> 00:02:52,420
+who is
+a postdoctoral researcher
+
+77
+00:02:52,480 --> 00:02:53,760
+in a research center.
+
+78
+00:02:53,760 --> 00:02:56,660
+And he told us that
+during this crisis,
+
+79
+00:02:56,800 --> 00:02:59,840
+he, he was flooded
+with an avalanche
+
+80
+00:02:59,840 --> 00:03:01,940
+of preprints, papers,
+and information,
+
+81
+00:03:02,320 --> 00:03:04,365
+and he feel he was stuck by
+
+82
+00:03:04,365 --> 00:03:05,245
+the amount of data.
+
+83
+00:03:05,245 --> 00:03:07,345
+It was impossible
+for him to digest,
+
+84
+00:03:08,045 --> 00:03:11,805
+everything. and he was
+not used to that,
+
+85
+00:03:11,805 --> 00:03:14,125
+he told us. He feels that,
+
+86
+00:03:14,525 --> 00:03:16,880
+it's good that there
+is transparency
+
+87
+00:03:17,020 --> 00:03:19,100
+about all the research
+works, but,
+
+88
+00:03:19,500 --> 00:03:21,260
+he was really afraid to waste
+
+89
+00:03:21,260 --> 00:03:24,460
+too much time if
+he has to assess
+
+90
+00:03:24,460 --> 00:03:25,760
+all of all of this.
+
+91
+00:03:26,220 --> 00:03:28,480
+And in fact,
+available information
+
+92
+00:03:28,540 --> 00:03:30,380
+about coronaviruses have never
+
+93
+00:03:30,380 --> 00:03:33,965
+been so rich or
+accessible as it is now.
+
+94
+00:03:34,345 --> 00:03:35,965
+Because at the beginning
+of the crisis,
+
+95
+00:03:36,105 --> 00:03:37,565
+lots of scientific
+publishers,
+
+96
+00:03:38,105 --> 00:03:40,265
+gave free access
+to their articles
+
+97
+00:03:40,265 --> 00:03:41,085
+about coronavirus,
+
+98
+00:03:42,105 --> 00:03:44,825
+to ease the research
+about the disease.
+
+99
+00:03:44,825 --> 00:03:46,765
+But they also speed
+up the review
+
+100
+00:03:47,500 --> 00:03:49,660
+and publication
+process for new
+
+101
+00:03:49,660 --> 00:03:52,160
+articles, and this
+led to several
+
+102
+00:03:52,300 --> 00:03:53,760
+thousands of new scientific
+
+103
+00:03:53,900 --> 00:03:55,340
+papers being published and
+
+104
+00:03:55,340 --> 00:03:57,120
+released each week during,
+
+105
+00:03:58,300 --> 00:04:00,240
+the month of April and May.
+
+106
+00:04:00,735 --> 00:04:02,575
+And this is
+the biggest explosion
+
+107
+00:04:02,575 --> 00:04:04,595
+of scientific
+literature ever.
+
+108
+00:04:05,455 --> 00:04:06,895
+So that was the trigger.
+
+109
+00:04:06,895 --> 00:04:08,915
+And now why do we
+have a problem?
+
+110
+00:04:09,695 --> 00:04:11,695
+Because this practice
+of open science,
+
+111
+00:04:11,935 --> 00:04:13,375
+it has a huge potential.
+
+112
+00:04:13,375 --> 00:04:15,155
+It's really fascinating,
+
+113
+00:04:15,530 --> 00:04:17,850
+but it also introduces
+a new challenge,
+
+114
+00:04:17,850 --> 00:04:18,830
+which is discoverability.
+
+115
+00:04:19,850 --> 00:04:21,130
+So having too much content,
+
+116
+00:04:21,130 --> 00:04:22,030
+too much material,
+
+117
+00:04:22,730 --> 00:04:24,430
+we risk missing
+something important,
+
+118
+00:04:24,890 --> 00:04:26,410
+something we will
+not find because
+
+119
+00:04:26,410 --> 00:04:28,350
+it's drawn into the mass
+of information.
+
+120
+00:04:28,635 --> 00:04:30,582
+That he's often
+afraid of missing
+
+121
+00:04:30,582 --> 00:04:31,333
+an article that
+already exists about,
+
+122
+00:04:31,362 --> 00:04:31,508
+the subject he's working on.
+
+123
+00:04:31,508 --> 00:04:32,475
+And for him,
+checking if something
+
+124
+00:04:32,475 --> 00:04:34,395
+already exists or
+not in the massive
+
+125
+00:04:34,395 --> 00:04:35,375
+amount of already published
+
+126
+00:04:43,240 --> 00:04:44,300
+scientific papers.
+
+127
+00:04:44,520 --> 00:04:45,580
+It's really complicated.
+
+128
+00:04:46,840 --> 00:04:48,940
+It costs too much
+time, he told us.
+
+129
+00:04:49,240 --> 00:04:51,020
+And this discoverability
+problem,
+
+130
+00:04:51,640 --> 00:04:53,480
+it can have very
+concrete impact.
+
+131
+00:04:53,480 --> 00:04:55,900
+So, let's just
+talk about one.
+
+132
+00:04:56,995 --> 00:04:58,515
+it has already claimed lives
+
+133
+00:04:58,515 --> 00:05:00,675
+during the Ibera
+crisis in twenty
+
+134
+00:05:00,675 --> 00:05:01,815
+thirteen, for example.
+
+135
+00:05:02,515 --> 00:05:05,475
+this is a story told
+by, Bernice Dan,
+
+136
+00:05:05,475 --> 00:05:07,475
+who is the chief
+medical officer
+
+137
+00:05:07,475 --> 00:05:09,900
+of Liberia's
+Ministry of Health.
+
+138
+00:05:10,220 --> 00:05:12,140
+so it's in
+an article published
+
+139
+00:05:12,140 --> 00:05:13,180
+in the New York Times.
+
+140
+00:05:13,180 --> 00:05:16,060
+And she explained
+that during the,
+
+141
+00:05:16,300 --> 00:05:18,560
+the, the eighties,
+the early eighties,
+
+142
+00:05:18,620 --> 00:05:20,540
+there have been already one
+
+143
+00:05:20,540 --> 00:05:22,460
+scientific work that's pointed
+
+144
+00:05:22,460 --> 00:05:24,895
+out that kibaria needs to be
+
+145
+00:05:24,895 --> 00:05:27,455
+included in the area
+where the Ebola
+
+146
+00:05:27,455 --> 00:05:29,635
+virus was endemic.
+
+147
+00:05:30,335 --> 00:05:32,415
+And this scientific work was
+
+148
+00:05:32,415 --> 00:05:34,335
+already warning
+for the risk of
+
+149
+00:05:34,335 --> 00:05:36,515
+an epidemic and a risk
+of a pandemic.
+
+150
+00:05:37,510 --> 00:05:40,390
+But this work was published in
+
+151
+00:05:40,390 --> 00:05:42,250
+some European
+medical journals,
+
+152
+00:05:43,350 --> 00:05:45,290
+which are really
+more confidential
+
+153
+00:05:45,510 --> 00:05:46,630
+than the English ones.
+
+154
+00:05:46,630 --> 00:05:48,470
+And so, it has
+remained unknown
+
+155
+00:05:48,470 --> 00:05:50,650
+to local health
+authority in Liberia.
+
+156
+00:05:50,790 --> 00:05:51,190
+And so,
+
+157
+00:05:51,190 --> 00:05:54,085
+that's how we had this crisis
+
+158
+00:05:54,385 --> 00:05:56,965
+with the Ebola
+pandemic in Liberia
+
+159
+00:05:57,185 --> 00:05:59,685
+which costs some
+lives in Africa.
+
+160
+00:06:01,265 --> 00:06:03,685
+And so this is
+a terrible example
+
+161
+00:06:03,745 --> 00:06:05,845
+of what we call
+dark knowledge.
+
+162
+00:06:06,070 --> 00:06:06,890
+And dark knowledge,
+
+163
+00:06:07,110 --> 00:06:08,970
+this is the part
+of the scientific
+
+164
+00:06:09,110 --> 00:06:10,790
+knowledge that cannot be found
+
+165
+00:06:10,790 --> 00:06:13,370
+or cannot be reached
+or cannot be used.
+
+166
+00:06:13,990 --> 00:06:16,250
+So back to our
+coronavirus examples,
+
+167
+00:06:16,790 --> 00:06:18,410
+among
+the scientific publication
+
+168
+00:06:18,550 --> 00:06:19,910
+we have been working on,
+
+169
+00:06:20,230 --> 00:06:20,950
+for this project,
+
+170
+00:06:22,125 --> 00:06:23,405
+so the publication that have
+
+171
+00:06:23,405 --> 00:06:24,685
+been opened and
+published during
+
+172
+00:06:24,685 --> 00:06:26,205
+the crisis, we estimate that
+
+173
+00:06:26,205 --> 00:06:27,725
+fifty percent have never been
+
+174
+00:06:27,725 --> 00:06:29,485
+quoted and no mention by any
+
+175
+00:06:29,485 --> 00:06:31,105
+other scientific work.
+
+176
+00:06:31,165 --> 00:06:33,325
+And we've also discovered that
+
+177
+00:06:33,325 --> 00:06:35,020
+at least six percent of this
+
+178
+00:06:35,020 --> 00:06:37,500
+publication, in
+not in English,
+
+179
+00:06:37,500 --> 00:06:40,220
+but in Chinese or
+Korean or Arabic,
+
+180
+00:06:40,220 --> 00:06:42,640
+Russian. So those publication
+
+181
+00:06:42,860 --> 00:06:44,540
+who are not which
+are not in English,
+
+182
+00:06:44,540 --> 00:06:45,820
+they will probably never be
+
+183
+00:06:45,820 --> 00:06:48,095
+found by any
+American researcher
+
+184
+00:06:48,235 --> 00:06:49,595
+or any European researcher if
+
+185
+00:06:49,595 --> 00:06:50,735
+it's not the same language.
+
+186
+00:06:51,515 --> 00:06:52,795
+And that's always a problem if
+
+187
+00:06:52,795 --> 00:06:54,155
+a research work
+cannot be found
+
+188
+00:06:54,155 --> 00:06:56,075
+because maybe this work was
+
+189
+00:06:56,075 --> 00:06:57,515
+bringing something
+new and very
+
+190
+00:06:57,515 --> 00:06:59,055
+useful for all
+the researchers.
+
+191
+00:06:59,275 --> 00:07:01,350
+But also if
+several researchers
+
+192
+00:07:01,350 --> 00:07:02,550
+are working at
+the same time on
+
+193
+00:07:02,550 --> 00:07:04,470
+the same subject
+without knowing it,
+
+194
+00:07:04,470 --> 00:07:06,870
+but it's it's the it's
+miss of time,
+
+195
+00:07:06,870 --> 00:07:08,550
+they they would have been able
+
+196
+00:07:08,550 --> 00:07:10,630
+to save some precious time if
+
+197
+00:07:10,630 --> 00:07:11,450
+they were aware.
+
+198
+00:07:12,310 --> 00:07:13,430
+And so at the end,
+
+199
+00:07:13,430 --> 00:07:14,710
+why do we do we have this
+
+200
+00:07:14,710 --> 00:07:16,250
+discoverability problem?
+
+201
+00:07:17,325 --> 00:07:19,965
+let's look at what
+are our tools
+
+202
+00:07:19,965 --> 00:07:21,325
+today to deal with this
+
+203
+00:07:21,325 --> 00:07:22,705
+discoverability problem.
+
+204
+00:07:22,765 --> 00:07:23,965
+Most part of the time,
+
+205
+00:07:23,965 --> 00:07:25,245
+researchers are using search
+
+206
+00:07:25,245 --> 00:07:28,225
+engines like,
+PubMed or Scopus,
+
+207
+00:07:28,970 --> 00:07:30,990
+but also Google,
+Google Scholar,
+
+208
+00:07:31,050 --> 00:07:32,570
+or Microsoft
+Academic when they
+
+209
+00:07:32,570 --> 00:07:35,070
+need to look for
+scientific papers.
+
+210
+00:07:35,690 --> 00:07:38,010
+And according to us,
+but not only us,
+
+211
+00:07:38,010 --> 00:07:40,170
+other other researchers have
+
+212
+00:07:40,170 --> 00:07:42,135
+this opinion, those
+search engines
+
+213
+00:07:42,135 --> 00:07:43,495
+are not always the best way to
+
+214
+00:07:43,495 --> 00:07:44,715
+tackle with
+this discoverability
+
+215
+00:07:45,015 --> 00:07:46,695
+problem. First,
+
+216
+00:07:46,695 --> 00:07:48,615
+for user experience reason,
+
+217
+00:07:48,615 --> 00:07:49,515
+because conventionally,
+
+218
+00:07:49,815 --> 00:07:52,075
+the presentation of
+a search result,
+
+219
+00:07:52,535 --> 00:07:54,855
+it's a list paginated
+like the one
+
+220
+00:07:54,855 --> 00:07:56,715
+you see here from
+Google Scholar.
+
+221
+00:07:57,370 --> 00:07:59,230
+But let me ask,
+
+222
+00:07:59,450 --> 00:08:01,530
+how many of you are looking at
+
+223
+00:08:01,530 --> 00:08:02,270
+the result,
+
+224
+00:08:02,730 --> 00:08:05,870
+located on the third
+page of results?
+
+225
+00:08:06,170 --> 00:08:07,470
+Only the third page.
+
+226
+00:08:09,130 --> 00:08:11,550
+I guess not many people,
+
+227
+00:08:12,330 --> 00:08:14,595
+and most part of the time,
+
+228
+00:08:14,595 --> 00:08:16,375
+there are hundreds
+and hundreds
+
+229
+00:08:16,515 --> 00:08:17,975
+of pages of results.
+
+230
+00:08:18,115 --> 00:08:20,855
+So that's a lot
+of articles that
+
+231
+00:08:20,915 --> 00:08:22,615
+you won't be able to find.
+
+232
+00:08:23,555 --> 00:08:26,355
+Second reason, it's
+transparency reason.
+
+233
+00:08:26,355 --> 00:08:28,390
+There are arbitrariness
+in the way
+
+234
+00:08:28,390 --> 00:08:29,830
+Google or Google
+Scholar work,
+
+235
+00:08:29,830 --> 00:08:31,770
+but other search
+engines also,
+
+236
+00:08:32,390 --> 00:08:34,150
+because the ranking algorithm
+
+237
+00:08:34,150 --> 00:08:35,210
+is not transparent.
+
+238
+00:08:36,310 --> 00:08:38,710
+we know, for example,
+few things,
+
+239
+00:08:38,710 --> 00:08:39,830
+and we already know that there
+
+240
+00:08:39,830 --> 00:08:40,605
+are some bias.
+
+241
+00:08:40,685 --> 00:08:42,125
+For example, publication that
+
+242
+00:08:42,125 --> 00:08:43,345
+are in English language,
+
+243
+00:08:44,285 --> 00:08:46,045
+they are more likely to be on
+
+244
+00:08:46,045 --> 00:08:47,985
+the top of the list
+than other language,
+
+245
+00:08:48,045 --> 00:08:50,125
+but also publication that have
+
+246
+00:08:50,125 --> 00:08:51,885
+been published in really well
+
+247
+00:08:51,885 --> 00:08:53,345
+known reviews or publication
+
+248
+00:08:53,485 --> 00:08:55,620
+that are already
+cited by a lot
+
+249
+00:08:55,620 --> 00:08:57,300
+of articles. They
+are more likely to,
+
+250
+00:08:57,540 --> 00:08:59,380
+have a good rank
+and more likely
+
+251
+00:08:59,380 --> 00:09:01,140
+to be fine. So which is really
+
+252
+00:09:01,140 --> 00:09:02,580
+good when you are looking for
+
+253
+00:09:02,580 --> 00:09:04,100
+some conventional
+definition of
+
+254
+00:09:04,100 --> 00:09:06,795
+a subject or when you
+are looking for,
+
+255
+00:09:07,115 --> 00:09:08,155
+the common sense,
+
+256
+00:09:08,155 --> 00:09:09,995
+what most people are thinking
+
+257
+00:09:09,995 --> 00:09:10,975
+about the subject.
+
+258
+00:09:11,435 --> 00:09:12,795
+But maybe that's not the best
+
+259
+00:09:12,795 --> 00:09:14,475
+way to take a critical look at
+
+260
+00:09:14,475 --> 00:09:16,075
+the subject or to have a deep
+
+261
+00:09:16,075 --> 00:09:17,755
+understanding of a subject or
+
+262
+00:09:17,755 --> 00:09:19,515
+to find some raw material for
+
+263
+00:09:19,515 --> 00:09:20,575
+a scientific study.
+
+264
+00:09:20,960 --> 00:09:22,960
+So maybe we need to admit that
+
+265
+00:09:22,960 --> 00:09:24,400
+the most efficient
+search engine
+
+266
+00:09:24,400 --> 00:09:26,160
+in your day to
+day life when you
+
+267
+00:09:26,160 --> 00:09:27,840
+need to find a recipe
+or the title
+
+268
+00:09:27,840 --> 00:09:29,360
+of a movie or
+something like that,
+
+269
+00:09:29,360 --> 00:09:31,600
+it's not the best tool for
+
+270
+00:09:31,600 --> 00:09:33,380
+searching for scientific
+information.
+
+271
+00:09:34,425 --> 00:09:35,465
+And the last reason,
+
+272
+00:09:35,705 --> 00:09:38,185
+I I wanted to point
+out is search
+
+273
+00:09:38,185 --> 00:09:41,065
+engine, they are
+not always good.
+
+274
+00:09:41,065 --> 00:09:42,025
+And in particular,
+
+275
+00:09:42,025 --> 00:09:43,225
+they're not good
+when you don't
+
+276
+00:09:43,225 --> 00:09:45,145
+know to dis how when you don't
+
+277
+00:09:45,145 --> 00:09:46,265
+know how to describe what you
+
+278
+00:09:46,265 --> 00:09:47,165
+are looking for.
+
+279
+00:09:47,700 --> 00:09:49,460
+Because maybe you
+don't know how
+
+280
+00:09:49,460 --> 00:09:51,540
+to name it, so maybe you don't
+
+281
+00:09:51,540 --> 00:09:53,060
+know what it looks like,
+
+282
+00:09:53,060 --> 00:09:53,940
+what you are looking for,
+
+283
+00:09:53,940 --> 00:09:54,980
+or maybe you don't even know
+
+284
+00:09:54,980 --> 00:09:56,120
+what you are looking for.
+
+285
+00:09:56,500 --> 00:09:58,820
+So for example,
+imagine if you,
+
+286
+00:09:59,220 --> 00:10:00,740
+read a very
+interesting article
+
+287
+00:10:00,740 --> 00:10:02,100
+about your research subject,
+
+288
+00:10:02,100 --> 00:10:03,080
+if you're a researcher,
+
+289
+00:10:03,915 --> 00:10:05,035
+and you would
+like to find some
+
+290
+00:10:05,035 --> 00:10:06,015
+similar publications,
+
+291
+00:10:06,155 --> 00:10:07,275
+but that have been published
+
+292
+00:10:07,275 --> 00:10:08,895
+several years ago
+in the past.
+
+293
+00:10:09,275 --> 00:10:11,355
+Or imagine if you
+would like to
+
+294
+00:10:11,355 --> 00:10:13,515
+know if some other work is
+
+295
+00:10:13,515 --> 00:10:15,195
+refuting this article that you
+
+296
+00:10:15,195 --> 00:10:15,935
+find interesting.
+
+297
+00:10:16,780 --> 00:10:19,180
+Or imagine if you want to find
+
+298
+00:10:19,180 --> 00:10:21,420
+some other works
+that are using
+
+299
+00:10:21,420 --> 00:10:23,040
+the same
+experimental procedure
+
+300
+00:10:23,180 --> 00:10:25,100
+as this interesting
+article but
+
+301
+00:10:25,100 --> 00:10:26,960
+for other disease,
+for example.
+
+302
+00:10:27,740 --> 00:10:29,760
+Well, if you are in
+this situation,
+
+303
+00:10:30,815 --> 00:10:32,335
+I wish you good luck to find
+
+304
+00:10:32,335 --> 00:10:34,355
+something with Google
+or Google Scholar.
+
+305
+00:10:35,455 --> 00:10:37,875
+So in our opinion,
+
+306
+00:10:38,255 --> 00:10:40,495
+the user experience is key in
+
+307
+00:10:40,495 --> 00:10:42,575
+this solution. So, of course,
+
+308
+00:10:42,575 --> 00:10:43,955
+there have been
+some innovation
+
+309
+00:10:44,015 --> 00:10:45,315
+in the field of information
+
+310
+00:10:45,535 --> 00:10:47,380
+research during
+the last years,
+
+311
+00:10:47,380 --> 00:10:48,280
+like for example,
+
+312
+00:10:50,500 --> 00:10:53,300
+faceted filters or
+similar content
+
+313
+00:10:53,300 --> 00:10:54,680
+recommendation, personalized
+
+314
+00:10:54,740 --> 00:10:56,340
+recommendation, or automatic
+
+315
+00:10:56,340 --> 00:10:57,720
+classification, NLP,
+
+316
+00:10:58,020 --> 00:11:00,280
+or entity recognition
+and metadata
+
+317
+00:11:00,340 --> 00:11:03,585
+enrichments. But
+every all this
+
+318
+00:11:03,585 --> 00:11:05,345
+is great and it does help,
+
+319
+00:11:05,345 --> 00:11:07,265
+but it's still
+not enough in our
+
+320
+00:11:07,265 --> 00:11:09,605
+opinion because most
+part of the time,
+
+321
+00:11:09,905 --> 00:11:12,225
+it's still designed
+as black boxes,
+
+322
+00:11:12,225 --> 00:11:13,525
+like magic recommendations.
+
+323
+00:11:13,940 --> 00:11:15,220
+It's still designed
+to give you
+
+324
+00:11:15,220 --> 00:11:17,060
+a quick answer
+rather than give
+
+325
+00:11:17,220 --> 00:11:19,160
+giving you more
+exploration capacity.
+
+326
+00:11:20,180 --> 00:11:22,360
+So the design choice
+of search engines,
+
+327
+00:11:23,620 --> 00:11:24,760
+it's it's often,
+
+328
+00:11:25,460 --> 00:11:27,720
+to limit what you
+can access easily,
+
+329
+00:11:27,905 --> 00:11:29,265
+And we think it's not the best
+
+330
+00:11:29,265 --> 00:11:31,265
+way to empower
+user when they're
+
+331
+00:11:31,265 --> 00:11:33,045
+looking for some
+scientific publication.
+
+332
+00:11:33,345 --> 00:11:34,305
+And according to us,
+
+333
+00:11:34,305 --> 00:11:35,925
+it's not
+a recommendation problem
+
+334
+00:11:36,785 --> 00:11:38,005
+to deal with
+this discoverability
+
+335
+00:11:38,305 --> 00:11:39,925
+crisis. It's not
+about improving
+
+336
+00:11:40,500 --> 00:11:41,800
+how artificial intelligence
+
+337
+00:11:42,020 --> 00:11:43,940
+algorithm will
+give you the best
+
+338
+00:11:43,940 --> 00:11:45,080
+three results ever.
+
+339
+00:11:45,380 --> 00:11:46,580
+Because we have to admit that
+
+340
+00:11:46,580 --> 00:11:48,340
+three result is
+not enough when
+
+341
+00:11:48,340 --> 00:11:49,640
+you are looking
+for publications
+
+342
+00:11:50,660 --> 00:11:52,200
+in your scientific field.
+
+343
+00:11:52,935 --> 00:11:53,815
+So according to us,
+
+344
+00:11:53,815 --> 00:11:55,015
+the solution is more about
+
+345
+00:11:55,015 --> 00:11:56,855
+improving
+the experience to give
+
+346
+00:11:56,855 --> 00:11:59,015
+people access to much more
+
+347
+00:11:59,015 --> 00:12:00,935
+information than before and to
+
+348
+00:12:00,935 --> 00:12:02,535
+give people the right tools to
+
+349
+00:12:02,535 --> 00:12:04,315
+be able to navigate
+to navigate
+
+350
+00:12:04,375 --> 00:12:05,735
+inside this very huge amounts
+
+351
+00:12:05,735 --> 00:12:06,395
+of information,
+
+352
+00:12:06,455 --> 00:12:08,300
+but to make them able to find
+
+353
+00:12:08,300 --> 00:12:10,300
+by themselves
+relevant contents.
+
+354
+00:12:10,300 --> 00:12:11,520
+And according to us,
+
+355
+00:12:11,740 --> 00:12:12,960
+that's the real challenge.
+
+356
+00:12:13,580 --> 00:12:15,580
+And so how did we
+work on this?
+
+357
+00:12:15,580 --> 00:12:16,240
+So let's,
+
+358
+00:12:16,860 --> 00:12:18,940
+share some few elements of our
+
+359
+00:12:18,940 --> 00:12:21,495
+methodology. So first,
+
+360
+00:12:21,495 --> 00:12:23,735
+we always work
+with real data.
+
+361
+00:12:23,735 --> 00:12:25,835
+And, in this case, we,
+
+362
+00:12:26,215 --> 00:12:27,175
+for this prototype,
+
+363
+00:12:27,175 --> 00:12:28,955
+we are working with
+two datasets.
+
+364
+00:12:29,975 --> 00:12:31,995
+the first one is LENS COVID
+
+365
+00:12:32,055 --> 00:12:33,035
+nineteen datasets.
+
+366
+00:12:33,450 --> 00:12:34,810
+LENS, it's an academic search
+
+367
+00:12:34,810 --> 00:12:36,570
+engine provided
+by an independent
+
+368
+00:12:36,570 --> 00:12:37,710
+nonprofit organization.
+
+369
+00:12:38,410 --> 00:12:42,350
+They've selected
+several thousand
+
+370
+00:12:42,410 --> 00:12:44,330
+of articles and patents with
+
+371
+00:12:44,330 --> 00:12:44,910
+that coronavirus.
+
+372
+00:12:45,465 --> 00:12:46,665
+The second dataset, it's,
+
+373
+00:12:47,065 --> 00:12:47,945
+called the nineteen,
+
+374
+00:12:47,945 --> 00:12:49,225
+it's the COVID-nineteen open
+
+375
+00:12:49,225 --> 00:12:50,125
+research datasets,
+
+376
+00:12:50,185 --> 00:12:52,505
+datasets which
+contain more than,
+
+377
+00:12:52,985 --> 00:12:55,485
+two hundred thousand
+scholarly articles,
+
+378
+00:12:56,425 --> 00:12:59,120
+and it has been
+created by the Allen
+
+379
+00:12:59,120 --> 00:13:00,740
+Institute for Artificial
+Intelligence.
+
+380
+00:13:00,800 --> 00:13:02,080
+So, those are the two datasets
+
+381
+00:13:02,080 --> 00:13:03,060
+we are working on.
+
+382
+00:13:03,440 --> 00:13:05,300
+We are doing a lot
+of user research.
+
+383
+00:13:05,760 --> 00:13:07,380
+we are supporting
+our experiments
+
+384
+00:13:07,440 --> 00:13:09,540
+with interviews
+and user testing
+
+385
+00:13:09,600 --> 00:13:11,460
+with a small group of experts
+
+386
+00:13:11,520 --> 00:13:12,260
+or researchers.
+
+387
+00:13:13,705 --> 00:13:15,865
+We are mixing, the different
+
+388
+00:13:15,865 --> 00:13:18,205
+skills in our team
+all the time.
+
+389
+00:13:18,345 --> 00:13:20,285
+For example, designers,
+developers,
+
+390
+00:13:21,385 --> 00:13:23,705
+statisticians, we
+are all working
+
+391
+00:13:23,705 --> 00:13:25,465
+together all
+the time on the same
+
+392
+00:13:25,465 --> 00:13:25,965
+problems.
+
+393
+00:13:27,060 --> 00:13:31,060
+And also, we prototype
+to solve problem.
+
+394
+00:13:31,060 --> 00:13:33,160
+So rather than
+specifying a solution
+
+395
+00:13:33,460 --> 00:13:35,860
+to test, we want we prefer to
+
+396
+00:13:35,860 --> 00:13:37,540
+describe problem
+and each member
+
+397
+00:13:37,540 --> 00:13:39,700
+in the team is in
+charge to find
+
+398
+00:13:39,700 --> 00:13:41,595
+solution to try and to test.
+
+399
+00:13:42,155 --> 00:13:43,355
+And so in this project,
+
+400
+00:13:43,355 --> 00:13:45,195
+the problems we
+wanted to solve,
+
+401
+00:13:45,435 --> 00:13:47,915
+were how to do
+something that is,
+
+402
+00:13:49,915 --> 00:13:51,595
+that is good where
+classic search
+
+403
+00:13:51,595 --> 00:13:52,475
+engines are not.
+
+404
+00:13:52,475 --> 00:13:53,295
+So for example,
+
+405
+00:13:53,515 --> 00:13:55,115
+how to allow users to better
+
+406
+00:13:55,115 --> 00:13:56,795
+understand the corpus as a as
+
+407
+00:13:56,795 --> 00:13:58,870
+a rule or how to help users
+
+408
+00:13:58,870 --> 00:14:00,470
+navigate in very large volumes
+
+409
+00:14:00,470 --> 00:14:02,630
+of content, or
+how to help users
+
+410
+00:14:02,630 --> 00:14:03,990
+find something
+that they cannot
+
+411
+00:14:03,990 --> 00:14:05,030
+describe, they don't know how
+
+412
+00:14:05,030 --> 00:14:06,870
+to describe, or how to reduce
+
+413
+00:14:06,870 --> 00:14:08,230
+the fear of missing out on
+
+414
+00:14:08,230 --> 00:14:09,050
+something important.
+
+415
+00:14:11,205 --> 00:14:12,265
+And we,
+
+416
+00:14:13,205 --> 00:14:15,285
+we have a strong
+intuition that
+
+417
+00:14:15,285 --> 00:14:17,525
+mapping can be
+an important part
+
+418
+00:14:17,525 --> 00:14:18,265
+of the solution.
+
+419
+00:14:19,525 --> 00:14:22,325
+In fact, it was Google
+Maps rather than,
+
+420
+00:14:22,565 --> 00:14:25,000
+Google Search. So we were
+
+421
+00:14:25,000 --> 00:14:26,520
+interested in
+the appearance of
+
+422
+00:14:26,520 --> 00:14:27,340
+Google Map,
+
+423
+00:14:28,200 --> 00:14:29,960
+and how this technology has
+
+424
+00:14:29,960 --> 00:14:31,100
+changed the use.
+
+425
+00:14:31,240 --> 00:14:32,280
+So we read this book,
+
+426
+00:14:32,280 --> 00:14:33,400
+which is really interesting,
+
+427
+00:14:33,400 --> 00:14:34,940
+which is called
+Nebula's Again,
+
+428
+00:14:35,240 --> 00:14:36,300
+by Bill Kilday.
+
+429
+00:14:36,915 --> 00:14:38,355
+And there was this
+citation that
+
+430
+00:14:38,355 --> 00:14:40,855
+was inspiring for us,
+that that said,
+
+431
+00:14:40,915 --> 00:14:41,955
+no one after us,
+
+432
+00:14:41,955 --> 00:14:43,555
+no generation to
+come will ever
+
+433
+00:14:43,555 --> 00:14:44,995
+be lost in the way that every
+
+434
+00:14:44,995 --> 00:14:46,295
+generation before was.
+
+435
+00:14:46,915 --> 00:14:48,755
+So our approach
+was first to try
+
+436
+00:14:48,755 --> 00:14:50,195
+to map the application to give
+
+437
+00:14:50,195 --> 00:14:51,810
+another view of the corpus to
+
+438
+00:14:51,810 --> 00:14:53,910
+bring a physical
+dimension in.
+
+439
+00:14:54,450 --> 00:14:55,510
+Because in data
+visualization,
+
+440
+00:14:56,210 --> 00:14:57,750
+specialization of
+the information
+
+441
+00:14:57,890 --> 00:15:00,530
+brings, a tangible
+and physical
+
+442
+00:15:00,530 --> 00:15:01,490
+dimension to data.
+
+443
+00:15:01,490 --> 00:15:03,030
+And it plays a very positive
+
+444
+00:15:03,090 --> 00:15:04,850
+role in the ability of people
+
+445
+00:15:04,850 --> 00:15:08,125
+to appropriate
+data and to play
+
+446
+00:15:08,125 --> 00:15:09,645
+with data. And
+this is something
+
+447
+00:15:09,645 --> 00:15:11,565
+we have observed since a long
+
+448
+00:15:11,565 --> 00:15:12,625
+time in our profession.
+
+449
+00:15:13,805 --> 00:15:15,425
+So, it helps people,
+
+450
+00:15:15,725 --> 00:15:16,925
+specialization
+of information,
+
+451
+00:15:16,925 --> 00:15:18,605
+it helps people get a mental
+
+452
+00:15:18,605 --> 00:15:19,825
+picture of the data.
+
+453
+00:15:20,240 --> 00:15:21,760
+It also helps people interact
+
+454
+00:15:21,760 --> 00:15:23,760
+with the data
+because they feel
+
+455
+00:15:23,760 --> 00:15:25,680
+more able to get
+their hands on
+
+456
+00:15:25,680 --> 00:15:27,620
+because this
+physical dimension,
+
+457
+00:15:27,760 --> 00:15:31,520
+it breaks the black
+box effect.
+
+458
+00:15:31,520 --> 00:15:32,740
+And also, specializations,
+
+459
+00:15:34,025 --> 00:15:36,185
+it also fosters
+memorization and
+
+460
+00:15:36,185 --> 00:15:37,625
+all the theories
+about the mental
+
+461
+00:15:37,625 --> 00:15:39,165
+palace are based on
+this observation.
+
+462
+00:15:40,665 --> 00:15:43,005
+So, armed with this conviction
+
+463
+00:15:43,225 --> 00:15:45,325
+of mapping can be a solution,
+
+464
+00:15:46,440 --> 00:15:49,000
+we wanted to try
+to what extent
+
+465
+00:15:49,000 --> 00:15:49,740
+this specialization,
+
+466
+00:15:50,040 --> 00:15:51,960
+this localization
+could help to
+
+467
+00:15:51,960 --> 00:15:53,660
+better search in
+scientific publication.
+
+468
+00:15:54,120 --> 00:15:55,480
+So, first we have been looking
+
+469
+00:15:55,480 --> 00:15:57,980
+for the best layout
+to map the dataset.
+
+470
+00:15:58,120 --> 00:16:00,955
+So, we wanted to
+find how to get
+
+471
+00:16:01,015 --> 00:16:02,955
+each publication
+with a specific
+
+472
+00:16:03,015 --> 00:16:04,135
+location in the map.
+
+473
+00:16:04,135 --> 00:16:06,315
+So try to visualize
+this corpus.
+
+474
+00:16:07,095 --> 00:16:08,955
+So we produce a lot
+of experiments
+
+475
+00:16:09,175 --> 00:16:10,875
+about how to position
+the publication
+
+476
+00:16:11,670 --> 00:16:12,970
+in the physical space.
+
+477
+00:16:14,630 --> 00:16:15,990
+it's a bit like if we have,
+
+478
+00:16:16,310 --> 00:16:17,990
+the dataset was like a ball of
+
+479
+00:16:17,990 --> 00:16:20,790
+clay and we try
+to mold the clay
+
+480
+00:16:20,790 --> 00:16:21,750
+to give it a shape,
+
+481
+00:16:21,990 --> 00:16:24,710
+according to specific part of
+
+482
+00:16:24,710 --> 00:16:25,370
+the dataset.
+
+483
+00:16:26,995 --> 00:16:29,015
+So at the end of
+all this tested,
+
+484
+00:16:29,155 --> 00:16:31,075
+and this is really a sample of
+
+485
+00:16:31,075 --> 00:16:32,375
+everything that we tested.
+
+486
+00:16:33,235 --> 00:16:35,015
+at the end, we kept
+two approaches.
+
+487
+00:16:35,315 --> 00:16:38,375
+The first one was a cetacean
+
+488
+00:16:38,435 --> 00:16:39,895
+network graph.
+
+489
+00:16:40,700 --> 00:16:42,080
+So the first approach,
+
+490
+00:16:42,380 --> 00:16:45,120
+it's a graph of
+the cetacean's link.
+
+491
+00:16:45,420 --> 00:16:48,380
+In, it's a network graph.
+
+492
+00:16:48,380 --> 00:16:50,540
+That means, it's
+it's built with
+
+493
+00:16:50,540 --> 00:16:52,880
+a force directed, layout.
+
+494
+00:16:53,235 --> 00:16:54,515
+So, how does it work?
+
+495
+00:16:54,515 --> 00:16:56,055
+Each node here is
+a publication.
+
+496
+00:16:57,075 --> 00:16:57,895
+And the publication,
+
+497
+00:16:57,955 --> 00:17:00,275
+they are linked together when
+
+498
+00:17:00,275 --> 00:17:01,795
+they are citing each other.
+
+499
+00:17:01,795 --> 00:17:03,715
+So, each time a publication is
+
+500
+00:17:03,715 --> 00:17:05,335
+citing another work,
+
+501
+00:17:05,795 --> 00:17:06,840
+we have those links.
+
+502
+00:17:07,640 --> 00:17:09,660
+And we use
+a physical simulation
+
+503
+00:17:10,040 --> 00:17:12,700
+where the links act
+as attractors.
+
+504
+00:17:12,840 --> 00:17:16,280
+It's a bit like
+if we have some
+
+505
+00:17:16,280 --> 00:17:18,060
+balls that are linked together
+
+506
+00:17:18,280 --> 00:17:20,875
+by stretch, rubber bands.
+
+507
+00:17:21,415 --> 00:17:23,035
+And as you let go,
+
+508
+00:17:23,095 --> 00:17:24,855
+all the rubber bands try to
+
+509
+00:17:24,855 --> 00:17:26,135
+bring the balls together and
+
+510
+00:17:26,135 --> 00:17:28,135
+the systems stabilize in a way
+
+511
+00:17:28,135 --> 00:17:29,735
+that optimize
+the expression of
+
+512
+00:17:29,735 --> 00:17:30,215
+edge length.
+
+513
+00:17:30,215 --> 00:17:32,930
+So it gives an idea
+of the organisation,
+
+514
+00:17:33,310 --> 00:17:34,770
+the structure of the corpus
+
+515
+00:17:34,990 --> 00:17:36,770
+according to
+the citation's link.
+
+516
+00:17:37,070 --> 00:17:38,990
+And we know that
+citation's links,
+
+517
+00:17:38,990 --> 00:17:40,110
+they are very important in
+
+518
+00:17:40,110 --> 00:17:41,310
+scientific research because
+
+519
+00:17:41,310 --> 00:17:43,550
+science is made
+by iteration and
+
+520
+00:17:43,550 --> 00:17:44,690
+progressive refutation.
+
+521
+00:17:45,515 --> 00:17:46,955
+So we were really
+interested in
+
+522
+00:17:46,955 --> 00:17:49,855
+finding a way, to make this,
+
+523
+00:17:50,795 --> 00:17:52,655
+to make visible this iterative
+
+524
+00:17:52,715 --> 00:17:53,835
+nature of science,
+
+525
+00:17:53,835 --> 00:17:55,615
+to show the making
+of science,
+
+526
+00:17:55,835 --> 00:17:57,375
+thanks to the station links.
+
+527
+00:17:58,330 --> 00:18:00,490
+And also, with this graph,
+
+528
+00:18:00,490 --> 00:18:01,950
+we were able to make visible
+
+529
+00:18:02,170 --> 00:18:04,110
+this dark knowledge
+in the datasets.
+
+530
+00:18:04,170 --> 00:18:05,690
+So I don't know
+if you have seen
+
+531
+00:18:05,690 --> 00:18:06,090
+it well,
+
+532
+00:18:06,090 --> 00:18:09,050
+but let me if you I don't know
+
+533
+00:18:09,050 --> 00:18:11,290
+if you see,
+the corolla here at
+
+534
+00:18:11,290 --> 00:18:13,955
+the periphery of the graph.
+
+535
+00:18:14,335 --> 00:18:16,735
+So this corolla is made of all
+
+536
+00:18:16,735 --> 00:18:18,975
+the articles that
+are not linked
+
+537
+00:18:18,975 --> 00:18:20,895
+to others. So
+the fifty percent
+
+538
+00:18:20,895 --> 00:18:22,495
+of publication that are not
+
+539
+00:18:22,495 --> 00:18:24,035
+cited by anyone else.
+
+540
+00:18:24,495 --> 00:18:27,720
+So in this map, they
+are still here.
+
+541
+00:18:28,420 --> 00:18:29,620
+we have this corolla,
+
+542
+00:18:29,620 --> 00:18:31,700
+which is the dark
+knowledge that
+
+543
+00:18:31,700 --> 00:18:33,460
+usually you don't see and hear
+
+544
+00:18:33,460 --> 00:18:34,920
+it's here at the border.
+
+545
+00:18:36,020 --> 00:18:38,360
+It remains visible
+in this map.
+
+546
+00:18:39,455 --> 00:18:42,115
+The second experiment,
+
+547
+00:18:42,175 --> 00:18:44,995
+the second way to
+map this corpus,
+
+548
+00:18:45,855 --> 00:18:48,275
+it's a dimension
+reduction map.
+
+549
+00:18:48,335 --> 00:18:49,475
+So here,
+
+550
+00:18:50,015 --> 00:18:52,175
+it's really here where we used
+
+551
+00:18:52,175 --> 00:18:54,950
+machine learning And here we
+
+552
+00:18:54,950 --> 00:18:56,410
+have another way to,
+
+553
+00:18:57,030 --> 00:18:58,250
+organize the datasets.
+
+554
+00:18:58,470 --> 00:19:01,110
+We reduce each publication to
+
+555
+00:19:01,110 --> 00:19:02,410
+a metadata sequence.
+
+556
+00:19:02,950 --> 00:19:05,350
+So it's like a unique sequence
+
+557
+00:19:05,350 --> 00:19:07,355
+of keywords and
+information that
+
+558
+00:19:07,355 --> 00:19:08,735
+reflects each publication.
+
+559
+00:19:08,875 --> 00:19:11,295
+So we use twenty
+six thousand,
+
+560
+00:19:12,155 --> 00:19:13,935
+different keywords to describe
+
+561
+00:19:13,995 --> 00:19:14,655
+the publications,
+
+562
+00:19:15,435 --> 00:19:16,875
+and each publication can be
+
+563
+00:19:16,875 --> 00:19:19,435
+summarized by
+a sequence of one
+
+564
+00:19:19,435 --> 00:19:21,790
+and zero describing if each
+
+565
+00:19:21,790 --> 00:19:24,130
+keyword belongs or not
+to the publication
+
+566
+00:19:24,590 --> 00:19:26,770
+. And after that, we have,
+
+567
+00:19:27,550 --> 00:19:32,290
+so this gives us vectors in
+
+568
+00:19:32,670 --> 00:19:34,610
+twenty six thousand
+dimensions.
+
+569
+00:19:34,835 --> 00:19:36,835
+It's like coordinates
+in a multi
+
+570
+00:19:36,835 --> 00:19:38,995
+dimensional space with twenty
+
+571
+00:19:38,995 --> 00:19:40,695
+six thousand dimension.
+
+572
+00:19:41,155 --> 00:19:42,915
+And then we use
+a machine learning
+
+573
+00:19:42,915 --> 00:19:45,415
+algorithm, which
+is called UMAP,
+
+574
+00:19:46,195 --> 00:19:47,795
+to switch position from this
+
+575
+00:19:47,795 --> 00:19:51,180
+multi dimensional
+space into a three
+
+576
+00:19:51,180 --> 00:19:54,860
+d or two d space.
+So we use UMAP.
+
+577
+00:19:54,860 --> 00:19:56,540
+It's an algorithm in the same
+
+578
+00:19:56,540 --> 00:19:58,080
+family as t SNE,
+
+579
+00:19:58,460 --> 00:20:00,560
+but it's better than
+t SNE for our goal.
+
+580
+00:20:00,860 --> 00:20:02,160
+And this kind of algorithm
+
+581
+00:20:02,715 --> 00:20:04,235
+translates proximity motion in
+
+582
+00:20:04,235 --> 00:20:06,815
+a multidimensional
+space into proximity,
+
+583
+00:20:07,755 --> 00:20:10,655
+into a three-dimensional
+space.
+
+584
+00:20:10,955 --> 00:20:13,035
+in a way that
+articles that are
+
+585
+00:20:13,035 --> 00:20:15,600
+close to each other
+in the twenty
+
+586
+00:20:15,600 --> 00:20:18,080
+six thousand
+dimension space are
+
+587
+00:20:18,080 --> 00:20:19,360
+still close to each other in
+
+588
+00:20:19,360 --> 00:20:22,260
+the two dimensional space.
+
+589
+00:20:22,720 --> 00:20:24,560
+And articles that
+were far away
+
+590
+00:20:24,560 --> 00:20:26,320
+in the multi dimensional space
+
+591
+00:20:26,320 --> 00:20:29,220
+are still far away
+in the two d space.
+
+592
+00:20:29,745 --> 00:20:31,445
+So it's a way to translate,
+
+593
+00:20:32,545 --> 00:20:34,085
+twenty six thousand dimension
+
+594
+00:20:34,225 --> 00:20:36,385
+into two dimension
+while preserving
+
+595
+00:20:36,385 --> 00:20:37,125
+the topology.
+
+596
+00:20:37,905 --> 00:20:39,445
+And so at the end, articles,
+
+597
+00:20:40,225 --> 00:20:42,805
+which have
+the closest sequences
+
+598
+00:20:42,945 --> 00:20:44,465
+of keywords are close to each
+
+599
+00:20:44,465 --> 00:20:45,240
+other in the map.
+
+600
+00:20:46,280 --> 00:20:48,300
+So here, the idea
+was to replicate,
+
+601
+00:20:48,840 --> 00:20:50,600
+the physical
+experience that you
+
+602
+00:20:50,600 --> 00:20:54,200
+have when you are in
+the library and,
+
+603
+00:20:55,000 --> 00:20:57,900
+you walk around the different
+
+604
+00:20:57,975 --> 00:21:00,455
+shelves and you
+find a book that
+
+605
+00:21:00,455 --> 00:21:02,215
+is interesting
+for you and step
+
+606
+00:21:02,215 --> 00:21:03,995
+by step close to each other,
+
+607
+00:21:04,055 --> 00:21:05,995
+you look at, all the books,
+
+608
+00:21:07,415 --> 00:21:08,615
+and you will find
+something that
+
+609
+00:21:08,615 --> 00:21:10,235
+you are not really
+looking for.
+
+610
+00:21:11,020 --> 00:21:13,740
+So we add these
+two ways to draw,
+
+611
+00:21:13,980 --> 00:21:15,200
+the map of the corpus.
+
+612
+00:21:16,780 --> 00:21:18,720
+And we they were
+both interesting.
+
+613
+00:21:19,100 --> 00:21:21,340
+And, so we made
+some user tests
+
+614
+00:21:21,340 --> 00:21:23,420
+to determine which
+one was the most
+
+615
+00:21:23,420 --> 00:21:24,960
+easy to use and
+to understand.
+
+616
+00:21:26,265 --> 00:21:27,545
+And at the end,
+
+617
+00:21:27,545 --> 00:21:29,785
+the dimension map
+the the reduction
+
+618
+00:21:30,185 --> 00:21:33,545
+the the dimension
+reduction map was,
+
+619
+00:21:33,945 --> 00:21:35,245
+really better understood,
+
+620
+00:21:35,625 --> 00:21:37,385
+without any doubt. So
+it's really clear.
+
+621
+00:21:37,385 --> 00:21:40,080
+Tester felt more comfortable
+
+622
+00:21:40,780 --> 00:21:42,400
+with this map. They interacted
+
+623
+00:21:42,460 --> 00:21:44,700
+with it more
+naturally than with
+
+624
+00:21:44,700 --> 00:21:45,760
+the citation graph.
+
+625
+00:21:46,380 --> 00:21:48,140
+And also, tester told us that
+
+626
+00:21:48,140 --> 00:21:49,760
+it was easier to understand.
+
+627
+00:21:49,820 --> 00:21:51,520
+It makes more sense for them.
+
+628
+00:21:51,580 --> 00:21:53,325
+So we,
+
+629
+00:21:53,645 --> 00:21:55,405
+have seen here
+the potential of
+
+630
+00:21:55,405 --> 00:21:57,405
+machine learning for our work
+
+631
+00:21:57,405 --> 00:21:58,305
+at that moment,
+
+632
+00:21:58,765 --> 00:22:01,505
+where we achieve
+a better organization,
+
+633
+00:22:02,045 --> 00:22:03,185
+a better localization,
+
+634
+00:22:03,485 --> 00:22:04,865
+thanks to machine learning.
+
+635
+00:22:06,450 --> 00:22:08,850
+So let's talk about
+another point,
+
+636
+00:22:08,850 --> 00:22:12,230
+but just let me find alright.
+
+637
+00:22:14,850 --> 00:22:17,750
+Just one minute. I'm
+short of battery.
+
+638
+00:22:33,015 --> 00:23:05,370
+It's Okay.
+
+639
+00:23:05,510 --> 00:23:06,730
+Sorry about that.
+
+640
+00:23:06,790 --> 00:23:09,430
+My plug was not
+working anymore,
+
+641
+00:23:09,430 --> 00:23:10,890
+but, I'm okay now.
+
+642
+00:23:11,750 --> 00:23:13,750
+So, something else I wanted to
+
+643
+00:23:13,750 --> 00:23:16,535
+tell you about, it's
+the colors because,
+
+644
+00:23:16,835 --> 00:23:18,355
+it's important to hear,
+
+645
+00:23:18,755 --> 00:23:21,815
+if you see the two, maps.
+
+646
+00:23:22,035 --> 00:23:23,475
+The one on the left
+and the one
+
+647
+00:23:23,475 --> 00:23:25,635
+on the right, it's
+there is a huge
+
+648
+00:23:25,635 --> 00:23:27,235
+difference in your ability to
+
+649
+00:23:27,235 --> 00:23:31,160
+save space and, to
+find some location.
+
+650
+00:23:31,460 --> 00:23:34,120
+So we need to have some colors
+
+651
+00:23:34,260 --> 00:23:36,760
+that are relevant
+and here colors
+
+652
+00:23:36,980 --> 00:23:38,520
+are reflecting clusters.
+
+653
+00:23:39,540 --> 00:23:42,840
+So, to get these clusters,
+
+654
+00:23:42,900 --> 00:23:44,340
+we also use a machine learning
+
+655
+00:23:44,340 --> 00:23:46,735
+algorithm. We use an algorithm
+
+656
+00:23:46,735 --> 00:23:48,995
+that is is called HDB scan.
+
+657
+00:23:49,935 --> 00:23:52,115
+it's a hierarchical clustering
+
+658
+00:23:52,175 --> 00:23:53,395
+algorithm algorithm.
+
+659
+00:23:54,415 --> 00:23:56,175
+That means that we are able to
+
+660
+00:23:56,175 --> 00:23:58,975
+find some parent cluster and
+
+661
+00:23:58,975 --> 00:24:00,435
+children cluster inside.
+
+662
+00:24:01,590 --> 00:24:03,450
+And it's a clustering
+by density.
+
+663
+00:24:03,670 --> 00:24:05,610
+That means that
+we can identify
+
+664
+00:24:05,670 --> 00:24:07,770
+some clusters even in complex
+
+665
+00:24:07,910 --> 00:24:09,450
+shapes in the map.
+
+666
+00:24:10,070 --> 00:24:15,130
+And, to, find those clusters,
+
+667
+00:24:17,055 --> 00:24:18,815
+we tried different different
+
+668
+00:24:18,815 --> 00:24:20,515
+implementation of
+this algorithm.
+
+669
+00:24:21,615 --> 00:24:22,995
+So HDB scan,
+
+670
+00:24:23,935 --> 00:24:26,355
+was better than
+a usual clustering
+
+671
+00:24:26,575 --> 00:24:27,955
+algorithm like Kamin's,
+
+672
+00:24:28,335 --> 00:24:31,075
+in its ability to
+detect complex shapes.
+
+673
+00:24:31,720 --> 00:24:33,740
+But you can detect
+those complex
+
+674
+00:24:33,960 --> 00:24:35,420
+shape in two dimension,
+
+675
+00:24:35,640 --> 00:24:37,260
+but also in three dimension,
+
+676
+00:24:38,520 --> 00:24:39,260
+four dimension,
+
+677
+00:24:39,400 --> 00:24:41,500
+and any of the different,
+
+678
+00:24:42,360 --> 00:24:44,360
+space we can
+create with this,
+
+679
+00:24:44,965 --> 00:24:48,145
+twenty thousand twenty
+six thousand as,
+
+680
+00:24:48,805 --> 00:24:50,085
+dimension we add on.
+
+681
+00:24:50,085 --> 00:24:52,565
+So we made some
+different tried
+
+682
+00:24:52,565 --> 00:24:53,285
+different tests.
+
+683
+00:24:53,285 --> 00:24:54,345
+And at the end,
+
+684
+00:24:55,125 --> 00:24:57,465
+we found that implementing
+the clustering
+
+685
+00:24:57,605 --> 00:24:59,145
+algorithm in a ten dimensional
+
+686
+00:24:59,365 --> 00:25:02,120
+space was, give us
+the best result.
+
+687
+00:25:04,100 --> 00:25:07,720
+Just a a small,
+point again about,
+
+688
+00:25:08,420 --> 00:25:10,260
+the caller. First,
+
+689
+00:25:10,260 --> 00:25:13,000
+it's it shows you
+the different
+
+690
+00:25:13,140 --> 00:25:16,125
+clusters, but also we can show
+
+691
+00:25:16,125 --> 00:25:17,265
+you some other dimension.
+
+692
+00:25:17,405 --> 00:25:19,905
+For example, I'm sorry.
+
+693
+00:25:20,125 --> 00:25:23,405
+Just for example,
+here, we can,
+
+694
+00:25:23,885 --> 00:25:27,165
+use the color to
+display to show
+
+695
+00:25:27,165 --> 00:25:28,385
+the number of citation.
+
+696
+00:25:29,150 --> 00:25:30,770
+So we can change dynamically
+
+697
+00:25:30,990 --> 00:25:33,170
+the color of the of
+the publication.
+
+698
+00:25:33,390 --> 00:25:34,990
+And here you have some other
+
+699
+00:25:34,990 --> 00:25:36,110
+patterns that appears.
+
+700
+00:25:36,110 --> 00:25:36,910
+And for example,
+
+701
+00:25:36,910 --> 00:25:39,170
+we are able to see
+that the cluster
+
+702
+00:25:39,230 --> 00:25:41,070
+talking about coronavirus in
+
+703
+00:25:41,070 --> 00:25:43,155
+biology and virology
+is the most
+
+704
+00:25:43,475 --> 00:25:45,175
+cited in in this corpus.
+
+705
+00:25:45,955 --> 00:25:48,355
+And just let me give you few,
+
+706
+00:25:48,915 --> 00:25:53,175
+explanation about,
+the class the labels.
+
+707
+00:25:54,195 --> 00:25:57,015
+So the labels, we
+also find them,
+
+708
+00:25:57,570 --> 00:25:59,190
+using some data treatments.
+
+709
+00:25:59,250 --> 00:26:04,150
+And here we try
+to find the most
+
+710
+00:26:04,850 --> 00:26:09,910
+used keywords to
+describe the cluster.
+
+711
+00:26:09,970 --> 00:26:10,870
+So for example,
+
+712
+00:26:11,335 --> 00:26:13,815
+we found the keywords that are
+
+713
+00:26:13,815 --> 00:26:16,375
+most frequent in
+the cluster and
+
+714
+00:26:16,375 --> 00:26:17,975
+not in the rest
+of the corpus,
+
+715
+00:26:18,135 --> 00:26:19,575
+in comparison with the rest of
+
+716
+00:26:19,575 --> 00:26:20,235
+the corpus.
+
+717
+00:26:21,815 --> 00:26:22,955
+So let's,
+
+718
+00:26:23,750 --> 00:26:26,390
+finish with the rest
+of the interface
+
+719
+00:26:26,390 --> 00:26:29,210
+because this map is
+not working alone.
+
+720
+00:26:29,670 --> 00:26:31,290
+there are some user interface
+
+721
+00:26:31,350 --> 00:26:33,270
+element to form
+a tool and give
+
+722
+00:26:33,270 --> 00:26:36,010
+users some features
+to explore further.
+
+723
+00:26:37,575 --> 00:26:40,695
+So we have, like
+in Google, like,
+
+724
+00:26:40,695 --> 00:26:43,015
+the ability to zoom,
+zoom in, zoom out,
+
+725
+00:26:43,015 --> 00:26:43,815
+or to pan,
+
+726
+00:26:43,815 --> 00:26:46,615
+or to hover any
+article and see
+
+727
+00:26:46,615 --> 00:26:47,355
+its link.
+
+728
+00:26:47,975 --> 00:26:49,195
+But we have also,
+
+729
+00:26:50,220 --> 00:26:52,560
+the ability to use
+some filters.
+
+730
+00:26:53,020 --> 00:26:53,980
+So for example,
+
+731
+00:26:53,980 --> 00:26:55,580
+it's really basic because it's
+
+732
+00:26:55,580 --> 00:26:56,480
+just a prototype,
+
+733
+00:26:56,620 --> 00:26:58,140
+and we have been focusing more
+
+734
+00:26:58,140 --> 00:26:59,580
+on the map. But so you can add
+
+735
+00:26:59,580 --> 00:27:01,500
+some filters for
+the year or for
+
+736
+00:27:01,500 --> 00:27:03,200
+the field of study
+or the keywords.
+
+737
+00:27:03,340 --> 00:27:05,495
+And when hovering, a filter,
+
+738
+00:27:05,495 --> 00:27:07,495
+you see directly which part of
+
+739
+00:27:07,495 --> 00:27:08,795
+the map is concerned.
+
+740
+00:27:09,335 --> 00:27:11,195
+And so, you can create this
+
+741
+00:27:11,575 --> 00:27:13,335
+filtered version of the map
+
+742
+00:27:13,335 --> 00:27:15,355
+according to what's
+important for you.
+
+743
+00:27:15,735 --> 00:27:17,415
+And you can also
+display the list
+
+744
+00:27:17,415 --> 00:27:18,395
+of all the publication.
+
+745
+00:27:19,850 --> 00:27:22,190
+and you have
+this correspondence
+
+746
+00:27:22,410 --> 00:27:23,850
+between the map and the list.
+
+747
+00:27:23,850 --> 00:27:25,770
+You can investigate further on
+
+748
+00:27:25,770 --> 00:27:27,690
+one article. So,
+
+749
+00:27:27,690 --> 00:27:29,450
+you can select an article and
+
+750
+00:27:29,450 --> 00:27:32,250
+you can see it's metadata and
+
+751
+00:27:32,250 --> 00:27:34,595
+the abstract and everything we
+
+752
+00:27:34,595 --> 00:27:37,015
+get we we have for
+this article.
+
+753
+00:27:37,875 --> 00:27:40,535
+But also you can
+explore the citation
+
+754
+00:27:40,915 --> 00:27:41,575
+the citations.
+
+755
+00:27:42,195 --> 00:27:45,475
+So papers which
+are citing this
+
+756
+00:27:45,475 --> 00:27:48,295
+paper or references
+the bibliography.
+
+757
+00:27:49,780 --> 00:27:51,480
+And we can, for example,
+
+758
+00:27:51,620 --> 00:27:53,800
+display the list
+of all the citing
+
+759
+00:27:53,860 --> 00:27:55,700
+papers and see where they are
+
+760
+00:27:55,700 --> 00:27:57,380
+on the map, if they are from
+
+761
+00:27:57,380 --> 00:27:59,300
+different fields
+of study or if
+
+762
+00:27:59,300 --> 00:28:01,480
+they are from the same
+fields of study.
+
+763
+00:28:01,845 --> 00:28:04,345
+So this is really, useful.
+
+764
+00:28:05,045 --> 00:28:07,125
+And also we can display a list
+
+765
+00:28:07,125 --> 00:28:08,345
+of similar publications.
+
+766
+00:28:08,725 --> 00:28:10,405
+So if you find something that
+
+767
+00:28:10,405 --> 00:28:11,525
+looks good for you,
+
+768
+00:28:11,525 --> 00:28:12,665
+we can automatically,
+
+769
+00:28:14,405 --> 00:28:16,245
+find the closest
+one and display
+
+770
+00:28:16,245 --> 00:28:17,385
+the closest one.
+
+771
+00:28:18,860 --> 00:28:19,840
+So this,
+
+772
+00:28:20,700 --> 00:28:22,540
+is the first prototype we have
+
+773
+00:28:22,540 --> 00:28:24,000
+been working on,
+and, voluntarily,
+
+774
+00:28:24,460 --> 00:28:28,320
+we have not put any
+search box yet.
+
+775
+00:28:28,460 --> 00:28:30,240
+So this is really,
+
+776
+00:28:32,155 --> 00:28:34,155
+because we wanted to keep this
+
+777
+00:28:34,155 --> 00:28:35,995
+for later. We wanted first to
+
+778
+00:28:35,995 --> 00:28:38,635
+explore the potential
+of the map
+
+779
+00:28:38,635 --> 00:28:40,495
+and the complementarity
+between,
+
+780
+00:28:41,035 --> 00:28:43,515
+the search, options
+like filters
+
+781
+00:28:43,515 --> 00:28:45,215
+and things like
+that on the map.
+
+782
+00:28:45,790 --> 00:28:47,950
+And so the questions we ask
+
+783
+00:28:47,950 --> 00:28:50,850
+ourselves is how does
+it fit together,
+
+784
+00:28:51,150 --> 00:28:52,210
+this map,
+
+785
+00:28:52,510 --> 00:28:54,830
+with the user
+experience of a classic
+
+786
+00:28:54,830 --> 00:28:56,830
+map like Google
+Map and the more
+
+787
+00:28:56,830 --> 00:28:58,830
+classic user
+experience element
+
+788
+00:28:58,830 --> 00:29:00,450
+like the filters on the list?
+
+789
+00:29:01,255 --> 00:29:05,015
+And we have done user
+testing on that,
+
+790
+00:29:05,015 --> 00:29:08,395
+and the user test
+show that users,
+
+791
+00:29:09,495 --> 00:29:11,195
+still use the map relatively
+
+792
+00:29:11,495 --> 00:29:13,515
+little as
+an exploration medium,
+
+793
+00:29:13,735 --> 00:29:16,075
+but more as a feedback,
+
+794
+00:29:16,870 --> 00:29:19,190
+as a way to evaluate
+the results
+
+795
+00:29:19,190 --> 00:29:21,610
+of their search,
+as a way to see,
+
+796
+00:29:22,150 --> 00:29:23,850
+if the filters they're using,
+
+797
+00:29:24,070 --> 00:29:25,750
+is it relevant
+for them or not,
+
+798
+00:29:25,750 --> 00:29:27,990
+or how many, result they will
+
+799
+00:29:27,990 --> 00:29:29,510
+get or not. But
+for the moment,
+
+800
+00:29:29,510 --> 00:29:31,270
+the map is not
+really the first
+
+801
+00:29:31,270 --> 00:29:33,835
+way to interact
+and to look for
+
+802
+00:29:33,835 --> 00:29:36,575
+something. So this
+is interesting,
+
+803
+00:29:37,595 --> 00:29:39,195
+but we would like to see to
+
+804
+00:29:39,195 --> 00:29:40,575
+investigate how we can,
+
+805
+00:29:41,275 --> 00:29:43,035
+make the most out of this map
+
+806
+00:29:43,035 --> 00:29:44,575
+for the searching capacity.
+
+807
+00:29:45,800 --> 00:29:49,740
+And so, we have still
+a long way to go,
+
+808
+00:29:50,120 --> 00:29:52,040
+still progress to
+make to succeed
+
+809
+00:29:52,040 --> 00:29:53,880
+in this challenge of improving
+
+810
+00:29:53,880 --> 00:29:55,480
+the research experience in
+
+811
+00:29:55,480 --> 00:29:56,700
+scientific publication.
+
+812
+00:29:57,400 --> 00:29:59,420
+But this is just
+a first step.
+
+813
+00:30:00,195 --> 00:30:01,175
+The next step,
+
+814
+00:30:02,675 --> 00:30:04,935
+we would like to
+try to visualize
+
+815
+00:30:05,875 --> 00:30:07,655
+relations between entities
+
+816
+00:30:08,195 --> 00:30:10,055
+extracted from
+the publication.
+
+817
+00:30:10,835 --> 00:30:12,935
+So, not anymore mapping
+the publication
+
+818
+00:30:13,155 --> 00:30:15,495
+and the relation
+between articles,
+
+819
+00:30:15,800 --> 00:30:17,880
+but mapping
+the relation between
+
+820
+00:30:17,880 --> 00:30:20,680
+entities relation between what
+
+821
+00:30:20,680 --> 00:30:21,960
+articles are talking about.
+
+822
+00:30:21,960 --> 00:30:23,720
+For example, we can extract
+
+823
+00:30:23,720 --> 00:30:26,220
+disease or molecules
+or viruses,
+
+824
+00:30:26,440 --> 00:30:28,700
+part of the body,
+gene, and so on.
+
+825
+00:30:29,195 --> 00:30:30,475
+And all these entities are
+
+826
+00:30:30,475 --> 00:30:32,155
+discussed inside publication.
+
+827
+00:30:32,155 --> 00:30:33,435
+So if you read one, two,
+
+828
+00:30:33,435 --> 00:30:34,315
+or three publication,
+
+829
+00:30:34,315 --> 00:30:35,835
+you will see
+the relation between
+
+830
+00:30:35,835 --> 00:30:36,575
+those entities.
+
+831
+00:30:37,435 --> 00:30:39,035
+for example, you will see that
+
+832
+00:30:39,035 --> 00:30:40,635
+an article is
+making a relation
+
+833
+00:30:40,635 --> 00:30:42,235
+between a virus and a part of
+
+834
+00:30:42,235 --> 00:30:44,095
+the body on a virus
+and a gene.
+
+835
+00:30:44,770 --> 00:30:47,990
+But you cannot do this for
+
+836
+00:30:48,130 --> 00:30:49,670
+thousand and thousand
+of publication.
+
+837
+00:30:49,970 --> 00:30:52,690
+But by automatic
+extraction and
+
+838
+00:30:52,690 --> 00:30:54,390
+by visualization,
+specialization,
+
+839
+00:30:54,770 --> 00:30:57,190
+we can make appears
+the relations
+
+840
+00:30:57,490 --> 00:31:00,245
+between entities for
+the whole corpus.
+
+841
+00:31:00,785 --> 00:31:02,385
+And maybe we will make some
+
+842
+00:31:02,385 --> 00:31:04,385
+correlation appear
+that you will
+
+843
+00:31:04,385 --> 00:31:06,405
+not have seen
+other way because
+
+844
+00:31:06,865 --> 00:31:08,305
+this is what you
+can do when you
+
+845
+00:31:08,305 --> 00:31:10,465
+can visualize such
+massive amount
+
+846
+00:31:10,465 --> 00:31:11,285
+of relations.
+
+847
+00:31:13,020 --> 00:31:15,200
+So I'm hope,
+
+848
+00:31:16,220 --> 00:31:17,900
+so this will be
+an expert type.
+
+849
+00:31:17,900 --> 00:31:19,420
+We are working on
+it at the moment,
+
+850
+00:31:19,420 --> 00:31:22,400
+and I really hope
+I will be able
+
+851
+00:31:22,860 --> 00:31:25,195
+to share it with you soon and
+
+852
+00:31:25,195 --> 00:31:27,835
+to give you some more feedback
+
+853
+00:31:27,835 --> 00:31:30,095
+so that this mapping,
+
+854
+00:31:31,595 --> 00:31:34,075
+the capacity to
+improve the way
+
+855
+00:31:34,075 --> 00:31:34,735
+we search.
+
+856
+00:31:36,315 --> 00:31:40,710
+So this, right, this
+is the the end.
+
+857
+00:31:40,710 --> 00:31:42,070
+This is the story of what we
+
+858
+00:31:42,070 --> 00:31:43,590
+have been working on
+since the beginning
+
+859
+00:31:43,590 --> 00:31:44,490
+of this crisis.
+
+860
+00:31:45,750 --> 00:31:49,750
+and I'm I'm really curious of
+
+861
+00:31:49,750 --> 00:31:50,970
+your question now.
+
+862
+00:31:51,830 --> 00:31:53,030
+So I'm gonna have a look at
+
+863
+00:31:53,030 --> 00:31:58,225
+the at the chat.
+Hi, Caroline.
+
+864
+00:31:58,365 --> 00:32:00,605
+It's James here. Can
+you hear me okay?
+
+865
+00:32:00,605 --> 00:32:01,885
+Yes. I can hear you. Cool.
+
+866
+00:32:01,885 --> 00:32:03,325
+Sorry I was late
+at the start.
+
+867
+00:32:03,325 --> 00:32:04,765
+There was a previous session
+
+868
+00:32:04,765 --> 00:32:05,745
+that I overran.
+
+869
+00:32:07,240 --> 00:32:09,240
+So, yeah, if
+people can send in
+
+870
+00:32:09,240 --> 00:32:10,520
+questions. I don't
+know whether
+
+871
+00:32:10,520 --> 00:32:11,800
+you can see there are some
+
+872
+00:32:11,800 --> 00:32:14,380
+questions already
+in the chat box,
+
+873
+00:32:15,400 --> 00:32:16,860
+that have been
+coming through.
+
+874
+00:32:17,320 --> 00:32:19,260
+I can see some
+people are typing
+
+875
+00:32:19,400 --> 00:32:20,140
+as well.
+
+876
+00:32:21,645 --> 00:32:22,765
+Yeah. Alright.
+
+877
+00:32:22,765 --> 00:32:25,905
+I don't know if I go
+over the question
+
+878
+00:32:26,285 --> 00:32:32,445
+by order of if, I can,
+
+879
+00:32:32,765 --> 00:32:34,605
+I can work backwards if that's
+
+880
+00:32:34,605 --> 00:32:36,465
+helpful and read
+out the questions.
+
+881
+00:32:36,750 --> 00:32:39,890
+Alright. so question,
+
+882
+00:32:41,470 --> 00:32:44,210
+did you experiment
+with modularity
+
+883
+00:32:44,670 --> 00:32:46,530
+based clustering methods?
+
+884
+00:32:46,990 --> 00:32:48,050
+How did you validate,
+
+885
+00:32:49,310 --> 00:32:51,650
+or test the clusters
+with users?
+
+886
+00:32:52,935 --> 00:32:57,175
+Alright. We tried mostly,
+
+887
+00:32:57,175 --> 00:32:59,035
+we tried different algorithm,
+
+888
+00:32:59,095 --> 00:32:59,895
+but we were,
+
+889
+00:33:00,615 --> 00:33:03,195
+we really wanted to
+have a hierarchical
+
+890
+00:33:03,975 --> 00:33:05,115
+clustering algorithm.
+
+891
+00:33:05,335 --> 00:33:07,450
+And so we tried several,
+
+892
+00:33:07,590 --> 00:33:11,110
+and we tested
+them with users.
+
+893
+00:33:11,110 --> 00:33:14,310
+And
+the the the the most important
+
+894
+00:33:14,310 --> 00:33:17,670
+thing was how people feel they
+
+895
+00:33:17,670 --> 00:33:19,830
+can find something
+in the map.
+
+896
+00:33:19,830 --> 00:33:22,455
+So we were showing them up to
+
+897
+00:33:22,455 --> 00:33:24,715
+new testers. And if they feel
+
+898
+00:33:25,095 --> 00:33:27,015
+they were lost
+and if they feel
+
+899
+00:33:27,015 --> 00:33:30,455
+it was like a mess, we, yeah,
+
+900
+00:33:30,455 --> 00:33:32,395
+we were not keeping
+the algorithm.
+
+901
+00:33:34,850 --> 00:33:37,350
+Great. Thanks.
+another question.
+
+902
+00:33:37,490 --> 00:33:39,510
+How did you test the layout
+
+903
+00:33:39,650 --> 00:33:41,750
+algorithm to arrive
+at the dimensionality
+
+904
+00:33:42,210 --> 00:33:47,665
+reduction method,
+was better? Yeah.
+
+905
+00:33:47,665 --> 00:33:49,765
+It's it's the same thing.
+
+906
+00:33:51,665 --> 00:33:53,265
+we first,
+
+907
+00:33:53,265 --> 00:33:55,665
+we we see what's
+the result when
+
+908
+00:33:55,665 --> 00:33:58,405
+we map the,
+the the publication.
+
+909
+00:33:58,545 --> 00:34:00,245
+So what's the result
+of the algorithm?
+
+910
+00:34:00,625 --> 00:34:02,190
+Does does it bring something
+
+911
+00:34:02,190 --> 00:34:04,210
+better in terms of
+specialization,
+
+912
+00:34:04,590 --> 00:34:06,770
+in terms of capacity to,
+
+913
+00:34:08,510 --> 00:34:10,750
+to have your publication that
+
+914
+00:34:10,750 --> 00:34:12,370
+are not all at the same,
+
+915
+00:34:13,655 --> 00:34:15,095
+in the same ball
+at the center,
+
+916
+00:34:15,095 --> 00:34:17,035
+but that are
+positioned differently
+
+917
+00:34:17,095 --> 00:34:17,835
+in the space.
+
+918
+00:34:18,215 --> 00:34:19,915
+So most mostly,
+
+919
+00:34:21,335 --> 00:34:23,335
+the idea was to find the best
+
+920
+00:34:23,335 --> 00:34:26,775
+algorithm to create some space
+
+921
+00:34:26,775 --> 00:34:27,595
+with more,
+
+922
+00:34:28,120 --> 00:34:30,120
+publication and
+some space with
+
+923
+00:34:30,120 --> 00:34:32,540
+the lesson to see
+those clusters
+
+924
+00:34:32,680 --> 00:34:35,480
+appears. So the capacity of
+
+925
+00:34:35,480 --> 00:34:40,275
+making clusters
+appear was a very
+
+926
+00:34:40,275 --> 00:34:42,375
+important point in evaluation
+
+927
+00:34:42,675 --> 00:34:45,175
+of the different
+algorithm we tried.
+
+928
+00:34:45,555 --> 00:34:46,595
+And after that,
+
+929
+00:34:46,595 --> 00:34:48,615
+once when we feel
+it was good,
+
+930
+00:34:49,235 --> 00:34:51,875
+we show it to our testers and
+
+931
+00:34:51,875 --> 00:34:53,640
+we ask some feedbacks and we
+
+932
+00:34:53,960 --> 00:34:57,020
+give testers some basic
+task of finding,
+
+933
+00:34:57,880 --> 00:34:59,800
+publication inside the map or
+
+934
+00:34:59,800 --> 00:35:01,320
+describing the map and we see
+
+935
+00:35:01,320 --> 00:35:04,940
+which one was more
+efficient. Great.
+
+936
+00:35:05,000 --> 00:35:06,840
+Thanks. another question.
+
+937
+00:35:06,840 --> 00:35:08,520
+You mentioned that users are
+
+938
+00:35:08,520 --> 00:35:11,315
+less likely to explore
+using this map.
+
+939
+00:35:11,775 --> 00:35:13,775
+How have you
+attempted to enable
+
+940
+00:35:13,775 --> 00:35:14,835
+this exploration?
+
+941
+00:35:18,255 --> 00:35:18,655
+Sorry.
+
+942
+00:35:18,655 --> 00:35:21,155
+I missed the users
+are more likely to.
+
+943
+00:35:22,330 --> 00:35:24,730
+So you mentioned
+that users are
+
+944
+00:35:24,730 --> 00:35:26,970
+less likely to explore
+using this map.
+
+945
+00:35:26,970 --> 00:35:28,570
+So I think
+the question is around
+
+946
+00:35:28,570 --> 00:35:30,650
+what plans do you have for
+
+947
+00:35:30,650 --> 00:35:33,390
+developing exploration,
+functionality,
+
+948
+00:35:33,770 --> 00:35:37,885
+tools, capabilities? Yeah.
+
+949
+00:35:38,105 --> 00:35:42,125
+RID is really to
+have an interface
+
+950
+00:35:42,425 --> 00:35:45,485
+that makes some
+rebounds between
+
+951
+00:35:45,545 --> 00:35:48,710
+classic, filtering
+and searching
+
+952
+00:35:48,850 --> 00:35:50,370
+options and the map.
+
+953
+00:35:50,370 --> 00:35:53,830
+Like, if all the interface was
+
+954
+00:35:53,890 --> 00:35:56,550
+reacting at the same
+time when you,
+
+955
+00:35:57,650 --> 00:35:58,790
+perform some action.
+
+956
+00:35:59,410 --> 00:36:02,235
+So, for example,
+
+957
+00:36:02,235 --> 00:36:04,475
+if you zoom somewhere
+in the map,
+
+958
+00:36:04,475 --> 00:36:05,115
+it should,
+
+959
+00:36:07,035 --> 00:36:09,055
+update at the same
+time the filters
+
+960
+00:36:09,115 --> 00:36:09,755
+on the list.
+
+961
+00:36:09,755 --> 00:36:13,210
+And if you feel one filter is
+
+962
+00:36:13,210 --> 00:36:14,250
+interesting for you,
+
+963
+00:36:14,250 --> 00:36:16,670
+it's which it should
+show directly
+
+964
+00:36:16,810 --> 00:36:20,170
+how part of the map,
+you will lost.
+
+965
+00:36:20,170 --> 00:36:23,930
+Or if you, get interested by,
+
+966
+00:36:23,930 --> 00:36:25,370
+for example, one article,
+
+967
+00:36:25,370 --> 00:36:27,885
+you should be able to see at
+
+968
+00:36:27,885 --> 00:36:28,865
+the same time,
+
+969
+00:36:29,565 --> 00:36:31,325
+you can you you you should be
+
+970
+00:36:31,325 --> 00:36:32,685
+able to read at the same time
+
+971
+00:36:32,685 --> 00:36:34,285
+the abstract and see what's
+
+972
+00:36:34,285 --> 00:36:35,985
+the impact of this article,
+
+973
+00:36:36,845 --> 00:36:39,325
+on the rest of
+the scientific field,
+
+974
+00:36:39,325 --> 00:36:40,925
+for example. So,
+
+975
+00:36:41,325 --> 00:36:44,090
+the idea is giving you more
+
+976
+00:36:44,090 --> 00:36:47,710
+options to go from one article
+
+977
+00:36:47,770 --> 00:36:49,770
+to another, to go from one ID
+
+978
+00:36:49,770 --> 00:36:51,930
+to another, to go
+from one keyword
+
+979
+00:36:51,930 --> 00:36:53,370
+to another because it's really
+
+980
+00:36:53,370 --> 00:36:56,010
+complicated to know which one
+
+981
+00:36:56,010 --> 00:36:58,005
+is the good keyword for you.
+
+982
+00:36:58,005 --> 00:36:59,785
+And this is something that is
+
+983
+00:37:00,005 --> 00:37:01,625
+really common in
+the interviews,
+
+984
+00:37:02,245 --> 00:37:06,185
+we made is that,
+at the beginning,
+
+985
+00:37:07,445 --> 00:37:09,545
+people are are naming things
+
+986
+00:37:09,685 --> 00:37:12,930
+differently. and according to
+
+987
+00:37:12,930 --> 00:37:13,910
+the location,
+
+988
+00:37:14,530 --> 00:37:15,890
+people are describing things
+
+989
+00:37:15,890 --> 00:37:17,270
+differently in
+the publication.
+
+990
+00:37:17,410 --> 00:37:21,330
+So if you have to
+rely only on one,
+
+991
+00:37:21,330 --> 00:37:23,430
+two, three keywords,
+you're really,
+
+992
+00:37:24,105 --> 00:37:25,545
+there is really
+a risk that you
+
+993
+00:37:25,545 --> 00:37:26,265
+miss something.
+
+994
+00:37:26,265 --> 00:37:29,065
+And that's exactly the fear of
+
+995
+00:37:29,065 --> 00:37:31,305
+researchers, who
+are working on
+
+996
+00:37:31,305 --> 00:37:32,525
+a specific subject.
+
+997
+00:37:33,225 --> 00:37:34,825
+it's the fear of missing out
+
+998
+00:37:34,825 --> 00:37:36,265
+some work that
+have been already
+
+999
+00:37:36,265 --> 00:37:37,530
+published and that they don't
+
+1000
+00:37:37,610 --> 00:37:39,050
+find because they don't know
+
+1001
+00:37:39,050 --> 00:37:40,970
+what is the correct keyword to
+
+1002
+00:37:40,970 --> 00:37:41,710
+find that.
+
+1003
+00:37:42,570 --> 00:37:43,950
+and this is why,
+
+1004
+00:37:44,810 --> 00:37:48,330
+any option to
+interact with this,
+
+1005
+00:37:48,810 --> 00:37:51,550
+corpus of document
+that doesn't,
+
+1006
+00:37:52,855 --> 00:37:55,495
+ask you to describe
+something with Word,
+
+1007
+00:37:55,495 --> 00:37:56,635
+but by proximity,
+
+1008
+00:37:56,935 --> 00:37:58,955
+by going from one to another,
+
+1009
+00:37:59,175 --> 00:38:01,015
+clicking here,
+clicking here to
+
+1010
+00:38:01,015 --> 00:38:03,275
+see what's the result.
+It's it's good.
+
+1011
+00:38:05,810 --> 00:38:08,150
+Perfect. Thanks.
+Thanks, Caroline.
+
+1012
+00:38:08,450 --> 00:38:10,070
+that was a really fantastic,
+
+1013
+00:38:10,290 --> 00:38:11,410
+really interesting talk.
+
+1014
+00:38:11,810 --> 00:38:13,010
+hopefully, you've
+had a look at
+
+1015
+00:38:13,010 --> 00:38:14,530
+some of the, compliments in
+
+1016
+00:38:14,530 --> 00:38:15,650
+the chat channel.
+
+1017
+00:38:15,650 --> 00:38:17,170
+I think a lot of
+people enjoyed
+
+1018
+00:38:17,170 --> 00:38:18,630
+that and found it
+really interesting.
+
+1019
+00:38:19,875 --> 00:38:22,135
+I'd ask if, anyone
+has any questions,
+
+1020
+00:38:22,195 --> 00:38:23,635
+further questions
+for Caroline,
+
+1021
+00:38:23,635 --> 00:38:26,535
+just post in
+the the leaders, Slack,
+
+1022
+00:38:27,075 --> 00:38:28,835
+chat, and, hopefully,
+
+1023
+00:38:28,835 --> 00:38:31,015
+she'll be around
+to pick that up.
+
+1024
+00:38:32,140 --> 00:38:34,140
+So now we're moving on to,
+
+1025
+00:38:34,460 --> 00:38:36,860
+the US time zone, coverage.
+
+1026
+00:38:36,860 --> 00:38:38,960
+So we have the welcome address
+
+1027
+00:38:39,020 --> 00:38:40,400
+for the for the US,
+
+1028
+00:38:40,940 --> 00:38:42,000
+part of the conference.
+
+1029
+00:38:42,060 --> 00:38:45,995
+So, I would direct
+people over to there,
+
+1030
+00:38:45,995 --> 00:38:47,915
+and we'll we'll
+get started with
+
+1031
+00:38:47,915 --> 00:38:49,695
+handing over
+the virtual baton.
+
+1032
+00:38:51,675 --> 00:38:53,355
+Thanks. Thanks very much all.
+
+1033
+00:38:53,355 --> 00:38:55,775
+Thanks, Caroline.
+Thank you, everyone.
+
+1034
+00:38:56,315 --> 00:38:58,975
+I remain available in
+the Slack channel,
+
+1035
+00:38:59,060 --> 00:39:00,980
+so don't don't hesitate to ask
+
+1036
+00:39:00,980 --> 00:39:04,280
+your question. Yeah. Great.
+
+1037
+00:39:05,860 --> 00:39:06,975
+Thank you very much.
+

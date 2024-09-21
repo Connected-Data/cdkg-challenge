@@ -1,0 +1,4913 @@
+1
+00:00:00,000 --> 00:00:02,100
+I'm so excited to
+be here today,
+
+2
+00:00:02,640 --> 00:00:06,400
+and, I am talk talking to you
+
+3
+00:00:06,400 --> 00:00:09,060
+from Detroit, Michigan,
+United States.
+
+4
+00:00:09,600 --> 00:00:12,320
+But I, as Arie
+mentioned, I work,
+
+5
+00:00:12,880 --> 00:00:13,700
+in Tennessee.
+
+6
+00:00:14,595 --> 00:00:16,435
+So I have a PhD in computer
+
+7
+00:00:16,435 --> 00:00:18,055
+science from Wayne
+State University,
+
+8
+00:00:18,995 --> 00:00:21,260
+and I started working for,
+
+9
+00:00:21,500 --> 00:00:23,340
+the Oak Ridge
+National Lab Center
+
+10
+00:00:23,340 --> 00:00:25,260
+for Biomedical Informatics at
+
+11
+00:00:25,260 --> 00:00:27,020
+University of Tennessee Health
+
+12
+00:00:27,020 --> 00:00:28,000
+Science Center.
+
+13
+00:00:28,460 --> 00:00:30,140
+We're also affiliated with Le
+
+14
+00:00:30,140 --> 00:00:31,920
+Bonheur Children's Hospital.
+
+15
+00:00:32,940 --> 00:00:35,745
+we work in
+the Research Foundation
+
+16
+00:00:35,745 --> 00:00:37,665
+Institute. so we're affiliated
+
+17
+00:00:37,665 --> 00:00:38,645
+with that as well.
+
+18
+00:00:39,265 --> 00:00:41,445
+And, me and my team,
+
+19
+00:00:41,505 --> 00:00:43,445
+we are working in
+the population
+
+20
+00:00:43,505 --> 00:00:44,965
+health intelligence lab.
+
+21
+00:00:45,665 --> 00:00:47,125
+We're quite
+multi multidisciplinary
+
+22
+00:00:47,745 --> 00:00:49,860
+team, and,
+
+23
+00:00:50,260 --> 00:00:52,020
+we we I work for doctor Arash
+
+24
+00:00:52,020 --> 00:00:55,940
+Shapanijad. this talk is based
+
+25
+00:00:55,940 --> 00:00:57,860
+on a recent journal article I
+
+26
+00:00:57,860 --> 00:00:58,820
+published in,
+
+27
+00:00:59,460 --> 00:01:02,120
+GMIR Journal for
+Biomedical Informatics.
+
+28
+00:01:03,365 --> 00:01:05,685
+And, the motivation for this
+
+29
+00:01:05,685 --> 00:01:07,445
+work was based on a family
+
+30
+00:01:07,445 --> 00:01:09,785
+resilience initiative
+started in,
+
+31
+00:01:11,365 --> 00:01:15,680
+about now, like,
+almost two years ago,
+
+32
+00:01:15,740 --> 00:01:17,580
+and, it's a screening program
+
+33
+00:01:17,580 --> 00:01:19,440
+for adverse
+childhood experiences
+
+34
+00:01:20,540 --> 00:01:22,460
+and social determinants
+of health.
+
+35
+00:01:22,460 --> 00:01:23,900
+And then the rest
+of the talk,
+
+36
+00:01:23,900 --> 00:01:25,020
+I'm just gonna be referring to
+
+37
+00:01:25,020 --> 00:01:26,960
+those as ACs and SDOWADGE.
+
+38
+00:01:28,335 --> 00:01:30,015
+The program addresses social
+
+39
+00:01:30,015 --> 00:01:31,875
+needs through
+community outreach
+
+40
+00:01:31,935 --> 00:01:34,815
+coordinators, and
+they have a strong,
+
+41
+00:01:35,135 --> 00:01:37,395
+resource referral
+referral network.
+
+42
+00:01:38,175 --> 00:01:39,475
+And they have these quarterly
+
+43
+00:01:39,535 --> 00:01:41,820
+reports where they
+show statistics
+
+44
+00:01:41,960 --> 00:01:44,040
+of cases that have
+been enrolled
+
+45
+00:01:44,040 --> 00:01:44,860
+in the program,
+
+46
+00:01:45,480 --> 00:01:47,580
+and they also have descriptive
+
+47
+00:01:47,720 --> 00:01:49,880
+anecdotes of the the clients
+
+48
+00:01:49,880 --> 00:01:51,640
+that have been coming
+to the clinic.
+
+49
+00:01:51,640 --> 00:01:52,940
+And so it's voluntary.
+
+50
+00:01:53,160 --> 00:01:55,480
+It happens right
+after the primary
+
+51
+00:01:55,480 --> 00:01:58,805
+care visit, And, they,
+
+52
+00:01:59,285 --> 00:02:02,245
+they detect issues,
+such as, you know,
+
+53
+00:02:02,245 --> 00:02:03,685
+when it comes to
+adverse childhood
+
+54
+00:02:03,685 --> 00:02:06,005
+experiences, they
+detect issues
+
+55
+00:02:06,005 --> 00:02:08,025
+related to child
+behavioral issues.
+
+56
+00:02:08,485 --> 00:02:09,945
+When it comes to
+social determinants
+
+57
+00:02:10,085 --> 00:02:11,720
+of health, the most prevalent
+
+58
+00:02:11,780 --> 00:02:13,960
+issues are housing,
+food insecurities,
+
+59
+00:02:14,420 --> 00:02:16,580
+and so on. And in terms of
+
+60
+00:02:16,580 --> 00:02:18,500
+follow-up activities
+with their
+
+61
+00:02:18,500 --> 00:02:19,400
+referral networks,
+
+62
+00:02:19,540 --> 00:02:21,880
+they do follow-up appointments
+
+63
+00:02:22,260 --> 00:02:24,100
+with psychiatric
+psych you know,
+
+64
+00:02:24,100 --> 00:02:26,120
+psychological appointments or
+
+65
+00:02:26,685 --> 00:02:28,625
+clinical appointments
+and so on.
+
+66
+00:02:29,085 --> 00:02:31,265
+And so the the current process
+
+67
+00:02:31,325 --> 00:02:33,965
+is semi automated or manual in
+
+68
+00:02:33,965 --> 00:02:35,245
+in for the most case.
+
+69
+00:02:35,245 --> 00:02:37,805
+And, we wanted to provide them
+
+70
+00:02:37,805 --> 00:02:39,885
+with a tool that
+can help automate
+
+71
+00:02:39,885 --> 00:02:41,185
+the screening process.
+
+72
+00:02:42,220 --> 00:02:44,380
+and so I just wanted
+to highlight that,
+
+73
+00:02:44,380 --> 00:02:45,740
+you know, some of
+the challenges
+
+74
+00:02:45,740 --> 00:02:47,500
+in digital health is that we
+
+75
+00:02:47,500 --> 00:02:50,080
+want to design
+intelligent tools,
+
+76
+00:02:50,460 --> 00:02:51,340
+and that,
+
+77
+00:02:51,820 --> 00:02:53,980
+will reduce the effort done by
+
+78
+00:02:53,980 --> 00:02:57,675
+users both in
+data entry and in
+
+79
+00:02:57,675 --> 00:02:58,575
+knowledge acquisition.
+
+80
+00:02:58,795 --> 00:03:00,555
+And users could be, you know,
+
+81
+00:03:00,555 --> 00:03:03,835
+caregivers, talking
+to the, you know,
+
+82
+00:03:03,835 --> 00:03:05,115
+health care professional about
+
+83
+00:03:05,115 --> 00:03:07,115
+their issues and
+the the health
+
+84
+00:03:07,115 --> 00:03:08,575
+care professional itself,
+
+85
+00:03:09,150 --> 00:03:11,150
+himself or herself
+in the knowledge
+
+86
+00:03:11,150 --> 00:03:12,190
+acquisition process,
+
+87
+00:03:12,190 --> 00:03:13,390
+and what do they do with this
+
+88
+00:03:13,390 --> 00:03:15,230
+collected knowledge.
+
+89
+00:03:15,230 --> 00:03:17,790
+And so we really want good,
+
+90
+00:03:18,430 --> 00:03:19,810
+data input modalities.
+
+91
+00:03:20,110 --> 00:03:22,030
+And, in in Michigan mission
+
+92
+00:03:22,030 --> 00:03:23,650
+critical areas like medicine,
+
+93
+00:03:24,905 --> 00:03:26,685
+we also want to
+provide explanations
+
+94
+00:03:27,305 --> 00:03:30,185
+of why this decision was made
+
+95
+00:03:30,185 --> 00:03:32,985
+to provide, you know,
+transparency and,
+
+96
+00:03:33,625 --> 00:03:37,625
+trustworthiness.
+now the the current
+
+97
+00:03:37,625 --> 00:03:39,800
+process is based off standard
+
+98
+00:03:39,800 --> 00:03:41,160
+questionnaires that they have
+
+99
+00:03:41,160 --> 00:03:43,000
+developed and agreed upon for
+
+100
+00:03:43,000 --> 00:03:44,440
+social determinants and other
+
+101
+00:03:44,440 --> 00:03:45,400
+childhood experiences.
+
+102
+00:03:45,400 --> 00:03:46,940
+They have a lot of questions
+
+103
+00:03:47,000 --> 00:03:49,260
+that caregivers have
+to go through.
+
+104
+00:03:50,440 --> 00:03:52,120
+These questions are not only
+
+105
+00:03:52,120 --> 00:03:53,960
+overwhelming, but
+also sometimes
+
+106
+00:03:53,960 --> 00:03:55,695
+irrelevant. And,
+
+107
+00:03:56,015 --> 00:03:57,695
+sometimes there
+are hidden issues
+
+108
+00:03:57,695 --> 00:03:59,375
+that the caregiver is not even
+
+109
+00:03:59,375 --> 00:04:01,375
+aware of that we
+want to uncover
+
+110
+00:04:01,375 --> 00:04:02,275
+in those conversations.
+
+111
+00:04:02,895 --> 00:04:04,575
+And so these tools
+are good for
+
+112
+00:04:04,575 --> 00:04:05,375
+spotting the issues,
+
+113
+00:04:05,375 --> 00:04:07,075
+but we need tools to,
+
+114
+00:04:07,775 --> 00:04:08,995
+help people navigate,
+
+115
+00:04:10,190 --> 00:04:11,730
+help the caregivers navigate
+
+116
+00:04:11,950 --> 00:04:13,490
+those in need to resources,
+
+117
+00:04:13,630 --> 00:04:15,310
+and we want those
+tools to mimic
+
+118
+00:04:15,310 --> 00:04:16,210
+human intelligence.
+
+119
+00:04:16,430 --> 00:04:18,750
+And one way to you know,
+
+120
+00:04:18,750 --> 00:04:20,590
+the most important aspect that
+
+121
+00:04:20,590 --> 00:04:22,850
+humans use to make
+decisions is context.
+
+122
+00:04:22,910 --> 00:04:24,290
+So context is key.
+
+123
+00:04:24,795 --> 00:04:26,475
+And we also want to be able to
+
+124
+00:04:26,475 --> 00:04:29,055
+explain why
+a decision was made.
+
+125
+00:04:29,755 --> 00:04:31,775
+So, we need to provide
+an explanation,
+
+126
+00:04:31,915 --> 00:04:33,455
+and we want for
+that explanation
+
+127
+00:04:33,515 --> 00:04:35,275
+to be based on
+evidence, you know,
+
+128
+00:04:35,275 --> 00:04:38,090
+research or public
+knowledge, evidence.
+
+129
+00:04:38,630 --> 00:04:41,750
+And one way to
+achieve, you know,
+
+130
+00:04:41,750 --> 00:04:43,430
+explainability in AI,
+
+131
+00:04:43,430 --> 00:04:45,190
+and I'm sure so many people in
+
+132
+00:04:45,190 --> 00:04:47,210
+the conference
+today and yesterday
+
+133
+00:04:47,350 --> 00:04:49,030
+and the day before have been
+
+134
+00:04:49,030 --> 00:04:50,390
+talking about
+knowledge graphs.
+
+135
+00:04:50,390 --> 00:04:51,545
+And I know,
+
+136
+00:04:52,105 --> 00:04:54,425
+you probably by now
+know the importance
+
+137
+00:04:54,425 --> 00:04:56,025
+of knowledge graphs
+and what they mean.
+
+138
+00:04:56,025 --> 00:04:57,085
+But just briefly,
+
+139
+00:04:58,345 --> 00:05:00,205
+because we wanted
+to build a tool,
+
+140
+00:05:00,825 --> 00:05:01,945
+you know, we wanted to,
+
+141
+00:05:02,345 --> 00:05:03,785
+utilize knowledge graphs for
+
+142
+00:05:03,785 --> 00:05:05,145
+building that tool for AI
+
+143
+00:05:05,145 --> 00:05:07,300
+explainability.
+And so, you know,
+
+144
+00:05:07,300 --> 00:05:08,820
+one way to define knowledge is
+
+145
+00:05:08,820 --> 00:05:09,620
+that it's, you know,
+
+146
+00:05:09,620 --> 00:05:11,800
+it's data or facts associated
+
+147
+00:05:12,020 --> 00:05:13,000
+with context.
+
+148
+00:05:13,060 --> 00:05:14,820
+In context, one way to look at
+
+149
+00:05:14,820 --> 00:05:16,900
+context is a it's
+an overloaded term,
+
+150
+00:05:16,900 --> 00:05:17,460
+but, well,
+
+151
+00:05:17,460 --> 00:05:19,940
+one way is to define it by
+
+152
+00:05:19,940 --> 00:05:21,700
+semantics or metadata that it
+
+153
+00:05:21,700 --> 00:05:23,775
+describe those facts and put
+
+154
+00:05:24,395 --> 00:05:25,775
+conversations in context.
+
+155
+00:05:26,635 --> 00:05:28,955
+and so, knowledge
+graphs help,
+
+156
+00:05:29,355 --> 00:05:31,455
+open the black box in AI.
+
+157
+00:05:31,595 --> 00:05:33,915
+And, the other
+important aspect
+
+158
+00:05:33,915 --> 00:05:35,355
+of knowledge graphs is they
+
+159
+00:05:35,355 --> 00:05:37,375
+generalize based on structures
+
+160
+00:05:38,100 --> 00:05:39,860
+on structure
+rather than data,
+
+161
+00:05:39,860 --> 00:05:41,860
+which is what classic machine
+
+162
+00:05:41,860 --> 00:05:44,360
+learning does in
+training models and,
+
+163
+00:05:44,900 --> 00:05:47,160
+you know, trying them
+on new new data.
+
+164
+00:05:47,540 --> 00:05:49,480
+And so, in terms
+of applications,
+
+165
+00:05:50,115 --> 00:05:51,895
+digital assistants or chatbots
+
+166
+00:05:52,275 --> 00:05:53,715
+or conversation agents,
+
+167
+00:05:53,715 --> 00:05:54,835
+there are many terms.
+
+168
+00:05:54,835 --> 00:05:56,195
+They incorporate
+knowledge graphs
+
+169
+00:05:56,195 --> 00:05:57,415
+into dialogue interactions.
+
+170
+00:05:58,195 --> 00:06:00,115
+And so users would be would be
+
+171
+00:06:00,275 --> 00:06:01,795
+the input from the user would
+
+172
+00:06:01,795 --> 00:06:03,255
+be data and context,
+
+173
+00:06:03,490 --> 00:06:04,950
+and those serve as parameters
+
+174
+00:06:05,010 --> 00:06:07,010
+to queries. We
+run those queries
+
+175
+00:06:07,010 --> 00:06:07,970
+by knowledge graphs.
+
+176
+00:06:07,970 --> 00:06:10,130
+We personalize
+and enrich those
+
+177
+00:06:10,130 --> 00:06:10,950
+knowledge graphs.
+
+178
+00:06:11,570 --> 00:06:13,350
+And then,
+the other application
+
+179
+00:06:13,410 --> 00:06:14,930
+is recommendation systems that
+
+180
+00:06:14,930 --> 00:06:16,530
+can use those query results to
+
+181
+00:06:16,530 --> 00:06:18,965
+detect personalized resource
+
+182
+00:06:19,105 --> 00:06:21,985
+suggestions. and
+so our approach
+
+183
+00:06:21,985 --> 00:06:24,085
+for AI explainability
+is both,
+
+184
+00:06:24,705 --> 00:06:25,745
+it's knowledge driven.
+
+185
+00:06:25,745 --> 00:06:27,185
+It's it uses
+knowledge graphs,
+
+186
+00:06:27,185 --> 00:06:29,025
+but it's but it's
+also evidence based.
+
+187
+00:06:29,025 --> 00:06:30,225
+So we would like to provide
+
+188
+00:06:30,225 --> 00:06:33,600
+explanations both
+based on the graph
+
+189
+00:06:33,600 --> 00:06:35,540
+structure and past
+traceability,
+
+190
+00:06:35,760 --> 00:06:39,380
+but also based on,
+you know, research,
+
+191
+00:06:40,400 --> 00:06:42,340
+published or, you know,
+
+192
+00:06:43,440 --> 00:06:44,660
+trials registered.
+
+193
+00:06:44,800 --> 00:06:46,320
+And so we want to provide some
+
+194
+00:06:46,320 --> 00:06:48,395
+quantitative, data.
+
+195
+00:06:48,575 --> 00:06:50,715
+And so starting
+from the bottom,
+
+196
+00:06:50,935 --> 00:06:53,415
+we have been working
+on something
+
+197
+00:06:53,415 --> 00:06:55,095
+that we called knowledge based
+
+198
+00:06:55,095 --> 00:06:56,715
+urban population
+health observatory.
+
+199
+00:06:57,015 --> 00:06:58,475
+So we collect evidence,
+
+200
+00:06:58,695 --> 00:07:00,715
+and this evidence
+is not individual
+
+201
+00:07:00,855 --> 00:07:01,575
+level evidence.
+
+202
+00:07:01,575 --> 00:07:02,715
+It's public evidence.
+
+203
+00:07:03,120 --> 00:07:04,900
+It's community
+level indicators
+
+204
+00:07:05,600 --> 00:07:07,280
+collected from several sources
+
+205
+00:07:07,280 --> 00:07:10,800
+like US Census surveys
+and, you know,
+
+206
+00:07:10,800 --> 00:07:13,280
+Esri and CDC. And,
+
+207
+00:07:13,920 --> 00:07:16,080
+we also have local community
+
+208
+00:07:16,080 --> 00:07:18,660
+partners such as
+Memphis Property Hub,
+
+209
+00:07:19,065 --> 00:07:22,345
+where we have
+data about things
+
+210
+00:07:22,345 --> 00:07:23,165
+like transportation,
+
+211
+00:07:25,465 --> 00:07:26,985
+things like walkability scores
+
+212
+00:07:26,985 --> 00:07:27,805
+in your neighborhood,
+
+213
+00:07:27,945 --> 00:07:30,745
+and that is a different level
+
+214
+00:07:30,745 --> 00:07:31,885
+of geographic granularity.
+
+215
+00:07:32,185 --> 00:07:34,620
+So ZIP codes, census tract,
+
+216
+00:07:34,620 --> 00:07:36,320
+and census per group levels,
+
+217
+00:07:37,180 --> 00:07:38,940
+and sometimes at
+the, you know,
+
+218
+00:07:38,940 --> 00:07:40,380
+the the the parcel level.
+
+219
+00:07:40,380 --> 00:07:42,160
+And so we, we have
+been collecting
+
+220
+00:07:42,300 --> 00:07:44,380
+that data about we call them
+
+221
+00:07:44,380 --> 00:07:45,820
+social determinants of health
+
+222
+00:07:45,820 --> 00:07:46,780
+for a while now,
+
+223
+00:07:46,780 --> 00:07:48,975
+and we have been
+doing a lot of
+
+224
+00:07:48,975 --> 00:07:50,115
+association studies,
+
+225
+00:07:50,975 --> 00:07:52,675
+linking those to
+health outcomes.
+
+226
+00:07:53,215 --> 00:07:55,375
+And on on the top
+of that, we,
+
+227
+00:07:55,375 --> 00:07:57,455
+you know so we we
+process that raw data,
+
+228
+00:07:57,455 --> 00:07:58,895
+and we try to come up with
+
+229
+00:07:58,895 --> 00:08:00,835
+epidemiological, you know,
+
+230
+00:08:00,895 --> 00:08:02,460
+metric metric scores,
+
+231
+00:08:02,460 --> 00:08:04,320
+like affinity scores and,
+
+232
+00:08:05,020 --> 00:08:06,800
+results of association
+analysis.
+
+233
+00:08:07,180 --> 00:08:09,340
+And so that's
+the evidence that
+
+234
+00:08:09,340 --> 00:08:10,000
+we're collecting.
+
+235
+00:08:10,860 --> 00:08:13,020
+And, also, we utilize semantic
+
+236
+00:08:13,020 --> 00:08:15,040
+web technologies
+such as ontologies.
+
+237
+00:08:15,420 --> 00:08:17,440
+We define epidemiological
+ontologies,
+
+238
+00:08:17,805 --> 00:08:19,425
+surveillance ontologies, and,
+
+239
+00:08:19,965 --> 00:08:22,225
+we use those to do
+semantic inference.
+
+240
+00:08:23,245 --> 00:08:25,005
+And we feed
+concepts from those
+
+241
+00:08:25,005 --> 00:08:26,445
+ontologies into
+building knowledge
+
+242
+00:08:26,445 --> 00:08:27,165
+graphs as well.
+
+243
+00:08:27,165 --> 00:08:29,725
+And so that provides
+a good base
+
+244
+00:08:29,725 --> 00:08:30,465
+for applications.
+
+245
+00:08:30,605 --> 00:08:33,680
+And so going to the top,
+we, you know,
+
+246
+00:08:33,680 --> 00:08:36,180
+we expose the results
+through APIs,
+
+247
+00:08:36,240 --> 00:08:37,700
+and there are so
+many technologies
+
+248
+00:08:37,920 --> 00:08:40,960
+out there to,
+query graphs or,
+
+249
+00:08:40,960 --> 00:08:42,240
+you know, either locally or
+
+250
+00:08:42,240 --> 00:08:44,640
+globally depending
+on the domain.
+
+251
+00:08:44,640 --> 00:08:47,815
+And then, we provide
+explanations.
+
+252
+00:08:48,355 --> 00:08:49,975
+So we provide
+recommendations,
+
+253
+00:08:50,275 --> 00:08:51,895
+but we also explain those.
+
+254
+00:08:52,515 --> 00:08:54,835
+And because we
+perform different
+
+255
+00:08:54,835 --> 00:08:56,835
+kind of analysis
+techniques, either,
+
+256
+00:08:56,835 --> 00:08:58,595
+you know, causal inference or
+
+257
+00:08:58,595 --> 00:09:00,035
+association, regressed through
+
+258
+00:09:00,035 --> 00:09:01,015
+regression analysis,
+
+259
+00:09:01,235 --> 00:09:02,870
+we can pull the results,
+
+260
+00:09:02,870 --> 00:09:04,230
+and we can actually provide
+
+261
+00:09:04,230 --> 00:09:05,670
+explanations of why we made
+
+262
+00:09:05,670 --> 00:09:06,490
+certain recommendations.
+
+263
+00:09:07,510 --> 00:09:09,750
+And we feed those
+into the applications
+
+264
+00:09:09,750 --> 00:09:11,350
+such as digital assistance and
+
+265
+00:09:11,350 --> 00:09:12,230
+recommended systems,
+
+266
+00:09:12,230 --> 00:09:14,070
+and we can even
+do analytics on
+
+267
+00:09:14,070 --> 00:09:17,145
+aggregated data
+based on previous
+
+268
+00:09:17,145 --> 00:09:21,225
+conversations.
+and so, you know,
+
+269
+00:09:21,225 --> 00:09:22,905
+since this is this
+is not, you know,
+
+270
+00:09:22,905 --> 00:09:23,945
+a research conference,
+
+271
+00:09:23,945 --> 00:09:25,305
+I just wanted to
+highlight that
+
+272
+00:09:25,305 --> 00:09:28,025
+we in in building this tool of
+
+273
+00:09:28,025 --> 00:09:29,485
+utilized several
+technologies,
+
+274
+00:09:30,670 --> 00:09:31,490
+and you probably,
+
+275
+00:09:31,950 --> 00:09:33,150
+heard about some of this in
+
+276
+00:09:33,150 --> 00:09:34,030
+the in the conference.
+
+277
+00:09:34,030 --> 00:09:35,630
+So I to build the ontology,
+
+278
+00:09:35,630 --> 00:09:38,990
+we utilized to build the QA
+
+279
+00:09:38,990 --> 00:09:40,190
+agent or the chatbot.
+
+280
+00:09:40,190 --> 00:09:42,350
+We utilized Google
+Dialogflow and,
+
+281
+00:09:43,485 --> 00:09:45,505
+also the the Google
+Cloud platform.
+
+282
+00:09:46,205 --> 00:09:48,065
+And for the knowledge graph,
+
+283
+00:09:48,365 --> 00:09:50,705
+we utilize the Neo
+four g graph
+
+284
+00:09:50,845 --> 00:09:53,665
+technology and
+a couple of plugins
+
+285
+00:09:53,805 --> 00:09:55,985
+associated with that
+technology as well.
+
+286
+00:09:56,850 --> 00:09:57,990
+As for the anthology,
+
+287
+00:09:58,690 --> 00:10:00,210
+it was developed by,
+
+288
+00:10:00,850 --> 00:10:03,010
+previous post doc
+that was working
+
+289
+00:10:03,010 --> 00:10:05,910
+with my PI, and he,
+in that anthology,
+
+290
+00:10:05,970 --> 00:10:08,230
+he encoded epidemiological
+
+291
+00:10:08,690 --> 00:10:11,215
+knowledge related to social
+
+292
+00:10:11,215 --> 00:10:12,435
+determinants of health,
+
+293
+00:10:12,495 --> 00:10:13,795
+adverse childhood
+experiences,
+
+294
+00:10:14,335 --> 00:10:16,995
+and how those cause certain
+
+295
+00:10:17,135 --> 00:10:18,975
+negative health outcomes and
+
+296
+00:10:18,975 --> 00:10:20,815
+what kind of interventions we
+
+297
+00:10:20,815 --> 00:10:23,615
+can do in order to
+mitigate those,
+
+298
+00:10:24,335 --> 00:10:26,780
+outcomes. And the ontology
+
+299
+00:10:27,000 --> 00:10:28,700
+includes both concept
+hierarchies.
+
+300
+00:10:28,920 --> 00:10:30,620
+And I'm sure through
+the conference
+
+301
+00:10:30,680 --> 00:10:32,060
+today, you've you've,
+
+302
+00:10:32,520 --> 00:10:34,680
+seen several ontologies
+and, you know,
+
+303
+00:10:34,680 --> 00:10:35,580
+what they mean.
+
+304
+00:10:35,960 --> 00:10:38,280
+But, this is a very
+conceptual diagram,
+
+305
+00:10:38,280 --> 00:10:40,085
+but, it's a it's
+a comprehensive
+
+306
+00:10:40,145 --> 00:10:42,405
+ontology of both
+concept hierarchies,
+
+307
+00:10:43,825 --> 00:10:45,665
+object properties
+between the different
+
+308
+00:10:45,665 --> 00:10:46,705
+context as well as,
+
+309
+00:10:47,265 --> 00:10:49,845
+data type properties
+and also,
+
+310
+00:10:50,385 --> 00:10:52,485
+you know, axioms,
+
+311
+00:10:52,785 --> 00:10:56,310
+epidemiological
+causal relationships
+
+312
+00:10:56,450 --> 00:10:57,190
+through axioms.
+
+313
+00:10:57,890 --> 00:10:59,670
+And in building
+this ontology,
+
+314
+00:10:59,970 --> 00:11:01,890
+we, or young, he,
+
+315
+00:11:02,290 --> 00:11:04,630
+he referred to those standard
+
+316
+00:11:04,690 --> 00:11:06,690
+questionnaires,
+and so he relied
+
+317
+00:11:06,690 --> 00:11:08,050
+on surveys on,
+
+318
+00:11:08,370 --> 00:11:12,125
+basic foundation
+research papers
+
+319
+00:11:12,125 --> 00:11:13,645
+on the topic, and,
+
+320
+00:11:14,525 --> 00:11:18,225
+he also published
+the anthology in RDFS,
+
+321
+00:11:18,685 --> 00:11:20,625
+OWL format on Pyoportals.
+
+322
+00:11:20,925 --> 00:11:23,820
+It's available and, you know,
+
+323
+00:11:23,820 --> 00:11:25,340
+for use by other researchers.
+
+324
+00:11:25,340 --> 00:11:27,440
+And he did reuse
+existing ontologies,
+
+325
+00:11:27,660 --> 00:11:29,660
+but, we we wanted to put that
+
+326
+00:11:29,660 --> 00:11:31,760
+ontology into use
+into a tool.
+
+327
+00:11:32,380 --> 00:11:35,200
+And so, moving to
+the QA agent,
+
+328
+00:11:35,765 --> 00:11:37,685
+as I said, we utilized Google
+
+329
+00:11:37,685 --> 00:11:38,885
+Dialogflow. And,
+
+330
+00:11:39,125 --> 00:11:40,485
+for those who are not familiar
+
+331
+00:11:40,485 --> 00:11:41,625
+with this framework,
+
+332
+00:11:41,685 --> 00:11:43,765
+just like IBM Watson and other
+
+333
+00:11:43,765 --> 00:11:47,045
+frameworks, we
+have to start by,
+
+334
+00:11:47,930 --> 00:11:48,890
+building an agent.
+
+335
+00:11:48,890 --> 00:11:50,570
+So we have to
+define an agent,
+
+336
+00:11:50,570 --> 00:11:53,070
+and let's say we
+have I'm working
+
+337
+00:11:53,210 --> 00:11:54,810
+on different
+application domains.
+
+338
+00:11:54,810 --> 00:11:57,070
+One domain is this
+AC civilians.
+
+339
+00:11:58,330 --> 00:11:59,610
+Then I have to, you know,
+
+340
+00:11:59,610 --> 00:12:01,795
+I have to define an agent for
+
+341
+00:12:01,795 --> 00:12:02,995
+each specific problem.
+
+342
+00:12:02,995 --> 00:12:04,275
+And within that agent,
+
+343
+00:12:04,275 --> 00:12:06,595
+I have to train the agent on
+
+344
+00:12:06,595 --> 00:12:08,195
+certain training phrases that
+
+345
+00:12:08,195 --> 00:12:09,575
+might come up in
+the conversations.
+
+346
+00:12:10,595 --> 00:12:12,695
+And, you know,
+
+347
+00:12:12,755 --> 00:12:14,275
+the Google dial dialogue flow
+
+348
+00:12:14,275 --> 00:12:15,875
+is pretty mature in terms of
+
+349
+00:12:15,875 --> 00:12:17,594
+natural language
+processing, you know,
+
+350
+00:12:17,594 --> 00:12:18,754
+they have, machine learning
+
+351
+00:12:18,754 --> 00:12:19,218
+model capability,
+
+352
+00:12:19,218 --> 00:12:21,420
+training capabilities
+already built in.
+
+353
+00:12:21,550 --> 00:12:21,940
+they already have,
+
+354
+00:12:22,070 --> 00:12:24,030
+types that are
+system defined.
+
+355
+00:12:24,330 --> 00:12:26,890
+So, they know things like age
+
+356
+00:12:26,890 --> 00:12:27,870
+and gender.
+
+357
+00:12:32,795 --> 00:12:33,995
+We don't need to tell,
+
+358
+00:12:34,475 --> 00:12:36,235
+the framework about
+these concepts.
+
+359
+00:12:36,235 --> 00:12:38,155
+But for our specific problem,
+
+360
+00:12:38,155 --> 00:12:41,675
+we had to train
+the agent on our
+
+361
+00:12:41,675 --> 00:12:43,675
+concepts the main
+concepts from
+
+362
+00:12:43,675 --> 00:12:44,735
+our domain ontology,
+
+363
+00:12:44,875 --> 00:12:47,030
+the ACs and social determinant
+
+364
+00:12:47,030 --> 00:12:47,930
+of health ontology.
+
+365
+00:12:48,390 --> 00:12:50,950
+And so we need to
+define entity types.
+
+366
+00:12:50,950 --> 00:12:52,390
+We need to load the agent with
+
+367
+00:12:52,390 --> 00:12:53,610
+those entity types,
+
+368
+00:12:53,670 --> 00:12:55,670
+and we need to
+train it on certain
+
+369
+00:12:55,670 --> 00:12:56,170
+phrases.
+
+370
+00:12:57,030 --> 00:12:59,590
+And, so I'm going
+to talk about
+
+371
+00:12:59,590 --> 00:13:01,765
+all of this next.
+
+372
+00:13:02,945 --> 00:13:04,145
+the first step, you know,
+
+373
+00:13:04,145 --> 00:13:05,985
+training the chatbot on those
+
+374
+00:13:05,985 --> 00:13:07,665
+domain content concepts.
+
+375
+00:13:07,665 --> 00:13:10,145
+As I said, Google
+utilizes natural
+
+376
+00:13:10,145 --> 00:13:11,505
+language processing
+to do that.
+
+377
+00:13:11,505 --> 00:13:13,905
+But, if let's say this is one
+
+378
+00:13:13,905 --> 00:13:16,005
+of the scenarios
+that came up and,
+
+379
+00:13:16,650 --> 00:13:18,570
+you know, and was inspired by
+
+380
+00:13:18,570 --> 00:13:20,970
+the quarterly
+reports of the Fry
+
+381
+00:13:20,970 --> 00:13:25,070
+initiative. So,
+within this sentence,
+
+382
+00:13:25,370 --> 00:13:26,650
+it's, you know, it's a text,
+
+383
+00:13:26,650 --> 00:13:28,090
+but there are certain concepts
+
+384
+00:13:28,090 --> 00:13:29,530
+that we wanted the agent to be
+
+385
+00:13:29,530 --> 00:13:30,430
+able to detect.
+
+386
+00:13:31,115 --> 00:13:33,515
+And so whenever, you know,
+
+387
+00:13:33,515 --> 00:13:35,275
+whenever the agent
+sees the word
+
+388
+00:13:35,275 --> 00:13:37,035
+alcoholic, it
+should be detected
+
+389
+00:13:37,035 --> 00:13:38,415
+as a substance abuse.
+
+390
+00:13:38,475 --> 00:13:40,075
+So this is an entity type,
+
+391
+00:13:40,075 --> 00:13:42,335
+and alcoholic is
+a parameter value.
+
+392
+00:13:42,395 --> 00:13:44,315
+And that's so
+that's that appears
+
+393
+00:13:44,315 --> 00:13:45,755
+in the current
+conversation and
+
+394
+00:13:45,755 --> 00:13:46,735
+the current context.
+
+395
+00:13:47,340 --> 00:13:47,980
+And so,
+
+396
+00:13:49,260 --> 00:13:51,340
+the the we told we
+told the framework
+
+397
+00:13:51,340 --> 00:13:52,320
+that this is,
+
+398
+00:13:52,940 --> 00:13:55,120
+a concept based
+on our ontology.
+
+399
+00:13:55,180 --> 00:13:57,440
+So our ontology
+covers that concept.
+
+400
+00:13:58,860 --> 00:14:01,135
+same thing, calm, you know,
+
+401
+00:14:01,135 --> 00:14:03,215
+I can't calm my child down.
+
+402
+00:14:03,215 --> 00:14:05,615
+He bounces back.
+This is a symptom.
+
+403
+00:14:05,615 --> 00:14:06,515
+These are symptoms.
+
+404
+00:14:06,575 --> 00:14:08,675
+So anything in brown
+is a symptom.
+
+405
+00:14:09,615 --> 00:14:11,375
+four year old as a phrase,
+
+406
+00:14:11,375 --> 00:14:13,295
+this is detected by Google as
+
+407
+00:14:13,295 --> 00:14:15,055
+a as an age. So that's why we
+
+408
+00:14:15,055 --> 00:14:17,260
+see that it says, prefix.
+
+409
+00:14:17,260 --> 00:14:20,540
+It's like a system.
+sex, the same thing.
+
+410
+00:14:20,540 --> 00:14:21,980
+So there are
+things that Google
+
+411
+00:14:21,980 --> 00:14:22,940
+is able to detect,
+
+412
+00:14:22,940 --> 00:14:24,860
+and that makes it
+easier for us.
+
+413
+00:14:24,860 --> 00:14:27,260
+But, substance
+abuse, symptom,
+
+414
+00:14:27,260 --> 00:14:28,160
+these are things.
+
+415
+00:14:29,065 --> 00:14:31,305
+stress is a is
+an outcome is a negative
+
+416
+00:14:31,305 --> 00:14:31,945
+health outcome.
+
+417
+00:14:31,945 --> 00:14:32,905
+It's not a disease,
+
+418
+00:14:32,905 --> 00:14:34,505
+but it's a negative
+health outcome,
+
+419
+00:14:34,505 --> 00:14:36,285
+and that is encoded
+in the ontology.
+
+420
+00:14:37,145 --> 00:14:39,245
+So that's about the training.
+
+421
+00:14:40,585 --> 00:14:42,880
+now about
+the the other important
+
+422
+00:14:42,940 --> 00:14:44,880
+aspect in developing chatbots
+
+423
+00:14:45,020 --> 00:14:46,640
+is this thing called intent.
+
+424
+00:14:47,180 --> 00:14:49,100
+So, for example,
+within an agent,
+
+425
+00:14:49,100 --> 00:14:50,940
+within an application
+domain, if,
+
+426
+00:14:50,940 --> 00:14:52,780
+let's say,
+the person is talking
+
+427
+00:14:52,780 --> 00:14:53,580
+about a problem,
+
+428
+00:14:53,580 --> 00:14:56,215
+I would like to
+be able to keep
+
+429
+00:14:56,215 --> 00:14:59,015
+track of what
+their context is,
+
+430
+00:14:59,015 --> 00:15:00,935
+and I want to keep
+all of the active
+
+431
+00:15:00,935 --> 00:15:02,055
+context on a stack.
+
+432
+00:15:02,055 --> 00:15:05,095
+So if they say I have
+housing issues,
+
+433
+00:15:05,095 --> 00:15:07,830
+then, housing it
+looks like this
+
+434
+00:15:07,830 --> 00:15:09,990
+person is looking
+for a housing
+
+435
+00:15:09,990 --> 00:15:12,330
+recommendation.
+And so in general,
+
+436
+00:15:12,390 --> 00:15:14,810
+this is an FRI or
+family resilience
+
+437
+00:15:14,870 --> 00:15:17,850
+initiative
+recommendation intent,
+
+438
+00:15:18,230 --> 00:15:20,470
+but this the the child intent
+
+439
+00:15:20,470 --> 00:15:22,005
+or the specific intent within
+
+440
+00:15:22,005 --> 00:15:24,165
+that generic intent
+is a housing
+
+441
+00:15:24,165 --> 00:15:25,705
+recommendation.
+He's not looking
+
+442
+00:15:26,085 --> 00:15:27,525
+she's not looking for,
+
+443
+00:15:27,845 --> 00:15:28,825
+food insecurities.
+
+444
+00:15:29,125 --> 00:15:30,405
+She's looking for housing
+
+445
+00:15:30,405 --> 00:15:30,905
+recommendations.
+
+446
+00:15:31,045 --> 00:15:33,045
+So that's there's this concept
+
+447
+00:15:33,045 --> 00:15:37,560
+of parent child
+intent detection.
+
+448
+00:15:37,560 --> 00:15:39,400
+And, as I said,
+
+449
+00:15:39,400 --> 00:15:41,260
+each at each point in
+the conversation,
+
+450
+00:15:41,480 --> 00:15:43,800
+there is one, you know, one,
+
+451
+00:15:44,680 --> 00:15:46,335
+one intent we're
+working with,
+
+452
+00:15:46,415 --> 00:15:47,935
+but we want we want to keep
+
+453
+00:15:47,935 --> 00:15:50,095
+track of all
+historical intents
+
+454
+00:15:50,095 --> 00:15:51,295
+that have been detected.
+
+455
+00:15:51,295 --> 00:15:53,955
+And so we call these
+active contacts.
+
+456
+00:15:54,095 --> 00:15:56,015
+So Google data
+flow keeps track
+
+457
+00:15:56,015 --> 00:15:56,675
+of those.
+
+458
+00:15:58,255 --> 00:15:59,935
+and but, of course,
+
+459
+00:15:59,935 --> 00:16:01,740
+we have we must have defined
+
+460
+00:16:01,740 --> 00:16:03,180
+those at the beginning, but,
+
+461
+00:16:03,500 --> 00:16:05,500
+it it keeps detecting
+the intents
+
+462
+00:16:05,500 --> 00:16:07,120
+at each step in
+the conversation.
+
+463
+00:16:08,140 --> 00:16:10,240
+So, in addition to detecting
+
+464
+00:16:10,300 --> 00:16:12,140
+intents and keeping
+them on a stack
+
+465
+00:16:12,140 --> 00:16:13,280
+of active contexts,
+
+466
+00:16:13,740 --> 00:16:18,205
+the the agent should detect as
+
+467
+00:16:18,205 --> 00:16:19,905
+we said the contextual
+parameters.
+
+468
+00:16:20,205 --> 00:16:22,045
+And so, you know,
+
+469
+00:16:22,045 --> 00:16:23,165
+three eight one zero three is
+
+470
+00:16:23,165 --> 00:16:25,025
+a ZIP code, so that's a system
+
+471
+00:16:25,085 --> 00:16:27,405
+system type. twenty one years
+
+472
+00:16:27,405 --> 00:16:29,265
+old is an age that's
+a system type.
+
+473
+00:16:29,565 --> 00:16:32,180
+But housing circumstance,
+you know,
+
+474
+00:16:32,180 --> 00:16:34,520
+is an entity type in
+this conversation,
+
+475
+00:16:34,820 --> 00:16:38,180
+so that's detected
+as an entity type.
+
+476
+00:16:38,180 --> 00:16:41,140
+And the parameters are we have
+
+477
+00:16:41,140 --> 00:16:43,460
+three parameters that
+have that type.
+
+478
+00:16:43,460 --> 00:16:44,600
+So we have mold.
+
+479
+00:16:44,625 --> 00:16:46,305
+She suffers from
+housing issues.
+
+480
+00:16:46,305 --> 00:16:48,625
+In particular, she
+has mold, bugs,
+
+481
+00:16:48,625 --> 00:16:50,005
+and inadequate heating.
+
+482
+00:16:50,865 --> 00:16:52,325
+Again, so
+housing circumstances
+
+483
+00:16:52,705 --> 00:16:54,565
+is a type defined
+in our ontology.
+
+484
+00:16:54,625 --> 00:16:58,405
+And so, the intent detection,
+
+485
+00:16:58,625 --> 00:17:01,490
+active context, and
+context parameters,
+
+486
+00:17:01,550 --> 00:17:02,750
+and their entity types.
+
+487
+00:17:02,750 --> 00:17:03,970
+All of that is,
+
+488
+00:17:04,270 --> 00:17:06,370
+is the is is kept track of.
+
+489
+00:17:06,750 --> 00:17:08,530
+And going forward in
+the conversation,
+
+490
+00:17:09,150 --> 00:17:10,990
+if, let's say, we
+reached a stage
+
+491
+00:17:10,990 --> 00:17:12,430
+where we are ready to schedule
+
+492
+00:17:12,430 --> 00:17:15,585
+an appointment,
+then we have to,
+
+493
+00:17:16,125 --> 00:17:17,165
+we ask the person,
+
+494
+00:17:17,165 --> 00:17:18,365
+would you like me to schedule
+
+495
+00:17:18,365 --> 00:17:18,925
+an appointment?
+
+496
+00:17:18,925 --> 00:17:21,085
+And if they say
+yes, I start an,
+
+497
+00:17:21,085 --> 00:17:23,185
+you know, an action
+or an event.
+
+498
+00:17:23,565 --> 00:17:26,365
+And so I have to
+call, you know,
+
+499
+00:17:26,365 --> 00:17:28,620
+the the the intent that is
+
+500
+00:17:28,620 --> 00:17:30,320
+responsible for that action.
+
+501
+00:17:30,700 --> 00:17:33,260
+And for that purpose,
+I need the time.
+
+502
+00:17:33,260 --> 00:17:35,180
+I need the the appointment
+type.
+
+503
+00:17:35,180 --> 00:17:36,880
+Is it a psychological
+appointment?
+
+504
+00:17:36,940 --> 00:17:38,460
+Is it a clinical appointment?
+
+505
+00:17:38,460 --> 00:17:40,860
+I need the date
+and time and for
+
+506
+00:17:40,860 --> 00:17:42,575
+how long. And so,
+
+507
+00:17:42,815 --> 00:17:44,815
+there is something
+called the slot
+
+508
+00:17:44,815 --> 00:17:46,995
+filling, context.
+
+509
+00:17:47,295 --> 00:17:50,355
+And, in in
+conversation agents,
+
+510
+00:17:50,575 --> 00:17:52,195
+we you know, in in
+these platforms,
+
+511
+00:17:52,575 --> 00:17:55,360
+you we can we can
+say that these
+
+512
+00:17:55,360 --> 00:17:56,800
+are the mandatory parameters.
+
+513
+00:17:56,800 --> 00:17:58,100
+These are optional
+parameters.
+
+514
+00:17:58,160 --> 00:17:59,600
+You know, they
+can the the user
+
+515
+00:17:59,600 --> 00:18:01,680
+can skip some of them and but
+
+516
+00:18:01,680 --> 00:18:02,720
+some of them are important.
+
+517
+00:18:02,720 --> 00:18:04,240
+And for the for those that are
+
+518
+00:18:04,240 --> 00:18:05,860
+important for
+the appointment,
+
+519
+00:18:06,975 --> 00:18:09,235
+we can link them to
+friendly questions.
+
+520
+00:18:09,295 --> 00:18:10,335
+For example, we can say,
+
+521
+00:18:10,335 --> 00:18:11,855
+can you please provide
+me with a date?
+
+522
+00:18:11,855 --> 00:18:13,615
+Can you please provide
+me with a time?
+
+523
+00:18:13,615 --> 00:18:15,695
+So that's something
+we can work
+
+524
+00:18:15,695 --> 00:18:17,075
+with through those platforms.
+
+525
+00:18:17,775 --> 00:18:20,175
+But I'm just showing
+the, you know,
+
+526
+00:18:20,175 --> 00:18:22,435
+the technical, aspects,
+
+527
+00:18:23,050 --> 00:18:23,930
+behind the scenes,
+
+528
+00:18:23,930 --> 00:18:25,450
+what happens behind
+the scenes.
+
+529
+00:18:25,450 --> 00:18:27,450
+So to the left is what
+a user would see,
+
+530
+00:18:27,450 --> 00:18:29,470
+and to the right
+is what happens
+
+531
+00:18:30,090 --> 00:18:31,790
+within the dialogue
+flow framework.
+
+532
+00:18:33,050 --> 00:18:35,085
+the third, thing,
+
+533
+00:18:35,085 --> 00:18:36,385
+and that's very important,
+
+534
+00:18:36,605 --> 00:18:39,085
+is how how do we
+lay all of this
+
+535
+00:18:39,085 --> 00:18:41,245
+information over
+to our, you know,
+
+536
+00:18:41,245 --> 00:18:43,265
+recommendation or
+knowledge graph,
+
+537
+00:18:44,125 --> 00:18:46,205
+you know, generation
+service or,
+
+538
+00:18:46,205 --> 00:18:49,100
+you know, back end
+component is through,
+
+539
+00:18:49,560 --> 00:18:50,920
+again, this is done through
+
+540
+00:18:50,920 --> 00:18:53,160
+the Google Cloud
+platform through
+
+541
+00:18:53,160 --> 00:18:54,380
+something called
+fulfillments.
+
+542
+00:18:54,680 --> 00:18:57,500
+And so, a fulfillment
+is simply,
+
+543
+00:18:57,720 --> 00:18:59,640
+you know, it's it's
+like a service
+
+544
+00:18:59,640 --> 00:19:01,080
+that could be either
+user defined.
+
+545
+00:19:01,080 --> 00:19:02,860
+So we could define our own
+
+546
+00:19:03,435 --> 00:19:06,555
+recommendation service
+endpoint and,
+
+547
+00:19:06,555 --> 00:19:07,595
+you know, for those who use
+
+548
+00:19:07,595 --> 00:19:09,035
+Google Cloud
+platform that you're
+
+549
+00:19:09,035 --> 00:19:09,995
+probably familiar with this.
+
+550
+00:19:09,995 --> 00:19:11,515
+So we have to define our own
+
+551
+00:19:11,515 --> 00:19:12,815
+service and what it does,
+
+552
+00:19:13,115 --> 00:19:14,955
+but we can also
+utilize the Google
+
+553
+00:19:14,955 --> 00:19:16,175
+Cloud platform APIs.
+
+554
+00:19:17,610 --> 00:19:18,570
+and that's one of the reasons
+
+555
+00:19:18,570 --> 00:19:19,770
+why I chose this platform.
+
+556
+00:19:19,770 --> 00:19:21,130
+For example, if I
+want to schedule
+
+557
+00:19:21,130 --> 00:19:21,770
+an appointment,
+
+558
+00:19:21,770 --> 00:19:23,470
+I could invoke
+the Google Calendar
+
+559
+00:19:23,530 --> 00:19:25,610
+API and do the you know,
+
+560
+00:19:25,610 --> 00:19:27,310
+I I could trigger the calendar
+
+561
+00:19:27,370 --> 00:19:29,930
+app on the user side
+and, you know,
+
+562
+00:19:29,930 --> 00:19:31,610
+they can just
+automatically add
+
+563
+00:19:31,610 --> 00:19:32,270
+the appointment.
+
+564
+00:19:32,775 --> 00:19:34,375
+I can involve
+the Google Places
+
+565
+00:19:34,375 --> 00:19:36,395
+API if I want to
+look for clinics
+
+566
+00:19:36,775 --> 00:19:38,715
+around. So I don't
+have to redefine.
+
+567
+00:19:38,935 --> 00:19:40,455
+I don't have to
+reinvent the wheel.
+
+568
+00:19:40,455 --> 00:19:42,775
+I can use existing APIs.
+
+569
+00:19:42,775 --> 00:19:44,215
+And so that's simply,
+
+570
+00:19:44,215 --> 00:19:45,495
+that's what fulfillment does.
+
+571
+00:19:45,495 --> 00:19:47,700
+So it's like an intermediary,
+
+572
+00:19:48,880 --> 00:19:50,820
+component there
+for communication
+
+573
+00:19:50,880 --> 00:19:53,220
+between the chatbot
+and whatever
+
+574
+00:19:53,360 --> 00:19:54,960
+other services I would like to
+
+575
+00:19:54,960 --> 00:19:57,200
+use such as Neo four
+g and, you know,
+
+576
+00:19:57,200 --> 00:19:58,260
+those other components.
+
+577
+00:20:00,345 --> 00:20:02,185
+And so that's for the agent or
+
+578
+00:20:02,185 --> 00:20:03,625
+the chatbot. Now,
+
+579
+00:20:03,945 --> 00:20:04,765
+through the fulfillment,
+
+580
+00:20:05,465 --> 00:20:07,785
+we pass over
+the parameters and
+
+581
+00:20:07,785 --> 00:20:09,465
+their entity types
+to the knowledge
+
+582
+00:20:09,465 --> 00:20:12,185
+graph. So now we have data in
+
+583
+00:20:12,185 --> 00:20:14,960
+terms of values, and
+we have, you know,
+
+584
+00:20:14,960 --> 00:20:17,040
+context in terms of
+those entity types.
+
+585
+00:20:17,040 --> 00:20:18,820
+So we have concepts and data.
+
+586
+00:20:19,200 --> 00:20:21,680
+And so we would
+like to do to,
+
+587
+00:20:21,680 --> 00:20:23,360
+you know, to to build a graph
+
+588
+00:20:23,360 --> 00:20:25,200
+that is personalized to this
+
+589
+00:20:25,200 --> 00:20:26,800
+specific user,
+and we would like
+
+590
+00:20:26,800 --> 00:20:29,155
+to enrich that graph gradually
+
+591
+00:20:29,375 --> 00:20:31,535
+and populate it with values or
+
+592
+00:20:31,535 --> 00:20:32,675
+facts or data,
+
+593
+00:20:33,935 --> 00:20:35,615
+that the user did
+not even mention
+
+594
+00:20:35,615 --> 00:20:36,355
+in the conversation.
+
+595
+00:20:36,495 --> 00:20:37,535
+And for that purpose,
+
+596
+00:20:37,535 --> 00:20:39,375
+we used we collect evidence,
+
+597
+00:20:39,375 --> 00:20:40,515
+as I mentioned earlier,
+
+598
+00:20:40,575 --> 00:20:42,015
+through this observatory or
+
+599
+00:20:42,015 --> 00:20:44,000
+through publicly
+available research,
+
+600
+00:20:45,180 --> 00:20:46,780
+articles. And so I would like
+
+601
+00:20:46,780 --> 00:20:48,300
+to talk more about
+this knowledge
+
+602
+00:20:48,300 --> 00:20:49,120
+graph component.
+
+603
+00:20:49,420 --> 00:20:52,460
+So, as I said, we you know,
+
+604
+00:20:52,460 --> 00:20:53,600
+within this conversation,
+
+605
+00:20:54,060 --> 00:20:57,360
+if the person said,
+I am Hispanic,
+
+606
+00:20:58,225 --> 00:21:00,065
+female living in
+Memphis in this
+
+607
+00:21:00,065 --> 00:21:02,465
+ZIP code. My six
+year old child
+
+608
+00:21:02,465 --> 00:21:04,005
+experiences night terror.
+
+609
+00:21:04,545 --> 00:21:05,505
+I don't have a car.
+
+610
+00:21:05,505 --> 00:21:08,465
+If she mentions
+those, you know,
+
+611
+00:21:08,465 --> 00:21:10,225
+those words in
+the text that she
+
+612
+00:21:10,225 --> 00:21:11,825
+provides in the in the chat,
+
+613
+00:21:11,825 --> 00:21:12,645
+in the conversation,
+
+614
+00:21:13,520 --> 00:21:16,180
+I can start off with
+those concepts.
+
+615
+00:21:16,320 --> 00:21:19,760
+So I can start with those by
+
+616
+00:21:19,760 --> 00:21:20,400
+adding you know,
+
+617
+00:21:20,400 --> 00:21:21,780
+I can create a personalized
+
+618
+00:21:22,000 --> 00:21:23,920
+graph for her. So I start by
+
+619
+00:21:23,920 --> 00:21:25,220
+adding those parameters,
+
+620
+00:21:25,680 --> 00:21:27,860
+contextual parameters
+in purple.
+
+621
+00:21:28,645 --> 00:21:29,765
+So all these circles,
+
+622
+00:21:29,765 --> 00:21:31,205
+Hispanic three eight
+one zero three.
+
+623
+00:21:31,205 --> 00:21:33,205
+So these are things
+that, you know,
+
+624
+00:21:33,205 --> 00:21:35,605
+she mentioned.
+And then I start
+
+625
+00:21:35,605 --> 00:21:37,705
+linking those parameter values
+
+626
+00:21:38,005 --> 00:21:41,225
+to their entity types
+based on concepts,
+
+627
+00:21:41,525 --> 00:21:43,770
+you know, either common sense
+
+628
+00:21:43,770 --> 00:21:45,610
+concepts or
+concepts defined in
+
+629
+00:21:45,610 --> 00:21:47,850
+my anthology. And so,
+
+630
+00:21:48,330 --> 00:21:50,750
+Hispanic is a race,
+so that's,
+
+631
+00:21:51,210 --> 00:21:53,210
+you know, it's the value is
+
+632
+00:21:53,210 --> 00:21:54,670
+Hispanic and it's a race.
+
+633
+00:21:54,730 --> 00:21:56,170
+And three eight one zero three
+
+634
+00:21:56,170 --> 00:21:57,690
+is a ZIP code, and,
+
+635
+00:21:59,385 --> 00:22:02,105
+six years old is
+in this context
+
+636
+00:22:02,105 --> 00:22:04,745
+is an age, and,
+
+637
+00:22:05,225 --> 00:22:06,985
+night terror is a symptom.
+
+638
+00:22:06,985 --> 00:22:08,825
+So symptom here is an example
+
+639
+00:22:08,825 --> 00:22:10,825
+of a concept that is
+not common sense.
+
+640
+00:22:10,825 --> 00:22:13,300
+It's something
+that I we define
+
+641
+00:22:13,300 --> 00:22:14,240
+in the anthologies,
+
+642
+00:22:14,300 --> 00:22:16,140
+and so it's that's
+why it's in blue.
+
+643
+00:22:16,140 --> 00:22:19,420
+So that's something that we
+
+644
+00:22:19,420 --> 00:22:21,260
+detected in
+the conversation as
+
+645
+00:22:21,260 --> 00:22:22,320
+an entity type.
+
+646
+00:22:22,380 --> 00:22:24,700
+Now the next step is to start
+
+647
+00:22:24,700 --> 00:22:26,700
+populating the graph with more
+
+648
+00:22:26,700 --> 00:22:29,665
+and more nodes based on this,
+
+649
+00:22:30,125 --> 00:22:32,445
+concept hierarchy hierarchical
+
+650
+00:22:32,445 --> 00:22:33,565
+relationships, you know,
+
+651
+00:22:33,565 --> 00:22:36,125
+those object
+properties defined
+
+652
+00:22:36,125 --> 00:22:36,845
+in the ontology.
+
+653
+00:22:36,845 --> 00:22:37,745
+So for example,
+
+654
+00:22:38,525 --> 00:22:39,645
+three eight one zero three as
+
+655
+00:22:39,645 --> 00:22:41,585
+a ZIP code represents
+a neighborhood.
+
+656
+00:22:41,725 --> 00:22:42,865
+So that's a neighborhood,
+
+657
+00:22:43,250 --> 00:22:45,190
+And a neighborhood has,
+
+658
+00:22:46,850 --> 00:22:49,170
+I'm just gonna to
+be able to point.
+
+659
+00:22:49,170 --> 00:22:50,770
+So this is a neighborhood,
+
+660
+00:22:50,770 --> 00:22:52,630
+and a neighborhood
+has physical
+
+661
+00:22:52,690 --> 00:22:54,610
+characteristics. And physical
+
+662
+00:22:54,610 --> 00:22:56,310
+characteristics
+could be workability
+
+663
+00:22:56,610 --> 00:22:58,265
+scores, crime rate,
+
+664
+00:22:58,365 --> 00:23:00,485
+and blight prevalence,
+you know,
+
+665
+00:23:00,485 --> 00:23:02,425
+signs of destruction
+in the neighborhood
+
+666
+00:23:03,045 --> 00:23:03,685
+. And so,
+
+667
+00:23:04,085 --> 00:23:06,725
+I can add more and more edges
+
+668
+00:23:06,725 --> 00:23:09,125
+and notes based on what I can
+
+669
+00:23:09,125 --> 00:23:12,120
+infer from
+the the the anthology.
+
+670
+00:23:12,820 --> 00:23:15,400
+And another example
+is that six
+
+671
+00:23:15,460 --> 00:23:17,860
+as an age is a school age.
+
+672
+00:23:17,860 --> 00:23:19,720
+She did not say that
+in the conversation
+
+673
+00:23:19,860 --> 00:23:22,840
+, but I can I can
+enrich the graph
+
+674
+00:23:22,900 --> 00:23:25,495
+by adding that external and
+
+675
+00:23:25,495 --> 00:23:26,155
+the relationship?
+
+676
+00:23:26,775 --> 00:23:28,715
+And so these are just
+simple examples,
+
+677
+00:23:28,775 --> 00:23:30,535
+but this is an example of how
+
+678
+00:23:30,535 --> 00:23:32,535
+I how I infer extra knowledge
+
+679
+00:23:32,535 --> 00:23:34,315
+to enrich and
+refine the graph.
+
+680
+00:23:35,815 --> 00:23:37,530
+and the last step is I start
+
+681
+00:23:37,530 --> 00:23:40,090
+populating those
+notes with values.
+
+682
+00:23:40,090 --> 00:23:41,150
+So, for example,
+
+683
+00:23:41,930 --> 00:23:43,370
+how do I know that three eight
+
+684
+00:23:43,370 --> 00:23:44,970
+one zero three
+what is the value
+
+685
+00:23:44,970 --> 00:23:46,490
+for a workability
+score in three
+
+686
+00:23:46,490 --> 00:23:47,550
+eight one zero three?
+
+687
+00:23:47,690 --> 00:23:50,045
+It's from this pop population
+
+688
+00:23:50,345 --> 00:23:51,945
+observatory that
+we're building.
+
+689
+00:23:51,945 --> 00:23:55,625
+So we have, data
+for, you know,
+
+690
+00:23:55,625 --> 00:23:56,505
+for each ZIP code.
+
+691
+00:23:56,505 --> 00:23:59,145
+I can retrieve all of these
+
+692
+00:23:59,145 --> 00:24:01,065
+characteristics,
+community level
+
+693
+00:24:01,065 --> 00:24:02,765
+characteristics
+publicly available
+
+694
+00:24:03,290 --> 00:24:05,210
+to populate the graph
+with values
+
+695
+00:24:05,210 --> 00:24:06,030
+or facts.
+
+696
+00:24:07,210 --> 00:24:09,630
+and, so that's what,
+
+697
+00:24:10,890 --> 00:24:12,250
+the graph is gonna look like
+
+698
+00:24:12,250 --> 00:24:14,250
+after a while. And as I said,
+
+699
+00:24:14,250 --> 00:24:16,915
+each node is color coded based
+
+700
+00:24:16,915 --> 00:24:19,175
+on where we get
+those nodes from,
+
+701
+00:24:19,475 --> 00:24:21,255
+and the edges could be direct
+
+702
+00:24:21,315 --> 00:24:22,995
+because they were mentioned or
+
+703
+00:24:22,995 --> 00:24:24,835
+in you know, they could be
+
+704
+00:24:24,835 --> 00:24:26,695
+indirect because
+they were inferred.
+
+705
+00:24:27,635 --> 00:24:30,510
+And, so that's,
+
+706
+00:24:31,290 --> 00:24:32,650
+and I'm gonna go back to this
+
+707
+00:24:32,650 --> 00:24:35,550
+later on for,
+explaining more things.
+
+708
+00:24:35,930 --> 00:24:38,730
+Now, once we're done
+with the knowledge
+
+709
+00:24:38,730 --> 00:24:39,630
+graph generation,
+
+710
+00:24:39,690 --> 00:24:41,210
+now we it's time to start
+
+711
+00:24:41,210 --> 00:24:42,190
+providing recommendations.
+
+712
+00:24:42,545 --> 00:24:44,545
+So for this
+particular scenario
+
+713
+00:24:44,545 --> 00:24:45,285
+and application,
+
+714
+00:24:46,065 --> 00:24:47,505
+we we thought of two kinds of
+
+715
+00:24:47,505 --> 00:24:49,345
+recommendations. So one one
+
+716
+00:24:49,345 --> 00:24:51,265
+thing is what is you know,
+
+717
+00:24:51,265 --> 00:24:53,525
+based on all of those
+detected issues,
+
+718
+00:24:54,145 --> 00:24:56,310
+what is the next question that
+
+719
+00:24:56,310 --> 00:24:59,030
+the QA agent should
+be asking the user?
+
+720
+00:24:59,030 --> 00:25:00,490
+So what's the next follow-up
+
+721
+00:25:00,550 --> 00:25:02,550
+question that is
+relevant to this user?
+
+722
+00:25:02,550 --> 00:25:04,230
+We don't want to
+overwhelm them
+
+723
+00:25:04,230 --> 00:25:05,450
+with a lot of questions.
+
+724
+00:25:05,510 --> 00:25:07,450
+What is the most recommended
+
+725
+00:25:07,670 --> 00:25:09,050
+questions to ask next?
+
+726
+00:25:09,705 --> 00:25:11,945
+Or if we are more
+towards the end
+
+727
+00:25:11,945 --> 00:25:13,465
+of the conversation
+and we know
+
+728
+00:25:13,465 --> 00:25:15,785
+that we what
+the person is mostly
+
+729
+00:25:15,785 --> 00:25:16,425
+concerned about,
+
+730
+00:25:16,425 --> 00:25:17,805
+we could recommend resources,
+
+731
+00:25:17,945 --> 00:25:21,165
+so clinics, appointments,
+and and so on.
+
+732
+00:25:21,705 --> 00:25:24,860
+And, we also would
+like to provide
+
+733
+00:25:24,860 --> 00:25:26,220
+explanations. So
+we want to keep
+
+734
+00:25:26,220 --> 00:25:28,080
+track of how we made
+the recommendation,
+
+735
+00:25:28,220 --> 00:25:30,140
+and that's also
+done on the graph.
+
+736
+00:25:30,140 --> 00:25:31,420
+So I'm just gonna talk about
+
+737
+00:25:31,420 --> 00:25:34,400
+this specific part next.
+
+738
+00:25:34,780 --> 00:25:36,320
+So in terms of personalized
+
+739
+00:25:36,460 --> 00:25:37,820
+recommendations,
+I'm just gonna
+
+740
+00:25:37,820 --> 00:25:39,805
+go back to this graph that I
+
+741
+00:25:39,805 --> 00:25:40,525
+showed earlier,
+
+742
+00:25:40,525 --> 00:25:41,885
+and I'm showing the right side
+
+743
+00:25:41,885 --> 00:25:43,665
+of the graph just
+for clarity.
+
+744
+00:25:44,445 --> 00:25:46,925
+So this person
+said that her six
+
+745
+00:25:46,925 --> 00:25:49,425
+year old child has
+night terrors.
+
+746
+00:25:49,485 --> 00:25:51,005
+And so as I said,
+
+747
+00:25:51,005 --> 00:25:53,900
+we had populated
+the graph with
+
+748
+00:25:53,900 --> 00:25:55,760
+the fact that six is an age,
+
+749
+00:25:56,060 --> 00:25:57,440
+and it's a school age.
+
+750
+00:25:57,660 --> 00:25:59,180
+So one question that comes up
+
+751
+00:25:59,180 --> 00:26:01,100
+in AC's questionnaires is,
+
+752
+00:26:01,100 --> 00:26:03,420
+does your child suffer from
+
+753
+00:26:03,420 --> 00:26:04,560
+bullying at school?
+
+754
+00:26:04,620 --> 00:26:06,775
+If I know that six
+is a school age,
+
+755
+00:26:06,775 --> 00:26:08,615
+then I should ask
+this question next.
+
+756
+00:26:08,615 --> 00:26:11,575
+If not, I should
+just skip it.
+
+757
+00:26:11,575 --> 00:26:13,735
+And that's one
+example of I how
+
+758
+00:26:13,735 --> 00:26:16,235
+I can refine the questions.
+
+759
+00:26:17,335 --> 00:26:20,610
+another example is, you know,
+
+760
+00:26:20,610 --> 00:26:22,150
+this thing about uncovering
+
+761
+00:26:22,210 --> 00:26:23,730
+hidden issues. For example,
+
+762
+00:26:23,730 --> 00:26:24,930
+she said night terror.
+
+763
+00:26:24,930 --> 00:26:26,370
+Night terror is
+a symptom based
+
+764
+00:26:26,370 --> 00:26:27,190
+on my ontology.
+
+765
+00:26:27,970 --> 00:26:30,210
+But I know from
+my ontology that
+
+766
+00:26:30,210 --> 00:26:32,050
+night terror as a symptom is
+
+767
+00:26:32,050 --> 00:26:33,830
+caused by emotional neglect.
+
+768
+00:26:34,125 --> 00:26:37,565
+This is something I
+encoded both as,
+
+769
+00:26:37,565 --> 00:26:38,625
+you know, a concept,
+
+770
+00:26:38,765 --> 00:26:40,625
+and I encoded
+the relationship,
+
+771
+00:26:40,845 --> 00:26:42,545
+so the causality
+relationship.
+
+772
+00:26:43,245 --> 00:26:45,185
+So emotional neglect causes
+
+773
+00:26:45,325 --> 00:26:47,350
+night terror. Now I'm not sure
+
+774
+00:26:47,350 --> 00:26:49,590
+if this user if
+this is the case
+
+775
+00:26:49,590 --> 00:26:50,310
+with this user,
+
+776
+00:26:50,310 --> 00:26:52,230
+but I would like
+to ask her that
+
+777
+00:26:52,230 --> 00:26:54,570
+question next. So
+I might ask her,
+
+778
+00:26:55,190 --> 00:26:57,990
+does your child suffer
+from, you know,
+
+779
+00:26:57,990 --> 00:26:58,875
+emotional neglect?
+
+780
+00:26:58,955 --> 00:27:00,715
+Or I could bring it
+up in a different
+
+781
+00:27:00,715 --> 00:27:02,155
+way. One of the questions that
+
+782
+00:27:02,155 --> 00:27:03,995
+comes up in
+the questionnaire is,
+
+783
+00:27:03,995 --> 00:27:06,075
+have you recently
+separated from
+
+784
+00:27:06,075 --> 00:27:06,815
+your husband?
+
+785
+00:27:07,035 --> 00:27:09,115
+So I could ask it
+in a, you know,
+
+786
+00:27:09,115 --> 00:27:10,495
+in a more friendly way.
+
+787
+00:27:10,955 --> 00:27:12,875
+And, if she says yes,
+
+788
+00:27:12,875 --> 00:27:14,400
+we can follow-up
+on that question.
+
+789
+00:27:14,400 --> 00:27:16,560
+If she say says no,
+we can move to the,
+
+790
+00:27:16,560 --> 00:27:18,100
+you know, to the to the next,
+
+791
+00:27:19,040 --> 00:27:20,880
+next stage where we can start
+
+792
+00:27:20,880 --> 00:27:22,660
+suggesting
+psychiatry clinics.
+
+793
+00:27:23,760 --> 00:27:26,240
+And, so I can ask her,
+
+794
+00:27:26,240 --> 00:27:27,760
+would you like so now this is
+
+795
+00:27:27,760 --> 00:27:28,400
+not a question.
+
+796
+00:27:28,400 --> 00:27:29,380
+This is a resource.
+
+797
+00:27:30,305 --> 00:27:32,945
+So I ask her, would
+you like, here are,
+
+798
+00:27:32,945 --> 00:27:34,385
+you know, a couple
+of psychiatric
+
+799
+00:27:34,385 --> 00:27:37,045
+clinics within and I
+can't personalize.
+
+800
+00:27:37,185 --> 00:27:38,545
+So I can say this is these are
+
+801
+00:27:38,545 --> 00:27:40,805
+the clinics within
+your ZIP code area,
+
+802
+00:27:41,025 --> 00:27:42,805
+and they also have a Spanish
+
+803
+00:27:42,865 --> 00:27:44,625
+speaking services, you know,
+
+804
+00:27:44,625 --> 00:27:46,840
+based on the fact that she
+
+805
+00:27:46,840 --> 00:27:48,940
+provided those two
+context the contextual
+
+806
+00:27:49,080 --> 00:27:51,000
+parameters about ZIP code and
+
+807
+00:27:51,000 --> 00:27:52,380
+the fact that she's Hispanic.
+
+808
+00:27:52,760 --> 00:27:54,600
+So this is an example
+of how how
+
+809
+00:27:54,600 --> 00:27:57,900
+I can personalize
+and how a suggestion
+
+810
+00:27:58,040 --> 00:27:59,960
+can be either a resource
+or a follow-up
+
+811
+00:27:59,960 --> 00:28:02,845
+question. Now the other aspect
+
+812
+00:28:02,905 --> 00:28:03,725
+is explanations.
+
+813
+00:28:03,945 --> 00:28:06,905
+So, this is now the left side
+
+814
+00:28:06,905 --> 00:28:08,605
+of the graph for clarity.
+
+815
+00:28:08,825 --> 00:28:10,585
+So this is the same person who
+
+816
+00:28:10,585 --> 00:28:12,665
+was talking. Now
+she did not say
+
+817
+00:28:12,665 --> 00:28:14,125
+anything about
+social determinants
+
+818
+00:28:14,265 --> 00:28:15,690
+of of health. All what she was
+
+819
+00:28:15,690 --> 00:28:17,610
+talking about was related to
+
+820
+00:28:17,610 --> 00:28:18,990
+adverse childhood experiences
+
+821
+00:28:19,050 --> 00:28:20,250
+and behavioral issues.
+
+822
+00:28:20,250 --> 00:28:22,490
+But the fact that she lives in
+
+823
+00:28:22,490 --> 00:28:24,010
+three zero two e
+three eight one
+
+824
+00:28:24,010 --> 00:28:27,130
+zero three can
+give me a lot of
+
+825
+00:28:27,130 --> 00:28:28,890
+information just based on her
+
+826
+00:28:28,890 --> 00:28:29,390
+neighborhood.
+
+827
+00:28:29,525 --> 00:28:31,305
+I can do a lot here.
+
+828
+00:28:31,365 --> 00:28:33,765
+I can as I said
+earlier, I can say,
+
+829
+00:28:33,765 --> 00:28:35,125
+well, this is a ZIP code that
+
+830
+00:28:35,125 --> 00:28:37,045
+presents a neighborhood that
+
+831
+00:28:37,045 --> 00:28:39,605
+suffers from this
+much crime rate,
+
+832
+00:28:39,605 --> 00:28:42,005
+this much destruction in terms
+
+833
+00:28:42,005 --> 00:28:43,305
+of neighborhood quality,
+
+834
+00:28:43,365 --> 00:28:45,970
+and it has this
+walkability score.
+
+835
+00:28:45,970 --> 00:28:47,810
+And I can populate
+those with values.
+
+836
+00:28:47,810 --> 00:28:50,690
+And if if, let's
+say, you know,
+
+837
+00:28:50,690 --> 00:28:54,630
+blight is the highest,
+then I can say,
+
+838
+00:28:54,690 --> 00:28:57,705
+well, you know,
+
+839
+00:28:57,705 --> 00:28:59,625
+she might be living she might
+
+840
+00:28:59,625 --> 00:29:01,385
+be one of one of
+the aspects of
+
+841
+00:29:01,385 --> 00:29:03,465
+measuring blight
+rate or, you know,
+
+842
+00:29:03,465 --> 00:29:06,505
+this, neighborhood
+quality aspect
+
+843
+00:29:06,505 --> 00:29:08,745
+is something called lead lead
+
+844
+00:29:08,745 --> 00:29:11,890
+paint based exposure
+risk score.
+
+845
+00:29:12,430 --> 00:29:14,510
+And, so they
+calculate the score
+
+846
+00:29:14,510 --> 00:29:15,950
+based on several things.
+
+847
+00:29:15,950 --> 00:29:17,710
+One of them is that that she's
+
+848
+00:29:17,710 --> 00:29:19,810
+living in a house
+that might be
+
+849
+00:29:20,510 --> 00:29:22,270
+might be painted with a lead
+
+850
+00:29:22,270 --> 00:29:24,505
+based paint, and that could
+
+851
+00:29:24,505 --> 00:29:25,965
+expose her to toxicants.
+
+852
+00:29:26,585 --> 00:29:28,445
+And the exposure to toxicants
+
+853
+00:29:28,825 --> 00:29:30,425
+might cause a negative health
+
+854
+00:29:30,425 --> 00:29:31,545
+outcomes like asthma.
+
+855
+00:29:31,545 --> 00:29:34,185
+And so I could do all of this
+
+856
+00:29:34,185 --> 00:29:36,460
+behind the scenes
+and then give
+
+857
+00:29:36,460 --> 00:29:37,980
+her a follow-up question that
+
+858
+00:29:37,980 --> 00:29:41,280
+she did not even was
+not even aware of.
+
+859
+00:29:41,660 --> 00:29:44,000
+I could ask her,
+would you you know,
+
+860
+00:29:44,140 --> 00:29:45,740
+does anybody in your household
+
+861
+00:29:45,740 --> 00:29:46,960
+suffer from asthma?
+
+862
+00:29:47,260 --> 00:29:49,440
+And if she says yes,
+I can directly,
+
+863
+00:29:50,165 --> 00:29:51,845
+give her resource suggestions
+
+864
+00:29:51,845 --> 00:29:53,925
+of asthma clinics.
+
+865
+00:29:53,925 --> 00:29:55,605
+If the if if it's her child,
+
+866
+00:29:55,605 --> 00:29:56,985
+then I can suggest pediatric
+
+867
+00:29:57,125 --> 00:29:57,945
+asthma clinics.
+
+868
+00:29:58,085 --> 00:29:59,125
+And I can, again,
+
+869
+00:29:59,125 --> 00:30:01,365
+personalize based on her ZIP
+
+870
+00:30:01,365 --> 00:30:03,465
+code and her, ethnicity.
+
+871
+00:30:05,045 --> 00:30:06,100
+And, you know,
+
+872
+00:30:06,100 --> 00:30:09,700
+I can trace I can
+trace back on this.
+
+873
+00:30:09,700 --> 00:30:11,140
+So this is an example
+of something
+
+874
+00:30:11,140 --> 00:30:12,020
+she did not mention,
+
+875
+00:30:12,020 --> 00:30:14,020
+and I want to show the person
+
+876
+00:30:14,020 --> 00:30:15,700
+behind the chat who's talking
+
+877
+00:30:15,700 --> 00:30:18,100
+to the user why I came up with
+
+878
+00:30:18,100 --> 00:30:20,185
+all of this. So
+I can trace back
+
+879
+00:30:20,185 --> 00:30:21,945
+on the graph and come up with
+
+880
+00:30:21,945 --> 00:30:25,225
+this path of reasoning of why
+
+881
+00:30:25,225 --> 00:30:26,845
+I made you know,
+
+882
+00:30:26,905 --> 00:30:28,425
+I suggested for
+the health care
+
+883
+00:30:28,425 --> 00:30:30,125
+practitioner to
+ask that question
+
+884
+00:30:30,665 --> 00:30:32,045
+or suggest those resources.
+
+885
+00:30:32,940 --> 00:30:35,420
+And so I can this is this is
+
+886
+00:30:35,420 --> 00:30:36,700
+the the beauty of graphs.
+
+887
+00:30:36,700 --> 00:30:38,620
+I can always
+provide the path.
+
+888
+00:30:38,620 --> 00:30:40,460
+It's it's it's
+it's white box.
+
+889
+00:30:40,460 --> 00:30:41,760
+It's not black box.
+
+890
+00:30:42,300 --> 00:30:44,940
+And so in in going forward to
+
+891
+00:30:44,940 --> 00:30:46,240
+developing the tool,
+
+892
+00:30:46,700 --> 00:30:49,485
+we wanted a tool design that
+
+893
+00:30:49,485 --> 00:30:50,445
+reflects all of this.
+
+894
+00:30:50,445 --> 00:30:53,265
+So, yes, we want
+this chat box,
+
+895
+00:30:54,765 --> 00:30:56,945
+chatbot to be available
+to the end user.
+
+896
+00:30:57,245 --> 00:30:58,765
+In this case, it's the child
+
+897
+00:30:58,765 --> 00:30:59,985
+parent or the caregiver,
+
+898
+00:31:00,125 --> 00:31:02,190
+but we also wanted to provide
+
+899
+00:31:02,250 --> 00:31:04,010
+all of these
+recommendations to
+
+900
+00:31:04,010 --> 00:31:05,690
+the health care
+practitioner or
+
+901
+00:31:05,690 --> 00:31:07,710
+social worker depending
+on the domain.
+
+902
+00:31:08,410 --> 00:31:11,210
+And we want also to
+provide, you know,
+
+903
+00:31:11,210 --> 00:31:13,370
+policymakers with
+explanations and,
+
+904
+00:31:13,370 --> 00:31:14,830
+you know, aggregated
+analytics.
+
+905
+00:31:14,970 --> 00:31:17,445
+And so before even thinking of
+
+906
+00:31:17,445 --> 00:31:18,425
+the tool design,
+
+907
+00:31:18,885 --> 00:31:20,105
+this is just a prototype.
+
+908
+00:31:20,165 --> 00:31:22,405
+So before thinking
+about the design,
+
+909
+00:31:22,405 --> 00:31:24,405
+we wanted to see what
+we want to show.
+
+910
+00:31:24,405 --> 00:31:26,025
+And so, eventually,
+
+911
+00:31:26,245 --> 00:31:27,625
+we want to
+provide recommendations
+
+912
+00:31:27,925 --> 00:31:29,605
+in in in the health domain.
+
+913
+00:31:29,605 --> 00:31:30,665
+They call them interventions,
+
+914
+00:31:31,950 --> 00:31:33,330
+which could be
+either therapeutic
+
+915
+00:31:33,550 --> 00:31:34,370
+or preventive.
+
+916
+00:31:35,390 --> 00:31:37,390
+And, things like, you know,
+
+917
+00:31:37,390 --> 00:31:38,910
+schedule an appointment with
+
+918
+00:31:38,910 --> 00:31:40,670
+an asthma clinic
+pediatric asthma
+
+919
+00:31:40,670 --> 00:31:42,610
+clinic. This is a this
+is an intervention
+
+920
+00:31:43,470 --> 00:31:45,250
+. And we when we personalize,
+
+921
+00:31:45,585 --> 00:31:46,565
+we give preferences.
+
+922
+00:31:46,705 --> 00:31:48,865
+So we say
+the preferences is we
+
+923
+00:31:48,865 --> 00:31:50,305
+want this to be near the ZIP
+
+924
+00:31:50,305 --> 00:31:52,645
+code with this language
+speaking skills.
+
+925
+00:31:53,185 --> 00:31:54,725
+And then we want to,
+
+926
+00:31:55,265 --> 00:31:57,425
+be keep track of
+everything that
+
+927
+00:31:57,425 --> 00:31:58,650
+we detected in
+the conversation.
+
+928
+00:31:58,890 --> 00:32:00,010
+Symptoms are important.
+
+929
+00:32:00,010 --> 00:32:01,930
+So we want to keep
+track of those from,
+
+930
+00:32:01,930 --> 00:32:03,310
+you know, a health
+perspective,
+
+931
+00:32:04,170 --> 00:32:06,090
+and we want to detect
+risk factors.
+
+932
+00:32:06,090 --> 00:32:07,770
+Again, risk factors
+is a, you know,
+
+933
+00:32:07,770 --> 00:32:09,630
+is a is a concept
+used in the medical
+
+934
+00:32:09,690 --> 00:32:10,190
+field.
+
+935
+00:32:10,650 --> 00:32:11,870
+So risk factors,
+
+936
+00:32:14,265 --> 00:32:16,045
+that appeared in this woman's
+
+937
+00:32:16,185 --> 00:32:18,525
+conversations where
+things like blights,
+
+938
+00:32:18,665 --> 00:32:21,065
+you know, being living
+in a neighborhood
+
+939
+00:32:21,065 --> 00:32:22,525
+with a high plight rating,
+
+940
+00:32:23,465 --> 00:32:25,380
+this is a social
+determinant of health.
+
+941
+00:32:26,100 --> 00:32:27,640
+Night terror as a symptom
+
+942
+00:32:27,700 --> 00:32:29,960
+represents a behavioral issue
+
+943
+00:32:30,100 --> 00:32:32,020
+that is related to adverse
+
+944
+00:32:32,020 --> 00:32:33,640
+childhood experiences because
+
+945
+00:32:33,780 --> 00:32:35,300
+we wanted this tool to also be
+
+946
+00:32:35,300 --> 00:32:36,340
+a surveillance tool.
+
+947
+00:32:36,340 --> 00:32:39,000
+So we want to keep
+track of symptoms,
+
+948
+00:32:39,615 --> 00:32:41,775
+risk factors,
+and also what are
+
+949
+00:32:41,775 --> 00:32:43,055
+the negative health outcomes
+
+950
+00:32:43,055 --> 00:32:44,835
+that we inferred in
+this conversation.
+
+951
+00:32:45,135 --> 00:32:46,675
+Asthma was one of them.
+
+952
+00:32:47,615 --> 00:32:49,375
+and then we want to provide
+
+953
+00:32:49,375 --> 00:32:51,455
+explanations. And in providing
+
+954
+00:32:51,455 --> 00:32:53,075
+explanation, we
+want to provide
+
+955
+00:32:53,135 --> 00:32:54,275
+the source of evidence,
+
+956
+00:32:54,440 --> 00:32:56,060
+how we came up with
+this explanation.
+
+957
+00:32:56,840 --> 00:32:59,580
+And so we want to say
+that the neighborhood
+
+958
+00:32:59,720 --> 00:33:01,400
+with blights, you know,
+
+959
+00:33:01,400 --> 00:33:03,480
+coming up with this was based
+
+960
+00:33:03,480 --> 00:33:04,860
+on the ontological reasoning,
+
+961
+00:33:04,920 --> 00:33:07,660
+but we came up with
+applied value,
+
+962
+00:33:07,720 --> 00:33:10,425
+the the rating white rating
+
+963
+00:33:10,425 --> 00:33:12,665
+value from this
+observatory that
+
+964
+00:33:12,665 --> 00:33:14,765
+we collected from population
+
+965
+00:33:14,985 --> 00:33:15,965
+level datasets.
+
+966
+00:33:16,665 --> 00:33:18,345
+So we want to
+provide the source
+
+967
+00:33:18,345 --> 00:33:19,865
+of evidence, and we want them
+
+968
+00:33:19,865 --> 00:33:21,705
+to be able to
+navigate and look
+
+969
+00:33:21,705 --> 00:33:24,285
+into those, you
+know, numbers.
+
+970
+00:33:24,810 --> 00:33:26,910
+And when we said
+that lead exposure,
+
+971
+00:33:28,170 --> 00:33:30,250
+leads to asthma or
+causes asthma,
+
+972
+00:33:30,250 --> 00:33:32,570
+that's something
+we came up from
+
+973
+00:33:32,570 --> 00:33:33,710
+based on the ontology.
+
+974
+00:33:34,490 --> 00:33:36,170
+And so we we will we want to
+
+975
+00:33:36,170 --> 00:33:37,610
+provide them with
+a link to this
+
+976
+00:33:37,610 --> 00:33:39,695
+ontology, and
+they can actually
+
+977
+00:33:39,695 --> 00:33:41,295
+look at it depending on their
+
+978
+00:33:41,295 --> 00:33:42,975
+literacy level
+and how much they
+
+979
+00:33:42,975 --> 00:33:43,635
+are interested.
+
+980
+00:33:44,255 --> 00:33:46,355
+But we need for this
+to be available.
+
+981
+00:33:47,135 --> 00:33:50,675
+And, we also want
+to, explain,
+
+982
+00:33:51,248 --> 00:33:52,640
+you know so in addition to
+
+983
+00:33:52,640 --> 00:33:53,840
+detecting health outcomes,
+
+984
+00:33:53,840 --> 00:33:55,760
+we detected a cause
+of a symptom.
+
+985
+00:33:55,760 --> 00:33:57,620
+We detected that
+emotional neglect
+
+986
+00:33:58,240 --> 00:34:00,820
+causes, night terror and,
+
+987
+00:34:01,440 --> 00:34:04,155
+both asthma and
+emotional neglect
+
+988
+00:34:04,395 --> 00:34:06,155
+were detected based
+on inference.
+
+989
+00:34:06,155 --> 00:34:07,195
+So they were not given.
+
+990
+00:34:07,195 --> 00:34:08,175
+They were inferred.
+
+991
+00:34:08,955 --> 00:34:11,915
+And in explaining this
+part, we can say,
+
+992
+00:34:11,915 --> 00:34:14,575
+well, this based
+on this causal
+
+993
+00:34:14,635 --> 00:34:16,155
+relationship between emotional
+
+994
+00:34:16,155 --> 00:34:17,515
+neglect and night terror,
+
+995
+00:34:17,515 --> 00:34:20,230
+and the resource for evidence
+
+996
+00:34:20,290 --> 00:34:21,110
+is the ontology.
+
+997
+00:34:21,970 --> 00:34:24,370
+And so the, the last thing I
+
+998
+00:34:24,370 --> 00:34:26,530
+wanna talk about
+is the the tool
+
+999
+00:34:26,530 --> 00:34:27,730
+design that we thought of,
+
+1000
+00:34:27,730 --> 00:34:29,110
+and it's really preliminary,
+
+1001
+00:34:29,170 --> 00:34:31,410
+and we're working
+on, you know,
+
+1002
+00:34:31,410 --> 00:34:33,010
+refining and revising it.
+
+1003
+00:34:33,010 --> 00:34:35,785
+But the the there
+are two views
+
+1004
+00:34:35,925 --> 00:34:36,725
+of this tool.
+
+1005
+00:34:36,725 --> 00:34:39,525
+The first view is
+which provides,
+
+1006
+00:34:39,525 --> 00:34:40,505
+you know, the recommendations
+
+1007
+00:34:40,965 --> 00:34:44,325
+and the explainability
+and the detection
+
+1008
+00:34:44,325 --> 00:34:47,190
+of social determinants,
+risk factors,
+
+1009
+00:34:47,810 --> 00:34:49,890
+ACs, and all of that, and,
+
+1010
+00:34:50,290 --> 00:34:52,230
+the analytics, the aggregated
+
+1011
+00:34:52,290 --> 00:34:54,290
+analytics based
+on all previous
+
+1012
+00:34:54,290 --> 00:34:56,770
+conversations,
+that is something
+
+1013
+00:34:56,770 --> 00:34:58,530
+that we would like the health
+
+1014
+00:34:58,530 --> 00:35:00,310
+care professional
+or the policymaker
+
+1015
+00:35:00,610 --> 00:35:02,435
+to look at. And,
+
+1016
+00:35:04,735 --> 00:35:06,835
+example of explanations,
+as I said.
+
+1017
+00:35:07,455 --> 00:35:10,095
+so for example here, the,
+
+1018
+00:35:11,215 --> 00:35:13,395
+the health care
+practitioner can,
+
+1019
+00:35:14,030 --> 00:35:15,710
+For example, when we said that
+
+1020
+00:35:15,710 --> 00:35:17,410
+the this patient
+has the following,
+
+1021
+00:35:17,950 --> 00:35:18,990
+risk, you know, symptoms,
+
+1022
+00:35:18,990 --> 00:35:19,890
+the risk factors,
+
+1023
+00:35:20,350 --> 00:35:22,210
+exposure to lead based pains,
+
+1024
+00:35:23,310 --> 00:35:25,650
+that a patient has
+a certain risk score,
+
+1025
+00:35:25,950 --> 00:35:28,030
+and, the fact that they should
+
+1026
+00:35:28,030 --> 00:35:29,330
+be screened for asthma.
+
+1027
+00:35:29,885 --> 00:35:31,725
+So all of that is you know,
+
+1028
+00:35:31,725 --> 00:35:32,625
+these are suggestions.
+
+1029
+00:35:32,765 --> 00:35:34,445
+But if they want
+to explain this,
+
+1030
+00:35:34,445 --> 00:35:36,365
+they can click on
+a question mark,
+
+1031
+00:35:36,365 --> 00:35:38,845
+you know, to
+explain why we made
+
+1032
+00:35:38,845 --> 00:35:42,285
+these decisions, and,
+we can, you know,
+
+1033
+00:35:42,285 --> 00:35:44,740
+show them a pop up or, like,
+
+1034
+00:35:44,740 --> 00:35:46,260
+a different view
+where they can
+
+1035
+00:35:46,260 --> 00:35:48,500
+see why we made this.
+
+1036
+00:35:48,500 --> 00:35:50,340
+So one way of explaining this
+
+1037
+00:35:50,340 --> 00:35:52,120
+is based on semantic
+inference,
+
+1038
+00:35:52,820 --> 00:35:54,660
+and we can provide a brief
+
+1039
+00:35:54,660 --> 00:35:56,325
+description of, you know,
+
+1040
+00:35:56,325 --> 00:35:57,925
+the causal relationship and
+
+1041
+00:35:57,925 --> 00:35:59,525
+the link to
+the ontology if they
+
+1042
+00:35:59,525 --> 00:36:00,645
+would like to look at it.
+
+1043
+00:36:00,645 --> 00:36:04,025
+And, if let's say
+this conversation
+
+1044
+00:36:04,325 --> 00:36:08,325
+detected four behavioral
+aspects about,
+
+1045
+00:36:08,325 --> 00:36:10,560
+you know, that this
+child suffers from,
+
+1046
+00:36:10,560 --> 00:36:12,160
+then we can give
+them an adverse
+
+1047
+00:36:12,160 --> 00:36:14,800
+childhood experience
+score four
+
+1048
+00:36:14,800 --> 00:36:16,500
+because there were there were
+
+1049
+00:36:16,880 --> 00:36:17,860
+four answers.
+
+1050
+00:36:18,640 --> 00:36:20,560
+You know? We asked them four
+
+1051
+00:36:20,560 --> 00:36:21,620
+follow-up questions,
+
+1052
+00:36:21,760 --> 00:36:23,520
+and they said yes
+to all four,
+
+1053
+00:36:23,520 --> 00:36:25,065
+then we can give
+them this score.
+
+1054
+00:36:25,065 --> 00:36:26,205
+And if, you know,
+
+1055
+00:36:26,665 --> 00:36:29,065
+they can decide
+if this is a is
+
+1056
+00:36:29,065 --> 00:36:31,385
+a high score or a low score or
+
+1057
+00:36:31,385 --> 00:36:32,665
+what they should do based on
+
+1058
+00:36:32,665 --> 00:36:34,345
+the score based on
+the literature.
+
+1059
+00:36:34,345 --> 00:36:37,005
+So we can give
+them article DOIs
+
+1060
+00:36:37,305 --> 00:36:38,845
+so they can pull up articles,
+
+1061
+00:36:39,430 --> 00:36:41,350
+authentic articles
+about AEs and
+
+1062
+00:36:41,350 --> 00:36:42,170
+health outcomes.
+
+1063
+00:36:43,110 --> 00:36:44,870
+so this is
+an example of how we
+
+1064
+00:36:44,870 --> 00:36:45,770
+provide explanations.
+
+1065
+00:36:47,190 --> 00:36:48,470
+And as I said, you know,
+
+1066
+00:36:48,470 --> 00:36:49,770
+we can provide geocoded,
+
+1067
+00:36:50,390 --> 00:36:51,510
+since this is a tool,
+
+1068
+00:36:51,510 --> 00:36:52,730
+we can provide geocoded,
+
+1069
+00:36:54,375 --> 00:36:56,235
+resource suggestions
+of clinics
+
+1070
+00:36:56,455 --> 00:36:58,475
+or housing authorities within
+
+1071
+00:36:58,695 --> 00:36:59,815
+their ZIP code,
+
+1072
+00:36:59,815 --> 00:37:01,835
+and we can show it on a map.
+
+1073
+00:37:03,175 --> 00:37:05,735
+and, for the the end user or
+
+1074
+00:37:05,735 --> 00:37:08,155
+the the the caregiver,
+we can give them,
+
+1075
+00:37:09,200 --> 00:37:10,640
+you know, we can load these
+
+1076
+00:37:10,640 --> 00:37:12,900
+suggestions into
+the chat box,
+
+1077
+00:37:13,040 --> 00:37:14,720
+and we can either do this
+
+1078
+00:37:14,720 --> 00:37:16,400
+automatically or
+give the health
+
+1079
+00:37:16,400 --> 00:37:18,480
+care practitioner
+the option to,
+
+1080
+00:37:18,480 --> 00:37:20,895
+you know, approve that this is
+
+1081
+00:37:20,895 --> 00:37:22,335
+the next question or not.
+
+1082
+00:37:22,335 --> 00:37:23,295
+Because this is, you know,
+
+1083
+00:37:23,295 --> 00:37:25,635
+this is something that
+needs evaluation.
+
+1084
+00:37:25,775 --> 00:37:28,255
+So we can we can try this with
+
+1085
+00:37:28,255 --> 00:37:30,515
+a few scenarios and
+see what works best.
+
+1086
+00:37:31,055 --> 00:37:34,270
+But, this is
+an example of what
+
+1087
+00:37:34,270 --> 00:37:36,030
+I was talking about earlier of
+
+1088
+00:37:36,030 --> 00:37:37,710
+the power of the Google Cloud
+
+1089
+00:37:37,710 --> 00:37:39,970
+Platform APIs through
+fulfillment.
+
+1090
+00:37:40,110 --> 00:37:42,590
+So we can integrate
+Google Maps
+
+1091
+00:37:42,590 --> 00:37:44,450
+or Google Places in
+the conversation.
+
+1092
+00:37:44,590 --> 00:37:46,270
+We can integrate
+Google Calendar
+
+1093
+00:37:46,270 --> 00:37:47,090
+in the conversations,
+
+1094
+00:37:48,485 --> 00:37:51,125
+in order to provide those
+
+1095
+00:37:51,125 --> 00:37:53,365
+recommendations. And so we're
+
+1096
+00:37:53,365 --> 00:37:54,425
+working on,
+
+1097
+00:37:54,965 --> 00:37:57,045
+evaluating this and trying to
+
+1098
+00:37:57,045 --> 00:37:59,605
+bring it to realization with
+
+1099
+00:37:59,605 --> 00:38:00,905
+the Afarai initiative,
+
+1100
+00:38:02,005 --> 00:38:03,305
+team at La Bonner.
+
+1101
+00:38:03,480 --> 00:38:06,840
+And, we're looking
+to, you know,
+
+1102
+00:38:06,840 --> 00:38:09,080
+get, funding for actually
+
+1103
+00:38:09,080 --> 00:38:10,860
+implementing the entire tool,
+
+1104
+00:38:12,600 --> 00:38:14,620
+and and integrated in clinical
+
+1105
+00:38:14,680 --> 00:38:18,735
+workflows. thank
+you so much for
+
+1106
+00:38:18,735 --> 00:38:20,335
+listening, and this is the end
+
+1107
+00:38:20,335 --> 00:38:21,075
+of my presentation.
+

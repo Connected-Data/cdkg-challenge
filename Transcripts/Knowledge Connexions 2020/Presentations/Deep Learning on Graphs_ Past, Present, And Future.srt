@@ -1,0 +1,4357 @@
+1
+00:00:07,580 --> 00:00:10,825
+It's, my massive pleasure to,
+
+2
+00:00:11,145 --> 00:00:12,445
+introduce Michael Bronstein.
+
+3
+00:00:12,825 --> 00:00:14,505
+Michael Bronstein
+is a professor
+
+4
+00:00:14,505 --> 00:00:16,505
+at Imperial College
+London where
+
+5
+00:00:16,505 --> 00:00:18,160
+he holds the chair in machine
+
+6
+00:00:18,160 --> 00:00:19,620
+learning and pattern
+recognition,
+
+7
+00:00:20,320 --> 00:00:22,580
+and also head of
+graph learning
+
+8
+00:00:22,720 --> 00:00:24,020
+research at Twitter.
+
+9
+00:00:24,720 --> 00:00:26,685
+He also leads, the,
+
+10
+00:00:27,165 --> 00:00:29,325
+machine learning project, in,
+
+11
+00:00:29,645 --> 00:00:32,065
+project SETI, a TED audacious
+
+12
+00:00:32,205 --> 00:00:33,425
+prize winning collaboration
+
+13
+00:00:34,180 --> 00:00:35,880
+aimed at understanding
+the communication
+
+14
+00:00:36,020 --> 00:00:38,200
+of, sperm whales.
+
+15
+00:00:38,660 --> 00:00:40,280
+So without further ado,
+
+16
+00:00:40,900 --> 00:00:43,615
+over over to you,
+Michael. Welcome.
+
+17
+00:00:45,035 --> 00:00:45,835
+Thank you, James.
+
+18
+00:00:45,835 --> 00:00:48,095
+I hope you can see
+and hear me well.
+
+19
+00:00:48,155 --> 00:00:49,035
+So thanks a lot,
+
+20
+00:00:49,275 --> 00:00:51,195
+for the invitation to to join
+
+21
+00:00:51,195 --> 00:00:52,575
+this presentation today.
+
+22
+00:00:52,860 --> 00:00:54,220
+And I would like
+to talk about,
+
+23
+00:00:54,460 --> 00:00:56,460
+deep learning graphs and,
+
+24
+00:00:56,780 --> 00:00:58,720
+try to outline
+what it is about,
+
+25
+00:00:58,940 --> 00:01:00,380
+what is the present state of
+
+26
+00:01:00,380 --> 00:01:02,935
+this science and
+technology and
+
+27
+00:01:02,995 --> 00:01:04,855
+what the future
+columns for it.
+
+28
+00:01:04,995 --> 00:01:06,755
+So allow me to
+start with actually
+
+29
+00:01:06,755 --> 00:01:09,250
+a little bit far
+away and taking
+
+30
+00:01:09,250 --> 00:01:10,610
+a step back and talking about
+
+31
+00:01:10,610 --> 00:01:13,030
+the concept of
+inductive bias.
+
+32
+00:01:13,170 --> 00:01:14,690
+So this is
+a fundamental notion
+
+33
+00:01:14,690 --> 00:01:16,985
+in learning and it refers to
+
+34
+00:01:16,985 --> 00:01:19,065
+the the set of
+assumptions that,
+
+35
+00:01:19,305 --> 00:01:21,545
+a machine learning system has
+
+36
+00:01:21,545 --> 00:01:23,785
+to do about, the data
+in the problem
+
+37
+00:01:23,785 --> 00:01:25,840
+at hand. And let's take a very
+
+38
+00:01:25,840 --> 00:01:27,540
+simple machine
+learning system,
+
+39
+00:01:27,920 --> 00:01:29,600
+some of the earliest neural
+
+40
+00:01:29,600 --> 00:01:31,700
+networks called,
+multilayer perceptrons.
+
+41
+00:01:32,975 --> 00:01:34,595
+We know that they
+can approximate
+
+42
+00:01:34,655 --> 00:01:36,175
+any continuous function to any
+
+43
+00:01:36,175 --> 00:01:37,315
+desired accuracy.
+
+44
+00:01:37,535 --> 00:01:39,075
+We call this
+property universal
+
+45
+00:01:39,840 --> 00:01:42,080
+approximation,
+and it was proven
+
+46
+00:01:42,080 --> 00:01:43,280
+in the end of the eighties for
+
+47
+00:01:43,280 --> 00:01:44,320
+for these architectures.
+
+48
+00:01:44,320 --> 00:01:46,880
+And, it sounds
+like a good piece
+
+49
+00:01:46,880 --> 00:01:47,520
+of news. Right?
+
+50
+00:01:47,520 --> 00:01:49,235
+Because we can
+represent anything
+
+51
+00:01:49,235 --> 00:01:51,015
+we want with multilayer
+perceptrons.
+
+52
+00:01:51,395 --> 00:01:52,835
+But with the moment we try to
+
+53
+00:01:52,835 --> 00:01:54,375
+apply these simple
+neural networks
+
+54
+00:01:54,515 --> 00:01:55,875
+to real problems dealing with
+
+55
+00:01:55,875 --> 00:01:56,755
+high dimensional data,
+
+56
+00:01:56,755 --> 00:01:58,650
+they tend to fail miserably.
+
+57
+00:01:59,670 --> 00:02:01,110
+And, let's look for example at
+
+58
+00:02:01,110 --> 00:02:02,890
+the problem of digit
+classification,
+
+59
+00:02:03,110 --> 00:02:05,910
+one of the simplest
+examples of
+
+60
+00:02:05,910 --> 00:02:07,210
+a computer vision problem.
+
+61
+00:02:07,945 --> 00:02:09,225
+Essentially, what
+we want to say
+
+62
+00:02:09,225 --> 00:02:12,025
+here is whether what we see is
+
+63
+00:02:12,025 --> 00:02:13,085
+the digit three.
+
+64
+00:02:13,465 --> 00:02:15,145
+And the way that you can think
+
+65
+00:02:15,145 --> 00:02:17,510
+of this problem
+when you try to
+
+66
+00:02:17,510 --> 00:02:20,390
+apply multilayer perceptron to
+
+67
+00:02:20,390 --> 00:02:21,530
+this digit classification,
+
+68
+00:02:21,830 --> 00:02:23,110
+you just stack the image into
+
+69
+00:02:23,110 --> 00:02:24,890
+a vector and pass
+it as the input
+
+70
+00:02:25,175 --> 00:02:27,355
+to the, to this
+neural network.
+
+71
+00:02:27,655 --> 00:02:30,155
+The problem is
+that what happens
+
+72
+00:02:30,615 --> 00:02:32,055
+when we have another instance
+
+73
+00:02:32,055 --> 00:02:33,575
+of the same image
+where the unit
+
+74
+00:02:33,575 --> 00:02:35,880
+is just shifted
+by one pixel as
+
+75
+00:02:35,880 --> 00:02:36,780
+you can see here.
+
+76
+00:02:37,320 --> 00:02:38,600
+And the input to the neural
+
+77
+00:02:38,600 --> 00:02:39,640
+network can be very different
+
+78
+00:02:39,640 --> 00:02:40,840
+because the neural network is
+
+79
+00:02:40,840 --> 00:02:42,915
+absolutely unaware
+about the structure
+
+80
+00:02:42,915 --> 00:02:44,195
+of the image and thinks of it
+
+81
+00:02:44,195 --> 00:02:45,655
+as a one dimensional vector.
+
+82
+00:02:45,875 --> 00:02:47,955
+So it will take
+a lot of examples
+
+83
+00:02:47,955 --> 00:02:49,635
+and very complex architecture
+
+84
+00:02:49,635 --> 00:02:51,260
+with a lot of parameters to
+
+85
+00:02:51,260 --> 00:02:52,700
+learn in variance
+to shifts from
+
+86
+00:02:52,700 --> 00:02:54,540
+the data. And this is one of
+
+87
+00:02:54,540 --> 00:02:56,220
+the reasons why early attempts
+
+88
+00:02:56,220 --> 00:02:57,740
+to apply neural networks to,
+
+89
+00:02:58,060 --> 00:02:59,740
+to image data, to
+computer vision
+
+90
+00:02:59,740 --> 00:03:02,925
+problems, failed,
+failed miserably.
+
+91
+00:03:04,345 --> 00:03:06,025
+Now the breaks
+will in applying
+
+92
+00:03:06,025 --> 00:03:07,385
+neural networks to images has
+
+93
+00:03:07,385 --> 00:03:09,590
+come from the right
+inductive bias.
+
+94
+00:03:09,670 --> 00:03:10,710
+And these are convolutional
+
+95
+00:03:10,710 --> 00:03:11,910
+neural networks
+from the seminal
+
+96
+00:03:11,910 --> 00:03:13,210
+work of Jan de Kann,
+
+97
+00:03:13,430 --> 00:03:15,350
+where the inductive
+bias is what
+
+98
+00:03:15,350 --> 00:03:16,970
+we call a translation
+equivariance.
+
+99
+00:03:17,665 --> 00:03:19,345
+Basically, it's hardwired into
+
+100
+00:03:19,345 --> 00:03:20,705
+the neural
+network architecture
+
+101
+00:03:20,705 --> 00:03:22,785
+in the form of shared
+local weights.
+
+102
+00:03:22,785 --> 00:03:24,545
+And this way, we have now way
+
+103
+00:03:24,545 --> 00:03:26,820
+less parameters and this idea
+
+104
+00:03:26,820 --> 00:03:28,180
+that you can recycle the same
+
+105
+00:03:28,180 --> 00:03:29,220
+weights and apply them at
+
+106
+00:03:29,220 --> 00:03:30,500
+different positions
+at the image
+
+107
+00:03:30,500 --> 00:03:32,740
+at different scales
+is very powerful.
+
+108
+00:03:32,740 --> 00:03:35,735
+That was really
+what made these
+
+109
+00:03:35,735 --> 00:03:37,015
+architectures so successful,
+
+110
+00:03:37,015 --> 00:03:39,015
+and the results speak
+for themselves.
+
+111
+00:03:39,015 --> 00:03:40,695
+As you know, CNNs have really
+
+112
+00:03:40,695 --> 00:03:42,375
+revolutionized the field of
+
+113
+00:03:42,375 --> 00:03:43,995
+computer vision in
+the past decade.
+
+114
+00:03:45,080 --> 00:03:46,920
+Now let me show you
+a different problem.
+
+115
+00:03:46,920 --> 00:03:48,940
+What you see here
+is a a molecule,
+
+116
+00:03:49,160 --> 00:03:50,920
+and, this is a molecule
+of caffeine.
+
+117
+00:03:50,920 --> 00:03:52,440
+I hope that in
+the break you've
+
+118
+00:03:52,440 --> 00:03:53,580
+had enough of it.
+
+119
+00:03:54,925 --> 00:03:56,845
+So I have a little
+bit in my my
+
+120
+00:03:56,845 --> 00:03:58,765
+tea cup here. And,
+
+121
+00:03:59,405 --> 00:04:00,865
+we can model it as a graph.
+
+122
+00:04:01,030 --> 00:04:02,790
+The nodes here
+represent the atoms
+
+123
+00:04:02,790 --> 00:04:05,030
+and the agents
+represent the chemical
+
+124
+00:04:05,030 --> 00:04:06,710
+bonds. Let's say that we want
+
+125
+00:04:06,710 --> 00:04:08,250
+to predict some
+chemical property
+
+126
+00:04:08,470 --> 00:04:10,375
+of this molecule,
+for example,
+
+127
+00:04:10,375 --> 00:04:11,655
+what physicists or chemists
+
+128
+00:04:11,655 --> 00:04:13,495
+would call
+the atomization energy.
+
+129
+00:04:13,495 --> 00:04:14,855
+So it's the energy that takes
+
+130
+00:04:14,855 --> 00:04:16,875
+to break this molecule apart.
+
+131
+00:04:17,430 --> 00:04:19,130
+And, this is
+really fundamental
+
+132
+00:04:19,510 --> 00:04:21,850
+problem in, drug
+design and drug
+
+133
+00:04:22,150 --> 00:04:24,470
+drug discovery
+to be able to do
+
+134
+00:04:24,470 --> 00:04:25,910
+virtual screening to predict
+
+135
+00:04:25,910 --> 00:04:26,955
+certain properties of,
+
+136
+00:04:27,035 --> 00:04:28,335
+potential drug candidates.
+
+137
+00:04:28,475 --> 00:04:30,395
+So how do we represent
+this molecule?
+
+138
+00:04:30,395 --> 00:04:32,075
+Again, we can just
+take the features
+
+139
+00:04:32,075 --> 00:04:33,355
+of the nodes and put them into
+
+140
+00:04:33,355 --> 00:04:35,535
+a vector as we did
+before with an image.
+
+141
+00:04:35,820 --> 00:04:38,620
+The problem though
+that we have many,
+
+142
+00:04:38,620 --> 00:04:40,060
+many more ways to do it.
+
+143
+00:04:40,060 --> 00:04:41,820
+Actually, any permutation
+of the nodes,
+
+144
+00:04:41,980 --> 00:04:44,545
+produces a valid
+representation vector.
+
+145
+00:04:44,865 --> 00:04:46,145
+And the kind of invariance we
+
+146
+00:04:46,145 --> 00:04:47,345
+want to have here is different
+
+147
+00:04:47,345 --> 00:04:48,565
+from the previous example.
+
+148
+00:04:48,705 --> 00:04:50,785
+Here, we need to
+account for all
+
+149
+00:04:50,785 --> 00:04:51,845
+the possible permutations.
+
+150
+00:04:52,945 --> 00:04:55,630
+And molecules are
+just one example
+
+151
+00:04:55,630 --> 00:04:57,010
+of graph structured data.
+
+152
+00:04:57,070 --> 00:04:58,690
+In fact, we see
+graphs everywhere.
+
+153
+00:04:58,830 --> 00:05:00,190
+Probably the most prominent
+
+154
+00:05:00,190 --> 00:05:01,810
+example are social networks
+
+155
+00:05:02,275 --> 00:05:04,355
+where the nodes are users and
+
+156
+00:05:04,355 --> 00:05:06,115
+the edges represent
+their social
+
+157
+00:05:06,115 --> 00:05:07,235
+relations and interactions.
+
+158
+00:05:07,235 --> 00:05:08,675
+So you can think
+of Facebook or
+
+159
+00:05:08,675 --> 00:05:11,880
+Twitter or any
+other graph that
+
+160
+00:05:11,880 --> 00:05:13,960
+is generated by
+by the activity
+
+161
+00:05:13,960 --> 00:05:14,860
+of of humans.
+
+162
+00:05:15,560 --> 00:05:16,840
+We also encounter graphs,
+
+163
+00:05:17,080 --> 00:05:19,000
+or networks in
+biological sciences
+
+164
+00:05:19,000 --> 00:05:20,550
+where we look at
+the interactions
+
+165
+00:05:21,145 --> 00:05:22,205
+between different biomolecules
+
+166
+00:05:22,345 --> 00:05:24,585
+such as proteins and
+drugs and so on.
+
+167
+00:05:24,585 --> 00:05:26,185
+In computer graphics
+and computer
+
+168
+00:05:26,185 --> 00:05:28,070
+vision where we
+use graphs with
+
+169
+00:05:28,070 --> 00:05:29,670
+maybe a bit more
+structure that
+
+170
+00:05:29,670 --> 00:05:31,270
+are called meshes to represent
+
+171
+00:05:31,270 --> 00:05:33,670
+three d objects and, in many,
+
+172
+00:05:33,670 --> 00:05:35,485
+many other fields
+like in brain
+
+173
+00:05:35,485 --> 00:05:36,925
+imaging where
+graphs can be used
+
+174
+00:05:36,925 --> 00:05:38,625
+to represent
+functional networks
+
+175
+00:05:38,685 --> 00:05:39,505
+and so on.
+
+176
+00:05:40,285 --> 00:05:41,725
+So if you want
+the gist of what
+
+177
+00:05:41,725 --> 00:05:43,070
+deep learning on graphs is,
+
+178
+00:05:43,150 --> 00:05:44,830
+it's essentially
+finding the right
+
+179
+00:05:44,830 --> 00:05:46,510
+inductive bias for
+graph structured
+
+180
+00:05:46,510 --> 00:05:48,430
+data, which is sometimes also
+
+181
+00:05:48,430 --> 00:05:51,090
+called relational
+inductive bias.
+
+182
+00:05:51,645 --> 00:05:53,025
+And in two thousand sixteen,
+
+183
+00:05:53,245 --> 00:05:54,925
+I wrote a position paper with
+
+184
+00:05:54,925 --> 00:05:56,765
+Jan de Kann, Pierre
+van der Geist,
+
+185
+00:05:56,765 --> 00:05:58,385
+Joanne Brunner,
+and Arthur Schlam,
+
+186
+00:05:58,820 --> 00:05:59,940
+where we connected several
+
+187
+00:05:59,940 --> 00:06:00,980
+attempts to deal with,
+
+188
+00:06:01,700 --> 00:06:03,060
+irregular or non Euclidean
+
+189
+00:06:03,060 --> 00:06:04,440
+structures in deep learning,
+
+190
+00:06:04,580 --> 00:06:06,680
+which we named,
+geometric deep learning.
+
+191
+00:06:07,060 --> 00:06:09,685
+So I would say
+that now I would
+
+192
+00:06:09,685 --> 00:06:11,845
+probably write it
+completely different.
+
+193
+00:06:11,845 --> 00:06:13,525
+So I think there
+is a much more
+
+194
+00:06:13,525 --> 00:06:15,605
+depth to this
+idea of trying to
+
+195
+00:06:15,605 --> 00:06:17,385
+geometrize machine
+learning problems.
+
+196
+00:06:18,480 --> 00:06:20,320
+But somehow this term is now
+
+197
+00:06:20,320 --> 00:06:22,160
+used synonymously with graph
+
+198
+00:06:22,160 --> 00:06:23,780
+deep learning or
+graph representation
+
+199
+00:06:23,920 --> 00:06:26,135
+learning. And, as I said,
+
+200
+00:06:26,135 --> 00:06:27,655
+there is more to that.
+
+201
+00:06:27,655 --> 00:06:29,035
+We can think of geometrical
+
+202
+00:06:29,095 --> 00:06:31,735
+learning as a framework
+unifying grids,
+
+203
+00:06:31,735 --> 00:06:33,690
+graphs, curves, and gauges,
+
+204
+00:06:33,690 --> 00:06:35,310
+which is high energy physics
+
+205
+00:06:35,930 --> 00:06:37,070
+term for manifolds.
+
+206
+00:06:37,370 --> 00:06:39,130
+So, in fact, we
+like calling it
+
+207
+00:06:39,130 --> 00:06:41,310
+the four g of deep learning.
+
+208
+00:06:42,235 --> 00:06:43,595
+So this year, graph neural
+
+209
+00:06:43,595 --> 00:06:44,875
+networks have
+officially become
+
+210
+00:06:44,875 --> 00:06:46,315
+one of the hottest topics in
+
+211
+00:06:46,315 --> 00:06:46,955
+machine learning.
+
+212
+00:06:46,955 --> 00:06:49,195
+And at least judging
+from the submissions
+
+213
+00:06:49,195 --> 00:06:50,495
+of the six of ICLR,
+
+214
+00:06:51,000 --> 00:06:52,940
+one of the main
+conferences in ML,
+
+215
+00:06:53,160 --> 00:06:55,080
+this has been one
+of the popular
+
+216
+00:06:55,080 --> 00:06:59,775
+keywords. So let me show you
+
+217
+00:06:59,775 --> 00:07:01,055
+some more details
+and let's look
+
+218
+00:07:01,055 --> 00:07:02,275
+at classical CNNs.
+
+219
+00:07:03,095 --> 00:07:04,775
+So if you look at
+classical CNNs
+
+220
+00:07:04,775 --> 00:07:08,090
+that take as input an image,
+
+221
+00:07:08,090 --> 00:07:09,530
+which we define as a function
+
+222
+00:07:09,530 --> 00:07:10,670
+that I denote here,
+
+223
+00:07:11,370 --> 00:07:13,895
+by x on a regular two
+dimensional grid,
+
+224
+00:07:14,135 --> 00:07:16,295
+What convolution
+does is a form
+
+225
+00:07:16,295 --> 00:07:18,055
+of weighted aggregation
+of the values
+
+226
+00:07:18,055 --> 00:07:19,515
+in the pixels of
+a neighborhood.
+
+227
+00:07:19,895 --> 00:07:21,255
+And we can do
+the same thing in
+
+228
+00:07:21,255 --> 00:07:22,590
+the graph. The neighbors will
+
+229
+00:07:22,590 --> 00:07:23,950
+be the nodes that are attached
+
+230
+00:07:23,950 --> 00:07:26,110
+by edges to any
+node in the graph.
+
+231
+00:07:26,110 --> 00:07:28,050
+So so far, it looks
+all the same.
+
+232
+00:07:28,430 --> 00:07:30,145
+But one thing to
+notice is that
+
+233
+00:07:30,225 --> 00:07:31,665
+when we move to
+a different location,
+
+234
+00:07:31,665 --> 00:07:33,025
+we still have
+a constant number
+
+235
+00:07:33,025 --> 00:07:34,705
+of neighbors because the grid
+
+236
+00:07:34,705 --> 00:07:35,985
+is regular. So in this case,
+
+237
+00:07:35,985 --> 00:07:37,745
+each pixel is
+connected to four
+
+238
+00:07:37,745 --> 00:07:39,010
+neighbors. And on the graph,
+
+239
+00:07:39,010 --> 00:07:39,650
+on the other hand,
+
+240
+00:07:39,650 --> 00:07:40,770
+we might have a very different
+
+241
+00:07:40,770 --> 00:07:41,670
+number of neighbors.
+
+242
+00:07:41,890 --> 00:07:43,570
+We had six neighbors
+in the previous
+
+243
+00:07:43,570 --> 00:07:46,470
+node and five
+neighbors, here.
+
+244
+00:07:46,610 --> 00:07:48,245
+And if you think of
+social networks,
+
+245
+00:07:48,405 --> 00:07:49,765
+these differences
+can be huge.
+
+246
+00:07:49,765 --> 00:07:51,445
+So a popular user like Donald
+
+247
+00:07:51,445 --> 00:07:52,885
+Trump has millions
+of followers
+
+248
+00:07:52,885 --> 00:07:54,565
+and other users
+might have just
+
+249
+00:07:54,565 --> 00:07:56,025
+a few tens or hundreds.
+
+250
+00:07:56,570 --> 00:07:58,010
+And this is what
+is called the node
+
+251
+00:07:58,010 --> 00:07:59,950
+degree in graph,
+in graph theory.
+
+252
+00:08:00,730 --> 00:08:02,010
+Another thing to
+observe is that
+
+253
+00:08:02,010 --> 00:08:03,210
+on agreed, we have a fixed
+
+254
+00:08:03,210 --> 00:08:04,430
+ordering of the neighbors.
+
+255
+00:08:04,855 --> 00:08:05,975
+We can always talk about,
+
+256
+00:08:06,135 --> 00:08:07,735
+a node to the left
+or a node to
+
+257
+00:08:07,735 --> 00:08:09,095
+the right, and this allows me
+
+258
+00:08:09,095 --> 00:08:10,615
+to always apply
+the same weights
+
+259
+00:08:10,615 --> 00:08:11,735
+to the first
+neighbor and other
+
+260
+00:08:11,735 --> 00:08:12,935
+to the second and so on.
+
+261
+00:08:12,935 --> 00:08:14,410
+And this is exactly
+the idea of
+
+262
+00:08:14,410 --> 00:08:16,170
+weight sharing
+in conversion on
+
+263
+00:08:16,170 --> 00:08:17,210
+your networks that that I
+
+264
+00:08:17,210 --> 00:08:18,270
+mentioned in the beginning.
+
+265
+00:08:18,810 --> 00:08:20,330
+So if you represent
+this as a matrix,
+
+266
+00:08:20,330 --> 00:08:21,875
+we actually see that there is
+
+267
+00:08:21,875 --> 00:08:24,035
+a special structure
+that is called,
+
+268
+00:08:24,355 --> 00:08:25,335
+circulant matrix.
+
+269
+00:08:25,635 --> 00:08:27,715
+And, because circulant
+matrices commute,
+
+270
+00:08:27,715 --> 00:08:29,075
+we also have
+commutativity with
+
+271
+00:08:29,075 --> 00:08:29,955
+the shift operator,
+
+272
+00:08:29,955 --> 00:08:31,550
+which is called
+shift equivariance.
+
+273
+00:08:31,690 --> 00:08:32,890
+And in fact, you can actually
+
+274
+00:08:32,890 --> 00:08:34,570
+derive convolution from first
+
+275
+00:08:34,570 --> 00:08:35,530
+principles of symmetry,
+
+276
+00:08:35,530 --> 00:08:36,750
+of translation symmetry.
+
+277
+00:08:37,130 --> 00:08:39,290
+And, this is the the idea of
+
+278
+00:08:39,290 --> 00:08:40,635
+geometric deep learning where
+
+279
+00:08:40,795 --> 00:08:42,555
+inductive biases emerge from,
+
+280
+00:08:42,955 --> 00:08:44,495
+first geometric principles.
+
+281
+00:08:46,315 --> 00:08:47,035
+So on the graph,
+
+282
+00:08:47,035 --> 00:08:48,520
+the situation is
+rather different.
+
+283
+00:08:48,600 --> 00:08:49,800
+The ordering of the neighbors
+
+284
+00:08:49,800 --> 00:08:50,920
+is completely arbitrary,
+
+285
+00:08:50,920 --> 00:08:52,280
+so we don't have
+a canonical way
+
+286
+00:08:52,280 --> 00:08:53,960
+of assigning a fixed weight to
+
+287
+00:08:53,960 --> 00:08:55,880
+a given node.
+And this actually
+
+288
+00:08:55,880 --> 00:08:56,920
+makes graph neural networks
+
+289
+00:08:56,920 --> 00:08:58,495
+quite different
+from traditional
+
+290
+00:08:58,495 --> 00:09:00,895
+CNNs in the form
+of the variance
+
+291
+00:09:00,895 --> 00:09:01,955
+that that we get.
+
+292
+00:09:02,575 --> 00:09:04,255
+So here's a blueprint for how
+
+293
+00:09:04,255 --> 00:09:05,855
+to do conversion
+like operations
+
+294
+00:09:05,855 --> 00:09:07,240
+on graphs, which
+have two types
+
+295
+00:09:07,240 --> 00:09:09,180
+of operations.
+We can aggregate
+
+296
+00:09:09,240 --> 00:09:10,860
+information from neighbors,
+
+297
+00:09:11,320 --> 00:09:12,680
+and we can process it in some
+
+298
+00:09:12,680 --> 00:09:14,520
+way and then update
+the features
+
+299
+00:09:14,520 --> 00:09:16,665
+of an old. So
+these are the two
+
+300
+00:09:16,665 --> 00:09:18,365
+operations, aggregate
+and update.
+
+301
+00:09:18,745 --> 00:09:20,425
+And aggregate has
+a most general
+
+302
+00:09:20,425 --> 00:09:22,105
+form of a function
+that is applied
+
+303
+00:09:22,105 --> 00:09:24,285
+to to the neighbor
+node features.
+
+304
+00:09:24,720 --> 00:09:26,960
+And importantly,
+this, function is,
+
+305
+00:09:27,280 --> 00:09:28,340
+prohibition environment.
+
+306
+00:09:28,400 --> 00:09:29,440
+And there are some important
+
+307
+00:09:29,440 --> 00:09:31,540
+particular examples
+of architectures
+
+308
+00:09:31,600 --> 00:09:33,635
+where this can be
+linear aggregation
+
+309
+00:09:33,695 --> 00:09:35,635
+or an aggregation
+that uses some
+
+310
+00:09:35,855 --> 00:09:38,195
+form of attention mechanism.
+
+311
+00:09:39,455 --> 00:09:42,020
+So let's now dive more into
+
+312
+00:09:42,020 --> 00:09:43,300
+the details of what is similar
+
+313
+00:09:43,300 --> 00:09:44,100
+and what is different,
+
+314
+00:09:44,340 --> 00:09:45,540
+between graph neural networks
+
+315
+00:09:45,540 --> 00:09:46,820
+and traditional deep learning
+
+316
+00:09:46,820 --> 00:09:49,405
+pipelines and look at CNNs.
+
+317
+00:09:49,625 --> 00:09:51,085
+So if we look at historical
+
+318
+00:09:51,145 --> 00:09:53,865
+developments of CNNs that that
+
+319
+00:09:53,865 --> 00:09:56,010
+that appeared in
+computer vision
+
+320
+00:09:56,010 --> 00:09:57,770
+problems. So early models such
+
+321
+00:09:57,770 --> 00:09:58,970
+as AlexNet from two thousand
+
+322
+00:09:58,970 --> 00:10:00,590
+twelve were
+relatively shallow,
+
+323
+00:10:00,810 --> 00:10:02,430
+and they have
+just eight layers
+
+324
+00:10:02,490 --> 00:10:04,410
+with relatively large filters
+
+325
+00:10:04,410 --> 00:10:06,905
+of up to eleven by
+eleven pixels.
+
+326
+00:10:07,605 --> 00:10:10,245
+And, as CNNs became
+more commonplace
+
+327
+00:10:10,245 --> 00:10:11,205
+in computer vision,
+
+328
+00:10:11,205 --> 00:10:12,725
+they also became
+deeper and used
+
+329
+00:10:12,725 --> 00:10:13,625
+smaller filters.
+
+330
+00:10:13,685 --> 00:10:15,640
+So the VGG architecture had
+
+331
+00:10:15,640 --> 00:10:17,880
+twenty layers and
+three by three
+
+332
+00:10:17,880 --> 00:10:19,400
+filters. And there are several
+
+333
+00:10:19,400 --> 00:10:21,900
+reasons for, why
+this happened.
+
+334
+00:10:22,535 --> 00:10:23,495
+First of all, obviously,
+
+335
+00:10:23,495 --> 00:10:25,355
+smaller filters
+are more efficient
+
+336
+00:10:25,495 --> 00:10:27,735
+computationally. But
+more importantly,
+
+337
+00:10:27,735 --> 00:10:29,115
+it was shown that
+in convolutional
+
+338
+00:10:29,175 --> 00:10:29,655
+neural networks,
+
+339
+00:10:29,655 --> 00:10:31,440
+you can construct
+complex features
+
+340
+00:10:31,440 --> 00:10:32,500
+from simple ones,
+
+341
+00:10:32,960 --> 00:10:34,160
+the property that we call
+
+342
+00:10:34,160 --> 00:10:35,920
+compositionality.
+So if you look
+
+343
+00:10:35,920 --> 00:10:37,935
+at the features that that that
+
+344
+00:10:37,935 --> 00:10:39,295
+are noted in different layers
+
+345
+00:10:39,295 --> 00:10:40,175
+in the neural network,
+
+346
+00:10:40,175 --> 00:10:41,875
+you see that the first layers
+
+347
+00:10:41,935 --> 00:10:43,615
+have primitive
+geometric features
+
+348
+00:10:43,615 --> 00:10:44,815
+such as edges or corners.
+
+349
+00:10:44,815 --> 00:10:46,115
+And as you go deeper,
+
+350
+00:10:46,170 --> 00:10:48,910
+you get more complex,
+complex features.
+
+351
+00:10:49,450 --> 00:10:50,970
+It appears not to be the case
+
+352
+00:10:50,970 --> 00:10:52,170
+in graph neural networks and
+
+353
+00:10:52,170 --> 00:10:54,110
+it's really wishful thinking,
+
+354
+00:10:54,775 --> 00:10:56,215
+composing complex structures
+
+355
+00:10:56,215 --> 00:10:57,275
+from simple ones.
+
+356
+00:10:57,895 --> 00:10:59,335
+For example, it
+was shown recently
+
+357
+00:10:59,335 --> 00:11:00,935
+that graph neural networks of
+
+358
+00:11:00,935 --> 00:11:02,055
+the message passing type are
+
+359
+00:11:02,055 --> 00:11:03,175
+equivalent to what is called
+
+360
+00:11:03,175 --> 00:11:04,790
+the Weiszler Lemann graph
+
+361
+00:11:04,790 --> 00:11:05,670
+isomorphism test,
+
+362
+00:11:05,670 --> 00:11:07,270
+which is a classical algorithm
+
+363
+00:11:07,270 --> 00:11:09,210
+from graph theory
+that determines
+
+364
+00:11:09,270 --> 00:11:10,870
+if two graphs are
+isomorphic by
+
+365
+00:11:10,870 --> 00:11:12,725
+means of some color refinement
+
+366
+00:11:12,725 --> 00:11:14,245
+procedure. And,
+
+367
+00:11:14,485 --> 00:11:15,845
+this is a test
+that can tell you
+
+368
+00:11:15,845 --> 00:11:17,605
+whether two graphs
+are possibly
+
+369
+00:11:17,605 --> 00:11:19,365
+isomorphic, but it's necessary
+
+370
+00:11:19,365 --> 00:11:20,665
+but insufficient condition.
+
+371
+00:11:21,040 --> 00:11:22,160
+In this case, for example,
+
+372
+00:11:22,160 --> 00:11:24,960
+the the the test
+will fail, because,
+
+373
+00:11:25,360 --> 00:11:27,040
+it is known that
+it cannot count,
+
+374
+00:11:27,440 --> 00:11:29,300
+simple substructure
+such as triangles.
+
+375
+00:11:29,765 --> 00:11:31,445
+And one of these
+graphs has triangles,
+
+376
+00:11:31,445 --> 00:11:32,425
+another one doesn't.
+
+377
+00:11:32,965 --> 00:11:34,485
+So there exists higher order,
+
+378
+00:11:34,485 --> 00:11:35,925
+more powerful
+versions of the the
+
+379
+00:11:35,925 --> 00:11:38,570
+Weisler Lemann test,
+but they have,
+
+380
+00:11:39,670 --> 00:11:41,030
+prohibitive computational and
+
+381
+00:11:41,030 --> 00:11:42,490
+memory complexity.
+
+382
+00:11:43,510 --> 00:11:44,870
+So another thing
+to notice that
+
+383
+00:11:44,870 --> 00:11:47,475
+unlike in the traditional
+architectures,
+
+384
+00:11:47,775 --> 00:11:49,295
+it is actually difficult to to
+
+385
+00:11:49,295 --> 00:11:50,975
+train deep, craft
+neural network
+
+386
+00:11:50,975 --> 00:11:52,255
+architectures and,
+
+387
+00:11:52,655 --> 00:11:53,695
+they require a lot of,
+
+388
+00:11:53,935 --> 00:11:56,120
+tricks such as
+regularization and,
+
+389
+00:11:56,520 --> 00:11:59,240
+architectural, changes such as
+
+390
+00:11:59,240 --> 00:12:00,220
+residual connections.
+
+391
+00:12:00,760 --> 00:12:02,760
+And, the bottom line that that
+
+392
+00:12:02,760 --> 00:12:03,980
+even with these tricks,
+
+393
+00:12:04,245 --> 00:12:05,205
+sometimes shallow,
+
+394
+00:12:05,605 --> 00:12:07,845
+baselines work
+better than than
+
+395
+00:12:07,845 --> 00:12:09,205
+the deep super duper graph
+
+396
+00:12:09,205 --> 00:12:12,485
+architectures.
+So one reason for
+
+397
+00:12:12,485 --> 00:12:13,910
+this is what is called feature
+
+398
+00:12:13,910 --> 00:12:15,350
+oversmooling. It means that
+
+399
+00:12:15,350 --> 00:12:16,710
+features on the nodes tend to
+
+400
+00:12:16,710 --> 00:12:18,070
+collapse to a single point in
+
+401
+00:12:18,070 --> 00:12:18,950
+the feature space.
+
+402
+00:12:18,950 --> 00:12:20,310
+But probably
+a more fundamental
+
+403
+00:12:20,310 --> 00:12:22,165
+phenomenon is that,
+
+404
+00:12:22,405 --> 00:12:24,345
+it was described in
+the recent paper,
+
+405
+00:12:24,805 --> 00:12:27,705
+by Uri Alon that,
+there is a bottleneck.
+
+406
+00:12:27,925 --> 00:12:29,045
+So in some graphs,
+
+407
+00:12:29,285 --> 00:12:30,780
+where the number of neighbors
+
+408
+00:12:30,780 --> 00:12:32,060
+tends to grow exponentially as
+
+409
+00:12:32,060 --> 00:12:33,600
+you expand
+the neighborhood size,
+
+410
+00:12:33,980 --> 00:12:35,340
+you get a lot of neighbors,
+
+411
+00:12:35,660 --> 00:12:37,280
+whose features you
+need to squeeze
+
+412
+00:12:37,765 --> 00:12:39,545
+through a single
+feature vector.
+
+413
+00:12:39,845 --> 00:12:40,645
+And if you have,
+
+414
+00:12:40,885 --> 00:12:42,165
+this exponential growth of
+
+415
+00:12:42,165 --> 00:12:43,365
+neighbors and you also happen
+
+416
+00:12:43,365 --> 00:12:45,065
+to depend on long
+range information,
+
+417
+00:12:45,490 --> 00:12:47,590
+you run into the bottleneck
+phenomenon.
+
+418
+00:12:48,610 --> 00:12:50,470
+And, in a sense,
+
+419
+00:12:51,490 --> 00:12:54,225
+it's not clear
+for which cases,
+
+420
+00:12:54,225 --> 00:12:54,945
+for which problems,
+
+421
+00:12:54,945 --> 00:12:57,285
+and for which graphs,
+that helps.
+
+422
+00:12:57,505 --> 00:12:58,565
+So in a sense,
+
+423
+00:12:59,985 --> 00:13:01,265
+deep graph neural networks try
+
+424
+00:13:01,265 --> 00:13:03,125
+to use many layers
+with small filters,
+
+425
+00:13:03,270 --> 00:13:04,650
+just one hot filters.
+
+426
+00:13:04,710 --> 00:13:06,550
+The alternative
+is to use fewer
+
+427
+00:13:06,550 --> 00:13:08,230
+layers but make
+the filters bigger,
+
+428
+00:13:08,230 --> 00:13:09,830
+and that's exactly what we try
+
+429
+00:13:09,830 --> 00:13:10,950
+to do in the work with my
+
+430
+00:13:10,950 --> 00:13:12,185
+collaborators at Peter.
+
+431
+00:13:12,265 --> 00:13:13,705
+We took this idea
+to the extreme.
+
+432
+00:13:13,705 --> 00:13:15,065
+We wanted to see
+what we can do
+
+433
+00:13:15,065 --> 00:13:17,085
+with a convolutional layer,
+
+434
+00:13:17,465 --> 00:13:19,085
+just single
+paragraph convolutional
+
+435
+00:13:19,145 --> 00:13:21,460
+layer. And, an analogy in
+
+436
+00:13:21,460 --> 00:13:23,220
+classical CNNs
+would be to have
+
+437
+00:13:23,220 --> 00:13:25,160
+a shallow network
+with bigger filters.
+
+438
+00:13:25,460 --> 00:13:27,035
+The nice thing here is that if
+
+439
+00:13:27,035 --> 00:13:28,335
+we use linear diffusion,
+
+440
+00:13:28,475 --> 00:13:29,435
+linear message passing,
+
+441
+00:13:29,435 --> 00:13:30,875
+we can pre compute the diffuse
+
+442
+00:13:30,875 --> 00:13:32,395
+features and then
+it boils down
+
+443
+00:13:32,395 --> 00:13:35,260
+to just applying
+simple multilayer
+
+444
+00:13:35,400 --> 00:13:36,860
+perceptrons to the predefined
+
+445
+00:13:37,000 --> 00:13:39,000
+old features.
+And as a result,
+
+446
+00:13:39,000 --> 00:13:40,760
+the neural network
+is extremely
+
+447
+00:13:40,760 --> 00:13:42,680
+efficient, and it scales to to
+
+448
+00:13:42,680 --> 00:13:43,820
+very large graphs.
+
+449
+00:13:45,465 --> 00:13:46,985
+So the surprising finding is
+
+450
+00:13:46,985 --> 00:13:48,605
+that such
+a simple architecture
+
+451
+00:13:48,665 --> 00:13:50,345
+performs almost
+on par with some
+
+452
+00:13:50,345 --> 00:13:52,105
+of the much more complex state
+
+453
+00:13:52,105 --> 00:13:53,565
+of the art deeper models.
+
+454
+00:13:54,000 --> 00:13:55,200
+And again,
+
+455
+00:13:55,360 --> 00:13:57,280
+this brings the question when
+
+456
+00:13:57,280 --> 00:13:59,280
+do you need depth
+for what kind
+
+457
+00:13:59,280 --> 00:14:01,140
+of graphs and for what
+kind of problems.
+
+458
+00:14:02,785 --> 00:14:03,745
+What is for sure that it's
+
+459
+00:14:03,745 --> 00:14:05,185
+significantly faster by more
+
+460
+00:14:05,185 --> 00:14:06,625
+than an order of magnitude in
+
+461
+00:14:06,625 --> 00:14:08,305
+training and inference, and,
+
+462
+00:14:08,625 --> 00:14:11,210
+it resembles the the inception
+
+463
+00:14:12,470 --> 00:14:13,670
+convolutional neural networks
+
+464
+00:14:13,670 --> 00:14:15,270
+that that were pioneered by
+
+465
+00:14:15,270 --> 00:14:17,350
+Google a few years
+ago because,
+
+466
+00:14:17,670 --> 00:14:19,530
+we use filters of
+different size,
+
+467
+00:14:19,830 --> 00:14:22,295
+as was used in that in that
+
+468
+00:14:22,295 --> 00:14:25,975
+architecture. So
+there are certain
+
+469
+00:14:25,975 --> 00:14:27,895
+graph quantities
+we cannot compute
+
+470
+00:14:27,895 --> 00:14:29,650
+by means of message passing no
+
+471
+00:14:29,650 --> 00:14:31,250
+matter how deep
+we make our own
+
+472
+00:14:31,250 --> 00:14:32,070
+neural network.
+
+473
+00:14:32,210 --> 00:14:33,570
+And I should say that this is
+
+474
+00:14:33,570 --> 00:14:35,170
+not fully understood and on
+
+475
+00:14:35,170 --> 00:14:36,530
+the contrary,
+there are examples
+
+476
+00:14:36,530 --> 00:14:38,130
+of properties such
+as graph moments,
+
+477
+00:14:38,130 --> 00:14:39,975
+for example, that can only be
+
+478
+00:14:39,975 --> 00:14:41,335
+computed unless
+the network has
+
+479
+00:14:41,335 --> 00:14:42,295
+certain minimal depth.
+
+480
+00:14:42,295 --> 00:14:44,715
+So it's still
+an open theoretical
+
+481
+00:14:44,855 --> 00:14:48,290
+question. So what
+we can do is,
+
+482
+00:14:48,690 --> 00:14:50,450
+to help graph neural networks
+
+483
+00:14:50,450 --> 00:14:51,890
+to count substructures by
+
+484
+00:14:51,890 --> 00:14:53,250
+providing these counts as some
+
+485
+00:14:53,250 --> 00:14:54,610
+peak computed
+feature vectors.
+
+486
+00:14:54,610 --> 00:14:56,265
+It's kind of positional or
+
+487
+00:14:56,265 --> 00:14:57,325
+structural encoding,
+
+488
+00:14:57,945 --> 00:14:59,145
+and we can do this by,
+
+489
+00:14:59,865 --> 00:15:02,345
+peak counting some
+structures of size k.
+
+490
+00:15:02,345 --> 00:15:03,385
+This could be, for example,
+
+491
+00:15:03,385 --> 00:15:04,985
+triangles or clicks or cycles
+
+492
+00:15:04,985 --> 00:15:06,910
+or paths of
+different lengths.
+
+493
+00:15:07,210 --> 00:15:08,730
+And we provide this as node or
+
+494
+00:15:08,730 --> 00:15:10,570
+edge fishes and
+then do standard
+
+495
+00:15:10,570 --> 00:15:11,470
+message passing.
+
+496
+00:15:11,610 --> 00:15:12,890
+So we call this architecture
+
+497
+00:15:12,890 --> 00:15:14,190
+graph subtraction networks.
+
+498
+00:15:14,765 --> 00:15:16,925
+And, the nice thing about it
+
+499
+00:15:16,925 --> 00:15:20,045
+that it actually
+retains the linear
+
+500
+00:15:20,045 --> 00:15:21,965
+complexity and
+the local structure
+
+501
+00:15:21,965 --> 00:15:23,485
+of standard message passing
+
+502
+00:15:23,485 --> 00:15:24,225
+neural networks.
+
+503
+00:15:24,640 --> 00:15:25,520
+And, the,
+
+504
+00:15:25,840 --> 00:15:27,920
+comp the the precomputation is
+
+505
+00:15:27,920 --> 00:15:29,300
+the part that might
+be expensive.
+
+506
+00:15:29,520 --> 00:15:30,480
+In the worst case,
+
+507
+00:15:30,480 --> 00:15:32,000
+it is as complex as the high
+
+508
+00:15:32,000 --> 00:15:35,095
+order of Le Mans, methods.
+
+509
+00:15:35,095 --> 00:15:36,395
+But, in practice,
+
+510
+00:15:37,095 --> 00:15:39,355
+it can the complexity
+is much lower.
+
+511
+00:15:40,215 --> 00:15:42,640
+So what we gain in
+this way is that,
+
+512
+00:15:42,880 --> 00:15:44,160
+the graph's
+abstraction network
+
+513
+00:15:44,160 --> 00:15:46,000
+is strictly more powerful than
+
+514
+00:15:46,000 --> 00:15:48,320
+the the device for a lemon or
+
+515
+00:15:48,320 --> 00:15:50,000
+the equivalent message passing
+
+516
+00:15:50,000 --> 00:15:50,980
+graph neural networks.
+
+517
+00:15:52,205 --> 00:15:54,145
+And we have problem specific
+
+518
+00:15:54,605 --> 00:15:56,605
+inductive bias, we see that,
+
+519
+00:15:56,605 --> 00:15:57,265
+for example,
+
+520
+00:15:57,645 --> 00:15:59,885
+by by counting
+certain structures
+
+521
+00:15:59,885 --> 00:16:03,160
+such as clicks in
+social network graphs,
+
+522
+00:16:03,380 --> 00:16:05,640
+we get significantly
+better performance.
+
+523
+00:16:05,860 --> 00:16:08,280
+And especially interesting for
+
+524
+00:16:08,340 --> 00:16:11,405
+molecular datasets describe
+
+525
+00:16:11,785 --> 00:16:12,845
+chemical compounds.
+
+526
+00:16:13,785 --> 00:16:15,385
+Cycles are important
+motif, and,
+
+527
+00:16:15,625 --> 00:16:16,985
+they're abundant in organic
+
+528
+00:16:16,985 --> 00:16:18,265
+molecules with structures such
+
+529
+00:16:18,265 --> 00:16:19,405
+as aromatic rings.
+
+530
+00:16:19,580 --> 00:16:21,100
+And, again, this
+is my favorite
+
+531
+00:16:21,100 --> 00:16:24,060
+molecule of caffeine.
+
+532
+00:16:24,060 --> 00:16:26,220
+It has two rings of
+size five and six.
+
+533
+00:16:26,220 --> 00:16:28,325
+So if you use
+a graph substructure
+
+534
+00:16:28,465 --> 00:16:29,685
+networks with
+these structures,
+
+535
+00:16:29,825 --> 00:16:31,345
+we get significant gain in
+
+536
+00:16:31,345 --> 00:16:33,025
+performance of
+predicting chemical
+
+537
+00:16:33,025 --> 00:16:34,785
+properties of
+molecular graphs.
+
+538
+00:16:34,785 --> 00:16:36,725
+And the experiment shown here
+
+539
+00:16:36,840 --> 00:16:38,600
+is on the TING dataset that is
+
+540
+00:16:38,600 --> 00:16:40,280
+often used for
+virtual screening
+
+541
+00:16:40,280 --> 00:16:41,580
+of drug like compounds.
+
+542
+00:16:42,360 --> 00:16:43,740
+And I believe
+that applications
+
+543
+00:16:43,880 --> 00:16:45,365
+of graph deep learning in
+
+544
+00:16:45,365 --> 00:16:46,565
+computational
+chemistry and drug
+
+545
+00:16:46,565 --> 00:16:48,565
+design and discovery
+are probably
+
+546
+00:16:48,565 --> 00:16:49,465
+the most promising.
+
+547
+00:16:49,925 --> 00:16:51,285
+Allow me to come back to this
+
+548
+00:16:51,285 --> 00:16:52,905
+point in a few minutes.
+
+549
+00:16:54,370 --> 00:16:55,810
+So in the remaining time,
+
+550
+00:16:55,810 --> 00:16:57,010
+let me share some thoughts on
+
+551
+00:16:57,010 --> 00:16:58,050
+what I believe to be,
+
+552
+00:16:58,370 --> 00:17:01,270
+the next steps in this field.
+
+553
+00:17:01,715 --> 00:17:03,395
+And, I would like
+maybe to make
+
+554
+00:17:03,395 --> 00:17:04,595
+here a small confession.
+
+555
+00:17:04,595 --> 00:17:06,435
+I'm somewhat
+disappointed with,
+
+556
+00:17:07,075 --> 00:17:09,395
+the the when I
+started working on,
+
+557
+00:17:09,715 --> 00:17:10,995
+genetic deep learning probably
+
+558
+00:17:10,995 --> 00:17:11,980
+around six years now,
+
+559
+00:17:11,980 --> 00:17:14,060
+I was expecting
+something similar
+
+560
+00:17:14,060 --> 00:17:15,340
+to the revolution
+that happened
+
+561
+00:17:15,340 --> 00:17:16,860
+with the adoption
+of deep learning
+
+562
+00:17:16,860 --> 00:17:18,620
+in computer vision and we have
+
+563
+00:17:18,620 --> 00:17:20,505
+not seen anything
+similar yet.
+
+564
+00:17:20,585 --> 00:17:21,145
+And, of course,
+
+565
+00:17:21,145 --> 00:17:22,585
+there is a lot of progress and
+
+566
+00:17:22,585 --> 00:17:25,625
+even some, commercial
+applications of,
+
+567
+00:17:26,025 --> 00:17:28,125
+craft neural networks
+in the industry.
+
+568
+00:17:28,185 --> 00:17:29,485
+Well, I could here shamefully
+
+569
+00:17:29,960 --> 00:17:31,560
+put the success of a startup
+
+570
+00:17:31,560 --> 00:17:34,060
+company that I founded
+with my students,
+
+571
+00:17:34,840 --> 00:17:36,520
+that where we were using graph
+
+572
+00:17:36,520 --> 00:17:37,820
+neural networks to detect
+
+573
+00:17:38,855 --> 00:17:41,195
+misinformation on
+on Twitter and
+
+574
+00:17:41,335 --> 00:17:43,115
+were acquired by
+Twitter last year.
+
+575
+00:17:43,495 --> 00:17:46,055
+Yet, I think it has been more
+
+576
+00:17:46,055 --> 00:17:48,075
+of an evolution even
+though a fast one.
+
+577
+00:17:48,410 --> 00:17:50,490
+And, let me try to explain and
+
+578
+00:17:50,490 --> 00:17:52,410
+maybe highlight
+some points that
+
+579
+00:17:52,410 --> 00:17:53,930
+are important for
+future progress
+
+580
+00:17:53,930 --> 00:17:55,390
+in this field that that will
+
+581
+00:17:55,575 --> 00:17:57,335
+make maybe a broader adoption
+
+582
+00:17:57,335 --> 00:17:59,435
+of deep learning on graphs.
+
+583
+00:18:00,375 --> 00:18:01,735
+So there are three
+things really
+
+584
+00:18:01,735 --> 00:18:04,135
+that sort of made deep
+learning happen,
+
+585
+00:18:04,135 --> 00:18:07,210
+and these are data compute and
+
+586
+00:18:07,210 --> 00:18:08,730
+and software. So in case of
+
+587
+00:18:08,730 --> 00:18:09,530
+computer vision,
+
+588
+00:18:09,530 --> 00:18:12,270
+data was a benchmark
+such as ImageNet.
+
+589
+00:18:12,985 --> 00:18:15,005
+Compute was
+the computing power
+
+590
+00:18:15,385 --> 00:18:17,245
+of graphics hardware,
+the GPUs,
+
+591
+00:18:17,785 --> 00:18:19,545
+and software was open source
+
+592
+00:18:19,545 --> 00:18:21,245
+tools such as PyTorch
+or TensorFlow
+
+593
+00:18:21,465 --> 00:18:23,920
+that that have
+democratized deep
+
+594
+00:18:23,920 --> 00:18:25,840
+learning. Now if you look at
+
+595
+00:18:25,840 --> 00:18:28,640
+the situation,
+in graphs, well,
+
+596
+00:18:28,800 --> 00:18:30,980
+we also see emergence of
+
+597
+00:18:31,395 --> 00:18:32,915
+standardized
+benchmarks such as
+
+598
+00:18:32,915 --> 00:18:35,015
+ImageNet for graphs,
+
+599
+00:18:35,155 --> 00:18:36,935
+the open graph benchmark,
+
+600
+00:18:38,035 --> 00:18:40,055
+software libraries such as DGL
+
+601
+00:18:40,115 --> 00:18:42,260
+or PyTorch Geometric that
+
+602
+00:18:42,260 --> 00:18:44,280
+implements some
+state of the art
+
+603
+00:18:45,620 --> 00:18:46,840
+graph learning architectures.
+
+604
+00:18:47,940 --> 00:18:50,015
+There are problems
+of efficiency
+
+605
+00:18:50,015 --> 00:18:50,755
+and scalability.
+
+606
+00:18:50,895 --> 00:18:52,415
+So this is really what has
+
+607
+00:18:52,415 --> 00:18:54,015
+precluded so far
+the application
+
+608
+00:18:54,015 --> 00:18:56,275
+of graph learning
+to industrial
+
+609
+00:18:56,815 --> 00:18:58,515
+scale and industrial
+settings.
+
+610
+00:18:59,330 --> 00:19:00,290
+So now we have,
+
+611
+00:19:00,530 --> 00:19:01,890
+several methods that that can
+
+612
+00:19:01,890 --> 00:19:03,590
+really work in
+production systems
+
+613
+00:19:04,130 --> 00:19:05,030
+of large scale.
+
+614
+00:19:06,210 --> 00:19:08,390
+If we look at,
+problems such as
+
+615
+00:19:08,985 --> 00:19:10,205
+Twitter and Facebook,
+
+616
+00:19:10,745 --> 00:19:12,105
+they deal with
+dynamic graphs.
+
+617
+00:19:12,105 --> 00:19:14,105
+So the graph is not
+a static session,
+
+618
+00:19:14,105 --> 00:19:16,125
+but it's living and
+evolving in time.
+
+619
+00:19:16,340 --> 00:19:17,780
+Nodes are added and deleted,
+
+620
+00:19:17,780 --> 00:19:18,840
+and it's really,
+
+621
+00:19:19,620 --> 00:19:20,980
+better to think of this graph
+
+622
+00:19:20,980 --> 00:19:23,780
+as a kind of
+a synchronous stream
+
+623
+00:19:23,780 --> 00:19:25,220
+of events that form it,
+
+624
+00:19:25,220 --> 00:19:28,345
+like edge and node insertions
+
+625
+00:19:28,405 --> 00:19:30,805
+and deletions. And there are
+
+626
+00:19:30,805 --> 00:19:32,265
+currently just
+few architectures
+
+627
+00:19:32,725 --> 00:19:33,845
+that support these cases.
+
+628
+00:19:33,845 --> 00:19:36,000
+So this is one of
+the topics that,
+
+629
+00:19:36,400 --> 00:19:38,880
+I'm working, on a Twitter work
+
+630
+00:19:38,880 --> 00:19:40,740
+with or we've
+developed recently
+
+631
+00:19:40,960 --> 00:19:42,560
+what we call temporal
+graph networks.
+
+632
+00:19:42,560 --> 00:19:43,825
+It's an architecture that
+
+633
+00:19:43,985 --> 00:19:45,345
+generalizes message passing
+
+634
+00:19:45,345 --> 00:19:47,685
+neural networks to
+dynamic graphs.
+
+635
+00:19:48,945 --> 00:19:51,345
+Now talking about high
+order structures,
+
+636
+00:19:51,345 --> 00:19:52,705
+I already mentioned them in
+
+637
+00:19:52,705 --> 00:19:54,170
+the context of
+our work on graph
+
+638
+00:19:54,170 --> 00:19:55,050
+substructure networks.
+
+639
+00:19:55,050 --> 00:19:56,890
+And I would like
+to stress again
+
+640
+00:19:56,890 --> 00:19:58,570
+that so far, graph
+neural networks
+
+641
+00:19:58,570 --> 00:20:00,965
+were primarily
+focused on simple,
+
+642
+00:20:01,445 --> 00:20:02,645
+structures such as nodes and
+
+643
+00:20:02,645 --> 00:20:04,645
+edges and message passing on
+
+644
+00:20:04,645 --> 00:20:05,205
+these structures.
+
+645
+00:20:05,205 --> 00:20:07,045
+But we all live
+in many complex
+
+646
+00:20:07,045 --> 00:20:08,805
+networks such as biological or
+
+647
+00:20:08,805 --> 00:20:09,625
+social networks.
+
+648
+00:20:09,930 --> 00:20:11,370
+We have complex high order
+
+649
+00:20:11,370 --> 00:20:13,210
+structures and motifs, and,
+
+650
+00:20:13,690 --> 00:20:15,770
+we want to better
+exploit them.
+
+651
+00:20:15,770 --> 00:20:17,450
+So I believe that
+there will be,
+
+652
+00:20:17,770 --> 00:20:19,985
+in the future
+emergence of methods
+
+653
+00:20:19,985 --> 00:20:21,345
+that take advantage of these
+
+654
+00:20:21,345 --> 00:20:22,385
+more complex structures and
+
+655
+00:20:22,385 --> 00:20:24,005
+their interesting relations to
+
+656
+00:20:24,385 --> 00:20:25,745
+previous works that have been
+
+657
+00:20:25,745 --> 00:20:28,005
+done on topological
+data analysis
+
+658
+00:20:28,270 --> 00:20:31,650
+such as persistent
+homologies on graphs.
+
+659
+00:20:32,670 --> 00:20:33,790
+Another important topic is
+
+660
+00:20:33,790 --> 00:20:34,750
+actually the very assumption
+
+661
+00:20:34,750 --> 00:20:36,350
+that we are given
+an input graph
+
+662
+00:20:36,350 --> 00:20:37,970
+to start with. In many cases,
+
+663
+00:20:38,225 --> 00:20:39,985
+this is not the case.
+
+664
+00:20:39,985 --> 00:20:40,945
+We don't have the graph.
+
+665
+00:20:40,945 --> 00:20:43,365
+We just have some
+cloud of points
+
+666
+00:20:44,145 --> 00:20:46,980
+and the graph can be
+just a convenience
+
+667
+00:20:47,200 --> 00:20:49,920
+that can be used to
+model the underlying
+
+668
+00:20:49,920 --> 00:20:50,660
+data structure.
+
+669
+00:20:51,760 --> 00:20:53,520
+We did first work
+that we called
+
+670
+00:20:53,520 --> 00:20:54,740
+dynamic graph CNNs.
+
+671
+00:20:55,665 --> 00:20:57,105
+It were we showed that it's
+
+672
+00:20:57,105 --> 00:20:58,465
+possible to design
+graph neural
+
+673
+00:20:58,465 --> 00:20:59,585
+networks that build the graph
+
+674
+00:20:59,585 --> 00:21:01,045
+as part of
+the learning process
+
+675
+00:21:01,105 --> 00:21:02,095
+on the fly.
+
+676
+00:21:02,440 --> 00:21:04,520
+And, the graph, for example,
+
+677
+00:21:04,520 --> 00:21:05,420
+can be constructed,
+
+678
+00:21:06,440 --> 00:21:07,880
+as k nearest
+neighbor graph and
+
+679
+00:21:07,880 --> 00:21:09,180
+updated between the layers,
+
+680
+00:21:09,915 --> 00:21:11,355
+in a way that is optimal for
+
+681
+00:21:11,355 --> 00:21:12,575
+the downstream task.
+
+682
+00:21:12,875 --> 00:21:14,075
+And this brings an important
+
+683
+00:21:14,075 --> 00:21:15,455
+question of whether
+the computational
+
+684
+00:21:15,515 --> 00:21:16,795
+graph that is used for message
+
+685
+00:21:16,795 --> 00:21:18,690
+passing does necessarily,
+
+686
+00:21:19,870 --> 00:21:22,050
+be the same as
+the input graph.
+
+687
+00:21:22,270 --> 00:21:23,950
+There are many
+good reasons why
+
+688
+00:21:23,950 --> 00:21:25,525
+we'd like to
+decouple the two,
+
+689
+00:21:25,605 --> 00:21:27,045
+one of which I
+already mentioned,
+
+690
+00:21:27,045 --> 00:21:28,325
+the the bottleneck
+phenomenon.
+
+691
+00:21:28,325 --> 00:21:30,265
+So you might rewire your graph
+
+692
+00:21:30,405 --> 00:21:31,865
+to make it more convenient.
+
+693
+00:21:32,860 --> 00:21:34,560
+And another reason is that,
+
+694
+00:21:35,100 --> 00:21:36,300
+the graph can actually be,
+
+695
+00:21:36,460 --> 00:21:37,820
+as I as I already said,
+
+696
+00:21:37,820 --> 00:21:39,580
+it can be done in a way that,
+
+697
+00:21:39,820 --> 00:21:41,680
+that is optimal for
+some downstream
+
+698
+00:21:41,820 --> 00:21:43,405
+task. And sometimes the graph
+
+699
+00:21:43,405 --> 00:21:45,185
+that can be learned
+in this way,
+
+700
+00:21:46,525 --> 00:21:48,045
+setting that we call latent
+
+701
+00:21:48,045 --> 00:21:48,785
+graph learning,
+
+702
+00:21:49,165 --> 00:21:50,365
+might be more important than
+
+703
+00:21:50,365 --> 00:21:51,650
+the downstream task itself so
+
+704
+00:21:51,650 --> 00:21:53,510
+it can provide
+some interpretation
+
+705
+00:21:53,810 --> 00:21:56,230
+of the of the problem
+or the classification
+
+706
+00:21:56,370 --> 00:21:59,810
+results. And we did with my
+
+707
+00:21:59,810 --> 00:22:01,635
+collaborators in Munich,
+
+708
+00:22:01,635 --> 00:22:03,635
+a recent work where we looked
+
+709
+00:22:03,635 --> 00:22:06,035
+at health care
+electronic records of,
+
+710
+00:22:06,435 --> 00:22:07,415
+different patients.
+
+711
+00:22:07,715 --> 00:22:09,590
+And graph neural networks have
+
+712
+00:22:09,590 --> 00:22:11,850
+been applied to these
+problems before,
+
+713
+00:22:11,990 --> 00:22:13,350
+but we can craft it graphs.
+
+714
+00:22:13,350 --> 00:22:15,110
+And here we show that learning
+
+715
+00:22:15,110 --> 00:22:18,475
+the graph as part
+of the process by,
+
+716
+00:22:18,955 --> 00:22:21,115
+by graph neural
+network provides
+
+717
+00:22:21,115 --> 00:22:22,975
+better results and also better
+
+718
+00:22:23,435 --> 00:22:26,470
+hopes to interpret
+these results.
+
+719
+00:22:26,470 --> 00:22:28,870
+And, thinking maybe broader in
+
+720
+00:22:28,870 --> 00:22:30,070
+retrospective, this kind of
+
+721
+00:22:30,070 --> 00:22:31,510
+methods is related to what was
+
+722
+00:22:31,510 --> 00:22:33,205
+called manifold learning or
+
+723
+00:22:33,205 --> 00:22:34,825
+nonlinear dimensionality
+reduction,
+
+724
+00:22:35,605 --> 00:22:38,505
+a class of approaches
+that, modeled,
+
+725
+00:22:39,365 --> 00:22:41,410
+the data as sampled from some
+
+726
+00:22:41,410 --> 00:22:42,610
+low dimensional manifold that
+
+727
+00:22:42,610 --> 00:22:44,930
+lives in a high
+dimensional space and,
+
+728
+00:22:45,330 --> 00:22:47,010
+tries tried them to represent
+
+729
+00:22:47,010 --> 00:22:49,715
+this dataset in
+a lower dimensional
+
+730
+00:22:49,715 --> 00:22:51,795
+space by preserving
+some structures
+
+731
+00:22:51,795 --> 00:22:53,875
+such as geodesic distance and
+
+732
+00:22:53,875 --> 00:22:55,875
+then applying,
+machine learning
+
+733
+00:22:55,875 --> 00:22:57,175
+algorithms such as clustering
+
+734
+00:22:57,710 --> 00:22:59,890
+on the slow dimensional
+representation.
+
+735
+00:23:00,190 --> 00:23:02,350
+So, the problem with these
+
+736
+00:23:02,350 --> 00:23:05,305
+approaches was
+that the different
+
+737
+00:23:05,305 --> 00:23:06,745
+steps were
+completely disconnected
+
+738
+00:23:06,745 --> 00:23:07,385
+from each other.
+
+739
+00:23:07,385 --> 00:23:09,225
+And you first had to to create
+
+740
+00:23:09,225 --> 00:23:10,985
+some
+handcrafted representation
+
+741
+00:23:10,985 --> 00:23:12,960
+of the data, then
+build the graph
+
+742
+00:23:12,960 --> 00:23:14,480
+that represents the structure
+
+743
+00:23:14,480 --> 00:23:16,800
+and only then apply
+machine learning.
+
+744
+00:23:16,800 --> 00:23:18,400
+And sometimes it
+required a lot
+
+745
+00:23:18,400 --> 00:23:21,035
+of tuning by hand of how you
+
+746
+00:23:21,255 --> 00:23:23,275
+represent the data
+and build the graph.
+
+747
+00:23:23,655 --> 00:23:27,390
+Now with graph
+learning pipelines,
+
+748
+00:23:27,390 --> 00:23:29,390
+you can, put all these stages
+
+749
+00:23:29,390 --> 00:23:30,830
+into a single end to end
+
+750
+00:23:30,830 --> 00:23:31,890
+differentiable pipeline,
+
+751
+00:23:32,190 --> 00:23:33,470
+and that's why I call these
+
+752
+00:23:33,470 --> 00:23:35,650
+methods meaningful
+learning two dot o.
+
+753
+00:23:35,785 --> 00:23:37,785
+It brings all these
+steps into a single,
+
+754
+00:23:38,025 --> 00:23:39,865
+architecture. And
+probably we'll
+
+755
+00:23:39,865 --> 00:23:42,105
+see more
+interesting applications
+
+756
+00:23:42,105 --> 00:23:43,225
+of these methods and one,
+
+757
+00:23:43,465 --> 00:23:45,325
+maybe a little
+bit exotic field
+
+758
+00:23:45,520 --> 00:23:48,340
+where these, matters
+are already,
+
+759
+00:23:49,680 --> 00:23:50,820
+been shown quite,
+
+760
+00:23:51,520 --> 00:23:52,820
+quite interesting to produce
+
+761
+00:23:53,120 --> 00:23:55,235
+quite cool results
+is high energy
+
+762
+00:23:55,235 --> 00:23:57,475
+physics where you
+can think of,
+
+763
+00:23:57,795 --> 00:23:59,895
+interactions of,
+different particles.
+
+764
+00:24:00,355 --> 00:24:02,675
+And, one of the key
+problems is
+
+765
+00:24:02,675 --> 00:24:04,490
+to reconstruct
+the interaction graph.
+
+766
+00:24:05,930 --> 00:24:06,730
+So there are many,
+
+767
+00:24:07,050 --> 00:24:08,730
+open theoretical
+questions about,
+
+768
+00:24:09,130 --> 00:24:10,190
+performance guarantees,
+
+769
+00:24:10,250 --> 00:24:11,550
+expressive power,
+generalization,
+
+770
+00:24:11,850 --> 00:24:14,110
+robustness of
+perturbations, and so on.
+
+771
+00:24:14,505 --> 00:24:18,265
+And, I think what
+has been done
+
+772
+00:24:18,265 --> 00:24:20,205
+so far is just the tip
+of the iceberg.
+
+773
+00:24:20,665 --> 00:24:21,545
+Last but not least,
+
+774
+00:24:21,545 --> 00:24:23,145
+and I apologize maybe running
+
+775
+00:24:23,145 --> 00:24:24,250
+a little bit over time,
+
+776
+00:24:24,970 --> 00:24:26,570
+I would like to
+finish with a few
+
+777
+00:24:26,570 --> 00:24:28,490
+examples of what they
+call killer apps.
+
+778
+00:24:28,490 --> 00:24:30,590
+So something like
+computer vision,
+
+779
+00:24:31,130 --> 00:24:32,410
+was the killer app for,
+
+780
+00:24:32,650 --> 00:24:34,055
+for traditional deep learning
+
+781
+00:24:34,055 --> 00:24:35,595
+and conversational
+neural networks.
+
+782
+00:24:35,975 --> 00:24:38,855
+For, graph neural
+networks, we see,
+
+783
+00:24:39,335 --> 00:24:40,855
+we see them applied
+to a lot of
+
+784
+00:24:40,855 --> 00:24:42,395
+different problems
+since graphs
+
+785
+00:24:42,560 --> 00:24:44,160
+are really very abstract and
+
+786
+00:24:44,160 --> 00:24:46,100
+universal models
+for systems of
+
+787
+00:24:46,160 --> 00:24:47,300
+relations and interactions.
+
+788
+00:24:47,600 --> 00:24:50,240
+You can find them in
+particle physics,
+
+789
+00:24:50,240 --> 00:24:52,575
+in recommender systems, in,
+
+790
+00:24:52,875 --> 00:24:54,715
+problems in social
+networks and
+
+791
+00:24:54,715 --> 00:24:55,855
+computational chemistry.
+
+792
+00:24:56,955 --> 00:24:59,195
+But, if you ask me what would
+
+793
+00:24:59,195 --> 00:25:00,715
+be one field of
+which I am willing
+
+794
+00:25:00,715 --> 00:25:02,220
+to bet where these
+methods would
+
+795
+00:25:02,220 --> 00:25:03,420
+probably make a breakthrough,
+
+796
+00:25:03,420 --> 00:25:04,940
+I would say these are problems
+
+797
+00:25:04,940 --> 00:25:06,240
+in medicine and biology,
+
+798
+00:25:06,860 --> 00:25:08,940
+and you can apply
+graphs on all
+
+799
+00:25:08,940 --> 00:25:10,225
+scales from nano to macro,
+
+800
+00:25:10,225 --> 00:25:11,505
+from modeling molecules and
+
+801
+00:25:11,505 --> 00:25:12,885
+interactions between molecules
+
+802
+00:25:13,345 --> 00:25:15,125
+to entire patient networks.
+
+803
+00:25:15,265 --> 00:25:16,785
+And some of
+the results here are
+
+804
+00:25:16,785 --> 00:25:18,005
+really extremely promising.
+
+805
+00:25:18,160 --> 00:25:19,540
+I would even say dramatic.
+
+806
+00:25:20,240 --> 00:25:23,460
+So one, on the nanoscale,
+
+807
+00:25:24,240 --> 00:25:25,920
+one application is that we can
+
+808
+00:25:25,920 --> 00:25:27,345
+model molecules as graphs and
+
+809
+00:25:27,345 --> 00:25:28,405
+predict their properties,
+
+810
+00:25:28,785 --> 00:25:30,545
+which is a holy grail of drug
+
+811
+00:25:30,545 --> 00:25:32,545
+design because the space in
+
+812
+00:25:32,545 --> 00:25:34,465
+which we operate is
+humongously large.
+
+813
+00:25:34,465 --> 00:25:35,880
+We have something like ten to
+
+814
+00:25:35,880 --> 00:25:37,980
+the sixty of possibly
+synthesizable,
+
+815
+00:25:39,080 --> 00:25:39,980
+small molecules.
+
+816
+00:25:40,680 --> 00:25:42,440
+Whereas, what we can test in
+
+817
+00:25:42,440 --> 00:25:43,800
+clinical environment is maybe
+
+818
+00:25:43,800 --> 00:25:45,295
+a few hundreds of compounds.
+
+819
+00:25:45,675 --> 00:25:47,615
+So we somehow
+need to to bridge
+
+820
+00:25:47,915 --> 00:25:49,135
+this gap computationally.
+
+821
+00:25:49,835 --> 00:25:51,675
+And at the lower
+level, we can do,
+
+822
+00:25:51,915 --> 00:25:53,695
+quantum mechanical models and
+
+823
+00:25:54,150 --> 00:25:55,670
+molecular dynamics and maybe
+
+824
+00:25:55,670 --> 00:25:57,530
+some approximations
+such as DFT.
+
+825
+00:25:57,990 --> 00:25:59,830
+So, craft neural networks,
+
+826
+00:26:00,950 --> 00:26:02,550
+already several years ago were
+
+827
+00:26:02,550 --> 00:26:04,465
+shown by any work
+by by DeepMind
+
+828
+00:26:04,465 --> 00:26:07,545
+by Justin Gilmer to be,
+
+829
+00:26:07,865 --> 00:26:09,385
+at the level of
+DFT while being
+
+830
+00:26:09,385 --> 00:26:11,850
+several orders of
+magnitude faster.
+
+831
+00:26:11,990 --> 00:26:13,030
+And this is really a cheap
+
+832
+00:26:13,030 --> 00:26:14,630
+alternative to,
+
+833
+00:26:15,110 --> 00:26:16,650
+more complex
+quantum mechanical
+
+834
+00:26:17,030 --> 00:26:18,230
+simulations for predicting
+
+835
+00:26:18,230 --> 00:26:20,250
+properties of potential
+drug candidates.
+
+836
+00:26:20,945 --> 00:26:22,785
+And one doubt that you always
+
+837
+00:26:22,785 --> 00:26:24,065
+have when you
+work on this kind
+
+838
+00:26:24,065 --> 00:26:25,585
+of biological or
+chemical problems
+
+839
+00:26:25,585 --> 00:26:27,745
+that it is too simplified and
+
+840
+00:26:27,745 --> 00:26:29,950
+kind of spherical
+course in a vacuum
+
+841
+00:26:30,010 --> 00:26:31,930
+from the famous joke, but,
+
+842
+00:26:32,170 --> 00:26:33,710
+probably not
+anymore and GraphML
+
+843
+00:26:33,770 --> 00:26:35,210
+is already on the radar of
+
+844
+00:26:35,210 --> 00:26:36,170
+pharmaceutical companies.
+
+845
+00:26:36,170 --> 00:26:37,390
+And earlier this year,
+
+846
+00:26:37,515 --> 00:26:38,955
+the group of colleagues at MIT
+
+847
+00:26:38,955 --> 00:26:40,475
+showed the discovery of a new
+
+848
+00:26:40,475 --> 00:26:43,435
+class of antibiotics
+where graph
+
+849
+00:26:43,435 --> 00:26:44,955
+neural networks were used in
+
+850
+00:26:44,955 --> 00:26:46,495
+the virtual
+screening pipeline.
+
+851
+00:26:47,620 --> 00:26:49,240
+So in our application also,
+
+852
+00:26:49,620 --> 00:26:51,320
+in drug design,
+
+853
+00:26:51,860 --> 00:26:53,540
+drugs are typically
+small molecules,
+
+854
+00:26:53,780 --> 00:26:55,140
+but their targets are usually
+
+855
+00:26:55,140 --> 00:26:56,600
+large molecules, proteins.
+
+856
+00:26:57,275 --> 00:26:59,515
+And, proteins are
+among the most
+
+857
+00:26:59,515 --> 00:27:03,035
+important, molecules
+in our body.
+
+858
+00:27:03,035 --> 00:27:04,715
+They play crucial
+role in almost
+
+859
+00:27:04,715 --> 00:27:06,095
+every biological process.
+
+860
+00:27:06,790 --> 00:27:10,570
+And, in some targets, unlike,
+
+861
+00:27:11,510 --> 00:27:13,450
+what we see with
+small molecules,
+
+862
+00:27:13,765 --> 00:27:15,365
+they're considered to be very
+
+863
+00:27:15,365 --> 00:27:16,645
+difficult target by small
+
+864
+00:27:16,645 --> 00:27:18,505
+molecules because
+they have flat
+
+865
+00:27:18,565 --> 00:27:20,085
+interfaces. So they're,
+
+866
+00:27:20,405 --> 00:27:21,465
+what is called undruggable.
+
+867
+00:27:22,350 --> 00:27:24,110
+And, it is possible to develop
+
+868
+00:27:24,110 --> 00:27:25,390
+a new class of drugs called
+
+869
+00:27:25,390 --> 00:27:26,830
+biologics or biological drugs
+
+870
+00:27:26,830 --> 00:27:28,270
+where the drug molecule itself
+
+871
+00:27:28,270 --> 00:27:30,355
+is a protein. And it allows to
+
+872
+00:27:30,355 --> 00:27:31,635
+address these
+kind of targets.
+
+873
+00:27:31,635 --> 00:27:33,575
+And with my
+colleagues at EPFL,
+
+874
+00:27:33,635 --> 00:27:35,315
+we've used geometric
+deep learning
+
+875
+00:27:35,315 --> 00:27:37,015
+to predict protein binding
+
+876
+00:27:37,950 --> 00:27:39,150
+properties and then construct
+
+877
+00:27:39,150 --> 00:27:40,430
+new proteins from scratch for
+
+878
+00:27:40,430 --> 00:27:42,610
+this called de novo
+protein design.
+
+879
+00:27:42,910 --> 00:27:43,950
+And we showed, for example,
+
+880
+00:27:43,950 --> 00:27:45,390
+that we can design
+proteins that
+
+881
+00:27:45,390 --> 00:27:47,165
+disrupt the programmed death
+
+882
+00:27:47,165 --> 00:27:49,165
+ligand complex that is used as
+
+883
+00:27:49,165 --> 00:27:50,945
+target for, cancer
+immunotherapy.
+
+884
+00:27:52,045 --> 00:27:54,590
+And, this approach potentially
+
+885
+00:27:54,590 --> 00:27:55,870
+could pave the way to a new
+
+886
+00:27:55,870 --> 00:27:57,890
+generation of
+biological anticancer
+
+887
+00:27:57,950 --> 00:28:00,290
+therapies. So this was a paper
+
+888
+00:28:00,590 --> 00:28:01,950
+that appeared on the cover of
+
+889
+00:28:01,950 --> 00:28:02,705
+Nature Methods,
+
+890
+00:28:02,945 --> 00:28:05,285
+in the February
+issue this year.
+
+891
+00:28:06,305 --> 00:28:08,065
+And at the high level
+of abstraction,
+
+892
+00:28:08,065 --> 00:28:09,825
+we can use graphs to
+model the interactions
+
+893
+00:28:09,825 --> 00:28:11,585
+between molecules
+such as proteins
+
+894
+00:28:11,585 --> 00:28:14,210
+and drugs as
+the the protein to
+
+895
+00:28:14,210 --> 00:28:15,590
+protein interaction drug.
+
+896
+00:28:15,810 --> 00:28:18,370
+And, in if you think of,
+
+897
+00:28:18,770 --> 00:28:20,710
+the drug traditional
+drug therapy,
+
+898
+00:28:21,105 --> 00:28:23,025
+in many cases, we see multiple
+
+899
+00:28:23,025 --> 00:28:24,305
+drugs that are administered at
+
+900
+00:28:24,305 --> 00:28:26,065
+the same time.
+Medics call this
+
+901
+00:28:26,065 --> 00:28:28,405
+polypharmacy or
+combinatorial therapy,
+
+902
+00:28:28,660 --> 00:28:30,180
+and it comes with
+the risks that
+
+903
+00:28:30,180 --> 00:28:31,540
+some interactions of the drugs
+
+904
+00:28:31,540 --> 00:28:33,220
+can produce bad,
+
+905
+00:28:33,460 --> 00:28:36,040
+or even potentially
+dangerous effects.
+
+906
+00:28:36,885 --> 00:28:38,885
+And, it is impossible
+to clinically
+
+907
+00:28:38,885 --> 00:28:39,685
+test all the,
+
+908
+00:28:40,165 --> 00:28:41,945
+millions of
+possible combinations
+
+909
+00:28:42,005 --> 00:28:43,705
+between all the FDA
+approved drugs,
+
+910
+00:28:44,380 --> 00:28:45,740
+and graph neural networks were
+
+911
+00:28:45,740 --> 00:28:47,420
+shown to be successful in
+
+912
+00:28:47,420 --> 00:28:50,380
+predicting drug
+side effects or
+
+913
+00:28:50,380 --> 00:28:51,040
+drug interactions.
+
+914
+00:28:51,705 --> 00:28:52,905
+So the interactions are not
+
+915
+00:28:52,905 --> 00:28:53,465
+necessarily bad.
+
+916
+00:28:53,465 --> 00:28:54,765
+They can actually
+be synergistic.
+
+917
+00:28:55,545 --> 00:28:57,705
+And, I'm part of the the cover
+
+918
+00:28:57,705 --> 00:28:59,040
+coalition that,
+
+919
+00:28:59,360 --> 00:29:03,380
+tries to to develop
+graph models
+
+920
+00:29:03,440 --> 00:29:06,160
+for predicting
+synergistic effects of,
+
+921
+00:29:06,560 --> 00:29:08,845
+combinatorial
+treatments against
+
+922
+00:29:08,845 --> 00:29:09,705
+COVID nineteen.
+
+923
+00:29:10,885 --> 00:29:12,245
+So I will finish with the last
+
+924
+00:29:12,245 --> 00:29:13,845
+example that takes
+ideas of drug
+
+925
+00:29:13,845 --> 00:29:15,705
+requisitioning to
+the domain of food.
+
+926
+00:29:15,790 --> 00:29:16,590
+And itself drugs,
+
+927
+00:29:16,590 --> 00:29:18,430
+we can look at drug
+like molecules
+
+928
+00:29:18,430 --> 00:29:20,110
+that are contained in food and
+
+929
+00:29:20,110 --> 00:29:22,910
+you you know that many plant
+
+930
+00:29:22,910 --> 00:29:26,215
+based foods belong to
+the same class of,
+
+931
+00:29:26,775 --> 00:29:28,955
+chemicals that are
+used as as drugs.
+
+932
+00:29:29,335 --> 00:29:30,615
+So it's not surprising that,
+
+933
+00:29:30,615 --> 00:29:31,575
+for example, many,
+
+934
+00:29:31,815 --> 00:29:34,440
+anti cancer therapies
+are actually,
+
+935
+00:29:35,220 --> 00:29:36,900
+synthetic analogs of molecules
+
+936
+00:29:36,900 --> 00:29:38,280
+that you can find in plants.
+
+937
+00:29:38,980 --> 00:29:41,140
+And we're reading
+just thousands or,
+
+938
+00:29:41,460 --> 00:29:43,455
+of such molecules,
+polyphenols,
+
+939
+00:29:43,595 --> 00:29:45,535
+flavonoids,
+terpenoids, indoles.
+
+940
+00:29:46,475 --> 00:29:47,995
+I'm pretty sure
+that most of you
+
+941
+00:29:47,995 --> 00:29:49,195
+have never heard of them.
+
+942
+00:29:49,355 --> 00:29:51,470
+In fact, they
+still remain large
+
+943
+00:29:51,470 --> 00:29:52,990
+and unexplored by experts.
+
+944
+00:29:52,990 --> 00:29:55,070
+They are never
+tracked by any,
+
+945
+00:29:55,630 --> 00:29:57,170
+any regulatory bodies.
+
+946
+00:29:57,310 --> 00:29:58,990
+So this is truly
+the dark matter
+
+947
+00:29:58,990 --> 00:30:00,655
+of nutrition. And,
+
+948
+00:30:01,055 --> 00:30:02,735
+with collaborations
+at Imperial College,
+
+949
+00:30:02,735 --> 00:30:03,935
+we used graph based,
+
+950
+00:30:04,255 --> 00:30:05,935
+ML techniques to discover drug
+
+951
+00:30:05,935 --> 00:30:07,475
+like molecules in
+food and then,
+
+952
+00:30:08,280 --> 00:30:10,060
+identify which foods,
+
+953
+00:30:10,360 --> 00:30:13,000
+would work the best
+and hope to
+
+954
+00:30:13,000 --> 00:30:14,780
+prevent or or treat diseases.
+
+955
+00:30:15,235 --> 00:30:16,355
+This is really the first way
+
+956
+00:30:16,355 --> 00:30:17,795
+this somewhat
+simplistic attempt
+
+957
+00:30:17,795 --> 00:30:19,235
+to use graph neural
+networks for
+
+958
+00:30:19,235 --> 00:30:21,735
+this problem of
+predicting health
+
+959
+00:30:22,115 --> 00:30:23,715
+effects of biologically active
+
+960
+00:30:23,715 --> 00:30:25,770
+molecules in full by modeling
+
+961
+00:30:25,770 --> 00:30:27,870
+their network effect.
+
+962
+00:30:28,730 --> 00:30:30,510
+And, in a longer perspective,
+
+963
+00:30:30,570 --> 00:30:33,785
+our ambition is to
+provide quantum
+
+964
+00:30:33,785 --> 00:30:37,145
+leap in how we,
+prescribe, design,
+
+965
+00:30:37,145 --> 00:30:38,365
+and prepare our food.
+
+966
+00:30:38,425 --> 00:30:40,185
+And as a conceptual
+take on this,
+
+967
+00:30:40,185 --> 00:30:41,485
+we partnered with
+the molecular
+
+968
+00:30:41,545 --> 00:30:43,370
+chef who used the ingredients
+
+969
+00:30:43,370 --> 00:30:45,870
+we have identified
+to prepare simple,
+
+970
+00:30:46,090 --> 00:30:48,190
+tasty, and, and cheap recipes
+
+971
+00:30:48,490 --> 00:30:51,095
+that you can actually
+find online.
+
+972
+00:30:51,715 --> 00:30:52,995
+So I think it's a good moment
+
+973
+00:30:52,995 --> 00:30:55,555
+to end on this
+tasty note and,
+
+974
+00:30:55,955 --> 00:30:57,715
+well, probably we need to come
+
+975
+00:30:57,715 --> 00:31:00,590
+back and see what whatever I
+
+976
+00:31:00,590 --> 00:31:01,950
+have prognosticated here,
+
+977
+00:31:01,950 --> 00:31:04,573
+how much of this
+has materialized,
+
+978
+00:31:05,833 --> 00:31:08,733
+in the next, few years.
+
+979
+00:31:09,273 --> 00:31:10,418
+So thank you very much.
+

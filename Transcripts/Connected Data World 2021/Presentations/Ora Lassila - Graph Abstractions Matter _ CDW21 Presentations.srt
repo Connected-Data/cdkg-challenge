@@ -1,0 +1,2887 @@
+1
+00:00:10,735 --> 00:00:12,435
+Hello. Good afternoon.
+
+2
+00:00:14,015 --> 00:00:17,715
+I'm Ora Lassila, and I will
+be talking about
+
+3
+00:00:18,175 --> 00:00:20,240
+graph abstractions.
+
+4
+00:00:22,540 --> 00:00:26,720
+This is titled as
+a personal view,
+
+5
+00:00:27,085 --> 00:00:29,565
+mostly because I'm
+kind of talking
+
+6
+00:00:29,565 --> 00:00:31,025
+about things that I've been
+
+7
+00:00:31,725 --> 00:00:34,945
+thinking about for
+several years now.
+
+8
+00:00:36,280 --> 00:00:38,460
+Not only in the context of my
+
+9
+00:00:39,160 --> 00:00:40,680
+current position
+as a principal
+
+10
+00:00:40,680 --> 00:00:42,600
+technologist in
+the Amazon Neptune
+
+11
+00:00:42,600 --> 00:00:43,800
+graph database team,
+
+12
+00:00:43,800 --> 00:00:47,155
+but also throughout the work
+
+13
+00:00:47,155 --> 00:00:49,075
+that I've done
+with with RDF and
+
+14
+00:00:49,075 --> 00:00:51,975
+the Symantec Web over the past
+
+15
+00:00:52,370 --> 00:00:53,590
+more than twenty years.
+
+16
+00:01:01,385 --> 00:01:04,925
+So here is a rough
+game plan today.
+
+17
+00:01:05,145 --> 00:01:06,605
+I'll talk a little bit about
+
+18
+00:01:06,985 --> 00:01:09,340
+the history of graphs first,
+
+19
+00:01:10,520 --> 00:01:11,960
+and then I'll get into graph
+
+20
+00:01:11,960 --> 00:01:13,880
+abstractions and
+and really how
+
+21
+00:01:13,880 --> 00:01:17,100
+to access graph data
+from the software
+
+22
+00:01:17,160 --> 00:01:20,435
+standpoint. From that,
+
+23
+00:01:20,435 --> 00:01:22,595
+I'll go to treating an entire
+
+24
+00:01:22,595 --> 00:01:25,075
+graph as an abstraction
+and talk
+
+25
+00:01:25,075 --> 00:01:26,275
+a little bit about what we can
+
+26
+00:01:26,275 --> 00:01:30,200
+do to unify
+the currently somewhat
+
+27
+00:01:30,200 --> 00:01:31,740
+fragmented world of graphs.
+
+28
+00:01:32,840 --> 00:01:34,360
+And, I'll conclude with,
+
+29
+00:01:34,680 --> 00:01:36,360
+some thoughts about how to how
+
+30
+00:01:36,360 --> 00:01:42,605
+to move forward from
+the current state.
+
+31
+00:01:43,385 --> 00:01:45,830
+So this is my take on,
+
+32
+00:01:46,230 --> 00:01:48,390
+on on the history
+of graphs and
+
+33
+00:01:48,390 --> 00:01:48,890
+ontologies.
+
+34
+00:01:51,430 --> 00:01:55,445
+Oftentimes, these things are
+
+35
+00:01:55,445 --> 00:01:57,625
+presented as something new and
+
+36
+00:01:58,005 --> 00:01:59,865
+the reality is quite
+the opposite.
+
+37
+00:02:00,910 --> 00:02:02,770
+So if we look at the graphs,
+
+38
+00:02:03,710 --> 00:02:05,150
+graph theory as a branch of
+
+39
+00:02:05,150 --> 00:02:07,765
+mathematics dates
+back to the early
+
+40
+00:02:07,765 --> 00:02:08,665
+seventeen hundreds.
+
+41
+00:02:10,885 --> 00:02:11,845
+And ever since the,
+
+42
+00:02:13,045 --> 00:02:14,485
+the birth of computer science
+
+43
+00:02:14,485 --> 00:02:16,265
+as a as a field of study,
+
+44
+00:02:16,580 --> 00:02:18,260
+we've understood
+that graphs are
+
+45
+00:02:18,260 --> 00:02:19,860
+really
+the essential underpinning
+
+46
+00:02:19,860 --> 00:02:21,480
+for most of computer science.
+
+47
+00:02:23,540 --> 00:02:27,585
+Social networks
+showed up sometime
+
+48
+00:02:27,585 --> 00:02:28,565
+in the 1960s.
+
+49
+00:02:29,905 --> 00:02:31,845
+Things like the small
+world experiment,
+
+50
+00:02:32,065 --> 00:02:34,440
+six degrees of
+separation, and and,
+
+51
+00:02:34,680 --> 00:02:36,620
+something we call
+the Erdos number.
+
+52
+00:02:38,840 --> 00:02:40,680
+And then in throughout
+the sixties
+
+53
+00:02:40,680 --> 00:02:42,040
+and seventies, there was work
+
+54
+00:02:42,040 --> 00:02:44,555
+on on network databases or
+
+55
+00:02:44,555 --> 00:02:47,195
+navigational
+databases and then
+
+56
+00:02:47,195 --> 00:02:48,235
+semantic networks,
+
+57
+00:02:48,235 --> 00:02:49,355
+which is really where we're
+
+58
+00:02:49,355 --> 00:02:51,775
+starting to spill
+over to the ontology
+
+59
+00:02:51,915 --> 00:02:52,980
+side here.
+
+60
+00:02:53,600 --> 00:02:56,260
+If we look at
+ontologies, really,
+
+61
+00:02:56,880 --> 00:02:59,380
+we can go back to
+the third century BC,
+
+62
+00:03:00,795 --> 00:03:03,055
+and Aristotle's
+work on categories
+
+63
+00:03:04,955 --> 00:03:07,135
+and logic. Of course,
+
+64
+00:03:08,020 --> 00:03:09,480
+the whole idea of taxonomical
+
+65
+00:03:09,700 --> 00:03:11,000
+classification of things,
+
+66
+00:03:11,860 --> 00:03:13,380
+got more concrete in the early
+
+67
+00:03:13,380 --> 00:03:15,000
+seventeen hundreds
+when Linnaeus
+
+68
+00:03:15,735 --> 00:03:17,275
+classified plants
+and animals.
+
+69
+00:03:19,175 --> 00:03:20,695
+In late eighteen hundreds,
+
+70
+00:03:20,695 --> 00:03:24,710
+we saw work on
+library classification
+
+71
+00:03:25,010 --> 00:03:26,310
+in the form of the Dewey
+
+72
+00:03:26,930 --> 00:03:28,230
+classification system.
+
+73
+00:03:29,250 --> 00:03:30,870
+And then around
+nineteen hundred,
+
+74
+00:03:31,330 --> 00:03:34,955
+philosopher Edmund
+Husserl really
+
+75
+00:03:34,955 --> 00:03:36,815
+worked on sort
+of understanding
+
+76
+00:03:37,035 --> 00:03:41,690
+how ontology can
+be the foundation
+
+77
+00:03:41,690 --> 00:03:43,530
+for representing
+information and
+
+78
+00:03:43,530 --> 00:03:44,750
+the meaning of information.
+
+79
+00:03:46,330 --> 00:03:48,030
+Now fast forward to the 1970s
+
+80
+00:03:48,570 --> 00:03:49,790
+and onwards.
+
+81
+00:03:51,935 --> 00:03:54,735
+Predicate logic became sort of
+
+82
+00:03:54,735 --> 00:03:56,675
+the foundation of knowledge
+
+83
+00:03:56,735 --> 00:03:59,820
+representation in
+the field of AI.
+
+84
+00:04:00,440 --> 00:04:02,600
+And then in the late 90s is
+
+85
+00:04:02,600 --> 00:04:04,040
+where these things
+come together
+
+86
+00:04:04,040 --> 00:04:05,800
+in the inception
+of the semantic
+
+87
+00:04:05,800 --> 00:04:08,235
+web and the related standards
+
+88
+00:04:08,235 --> 00:04:10,655
+such as RDF and
+OWL and whatnot.
+
+89
+00:04:11,995 --> 00:04:13,595
+And from that,
+we basically get
+
+90
+00:04:13,595 --> 00:04:15,375
+the modern knowledge
+graphs and
+
+91
+00:04:16,030 --> 00:04:19,250
+graph databases and all that.
+
+92
+00:04:20,030 --> 00:04:21,250
+So long history.
+
+93
+00:04:23,285 --> 00:04:24,825
+But despite this history,
+
+94
+00:04:25,365 --> 00:04:26,965
+programming with graphs and
+
+95
+00:04:26,965 --> 00:04:29,525
+ontologies is by
+and large still
+
+96
+00:04:29,525 --> 00:04:30,425
+rather cumbersome.
+
+97
+00:04:32,110 --> 00:04:33,170
+And this is something,
+
+98
+00:04:33,630 --> 00:04:34,850
+I'd like to address.
+
+99
+00:04:39,205 --> 00:04:40,885
+So, when we're talking about
+
+100
+00:04:40,885 --> 00:04:43,125
+graphs today, we first of all
+
+101
+00:04:43,125 --> 00:04:45,820
+have this a little bit of
+
+102
+00:04:45,820 --> 00:04:47,340
+fragmentation of the space.
+
+103
+00:04:47,340 --> 00:04:49,260
+And and and this may be all
+
+104
+00:04:49,260 --> 00:04:50,800
+familiar to all of you,
+
+105
+00:04:51,180 --> 00:04:52,915
+but let me just
+kind of summarize,
+
+106
+00:04:53,295 --> 00:04:55,135
+anyway. So we
+basically have two
+
+107
+00:04:55,135 --> 00:04:56,035
+kinds of graphs,
+
+108
+00:04:56,255 --> 00:04:58,915
+RDF graphs and labeled
+property graphs.
+
+109
+00:05:00,950 --> 00:05:02,250
+On the RDF side,
+
+110
+00:05:02,390 --> 00:05:04,630
+graphs are such that vertices
+
+111
+00:05:04,630 --> 00:05:06,150
+and edge types are really just
+
+112
+00:05:06,150 --> 00:05:08,335
+identifiers. Graphs decompose
+
+113
+00:05:08,395 --> 00:05:09,855
+into something we
+call triples.
+
+114
+00:05:10,715 --> 00:05:11,455
+So basically,
+
+115
+00:05:11,515 --> 00:05:14,155
+these are the edges
+and the two
+
+116
+00:05:14,155 --> 00:05:15,695
+endpoints of an edge.
+
+117
+00:05:17,380 --> 00:05:19,560
+Scalar data types in RDF are
+
+118
+00:05:20,020 --> 00:05:23,320
+pulled from XSD, XML schema.
+
+119
+00:05:24,885 --> 00:05:26,485
+And there are no
+composite data
+
+120
+00:05:26,485 --> 00:05:28,985
+types per se, and composite
+
+121
+00:05:29,605 --> 00:05:31,125
+objects are constructed using
+
+122
+00:05:31,125 --> 00:05:32,585
+the graph structure itself.
+
+123
+00:05:33,940 --> 00:05:36,040
+Now, on the property
+graph side,
+
+124
+00:05:36,260 --> 00:05:39,060
+vertices and edges themselves
+
+125
+00:05:39,060 --> 00:05:40,200
+are structured objects.
+
+126
+00:05:40,505 --> 00:05:41,965
+There is no common identifier
+
+127
+00:05:42,025 --> 00:05:44,605
+scheme like there is
+on the RDF side.
+
+128
+00:05:45,145 --> 00:05:47,305
+And the scalar and
+composite data types,
+
+129
+00:05:47,305 --> 00:05:49,860
+they are typically
+borrowed from
+
+130
+00:05:49,860 --> 00:05:51,160
+the whatever is
+the implementation
+
+131
+00:05:51,380 --> 00:05:52,360
+language underneath.
+
+132
+00:05:53,940 --> 00:05:55,300
+We also have
+fragmentation when
+
+133
+00:05:55,300 --> 00:05:56,600
+it comes to query languages.
+
+134
+00:05:56,605 --> 00:05:58,545
+So on the RDF side,
+we have SPARQL.
+
+135
+00:06:00,285 --> 00:06:02,605
+And in the context
+of this talk,
+
+136
+00:06:02,845 --> 00:06:03,965
+on the property graph side,
+
+137
+00:06:03,965 --> 00:06:05,505
+we have Gremlin and Cypher.
+
+138
+00:06:05,710 --> 00:06:06,930
+There are others too,
+
+139
+00:06:07,070 --> 00:06:08,850
+because the field is
+more fragmented.
+
+140
+00:06:13,845 --> 00:06:16,025
+I'll be talking
+about RDF mostly.
+
+141
+00:06:17,525 --> 00:06:18,245
+Towards the end,
+
+142
+00:06:18,245 --> 00:06:20,105
+I'll come back to
+property graphs.
+
+143
+00:06:20,820 --> 00:06:24,280
+If we look at RDF
+and the abstractions
+
+144
+00:06:24,900 --> 00:06:26,340
+available for us in terms of
+
+145
+00:06:26,340 --> 00:06:29,045
+programming with
+graphs, The triples,
+
+146
+00:06:29,265 --> 00:06:31,905
+which RDF graphs
+decomposed to,
+
+147
+00:06:31,905 --> 00:06:33,605
+are very low level
+abstractions.
+
+148
+00:06:33,985 --> 00:06:35,345
+It's like programming with
+
+149
+00:06:35,345 --> 00:06:36,325
+assembly language.
+
+150
+00:06:38,460 --> 00:06:39,900
+So we need something
+different.
+
+151
+00:06:39,900 --> 00:06:42,780
+And in the past,
+
+152
+00:06:42,780 --> 00:06:44,540
+we've sort of tried
+to map graphs
+
+153
+00:06:44,540 --> 00:06:45,280
+to trees,
+
+154
+00:06:46,825 --> 00:06:49,705
+but we have a meta
+model mismatch there.
+
+155
+00:06:49,705 --> 00:06:51,405
+Graphs and trees,
+
+156
+00:06:51,625 --> 00:06:52,845
+there there are differences
+
+157
+00:06:53,660 --> 00:06:56,560
+which can cause all
+kinds of confusion.
+
+158
+00:06:56,700 --> 00:06:58,460
+And of course,
+examples of this
+
+159
+00:06:58,460 --> 00:07:00,080
+are things like RDF XML,
+
+160
+00:07:01,435 --> 00:07:03,035
+You're trying to use XML as
+
+161
+00:07:03,035 --> 00:07:05,835
+the representation
+for RDF and JSON LD,
+
+162
+00:07:05,835 --> 00:07:07,195
+which is basically
+does the same
+
+163
+00:07:07,195 --> 00:07:07,935
+with JSON.
+
+164
+00:07:09,240 --> 00:07:11,080
+I think of those as
+warning examples.
+
+165
+00:07:11,080 --> 00:07:11,900
+Now, of course,
+
+166
+00:07:12,280 --> 00:07:13,960
+it's also important
+to remember
+
+167
+00:07:13,960 --> 00:07:15,240
+that really when it
+comes to graph,
+
+168
+00:07:15,240 --> 00:07:17,000
+the syntax does not matter and
+
+169
+00:07:17,000 --> 00:07:18,125
+it should not matter.
+
+170
+00:07:18,685 --> 00:07:20,525
+You solve the syntax
+problem once,
+
+171
+00:07:20,525 --> 00:07:22,065
+and then you forget about it.
+
+172
+00:07:23,245 --> 00:07:24,525
+But what about the graph
+
+173
+00:07:24,525 --> 00:07:26,065
+abstractions themselves?
+
+174
+00:07:26,285 --> 00:07:29,210
+So could we do something that
+
+175
+00:07:29,210 --> 00:07:31,050
+people have done on
+the relational side?
+
+176
+00:07:31,050 --> 00:07:32,410
+So something that
+could be like
+
+177
+00:07:32,410 --> 00:07:33,950
+an object graph mapping?
+
+178
+00:07:35,395 --> 00:07:36,995
+Take data from a graph and map
+
+179
+00:07:36,995 --> 00:07:38,375
+that to some kind of objects.
+
+180
+00:07:39,875 --> 00:07:41,930
+There are it can be
+done, of course,
+
+181
+00:07:42,090 --> 00:07:43,690
+but there are some interesting
+
+182
+00:07:43,690 --> 00:07:45,310
+issues here. So first of all,
+
+183
+00:07:45,530 --> 00:07:47,150
+what constitutes an object?
+
+184
+00:07:47,450 --> 00:07:49,050
+So how much of
+the graph do you
+
+185
+00:07:49,050 --> 00:07:52,165
+have to pull to
+build an object?
+
+186
+00:07:53,345 --> 00:07:54,225
+And then, of course,
+
+187
+00:07:54,225 --> 00:07:55,585
+there are these kind of shared
+
+188
+00:07:55,585 --> 00:07:58,245
+references. And in
+RDF particularly,
+
+189
+00:07:58,890 --> 00:08:00,570
+there's something
+called blank nodes.
+
+190
+00:08:00,570 --> 00:08:03,610
+These are nodes that cannot be
+
+191
+00:08:03,610 --> 00:08:05,210
+addressed from
+outside the graph
+
+192
+00:08:05,210 --> 00:08:07,610
+and those can be difficult to
+
+193
+00:08:07,610 --> 00:08:09,935
+handle if you do this mapping
+
+194
+00:08:10,555 --> 00:08:11,295
+to objects.
+
+195
+00:08:14,555 --> 00:08:15,375
+Graph queries,
+
+196
+00:08:16,155 --> 00:08:18,330
+or as I'd like to
+sort of think about,
+
+197
+00:08:18,330 --> 00:08:20,030
+this, how do I get
+there from here?
+
+198
+00:08:21,770 --> 00:08:24,110
+So graph queries, mostly,
+
+199
+00:08:24,170 --> 00:08:27,265
+they're about
+traversal in the sense
+
+200
+00:08:27,265 --> 00:08:29,125
+that traversal is an excellent
+
+201
+00:08:29,265 --> 00:08:33,350
+way to understand what you do
+
+202
+00:08:33,350 --> 00:08:35,030
+with a graph and how you kind
+
+203
+00:08:35,030 --> 00:08:37,210
+of find things in a graph.
+
+204
+00:08:38,390 --> 00:08:40,230
+So questions like where can I
+
+205
+00:08:40,230 --> 00:08:42,090
+go from here given
+this particular
+
+206
+00:08:42,230 --> 00:08:43,275
+path pattern?
+
+207
+00:08:44,535 --> 00:08:45,895
+Are these two
+nodes in the graph
+
+208
+00:08:45,895 --> 00:08:47,015
+connected? And if they are,
+
+209
+00:08:47,015 --> 00:08:48,155
+how are they connected?
+
+210
+00:08:50,580 --> 00:08:52,360
+Using path patterns,
+
+211
+00:08:53,060 --> 00:08:55,300
+for traversing
+a graph is a little
+
+212
+00:08:55,300 --> 00:08:57,080
+bit like pattern
+matching the graph
+
+213
+00:08:58,260 --> 00:09:00,095
+itself. And of course,
+
+214
+00:09:00,095 --> 00:09:04,575
+SPARQL is a very
+powerful query
+
+215
+00:09:04,575 --> 00:09:06,515
+language, but it's
+a very big hammer,
+
+216
+00:09:06,895 --> 00:09:10,850
+very heavy tool for most graph
+
+217
+00:09:10,850 --> 00:09:11,650
+access problems.
+
+218
+00:09:11,650 --> 00:09:13,110
+We need something simpler.
+
+219
+00:09:14,210 --> 00:09:15,955
+Something like
+a simple search,
+
+220
+00:09:15,955 --> 00:09:18,135
+maybe faceted
+search or filtering
+
+221
+00:09:18,595 --> 00:09:20,215
+of data from the graph.
+
+222
+00:09:20,995 --> 00:09:22,435
+And once you've done
+the filtering,
+
+223
+00:09:22,435 --> 00:09:23,555
+then of course
+the question is,
+
+224
+00:09:23,555 --> 00:09:24,755
+give me everything you know.
+
+225
+00:09:24,835 --> 00:09:26,443
+to the particular
+node in the graph.
+
+226
+00:09:26,443 --> 00:09:27,460
+This is sort of
+related to the object
+
+227
+00:09:27,460 --> 00:09:28,436
+graph mapping. And
+then, of course,
+
+228
+00:09:28,436 --> 00:09:29,640
+queries that really
+are about traversal,
+
+229
+00:09:31,460 --> 00:09:38,065
+specifically. So
+specifically.
+
+230
+00:09:40,685 --> 00:09:42,705
+Now, graphs are
+the graph data,
+
+231
+00:09:42,845 --> 00:09:44,465
+graphs they're
+modeled somehow.
+
+232
+00:09:45,730 --> 00:09:47,810
+And here again, we
+have some problems.
+
+233
+00:09:47,810 --> 00:09:48,950
+So first of all,
+
+234
+00:09:49,010 --> 00:09:51,590
+the property graphs generally
+
+235
+00:09:51,650 --> 00:09:53,110
+do not have schema languages
+
+236
+00:09:53,170 --> 00:09:54,710
+that would let you
+do the modeling.
+
+237
+00:09:54,755 --> 00:09:56,435
+So the model is
+implicit or it's
+
+238
+00:09:56,435 --> 00:09:59,095
+buried in the code
+that you write.
+
+239
+00:10:00,755 --> 00:10:01,975
+RDF, on the other hand,
+
+240
+00:10:02,355 --> 00:10:03,715
+in some ways has
+too many schema
+
+241
+00:10:03,715 --> 00:10:07,160
+languages. So, we have RDFS,
+
+242
+00:10:07,540 --> 00:10:09,220
+we have OWL as a sort of more
+
+243
+00:10:09,220 --> 00:10:10,100
+powerful schema language,
+
+244
+00:10:10,100 --> 00:10:11,940
+and then we have
+SHACL and they
+
+245
+00:10:11,940 --> 00:10:15,465
+are all languages that were
+
+246
+00:10:15,465 --> 00:10:17,885
+created really for
+specific purposes.
+
+247
+00:10:19,625 --> 00:10:20,585
+And I think there,
+
+248
+00:10:20,585 --> 00:10:22,025
+what we would
+need is some kind
+
+249
+00:10:22,025 --> 00:10:25,370
+of a unifying view of these
+
+250
+00:10:25,370 --> 00:10:27,850
+because telling
+people that, hey,
+
+251
+00:10:27,850 --> 00:10:28,890
+you can model your graph,
+
+252
+00:10:28,890 --> 00:10:30,250
+but here are three schema
+
+253
+00:10:30,250 --> 00:10:31,725
+languages that
+you have to use.
+
+254
+00:10:31,885 --> 00:10:32,865
+It's just confusing.
+
+255
+00:10:34,445 --> 00:10:35,725
+And then the third problem,
+
+256
+00:10:35,725 --> 00:10:37,965
+and then maybe
+the most important
+
+257
+00:10:37,965 --> 00:10:39,645
+problem is that
+how do you then
+
+258
+00:10:39,645 --> 00:10:42,300
+take models of your graph data
+
+259
+00:10:42,300 --> 00:10:45,020
+and map those to
+whatever it is
+
+260
+00:10:45,020 --> 00:10:46,700
+that you have to
+do when you're
+
+261
+00:10:46,700 --> 00:10:47,600
+writing code?
+
+262
+00:10:50,835 --> 00:10:52,535
+There's also this question of
+
+263
+00:10:53,875 --> 00:10:55,795
+shared ontologies
+or shared models.
+
+264
+00:10:55,795 --> 00:10:58,880
+So let's say you have decided
+
+265
+00:10:58,880 --> 00:11:01,120
+to use some shared
+ontology and
+
+266
+00:11:01,120 --> 00:11:02,720
+you map your data to this
+
+267
+00:11:02,720 --> 00:11:04,560
+particular ontology.
+Now what?
+
+268
+00:11:04,560 --> 00:11:06,535
+What does that
+actually buy you?
+
+269
+00:11:06,535 --> 00:11:08,775
+How do you take advantage of
+
+270
+00:11:08,775 --> 00:11:11,095
+the fact that your data now
+
+271
+00:11:11,095 --> 00:11:12,715
+conforms to
+a particular model?
+
+272
+00:11:14,760 --> 00:11:16,380
+So here I'm sort
+of pondering,
+
+273
+00:11:16,680 --> 00:11:18,360
+can we support ontologies with
+
+274
+00:11:18,360 --> 00:11:20,220
+some kind of
+predefined software
+
+275
+00:11:20,280 --> 00:11:22,215
+libraries that basically
+
+276
+00:11:22,275 --> 00:11:23,795
+encapsulates some
+of the knowledge
+
+277
+00:11:23,795 --> 00:11:24,835
+about this ontology.
+
+278
+00:11:24,835 --> 00:11:27,015
+And I like to call
+these ontology
+
+279
+00:11:27,155 --> 00:11:29,315
+engines. This is ongoing work
+
+280
+00:11:29,315 --> 00:11:30,215
+on my part.
+
+281
+00:11:34,280 --> 00:11:35,080
+And then finally,
+
+282
+00:11:35,080 --> 00:11:36,520
+since we're talking
+about ontologies,
+
+283
+00:11:36,520 --> 00:11:37,980
+there's the question
+of reasoning,
+
+284
+00:11:39,345 --> 00:11:40,465
+which is really
+something we can
+
+285
+00:11:40,465 --> 00:11:44,405
+do on the RDF side,
+particularly.
+
+286
+00:11:45,505 --> 00:11:46,865
+First of all, we have symbolic
+
+287
+00:11:46,865 --> 00:11:49,690
+reasoning. So this is really
+
+288
+00:11:49,690 --> 00:11:52,490
+reasoning using some type of
+
+289
+00:11:52,490 --> 00:11:53,550
+logical rules.
+
+290
+00:11:55,370 --> 00:11:57,715
+Interesting things
+to to to note
+
+291
+00:11:57,715 --> 00:11:59,415
+here is that
+generative reasoning
+
+292
+00:11:59,555 --> 00:12:01,235
+or reasoning that kind of adds
+
+293
+00:12:01,235 --> 00:12:03,175
+more edges to the graph,
+if you will,
+
+294
+00:12:03,635 --> 00:12:04,915
+is something that
+can easily be
+
+295
+00:12:04,915 --> 00:12:06,695
+hidden from
+the application itself.
+
+296
+00:12:07,320 --> 00:12:08,760
+The application actually does
+
+297
+00:12:08,760 --> 00:12:10,040
+not have to know that there's
+
+298
+00:12:10,040 --> 00:12:12,060
+a reasoner running
+underneath.
+
+299
+00:12:13,400 --> 00:12:15,240
+Queries and accesses
+to the graph
+
+300
+00:12:15,240 --> 00:12:19,325
+are really not to the asserted
+
+301
+00:12:19,325 --> 00:12:20,125
+graph itself,
+
+302
+00:12:20,125 --> 00:12:23,245
+but they are to the graph plus
+
+303
+00:12:23,245 --> 00:12:24,365
+all the things that we have
+
+304
+00:12:24,365 --> 00:12:26,110
+managed to infer
+from the graph.
+
+305
+00:12:28,030 --> 00:12:28,510
+Then, of course,
+
+306
+00:12:28,510 --> 00:12:30,290
+we have non symbolic
+reasoning.
+
+307
+00:12:30,430 --> 00:12:31,970
+So machine learning techniques
+
+308
+00:12:32,270 --> 00:12:33,870
+can actually be used much like
+
+309
+00:12:33,870 --> 00:12:34,850
+symbolic reasoning.
+
+310
+00:12:35,715 --> 00:12:37,555
+You can do things like node
+
+311
+00:12:37,555 --> 00:12:39,735
+classification or
+link prediction.
+
+312
+00:12:40,995 --> 00:12:42,695
+And I think what
+we really need
+
+313
+00:12:43,320 --> 00:12:45,400
+is sort of an expanded view of
+
+314
+00:12:45,400 --> 00:12:47,560
+reasoning where
+we will kind of
+
+315
+00:12:47,560 --> 00:12:50,120
+stop this sort of rift between
+
+316
+00:12:50,120 --> 00:12:51,480
+symbolic reasoning and non
+
+317
+00:12:51,480 --> 00:12:52,380
+symbolic reasoning.
+
+318
+00:12:52,825 --> 00:12:54,205
+But I think more importantly,
+
+319
+00:12:55,305 --> 00:12:56,745
+what we really
+need to do is we
+
+320
+00:12:56,745 --> 00:12:59,085
+need to rethink what
+an application is.
+
+321
+00:13:00,400 --> 00:13:04,080
+I think that logic should be
+
+322
+00:13:04,080 --> 00:13:05,440
+associated with the data and
+
+323
+00:13:05,440 --> 00:13:07,620
+the models and not
+with an application.
+
+324
+00:13:08,725 --> 00:13:10,185
+Traditional view
+of an application
+
+325
+00:13:10,245 --> 00:13:12,265
+is that it's sort
+of the gatekeeper
+
+326
+00:13:12,405 --> 00:13:13,945
+to particular kind of data.
+
+327
+00:13:14,405 --> 00:13:16,520
+And I think
+a better view of of
+
+328
+00:13:16,520 --> 00:13:18,200
+an application is
+that it reflects
+
+329
+00:13:18,200 --> 00:13:20,200
+the user's intent to,
+
+330
+00:13:20,600 --> 00:13:21,660
+accomplish something.
+
+331
+00:13:23,080 --> 00:13:24,355
+But in this view,
+
+332
+00:13:24,415 --> 00:13:25,535
+you really have to kind of
+
+333
+00:13:25,535 --> 00:13:26,975
+separate the application from
+
+334
+00:13:26,975 --> 00:13:28,435
+the semantics of the data.
+
+335
+00:13:34,070 --> 00:13:36,570
+I think graphs really could be
+
+336
+00:13:37,565 --> 00:13:39,245
+sort of an overarching logical
+
+337
+00:13:39,245 --> 00:13:40,605
+abstraction for all the data
+
+338
+00:13:40,605 --> 00:13:42,305
+that we manipulate.
+
+339
+00:13:44,285 --> 00:13:46,545
+Modern enterprise
+data practices,
+
+340
+00:13:47,560 --> 00:13:49,480
+to be, to put this kindly,
+
+341
+00:13:49,480 --> 00:13:52,760
+is messy and data silos,
+
+342
+00:13:52,760 --> 00:13:53,580
+they're commonplace.
+
+343
+00:13:55,215 --> 00:13:57,955
+And data integration
+often happens
+
+344
+00:13:59,535 --> 00:14:02,140
+through ad hoc
+solutions or just
+
+345
+00:14:02,140 --> 00:14:04,620
+a custom integration
+scripts or
+
+346
+00:14:04,620 --> 00:14:06,940
+what have you. And this thing
+
+347
+00:14:06,940 --> 00:14:10,220
+will never end unless we find
+
+348
+00:14:10,220 --> 00:14:11,885
+some kind of
+a unifying logical
+
+349
+00:14:11,885 --> 00:14:19,505
+not only manipulating the data
+
+350
+00:14:19,505 --> 00:14:20,820
+from the standpoint
+of our software,
+
+351
+00:14:20,900 --> 00:14:22,500
+not only manipulating the data
+
+352
+00:14:22,500 --> 00:14:24,180
+from the standpoint of our of
+
+353
+00:14:24,180 --> 00:14:25,320
+our software applications,
+
+354
+00:14:25,380 --> 00:14:26,980
+but also from
+the standpoint of
+
+355
+00:14:26,980 --> 00:14:27,800
+data integration.
+
+356
+00:14:30,755 --> 00:14:32,435
+My view of this is that until
+
+357
+00:14:32,435 --> 00:14:34,215
+something better shows up,
+
+358
+00:14:34,355 --> 00:14:38,160
+RDF and OWL actually
+can provide
+
+359
+00:14:38,160 --> 00:14:38,900
+this view.
+
+360
+00:14:40,640 --> 00:14:42,660
+I chose this picture
+here specifically.
+
+361
+00:14:42,960 --> 00:14:45,380
+This is the Tower of Babel.
+
+362
+00:14:46,485 --> 00:14:47,685
+And I think that that's where
+
+363
+00:14:47,685 --> 00:14:50,085
+we are when it comes to data
+
+364
+00:14:50,085 --> 00:14:50,905
+practice today.
+
+365
+00:14:52,245 --> 00:14:54,400
+Lots of languages,
+everybody's talking,
+
+366
+00:14:54,540 --> 00:14:55,600
+nobody's understanding.
+
+367
+00:15:00,755 --> 00:15:01,475
+And then, of course,
+
+368
+00:15:01,475 --> 00:15:02,995
+we still have this question of
+
+369
+00:15:02,995 --> 00:15:05,475
+RDF versus the labeled
+property graph,
+
+370
+00:15:05,475 --> 00:15:07,335
+so let me talk a little
+bit about that.
+
+371
+00:15:08,270 --> 00:15:10,350
+First of all, when users are
+
+372
+00:15:10,350 --> 00:15:13,870
+given the choice
+between RDF and
+
+373
+00:15:13,870 --> 00:15:14,590
+property graphs,
+
+374
+00:15:14,590 --> 00:15:16,595
+it tends to confuse users.
+
+375
+00:15:16,595 --> 00:15:18,055
+They don't know what to choose
+
+376
+00:15:18,195 --> 00:15:21,395
+and once they make
+that choice,
+
+377
+00:15:21,395 --> 00:15:23,255
+it tends to be
+hard to walk back
+
+378
+00:15:23,530 --> 00:15:25,210
+that choice later
+on if you find
+
+379
+00:15:25,210 --> 00:15:26,910
+out you made
+the wrong choice.
+
+380
+00:15:28,090 --> 00:15:30,190
+This really should
+not matter.
+
+381
+00:15:31,665 --> 00:15:34,385
+I think the real
+issue here deep
+
+382
+00:15:34,385 --> 00:15:37,105
+down maybe that
+there are these
+
+383
+00:15:37,105 --> 00:15:39,365
+two kind of ways to
+think about graphs.
+
+384
+00:15:39,450 --> 00:15:41,150
+Graph as
+a logical representation
+
+385
+00:15:41,290 --> 00:15:43,930
+of your data versus
+graph as a physical
+
+386
+00:15:43,930 --> 00:15:44,830
+data structure.
+
+387
+00:15:46,545 --> 00:15:49,665
+I think RDF tends to represent
+
+388
+00:15:49,665 --> 00:15:51,505
+the former, property graphs
+
+389
+00:15:51,505 --> 00:15:52,565
+often the latter.
+
+390
+00:15:53,480 --> 00:15:54,680
+But regardless of this,
+
+391
+00:15:54,680 --> 00:15:56,200
+the practical problem we face
+
+392
+00:15:56,200 --> 00:15:58,140
+is that we still
+have two separate
+
+393
+00:15:58,200 --> 00:16:01,935
+ecosystems for
+tooling for these
+
+394
+00:16:01,935 --> 00:16:03,475
+two different
+kinds of graphs.
+
+395
+00:16:05,055 --> 00:16:06,335
+So let's talk
+a little bit about
+
+396
+00:16:06,335 --> 00:16:10,630
+these graphs, RDF and
+property graphs.
+
+397
+00:16:10,630 --> 00:16:12,550
+What are the pros and
+what are the cons?
+
+398
+00:16:12,550 --> 00:16:15,110
+So RDF is a W3C standard.
+
+399
+00:16:15,110 --> 00:16:16,090
+It's well established,
+
+400
+00:16:17,515 --> 00:16:18,795
+originally created over twenty
+
+401
+00:16:18,795 --> 00:16:19,535
+years ago.
+
+402
+00:16:20,795 --> 00:16:22,635
+RDF makes it easy
+to use external
+
+403
+00:16:22,635 --> 00:16:23,455
+data sources.
+
+404
+00:16:24,395 --> 00:16:27,580
+RDF comes with schema
+languages And,
+
+405
+00:16:30,120 --> 00:16:31,160
+particularly when it comes to
+
+406
+00:16:31,160 --> 00:16:32,280
+external data sources,
+
+407
+00:16:32,280 --> 00:16:33,740
+RDF has formal semantics,
+
+408
+00:16:34,465 --> 00:16:36,225
+and it particularly has formal
+
+409
+00:16:36,225 --> 00:16:37,685
+semantics for graph merging.
+
+410
+00:16:39,025 --> 00:16:39,825
+And then finally,
+
+411
+00:16:39,825 --> 00:16:41,285
+RDF supports reasoning.
+
+412
+00:16:41,450 --> 00:16:43,770
+So you can
+incorporate symbolic
+
+413
+00:16:43,770 --> 00:16:45,390
+reasoning in your
+application.
+
+414
+00:16:47,770 --> 00:16:48,970
+Property graphs on the other
+
+415
+00:16:48,970 --> 00:16:50,410
+side are very intuitive for
+
+416
+00:16:50,410 --> 00:16:52,565
+software more so than RDF.
+
+417
+00:16:54,865 --> 00:16:56,725
+And they tend to
+integrate better
+
+418
+00:16:57,025 --> 00:16:58,145
+with programming languages,
+
+419
+00:16:58,145 --> 00:16:59,745
+particularly when it comes to
+
+420
+00:16:59,745 --> 00:17:01,310
+the query language Grambling,
+
+421
+00:17:01,850 --> 00:17:03,790
+which in a way sort
+of is a programming
+
+422
+00:17:03,850 --> 00:17:05,310
+language in its own right.
+
+423
+00:17:06,890 --> 00:17:09,630
+Now on the negative
+side, for RDF,
+
+424
+00:17:10,010 --> 00:17:12,155
+it's often considered kind of
+
+425
+00:17:12,155 --> 00:17:14,635
+too academic. I
+don't necessarily
+
+426
+00:17:14,635 --> 00:17:15,855
+share this view myself,
+
+427
+00:17:15,915 --> 00:17:17,855
+but this is what
+I keep hearing.
+
+428
+00:17:19,130 --> 00:17:20,330
+And related to that is that
+
+429
+00:17:20,330 --> 00:17:22,350
+there's no kind
+of easy on ramp
+
+430
+00:17:22,810 --> 00:17:24,910
+to learn and adopt RDF.
+
+431
+00:17:27,025 --> 00:17:28,725
+Now, on the property graphs,
+
+432
+00:17:28,865 --> 00:17:30,145
+on the negative side is that
+
+433
+00:17:30,145 --> 00:17:31,285
+there is no standard.
+
+434
+00:17:31,425 --> 00:17:33,970
+There's many
+divergent implementations
+
+435
+00:17:34,190 --> 00:17:35,570
+that are proprietary.
+
+436
+00:17:37,310 --> 00:17:40,405
+There's no schema language and
+
+437
+00:17:40,405 --> 00:17:41,945
+there is no formal semantics.
+
+438
+00:17:42,485 --> 00:17:45,925
+So this makes it
+hard to do a lot
+
+439
+00:17:45,925 --> 00:17:47,780
+of things and I'll
+come back to that.
+
+440
+00:17:49,380 --> 00:17:51,240
+So this is the reality,
+
+441
+00:17:51,620 --> 00:17:53,720
+but what we really
+want is we want both.
+
+442
+00:17:54,180 --> 00:17:56,435
+We want the good
+things from RDF
+
+443
+00:17:56,495 --> 00:17:58,495
+and we want the good
+things from
+
+444
+00:17:58,495 --> 00:17:59,475
+property graphs.
+
+445
+00:18:00,015 --> 00:18:01,875
+And we don't want
+to be confused
+
+446
+00:18:01,935 --> 00:18:03,820
+with the choice
+between the two.
+
+447
+00:18:05,500 --> 00:18:07,020
+So this sort of brings me back
+
+448
+00:18:07,020 --> 00:18:09,020
+to the idea that
+the graph itself
+
+449
+00:18:09,020 --> 00:18:10,400
+is sort of an abstraction.
+
+450
+00:18:11,715 --> 00:18:15,815
+What we really
+want is a unifying
+
+451
+00:18:16,035 --> 00:18:18,515
+model that covers both RDF and
+
+452
+00:18:18,515 --> 00:18:21,590
+the property graphs. Why?
+
+453
+00:18:21,810 --> 00:18:23,190
+Because this would
+help adoption
+
+454
+00:18:24,690 --> 00:18:26,610
+of graph technology
+and I think
+
+455
+00:18:26,610 --> 00:18:28,850
+this is important to
+the graph industry,
+
+456
+00:18:28,850 --> 00:18:30,965
+if you will. It's
+still sort of
+
+457
+00:18:30,965 --> 00:18:35,605
+a nascent industry
+and to really
+
+458
+00:18:35,605 --> 00:18:38,700
+see mainstream adoption,
+
+459
+00:18:38,840 --> 00:18:40,120
+we need to make things easier
+
+460
+00:18:40,120 --> 00:18:41,100
+and less confusing.
+
+461
+00:18:41,640 --> 00:18:43,400
+It also gives
+users more choices
+
+462
+00:18:43,400 --> 00:18:44,840
+if we were to have this.
+
+463
+00:18:44,840 --> 00:18:45,740
+So for example,
+
+464
+00:18:46,485 --> 00:18:48,165
+I personally would very much
+
+465
+00:18:48,165 --> 00:18:51,065
+like to run Gremlin over RDF,
+
+466
+00:18:51,125 --> 00:18:52,905
+but today I can't do that.
+
+467
+00:18:54,460 --> 00:18:56,940
+So in the Neptune
+team, at AWS,
+
+468
+00:18:56,940 --> 00:18:58,160
+we're working on this,
+
+469
+00:18:59,340 --> 00:19:01,360
+in a project code
+named OneGraph.
+
+470
+00:19:04,255 --> 00:19:06,575
+And turns out that this is
+
+471
+00:19:06,575 --> 00:19:08,115
+actually not so easy.
+
+472
+00:19:09,670 --> 00:19:10,970
+There are a number
+of obstacles.
+
+473
+00:19:11,990 --> 00:19:15,430
+We think we can solve them,
+
+474
+00:19:15,430 --> 00:19:17,350
+but let me just
+kind of give you
+
+475
+00:19:17,350 --> 00:19:19,565
+the highlights of what things
+
+476
+00:19:19,565 --> 00:19:20,225
+are difficult.
+
+477
+00:19:21,325 --> 00:19:22,205
+So first of all,
+
+478
+00:19:22,205 --> 00:19:24,445
+there's the question
+of the formal
+
+479
+00:19:24,445 --> 00:19:26,270
+semantics of RDF and also this
+
+480
+00:19:26,430 --> 00:19:28,590
+emerging extension
+of RDF called
+
+481
+00:19:28,590 --> 00:19:32,430
+RDF star that
+tries to bring RDF
+
+482
+00:19:32,430 --> 00:19:35,570
+closer to how property
+graphs work.
+
+483
+00:19:36,805 --> 00:19:38,905
+In RDF semantics,
+triples are unique,
+
+484
+00:19:39,445 --> 00:19:43,525
+which means that
+that you can't
+
+485
+00:19:43,525 --> 00:19:47,660
+have two triples
+that are the same
+
+486
+00:19:47,660 --> 00:19:49,020
+but would be separate so that
+
+487
+00:19:49,020 --> 00:19:51,020
+you could assign different
+
+488
+00:19:51,020 --> 00:19:52,320
+properties to them.
+
+489
+00:19:52,995 --> 00:19:54,515
+Whereas this is a very common
+
+490
+00:19:54,515 --> 00:19:56,455
+pattern in property graphs.
+
+491
+00:19:57,795 --> 00:19:59,475
+And of course,
+those of you who
+
+492
+00:19:59,475 --> 00:20:00,135
+know RDF,
+
+493
+00:20:00,195 --> 00:20:02,870
+there's the old
+style verification
+
+494
+00:20:03,170 --> 00:20:05,170
+mechanism, for this,
+
+495
+00:20:05,170 --> 00:20:06,850
+and it does not
+have this problem,
+
+496
+00:20:06,850 --> 00:20:08,290
+but verification tends to be
+
+497
+00:20:08,290 --> 00:20:11,615
+cumbersome and is
+often misunderstood.
+
+498
+00:20:11,915 --> 00:20:14,895
+I think it's
+the most misunderstood
+
+499
+00:20:15,115 --> 00:20:17,055
+part of the original
+RDF specification.
+
+500
+00:20:19,130 --> 00:20:21,210
+There's, of course,
+
+501
+00:20:21,210 --> 00:20:22,490
+this question of
+lack of formal
+
+502
+00:20:22,490 --> 00:20:23,850
+semantics for
+property graphs.
+
+503
+00:20:23,850 --> 00:20:24,890
+It's kind of difficult to
+
+504
+00:20:24,890 --> 00:20:25,930
+determine what the correct
+
+505
+00:20:25,930 --> 00:20:28,375
+semantics are. And so building
+
+506
+00:20:28,375 --> 00:20:31,355
+this unifying and
+unifying model,
+
+507
+00:20:33,575 --> 00:20:35,175
+it's now difficult because we
+
+508
+00:20:35,175 --> 00:20:38,700
+don't actually know how to
+
+509
+00:20:39,000 --> 00:20:41,020
+reconcile RDF semantics and
+
+510
+00:20:41,240 --> 00:20:42,380
+property graph semantics.
+
+511
+00:20:42,920 --> 00:20:44,120
+On the property graph side,
+
+512
+00:20:44,120 --> 00:20:45,580
+there's also kind
+of a diversity
+
+513
+00:20:45,640 --> 00:20:48,535
+of scalar, scalar data types,
+
+514
+00:20:48,535 --> 00:20:50,475
+which would have
+to be reconciled
+
+515
+00:20:50,535 --> 00:20:52,615
+against the set of scalar data
+
+516
+00:20:52,615 --> 00:20:53,675
+types on the RDS.
+
+517
+00:20:57,230 --> 00:20:59,330
+There's question of
+graph partitioning.
+
+518
+00:21:00,110 --> 00:21:01,790
+So RDF supports a mechanism
+
+519
+00:21:01,790 --> 00:21:03,275
+called named graphs that lets
+
+520
+00:21:03,275 --> 00:21:05,055
+you partition your graph.
+
+521
+00:21:05,755 --> 00:21:07,755
+This mechanism does not exist
+
+522
+00:21:07,755 --> 00:21:09,375
+on the property graph side.
+
+523
+00:21:10,850 --> 00:21:13,330
+Now, to make things even more
+
+524
+00:21:13,330 --> 00:21:14,870
+complicated is that in RDF,
+
+525
+00:21:15,650 --> 00:21:17,270
+vertices are just
+identifiers.
+
+526
+00:21:17,410 --> 00:21:18,285
+There's no structure.
+
+527
+00:21:18,525 --> 00:21:20,445
+So when you're
+partitioning your graph,
+
+528
+00:21:20,445 --> 00:21:23,085
+you're really kind
+of what you're
+
+529
+00:21:23,085 --> 00:21:24,285
+doing is that you're you're
+
+530
+00:21:24,285 --> 00:21:26,900
+asking which
+particular partition
+
+531
+00:21:26,960 --> 00:21:29,300
+does any particular
+edge belong to.
+
+532
+00:21:30,160 --> 00:21:31,840
+But on the property
+graph side,
+
+533
+00:21:31,840 --> 00:21:35,835
+both vertices and edges are
+
+534
+00:21:35,835 --> 00:21:36,895
+structured objects.
+
+535
+00:21:38,555 --> 00:21:40,555
+So what do you do
+about the partitioning
+
+536
+00:21:40,555 --> 00:21:41,695
+when it comes to vertices?
+
+537
+00:21:43,590 --> 00:21:44,410
+And then finally,
+
+538
+00:21:44,870 --> 00:21:46,950
+there's this
+question of update
+
+539
+00:21:46,950 --> 00:21:50,285
+semantics. So to come back to
+
+540
+00:21:50,285 --> 00:21:51,005
+the first problem,
+
+541
+00:21:51,005 --> 00:21:52,525
+so let's say we have these non
+
+542
+00:21:52,525 --> 00:21:53,325
+unique triples.
+
+543
+00:21:53,325 --> 00:21:56,705
+So kind of multiple instances
+
+544
+00:21:56,765 --> 00:21:58,430
+of the same edge,
+if you will.
+
+545
+00:21:58,510 --> 00:21:59,710
+When you delete one of them,
+
+546
+00:21:59,710 --> 00:22:00,750
+what happens to the others?
+
+547
+00:22:00,750 --> 00:22:02,290
+Are those deleted as well?
+
+548
+00:22:02,590 --> 00:22:04,030
+We have to figure
+out what the right
+
+549
+00:22:04,030 --> 00:22:05,410
+semantics for that is.
+
+550
+00:22:05,825 --> 00:22:06,705
+And then, of course,
+
+551
+00:22:06,705 --> 00:22:10,565
+if you have
+properties on edges,
+
+552
+00:22:10,625 --> 00:22:13,105
+so you've associated some
+
+553
+00:22:13,105 --> 00:22:14,725
+properties with
+the edges themselves,
+
+554
+00:22:15,240 --> 00:22:16,620
+What happens when you delete
+
+555
+00:22:17,160 --> 00:22:19,020
+such an edge? Are
+those properties
+
+556
+00:22:19,080 --> 00:22:20,140
+deleted as well?
+
+557
+00:22:21,880 --> 00:22:23,480
+So would we need some kind of
+
+558
+00:22:23,480 --> 00:22:27,945
+a cascading delete
+for edge properties?
+
+559
+00:22:27,945 --> 00:22:29,465
+All these are problems that we
+
+560
+00:22:29,465 --> 00:22:30,905
+have to solve
+before we can say
+
+561
+00:22:30,905 --> 00:22:33,405
+that we can have this
+unifying model.
+
+562
+00:22:35,060 --> 00:22:36,500
+But anyway, we're
+working on this,
+
+563
+00:22:36,500 --> 00:22:37,480
+we're getting there.
+
+564
+00:22:39,860 --> 00:22:41,535
+So, the way forward,
+
+565
+00:22:42,155 --> 00:22:43,755
+and this I really
+would like to
+
+566
+00:22:43,755 --> 00:22:44,955
+present in terms of what are
+
+567
+00:22:44,955 --> 00:22:46,795
+the real pain points when it
+
+568
+00:22:46,795 --> 00:22:48,155
+comes to building knowledge
+
+569
+00:22:48,155 --> 00:22:48,975
+graph software.
+
+570
+00:22:50,600 --> 00:22:53,320
+So first of all is
+the basic question,
+
+571
+00:22:53,320 --> 00:22:55,400
+how do I write software that
+
+572
+00:22:55,400 --> 00:22:56,920
+leverages knowledge graph and
+
+573
+00:22:56,920 --> 00:22:57,980
+knowledge graph data?
+
+574
+00:22:58,625 --> 00:23:00,705
+We have to kind
+of bridge the gap
+
+575
+00:23:00,705 --> 00:23:02,485
+between the graph
+and the code.
+
+576
+00:23:03,025 --> 00:23:04,385
+Your graph has a model,
+
+577
+00:23:04,385 --> 00:23:06,465
+your code needs to understand
+
+578
+00:23:06,465 --> 00:23:09,810
+what that model is,
+how do you do that?
+
+579
+00:23:09,810 --> 00:23:10,930
+And as I said earlier,
+
+580
+00:23:10,930 --> 00:23:12,470
+we have these very low level
+
+581
+00:23:12,690 --> 00:23:15,725
+interfaces to graphs,
+
+582
+00:23:16,025 --> 00:23:17,305
+and that basically means that
+
+583
+00:23:17,305 --> 00:23:18,505
+you end up writing a lot of
+
+584
+00:23:18,505 --> 00:23:19,645
+boilerplate code.
+
+585
+00:23:21,065 --> 00:23:22,345
+So I think the answer is that
+
+586
+00:23:22,345 --> 00:23:24,000
+we really need to
+think carefully
+
+587
+00:23:24,000 --> 00:23:26,000
+what the proper interfaces and
+
+588
+00:23:26,000 --> 00:23:27,940
+abstractions are for graphs.
+
+589
+00:23:30,080 --> 00:23:31,895
+So the second
+question is, okay,
+
+590
+00:23:31,895 --> 00:23:33,835
+so I map my data
+to an ontology.
+
+591
+00:23:34,135 --> 00:23:35,595
+Now what? So,
+
+592
+00:23:35,815 --> 00:23:39,380
+what does it mean to have some
+
+593
+00:23:39,380 --> 00:23:42,040
+kind of support
+for ontologies?
+
+594
+00:23:42,660 --> 00:23:43,960
+What is the role
+of reasoning?
+
+595
+00:23:44,180 --> 00:23:45,700
+As I said, hiding
+the reasoning
+
+596
+00:23:45,700 --> 00:23:47,755
+works well and
+and and there are
+
+597
+00:23:47,755 --> 00:23:49,115
+some things that you can pick
+
+598
+00:23:49,115 --> 00:23:50,555
+from RDF and AL that are
+
+599
+00:23:50,555 --> 00:23:51,535
+particularly useful.
+
+600
+00:23:53,760 --> 00:23:55,140
+But how do you do this?
+
+601
+00:23:57,200 --> 00:23:58,500
+At this point, I'm thinking
+
+602
+00:23:58,800 --> 00:24:00,980
+libraries built to
+support a particular
+
+603
+00:24:01,040 --> 00:24:03,435
+ontology might be the answer.
+
+604
+00:24:03,815 --> 00:24:04,615
+Like I said earlier,
+
+605
+00:24:04,615 --> 00:24:06,315
+I call these ontology engines
+
+606
+00:24:07,815 --> 00:24:10,320
+so that you
+basically have some
+
+607
+00:24:10,320 --> 00:24:12,000
+software support if you decide
+
+608
+00:24:12,000 --> 00:24:13,700
+to adopt a particular ontology
+
+609
+00:24:14,240 --> 00:24:16,020
+that you use for
+modeling your data.
+
+610
+00:24:19,415 --> 00:24:20,615
+So then there's
+the question of
+
+611
+00:24:20,615 --> 00:24:22,395
+property graphs versus RDF.
+
+612
+00:24:22,535 --> 00:24:24,395
+What do we do about those?
+
+613
+00:24:25,550 --> 00:24:28,430
+Choosing between
+the two is hard.
+
+614
+00:24:28,430 --> 00:24:29,570
+It leads to confusion.
+
+615
+00:24:30,830 --> 00:24:31,870
+We have this effort,
+
+616
+00:24:31,870 --> 00:24:33,870
+the RDF star effort that is
+
+617
+00:24:33,870 --> 00:24:37,375
+going to offer some
+alleviation to this,
+
+618
+00:24:37,935 --> 00:24:38,675
+this problem,
+
+619
+00:24:40,575 --> 00:24:42,730
+but may not get us
+quite quite there.
+
+620
+00:24:42,890 --> 00:24:45,230
+For that, the OneGraph Unified
+
+621
+00:24:45,290 --> 00:24:50,110
+Meta Model should
+bring a relief.
+
+622
+00:24:51,185 --> 00:24:53,205
+And, we recently
+published a paper
+
+623
+00:24:54,385 --> 00:24:56,545
+on this and, I'll
+have the link
+
+624
+00:24:56,545 --> 00:24:58,165
+to that at the end of
+the presentation.
+
+625
+00:25:00,600 --> 00:25:01,500
+And then finally,
+
+626
+00:25:02,920 --> 00:25:04,940
+there's this question of,
+
+627
+00:25:06,255 --> 00:25:09,395
+can we get out
+of this practice
+
+628
+00:25:09,455 --> 00:25:15,010
+of never ending integrations
+
+629
+00:25:15,150 --> 00:25:18,530
+between data that
+sits in silos.
+
+630
+00:25:20,485 --> 00:25:22,085
+Modern tools we have do not
+
+631
+00:25:22,085 --> 00:25:23,865
+actually offer
+a single unified
+
+632
+00:25:23,925 --> 00:25:24,905
+view of data.
+
+633
+00:25:26,085 --> 00:25:27,925
+And I do believe that graphs,
+
+634
+00:25:27,925 --> 00:25:29,830
+particularly built on built on
+
+635
+00:25:29,830 --> 00:25:31,370
+RDF and OWL modeling,
+
+636
+00:25:32,150 --> 00:25:34,150
+can offer this unifying
+logical view.
+
+637
+00:25:34,150 --> 00:25:35,350
+And that doesn't
+mean there has
+
+638
+00:25:35,350 --> 00:25:37,210
+to be a physical
+view of the data.
+
+639
+00:25:37,855 --> 00:25:39,775
+But we need some
+common language
+
+640
+00:25:39,775 --> 00:25:42,015
+to talk about data so that we
+
+641
+00:25:42,015 --> 00:25:43,955
+can talk about
+integrations and
+
+642
+00:25:44,470 --> 00:25:46,250
+we can kind of separate
+the applications
+
+643
+00:25:46,710 --> 00:25:48,170
+from the physical data.
+
+644
+00:25:51,565 --> 00:25:53,025
+So those are my
+thoughts today.
+
+645
+00:25:53,805 --> 00:25:55,165
+I'm happy to take
+questions and
+
+646
+00:25:55,165 --> 00:25:56,785
+here are some links,
+
+647
+00:25:59,540 --> 00:26:01,460
+some material
+about how to build
+
+648
+00:26:01,460 --> 00:26:04,260
+knowledge graphs
+on using Neptune
+
+649
+00:26:04,260 --> 00:26:07,240
+and then this
+paper of ours that
+
+650
+00:26:08,185 --> 00:26:11,645
+talks about
+the unifying model,
+
+651
+00:26:13,465 --> 00:26:17,994
+between RDF and
+Propertures. Thank you.
+

@@ -1,0 +1,3075 @@
+1
+00:00:06,320 --> 00:00:08,160
+Hello. I'm Victor Lee,
+
+2
+00:00:08,160 --> 00:00:09,920
+vice president of
+machine learning
+
+3
+00:00:09,920 --> 00:00:11,300
+and AI at TigerGraph,
+
+4
+00:00:11,755 --> 00:00:13,195
+and I'm here today to talk to
+
+5
+00:00:13,195 --> 00:00:15,355
+you about graph algorithms and
+
+6
+00:00:15,355 --> 00:00:16,495
+graph machine learning,
+
+7
+00:00:16,715 --> 00:00:18,735
+making sense of
+today's choices.
+
+8
+00:00:21,080 --> 00:00:22,920
+So what is graph
+machine learning?
+
+9
+00:00:22,920 --> 00:00:24,440
+You may have heard
+several things
+
+10
+00:00:24,440 --> 00:00:25,880
+about it. Of course,
+
+11
+00:00:25,880 --> 00:00:27,580
+we start with
+graph algorithms,
+
+12
+00:00:28,205 --> 00:00:28,925
+knowledge graphs,
+
+13
+00:00:28,925 --> 00:00:30,525
+which have both
+been around for
+
+14
+00:00:30,525 --> 00:00:32,765
+a long time. Now we hear about
+
+15
+00:00:32,765 --> 00:00:35,265
+graph data science,
+graph embeddings,
+
+16
+00:00:35,565 --> 00:00:36,785
+graph neural networks.
+
+17
+00:00:37,410 --> 00:00:38,770
+Maybe you know what these team
+
+18
+00:00:38,930 --> 00:00:41,010
+terms mean. Maybe they're less
+
+19
+00:00:41,010 --> 00:00:41,970
+familiar to you.
+
+20
+00:00:41,970 --> 00:00:43,250
+But even if you know them,
+
+21
+00:00:43,250 --> 00:00:44,630
+how do they all fit together?
+
+22
+00:00:44,850 --> 00:00:47,235
+What are the use cases?
+
+23
+00:00:47,455 --> 00:00:49,375
+How should you
+orchestrate these
+
+24
+00:00:49,375 --> 00:00:51,635
+into some real
+world use cases?
+
+25
+00:00:53,740 --> 00:00:55,100
+So we're gonna
+be going through
+
+26
+00:00:55,100 --> 00:00:56,640
+some questions in this talk.
+
+27
+00:00:57,020 --> 00:00:58,460
+Does graph machine learning
+
+28
+00:00:58,460 --> 00:00:59,760
+replace graph algorithms?
+
+29
+00:01:01,905 --> 00:01:03,285
+What is a graph embedding?
+
+30
+00:01:05,025 --> 00:01:06,305
+What's the difference between
+
+31
+00:01:06,305 --> 00:01:07,665
+graph neural networks and
+
+32
+00:01:07,665 --> 00:01:09,125
+conventional neural networks?
+
+33
+00:01:10,510 --> 00:01:12,110
+What are the use
+cases for these
+
+34
+00:01:12,110 --> 00:01:14,610
+methods? And lastly,
+
+35
+00:01:14,750 --> 00:01:16,430
+what setup do I need to run
+
+36
+00:01:16,430 --> 00:01:17,615
+graph machine learning?
+
+37
+00:01:17,855 --> 00:01:18,575
+These, we hope,
+
+38
+00:01:18,575 --> 00:01:19,935
+are maybe some
+of the questions
+
+39
+00:01:19,935 --> 00:01:21,135
+that you have, and we'll be
+
+40
+00:01:21,135 --> 00:01:22,675
+addressing them in this talk.
+
+41
+00:01:23,695 --> 00:01:25,695
+So the first thing to remember
+
+42
+00:01:25,695 --> 00:01:27,230
+is that there's more than one
+
+43
+00:01:27,230 --> 00:01:28,530
+type of machine learning.
+
+44
+00:01:28,590 --> 00:01:30,030
+So first of all,
+
+45
+00:01:30,030 --> 00:01:32,110
+we have unsupervised
+machine learning,
+
+46
+00:01:32,110 --> 00:01:33,550
+which is very data driven.
+
+47
+00:01:33,550 --> 00:01:35,875
+You you just look at
+the data you have,
+
+48
+00:01:35,955 --> 00:01:38,055
+and you run some automated,
+
+49
+00:01:39,155 --> 00:01:41,175
+analytics to try to uncover
+
+50
+00:01:41,715 --> 00:01:44,295
+interesting things,
+relevant things,
+
+51
+00:01:45,180 --> 00:01:46,640
+characteristic of that data.
+
+52
+00:01:46,700 --> 00:01:49,580
+You're not you don't know what
+
+53
+00:01:49,580 --> 00:01:50,560
+you're looking for.
+
+54
+00:01:51,180 --> 00:01:53,415
+You just let the data
+itself tell you.
+
+55
+00:01:53,495 --> 00:01:55,675
+And graph algorithms
+are an excellent
+
+56
+00:01:55,735 --> 00:01:57,495
+example of unsupervised
+learning.
+
+57
+00:01:57,495 --> 00:01:58,455
+So in that way,
+
+58
+00:01:58,455 --> 00:02:00,695
+graph algorithms
+apply to machine
+
+59
+00:02:00,695 --> 00:02:02,480
+learning. Then
+there's supervised.
+
+60
+00:02:03,420 --> 00:02:04,860
+When people talk about ML,
+
+61
+00:02:04,860 --> 00:02:06,300
+they're actually
+usually talking
+
+62
+00:02:06,300 --> 00:02:07,680
+about supervised learning,
+
+63
+00:02:08,300 --> 00:02:09,820
+particularly deep learning and
+
+64
+00:02:09,820 --> 00:02:10,640
+neural networks.
+
+65
+00:02:10,905 --> 00:02:12,985
+And so there's usually some,
+
+66
+00:02:13,305 --> 00:02:14,345
+particular aim,
+
+67
+00:02:14,345 --> 00:02:15,785
+like you're trying to make
+
+68
+00:02:15,785 --> 00:02:18,205
+predictions based on
+some existing data.
+
+69
+00:02:20,550 --> 00:02:22,710
+It's tied to
+classify objects.
+
+70
+00:02:22,710 --> 00:02:25,270
+If I if I don't know what type
+
+71
+00:02:25,270 --> 00:02:25,990
+of thing this is,
+
+72
+00:02:25,990 --> 00:02:28,230
+can I use previous examples to
+
+73
+00:02:28,230 --> 00:02:30,015
+develop a a model?
+
+74
+00:02:30,315 --> 00:02:31,775
+Think of decision trees.
+
+75
+00:02:31,835 --> 00:02:33,375
+Decision trees are an example
+
+76
+00:02:33,515 --> 00:02:36,255
+of of a model which classifies
+
+77
+00:02:36,395 --> 00:02:38,015
+something. You answer
+some questions,
+
+78
+00:02:38,075 --> 00:02:39,740
+yes or no, and it eventually
+
+79
+00:02:39,740 --> 00:02:41,420
+gives you an answer
+and says, oh,
+
+80
+00:02:41,420 --> 00:02:43,180
+you are this type of thing or
+
+81
+00:02:43,180 --> 00:02:44,160
+you should do this.
+
+82
+00:02:44,460 --> 00:02:46,240
+It's it's putting
+you into a class
+
+83
+00:02:46,485 --> 00:02:48,405
+and learning what well,
+
+84
+00:02:48,405 --> 00:02:49,685
+what are the questions you we
+
+85
+00:02:49,685 --> 00:02:51,285
+should ask in
+the decision tree.
+
+86
+00:02:51,285 --> 00:02:52,885
+Sometimes you use
+machine learning
+
+87
+00:02:52,885 --> 00:02:54,270
+for that. And
+there's reinforcement
+
+88
+00:02:54,650 --> 00:02:56,670
+learning. That's when you just
+
+89
+00:02:56,810 --> 00:02:58,410
+try a task and
+you're gonna make
+
+90
+00:02:58,410 --> 00:02:59,610
+mistakes, but you learn from
+
+91
+00:02:59,610 --> 00:03:00,810
+those mistakes,
+and eventually,
+
+92
+00:03:00,810 --> 00:03:02,510
+you learn how to do
+it really well.
+
+93
+00:03:03,485 --> 00:03:06,205
+So graph can apply both to
+
+94
+00:03:06,205 --> 00:03:08,605
+unsupervised and
+supervised and
+
+95
+00:03:08,605 --> 00:03:09,425
+and reinforcement.
+
+96
+00:03:09,645 --> 00:03:12,100
+We're gonna focus primarily on
+
+97
+00:03:12,100 --> 00:03:13,800
+supervised learning
+in this talk.
+
+98
+00:03:15,140 --> 00:03:17,960
+It's also good to
+look at a typical
+
+99
+00:03:18,415 --> 00:03:20,255
+pipeline or workflow for doing
+
+100
+00:03:20,255 --> 00:03:21,455
+machine learning because this
+
+101
+00:03:21,455 --> 00:03:24,015
+will tell us at
+what stages and
+
+102
+00:03:24,015 --> 00:03:26,115
+in what ways graph can help.
+
+103
+00:03:26,420 --> 00:03:28,520
+So first of all,
+at the beginning,
+
+104
+00:03:28,580 --> 00:03:30,180
+when you're just
+gathering your
+
+105
+00:03:30,180 --> 00:03:31,640
+data and assembling it,
+
+106
+00:03:32,340 --> 00:03:34,360
+you made a a decision,
+presumably,
+
+107
+00:03:34,660 --> 00:03:36,165
+to model it as a graph.
+
+108
+00:03:36,165 --> 00:03:37,525
+Since we're talking
+about graph
+
+109
+00:03:37,525 --> 00:03:38,345
+machine learning,
+
+110
+00:03:38,485 --> 00:03:40,085
+we've gotta start
+off with a graph.
+
+111
+00:03:40,085 --> 00:03:41,765
+So if you've made the decision
+
+112
+00:03:41,765 --> 00:03:43,065
+that the relationships,
+
+113
+00:03:43,650 --> 00:03:45,010
+the connections that you can
+
+114
+00:03:45,010 --> 00:03:48,070
+express in a graph
+are that added,
+
+115
+00:03:49,090 --> 00:03:50,610
+density of information,
+I call it.
+
+116
+00:03:50,610 --> 00:03:52,865
+So more understanding
+how things
+
+117
+00:03:52,865 --> 00:03:54,625
+are connected to each other is
+
+118
+00:03:54,625 --> 00:03:56,225
+often what you're
+trying that's
+
+119
+00:03:56,225 --> 00:03:57,925
+the nature of
+understanding data.
+
+120
+00:03:59,490 --> 00:04:01,730
+And so, that's
+the first way it
+
+121
+00:04:01,730 --> 00:04:03,890
+contributes. The
+second is kinda
+
+122
+00:04:03,890 --> 00:04:04,930
+cleaning up your data,
+
+123
+00:04:04,930 --> 00:04:06,290
+making sure that things are
+
+124
+00:04:06,290 --> 00:04:07,990
+represented in
+a standard way,
+
+125
+00:04:08,735 --> 00:04:09,615
+representing things that,
+
+126
+00:04:11,055 --> 00:04:12,735
+might appear as
+different objects
+
+127
+00:04:12,735 --> 00:04:14,655
+in the original
+data are in fact
+
+128
+00:04:14,655 --> 00:04:16,195
+the same real world object.
+
+129
+00:04:16,440 --> 00:04:17,740
+That's entity resolution.
+
+130
+00:04:17,800 --> 00:04:18,940
+Trying to find those,
+
+131
+00:04:19,720 --> 00:04:21,560
+making those matches of of
+
+132
+00:04:21,560 --> 00:04:23,000
+different identities that are
+
+133
+00:04:23,000 --> 00:04:24,060
+in fact the same.
+
+134
+00:04:24,925 --> 00:04:26,365
+You can use graph
+based techniques
+
+135
+00:04:26,365 --> 00:04:27,105
+for that.
+
+136
+00:04:27,805 --> 00:04:29,965
+And when here in the middle,
+
+137
+00:04:29,965 --> 00:04:31,565
+this is the core
+section where,
+
+138
+00:04:31,565 --> 00:04:32,925
+traditionally,
+graph has played
+
+139
+00:04:32,925 --> 00:04:34,305
+a role in machine learning.
+
+140
+00:04:34,990 --> 00:04:37,070
+Using graph based
+features either
+
+141
+00:04:37,070 --> 00:04:38,670
+through either
+through standard
+
+142
+00:04:38,670 --> 00:04:41,170
+algorithms or writing specific
+
+143
+00:04:41,310 --> 00:04:43,475
+pattern matching queries that
+
+144
+00:04:43,475 --> 00:04:45,395
+that you designed for for your
+
+145
+00:04:45,395 --> 00:04:47,395
+application. And
+this is all in
+
+146
+00:04:47,395 --> 00:04:49,015
+the data preparation phase.
+
+147
+00:04:49,235 --> 00:04:50,995
+And then we get to
+the model training.
+
+148
+00:04:50,995 --> 00:04:52,435
+And and this is model training
+
+149
+00:04:52,435 --> 00:04:54,010
+is when people
+talk about machine
+
+150
+00:04:54,010 --> 00:04:55,370
+learning. That's, again,
+
+151
+00:04:55,370 --> 00:04:56,990
+usually what they're
+thinking about.
+
+152
+00:04:57,130 --> 00:04:58,650
+And now we have graph neural
+
+153
+00:04:58,650 --> 00:05:00,590
+networks where if you
+have graph data,
+
+154
+00:05:01,085 --> 00:05:02,845
+you can train directly on that
+
+155
+00:05:02,845 --> 00:05:04,365
+using a graph neural network.
+
+156
+00:05:04,365 --> 00:05:06,065
+So we'll talk about that.
+
+157
+00:05:06,285 --> 00:05:08,285
+And then we have
+graph embedding.
+
+158
+00:05:08,285 --> 00:05:09,005
+And and, again,
+
+159
+00:05:09,005 --> 00:05:10,045
+that's one of the terms we're
+
+160
+00:05:10,045 --> 00:05:11,950
+gonna define, and
+I've intentionally
+
+161
+00:05:12,010 --> 00:05:13,930
+put it in between feature
+
+162
+00:05:13,930 --> 00:05:15,610
+extraction and model training
+
+163
+00:05:15,610 --> 00:05:17,630
+because it has
+aspects of both.
+
+164
+00:05:19,825 --> 00:05:23,105
+So we have answered the first
+
+165
+00:05:23,105 --> 00:05:23,925
+of our questions.
+
+166
+00:05:23,985 --> 00:05:25,425
+Does graph machine learning
+
+167
+00:05:25,425 --> 00:05:27,840
+replace graph algorithms? No.
+
+168
+00:05:27,840 --> 00:05:29,380
+It doesn't because
+they contribute
+
+169
+00:05:30,000 --> 00:05:30,980
+in different ways.
+
+170
+00:05:31,680 --> 00:05:33,360
+Graph algorithms
+are great during
+
+171
+00:05:33,360 --> 00:05:35,905
+the the feature extraction and
+
+172
+00:05:35,905 --> 00:05:37,025
+feature engineering phase.
+
+173
+00:05:37,025 --> 00:05:38,545
+They can also be used during
+
+174
+00:05:38,545 --> 00:05:40,645
+the the data cleansing phase.
+
+175
+00:05:41,425 --> 00:05:45,150
+But then you use graph machine
+
+176
+00:05:45,150 --> 00:05:47,250
+learning is really
+the whole scope.
+
+177
+00:05:47,950 --> 00:05:49,230
+But if you wanted to think of
+
+178
+00:05:49,230 --> 00:05:51,010
+it as just the graph
+neural networks,
+
+179
+00:05:51,195 --> 00:05:53,115
+then that is a a later stage
+
+180
+00:05:53,115 --> 00:05:54,715
+that comes after you probably
+
+181
+00:05:54,715 --> 00:05:55,935
+use the graph algorithms.
+
+182
+00:05:58,610 --> 00:06:00,870
+So then looking at
+that pipeline,
+
+183
+00:06:01,010 --> 00:06:03,670
+we saw about four stages where
+
+184
+00:06:03,730 --> 00:06:05,030
+graph can can contribute.
+
+185
+00:06:05,225 --> 00:06:06,825
+So we're gonna talk about each
+
+186
+00:06:06,825 --> 00:06:07,725
+of those phases.
+
+187
+00:06:07,945 --> 00:06:09,805
+The first being graph assisted
+
+188
+00:06:09,865 --> 00:06:12,125
+data cleansing and
+entity resolution.
+
+189
+00:06:13,370 --> 00:06:15,290
+So one thing that graphs are
+
+190
+00:06:15,290 --> 00:06:17,870
+really good at is
+is identifying
+
+191
+00:06:18,250 --> 00:06:19,950
+how things can be similar.
+
+192
+00:06:21,635 --> 00:06:22,595
+And in this sense,
+
+193
+00:06:22,595 --> 00:06:23,895
+let's talk about this.
+
+194
+00:06:25,715 --> 00:06:26,775
+In this example,
+
+195
+00:06:27,075 --> 00:06:29,770
+we have persons represented by
+
+196
+00:06:29,770 --> 00:06:32,970
+these larger orange
+vertices, person a,
+
+197
+00:06:32,970 --> 00:06:33,790
+person b.
+
+198
+00:06:33,850 --> 00:06:36,270
+And then features
+or characteristics
+
+199
+00:06:36,595 --> 00:06:38,355
+of them are
+represented by these
+
+200
+00:06:38,355 --> 00:06:40,115
+blue vertices.
+And think about,
+
+201
+00:06:40,115 --> 00:06:42,935
+say, x might
+represent a school,
+
+202
+00:06:42,995 --> 00:06:44,135
+a particular school,
+
+203
+00:06:44,480 --> 00:06:46,080
+And this relationship means
+
+204
+00:06:46,080 --> 00:06:47,940
+person a went to school x,
+
+205
+00:06:48,320 --> 00:06:49,920
+and this means person b also
+
+206
+00:06:49,920 --> 00:06:51,280
+went to school x.
+
+207
+00:06:51,280 --> 00:06:52,980
+So they have
+something in common.
+
+208
+00:06:53,955 --> 00:06:56,755
+We y might be a city they grew
+
+209
+00:06:56,755 --> 00:06:58,855
+up in or a place
+where they work.
+
+210
+00:06:58,915 --> 00:07:00,455
+Other things they
+have in common.
+
+211
+00:07:01,570 --> 00:07:03,250
+And so there's a reason why
+
+212
+00:07:03,250 --> 00:07:04,870
+these are because,
+
+213
+00:07:05,650 --> 00:07:07,570
+a city or a school
+are entities
+
+214
+00:07:07,570 --> 00:07:09,010
+in themselves.
+That's why they're
+
+215
+00:07:09,010 --> 00:07:11,475
+represented as vertices
+in the graph.
+
+216
+00:07:11,615 --> 00:07:12,975
+And so there are a variety of
+
+217
+00:07:12,975 --> 00:07:14,655
+similarity algorithms that can
+
+218
+00:07:14,655 --> 00:07:17,135
+be used to compute
+a score based
+
+219
+00:07:17,135 --> 00:07:19,910
+on this graph
+structural similarity
+
+220
+00:07:20,130 --> 00:07:21,190
+of a and b.
+
+221
+00:07:21,490 --> 00:07:23,190
+One example is
+cosine similarity.
+
+222
+00:07:23,570 --> 00:07:25,330
+It takes into
+account the weights
+
+223
+00:07:25,330 --> 00:07:27,225
+of these relationships
+and which
+
+224
+00:07:27,225 --> 00:07:29,545
+ones match. And
+so the score is
+
+225
+00:07:29,545 --> 00:07:30,905
+gonna depend on the weights of
+
+226
+00:07:30,905 --> 00:07:33,625
+these x and y
+that match, but,
+
+227
+00:07:34,105 --> 00:07:36,650
+divided by
+the existence of all
+
+228
+00:07:36,650 --> 00:07:38,410
+these other factors
+whether they
+
+229
+00:07:38,410 --> 00:07:40,730
+match or not.
+That's one way to
+
+230
+00:07:40,730 --> 00:07:41,870
+come up with a score.
+
+231
+00:07:43,145 --> 00:07:44,845
+And once you have
+these scores,
+
+232
+00:07:45,465 --> 00:07:48,365
+you can represent
+them on the graph.
+
+233
+00:07:48,745 --> 00:07:50,890
+And this means
+that, this group,
+
+234
+00:07:50,890 --> 00:07:52,410
+they all have
+similarity scores
+
+235
+00:07:52,410 --> 00:07:53,310
+in the nineties.
+
+236
+00:07:53,930 --> 00:07:55,210
+This group, they also have
+
+237
+00:07:55,210 --> 00:07:56,830
+similarity scores
+in the nineties,
+
+238
+00:07:57,125 --> 00:07:59,625
+but c to e is only
+sixty five percent,
+
+239
+00:07:59,685 --> 00:08:02,105
+d to f is only sixty percent.
+
+240
+00:08:02,325 --> 00:08:03,465
+So those are lower.
+
+241
+00:08:03,685 --> 00:08:05,933
+We can then do some
+scores together.
+
+242
+00:08:05,933 --> 00:08:06,600
+If these each
+represent persons,
+
+243
+00:08:06,600 --> 00:08:07,400
+that may mean of these seven
+
+244
+00:08:07,400 --> 00:08:08,310
+original digital identities,
+
+245
+00:08:12,985 --> 00:08:14,925
+that may mean of these seven
+
+246
+00:08:14,985 --> 00:08:16,685
+original digital identities,
+
+247
+00:08:17,145 --> 00:08:19,405
+we've reduced them or resolved
+
+248
+00:08:19,545 --> 00:08:22,045
+them to two real
+world identities,
+
+249
+00:08:22,590 --> 00:08:24,530
+Barry Markham and
+Beryl Markham.
+
+250
+00:08:26,590 --> 00:08:27,630
+So that is,
+
+251
+00:08:27,950 --> 00:08:29,890
+one way that we can use graph
+
+252
+00:08:30,030 --> 00:08:31,250
+for machine learning.
+
+253
+00:08:31,865 --> 00:08:34,825
+Another way is to help develop
+
+254
+00:08:34,825 --> 00:08:36,905
+graph based features
+using either
+
+255
+00:08:36,905 --> 00:08:38,605
+algorithms or
+pattern matching.
+
+256
+00:08:39,890 --> 00:08:41,730
+And there are lots and lots of
+
+257
+00:08:41,730 --> 00:08:42,550
+graph algorithms.
+
+258
+00:08:42,850 --> 00:08:44,610
+This is TigerGraph's current
+
+259
+00:08:44,610 --> 00:08:46,050
+graph algorithm library with
+
+260
+00:08:46,050 --> 00:08:47,190
+about fifty algorithms,
+
+261
+00:08:47,250 --> 00:08:48,470
+but they're even more.
+
+262
+00:08:48,565 --> 00:08:50,265
+So we're always
+developing more.
+
+263
+00:08:50,645 --> 00:08:52,565
+And they each have
+their different uses.
+
+264
+00:08:52,565 --> 00:08:53,845
+The first thing
+you wanna do is
+
+265
+00:08:53,845 --> 00:08:55,685
+understand the general type.
+
+266
+00:08:55,685 --> 00:08:57,260
+Is it the similarity
+algorithm?
+
+267
+00:08:57,320 --> 00:08:58,940
+Is it a centrality algorithm?
+
+268
+00:08:59,240 --> 00:09:00,780
+Is it a community algorithm?
+
+269
+00:09:01,640 --> 00:09:02,760
+And then there are different
+
+270
+00:09:02,760 --> 00:09:03,800
+varieties among those.
+
+271
+00:09:03,800 --> 00:09:06,615
+And then they
+those all lead to
+
+272
+00:09:06,615 --> 00:09:07,435
+different uses.
+
+273
+00:09:07,575 --> 00:09:09,355
+So here's just one example.
+
+274
+00:09:10,055 --> 00:09:11,975
+And say you're
+trying to do some,
+
+275
+00:09:12,455 --> 00:09:15,200
+data preprocessing
+to help predict,
+
+276
+00:09:16,780 --> 00:09:19,100
+fraud. And so in this data,
+
+277
+00:09:19,100 --> 00:09:22,720
+we have different application
+
+278
+00:09:23,100 --> 00:09:26,675
+programs and then
+which have personal,
+
+279
+00:09:27,375 --> 00:09:28,595
+identifying information.
+
+280
+00:09:28,655 --> 00:09:30,435
+So this is your
+private information,
+
+281
+00:09:30,495 --> 00:09:32,275
+which you don't
+want unauthorized
+
+282
+00:09:32,495 --> 00:09:33,635
+persons to see.
+
+283
+00:09:35,010 --> 00:09:36,610
+And by informing this graph,
+
+284
+00:09:36,610 --> 00:09:38,210
+we can see that there's
+a cluster here,
+
+285
+00:09:38,210 --> 00:09:39,750
+and there's a cluster here.
+
+286
+00:09:40,290 --> 00:09:43,225
+And so and then
+we we apply a a
+
+287
+00:09:43,225 --> 00:09:44,745
+community detection algorithm
+
+288
+00:09:44,745 --> 00:09:46,985
+like Louvain. And then we move
+
+289
+00:09:46,985 --> 00:09:48,745
+on to the next step when we
+
+290
+00:09:48,745 --> 00:09:51,580
+apply other graph
+algorithms to
+
+291
+00:09:51,580 --> 00:09:54,300
+each of these communities
+to score them,
+
+292
+00:09:54,300 --> 00:09:56,400
+so to speak. So we
+have page rank.
+
+293
+00:09:56,620 --> 00:09:58,735
+We have, LCC,
+
+294
+00:09:58,955 --> 00:10:00,815
+another community
+detection algorithm,
+
+295
+00:10:01,275 --> 00:10:02,735
+and diameter estimation,
+
+296
+00:10:02,875 --> 00:10:04,735
+which has to do with, like,
+
+297
+00:10:04,795 --> 00:10:07,030
+what are the shortest paths to
+
+298
+00:10:07,030 --> 00:10:08,810
+get from anywhere
+to anywhere.
+
+299
+00:10:09,830 --> 00:10:11,750
+So the diameter
+is the so called
+
+300
+00:10:11,750 --> 00:10:13,770
+worst of the shortest paths
+
+301
+00:10:14,195 --> 00:10:15,555
+toward the longest
+of the shortest
+
+302
+00:10:15,555 --> 00:10:18,355
+paths. So we come
+up with an average
+
+303
+00:10:18,355 --> 00:10:21,415
+page rank score,
+an average LCC score,
+
+304
+00:10:21,690 --> 00:10:23,770
+and the diameter of each of
+
+305
+00:10:23,770 --> 00:10:24,590
+these components.
+
+306
+00:10:24,970 --> 00:10:27,390
+And you see, like excuse me.
+
+307
+00:10:27,770 --> 00:10:30,075
+These scores, you
+can think of,
+
+308
+00:10:30,075 --> 00:10:30,815
+they're numeric,
+
+309
+00:10:31,035 --> 00:10:32,155
+and there's a set of them,
+
+310
+00:10:32,155 --> 00:10:33,755
+and you can put them
+in a particular
+
+311
+00:10:33,755 --> 00:10:35,275
+order. And, hey,
+
+312
+00:10:35,275 --> 00:10:36,450
+that's a feature vector.
+
+313
+00:10:36,450 --> 00:10:38,130
+So you now have
+a feature vector
+
+314
+00:10:38,130 --> 00:10:39,430
+to describe this community.
+
+315
+00:10:39,730 --> 00:10:41,250
+You can then put that into,
+
+316
+00:10:42,050 --> 00:10:43,490
+machine learning algorithm to
+
+317
+00:10:43,490 --> 00:10:46,455
+train it to detect
+which communities
+
+318
+00:10:46,995 --> 00:10:48,755
+represent ones with fraud and
+
+319
+00:10:48,755 --> 00:10:49,795
+which ones not.
+
+320
+00:10:49,795 --> 00:10:51,795
+Because fraud tends to happen
+
+321
+00:10:51,955 --> 00:10:53,715
+fraud is an interaction
+activity.
+
+322
+00:10:53,715 --> 00:10:55,540
+You don't do fraud
+in isolation.
+
+323
+00:10:55,540 --> 00:10:57,380
+It's always
+somebody interacting
+
+324
+00:10:57,380 --> 00:10:58,360
+with somebody else.
+
+325
+00:10:59,860 --> 00:11:01,000
+That's just one example.
+
+326
+00:11:01,355 --> 00:11:03,055
+This was taken from
+a presentation
+
+327
+00:11:03,115 --> 00:11:04,735
+that one of my
+colleagues presented.
+
+328
+00:11:05,275 --> 00:11:06,715
+So if you wanna
+find out more,
+
+329
+00:11:06,715 --> 00:11:08,555
+you can find other use cases
+
+330
+00:11:08,555 --> 00:11:09,455
+from this presentation.
+
+331
+00:11:11,840 --> 00:11:13,760
+It's not always
+standard algorithms,
+
+332
+00:11:13,760 --> 00:11:15,620
+but sometimes it's
+it's designated
+
+333
+00:11:17,280 --> 00:11:18,640
+pattern matching queries that
+
+334
+00:11:18,640 --> 00:11:20,965
+you wrote for a specific
+application.
+
+335
+00:11:21,345 --> 00:11:22,245
+In this application,
+
+336
+00:11:22,785 --> 00:11:25,445
+we have phones and phone calls
+
+337
+00:11:26,145 --> 00:11:27,990
+between the phones
+to form a graph.
+
+338
+00:11:28,310 --> 00:11:30,630
+And the the phone
+service provider,
+
+339
+00:11:30,630 --> 00:11:31,770
+the telephone company,
+
+340
+00:11:32,070 --> 00:11:33,750
+is trying to do some automated
+
+341
+00:11:33,750 --> 00:11:35,865
+real time detection to see if
+
+342
+00:11:35,865 --> 00:11:38,185
+the phone call
+is is from an an
+
+343
+00:11:38,185 --> 00:11:40,605
+annoying unwanted
+caller, a spammer,
+
+344
+00:11:40,985 --> 00:11:42,025
+somebody who is,
+
+345
+00:11:42,025 --> 00:11:43,305
+you know or maybe running some
+
+346
+00:11:43,305 --> 00:11:44,205
+kind of scam.
+
+347
+00:11:44,430 --> 00:11:49,070
+And so we extract
+we design several.
+
+348
+00:11:49,070 --> 00:11:50,590
+In this case, several
+means a hundred
+
+349
+00:11:50,590 --> 00:11:53,070
+and eighteen different pattern
+
+350
+00:11:53,070 --> 00:11:54,735
+queries such as,
+
+351
+00:11:54,875 --> 00:11:57,195
+is there a pattern
+that's a a four
+
+352
+00:11:57,195 --> 00:11:58,395
+hop loop?
+
+353
+00:11:58,395 --> 00:12:00,475
+Is there a pattern of calls to
+
+354
+00:12:00,475 --> 00:12:02,750
+people who were
+called frequently
+
+355
+00:12:02,890 --> 00:12:04,270
+over a certain time window?
+
+356
+00:12:04,490 --> 00:12:06,810
+Is there a pattern
+of people who
+
+357
+00:12:06,810 --> 00:12:08,570
+were called and then call each
+
+358
+00:12:08,570 --> 00:12:10,405
+other forming
+a little subcommunity
+
+359
+00:12:11,105 --> 00:12:12,565
+within a certain time window.
+
+360
+00:12:12,865 --> 00:12:14,325
+And each of these features
+
+361
+00:12:14,465 --> 00:12:15,585
+produces a score.
+
+362
+00:12:15,585 --> 00:12:16,705
+Maybe it's yes, no.
+
+363
+00:12:16,705 --> 00:12:18,420
+Maybe it's it's how often that
+
+364
+00:12:18,420 --> 00:12:19,320
+pattern occurs.
+
+365
+00:12:20,020 --> 00:12:21,640
+And so you get
+a feature vector.
+
+366
+00:12:22,180 --> 00:12:24,340
+And then using that
+feature vector,
+
+367
+00:12:24,340 --> 00:12:25,400
+we can, again,
+
+368
+00:12:25,695 --> 00:12:28,195
+train it to detect
+in which cases,
+
+369
+00:12:28,815 --> 00:12:30,895
+are these is this caller,
+
+370
+00:12:30,895 --> 00:12:32,815
+the hub caller,
+caller number one,
+
+371
+00:12:32,815 --> 00:12:33,615
+the source caller,
+
+372
+00:12:34,510 --> 00:12:36,350
+somebody who might
+be a spammer
+
+373
+00:12:36,350 --> 00:12:40,670
+or a scammer. So that's
+the second way.
+
+374
+00:12:40,670 --> 00:12:42,270
+Again, graph can help us with
+
+375
+00:12:42,270 --> 00:12:43,090
+data cleansing.
+
+376
+00:12:43,265 --> 00:12:44,785
+Graph can help
+us with the very
+
+377
+00:12:44,785 --> 00:12:47,045
+important phase of
+feature engineering.
+
+378
+00:12:47,665 --> 00:12:49,685
+And now we're starting
+to get into,
+
+379
+00:12:50,910 --> 00:12:52,610
+getting into machine learning
+
+380
+00:12:52,990 --> 00:12:55,010
+traditionally thought of,
+
+381
+00:12:55,550 --> 00:12:57,410
+and into the the model
+building.
+
+382
+00:12:58,005 --> 00:13:00,165
+So one of the challenges with
+
+383
+00:13:00,165 --> 00:13:01,685
+graph machine learning is that
+
+384
+00:13:01,685 --> 00:13:03,785
+the data is so rich.
+
+385
+00:13:04,405 --> 00:13:05,925
+It expresses such a wealth of
+
+386
+00:13:05,925 --> 00:13:08,380
+information that
+sometimes doing
+
+387
+00:13:08,380 --> 00:13:10,480
+this analytics can
+be expensive.
+
+388
+00:13:12,220 --> 00:13:14,380
+And, also,
+conventional machine
+
+389
+00:13:14,380 --> 00:13:16,105
+learning techniques are based
+
+390
+00:13:16,105 --> 00:13:18,525
+on matrices, not on graphs.
+
+391
+00:13:18,825 --> 00:13:21,305
+So there's a difference
+in the data
+
+392
+00:13:21,305 --> 00:13:22,985
+representation, and there may
+
+393
+00:13:22,985 --> 00:13:24,505
+be too much information to
+
+394
+00:13:24,505 --> 00:13:25,370
+conveniently handle.
+
+395
+00:13:25,850 --> 00:13:28,490
+So enter embeddings
+as a possible
+
+396
+00:13:28,490 --> 00:13:30,350
+solution. What is
+an embedding?
+
+397
+00:13:30,570 --> 00:13:31,950
+That was one of
+our questions.
+
+398
+00:13:32,845 --> 00:13:34,605
+An embedding transforms high
+
+399
+00:13:34,605 --> 00:13:37,185
+dimensional data into
+a lower dimension.
+
+400
+00:13:37,965 --> 00:13:39,965
+An everyday example is how do
+
+401
+00:13:39,965 --> 00:13:43,380
+we represent our
+spherical Earth,
+
+402
+00:13:43,520 --> 00:13:45,300
+our planet on a map?
+
+403
+00:13:45,440 --> 00:13:47,380
+We all read two
+dimensional maps,
+
+404
+00:13:47,680 --> 00:13:48,980
+but the world is
+three-dimensional.
+
+405
+00:13:50,425 --> 00:13:53,305
+A local map seems
+not a problem
+
+406
+00:13:53,305 --> 00:13:55,405
+because the the Earth
+is relatively
+
+407
+00:13:55,625 --> 00:13:57,245
+flat in that small space.
+
+408
+00:13:57,465 --> 00:13:59,085
+But when you look at
+the whole globe,
+
+409
+00:13:59,450 --> 00:14:01,710
+we have squashed
+the globe onto
+
+410
+00:14:01,770 --> 00:14:02,830
+a flat projection.
+
+411
+00:14:03,290 --> 00:14:05,470
+And that projection
+is an embedding
+
+412
+00:14:05,770 --> 00:14:07,610
+that is a transform from three
+
+413
+00:14:07,610 --> 00:14:09,935
+d to two d. And
+so you preserve
+
+414
+00:14:09,935 --> 00:14:11,075
+the important details.
+
+415
+00:14:11,375 --> 00:14:12,255
+You may have, you know,
+
+416
+00:14:12,255 --> 00:14:13,935
+have some error in
+some of the less
+
+417
+00:14:13,935 --> 00:14:14,915
+important details.
+
+418
+00:14:16,700 --> 00:14:18,300
+And you can see here examples
+
+419
+00:14:18,300 --> 00:14:20,880
+of three different ways to map
+
+420
+00:14:21,100 --> 00:14:23,440
+the the world onto
+a flat surface.
+
+421
+00:14:24,995 --> 00:14:26,615
+So in the case of a graph,
+
+422
+00:14:26,835 --> 00:14:29,315
+what we wanna do is we start
+
+423
+00:14:29,315 --> 00:14:30,455
+with the original graph.
+
+424
+00:14:30,595 --> 00:14:33,470
+We take into account
+all the edges,
+
+425
+00:14:33,470 --> 00:14:35,230
+the structural relationship of
+
+426
+00:14:35,230 --> 00:14:37,390
+the graph, but we wanna reduce
+
+427
+00:14:37,390 --> 00:14:40,030
+that down till we just have
+
+428
+00:14:40,030 --> 00:14:42,265
+individual vertex vectors.
+
+429
+00:14:42,325 --> 00:14:43,525
+So if these are the,
+
+430
+00:14:44,005 --> 00:14:45,865
+the seven vertices
+plus their edges,
+
+431
+00:14:46,085 --> 00:14:48,505
+we now just have
+these seven rows,
+
+432
+00:14:49,365 --> 00:14:53,610
+and each row
+produces a a vector
+
+433
+00:14:53,610 --> 00:14:54,810
+of latent features.
+
+434
+00:14:54,810 --> 00:14:55,930
+They're not features that you
+
+435
+00:14:55,930 --> 00:14:56,990
+can really describe,
+
+436
+00:14:57,265 --> 00:14:58,885
+but a key is that this is
+
+437
+00:14:59,025 --> 00:15:00,565
+relatively compact.
+
+438
+00:15:00,625 --> 00:15:03,185
+And so now we have
+tabular data,
+
+439
+00:15:03,185 --> 00:15:04,885
+which is relatively compact,
+
+440
+00:15:05,180 --> 00:15:07,440
+makes it amenable
+to traditional
+
+441
+00:15:07,580 --> 00:15:08,400
+machine learning.
+
+442
+00:15:08,620 --> 00:15:11,100
+And the the characteristic of
+
+443
+00:15:11,100 --> 00:15:13,575
+these embeddings
+is that if two
+
+444
+00:15:13,575 --> 00:15:15,835
+vertices have are structurally
+
+445
+00:15:15,975 --> 00:15:18,135
+similar because
+they connect to
+
+446
+00:15:18,135 --> 00:15:20,055
+similar things in
+the in the same
+
+447
+00:15:20,055 --> 00:15:22,510
+quantity, with
+the same similar
+
+448
+00:15:22,570 --> 00:15:24,830
+types of paths, the same
+type of things,
+
+449
+00:15:25,210 --> 00:15:26,910
+then they will have
+similar vectors.
+
+450
+00:15:27,050 --> 00:15:30,285
+You can use simple algorithms
+
+451
+00:15:30,505 --> 00:15:31,805
+that compute the similarity
+
+452
+00:15:31,865 --> 00:15:32,925
+between two vectors,
+
+453
+00:15:33,225 --> 00:15:34,525
+like cosine similarity,
+
+454
+00:15:35,145 --> 00:15:36,445
+and you can make
+recommendations.
+
+455
+00:15:37,270 --> 00:15:38,790
+You can group them together if
+
+456
+00:15:38,790 --> 00:15:40,570
+they're similar and
+do classification.
+
+457
+00:15:40,790 --> 00:15:42,170
+So you can do
+fraud detection.
+
+458
+00:15:43,110 --> 00:15:44,550
+Again, all the use cases that
+
+459
+00:15:44,550 --> 00:15:46,810
+we had before, you
+can still apply.
+
+460
+00:15:47,155 --> 00:15:48,755
+But we've transformed
+the data.
+
+461
+00:15:48,755 --> 00:15:50,215
+We've made it more scalable.
+
+462
+00:15:50,755 --> 00:15:51,975
+We've made it more compact,
+
+463
+00:15:52,595 --> 00:15:55,180
+and we've made it tabular,
+
+464
+00:15:55,240 --> 00:15:56,440
+which means that you can now
+
+465
+00:15:56,440 --> 00:15:58,280
+apply traditional
+machine learning
+
+466
+00:15:58,280 --> 00:16:02,695
+techniques. So, again,
+why you do it?
+
+467
+00:16:02,695 --> 00:16:05,755
+So to get a dense
+tabular format,
+
+468
+00:16:06,695 --> 00:16:08,135
+and to gather graph features
+
+469
+00:16:08,135 --> 00:16:11,950
+without manual
+extraction. Oops.
+
+470
+00:16:13,210 --> 00:16:14,270
+And is it suitable?
+
+471
+00:16:14,330 --> 00:16:15,930
+It's it's better if your data
+
+472
+00:16:15,930 --> 00:16:17,530
+is relatively
+stable because if
+
+473
+00:16:17,530 --> 00:16:18,410
+the data changes,
+
+474
+00:16:18,410 --> 00:16:19,870
+you will have to retrain it.
+
+475
+00:16:21,685 --> 00:16:23,525
+So this answers our
+second question,
+
+476
+00:16:23,525 --> 00:16:24,905
+what is a graph embedding?
+
+477
+00:16:25,365 --> 00:16:26,585
+It's something that transforms
+
+478
+00:16:26,725 --> 00:16:29,065
+this graph structure
+into a compressed
+
+479
+00:16:29,100 --> 00:16:30,160
+tabular format.
+
+480
+00:16:32,540 --> 00:16:34,780
+And we're now on
+to the the fourth
+
+481
+00:16:34,780 --> 00:16:36,595
+way that graph can help with
+
+482
+00:16:36,675 --> 00:16:37,315
+with machine learning,
+
+483
+00:16:37,315 --> 00:16:39,075
+and that is graph
+neural networks
+
+484
+00:16:39,075 --> 00:16:42,515
+themselves. And start with
+
+485
+00:16:42,515 --> 00:16:44,055
+ordinary neural networks,
+
+486
+00:16:44,435 --> 00:16:45,795
+a powerful machine learning
+
+487
+00:16:45,795 --> 00:16:48,360
+technique to predict
+and classify.
+
+488
+00:16:48,740 --> 00:16:50,500
+That's why they're
+so well known,
+
+489
+00:16:50,500 --> 00:16:51,560
+so well used.
+
+490
+00:16:51,940 --> 00:16:53,240
+And then we have graph,
+
+491
+00:16:53,620 --> 00:16:55,140
+which is a great way to get
+
+492
+00:16:55,140 --> 00:16:57,315
+insight through
+connected data.
+
+493
+00:16:58,575 --> 00:17:00,355
+You can somehow
+combine these.
+
+494
+00:17:01,295 --> 00:17:03,055
+You can get what
+we call a graph
+
+495
+00:17:03,055 --> 00:17:04,755
+convolutional neural network.
+
+496
+00:17:05,210 --> 00:17:06,910
+So you take the traditional,
+
+497
+00:17:08,250 --> 00:17:10,010
+neural network data flow,
+
+498
+00:17:10,010 --> 00:17:11,530
+and you insert an additional
+
+499
+00:17:11,530 --> 00:17:13,230
+step called the graph
+convolution.
+
+500
+00:17:13,725 --> 00:17:15,105
+And what the graph convolution
+
+501
+00:17:15,165 --> 00:17:17,825
+is doing is if each of these
+
+502
+00:17:18,365 --> 00:17:20,845
+nodes represents
+a vertex in the graph,
+
+503
+00:17:20,845 --> 00:17:22,525
+and so we're trying to learn
+
+504
+00:17:22,525 --> 00:17:24,930
+about each each
+vertex in the graph.
+
+505
+00:17:25,710 --> 00:17:27,630
+We have a convolution
+step where
+
+506
+00:17:27,630 --> 00:17:28,930
+we take its features,
+
+507
+00:17:29,390 --> 00:17:30,610
+this vertices features,
+
+508
+00:17:31,015 --> 00:17:32,795
+and combine it
+with the features
+
+509
+00:17:32,855 --> 00:17:33,995
+of its neighbors.
+
+510
+00:17:35,895 --> 00:17:37,595
+And maybe maybe
+it's an averaging.
+
+511
+00:17:38,150 --> 00:17:39,110
+Maybe it's something a little
+
+512
+00:17:39,110 --> 00:17:40,570
+more complicated
+than averaging.
+
+513
+00:17:40,710 --> 00:17:41,350
+But in some way,
+
+514
+00:17:41,350 --> 00:17:43,690
+you combine and or convolve,
+
+515
+00:17:44,150 --> 00:17:45,050
+as they say,
+
+516
+00:17:46,065 --> 00:17:48,465
+the features of this
+with its neighbors.
+
+517
+00:17:48,465 --> 00:17:49,845
+And that's where the graph
+
+518
+00:17:50,385 --> 00:17:51,665
+information is coming in,
+
+519
+00:17:51,665 --> 00:17:52,645
+looking at neighbors.
+
+520
+00:17:53,025 --> 00:17:54,980
+So combines the added insight
+
+521
+00:17:54,980 --> 00:17:57,220
+from connected data
+with the modeling
+
+522
+00:17:57,220 --> 00:17:58,360
+power of neural networks.
+
+523
+00:17:58,580 --> 00:17:59,780
+And so you're actually using
+
+524
+00:17:59,780 --> 00:18:02,145
+the graph structure
+doing during
+
+525
+00:18:02,145 --> 00:18:04,085
+the training. It's not
+just a preprocessing
+
+526
+00:18:04,465 --> 00:18:06,465
+step, but it's
+you actually use
+
+527
+00:18:06,465 --> 00:18:09,045
+the graph during
+the training cycle.
+
+528
+00:18:11,670 --> 00:18:13,190
+The basic one we talked about
+
+529
+00:18:13,190 --> 00:18:14,730
+is for a so called homogeneous
+
+530
+00:18:15,110 --> 00:18:16,710
+graph when there's
+only one type
+
+531
+00:18:16,710 --> 00:18:18,650
+of node, one type of edge.
+
+532
+00:18:19,745 --> 00:18:21,025
+If you're familiar with other
+
+533
+00:18:21,025 --> 00:18:22,465
+types of graph neural network
+
+534
+00:18:22,785 --> 00:18:24,225
+other types of neural networks
+
+535
+00:18:24,225 --> 00:18:25,985
+like attention networks or
+
+536
+00:18:25,985 --> 00:18:27,125
+recurrent networks,
+
+537
+00:18:27,750 --> 00:18:29,370
+There are graph
+versions of those.
+
+538
+00:18:29,590 --> 00:18:32,070
+There are also algorithms for
+
+539
+00:18:32,070 --> 00:18:33,830
+heterogeneous graphs
+where there's
+
+540
+00:18:33,830 --> 00:18:35,350
+more than one type of node and
+
+541
+00:18:35,350 --> 00:18:36,730
+more than one type of edge.
+
+542
+00:18:37,415 --> 00:18:39,255
+And what's better,
+there are now,
+
+543
+00:18:39,575 --> 00:18:42,555
+three major open
+source GNN libraries.
+
+544
+00:18:43,335 --> 00:18:45,340
+All, PyTorch has one.
+
+545
+00:18:45,980 --> 00:18:48,080
+TensorFlow just
+introduced one.
+
+546
+00:18:48,140 --> 00:18:50,620
+And there's one DGL
+deep graph learning,
+
+547
+00:18:50,620 --> 00:18:52,300
+which is just for graph.
+
+548
+00:18:52,300 --> 00:18:54,475
+And so you have
+several choices
+
+549
+00:18:54,695 --> 00:18:56,395
+for open source libraries,
+
+550
+00:18:56,455 --> 00:18:58,235
+all in all in
+Python, of course.
+
+551
+00:18:58,775 --> 00:19:00,855
+And so why would
+you use a graph
+
+552
+00:19:00,855 --> 00:19:01,675
+neural network?
+
+553
+00:19:02,310 --> 00:19:03,750
+If you have a graph
+where graph
+
+554
+00:19:03,750 --> 00:19:05,910
+structure is important and you
+
+555
+00:19:05,910 --> 00:19:08,230
+have a task where
+a neural network
+
+556
+00:19:08,230 --> 00:19:10,010
+makes sense, then you probably
+
+557
+00:19:10,185 --> 00:19:11,545
+should consider using graph or
+
+558
+00:19:11,545 --> 00:19:12,445
+neural network.
+
+559
+00:19:13,225 --> 00:19:14,605
+So you don't need
+to explicitly
+
+560
+00:19:15,065 --> 00:19:16,285
+extract graph features.
+
+561
+00:19:16,505 --> 00:19:17,965
+The training will do that.
+
+562
+00:19:18,280 --> 00:19:19,800
+As I've said, they're they're
+
+563
+00:19:19,800 --> 00:19:22,140
+a well established
+software framework,
+
+564
+00:19:23,800 --> 00:19:25,240
+because you're
+you're just using
+
+565
+00:19:25,240 --> 00:19:27,100
+a neural network.
+It's in Python.
+
+566
+00:19:27,345 --> 00:19:29,025
+You can use a lot
+of the the same
+
+567
+00:19:29,025 --> 00:19:32,165
+infrastructure. And so that
+
+568
+00:19:32,385 --> 00:19:33,765
+answers one more question,
+
+569
+00:19:33,985 --> 00:19:35,185
+and we'll we'll sort of say
+
+570
+00:19:35,185 --> 00:19:36,485
+what's the difference between
+
+571
+00:19:36,640 --> 00:19:38,560
+a graph neural network
+and a conventional
+
+572
+00:19:38,560 --> 00:19:39,540
+neural network.
+
+573
+00:19:39,680 --> 00:19:41,440
+It's that convolution
+phase when
+
+574
+00:19:41,440 --> 00:19:42,800
+you're taking the local graph
+
+575
+00:19:42,800 --> 00:19:44,160
+structure into account during
+
+576
+00:19:44,160 --> 00:19:45,515
+the training. And I said,
+
+577
+00:19:45,515 --> 00:19:46,815
+we're just gonna say,
+
+578
+00:19:46,955 --> 00:19:48,635
+we've talked about
+some use cases.
+
+579
+00:19:48,635 --> 00:19:50,235
+There are lots of use cases.
+
+580
+00:19:50,235 --> 00:19:52,335
+Don't have time to get
+into all of them.
+
+581
+00:19:52,395 --> 00:19:55,240
+But, again, if if you
+have graph data,
+
+582
+00:19:55,300 --> 00:19:56,660
+you can apply these.
+
+583
+00:19:56,660 --> 00:19:58,200
+You're gonna get
+some benefit.
+
+584
+00:19:58,900 --> 00:20:00,260
+The last question we're gonna
+
+585
+00:20:00,260 --> 00:20:01,700
+look at is what setup do you
+
+586
+00:20:01,700 --> 00:20:03,205
+need for graph
+machine learning?
+
+587
+00:20:04,005 --> 00:20:05,205
+Learning. And here it's useful
+
+588
+00:20:05,205 --> 00:20:06,665
+to again look at
+our pipeline.
+
+589
+00:20:08,165 --> 00:20:10,245
+So first off,
+you're gonna want
+
+590
+00:20:10,245 --> 00:20:12,130
+a graph database
+and, hopefully,
+
+591
+00:20:12,130 --> 00:20:14,230
+a scalable one to to make sure
+
+592
+00:20:14,290 --> 00:20:15,890
+it's large enough
+and performant
+
+593
+00:20:15,890 --> 00:20:17,810
+enough for the task
+you need to do.
+
+594
+00:20:17,810 --> 00:20:18,850
+Because you're gonna be doing
+
+595
+00:20:18,850 --> 00:20:21,285
+some computationally
+complex or
+
+596
+00:20:21,285 --> 00:20:22,185
+intense stuff.
+
+597
+00:20:23,045 --> 00:20:24,345
+To do the data cleansing,
+
+598
+00:20:24,565 --> 00:20:26,085
+you're gonna have
+to be able to
+
+599
+00:20:26,085 --> 00:20:29,010
+do some queries and updates.
+
+600
+00:20:29,010 --> 00:20:30,530
+So you wanna be
+able to, you know,
+
+601
+00:20:30,530 --> 00:20:32,070
+update your data
+in the graph.
+
+602
+00:20:33,650 --> 00:20:35,010
+And you're gonna need a graph
+
+603
+00:20:35,010 --> 00:20:37,315
+algorithm library
+as well as a graph
+
+604
+00:20:37,315 --> 00:20:38,215
+query language.
+
+605
+00:20:38,275 --> 00:20:39,635
+You know, all databases come
+
+606
+00:20:39,635 --> 00:20:40,995
+with a graph query language,
+
+607
+00:20:40,995 --> 00:20:42,435
+but you want them which is
+
+608
+00:20:42,435 --> 00:20:44,670
+flexible enough
+to express some
+
+609
+00:20:44,670 --> 00:20:46,590
+of those patterns
+such as the one
+
+610
+00:20:46,590 --> 00:20:48,910
+in that, unwanted phone call
+
+611
+00:20:48,910 --> 00:20:50,370
+application we looked at.
+
+612
+00:20:51,995 --> 00:20:54,015
+And lastly, you
+need the capability
+
+613
+00:20:54,075 --> 00:20:55,535
+to run graph neural networks.
+
+614
+00:20:55,835 --> 00:20:57,435
+So where are you
+gonna get these
+
+615
+00:20:57,435 --> 00:21:00,420
+capabilities? Oh, one more.
+
+616
+00:21:00,420 --> 00:21:01,720
+Graph embedding also.
+
+617
+00:21:02,260 --> 00:21:05,540
+So all of these are or should
+
+618
+00:21:05,540 --> 00:21:07,240
+be available within
+a database.
+
+619
+00:21:07,535 --> 00:21:08,995
+Obviously, this
+is a database,
+
+620
+00:21:09,855 --> 00:21:12,255
+and you wanna be
+updating the data
+
+621
+00:21:12,255 --> 00:21:13,075
+in the database.
+
+622
+00:21:13,455 --> 00:21:15,875
+So, ideally, you
+can, run queries,
+
+623
+00:21:16,015 --> 00:21:18,910
+update, read, read,
+write, read,
+
+624
+00:21:18,910 --> 00:21:21,490
+modify, write queries here.
+
+625
+00:21:21,870 --> 00:21:23,790
+And in this phase,
+
+626
+00:21:23,790 --> 00:21:25,570
+you want a graph
+algorithm library
+
+627
+00:21:25,710 --> 00:21:27,185
+incorporated in your database
+
+628
+00:21:27,565 --> 00:21:29,005
+as well as, you know,
+
+629
+00:21:29,005 --> 00:21:30,945
+a graph query
+language can also
+
+630
+00:21:31,165 --> 00:21:32,465
+extract custom features.
+
+631
+00:21:33,085 --> 00:21:35,105
+For this last phase
+of model building,
+
+632
+00:21:35,350 --> 00:21:36,170
+you know, traditionally,
+
+633
+00:21:36,310 --> 00:21:37,750
+you would export your data to
+
+634
+00:21:37,750 --> 00:21:39,050
+machine learning server,
+
+635
+00:21:39,430 --> 00:21:41,050
+but it's becoming more common
+
+636
+00:21:41,190 --> 00:21:42,630
+that customers are looking for
+
+637
+00:21:42,630 --> 00:21:44,095
+in database machine learning.
+
+638
+00:21:44,175 --> 00:21:45,295
+And why would they do that?
+
+639
+00:21:45,295 --> 00:21:47,615
+It's because it simplifies and
+
+640
+00:21:47,615 --> 00:21:48,755
+shortens the pipeline.
+
+641
+00:21:48,975 --> 00:21:50,355
+You bring the data in.
+
+642
+00:21:50,495 --> 00:21:52,575
+You do your
+feature engineering
+
+643
+00:21:52,575 --> 00:21:54,020
+and data cleansing
+in database.
+
+644
+00:21:54,260 --> 00:21:55,960
+You train in in in database.
+
+645
+00:21:56,020 --> 00:21:57,400
+You deploy in database.
+
+646
+00:21:57,860 --> 00:21:59,940
+So there's, you
+don't have the the
+
+647
+00:21:59,940 --> 00:22:02,020
+time and expense
+of pushing data
+
+648
+00:22:02,020 --> 00:22:04,225
+from one place to
+around to another,
+
+649
+00:22:04,365 --> 00:22:05,965
+it becomes a much more data
+
+650
+00:22:05,965 --> 00:22:07,005
+centered operation.
+
+651
+00:22:07,005 --> 00:22:08,765
+You you bring the analytics to
+
+652
+00:22:08,765 --> 00:22:11,025
+the database
+rather than moving
+
+653
+00:22:11,165 --> 00:22:14,140
+the data moving
+the data in a physical
+
+654
+00:22:14,140 --> 00:22:18,240
+pipeline. And so last,
+
+655
+00:22:18,940 --> 00:22:20,460
+I think that that
+covers all of
+
+656
+00:22:20,460 --> 00:22:22,525
+our points. So let's
+let's review.
+
+657
+00:22:22,585 --> 00:22:24,425
+So graph machine learning and
+
+658
+00:22:24,425 --> 00:22:26,585
+graph algorithms contribute in
+
+659
+00:22:26,585 --> 00:22:28,685
+different and
+complementary ways
+
+660
+00:22:29,150 --> 00:22:30,830
+to analytics and
+machine learning.
+
+661
+00:22:30,830 --> 00:22:32,610
+So it's not an either
+or choice.
+
+662
+00:22:33,630 --> 00:22:34,930
+What is a graph embedding?
+
+663
+00:22:35,070 --> 00:22:36,370
+It's something that transforms
+
+664
+00:22:36,430 --> 00:22:38,695
+the graph structure
+to a a more
+
+665
+00:22:38,695 --> 00:22:40,875
+compressed and tabular format
+
+666
+00:22:41,175 --> 00:22:41,995
+for compatibility,
+
+667
+00:22:43,495 --> 00:22:45,355
+with more traditional
+machine learning.
+
+668
+00:22:46,010 --> 00:22:48,030
+Or you can do graph
+neural networks,
+
+669
+00:22:48,570 --> 00:22:50,250
+and you actually
+can use both,
+
+670
+00:22:50,250 --> 00:22:52,410
+but probably you would either
+
+671
+00:22:52,410 --> 00:22:54,410
+use a graph embedding
+with a traditional
+
+672
+00:22:54,410 --> 00:22:56,635
+neural network or
+a graph neural
+
+673
+00:22:56,635 --> 00:22:58,235
+network. And a graph neural
+
+674
+00:22:58,235 --> 00:22:59,595
+network takes local graph
+
+675
+00:22:59,595 --> 00:23:01,195
+structure into account during
+
+676
+00:23:01,195 --> 00:23:03,295
+the training. And lastly,
+
+677
+00:23:03,515 --> 00:23:04,795
+if you wanna take advantage of
+
+678
+00:23:04,795 --> 00:23:06,430
+all of this, you're gonna need
+
+679
+00:23:06,430 --> 00:23:09,010
+a scalable graph database with
+
+680
+00:23:09,070 --> 00:23:11,070
+flexible graph querying and
+
+681
+00:23:11,070 --> 00:23:12,610
+doing those read
+write updates.
+
+682
+00:23:13,365 --> 00:23:14,485
+You're gonna need a graph
+
+683
+00:23:14,485 --> 00:23:16,485
+algorithm library and either
+
+684
+00:23:16,485 --> 00:23:18,725
+an internal or external graph
+
+685
+00:23:18,725 --> 00:23:21,110
+machine learning library with
+
+686
+00:23:21,110 --> 00:23:23,690
+the advantages of
+of in database
+
+687
+00:23:23,830 --> 00:23:25,190
+machine learning where you can
+
+688
+00:23:25,190 --> 00:23:26,730
+do the training
+in the database,
+
+689
+00:23:27,430 --> 00:23:28,890
+are starting to
+become apparent.
+
+690
+00:23:29,455 --> 00:23:31,615
+And, again, we we hit on a few
+
+691
+00:23:31,615 --> 00:23:33,475
+use cases. There's
+so many more.
+
+692
+00:23:34,335 --> 00:23:35,855
+So I'll just say they abound.
+
+693
+00:23:35,855 --> 00:23:37,695
+And so thank you very much for
+
+694
+00:23:37,695 --> 00:23:39,940
+your your attention, and I,
+
+695
+00:23:40,640 --> 00:23:42,240
+hope you got something
+out of this talk.
+
+696
+00:23:42,240 --> 00:23:43,380
+Thank you very much.
+

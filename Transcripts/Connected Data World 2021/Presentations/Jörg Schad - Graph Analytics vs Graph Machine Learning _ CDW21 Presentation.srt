@@ -1,0 +1,3603 @@
+1
+00:00:05,920 --> 00:00:07,360
+Hello, and welcome to this
+
+2
+00:00:07,360 --> 00:00:08,880
+connected data world talk on
+
+3
+00:00:08,880 --> 00:00:10,740
+graph analytics
+versus GraphML.
+
+4
+00:00:12,075 --> 00:00:14,395
+Probably, most of you
+have heard about,
+
+5
+00:00:14,715 --> 00:00:16,235
+the recent uptake in graph
+
+6
+00:00:16,235 --> 00:00:18,235
+analytics and
+GraphML for a large
+
+7
+00:00:18,235 --> 00:00:19,455
+number of use cases.
+
+8
+00:00:19,670 --> 00:00:21,290
+And I actually truly believe
+
+9
+00:00:21,430 --> 00:00:23,450
+graph is the future of AI.
+
+10
+00:00:23,510 --> 00:00:25,210
+Just if we look
+at what companies
+
+11
+00:00:25,270 --> 00:00:27,210
+like Uber and
+DeepMind are doing,
+
+12
+00:00:27,445 --> 00:00:29,305
+if we look at,
+what's happening
+
+13
+00:00:29,365 --> 00:00:31,545
+in drug research
+or computational
+
+14
+00:00:32,005 --> 00:00:34,325
+chemistry. So, also,
+
+15
+00:00:34,325 --> 00:00:35,685
+if we look at Gartner trends,
+
+16
+00:00:35,685 --> 00:00:37,520
+there is a clear uptick in,
+
+17
+00:00:37,920 --> 00:00:39,540
+how we can leverage graph.
+
+18
+00:00:39,600 --> 00:00:40,480
+And I think here,
+
+19
+00:00:40,480 --> 00:00:42,160
+this audience can
+probably truly
+
+20
+00:00:42,160 --> 00:00:43,460
+appreciate this uptake,
+
+21
+00:00:44,000 --> 00:00:45,655
+which many of us probably have
+
+22
+00:00:45,655 --> 00:00:47,595
+seen coming from
+the last years.
+
+23
+00:00:48,615 --> 00:00:49,415
+I'm Jorg.
+
+24
+00:00:49,415 --> 00:00:51,195
+I'm the CTO over at RankoDB,
+
+25
+00:00:51,575 --> 00:00:52,555
+a graph database.
+
+26
+00:00:52,695 --> 00:00:55,370
+So I actually do this
+on a daily basis.
+
+27
+00:00:55,910 --> 00:00:58,630
+And, also very
+passionate about,
+
+28
+00:00:58,950 --> 00:01:00,570
+graph machine learning
+and GraphML.
+
+29
+00:01:01,935 --> 00:01:02,895
+Also, for example,
+
+30
+00:01:02,895 --> 00:01:04,835
+teaching an a weighted
+course on that.
+
+31
+00:01:05,695 --> 00:01:07,855
+So but let's actually
+dig into it.
+
+32
+00:01:07,855 --> 00:01:09,955
+Let's also see what
+this talk is about.
+
+33
+00:01:10,130 --> 00:01:12,310
+So if you're talking
+about graph AI,
+
+34
+00:01:12,370 --> 00:01:14,530
+we can often mean very
+different things.
+
+35
+00:01:14,530 --> 00:01:16,770
+So I always try to kind of
+
+36
+00:01:16,770 --> 00:01:19,925
+classify the complexity
+of queries
+
+37
+00:01:19,925 --> 00:01:22,105
+we try to answer as follows.
+
+38
+00:01:22,645 --> 00:01:24,485
+So the most simple
+things we can
+
+39
+00:01:24,485 --> 00:01:26,085
+look at are graph queries.
+
+40
+00:01:26,085 --> 00:01:27,925
+So those are queries
+which should
+
+41
+00:01:27,925 --> 00:01:30,450
+be able to, be
+answered from any,
+
+42
+00:01:30,990 --> 00:01:31,890
+graph database.
+
+43
+00:01:32,030 --> 00:01:33,390
+And it can simply be like,
+
+44
+00:01:33,390 --> 00:01:35,070
+who can introduce
+me to another
+
+45
+00:01:35,070 --> 00:01:37,070
+person in our
+social graph here
+
+46
+00:01:37,070 --> 00:01:37,795
+on the right?
+
+47
+00:01:38,435 --> 00:01:39,815
+So in the end, basically,
+
+48
+00:01:39,875 --> 00:01:41,635
+what is the path
+going from one
+
+49
+00:01:41,635 --> 00:01:43,415
+note to another
+in this graph?
+
+50
+00:01:44,355 --> 00:01:46,920
+If we want to get
+more complex and,
+
+51
+00:01:47,160 --> 00:01:49,320
+as I said, often from, like,
+
+52
+00:01:49,320 --> 00:01:50,360
+an algorithmic level,
+
+53
+00:01:50,360 --> 00:01:52,300
+we first we have to
+keep some state.
+
+54
+00:01:52,760 --> 00:01:55,505
+We have to make
+sure, to actually,
+
+55
+00:01:56,045 --> 00:01:58,225
+find something
+globally in a graph.
+
+56
+00:01:58,845 --> 00:02:00,205
+And then we actually come to
+
+57
+00:02:00,205 --> 00:02:02,205
+the realm of graph
+analytics or
+
+58
+00:02:02,205 --> 00:02:03,185
+graph algorithms.
+
+59
+00:02:04,140 --> 00:02:05,340
+And, for example,
+
+60
+00:02:05,340 --> 00:02:07,020
+questions we can answer here,
+
+61
+00:02:07,020 --> 00:02:08,860
+who has the most
+connected persons
+
+62
+00:02:08,860 --> 00:02:10,620
+in this graph? And
+you can already
+
+63
+00:02:10,620 --> 00:02:11,900
+see we have to, a,
+
+64
+00:02:11,900 --> 00:02:14,275
+look at the entire graph, b,
+
+65
+00:02:14,495 --> 00:02:16,415
+we have to keep
+some state, like,
+
+66
+00:02:16,415 --> 00:02:18,195
+how many direct neighbors,
+
+67
+00:02:18,255 --> 00:02:19,775
+how many direct
+connections does
+
+68
+00:02:19,775 --> 00:02:20,700
+a person have.
+
+69
+00:02:22,060 --> 00:02:23,740
+Then kind of see next level,
+
+70
+00:02:23,740 --> 00:02:25,100
+and this has
+really been taking
+
+71
+00:02:25,100 --> 00:02:26,460
+up over the past year,
+
+72
+00:02:26,460 --> 00:02:27,840
+is graph machine learning.
+
+73
+00:02:28,265 --> 00:02:29,805
+So graph machine learning,
+
+74
+00:02:30,345 --> 00:02:32,665
+allows us to deploy, yeah,
+
+75
+00:02:32,665 --> 00:02:35,005
+statistical machine
+learning to
+
+76
+00:02:35,065 --> 00:02:37,490
+alter our graph or to
+add, for example,
+
+77
+00:02:37,490 --> 00:02:39,270
+edges, to add node features.
+
+78
+00:02:39,570 --> 00:02:41,730
+And with that, we can do solve
+
+79
+00:02:41,730 --> 00:02:43,110
+tasks such as follows,
+
+80
+00:02:43,490 --> 00:02:44,985
+predicting potential
+connections.
+
+81
+00:02:45,065 --> 00:02:46,925
+So we can see that
+here on the right,
+
+82
+00:02:47,465 --> 00:02:49,385
+who should actually
+be connected
+
+83
+00:02:49,385 --> 00:02:50,525
+to another person,
+
+84
+00:02:51,785 --> 00:02:53,465
+but we can also predict other
+
+85
+00:02:53,465 --> 00:02:55,990
+node features that
+can, for example,
+
+86
+00:02:55,990 --> 00:02:58,170
+be the churn
+probability of people.
+
+87
+00:02:58,550 --> 00:03:00,010
+So here in this graph,
+
+88
+00:03:00,390 --> 00:03:02,150
+imagine just each node having
+
+89
+00:03:02,150 --> 00:03:03,965
+a little feature saying how
+
+90
+00:03:03,965 --> 00:03:05,665
+likely is that
+person to churn.
+
+91
+00:03:07,325 --> 00:03:09,645
+So with that, I often
+get the question
+
+92
+00:03:09,645 --> 00:03:10,845
+asked, like, what is actually
+
+93
+00:03:10,845 --> 00:03:13,030
+the difference between regular
+
+94
+00:03:13,170 --> 00:03:14,390
+ML and GraphML?
+
+95
+00:03:15,010 --> 00:03:17,510
+I really feel
+the value of GraphML
+
+96
+00:03:18,050 --> 00:03:19,590
+comes in from
+certain properties
+
+97
+00:03:19,730 --> 00:03:20,950
+of real world datasets.
+
+98
+00:03:21,625 --> 00:03:23,785
+So a default
+assumption in more
+
+99
+00:03:23,785 --> 00:03:25,485
+traditional machine
+learning is,
+
+100
+00:03:25,705 --> 00:03:27,565
+I independent and identically
+
+101
+00:03:27,705 --> 00:03:28,845
+distributed data.
+
+102
+00:03:29,170 --> 00:03:31,170
+Meaning, if we here
+on the right again,
+
+103
+00:03:31,170 --> 00:03:33,330
+our social graph
+and we will try
+
+104
+00:03:33,330 --> 00:03:35,730
+to to churn,
+imagine how likely
+
+105
+00:03:35,730 --> 00:03:37,090
+someone to leave our favorite
+
+106
+00:03:37,090 --> 00:03:37,910
+social network,
+
+107
+00:03:38,265 --> 00:03:39,865
+we would treat each person
+
+108
+00:03:39,865 --> 00:03:42,665
+independently, and then try to
+
+109
+00:03:42,665 --> 00:03:43,885
+predict those probabilities.
+
+110
+00:03:45,600 --> 00:03:46,720
+But if we think about it,
+
+111
+00:03:46,720 --> 00:03:48,160
+what just what will happen if
+
+112
+00:03:48,160 --> 00:03:49,760
+all our friends have just left
+
+113
+00:03:49,760 --> 00:03:51,060
+the same social network?
+
+114
+00:03:51,520 --> 00:03:53,600
+So we are very likely to leave
+
+115
+00:03:53,600 --> 00:03:55,325
+that as well as we'll
+just be left with,
+
+116
+00:03:55,325 --> 00:03:57,165
+like, a so lonely
+node out there
+
+117
+00:03:57,165 --> 00:03:58,385
+without any connections.
+
+118
+00:03:59,325 --> 00:04:00,545
+That is the one part.
+
+119
+00:04:00,605 --> 00:04:01,965
+Second part, probably,
+
+120
+00:04:01,965 --> 00:04:03,645
+we'll also have
+similar reasons
+
+121
+00:04:03,645 --> 00:04:05,410
+to lease the network
+as all our
+
+122
+00:04:05,410 --> 00:04:07,650
+friends set. This is actually
+
+123
+00:04:07,650 --> 00:04:09,090
+an assumption
+which is true for
+
+124
+00:04:09,090 --> 00:04:10,390
+many real world datasets,
+
+125
+00:04:10,690 --> 00:04:11,830
+and it's called homophily.
+
+126
+00:04:12,445 --> 00:04:14,145
+And that means
+that neighboring
+
+127
+00:04:14,205 --> 00:04:15,345
+nodes are similar.
+
+128
+00:04:15,485 --> 00:04:16,545
+So in this case,
+
+129
+00:04:16,605 --> 00:04:19,185
+we would have
+a similar likelihood
+
+130
+00:04:19,325 --> 00:04:21,005
+to leave that networks and all
+
+131
+00:04:21,005 --> 00:04:22,410
+our neighbors, or at least it
+
+132
+00:04:22,410 --> 00:04:23,790
+wouldn't be totally
+independent.
+
+133
+00:04:24,490 --> 00:04:26,090
+Of course, in
+traditional machine
+
+134
+00:04:26,090 --> 00:04:28,170
+learning, you could
+create an extra
+
+135
+00:04:28,170 --> 00:04:30,755
+feature such as
+how many of your
+
+136
+00:04:30,815 --> 00:04:32,355
+direct connections
+have recently
+
+137
+00:04:32,415 --> 00:04:33,395
+left that network.
+
+138
+00:04:33,535 --> 00:04:35,135
+What you see is
+this is an explicit
+
+139
+00:04:35,135 --> 00:04:36,595
+feature we have to create,
+
+140
+00:04:36,815 --> 00:04:38,755
+we actually have to
+consider upfront.
+
+141
+00:04:40,290 --> 00:04:42,930
+So, let's dive
+a little bit more
+
+142
+00:04:42,930 --> 00:04:44,690
+into what we can do or what
+
+143
+00:04:44,690 --> 00:04:46,610
+actually graph
+analytics is about.
+
+144
+00:04:46,610 --> 00:04:48,815
+Graph analytics sometimes also
+
+145
+00:04:48,815 --> 00:04:50,675
+refer to network analysis.
+
+146
+00:04:51,055 --> 00:04:52,815
+Feel free to ping
+me about the exact
+
+147
+00:04:52,815 --> 00:04:54,015
+difference. Happy to get into
+
+148
+00:04:54,015 --> 00:04:55,200
+the debate about that.
+
+149
+00:04:55,440 --> 00:04:57,540
+But, this is actually analysis
+
+150
+00:04:57,680 --> 00:04:59,460
+applied to graph based data.
+
+151
+00:05:00,080 --> 00:05:02,240
+It's, used across many fields
+
+152
+00:05:02,240 --> 00:05:03,940
+from fraud detection,
+marketing,
+
+153
+00:05:04,635 --> 00:05:05,855
+supply chain management,
+
+154
+00:05:05,995 --> 00:05:08,495
+recommendation systems,
+law enforcement,
+
+155
+00:05:08,635 --> 00:05:09,535
+cyber, etcetera.
+
+156
+00:05:10,075 --> 00:05:12,050
+And if we drill down,
+
+157
+00:05:12,050 --> 00:05:13,650
+we can also treat it as a way
+
+158
+00:05:13,650 --> 00:05:15,190
+of unsupervised learning.
+
+159
+00:05:15,410 --> 00:05:17,250
+So, let's take a look at what
+
+160
+00:05:17,250 --> 00:05:18,470
+we can do with that.
+
+161
+00:05:18,605 --> 00:05:19,505
+So for example,
+
+162
+00:05:19,805 --> 00:05:21,585
+who is important
+or influential?
+
+163
+00:05:21,885 --> 00:05:23,825
+We saw that already
+in the previous
+
+164
+00:05:23,885 --> 00:05:26,205
+example about, our network,
+
+165
+00:05:26,205 --> 00:05:27,985
+who is the most
+connected persons.
+
+166
+00:05:28,230 --> 00:05:30,150
+But we'll also
+see shortly that
+
+167
+00:05:30,150 --> 00:05:32,010
+there are many other measures
+
+168
+00:05:32,070 --> 00:05:33,750
+of what it means
+to be important
+
+169
+00:05:33,750 --> 00:05:35,830
+in a network. And,
+again, here,
+
+170
+00:05:35,830 --> 00:05:37,325
+you can already
+see this is kind
+
+171
+00:05:37,325 --> 00:05:39,505
+of like unsupervised
+learning task.
+
+172
+00:05:40,045 --> 00:05:41,405
+We just have to graph.
+
+173
+00:05:41,405 --> 00:05:43,565
+We don't necessarily
+have a training
+
+174
+00:05:43,565 --> 00:05:45,345
+target, but we can
+still identify,
+
+175
+00:05:46,330 --> 00:05:47,850
+who would be important or who
+
+176
+00:05:47,850 --> 00:05:49,710
+not till we kind of
+get an outcome.
+
+177
+00:05:50,730 --> 00:05:52,945
+Other things, can
+be if we have,
+
+178
+00:05:53,665 --> 00:05:54,725
+a chain of events,
+
+179
+00:05:54,945 --> 00:05:56,945
+what is the connection or also
+
+180
+00:05:56,945 --> 00:05:58,065
+topological sort,
+
+181
+00:05:58,065 --> 00:06:00,325
+what is kind of a valid order
+
+182
+00:06:00,465 --> 00:06:02,405
+in those partially
+sorted graphs.
+
+183
+00:06:02,705 --> 00:06:04,050
+And An important question,
+
+184
+00:06:04,050 --> 00:06:06,630
+especially in
+computational chemistry,
+
+185
+00:06:06,690 --> 00:06:07,490
+is, for example,
+
+186
+00:06:07,490 --> 00:06:09,010
+are two graphs the same,
+
+187
+00:06:09,010 --> 00:06:11,010
+which isn't as easy to answer
+
+188
+00:06:11,010 --> 00:06:12,150
+as you might think.
+
+189
+00:06:12,405 --> 00:06:14,005
+And as there exist
+a large number
+
+190
+00:06:14,005 --> 00:06:15,785
+of algorithms for
+that as well.
+
+191
+00:06:16,325 --> 00:06:18,565
+And then if we go into
+fraud detection,
+
+192
+00:06:18,565 --> 00:06:20,245
+what is unusual in a graph?
+
+193
+00:06:20,245 --> 00:06:23,420
+So where are
+certain patterns,
+
+194
+00:06:23,800 --> 00:06:25,660
+which might indicate,
+
+195
+00:06:25,960 --> 00:06:27,100
+fraudulist behaviors?
+
+196
+00:06:27,240 --> 00:06:28,860
+So for example, in
+money laundering,
+
+197
+00:06:28,920 --> 00:06:32,095
+certain chains of
+money going around,
+
+198
+00:06:32,795 --> 00:06:33,615
+being transferred,
+
+199
+00:06:33,915 --> 00:06:36,395
+back to that same
+person, or just,
+
+200
+00:06:36,635 --> 00:06:38,400
+also large aggregates of,
+
+201
+00:06:38,640 --> 00:06:40,320
+money being transferred
+from, like,
+
+202
+00:06:40,320 --> 00:06:42,240
+one account split up and then
+
+203
+00:06:42,240 --> 00:06:43,520
+eventually arriving at,
+
+204
+00:06:44,240 --> 00:06:46,340
+the destination account.
+
+205
+00:06:47,715 --> 00:06:50,195
+Maybe just as the last
+example here,
+
+206
+00:06:50,195 --> 00:06:51,255
+also very important,
+
+207
+00:06:51,315 --> 00:06:52,935
+what are
+distinct subcommunities
+
+208
+00:06:53,395 --> 00:06:54,830
+in the graph? Again,
+
+209
+00:06:54,830 --> 00:06:56,910
+many real world datasets have
+
+210
+00:06:56,910 --> 00:06:57,810
+certain subcommunities.
+
+211
+00:06:58,590 --> 00:07:00,450
+If you think back
+of our social,
+
+212
+00:07:00,830 --> 00:07:02,295
+graphs there, they often were
+
+213
+00:07:02,295 --> 00:07:03,915
+like those independent
+components,
+
+214
+00:07:04,455 --> 00:07:06,315
+or, like, independent
+subgroups,
+
+215
+00:07:06,375 --> 00:07:07,435
+more or less independent,
+
+216
+00:07:08,135 --> 00:07:10,135
+of people usually
+centered around
+
+217
+00:07:10,135 --> 00:07:11,410
+one or more influencers.
+
+218
+00:07:13,250 --> 00:07:14,930
+And often, it's
+quite important
+
+219
+00:07:14,930 --> 00:07:16,950
+to identify those
+communities.
+
+220
+00:07:17,490 --> 00:07:18,530
+For example, again,
+
+221
+00:07:18,530 --> 00:07:20,450
+this can also be used in fraud
+
+222
+00:07:20,450 --> 00:07:22,545
+detection. Where we
+try to identify,
+
+223
+00:07:22,545 --> 00:07:24,165
+for example, similar items,
+
+224
+00:07:24,625 --> 00:07:27,525
+similar offerings,
+in into subgroups.
+
+225
+00:07:30,490 --> 00:07:32,810
+Usually, graph algorithms are
+
+226
+00:07:32,810 --> 00:07:34,830
+specked by a number
+of graph algorithms.
+
+227
+00:07:35,210 --> 00:07:37,370
+And so here, just a very crude
+
+228
+00:07:37,370 --> 00:07:39,115
+approach of kind
+of classifying
+
+229
+00:07:39,415 --> 00:07:41,195
+what what is all out there.
+
+230
+00:07:41,255 --> 00:07:42,055
+So on the one hand,
+
+231
+00:07:42,055 --> 00:07:43,995
+we have search or
+traversal algorithms.
+
+232
+00:07:44,135 --> 00:07:46,635
+So that can be, Node or Edge.
+
+233
+00:07:46,880 --> 00:07:48,480
+This can be breadth
+first search,
+
+234
+00:07:48,480 --> 00:07:49,280
+depth first search,
+
+235
+00:07:49,280 --> 00:07:50,720
+which probably most
+of you already
+
+236
+00:07:50,720 --> 00:07:52,880
+covered, in some kind of,
+
+237
+00:07:53,200 --> 00:07:55,575
+computer science or
+mathematics class.
+
+238
+00:07:56,455 --> 00:07:57,595
+Otherwise, pathfinding,
+
+239
+00:07:57,815 --> 00:07:59,255
+and that would be the simple
+
+240
+00:07:59,255 --> 00:08:01,195
+example we saw also
+in the beginning.
+
+241
+00:08:01,655 --> 00:08:02,535
+I want to find, like,
+
+242
+00:08:02,535 --> 00:08:05,210
+how can I get from
+HEP or in a social
+
+243
+00:08:05,210 --> 00:08:06,650
+network? Who can introduce me
+
+244
+00:08:06,650 --> 00:08:08,110
+to a specific person?
+
+245
+00:08:09,290 --> 00:08:10,330
+And then we come to,
+
+246
+00:08:10,650 --> 00:08:12,490
+the more fancy term for what's
+
+247
+00:08:12,490 --> 00:08:13,535
+actually important out there,
+
+248
+00:08:13,535 --> 00:08:14,755
+and that would be centrality.
+
+249
+00:08:15,455 --> 00:08:16,495
+And so, for example,
+
+250
+00:08:16,495 --> 00:08:18,335
+what are important nodes in in
+
+251
+00:08:18,335 --> 00:08:19,875
+a network, in a graph?
+
+252
+00:08:20,370 --> 00:08:22,050
+And, those are
+also referred to
+
+253
+00:08:22,050 --> 00:08:22,850
+as central nodes,
+
+254
+00:08:22,850 --> 00:08:24,070
+hence the notion centrality.
+
+255
+00:08:24,770 --> 00:08:27,505
+If we now, take
+a look on the right,
+
+256
+00:08:28,065 --> 00:08:30,005
+so here we have
+the sample graph,
+
+257
+00:08:30,385 --> 00:08:33,185
+and, I try to identify several
+
+258
+00:08:33,185 --> 00:08:35,320
+different notions
+of centrality
+
+259
+00:08:35,700 --> 00:08:37,300
+because it really depends on
+
+260
+00:08:37,300 --> 00:08:39,000
+the what you want to achieve.
+
+261
+00:08:39,220 --> 00:08:41,460
+So, for example,
+the most simple one,
+
+262
+00:08:41,460 --> 00:08:43,165
+and that was also the question
+
+263
+00:08:43,165 --> 00:08:44,925
+we had in in the beginning in
+
+264
+00:08:44,925 --> 00:08:46,145
+the introduction slide,
+
+265
+00:08:46,365 --> 00:08:47,965
+what is the most
+connected node?
+
+266
+00:08:47,965 --> 00:08:49,645
+And this is referred to degree
+
+267
+00:08:49,645 --> 00:08:51,670
+centrality because
+the degree,
+
+268
+00:08:51,730 --> 00:08:53,750
+the number of
+edges a node has,
+
+269
+00:08:54,290 --> 00:08:56,310
+is basically that
+criterion here.
+
+270
+00:08:56,690 --> 00:08:59,110
+The other one, is
+closeness centrality,
+
+271
+00:08:59,495 --> 00:09:02,155
+and that refers to
+which nodes are,
+
+272
+00:09:02,775 --> 00:09:05,255
+on average, close to
+all other nodes.
+
+273
+00:09:05,255 --> 00:09:05,975
+So, for example,
+
+274
+00:09:05,975 --> 00:09:08,150
+if you're trying to build some
+
+275
+00:09:08,150 --> 00:09:09,670
+kind of distribution center,
+
+276
+00:09:09,670 --> 00:09:11,190
+which from where you can reach
+
+277
+00:09:11,190 --> 00:09:15,050
+all nodes on average,
+in the fastest,
+
+278
+00:09:15,270 --> 00:09:17,050
+that would be
+the closeness centrality.
+
+279
+00:09:18,045 --> 00:09:20,045
+Last, there's also betweenness
+
+280
+00:09:20,045 --> 00:09:23,165
+centrality, and that's,
+referring to,
+
+281
+00:09:23,405 --> 00:09:25,485
+what is how important
+are certain
+
+282
+00:09:25,485 --> 00:09:27,800
+nodes in connecting
+multiple subgroups.
+
+283
+00:09:27,860 --> 00:09:29,620
+And you can already see if you
+
+284
+00:09:29,620 --> 00:09:31,700
+drop this node
+here as in between
+
+285
+00:09:31,700 --> 00:09:35,080
+as the, purple node,
+you would actually,
+
+286
+00:09:36,355 --> 00:09:38,215
+split that graph
+into two subgraphs.
+
+287
+00:09:38,595 --> 00:09:39,635
+There, of course, exist,
+
+288
+00:09:39,955 --> 00:09:41,895
+even many more
+different centrality
+
+289
+00:09:42,035 --> 00:09:43,555
+measures, but just to give you
+
+290
+00:09:43,555 --> 00:09:45,155
+feeling for it that
+this is a very
+
+291
+00:09:45,155 --> 00:09:47,640
+important task with
+also many important,
+
+292
+00:09:48,180 --> 00:09:49,080
+different algorithms.
+
+293
+00:09:51,060 --> 00:09:53,460
+And next, quite common task is
+
+294
+00:09:53,460 --> 00:09:55,025
+cycle detection, And this is,
+
+295
+00:09:55,025 --> 00:09:57,285
+for example, given my database
+
+296
+00:09:57,345 --> 00:09:58,785
+background, as this is often
+
+297
+00:09:58,785 --> 00:10:01,045
+used in database
+systems to identify,
+
+298
+00:10:01,665 --> 00:10:03,150
+cycles or a deadlock
+detection.
+
+299
+00:10:03,310 --> 00:10:05,710
+If one transaction
+depends on another,
+
+300
+00:10:05,710 --> 00:10:06,770
+depends on another,
+
+301
+00:10:06,910 --> 00:10:08,350
+then probably we have to abort
+
+302
+00:10:08,350 --> 00:10:09,090
+one transaction.
+
+303
+00:10:09,550 --> 00:10:11,790
+And, if you want
+to imagine that,
+
+304
+00:10:11,790 --> 00:10:13,835
+that's actually a cycle
+in the dependency
+
+305
+00:10:13,975 --> 00:10:15,195
+graph of those transactions.
+
+306
+00:10:15,735 --> 00:10:17,655
+And it can also be
+used in general
+
+307
+00:10:17,655 --> 00:10:18,615
+network analysis.
+
+308
+00:10:18,615 --> 00:10:20,055
+So if you're trying
+to plan, like,
+
+309
+00:10:20,055 --> 00:10:22,235
+a routing or
+telecommunication networks,
+
+310
+00:10:22,490 --> 00:10:23,710
+also cycle detection,
+
+311
+00:10:24,410 --> 00:10:25,950
+can be an important step.
+
+312
+00:10:26,570 --> 00:10:27,850
+And then, last,
+
+313
+00:10:27,850 --> 00:10:29,370
+we already touched
+upon that is
+
+314
+00:10:29,370 --> 00:10:31,135
+community detection where we
+
+315
+00:10:31,135 --> 00:10:32,575
+want to identify distinct
+
+316
+00:10:32,575 --> 00:10:33,955
+subgroups in our graphs,
+
+317
+00:10:34,175 --> 00:10:35,795
+which might have
+different behavior.
+
+318
+00:10:36,415 --> 00:10:38,015
+And, again, this
+could, for example,
+
+319
+00:10:38,015 --> 00:10:40,435
+also be in
+a telecommunications network,
+
+320
+00:10:41,110 --> 00:10:43,510
+where, which helps
+us to generate
+
+321
+00:10:43,510 --> 00:10:46,230
+our routing or in
+cases like a fraud
+
+322
+00:10:46,230 --> 00:10:47,590
+detection where we want to
+
+323
+00:10:47,590 --> 00:10:49,050
+identify distinct subgroups,
+
+324
+00:10:49,255 --> 00:10:50,855
+which we then can classify as
+
+325
+00:10:50,855 --> 00:10:52,875
+either fraudulent or not.
+
+326
+00:10:54,535 --> 00:10:56,635
+Let's next move to, GraphML.
+
+327
+00:10:56,910 --> 00:10:59,070
+So GraphML is machine learning
+
+328
+00:10:59,070 --> 00:11:00,690
+applied to graph based data,
+
+329
+00:11:00,910 --> 00:11:02,430
+and this means we're actually
+
+330
+00:11:02,430 --> 00:11:04,450
+coming up with
+a trained statistical
+
+331
+00:11:04,590 --> 00:11:06,535
+model. So as you
+might know from
+
+332
+00:11:06,755 --> 00:11:08,135
+traditional machine learning,
+
+333
+00:11:08,195 --> 00:11:09,715
+when we we are training a deep
+
+334
+00:11:09,715 --> 00:11:11,415
+neural network or
+something else,
+
+335
+00:11:12,035 --> 00:11:13,250
+this comes in two steps.
+
+336
+00:11:13,250 --> 00:11:14,610
+So there's first a training
+
+337
+00:11:14,610 --> 00:11:15,990
+approach where we are training
+
+338
+00:11:16,050 --> 00:11:17,510
+our statistical model,
+
+339
+00:11:17,570 --> 00:11:19,090
+and then the second step where
+
+340
+00:11:19,090 --> 00:11:20,690
+we actually leverage it to do
+
+341
+00:11:20,690 --> 00:11:22,035
+some productive work.
+
+342
+00:11:22,115 --> 00:11:23,895
+This is called
+the inference part.
+
+343
+00:11:24,435 --> 00:11:26,515
+And, this is really split,
+
+344
+00:11:26,515 --> 00:11:28,355
+and this is also distinct from
+
+345
+00:11:28,355 --> 00:11:29,890
+analytics where, basically,
+
+346
+00:11:29,890 --> 00:11:32,050
+this is like one task.
+I have my graph.
+
+347
+00:11:32,050 --> 00:11:33,250
+I'm doing my analysis,
+
+348
+00:11:33,250 --> 00:11:34,790
+and this is then my outcome,
+
+349
+00:11:34,930 --> 00:11:36,950
+my my inference in one step.
+
+350
+00:11:38,915 --> 00:11:40,995
+Graph eval typically
+is a supervised
+
+351
+00:11:40,995 --> 00:11:42,995
+machine learning step,
+not not always,
+
+352
+00:11:42,995 --> 00:11:45,210
+but typically,
+where I have kind
+
+353
+00:11:45,210 --> 00:11:47,630
+of one target I
+want to train for.
+
+354
+00:11:48,010 --> 00:11:50,170
+And the challenge with graphs
+
+355
+00:11:50,170 --> 00:11:51,850
+and machine learning is graphs
+
+356
+00:11:51,850 --> 00:11:53,275
+are unstructured data.
+
+357
+00:11:53,515 --> 00:11:56,335
+So the question is how
+can our favorite,
+
+358
+00:11:56,715 --> 00:11:57,535
+neural networks,
+
+359
+00:11:58,075 --> 00:11:59,755
+or other also support vector
+
+360
+00:11:59,755 --> 00:12:01,375
+machines deal with that?
+
+361
+00:12:01,640 --> 00:12:03,160
+And this is where we come into
+
+362
+00:12:03,160 --> 00:12:04,620
+the realm of graph
+embeddings.
+
+363
+00:12:05,080 --> 00:12:07,900
+So graph embeddings, often,
+
+364
+00:12:08,680 --> 00:12:11,455
+or you usually
+try to represent
+
+365
+00:12:11,455 --> 00:12:14,275
+our graph in some
+form of a vector.
+
+366
+00:12:14,655 --> 00:12:16,495
+So here we have
+one example for
+
+367
+00:12:16,495 --> 00:12:17,235
+note embeddings.
+
+368
+00:12:17,490 --> 00:12:19,410
+So we try to embed
+the notes in
+
+369
+00:12:19,410 --> 00:12:21,670
+a in a graph form, and,
+
+370
+00:12:22,450 --> 00:12:24,150
+we just choose
+a two dimensional
+
+371
+00:12:24,530 --> 00:12:26,565
+embedding. And if we
+already plot that,
+
+372
+00:12:26,565 --> 00:12:27,845
+we can see, often,
+
+373
+00:12:27,845 --> 00:12:29,465
+this is already very helpful,
+
+374
+00:12:30,005 --> 00:12:31,625
+to distinguish
+certain subgroups.
+
+375
+00:12:32,085 --> 00:12:33,785
+This is the Karate
+Club example.
+
+376
+00:12:33,930 --> 00:12:35,630
+Feel free to beat
+up about that
+
+377
+00:12:35,770 --> 00:12:37,630
+or visit our, workshop,
+
+378
+00:12:38,330 --> 00:12:39,930
+on graph machine
+learning where
+
+379
+00:12:39,930 --> 00:12:41,630
+we'll dive more
+into this example.
+
+380
+00:12:42,115 --> 00:12:44,035
+But we can already
+see often by
+
+381
+00:12:44,035 --> 00:12:46,995
+just embedding it, in in a,
+
+382
+00:12:47,395 --> 00:12:49,395
+vector space. We can easily
+
+383
+00:12:49,395 --> 00:12:50,935
+apply here linear separation
+
+384
+00:12:51,190 --> 00:12:52,390
+between those two groups.
+
+385
+00:12:52,390 --> 00:12:54,630
+And, again, this
+is due to the fact
+
+386
+00:12:54,630 --> 00:12:56,330
+that, real world datasets,
+
+387
+00:12:56,470 --> 00:12:57,910
+real world graphs often have
+
+388
+00:12:57,910 --> 00:13:00,475
+those properties such
+as in this case,
+
+389
+00:13:00,475 --> 00:13:04,175
+again, homophily
+that neighboring
+
+390
+00:13:04,235 --> 00:13:06,735
+nodes will inhabit
+similar behaviors.
+
+391
+00:13:08,950 --> 00:13:11,270
+Then, usually, this is done,
+
+392
+00:13:11,510 --> 00:13:12,870
+with graph neural networks.
+
+393
+00:13:12,870 --> 00:13:14,150
+So graph neural networks,
+
+394
+00:13:14,150 --> 00:13:14,870
+what do they do?
+
+395
+00:13:14,870 --> 00:13:16,490
+They basically take a graph,
+
+396
+00:13:16,855 --> 00:13:18,475
+go into the embedding space,
+
+397
+00:13:18,935 --> 00:13:20,855
+turn it into another latent
+
+398
+00:13:20,855 --> 00:13:22,455
+representation of set graph.
+
+399
+00:13:22,455 --> 00:13:24,420
+So, that transformation step.
+
+400
+00:13:24,500 --> 00:13:25,780
+Which you're using high level
+
+401
+00:13:25,780 --> 00:13:27,220
+frameworks, you often don't
+
+402
+00:13:27,220 --> 00:13:28,020
+really see that,
+
+403
+00:13:28,340 --> 00:13:29,700
+step in the background to go
+
+404
+00:13:29,700 --> 00:13:30,600
+through the embeddings.
+
+405
+00:13:31,140 --> 00:13:31,860
+But, basically,
+
+406
+00:13:31,860 --> 00:13:34,155
+we come up with a new latent
+
+407
+00:13:34,155 --> 00:13:35,835
+representation of set graph,
+
+408
+00:13:35,995 --> 00:13:37,755
+which can then
+be used for node
+
+409
+00:13:37,755 --> 00:13:39,935
+classification, graph
+classification,
+
+410
+00:13:40,075 --> 00:13:42,175
+or for example, link
+prediction output.
+
+411
+00:13:43,580 --> 00:13:45,500
+There are a large
+number of use
+
+412
+00:13:45,500 --> 00:13:47,260
+cases and, I would say this is
+
+413
+00:13:47,260 --> 00:13:49,100
+still growing, this field.
+
+414
+00:13:49,100 --> 00:13:51,455
+For example, Uber
+Eats is using,
+
+415
+00:13:52,075 --> 00:13:53,115
+graph machine learning,
+
+416
+00:13:53,115 --> 00:13:54,395
+graph neural networks for
+
+417
+00:13:54,395 --> 00:13:55,775
+recommendation use cases,
+
+418
+00:13:56,395 --> 00:13:58,000
+which food should
+you order next?
+
+419
+00:13:59,920 --> 00:14:01,940
+Molecular or, computational
+
+420
+00:14:02,080 --> 00:14:03,760
+chemistry is using,
+
+421
+00:14:04,160 --> 00:14:05,780
+graph machine learning for
+
+422
+00:14:05,840 --> 00:14:06,820
+practice covering.
+
+423
+00:14:07,235 --> 00:14:09,175
+And, for example,
+also DeepMind,
+
+424
+00:14:09,315 --> 00:14:11,475
+if you think about, maps,
+
+425
+00:14:11,475 --> 00:14:13,555
+this is in in the end
+also a graph.
+
+426
+00:14:13,555 --> 00:14:15,235
+So they are using
+graph machine
+
+427
+00:14:15,235 --> 00:14:17,390
+learning to improve
+CTA predictions,
+
+428
+00:14:17,930 --> 00:14:18,990
+for Google Maps.
+
+429
+00:14:21,050 --> 00:14:22,970
+If we take a look at
+these use cases,
+
+430
+00:14:22,970 --> 00:14:24,350
+they are actually overlapping
+
+431
+00:14:24,410 --> 00:14:25,225
+quite a bit. I mean,
+
+432
+00:14:25,225 --> 00:14:26,505
+there are certain things which
+
+433
+00:14:26,505 --> 00:14:27,885
+we would only do in GraphML.
+
+434
+00:14:28,105 --> 00:14:29,805
+For example, link prediction
+
+435
+00:14:30,105 --> 00:14:32,665
+gets a bit
+challenging in Graph
+
+436
+00:14:32,665 --> 00:14:34,720
+Analytics, And there
+are other tasks,
+
+437
+00:14:34,960 --> 00:14:37,360
+which are clearly
+part of the graph
+
+438
+00:14:37,360 --> 00:14:38,420
+analytics domain.
+
+439
+00:14:38,640 --> 00:14:40,240
+But for a lot of tasks,
+
+440
+00:14:40,240 --> 00:14:42,160
+we often have a choice of what
+
+441
+00:14:42,160 --> 00:14:44,175
+we want to do. And this is
+
+442
+00:14:44,175 --> 00:14:45,535
+actually what the remainder of
+
+443
+00:14:45,535 --> 00:14:48,415
+this talk about
+is is about when
+
+444
+00:14:48,415 --> 00:14:50,095
+should we choose
+in this middle
+
+445
+00:14:50,095 --> 00:14:51,775
+space here when
+we actually have
+
+446
+00:14:51,775 --> 00:14:53,590
+options? What are
+our trade offs
+
+447
+00:14:53,590 --> 00:14:55,450
+between choosing
+a graph analytics
+
+448
+00:14:55,510 --> 00:14:57,770
+solution and a graph
+ML solution?
+
+449
+00:14:59,565 --> 00:15:02,525
+First question for, for this,
+
+450
+00:15:02,925 --> 00:15:04,705
+is probably performance.
+
+451
+00:15:04,845 --> 00:15:06,365
+So how long does it actually
+
+452
+00:15:06,365 --> 00:15:07,585
+take to get a result?
+
+453
+00:15:08,100 --> 00:15:09,060
+In graph analytics,
+
+454
+00:15:09,060 --> 00:15:10,920
+this really depends
+on the algorithm.
+
+455
+00:15:11,300 --> 00:15:12,580
+But as I said in
+the beginning,
+
+456
+00:15:12,580 --> 00:15:13,780
+typically, we have to look at
+
+457
+00:15:13,780 --> 00:15:15,160
+the overall graph,
+
+458
+00:15:15,465 --> 00:15:17,085
+and we also have to recompute
+
+459
+00:15:17,225 --> 00:15:19,465
+that or rerun that
+algorithm for
+
+460
+00:15:19,465 --> 00:15:21,805
+any new tree and
+any updated graph.
+
+461
+00:15:22,105 --> 00:15:23,720
+So overall performance,
+
+462
+00:15:24,260 --> 00:15:26,100
+it can be really
+fast if we have
+
+463
+00:15:26,100 --> 00:15:27,000
+a simple algorithm,
+
+464
+00:15:27,300 --> 00:15:29,160
+but especially on
+large graphs,
+
+465
+00:15:29,460 --> 00:15:31,380
+often performance
+is is a challenge
+
+466
+00:15:31,380 --> 00:15:32,040
+out here.
+
+467
+00:15:32,725 --> 00:15:34,325
+In graph machine learning,
+
+468
+00:15:34,325 --> 00:15:36,505
+this performance
+or the performance
+
+469
+00:15:36,565 --> 00:15:38,245
+cost is actually split across
+
+470
+00:15:38,245 --> 00:15:39,785
+the two parts. So training,
+
+471
+00:15:40,460 --> 00:15:42,240
+we need to train
+our statistical
+
+472
+00:15:42,380 --> 00:15:44,160
+model and then, inference.
+
+473
+00:15:45,100 --> 00:15:47,200
+Modern, graph machine learning
+
+474
+00:15:47,260 --> 00:15:49,840
+is often using
+inductive techniques.
+
+475
+00:15:49,975 --> 00:15:51,515
+So we don't actually need
+
+476
+00:15:51,815 --> 00:15:53,255
+retraining if we have a new
+
+477
+00:15:53,255 --> 00:15:55,195
+query or or an updated graph.
+
+478
+00:15:56,055 --> 00:15:58,375
+And, also, with that,
+
+479
+00:15:59,095 --> 00:16:00,470
+the inference part,
+
+480
+00:16:00,470 --> 00:16:02,230
+which is what we
+typically care
+
+481
+00:16:02,230 --> 00:16:04,410
+about if we need
+an a quick result,
+
+482
+00:16:04,550 --> 00:16:06,730
+is also constant
+in graph size.
+
+483
+00:16:07,030 --> 00:16:10,565
+So, in the end, the in
+graph machining,
+
+484
+00:16:10,705 --> 00:16:12,565
+we kind of we pay an upfront
+
+485
+00:16:12,625 --> 00:16:15,960
+price into training,
+but then often,
+
+486
+00:16:16,420 --> 00:16:18,100
+again, it it slightly depends
+
+487
+00:16:18,100 --> 00:16:19,240
+on the model complexity.
+
+488
+00:16:19,700 --> 00:16:21,480
+We can achieve pretty fast
+
+489
+00:16:21,540 --> 00:16:23,935
+inference times,
+which is, as I said,
+
+490
+00:16:24,295 --> 00:16:25,895
+then also constant in terms of
+
+491
+00:16:25,895 --> 00:16:27,975
+graph size. Also,
+
+492
+00:16:28,135 --> 00:16:29,415
+we can leverage specialized
+
+493
+00:16:29,415 --> 00:16:30,215
+hardware for that.
+
+494
+00:16:30,215 --> 00:16:31,415
+So, for example, GPUs,
+
+495
+00:16:31,415 --> 00:16:32,900
+they are really
+good in training
+
+496
+00:16:32,900 --> 00:16:37,280
+and also doing inference
+on, on those,
+
+497
+00:16:38,220 --> 00:16:39,120
+neural networks.
+
+498
+00:16:39,500 --> 00:16:40,780
+And, so in the end,
+
+499
+00:16:40,780 --> 00:16:42,665
+if we really care about fast
+
+500
+00:16:42,665 --> 00:16:43,725
+inference performance,
+
+501
+00:16:44,345 --> 00:16:45,705
+graph machine
+learning can give
+
+502
+00:16:45,705 --> 00:16:47,705
+us this edge here because we
+
+503
+00:16:47,705 --> 00:16:49,485
+train a statistical model.
+
+504
+00:16:49,785 --> 00:16:51,490
+And then once we have some,
+
+505
+00:16:51,490 --> 00:16:53,170
+we don't have to go
+across the entire
+
+506
+00:16:53,170 --> 00:16:54,930
+graph but can just
+look at the narrow
+
+507
+00:16:54,930 --> 00:16:56,070
+field of that graph.
+
+508
+00:16:57,490 --> 00:16:59,365
+This comes at a trade off,
+
+509
+00:16:59,365 --> 00:17:01,865
+and that trade off
+is, a curiously,
+
+510
+00:17:02,485 --> 00:17:04,805
+or if you see
+the vice versa side,
+
+511
+00:17:04,965 --> 00:17:06,265
+it uses an approximation.
+
+512
+00:17:07,020 --> 00:17:09,020
+So the next
+question would be,
+
+513
+00:17:09,020 --> 00:17:10,960
+does, the use case actually
+
+514
+00:17:11,020 --> 00:17:13,420
+require exact results or are
+
+515
+00:17:13,420 --> 00:17:14,720
+approximations sufficient?
+
+516
+00:17:15,135 --> 00:17:16,895
+If we take, for
+example, a look at,
+
+517
+00:17:17,215 --> 00:17:19,475
+health care. In health
+care, probably,
+
+518
+00:17:19,615 --> 00:17:21,615
+we really want
+exact results and
+
+519
+00:17:21,615 --> 00:17:23,710
+approximations
+depending on what
+
+520
+00:17:23,710 --> 00:17:24,590
+we are doing, but,
+
+521
+00:17:24,990 --> 00:17:26,590
+that might actually
+be a challenging
+
+522
+00:17:26,590 --> 00:17:28,370
+thing similar in finance,
+
+523
+00:17:29,470 --> 00:17:31,285
+but it depends
+a little on the use
+
+524
+00:17:31,285 --> 00:17:33,605
+cases. Whereas if
+we do the Uber
+
+525
+00:17:33,605 --> 00:17:34,905
+Eats product recommendation,
+
+526
+00:17:35,365 --> 00:17:37,605
+if we only use
+an approximations there,
+
+527
+00:17:37,605 --> 00:17:40,890
+that's actually okay
+because, overall,
+
+528
+00:17:42,790 --> 00:17:44,010
+we won't get, like,
+
+529
+00:17:44,070 --> 00:17:45,670
+really exact results anyhow as
+
+530
+00:17:45,670 --> 00:17:47,130
+we're still dealing
+with humans.
+
+531
+00:17:47,375 --> 00:17:49,155
+And so having an approximation
+
+532
+00:17:49,455 --> 00:17:51,315
+in our algorithm
+is actually fine.
+
+533
+00:17:51,935 --> 00:17:54,335
+The other aspect
+of when we talk
+
+534
+00:17:54,335 --> 00:17:56,030
+about those approximations or
+
+535
+00:17:56,030 --> 00:17:58,110
+at least statistical
+model aspect of,
+
+536
+00:17:58,430 --> 00:18:00,190
+graph neural
+networks also comes
+
+537
+00:18:00,190 --> 00:18:01,650
+to reproducible results.
+
+538
+00:18:02,190 --> 00:18:03,870
+Imagine, you're in finance,
+
+539
+00:18:03,870 --> 00:18:05,565
+you're retraining your model.
+
+540
+00:18:05,625 --> 00:18:07,385
+You would expect
+at least similar
+
+541
+00:18:07,385 --> 00:18:09,705
+results. So
+the question is how
+
+542
+00:18:09,705 --> 00:18:11,645
+reproducible are the outcomes
+
+543
+00:18:11,705 --> 00:18:12,525
+in the end.
+
+544
+00:18:13,410 --> 00:18:14,230
+Graph analytics,
+
+545
+00:18:14,290 --> 00:18:16,450
+we have an analytical
+model, so it's,
+
+546
+00:18:16,930 --> 00:18:19,590
+reproducible,
+and also accurate
+
+547
+00:18:21,235 --> 00:18:23,075
+to our to our
+algorithms because
+
+548
+00:18:23,075 --> 00:18:24,275
+we are just really following
+
+549
+00:18:24,275 --> 00:18:25,575
+the algorithmic steps.
+
+550
+00:18:25,955 --> 00:18:26,915
+But keep in mind,
+
+551
+00:18:26,915 --> 00:18:28,775
+it might actually
+be too expensive
+
+552
+00:18:28,915 --> 00:18:30,270
+to run on large graphs.
+
+553
+00:18:30,270 --> 00:18:32,670
+So, accuracy
+doesn't really help
+
+554
+00:18:32,670 --> 00:18:35,150
+us if it comes down
+to too large cost,
+
+555
+00:18:35,150 --> 00:18:36,670
+and we can't fully,
+
+556
+00:18:36,990 --> 00:18:38,245
+leverage that in the end.
+
+557
+00:18:38,725 --> 00:18:39,685
+Graph machine learning,
+
+558
+00:18:39,685 --> 00:18:40,565
+on the other hand,
+
+559
+00:18:40,565 --> 00:18:42,165
+is using a statistical model,
+
+560
+00:18:42,165 --> 00:18:43,305
+so an approximation.
+
+561
+00:18:44,645 --> 00:18:47,070
+And so the accuracy depends on
+
+562
+00:18:47,070 --> 00:18:47,950
+data and model.
+
+563
+00:18:47,950 --> 00:18:49,970
+So how much data do
+we have available?
+
+564
+00:18:50,430 --> 00:18:54,565
+Often, I've often seen
+machine learning,
+
+565
+00:18:55,025 --> 00:18:57,185
+trying to be trained with just
+
+566
+00:18:57,185 --> 00:19:00,325
+too small or too
+unqualified data.
+
+567
+00:19:00,385 --> 00:19:01,905
+So I think this is really then
+
+568
+00:19:01,905 --> 00:19:03,670
+crucial also for
+your accuracy.
+
+569
+00:19:04,050 --> 00:19:06,530
+And, on the other hand,
+
+570
+00:19:06,690 --> 00:19:08,450
+we can also control the model
+
+571
+00:19:08,450 --> 00:19:10,210
+complexity of our
+graph machine
+
+572
+00:19:10,210 --> 00:19:11,855
+learning models,
+but keep in mind,
+
+573
+00:19:11,855 --> 00:19:13,955
+it's still an approximation
+out there.
+
+574
+00:19:14,815 --> 00:19:16,735
+And this also relates then,
+
+575
+00:19:17,055 --> 00:19:19,295
+or leads over to
+the next item,
+
+576
+00:19:19,295 --> 00:19:20,355
+and that's explainability.
+
+577
+00:19:22,060 --> 00:19:24,060
+So, the ability
+to reason about
+
+578
+00:19:24,060 --> 00:19:25,180
+the inference results.
+
+579
+00:19:25,180 --> 00:19:27,120
+So understand why a certain
+
+580
+00:19:27,340 --> 00:19:28,380
+decision was made.
+
+581
+00:19:28,380 --> 00:19:29,360
+Why was this,
+
+582
+00:19:30,295 --> 00:19:33,095
+why was this graph
+classified as a?
+
+583
+00:19:33,095 --> 00:19:34,875
+Why was it classified as b?
+
+584
+00:19:35,335 --> 00:19:37,195
+Or going back to our social
+
+585
+00:19:37,495 --> 00:19:38,635
+graph from the beginning,
+
+586
+00:19:38,830 --> 00:19:40,670
+why was a certain
+person classified
+
+587
+00:19:40,670 --> 00:19:42,210
+to be likely to churn?
+
+588
+00:19:42,830 --> 00:19:44,110
+Graph analytics, again,
+
+589
+00:19:44,350 --> 00:19:45,950
+it's an analytical model which
+
+590
+00:19:45,950 --> 00:19:47,170
+we can reason about.
+
+591
+00:19:47,345 --> 00:19:49,285
+Graph machine, on
+the other hand,
+
+592
+00:19:49,425 --> 00:19:50,865
+we have a statistical model,
+
+593
+00:19:50,865 --> 00:19:52,545
+which is often a black box.
+
+594
+00:19:52,545 --> 00:19:54,625
+So trying to reason about our
+
+595
+00:19:54,625 --> 00:19:56,920
+graph neural network
+probably will be,
+
+596
+00:19:57,320 --> 00:19:59,080
+challenging, but
+this is actually
+
+597
+00:19:59,080 --> 00:20:01,160
+an active line of
+research trying
+
+598
+00:20:01,160 --> 00:20:03,100
+to understand how
+can we make,
+
+599
+00:20:03,885 --> 00:20:05,405
+how can we make
+machine learning
+
+600
+00:20:05,405 --> 00:20:06,625
+models more explainable?
+
+601
+00:20:06,685 --> 00:20:08,365
+How can we more understand why
+
+602
+00:20:08,365 --> 00:20:09,905
+a certain decision was made?
+
+603
+00:20:11,630 --> 00:20:14,830
+Scalability. So the ability to
+
+604
+00:20:14,830 --> 00:20:16,690
+really scale to large graphs,
+
+605
+00:20:16,750 --> 00:20:18,670
+large datasets,
+which might even,
+
+606
+00:20:18,990 --> 00:20:21,365
+require a distributed
+computation.
+
+607
+00:20:21,365 --> 00:20:23,445
+So graph analytics,
+
+608
+00:20:23,445 --> 00:20:26,025
+the scalability depends
+on the complexity
+
+609
+00:20:26,085 --> 00:20:26,985
+of the algorithm.
+
+610
+00:20:27,765 --> 00:20:30,510
+But as we talked
+about earlier,
+
+611
+00:20:30,570 --> 00:20:32,410
+often or in most cases,
+
+612
+00:20:32,410 --> 00:20:34,430
+we have to look at
+the entire graph.
+
+613
+00:20:34,810 --> 00:20:37,050
+So, there's already, like,
+
+614
+00:20:37,050 --> 00:20:38,190
+some kind of limit.
+
+615
+00:20:38,535 --> 00:20:40,535
+And, the other aspect
+here is that,
+
+616
+00:20:40,855 --> 00:20:43,175
+growing or updating
+datasets is,
+
+617
+00:20:43,495 --> 00:20:45,895
+challenging. This
+is also called
+
+618
+00:20:45,895 --> 00:20:46,715
+trans activity,
+
+619
+00:20:47,250 --> 00:20:49,730
+and it refers to
+imagine the we
+
+620
+00:20:49,730 --> 00:20:51,830
+are Facebook. We
+are LinkedIn.
+
+621
+00:20:52,610 --> 00:20:54,275
+Our social network graph is
+
+622
+00:20:54,355 --> 00:20:55,795
+isn't going to be stable.
+
+623
+00:20:55,795 --> 00:20:57,315
+There are changes
+all the time,
+
+624
+00:20:57,315 --> 00:20:59,495
+new people joining
+or people churning.
+
+625
+00:21:00,515 --> 00:21:02,275
+And, the question is now,
+
+626
+00:21:02,275 --> 00:21:03,815
+if I want certain results,
+
+627
+00:21:04,070 --> 00:21:05,990
+what does it mean
+for for my graph?
+
+628
+00:21:05,990 --> 00:21:08,950
+In graph analytics,
+often, as I said,
+
+629
+00:21:08,950 --> 00:21:10,570
+this is, trans activity.
+
+630
+00:21:10,870 --> 00:21:12,730
+We have to recompute
+the results,
+
+631
+00:21:13,125 --> 00:21:15,445
+from scratch,
+which, of course,
+
+632
+00:21:15,445 --> 00:21:17,205
+is also costly in terms of,
+
+633
+00:21:17,525 --> 00:21:19,285
+scalability,
+especially in terms
+
+634
+00:21:19,285 --> 00:21:20,505
+of large graphs.
+
+635
+00:21:21,630 --> 00:21:22,670
+Graph machine learning,
+
+636
+00:21:22,830 --> 00:21:24,430
+on the other hand, it, again,
+
+637
+00:21:24,430 --> 00:21:26,350
+it depends a little
+bit on the model,
+
+638
+00:21:26,350 --> 00:21:27,890
+how how much it scales.
+
+639
+00:21:28,195 --> 00:21:30,035
+But, again, keep in
+mind, we have this,
+
+640
+00:21:30,355 --> 00:21:32,915
+trade off between,
+training and,
+
+641
+00:21:33,395 --> 00:21:35,050
+inference. So training,
+
+642
+00:21:35,770 --> 00:21:37,450
+it can often be a really long
+
+643
+00:21:37,450 --> 00:21:38,830
+but offline process.
+
+644
+00:21:39,050 --> 00:21:40,890
+And then when I want
+to do the inference
+
+645
+00:21:40,890 --> 00:21:43,210
+, I can rely, or utilize some
+
+646
+00:21:43,210 --> 00:21:44,945
+results I have out
+of the the training
+
+647
+00:21:44,945 --> 00:21:47,825
+process. Furthermore, again,
+
+648
+00:21:47,825 --> 00:21:49,745
+a kind of
+a complexity precision
+
+649
+00:21:49,745 --> 00:21:51,905
+trade off. So less
+complex models
+
+650
+00:21:51,905 --> 00:21:54,165
+also would evaluate
+and train faster.
+
+651
+00:21:55,840 --> 00:21:57,440
+And so I I have
+kind of, like,
+
+652
+00:21:57,440 --> 00:21:58,900
+a knob to control that.
+
+653
+00:21:59,280 --> 00:22:01,540
+About growing and
+updating datasets,
+
+654
+00:22:02,345 --> 00:22:04,025
+graph machine
+learning or modern
+
+655
+00:22:04,025 --> 00:22:05,945
+graph machine learning
+as, for example,
+
+656
+00:22:05,945 --> 00:22:08,445
+GraphSAGE, they are
+actually inductive.
+
+657
+00:22:08,800 --> 00:22:10,560
+So we can update
+our data set,
+
+658
+00:22:10,560 --> 00:22:12,100
+and we don't have to retrain,
+
+659
+00:22:12,720 --> 00:22:14,580
+the entire model
+from scratch,
+
+660
+00:22:14,640 --> 00:22:16,640
+but we can still utilize that
+
+661
+00:22:16,640 --> 00:22:19,495
+trained model to classify new
+
+662
+00:22:19,495 --> 00:22:21,915
+new nodes or change
+parts of Deepgram.
+
+663
+00:22:23,735 --> 00:22:25,675
+So, Zan, if we go to, like,
+
+664
+00:22:25,950 --> 00:22:27,790
+a direct comparison,
+so we took,
+
+665
+00:22:28,110 --> 00:22:30,370
+actually ran the number
+of algorithms.
+
+666
+00:22:30,750 --> 00:22:32,670
+And, you can see
+there are certain
+
+667
+00:22:32,670 --> 00:22:35,195
+things which we would
+just solve in the,
+
+668
+00:22:35,655 --> 00:22:37,915
+in in the space of
+graph analytics
+
+669
+00:22:37,975 --> 00:22:39,915
+such as sort shortest
+paths, etcetera,
+
+670
+00:22:40,935 --> 00:22:41,835
+connect components.
+
+671
+00:22:42,350 --> 00:22:43,550
+There are other
+things where we
+
+672
+00:22:43,550 --> 00:22:44,990
+actually have options such as
+
+673
+00:22:44,990 --> 00:22:46,610
+vertex or graph similarity.
+
+674
+00:22:47,950 --> 00:22:49,390
+And there are
+other things which
+
+675
+00:22:49,390 --> 00:22:51,170
+we would only do
+in the GraphML
+
+676
+00:22:51,390 --> 00:22:52,945
+space such as
+edge prediction.
+
+677
+00:22:53,805 --> 00:22:55,725
+And especially in that realm
+
+678
+00:22:55,725 --> 00:22:57,425
+here where we have
+two options,
+
+679
+00:22:57,485 --> 00:22:59,425
+let's take vertex and
+graph similarity,
+
+680
+00:22:59,920 --> 00:23:02,000
+we we can see
+the, trade offs.
+
+681
+00:23:02,000 --> 00:23:04,820
+Graph analytics, basically,
+
+682
+00:23:05,360 --> 00:23:06,960
+doesn't need, any train time,
+
+683
+00:23:06,960 --> 00:23:07,840
+so it's great there.
+
+684
+00:23:07,840 --> 00:23:08,880
+But on the other hand,
+
+685
+00:23:08,880 --> 00:23:10,365
+it will be pretty,
+
+686
+00:23:10,685 --> 00:23:12,685
+bad or we will incur that
+
+687
+00:23:12,685 --> 00:23:14,865
+performance cost at
+inference time.
+
+688
+00:23:15,005 --> 00:23:16,420
+We do the same with
+graph machine,
+
+689
+00:23:16,740 --> 00:23:18,260
+we can actually have the trade
+
+690
+00:23:18,260 --> 00:23:20,340
+off between training time and
+
+691
+00:23:20,340 --> 00:23:22,020
+inference time
+and split it into
+
+692
+00:23:22,020 --> 00:23:24,200
+one offline and one
+online process.
+
+693
+00:23:24,845 --> 00:23:27,185
+Trends, or inductivity slash
+
+694
+00:23:27,245 --> 00:23:29,825
+transductive notes, in,
+
+695
+00:23:30,605 --> 00:23:31,745
+using graph machining,
+
+696
+00:23:32,210 --> 00:23:34,530
+we can utilize a trained model
+
+697
+00:23:34,530 --> 00:23:36,150
+also if our graph changes.
+
+698
+00:23:36,370 --> 00:23:37,970
+But, of course,
+as Tom said in,
+
+699
+00:23:38,370 --> 00:23:41,110
+cost of, explainability
+and precision,
+
+700
+00:23:41,825 --> 00:23:44,085
+it's going to be
+less explainable.
+
+701
+00:23:44,385 --> 00:23:47,605
+First, we have,
+a generated model.
+
+702
+00:23:47,665 --> 00:23:48,865
+And also the precision,
+
+703
+00:23:48,865 --> 00:23:50,085
+it will be an approximation,
+
+704
+00:23:50,625 --> 00:23:54,290
+of those results.
+How to choose that?
+
+705
+00:23:54,290 --> 00:23:55,590
+That was a lot
+of information,
+
+706
+00:23:56,050 --> 00:23:58,050
+but the simplified version or
+
+707
+00:23:58,050 --> 00:24:00,705
+the questions I would
+ask, first of all,
+
+708
+00:24:00,705 --> 00:24:01,425
+should always be,
+
+709
+00:24:01,425 --> 00:24:02,965
+is a simple model sufficient?
+
+710
+00:24:03,105 --> 00:24:05,045
+Graph analytical models are
+
+711
+00:24:05,665 --> 00:24:07,605
+usually simpler and,
+
+712
+00:24:08,580 --> 00:24:09,960
+keep it short and simple.
+
+713
+00:24:10,340 --> 00:24:11,940
+So I would always
+choose a simple
+
+714
+00:24:11,940 --> 00:24:13,960
+model over a more
+complex one.
+
+715
+00:24:14,340 --> 00:24:15,300
+Next question would be,
+
+716
+00:24:15,300 --> 00:24:16,580
+is is there a need for, like,
+
+717
+00:24:16,580 --> 00:24:18,565
+an exact answer,
+
+718
+00:24:18,565 --> 00:24:19,785
+or are we approximations?
+
+719
+00:24:21,525 --> 00:24:23,305
+The if we are approximations,
+
+720
+00:24:24,565 --> 00:24:26,230
+this could be an enabler for
+
+721
+00:24:26,230 --> 00:24:27,670
+graph machine.
+And if we really
+
+722
+00:24:27,670 --> 00:24:29,450
+always need very
+exact answers,
+
+723
+00:24:29,830 --> 00:24:31,670
+we'll probably
+stay in the realm
+
+724
+00:24:31,670 --> 00:24:32,970
+of of graph analytics.
+
+725
+00:24:33,415 --> 00:24:34,375
+But keep in mind,
+
+726
+00:24:34,615 --> 00:24:36,235
+this might actually
+be unfeasible,
+
+727
+00:24:36,775 --> 00:24:38,535
+depending on the data size.
+
+728
+00:24:38,535 --> 00:24:40,715
+And this is exactly
+the next question.
+
+729
+00:24:41,150 --> 00:24:42,430
+The smaller the data sets,
+
+730
+00:24:42,430 --> 00:24:43,490
+the more likely,
+
+731
+00:24:43,870 --> 00:24:45,730
+we are happy in
+the data analytics
+
+732
+00:24:45,790 --> 00:24:47,870
+space. The bigger
+the data sets
+
+733
+00:24:47,870 --> 00:24:50,515
+might actually mean
+we need We we are,
+
+734
+00:24:50,515 --> 00:24:52,755
+a, able to train
+a a larger model,
+
+735
+00:24:52,995 --> 00:24:56,055
+but, b, also, might require,
+
+736
+00:24:56,515 --> 00:24:57,655
+graph machine learning.
+
+737
+00:24:59,180 --> 00:25:00,880
+What are our performance
+requirements?
+
+738
+00:25:01,260 --> 00:25:02,860
+And, again, this can be split
+
+739
+00:25:02,860 --> 00:25:03,820
+into two parts.
+
+740
+00:25:03,820 --> 00:25:05,760
+Are we okay with
+a large offline
+
+741
+00:25:07,235 --> 00:25:08,295
+training process,
+
+742
+00:25:08,675 --> 00:25:10,775
+and then faster
+serving times,
+
+743
+00:25:11,075 --> 00:25:13,155
+or, are we actually okay with
+
+744
+00:25:13,155 --> 00:25:14,915
+just running graph
+analysis from
+
+745
+00:25:14,915 --> 00:25:17,050
+scratch? We have a need for
+
+746
+00:25:17,050 --> 00:25:18,110
+inductive learning.
+
+747
+00:25:18,410 --> 00:25:19,370
+I said, like,
+
+748
+00:25:19,370 --> 00:25:21,930
+since this is a subpart of,
+
+749
+00:25:22,250 --> 00:25:24,925
+three and four, but,
+also refers to,
+
+750
+00:25:24,925 --> 00:25:26,605
+like, how dynamic
+is our graph,
+
+751
+00:25:26,605 --> 00:25:28,385
+how often is our
+graph changing.
+
+752
+00:25:28,605 --> 00:25:30,205
+And then last,
+do we have a need
+
+753
+00:25:30,205 --> 00:25:32,440
+for explainable
+results that we
+
+754
+00:25:32,440 --> 00:25:33,480
+can easily look at,
+
+755
+00:25:33,960 --> 00:25:35,820
+explainable machine learning,
+
+756
+00:25:36,440 --> 00:25:38,600
+techniques? Or, we, again,
+
+757
+00:25:38,600 --> 00:25:40,380
+might have a tendency to use,
+
+758
+00:25:41,000 --> 00:25:43,215
+graph analytics
+over graph machine
+
+759
+00:25:44,475 --> 00:25:46,475
+learning. So,
+that was a lot of
+
+760
+00:25:46,475 --> 00:25:48,555
+information. I
+tried to capture
+
+761
+00:25:48,555 --> 00:25:49,835
+some information here,
+
+762
+00:25:50,075 --> 00:25:51,520
+where to go next
+if you want to
+
+763
+00:25:51,520 --> 00:25:52,660
+learn more about it.
+
+764
+00:25:52,880 --> 00:25:53,760
+So first of all,
+
+765
+00:25:53,760 --> 00:25:55,040
+if you want to
+learn more about
+
+766
+00:25:55,040 --> 00:25:55,860
+graph databases,
+
+767
+00:25:56,000 --> 00:25:57,620
+graph databases in action,
+
+768
+00:25:57,760 --> 00:25:59,280
+if you want to
+learn a bit more
+
+769
+00:25:59,280 --> 00:26:00,640
+about how to model data,
+
+770
+00:26:00,640 --> 00:26:03,285
+the practitioner's
+guide to draft data,
+
+771
+00:26:03,585 --> 00:26:05,125
+then, graph algorithms,
+
+772
+00:26:06,305 --> 00:26:08,100
+is nicely covered
+in this book.
+
+773
+00:26:09,380 --> 00:26:10,600
+Graph machine learning,
+
+774
+00:26:11,060 --> 00:26:13,560
+also kind of as
+a lead over from,
+
+775
+00:26:14,020 --> 00:26:15,700
+graph analytics is covered in
+
+776
+00:26:15,700 --> 00:26:17,160
+graph powered
+machine learning.
+
+777
+00:26:17,425 --> 00:26:19,985
+And then if you really
+want to dwell,
+
+778
+00:26:20,305 --> 00:26:23,985
+deeply into, graph
+machine learning and,
+
+779
+00:26:24,145 --> 00:26:25,370
+also refer to, like,
+
+780
+00:26:25,450 --> 00:26:26,730
+the embedding processes graph
+
+781
+00:26:26,730 --> 00:26:28,410
+representation
+learning as this
+
+782
+00:26:28,410 --> 00:26:30,350
+is a really great free ebook,
+
+783
+00:26:30,570 --> 00:26:31,630
+which is out there.
+
+784
+00:26:32,170 --> 00:26:34,010
+Furthermore,
+there's a a really
+
+785
+00:26:34,010 --> 00:26:35,665
+great course at Stanford about
+
+786
+00:26:35,665 --> 00:26:37,265
+machine learning
+with graph and
+
+787
+00:26:37,265 --> 00:26:39,045
+a number of blocks out there.
+
+788
+00:26:40,145 --> 00:26:41,025
+Having that said,
+
+789
+00:26:41,025 --> 00:26:42,565
+thank you so much
+for listening.
+
+790
+00:26:43,300 --> 00:26:45,380
+Also feel free to, visit us.
+
+791
+00:26:45,700 --> 00:26:46,900
+We have a number of,
+
+792
+00:26:47,140 --> 00:26:48,760
+other information out there,
+
+793
+00:26:49,380 --> 00:26:50,680
+both on the side.
+
+794
+00:26:51,935 --> 00:26:53,455
+Otherwise, there's also talk
+
+795
+00:26:53,455 --> 00:26:55,455
+from Data AI
+Summit about graph
+
+796
+00:26:55,455 --> 00:26:56,515
+powered machine learning.
+
+797
+00:26:56,655 --> 00:26:58,095
+And if you're
+really interested,
+
+798
+00:26:58,095 --> 00:27:01,155
+there's, kind of, AZ
+workshop tomorrow.
+
+799
+00:27:01,520 --> 00:27:03,680
+And, then there's
+a longer version
+
+800
+00:27:03,680 --> 00:27:05,200
+of the graph powered machine
+
+801
+00:27:05,200 --> 00:27:07,700
+learning first steps,
+over at O'Reilly,
+
+802
+00:27:08,160 --> 00:27:11,015
+also, taught, by by me.
+
+803
+00:27:11,255 --> 00:27:12,775
+But I would first recommend
+
+804
+00:27:12,775 --> 00:27:14,775
+visit the course
+tomorrow, and,
+
+805
+00:27:15,015 --> 00:27:16,670
+then let's see about that.
+
+806
+00:27:17,070 --> 00:27:18,450
+Thank you so much
+for listening,
+
+807
+00:27:18,590 --> 00:27:20,850
+and, feel free to
+ask any questions.
+
+808
+00:27:21,390 --> 00:27:23,250
+If you don't, feel,
+
+809
+00:27:23,630 --> 00:27:25,903
+open or incentivized
+to ask them now,
+
+810
+00:27:25,903 --> 00:27:27,523
+also feel free to reach out.
+
+811
+00:27:27,823 --> 00:27:28,883
+Thank you so much.
+

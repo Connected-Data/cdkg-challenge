@@ -1,0 +1,2589 @@
+1
+00:00:10,880 --> 00:00:13,695
+Greetings. I'm very pleased to
+
+2
+00:00:13,695 --> 00:00:16,975
+be here in CDW twenty one and
+
+3
+00:00:16,975 --> 00:00:19,235
+talk to you,
+knowledgeable people,
+
+4
+00:00:19,615 --> 00:00:22,390
+about knowledge
+and how we should
+
+5
+00:00:22,450 --> 00:00:25,170
+rethink it, restructure it,
+
+6
+00:00:25,170 --> 00:00:27,430
+and prepare it
+for a better AI.
+
+7
+00:00:28,715 --> 00:00:30,975
+The last decade has
+been phenomenal
+
+8
+00:00:31,115 --> 00:00:32,875
+for AI, primarily because of
+
+9
+00:00:32,875 --> 00:00:33,615
+deep learning.
+
+10
+00:00:34,555 --> 00:00:37,535
+But there's a next
+wave that is coming.
+
+11
+00:00:38,010 --> 00:00:40,010
+And whether use system two
+
+12
+00:00:40,010 --> 00:00:41,630
+definition that Yoshua Bengio
+
+13
+00:00:41,930 --> 00:00:44,090
+is doing based on Kanban's or
+
+14
+00:00:44,090 --> 00:00:45,610
+use the DARPA definition of
+
+15
+00:00:45,610 --> 00:00:47,150
+the third wave of AI,
+
+16
+00:00:47,265 --> 00:00:48,885
+there's something
+new that's coming.
+
+17
+00:00:49,825 --> 00:00:51,365
+AI that is more cognitive,
+
+18
+00:00:51,985 --> 00:00:53,445
+that has better understanding
+
+19
+00:00:53,825 --> 00:00:55,745
+of the world, that has higher
+
+20
+00:00:55,745 --> 00:00:58,450
+intelligence.
+And this is going
+
+21
+00:00:58,450 --> 00:00:59,990
+to be done through
+a combination
+
+22
+00:01:00,050 --> 00:01:01,730
+of components. It's going to
+
+23
+00:01:01,730 --> 00:01:03,490
+have neural networks in it.
+
+24
+00:01:03,490 --> 00:01:04,790
+It's going to have symbolic
+
+25
+00:01:04,850 --> 00:01:06,355
+representation and symbolic
+
+26
+00:01:06,355 --> 00:01:07,475
+reasoning in it.
+
+27
+00:01:07,475 --> 00:01:08,195
+And, of course,
+
+28
+00:01:08,195 --> 00:01:09,955
+it's going to be based on deep
+
+29
+00:01:09,955 --> 00:01:12,535
+knowledge. And
+when we have it,
+
+30
+00:01:12,755 --> 00:01:14,800
+the value that is provided to
+
+31
+00:01:14,800 --> 00:01:16,180
+individuals, to businesses,
+
+32
+00:01:16,560 --> 00:01:18,400
+would be redefined and much
+
+33
+00:01:18,400 --> 00:01:20,240
+enhanced compared
+to even the great
+
+34
+00:01:20,240 --> 00:01:21,940
+things that we can do today.
+
+35
+00:01:22,515 --> 00:01:24,455
+This will require
+new architectures
+
+36
+00:01:24,675 --> 00:01:25,635
+to implement it,
+
+37
+00:01:25,635 --> 00:01:27,735
+which we'll talk
+about later on.
+
+38
+00:01:28,435 --> 00:01:30,295
+And with all that
+coming together,
+
+39
+00:01:31,230 --> 00:01:33,410
+a new human centric cognitive
+
+40
+00:01:33,950 --> 00:01:35,730
+AI is about to arrive.
+
+41
+00:01:37,070 --> 00:01:38,530
+I mentioned deep knowledge.
+
+42
+00:01:38,990 --> 00:01:40,450
+What do I mean by that?
+
+43
+00:01:41,215 --> 00:01:43,055
+If you look at the nature of
+
+44
+00:01:43,055 --> 00:01:44,975
+recognition versus
+higher level
+
+45
+00:01:44,975 --> 00:01:46,915
+cognition, they are
+very different.
+
+46
+00:01:47,455 --> 00:01:48,275
+In recognition,
+
+47
+00:01:49,060 --> 00:01:51,300
+there's a world out there with
+
+48
+00:01:51,300 --> 00:01:52,760
+relatively shallow data.
+
+49
+00:01:53,220 --> 00:01:54,440
+If you look at pixels,
+
+50
+00:01:54,500 --> 00:01:56,980
+you just have their
+location, the color,
+
+51
+00:01:56,980 --> 00:01:57,800
+their intensity,
+
+52
+00:01:58,415 --> 00:02:00,515
+but the data is
+relatively shallow.
+
+53
+00:02:00,895 --> 00:02:03,155
+It's continuous.
+It's differentiable.
+
+54
+00:02:04,335 --> 00:02:06,815
+And you need deep learning and
+
+55
+00:02:06,815 --> 00:02:09,640
+other methods in order
+to structure it,
+
+56
+00:02:09,640 --> 00:02:11,960
+find what is
+the meaning of that,
+
+57
+00:02:11,960 --> 00:02:15,020
+and then make it
+into knowledge.
+
+58
+00:02:15,800 --> 00:02:17,020
+Cognition is different.
+
+59
+00:02:18,195 --> 00:02:20,275
+High cognition requires to to
+
+60
+00:02:20,275 --> 00:02:21,955
+understand a very
+deep structure
+
+61
+00:02:21,955 --> 00:02:22,615
+of knowledge.
+
+62
+00:02:23,315 --> 00:02:26,775
+Let's take the example,
+is grandma well?
+
+63
+00:02:27,990 --> 00:02:29,850
+In order to pass
+and understand
+
+64
+00:02:30,710 --> 00:02:31,770
+what is grandma,
+
+65
+00:02:31,830 --> 00:02:33,350
+what is this
+particular grandma,
+
+66
+00:02:33,350 --> 00:02:35,665
+what is expected in
+any particular age,
+
+67
+00:02:35,825 --> 00:02:36,805
+what's the history,
+
+68
+00:02:37,105 --> 00:02:38,145
+and many other things.
+
+69
+00:02:38,145 --> 00:02:39,745
+What is relatively
+well for this
+
+70
+00:02:39,745 --> 00:02:40,645
+particular grandma.
+
+71
+00:02:41,185 --> 00:02:42,865
+There's so much
+knowledge that's
+
+72
+00:02:42,865 --> 00:02:45,600
+in there that all comes forth
+
+73
+00:02:45,600 --> 00:02:46,820
+with a simple question.
+
+74
+00:02:47,600 --> 00:02:50,020
+So deep knowledge
+are knowledge
+
+75
+00:02:50,080 --> 00:02:52,785
+constructs that allow an AI to
+
+76
+00:02:52,785 --> 00:02:54,565
+continuously acquire
+new information,
+
+77
+00:02:55,665 --> 00:02:58,245
+organize its internal
+view of the world,
+
+78
+00:02:59,105 --> 00:03:01,205
+comprehend the meaning
+of grandma
+
+79
+00:03:01,265 --> 00:03:04,230
+and well in context and reason
+
+80
+00:03:04,610 --> 00:03:05,510
+on its knowledge.
+
+81
+00:03:07,090 --> 00:03:09,350
+Language models are great,
+
+82
+00:03:10,895 --> 00:03:14,595
+and they are able
+to fill in word,
+
+83
+00:03:14,655 --> 00:03:18,035
+generate new statements,
+and in them,
+
+84
+00:03:18,510 --> 00:03:19,890
+there's a lot of knowledge.
+
+85
+00:03:20,030 --> 00:03:21,890
+There's statistical
+information,
+
+86
+00:03:21,950 --> 00:03:23,710
+of course. There's a lot of
+
+87
+00:03:23,710 --> 00:03:25,090
+factual knowledge,
+
+88
+00:03:25,150 --> 00:03:26,910
+and there even
+some common sense
+
+89
+00:03:26,910 --> 00:03:29,195
+knowledge. And you can see it
+
+90
+00:03:29,195 --> 00:03:31,195
+in some of the benchmarks like
+
+91
+00:03:31,195 --> 00:03:33,855
+the natural questions
+or trivia QA,
+
+92
+00:03:34,155 --> 00:03:36,280
+where models like t five that
+
+93
+00:03:36,280 --> 00:03:37,960
+were trained
+through masking and
+
+94
+00:03:37,960 --> 00:03:40,280
+other methods are able to give
+
+95
+00:03:40,280 --> 00:03:41,260
+pretty good results.
+
+96
+00:03:42,120 --> 00:03:44,765
+And in addition to just having
+
+97
+00:03:44,765 --> 00:03:47,105
+those direct ways of assessing
+
+98
+00:03:47,325 --> 00:03:49,005
+how much knowledge
+is in there,
+
+99
+00:03:49,005 --> 00:03:50,285
+you can enhance it.
+
+100
+00:03:50,285 --> 00:03:52,150
+For example, the work that was
+
+101
+00:03:52,150 --> 00:03:55,110
+done in Eugene Choi's group on
+
+102
+00:03:55,110 --> 00:03:57,750
+Atomic shows that
+you can extract
+
+103
+00:03:57,750 --> 00:04:00,570
+from GPT three a lot
+of common sense,
+
+104
+00:04:01,235 --> 00:04:04,275
+information and
+enhance a knowledge
+
+105
+00:04:04,275 --> 00:04:07,955
+graph by ten x
+from common sense
+
+106
+00:04:07,955 --> 00:04:10,370
+information that
+is within a large
+
+107
+00:04:10,370 --> 00:04:11,830
+model, a GPT three.
+
+108
+00:04:11,890 --> 00:04:13,410
+And GPT three by itself,
+
+109
+00:04:13,410 --> 00:04:14,470
+by being prompted,
+
+110
+00:04:14,770 --> 00:04:16,610
+can give you some really nice
+
+111
+00:04:16,610 --> 00:04:18,595
+common sense answer
+like x starts
+
+112
+00:04:18,595 --> 00:04:21,735
+running so x gets in
+shape and so on.
+
+113
+00:04:22,195 --> 00:04:23,815
+So overall, it's good.
+
+114
+00:04:24,035 --> 00:04:27,640
+Language models
+are one of option
+
+115
+00:04:27,640 --> 00:04:29,340
+for good knowledge models.
+
+116
+00:04:29,800 --> 00:04:31,740
+There's also some additional
+
+117
+00:04:31,960 --> 00:04:34,335
+value that has been quoted on
+
+118
+00:04:34,335 --> 00:04:36,755
+why there might be a very good
+
+119
+00:04:36,815 --> 00:04:38,115
+knowledge model because,
+
+120
+00:04:39,055 --> 00:04:40,675
+there's no schema
+engineering,
+
+121
+00:04:41,550 --> 00:04:43,890
+there's no need to have preset
+
+122
+00:04:44,590 --> 00:04:46,910
+relations and also there's no
+
+123
+00:04:46,910 --> 00:04:48,190
+need for a person,
+
+124
+00:04:48,190 --> 00:04:50,210
+for humans to provide
+supervision.
+
+125
+00:04:51,975 --> 00:04:55,815
+So, are language models great
+
+126
+00:04:55,815 --> 00:04:56,795
+knowledge models?
+
+127
+00:04:57,495 --> 00:04:59,995
+And the answer, I
+believe, is not.
+
+128
+00:05:00,850 --> 00:05:03,330
+Language models are not great
+
+129
+00:05:03,330 --> 00:05:04,310
+knowledge models,
+
+130
+00:05:05,010 --> 00:05:07,270
+and it's true both on
+the effectiveness,
+
+131
+00:05:08,605 --> 00:05:10,225
+which is how well
+they perform,
+
+132
+00:05:10,285 --> 00:05:11,665
+as well as their efficiency,
+
+133
+00:05:11,885 --> 00:05:13,725
+which is how much
+compute do you
+
+134
+00:05:13,725 --> 00:05:15,185
+need in order to perform.
+
+135
+00:05:15,485 --> 00:05:17,585
+And let's take the same t five
+
+136
+00:05:17,850 --> 00:05:20,430
+and the benchmarks
+that we just show,
+
+137
+00:05:21,530 --> 00:05:22,990
+very good performance in.
+
+138
+00:05:23,210 --> 00:05:25,630
+When you integrate retrieval,
+
+139
+00:05:26,175 --> 00:05:29,935
+such as in RAM or RAG or more
+
+140
+00:05:29,935 --> 00:05:31,555
+recently infusion
+and decoder,
+
+141
+00:05:31,935 --> 00:05:33,875
+you can get a much
+better results
+
+142
+00:05:34,980 --> 00:05:36,820
+like going from
+thirty six point
+
+143
+00:05:36,820 --> 00:05:39,380
+six to fifty one point four on
+
+144
+00:05:39,380 --> 00:05:42,180
+the actual f one or the exact
+
+145
+00:05:42,180 --> 00:05:44,165
+MET scores. And you can do it
+
+146
+00:05:44,165 --> 00:05:46,265
+with a much smaller model.
+
+147
+00:05:46,805 --> 00:05:49,465
+By using information,
+in this case,
+
+148
+00:05:49,685 --> 00:05:52,380
+that resides outside
+and effectively
+
+149
+00:05:52,520 --> 00:05:54,620
+bring it in, you improve both
+
+150
+00:05:54,760 --> 00:05:56,600
+efficiency and the quality of
+
+151
+00:05:56,600 --> 00:05:59,005
+the result. Well,
+
+152
+00:05:59,545 --> 00:06:00,905
+you're saying that language
+
+153
+00:06:00,905 --> 00:06:02,585
+models are
+performing very well
+
+154
+00:06:02,585 --> 00:06:04,665
+as a repository of knowledge,
+
+155
+00:06:04,665 --> 00:06:06,125
+so what's the problem?
+
+156
+00:06:06,665 --> 00:06:09,200
+Well, they were
+not designed for
+
+157
+00:06:09,200 --> 00:06:12,100
+that and even though
+they do well,
+
+158
+00:06:12,320 --> 00:06:13,840
+we need to think about what is
+
+159
+00:06:13,840 --> 00:06:15,680
+really the optimal way of
+
+160
+00:06:15,680 --> 00:06:16,660
+representing knowledge.
+
+161
+00:06:16,915 --> 00:06:18,615
+And there are some
+basic limitations
+
+162
+00:06:19,235 --> 00:06:20,755
+in the representation
+and other
+
+163
+00:06:20,755 --> 00:06:23,315
+aspects that make
+language model
+
+164
+00:06:23,315 --> 00:06:25,895
+good but not great
+for the task.
+
+165
+00:06:26,230 --> 00:06:27,670
+And we should remember that
+
+166
+00:06:27,670 --> 00:06:29,190
+sometimes there's so much
+
+167
+00:06:29,190 --> 00:06:31,350
+information learned in those
+
+168
+00:06:31,350 --> 00:06:33,030
+language models that we can
+
+169
+00:06:33,030 --> 00:06:35,895
+extract and enhance dedicated
+
+170
+00:06:36,115 --> 00:06:37,015
+knowledge models.
+
+171
+00:06:37,475 --> 00:06:38,535
+But by themselves,
+
+172
+00:06:38,915 --> 00:06:40,295
+there are several
+shortcomings,
+
+173
+00:06:40,595 --> 00:06:42,615
+and let's look at
+what those are.
+
+174
+00:06:43,430 --> 00:06:45,110
+So what makes for a great
+
+175
+00:06:45,110 --> 00:06:46,010
+knowledge model?
+
+176
+00:06:47,030 --> 00:06:49,050
+I would say five areas
+of capabilities,
+
+177
+00:06:49,830 --> 00:06:52,675
+scalability, fidelity,
+adaptability,
+
+178
+00:06:53,535 --> 00:06:55,075
+richness, and explainability.
+
+179
+00:06:55,935 --> 00:06:58,755
+Let's talk a bit
+about each of them.
+
+180
+00:06:59,700 --> 00:07:01,140
+The scale of information that
+
+181
+00:07:01,140 --> 00:07:03,160
+we're dealing with
+is very high,
+
+182
+00:07:03,220 --> 00:07:04,980
+and you can see
+that if you look
+
+183
+00:07:04,980 --> 00:07:08,040
+just at the sizes of
+the recent models.
+
+184
+00:07:09,685 --> 00:07:12,345
+How do systems deal
+with this tension?
+
+185
+00:07:12,725 --> 00:07:14,325
+On one hand, you want to have
+
+186
+00:07:14,325 --> 00:07:16,025
+the largest scale possible.
+
+187
+00:07:16,325 --> 00:07:18,345
+On the other hand,
+you want expediency.
+
+188
+00:07:19,060 --> 00:07:20,660
+You want the ability to do it
+
+189
+00:07:20,660 --> 00:07:22,360
+in a very cost
+effective manner.
+
+190
+00:07:23,060 --> 00:07:25,380
+There is a way
+that systems deal
+
+191
+00:07:25,380 --> 00:07:26,040
+with that,
+
+192
+00:07:26,555 --> 00:07:29,135
+and that is by creating tiers
+
+193
+00:07:29,275 --> 00:07:30,095
+or a hierarchy.
+
+194
+00:07:31,595 --> 00:07:33,115
+You want to
+differentiate between
+
+195
+00:07:33,115 --> 00:07:34,955
+things that you access every
+
+196
+00:07:34,955 --> 00:07:37,920
+tenth time to maybe items that
+
+197
+00:07:37,920 --> 00:07:40,260
+you access every ten
+trillion times.
+
+198
+00:07:40,880 --> 00:07:42,560
+And by providing
+this hierarchy
+
+199
+00:07:42,560 --> 00:07:44,260
+such as in a computer system,
+
+200
+00:07:44,400 --> 00:07:47,035
+you are able to
+separate the closest
+
+201
+00:07:47,095 --> 00:07:48,695
+thing in the computer system.
+
+202
+00:07:48,695 --> 00:07:50,295
+It would be within
+the registers
+
+203
+00:07:50,295 --> 00:07:52,875
+or the cache. Can be
+easily accessible.
+
+204
+00:07:53,255 --> 00:07:55,755
+There's a small
+scale, high cost,
+
+205
+00:07:55,930 --> 00:07:57,610
+but you get it
+when you need it
+
+206
+00:07:57,610 --> 00:07:59,850
+immediately. And
+then as you go
+
+207
+00:07:59,850 --> 00:08:01,710
+to further and further tiers,
+
+208
+00:08:01,850 --> 00:08:04,590
+you have a larger
+scale, more capacity.
+
+209
+00:08:06,305 --> 00:08:07,765
+The speed is lower,
+
+210
+00:08:08,065 --> 00:08:09,445
+and the cost is lower.
+
+211
+00:08:09,665 --> 00:08:11,925
+So by having a full
+hierarchy system,
+
+212
+00:08:11,985 --> 00:08:14,565
+you can have the scale
+of the largest
+
+213
+00:08:15,530 --> 00:08:18,010
+tier, but you can do a much
+
+214
+00:08:18,010 --> 00:08:20,810
+shorter access time and better
+
+215
+00:08:20,810 --> 00:08:22,895
+cost than with a single tier.
+
+216
+00:08:23,215 --> 00:08:25,615
+And many systems in nature are
+
+217
+00:08:25,615 --> 00:08:27,075
+operating in the same manner.
+
+218
+00:08:27,295 --> 00:08:29,295
+Let's take an example
+from a completely
+
+219
+00:08:29,295 --> 00:08:30,195
+different space.
+
+220
+00:08:31,500 --> 00:08:33,740
+Energy gets to our cells by
+
+221
+00:08:33,740 --> 00:08:36,240
+transforming ATP to ADP,
+
+222
+00:08:37,260 --> 00:08:38,640
+and it's just there.
+
+223
+00:08:39,285 --> 00:08:40,725
+How do we get this energy?
+
+224
+00:08:40,725 --> 00:08:43,365
+We get a glucose
+circulating in
+
+225
+00:08:43,365 --> 00:08:44,025
+the bloodstream.
+
+226
+00:08:44,565 --> 00:08:46,245
+So there's lots
+of energy going
+
+227
+00:08:46,245 --> 00:08:47,525
+around but still
+needs a little
+
+228
+00:08:47,525 --> 00:08:49,810
+bit of processing to
+become available.
+
+229
+00:08:50,510 --> 00:08:53,330
+But all this
+glucose circulating
+
+230
+00:08:53,710 --> 00:08:55,310
+is not enough.
+There's storage,
+
+231
+00:08:55,310 --> 00:08:56,130
+there's backup,
+
+232
+00:08:56,285 --> 00:08:58,205
+and that one is glycogen or
+
+233
+00:08:58,205 --> 00:09:00,525
+others that is
+sitting in liver,
+
+234
+00:09:00,525 --> 00:09:02,225
+muscle cells, fatty tissue,
+
+235
+00:09:02,445 --> 00:09:04,865
+and can be turned
+into glucose.
+
+236
+00:09:05,610 --> 00:09:06,990
+But there's the external,
+
+237
+00:09:07,050 --> 00:09:08,650
+the largest tier is of course
+
+238
+00:09:08,650 --> 00:09:10,250
+the outside world
+where you have
+
+239
+00:09:10,250 --> 00:09:13,710
+all this energy that
+can be consumed,
+
+240
+00:09:14,375 --> 00:09:15,915
+digested, and then turned.
+
+241
+00:09:15,975 --> 00:09:17,815
+So the idea of having a tiered
+
+242
+00:09:17,815 --> 00:09:21,275
+system is one that is in all
+
+243
+00:09:21,575 --> 00:09:24,040
+environments and settings,
+
+244
+00:09:24,100 --> 00:09:27,160
+which require
+a huge scale with
+
+245
+00:09:27,220 --> 00:09:28,600
+very fast access.
+
+246
+00:09:29,620 --> 00:09:33,515
+Another area is
+the richness of
+
+247
+00:09:33,515 --> 00:09:36,095
+knowledge. The
+ability to capture
+
+248
+00:09:36,475 --> 00:09:37,455
+all the complexities,
+
+249
+00:09:37,835 --> 00:09:40,715
+all the relationship
+in both in
+
+250
+00:09:40,715 --> 00:09:43,300
+the language world as well as
+
+251
+00:09:43,300 --> 00:09:44,360
+in other modalities.
+
+252
+00:09:45,140 --> 00:09:47,700
+And this is
+something that I'm,
+
+253
+00:09:48,100 --> 00:09:50,025
+invited to read in a blog that
+
+254
+00:09:50,185 --> 00:09:51,785
+I published on the dimensions
+
+255
+00:09:51,785 --> 00:09:54,125
+of knowledge. But
+just in a nutshell,
+
+256
+00:09:54,985 --> 00:09:56,345
+there's knowledge
+about the world
+
+257
+00:09:56,345 --> 00:09:57,565
+that needs to be captured,
+
+258
+00:09:57,830 --> 00:09:59,830
+and it could be
+descriptive like
+
+259
+00:09:59,830 --> 00:10:03,110
+taxonomies or
+ontologies and and
+
+260
+00:10:03,110 --> 00:10:04,490
+property inheritance.
+
+261
+00:10:04,995 --> 00:10:06,995
+It could be either language or
+
+262
+00:10:06,995 --> 00:10:09,635
+it could be a three d point
+
+263
+00:10:09,635 --> 00:10:12,840
+cloud about some
+some, assets,
+
+264
+00:10:12,840 --> 00:10:14,280
+some physical objects that you
+
+265
+00:10:14,280 --> 00:10:15,100
+capture inside.
+
+266
+00:10:16,040 --> 00:10:18,360
+The second is
+ability to capture
+
+267
+00:10:18,360 --> 00:10:19,500
+models of the world.
+
+268
+00:10:20,355 --> 00:10:22,275
+Causal models,
+procedural models,
+
+269
+00:10:22,275 --> 00:10:23,255
+physical models,
+
+270
+00:10:23,715 --> 00:10:26,055
+how things are
+related and moving
+
+271
+00:10:26,435 --> 00:10:29,415
+in time, in space,
+in progression.
+
+272
+00:10:30,180 --> 00:10:32,760
+And finally, scripts
+and stories.
+
+273
+00:10:32,980 --> 00:10:35,560
+It's not just things
+that are point.
+
+274
+00:10:35,780 --> 00:10:38,020
+There are complex
+story that we
+
+275
+00:10:38,020 --> 00:10:40,255
+tell ourselves that we know
+
+276
+00:10:40,255 --> 00:10:42,815
+things about the world which
+
+277
+00:10:42,815 --> 00:10:44,835
+needs to be captured
+in this form.
+
+278
+00:10:45,375 --> 00:10:46,995
+And then there's
+the meta knowledge,
+
+279
+00:10:47,710 --> 00:10:49,250
+context, source attribution.
+
+280
+00:10:49,470 --> 00:10:51,970
+So if you read
+something in a,
+
+281
+00:10:52,510 --> 00:10:54,530
+in a magazine from
+the Newsstand
+
+282
+00:10:54,805 --> 00:10:56,425
+or you read it from the,
+
+283
+00:10:57,285 --> 00:10:58,745
+the New England Medical,
+
+284
+00:10:59,365 --> 00:11:00,345
+Journal of Medicine,
+
+285
+00:11:00,405 --> 00:11:01,705
+you will treat it differently
+
+286
+00:11:02,040 --> 00:11:03,960
+because you understand
+the attribution
+
+287
+00:11:03,960 --> 00:11:04,860
+to the sources.
+
+288
+00:11:05,400 --> 00:11:06,680
+And then there's values and
+
+289
+00:11:06,680 --> 00:11:08,200
+priorities which
+are so important
+
+290
+00:11:08,200 --> 00:11:09,740
+as part of our
+knowledge structure.
+
+291
+00:11:10,195 --> 00:11:11,735
+When is something
+more applicable?
+
+292
+00:11:12,035 --> 00:11:14,055
+What's the value
+that we put on it?
+
+293
+00:11:14,115 --> 00:11:15,575
+And then finally, concepts.
+
+294
+00:11:16,515 --> 00:11:18,600
+Concepts are
+the most important
+
+295
+00:11:18,600 --> 00:11:20,380
+construct that
+we use as humans
+
+296
+00:11:20,680 --> 00:11:23,800
+to think and build
+views of the world,
+
+297
+00:11:23,800 --> 00:11:25,240
+and concepts are the one that
+
+298
+00:11:25,240 --> 00:11:28,415
+cutting across
+all those views.
+
+299
+00:11:29,075 --> 00:11:31,255
+The next area is
+adaptability.
+
+300
+00:11:32,515 --> 00:11:34,980
+A knowledge model
+must work with
+
+301
+00:11:34,980 --> 00:11:37,140
+multitude of data
+sources, types,
+
+302
+00:11:37,140 --> 00:11:38,200
+and update rates.
+
+303
+00:11:38,740 --> 00:11:42,360
+So if I'm a dentist
+with a small office,
+
+304
+00:11:42,665 --> 00:11:44,365
+I want to be able to work with
+
+305
+00:11:44,745 --> 00:11:46,985
+my patient's
+information and be
+
+306
+00:11:46,985 --> 00:11:48,665
+able to update it quickly and
+
+307
+00:11:48,665 --> 00:11:50,605
+be able to have
+different types
+
+308
+00:11:50,770 --> 00:11:52,050
+of information in there.
+
+309
+00:11:52,050 --> 00:11:53,670
+If I'm a financial
+institution,
+
+310
+00:11:53,890 --> 00:11:55,990
+it's very different
+types of data.
+
+311
+00:11:56,370 --> 00:11:58,370
+Also, the rate of change and
+
+312
+00:11:58,370 --> 00:12:00,230
+update of the model
+is very important.
+
+313
+00:12:00,675 --> 00:12:02,675
+The model need to
+change as fast
+
+314
+00:12:02,675 --> 00:12:04,435
+as the relevant
+part in the world
+
+315
+00:12:04,435 --> 00:12:07,395
+changes. So if it's
+about tracking
+
+316
+00:12:07,395 --> 00:12:08,515
+where people live and what's
+
+317
+00:12:08,515 --> 00:12:10,280
+their phone numbers,
+that's one rate.
+
+318
+00:12:10,280 --> 00:12:11,720
+If it's tracking the latest
+
+319
+00:12:11,720 --> 00:12:12,860
+earthquake in California,
+
+320
+00:12:13,480 --> 00:12:14,780
+it's a different rate.
+
+321
+00:12:14,920 --> 00:12:18,815
+And there's no
+path where going
+
+322
+00:12:18,815 --> 00:12:21,375
+through a retraining or even
+
+323
+00:12:21,375 --> 00:12:23,775
+fine tuning with new data can
+
+324
+00:12:23,775 --> 00:12:26,070
+refresh as quick as the world
+
+325
+00:12:26,070 --> 00:12:27,690
+changes in some
+of those cases.
+
+326
+00:12:28,950 --> 00:12:30,890
+The next area is
+explainability.
+
+327
+00:12:32,855 --> 00:12:35,035
+When an AI interacts
+with humans,
+
+328
+00:12:36,055 --> 00:12:37,915
+how can the AI
+explain itself,
+
+329
+00:12:38,775 --> 00:12:40,970
+be interpretable
+and communicate
+
+330
+00:12:41,190 --> 00:12:42,730
+in a very natural manner?
+
+331
+00:12:43,350 --> 00:12:45,050
+And this is better structured
+
+332
+00:12:45,430 --> 00:12:46,970
+when you have an explicit,
+
+333
+00:12:47,830 --> 00:12:49,815
+intelligible source
+of knowledge.
+
+334
+00:12:50,995 --> 00:12:51,815
+For one,
+
+335
+00:12:52,035 --> 00:12:54,355
+all the structure is built in
+
+336
+00:12:54,355 --> 00:12:55,815
+a way that is transparent.
+
+337
+00:12:56,170 --> 00:12:58,330
+Whether it's
+a taxonomy or other
+
+338
+00:12:58,330 --> 00:13:00,910
+relationship, it
+can be explained
+
+339
+00:13:01,130 --> 00:13:02,270
+more simply.
+
+340
+00:13:03,345 --> 00:13:05,205
+It also have all
+the constructs
+
+341
+00:13:05,665 --> 00:13:07,765
+to do what if
+analysis counterfactual
+
+342
+00:13:08,545 --> 00:13:10,545
+in a way that can
+be mapped back
+
+343
+00:13:10,545 --> 00:13:12,165
+to this explicit structure.
+
+344
+00:13:13,020 --> 00:13:14,620
+And finally, it gives a better
+
+345
+00:13:14,620 --> 00:13:17,520
+foundation for a human AI
+
+346
+00:13:17,580 --> 00:13:19,600
+communication
+where information
+
+347
+00:13:19,660 --> 00:13:23,445
+can be exchanged,
+adopted, integrated,
+
+348
+00:13:24,145 --> 00:13:26,005
+and communicated back.
+
+349
+00:13:27,825 --> 00:13:29,445
+Finally, fidelity.
+
+350
+00:13:30,720 --> 00:13:32,320
+Knowledge models must retain
+
+351
+00:13:32,320 --> 00:13:34,740
+information in
+a form that allows
+
+352
+00:13:35,200 --> 00:13:37,700
+faithful reproduction
+to the origin,
+
+353
+00:13:38,215 --> 00:13:39,915
+whether it's facts,
+attributes,
+
+354
+00:13:40,535 --> 00:13:42,855
+relationship. When you store
+
+355
+00:13:42,855 --> 00:13:44,235
+them in a knowledge graph,
+
+356
+00:13:44,535 --> 00:13:47,080
+you can store them
+in a way that
+
+357
+00:13:47,080 --> 00:13:48,620
+is true to source.
+
+358
+00:13:49,160 --> 00:13:51,020
+You can also store
+them in a way
+
+359
+00:13:51,160 --> 00:13:53,260
+that is not dependent
+on statistical
+
+360
+00:13:53,400 --> 00:13:55,935
+occurrence. So
+whether it happened
+
+361
+00:13:55,935 --> 00:13:58,675
+once or it happened
+multiple times,
+
+362
+00:13:58,815 --> 00:14:01,075
+you are much less sensitive to
+
+363
+00:14:01,135 --> 00:14:03,295
+catastrophic
+forgetting or other
+
+364
+00:14:03,295 --> 00:14:04,355
+types of decay.
+
+365
+00:14:05,180 --> 00:14:07,020
+And also because
+you have the full
+
+366
+00:14:07,020 --> 00:14:08,960
+structure, because you
+have the sources,
+
+367
+00:14:09,500 --> 00:14:11,840
+you can diminish
+some of the effects
+
+368
+00:14:12,140 --> 00:14:13,680
+of training based bias.
+
+369
+00:14:15,035 --> 00:14:16,895
+We spoke about all
+those principles
+
+370
+00:14:17,195 --> 00:14:19,215
+of having a great
+knowledge model,
+
+371
+00:14:19,675 --> 00:14:21,355
+but how does it translate to
+
+372
+00:14:21,355 --> 00:14:23,730
+an actual
+architecture that can
+
+373
+00:14:23,730 --> 00:14:25,910
+support the next wave of AI?
+
+374
+00:14:26,610 --> 00:14:29,750
+And I would posit that
+the architectures
+
+375
+00:14:30,370 --> 00:14:32,435
+need to have knowledge and
+
+376
+00:14:32,435 --> 00:14:34,535
+information at three levels.
+
+377
+00:14:35,635 --> 00:14:36,695
+It can do more,
+
+378
+00:14:37,235 --> 00:14:39,975
+but three levels
+is the necessary
+
+379
+00:14:40,035 --> 00:14:41,415
+and sufficient partition.
+
+380
+00:14:42,200 --> 00:14:44,360
+So I call it three levels
+
+381
+00:14:44,360 --> 00:14:47,100
+knowledge or it
+sounds phonetically
+
+382
+00:14:47,240 --> 00:14:49,180
+like thrill k.
+
+383
+00:14:50,355 --> 00:14:52,435
+And the first level
+is for the most
+
+384
+00:14:52,435 --> 00:14:53,395
+immediate knowledge,
+
+385
+00:14:53,395 --> 00:14:55,395
+and that knowledge is,
+
+386
+00:14:55,395 --> 00:14:56,935
+let's call it giga scale.
+
+387
+00:14:57,480 --> 00:15:00,060
+And it should sit in
+the newer network.
+
+388
+00:15:01,480 --> 00:15:04,300
+The next level of knowledge is
+
+389
+00:15:04,600 --> 00:15:06,060
+the deep knowledge base.
+
+390
+00:15:06,095 --> 00:15:07,615
+So this could be
+a knowledge graph,
+
+391
+00:15:07,615 --> 00:15:09,295
+for example. This is where you
+
+392
+00:15:09,295 --> 00:15:11,395
+have intelligible,
+structured,
+
+393
+00:15:11,615 --> 00:15:12,675
+explicit knowledge.
+
+394
+00:15:13,430 --> 00:15:15,510
+And this one could
+be at the terror
+
+395
+00:15:15,510 --> 00:15:17,850
+scale. And this is available
+
+396
+00:15:18,390 --> 00:15:20,710
+whenever is needed
+by the neural
+
+397
+00:15:20,710 --> 00:15:22,465
+network. And finally,
+
+398
+00:15:23,165 --> 00:15:25,105
+there's the world
+information.
+
+399
+00:15:25,245 --> 00:15:27,565
+And the world
+knowledge or world
+
+400
+00:15:27,565 --> 00:15:30,650
+data is considered
+to be zeta scale.
+
+401
+00:15:30,650 --> 00:15:32,570
+You've got things
+today in terms
+
+402
+00:15:32,570 --> 00:15:34,490
+of the flow of
+information that
+
+403
+00:15:34,490 --> 00:15:36,490
+are reaching that level of ten
+
+404
+00:15:36,490 --> 00:15:37,665
+to the twenty one.
+
+405
+00:15:37,825 --> 00:15:39,665
+And we need to plan our system
+
+406
+00:15:39,665 --> 00:15:41,365
+for the Yetta scale,
+
+407
+00:15:41,425 --> 00:15:43,285
+the ten to the power
+of twenty four.
+
+408
+00:15:43,665 --> 00:15:45,745
+So we have those three levels
+
+409
+00:15:45,745 --> 00:15:47,530
+of knowledge, The immediate,
+
+410
+00:15:48,150 --> 00:15:50,470
+the one that is associated in
+
+411
+00:15:50,470 --> 00:15:51,430
+the knowledge base,
+
+412
+00:15:51,430 --> 00:15:52,970
+and the one that is supporting
+
+413
+00:15:53,190 --> 00:15:54,250
+out there in the world.
+
+414
+00:15:54,575 --> 00:15:56,095
+How do we put it together as
+
+415
+00:15:56,095 --> 00:15:56,835
+an architecture?
+
+416
+00:15:57,615 --> 00:15:59,635
+So how does the three
+k architecture
+
+417
+00:15:59,855 --> 00:16:02,115
+look like? It has
+those three elements.
+
+418
+00:16:02,450 --> 00:16:04,690
+It has the neural network with
+
+419
+00:16:04,690 --> 00:16:06,530
+a lot of knowledge within its
+
+420
+00:16:06,530 --> 00:16:07,590
+parametric memory,
+
+421
+00:16:07,730 --> 00:16:09,490
+and simple flows could just go
+
+422
+00:16:09,490 --> 00:16:12,025
+from input through
+neural network
+
+423
+00:16:12,025 --> 00:16:12,765
+to output.
+
+424
+00:16:13,305 --> 00:16:15,885
+But it also has
+the knowledge base,
+
+425
+00:16:16,345 --> 00:16:17,885
+structured, explicit,
+
+426
+00:16:18,345 --> 00:16:19,965
+intelligible knowledge base.
+
+427
+00:16:20,130 --> 00:16:21,250
+So when needed,
+
+428
+00:16:21,250 --> 00:16:24,210
+you can have
+the extraction into
+
+429
+00:16:24,210 --> 00:16:25,270
+the neural network.
+
+430
+00:16:25,730 --> 00:16:27,830
+And I'm saying reason because
+
+431
+00:16:28,095 --> 00:16:29,615
+there's not only the symbolic
+
+432
+00:16:29,615 --> 00:16:31,215
+representation which
+is in the deep
+
+433
+00:16:31,215 --> 00:16:31,935
+knowledge base,
+
+434
+00:16:31,935 --> 00:16:33,695
+but also the ability to do
+
+435
+00:16:33,695 --> 00:16:34,675
+symbolic reasoning.
+
+436
+00:16:35,480 --> 00:16:36,220
+And then,
+
+437
+00:16:36,680 --> 00:16:39,080
+since you cannot have
+all the information
+
+438
+00:16:39,080 --> 00:16:41,020
+of the world inside your model
+
+439
+00:16:41,480 --> 00:16:43,825
+updated at the right rate,
+
+440
+00:16:43,965 --> 00:16:45,325
+there needs to be access to
+
+441
+00:16:45,325 --> 00:16:47,565
+the outside world
+and all the corpus
+
+442
+00:16:47,565 --> 00:16:50,450
+of data, documents, images,
+
+443
+00:16:50,910 --> 00:16:52,690
+earthquake information,
+financial,
+
+444
+00:16:52,910 --> 00:16:54,350
+everything that's
+happening out
+
+445
+00:16:54,350 --> 00:16:55,810
+there based on
+the application.
+
+446
+00:16:56,190 --> 00:16:57,730
+And there needs to
+be the retrieval
+
+447
+00:16:57,790 --> 00:16:58,850
+mechanisms, obviously,
+
+448
+00:16:59,875 --> 00:17:02,275
+but there also needs
+to be a knowledge
+
+449
+00:17:02,275 --> 00:17:04,295
+acquisition that continuously
+
+450
+00:17:04,995 --> 00:17:08,295
+updates an ever
+growing consistent
+
+451
+00:17:08,910 --> 00:17:11,010
+view of the world
+within the machine.
+
+452
+00:17:11,390 --> 00:17:13,090
+And this is how we can avoid
+
+453
+00:17:13,390 --> 00:17:14,850
+going to some of
+the shortfalls
+
+454
+00:17:15,230 --> 00:17:19,155
+of handmade expert
+systems of the past.
+
+455
+00:17:20,495 --> 00:17:24,175
+So how will this
+new AI look like?
+
+456
+00:17:24,175 --> 00:17:26,470
+What is this new cognitive AI
+
+457
+00:17:26,630 --> 00:17:27,610
+that will emerge?
+
+458
+00:17:27,990 --> 00:17:30,310
+Well, you have to
+imagine beyond
+
+459
+00:17:30,310 --> 00:17:31,450
+statistical correlation,
+
+460
+00:17:31,830 --> 00:17:33,590
+beyond the type of things that
+
+461
+00:17:33,590 --> 00:17:35,285
+we are very
+impressed by today.
+
+462
+00:17:35,765 --> 00:17:38,265
+You need to imagine an AI that
+
+463
+00:17:38,325 --> 00:17:40,105
+actually understands language
+
+464
+00:17:40,485 --> 00:17:42,085
+by understanding concepts and
+
+465
+00:17:42,085 --> 00:17:44,010
+relationship,
+not just predicts
+
+466
+00:17:44,010 --> 00:17:45,950
+the next word or
+the next phrase.
+
+467
+00:17:46,410 --> 00:17:48,490
+You need to imagine an AI that
+
+468
+00:17:48,490 --> 00:17:51,355
+is inherently multi sourced so
+
+469
+00:17:51,355 --> 00:17:53,355
+it can converge
+multiple sources
+
+470
+00:17:53,355 --> 00:17:54,415
+into its knowledge.
+
+471
+00:17:54,475 --> 00:17:55,775
+And multi model,
+
+472
+00:17:55,995 --> 00:17:58,415
+because the world around us is
+
+473
+00:17:58,475 --> 00:17:59,855
+multi model and rich.
+
+474
+00:18:00,610 --> 00:18:03,670
+It integrates common
+sense knowledge,
+
+475
+00:18:04,210 --> 00:18:05,810
+and common sense knowledge is
+
+476
+00:18:05,810 --> 00:18:08,310
+the basis for making reasoned
+
+477
+00:18:08,770 --> 00:18:10,070
+intelligent decisions.
+
+478
+00:18:10,725 --> 00:18:12,505
+It can adapt to
+new circumstances
+
+479
+00:18:12,805 --> 00:18:15,145
+and new tasks because the data
+
+480
+00:18:15,285 --> 00:18:17,285
+and the knowledge
+is not structured
+
+481
+00:18:17,285 --> 00:18:18,640
+for a particular task,
+
+482
+00:18:18,720 --> 00:18:20,320
+but it's there with all its
+
+483
+00:18:20,320 --> 00:18:22,880
+richness and
+expressivity to be
+
+484
+00:18:22,880 --> 00:18:24,340
+used for new tasks.
+
+485
+00:18:25,200 --> 00:18:27,300
+It explains itself
+and communicates
+
+486
+00:18:27,520 --> 00:18:30,145
+better based on
+what we discussed
+
+487
+00:18:30,145 --> 00:18:33,045
+earlier. And importantly,
+
+488
+00:18:33,905 --> 00:18:35,845
+it is more robust
+and customizable.
+
+489
+00:18:36,960 --> 00:18:39,540
+For the long tail
+of use for AI,
+
+490
+00:18:40,320 --> 00:18:42,740
+the AI needs to
+adapt to particular
+
+491
+00:18:42,880 --> 00:18:45,145
+environments, to your car,
+
+492
+00:18:45,365 --> 00:18:48,325
+to your home so that it learns
+
+493
+00:18:48,325 --> 00:18:50,005
+the specifics,
+it builds it into
+
+494
+00:18:50,005 --> 00:18:52,150
+its knowledge, and
+it can interact
+
+495
+00:18:52,150 --> 00:18:54,090
+with you in
+the most appropriate
+
+496
+00:18:54,150 --> 00:18:55,610
+way for you.
+
+497
+00:18:56,390 --> 00:18:58,890
+So those competencies together
+
+498
+00:18:59,415 --> 00:19:02,155
+create
+a anthropocentric cognitive
+
+499
+00:19:02,215 --> 00:19:06,135
+AI that can be
+achieved only if
+
+500
+00:19:06,135 --> 00:19:08,370
+we use knowledge underlying,
+
+501
+00:19:08,510 --> 00:19:10,850
+which is explicit,
+intelligible,
+
+502
+00:19:11,230 --> 00:19:12,210
+and well structured.
+
+503
+00:19:14,110 --> 00:19:16,385
+So what is needed to make
+
+504
+00:19:16,385 --> 00:19:17,925
+cognitive AI a reality?
+
+505
+00:19:18,145 --> 00:19:19,925
+Well, it takes more
+than a village.
+
+506
+00:19:20,225 --> 00:19:22,805
+It takes the whole
+community to do it.
+
+507
+00:19:23,150 --> 00:19:24,350
+And some of
+the things that are
+
+508
+00:19:24,350 --> 00:19:26,290
+required are the capabilities
+
+509
+00:19:26,990 --> 00:19:29,710
+to access and to mine diverse
+
+510
+00:19:29,710 --> 00:19:31,390
+sources of knowledge
+and be able
+
+511
+00:19:31,390 --> 00:19:34,035
+to bring them into
+the knowledge model.
+
+512
+00:19:34,415 --> 00:19:36,495
+We need to have
+strong semantic
+
+513
+00:19:36,495 --> 00:19:38,835
+parsers and
+knowledge representations
+
+514
+00:19:39,295 --> 00:19:41,475
+for all this
+diverse multimodal
+
+515
+00:19:41,615 --> 00:19:43,780
+knowledge. We need to have
+
+516
+00:19:43,840 --> 00:19:46,080
+hardware and software that is
+
+517
+00:19:46,080 --> 00:19:48,260
+able to do all this,
+hierarchically,
+
+518
+00:19:48,800 --> 00:19:51,300
+on the fly, in a cost
+efficient manner.
+
+519
+00:19:51,875 --> 00:19:53,635
+We need to be
+able to have some
+
+520
+00:19:53,635 --> 00:19:55,895
+apps that are
+really showcasing
+
+521
+00:19:55,955 --> 00:19:58,675
+this to drive
+the need and make
+
+522
+00:19:58,675 --> 00:20:00,695
+all the necessary improvements
+
+523
+00:20:01,270 --> 00:20:02,410
+on those workloads.
+
+524
+00:20:02,950 --> 00:20:05,350
+And finally, I expect to have
+
+525
+00:20:05,350 --> 00:20:07,830
+a new marketplace
+created since
+
+526
+00:20:07,830 --> 00:20:11,065
+this is the age of
+knowledge emerging.
+
+527
+00:20:11,765 --> 00:20:13,605
+Knowledge structure
+or knowledge
+
+528
+00:20:13,605 --> 00:20:16,585
+basis can be sold,
+communicated,
+
+529
+00:20:16,885 --> 00:20:19,050
+and used as other precious
+
+530
+00:20:19,050 --> 00:20:21,310
+resource that we have
+around us today.
+
+531
+00:20:21,850 --> 00:20:23,710
+We are doing our part of this
+
+532
+00:20:24,170 --> 00:20:27,465
+within Interlapse
+at my emergent
+
+533
+00:20:28,085 --> 00:20:29,465
+AI research organization.
+
+534
+00:20:30,005 --> 00:20:31,925
+We are looking at
+multiple aspects
+
+535
+00:20:31,925 --> 00:20:34,520
+of this, including
+NLP, multimodality,
+
+536
+00:20:35,060 --> 00:20:36,200
+common sense reasoning,
+
+537
+00:20:36,580 --> 00:20:37,720
+neuromorphic computing.
+
+538
+00:20:38,260 --> 00:20:41,535
+And this is just an example of
+
+539
+00:20:41,535 --> 00:20:43,615
+demonstrating
+the match that is
+
+540
+00:20:43,615 --> 00:20:46,595
+being created between a word
+
+541
+00:20:46,815 --> 00:20:48,575
+being addressed
+by the language
+
+542
+00:20:48,575 --> 00:20:50,520
+transformer, part of the image
+
+543
+00:20:50,520 --> 00:20:51,340
+that's corresponding,
+
+544
+00:20:51,800 --> 00:20:53,740
+and there's also
+a data structure
+
+545
+00:20:53,880 --> 00:20:55,400
+that is mapped into that.
+
+546
+00:20:55,400 --> 00:20:57,320
+And this work is featured in
+
+547
+00:20:57,320 --> 00:20:59,000
+visual comic leaderboard and
+
+548
+00:20:59,000 --> 00:20:59,465
+other places.
+
+549
+00:21:01,385 --> 00:21:02,845
+Let's bring it all together.
+
+550
+00:21:03,545 --> 00:21:05,385
+So when is it going to happen
+
+551
+00:21:05,385 --> 00:21:07,245
+and how is it going
+to look like?
+
+552
+00:21:08,770 --> 00:21:10,610
+I expect that it
+will take about
+
+553
+00:21:10,610 --> 00:21:13,570
+the same duration
+as deep learning
+
+554
+00:21:13,570 --> 00:21:15,745
+took if you compare
+two thousand
+
+555
+00:21:15,745 --> 00:21:17,765
+twenty one to twenty eleven.
+
+556
+00:21:18,065 --> 00:21:19,905
+So this year, cognitive AI is
+
+557
+00:21:19,905 --> 00:21:21,125
+still a nascent technology.
+
+558
+00:21:21,665 --> 00:21:23,125
+By twenty twenty five,
+
+559
+00:21:23,450 --> 00:21:25,050
+I expect it to be already in
+
+560
+00:21:25,050 --> 00:21:26,270
+some commercial use.
+
+561
+00:21:26,810 --> 00:21:28,430
+And by the end of the decade,
+
+562
+00:21:28,490 --> 00:21:30,110
+I expect it to be a mainstay.
+
+563
+00:21:31,185 --> 00:21:33,525
+And Thrill k promises to be
+
+564
+00:21:33,585 --> 00:21:36,705
+the blueprint of
+how it's going
+
+565
+00:21:36,705 --> 00:21:37,445
+to be implemented,
+
+566
+00:21:38,250 --> 00:21:40,030
+And it needs to bring together
+
+567
+00:21:40,890 --> 00:21:42,750
+new network with symbolic
+
+568
+00:21:42,810 --> 00:21:44,890
+representation
+and with symbolic
+
+569
+00:21:44,890 --> 00:21:47,210
+reasoning. It needs to be able
+
+570
+00:21:47,210 --> 00:21:50,895
+to adapt and
+discover information
+
+571
+00:21:51,195 --> 00:21:53,035
+from the outside
+world so it has
+
+572
+00:21:53,035 --> 00:21:55,375
+a continuously growing
+knowledge base.
+
+573
+00:21:55,515 --> 00:21:57,820
+It has to be able to provide
+
+574
+00:21:57,820 --> 00:22:00,000
+support at scale
+to a diversity
+
+575
+00:22:00,060 --> 00:22:02,860
+of users as well
+as usages through
+
+576
+00:22:02,860 --> 00:22:04,560
+its flexible
+knowledge structure.
+
+577
+00:22:05,325 --> 00:22:07,645
+And it's gonna
+build around deep
+
+578
+00:22:07,645 --> 00:22:09,905
+knowledge that is
+conceptualized,
+
+579
+00:22:10,765 --> 00:22:12,945
+multimodal, ontology based,
+
+580
+00:22:13,390 --> 00:22:16,690
+and it's ready for
+the unfolding future.
+
+581
+00:22:17,150 --> 00:22:18,370
+Thank you very much.
+

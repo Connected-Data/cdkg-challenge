@@ -1,0 +1,4083 @@
+1
+00:00:00,540 --> 00:00:02,220
+So it's my great pleasure to,
+
+2
+00:00:02,460 --> 00:00:05,280
+introduce Eran
+Avidan of Intel.
+
+3
+00:00:05,855 --> 00:00:07,295
+Eran is a machine learning
+
+4
+00:00:07,295 --> 00:00:09,555
+engineer and architect
+of the advanced
+
+5
+00:00:09,615 --> 00:00:10,975
+analytics group at Intel,
+
+6
+00:00:10,975 --> 00:00:12,815
+which delivers AI and big data
+
+7
+00:00:12,815 --> 00:00:14,275
+solutions across Intel.
+
+8
+00:00:14,740 --> 00:00:16,840
+His work at
+the Advanced Analytics
+
+9
+00:00:17,060 --> 00:00:18,660
+Group includes research and
+
+10
+00:00:18,660 --> 00:00:20,260
+development of cutting edge
+
+11
+00:00:20,260 --> 00:00:22,180
+distributed architectures in
+
+12
+00:00:22,180 --> 00:00:23,240
+the AI domain.
+
+13
+00:00:24,015 --> 00:00:25,535
+So let's give
+a warm warm welcome
+
+14
+00:00:25,535 --> 00:00:28,035
+to Aram, and, and we
+can get started.
+
+15
+00:00:28,175 --> 00:00:32,450
+Over over to you.
+So hi, everyone.
+
+16
+00:00:33,310 --> 00:00:35,890
+So I was introduced,
+very formally,
+
+17
+00:00:36,030 --> 00:00:39,695
+very excited, to be
+here, starting this,
+
+18
+00:00:39,935 --> 00:00:41,075
+presentation day.
+
+19
+00:00:41,775 --> 00:00:43,615
+And, today, I want
+to share with
+
+20
+00:00:43,615 --> 00:00:45,455
+you and give you
+a bit of a overview
+
+21
+00:00:45,455 --> 00:00:47,110
+of what we did for our sales
+
+22
+00:00:47,670 --> 00:00:49,050
+department at Intel.
+
+23
+00:00:49,430 --> 00:00:50,470
+Actually, a project,
+
+24
+00:00:50,790 --> 00:00:52,150
+building and
+maintaining a knowledge
+
+25
+00:00:52,150 --> 00:00:53,750
+graph we started
+working on two
+
+26
+00:00:53,750 --> 00:00:55,530
+years ago. And,
+
+27
+00:00:56,390 --> 00:00:57,695
+to continue my introduction,
+
+28
+00:00:57,835 --> 00:00:59,035
+my name is Ivan, and,
+
+29
+00:00:59,195 --> 00:01:00,475
+I'm a machine
+learning engineer
+
+30
+00:01:00,475 --> 00:01:02,895
+and the architect
+of, Intel IT AI.
+
+31
+00:01:03,675 --> 00:01:05,790
+And been working
+at the Advanced
+
+32
+00:01:05,790 --> 00:01:08,350
+Analytics Group
+for the past ten
+
+33
+00:01:08,350 --> 00:01:10,610
+years or so,
+where we provide,
+
+34
+00:01:11,230 --> 00:01:12,910
+products and solution across
+
+35
+00:01:12,910 --> 00:01:14,370
+many of Intel's division,
+
+36
+00:01:14,875 --> 00:01:15,915
+specifically machine learning
+
+37
+00:01:15,915 --> 00:01:17,215
+and artificial intelligence,
+
+38
+00:01:17,835 --> 00:01:19,195
+solutions from,
+
+39
+00:01:19,515 --> 00:01:23,060
+helping better
+design the chips
+
+40
+00:01:23,300 --> 00:01:24,040
+through manufacturing,
+
+41
+00:01:24,260 --> 00:01:26,360
+increasing the yields
+through analytics,
+
+42
+00:01:27,220 --> 00:01:28,740
+up until sales and marketing
+
+43
+00:01:28,740 --> 00:01:30,440
+where we help
+increase the revenues
+
+44
+00:01:30,740 --> 00:01:33,595
+by recommendation
+systems, and so on.
+
+45
+00:01:33,735 --> 00:01:35,275
+And we even have
+some products,
+
+46
+00:01:35,735 --> 00:01:36,715
+working with Mobileye,
+
+47
+00:01:37,175 --> 00:01:39,015
+harnessing insights from cars
+
+48
+00:01:39,015 --> 00:01:40,810
+that transmit data through,
+
+49
+00:01:41,050 --> 00:01:43,790
+Mobileye sensored vehicles.
+
+50
+00:01:44,970 --> 00:01:46,170
+But today, we're gonna talk
+
+51
+00:01:46,170 --> 00:01:47,390
+about sales and marketing,
+
+52
+00:01:47,450 --> 00:01:48,545
+and I would like to introduce
+
+53
+00:01:48,545 --> 00:01:50,225
+you to our sales AI system.
+
+54
+00:01:50,225 --> 00:01:51,285
+But before that,
+
+55
+00:01:51,585 --> 00:01:52,965
+let's talk a little bit about
+
+56
+00:01:53,185 --> 00:01:54,245
+our sales department.
+
+57
+00:01:55,000 --> 00:01:56,120
+Intel sales department,
+
+58
+00:01:56,120 --> 00:01:57,820
+like every other
+big enterprise,
+
+59
+00:01:58,040 --> 00:02:00,300
+is is huge. It's
+actually a division.
+
+60
+00:02:00,520 --> 00:02:01,800
+It's huge. It's composed of
+
+61
+00:02:01,800 --> 00:02:03,100
+thousands of people,
+
+62
+00:02:03,475 --> 00:02:05,715
+account managers
+covering hundreds
+
+63
+00:02:05,715 --> 00:02:08,055
+of thousands of,
+customer accounts.
+
+64
+00:02:08,435 --> 00:02:09,395
+And they can offer,
+
+65
+00:02:10,330 --> 00:02:11,610
+hundreds of different products
+
+66
+00:02:11,610 --> 00:02:14,190
+from CPUs, soon to be GPUs,
+
+67
+00:02:14,650 --> 00:02:16,030
+and memory and storage.
+
+68
+00:02:17,130 --> 00:02:18,585
+This enormous complexity,
+
+69
+00:02:19,445 --> 00:02:21,765
+may lead to some
+missed business
+
+70
+00:02:21,765 --> 00:02:24,005
+opportunities. And this is why
+
+71
+00:02:24,005 --> 00:02:26,985
+we've built, this
+sales AI platform.
+
+72
+00:02:27,160 --> 00:02:29,080
+We're looking to
+bridge this gap
+
+73
+00:02:29,080 --> 00:02:32,280
+of missed opportunities
+by first,
+
+74
+00:02:32,280 --> 00:02:34,540
+in real time, scan
+customer information,
+
+75
+00:02:35,015 --> 00:02:37,735
+store it, detect
+intent to buy,
+
+76
+00:02:37,735 --> 00:02:39,495
+and maybe identify
+some potential
+
+77
+00:02:39,495 --> 00:02:41,495
+opportunities, automating and
+
+78
+00:02:41,495 --> 00:02:43,435
+recommending
+a personal or best
+
+79
+00:02:44,130 --> 00:02:45,830
+action for
+the account manager,
+
+80
+00:02:46,370 --> 00:02:48,210
+and then feeding
+back to the system
+
+81
+00:02:48,210 --> 00:02:50,210
+learning based on
+customer response.
+
+82
+00:02:50,210 --> 00:02:52,725
+So that's the sales
+AI framework
+
+83
+00:02:53,025 --> 00:02:54,545
+we've been working
+on for the past
+
+84
+00:02:54,545 --> 00:02:57,045
+six years. And over
+the past six years,
+
+85
+00:02:57,425 --> 00:02:59,665
+our sales AI program
+led to a community
+
+86
+00:02:59,665 --> 00:03:01,410
+of sales revenue growth of
+
+87
+00:03:01,410 --> 00:03:03,810
+approximately more
+than half a billion
+
+88
+00:03:03,810 --> 00:03:06,150
+dollars. And through
+those years,
+
+89
+00:03:07,170 --> 00:03:09,270
+we've supplied
+different solutions
+
+90
+00:03:09,330 --> 00:03:10,390
+for account managers.
+
+91
+00:03:10,735 --> 00:03:11,935
+And to give you an example,
+
+92
+00:03:11,935 --> 00:03:13,295
+one such solution is called
+
+93
+00:03:13,295 --> 00:03:15,855
+the sales assist as it assists
+
+94
+00:03:15,855 --> 00:03:17,475
+account managers
+in identifying
+
+95
+00:03:17,615 --> 00:03:18,995
+new business opportunities,
+
+96
+00:03:20,110 --> 00:03:22,210
+with leads about
+their respective
+
+97
+00:03:22,270 --> 00:03:24,770
+customers. For instance,
+
+98
+00:03:24,910 --> 00:03:26,510
+an account manager
+can open his
+
+99
+00:03:26,510 --> 00:03:28,745
+dashboard and see
+the companies that it,
+
+100
+00:03:28,905 --> 00:03:32,745
+he or she covers and
+see that company a,
+
+101
+00:03:32,745 --> 00:03:34,265
+we're gonna talk a lot a lot
+
+102
+00:03:34,265 --> 00:03:35,565
+about company a,
+
+103
+00:03:35,865 --> 00:03:37,485
+is about to attend
+the conference.
+
+104
+00:03:38,410 --> 00:03:41,630
+Or maybe they
+browse into website
+
+105
+00:03:41,850 --> 00:03:43,450
+for products they
+never purchased
+
+106
+00:03:43,450 --> 00:03:45,530
+before, and this may
+lead to a business
+
+107
+00:03:45,530 --> 00:03:49,305
+opportunity. And
+we all these,
+
+108
+00:03:49,305 --> 00:03:50,825
+we supplied many
+such solution,
+
+109
+00:03:50,825 --> 00:03:53,485
+but then we started
+thinking, well,
+
+110
+00:03:54,550 --> 00:03:56,230
+all these insights
+that we give
+
+111
+00:03:56,230 --> 00:03:57,050
+account managers,
+
+112
+00:03:57,110 --> 00:03:59,510
+are they visible
+for any future
+
+113
+00:03:59,510 --> 00:04:01,910
+model or system that inquires
+
+114
+00:04:01,910 --> 00:04:03,015
+about company a?
+
+115
+00:04:03,495 --> 00:04:05,255
+Or do we even have a single
+
+116
+00:04:05,255 --> 00:04:09,175
+layer of sensing where
+we store all the,
+
+117
+00:04:09,735 --> 00:04:12,055
+information we
+collect for future
+
+118
+00:04:12,055 --> 00:04:14,200
+progress? Do we store back all
+
+119
+00:04:14,200 --> 00:04:16,200
+the insights into that same
+
+120
+00:04:16,200 --> 00:04:18,360
+place where someone can query
+
+121
+00:04:18,360 --> 00:04:20,300
+about company and get
+all the information
+
+122
+00:04:20,360 --> 00:04:21,985
+back? And the answer,
+
+123
+00:04:21,985 --> 00:04:24,645
+as you can imagine,
+was, no. We do not.
+
+124
+00:04:25,025 --> 00:04:28,405
+So we decided to
+start studying now.
+
+125
+00:04:30,860 --> 00:04:33,280
+We decided to record
+all activities
+
+126
+00:04:33,660 --> 00:04:36,115
+as well as insights
+into a single
+
+127
+00:04:36,115 --> 00:04:37,255
+centralized place.
+
+128
+00:04:38,035 --> 00:04:39,655
+This would basically simulate
+
+129
+00:04:39,715 --> 00:04:41,555
+in the sensing part
+what an account
+
+130
+00:04:41,555 --> 00:04:42,695
+manager would do.
+
+131
+00:04:43,290 --> 00:04:45,210
+So we look at sensing at scale
+
+132
+00:04:45,210 --> 00:04:47,210
+in a nutshell,
+what I'm talking
+
+133
+00:04:47,210 --> 00:04:49,390
+about to, give
+you an example.
+
+134
+00:04:49,690 --> 00:04:51,630
+It it starts from
+basic information
+
+135
+00:04:52,055 --> 00:04:53,575
+that the company gives us with
+
+136
+00:04:53,575 --> 00:04:55,255
+enrolls into Intel's program,
+
+137
+00:04:55,255 --> 00:04:57,095
+like location and
+maybe the field
+
+138
+00:04:57,095 --> 00:04:58,875
+it works in.
+
+139
+00:05:00,260 --> 00:05:02,020
+Then we can start
+recording some
+
+140
+00:05:02,020 --> 00:05:02,920
+internal information,
+
+141
+00:05:03,060 --> 00:05:05,480
+sales transactions,
+what they bought,
+
+142
+00:05:05,540 --> 00:05:07,755
+how many, maybe what courses
+
+143
+00:05:07,755 --> 00:05:10,335
+they took in, for
+Intel products.
+
+144
+00:05:11,995 --> 00:05:12,975
+Up to,
+
+145
+00:05:13,435 --> 00:05:15,590
+collecting customer website
+
+146
+00:05:15,650 --> 00:05:17,250
+information and going through
+
+147
+00:05:17,250 --> 00:05:18,850
+social media and
+recording these
+
+148
+00:05:18,850 --> 00:05:20,070
+activities as well.
+
+149
+00:05:25,195 --> 00:05:26,715
+So usually, when
+you take pieces
+
+150
+00:05:26,715 --> 00:05:27,375
+of information,
+
+151
+00:05:28,715 --> 00:05:31,035
+then they're
+scattered all over
+
+152
+00:05:31,035 --> 00:05:32,800
+the place. But we decided to
+
+153
+00:05:32,800 --> 00:05:34,580
+take all those silos
+of information,
+
+154
+00:05:34,800 --> 00:05:36,160
+all those silos of data,
+
+155
+00:05:36,160 --> 00:05:38,980
+and and put them into a single
+
+156
+00:05:39,040 --> 00:05:40,815
+centralized knowledge graph.
+
+157
+00:05:41,695 --> 00:05:43,695
+And why would one store store
+
+158
+00:05:43,695 --> 00:05:45,315
+these things in
+a graph structure?
+
+159
+00:05:45,375 --> 00:05:47,295
+So for us,
+the motivation was,
+
+160
+00:05:47,295 --> 00:05:49,955
+I believe, similar
+to a lot of others.
+
+161
+00:05:51,700 --> 00:05:53,940
+The world is
+composed of entities
+
+162
+00:05:53,940 --> 00:05:55,880
+and relationship
+between them.
+
+163
+00:05:56,420 --> 00:05:58,685
+So this makes things very easy
+
+164
+00:05:58,685 --> 00:06:00,045
+to explain. When you give
+
+165
+00:06:00,045 --> 00:06:01,805
+predictions or even a simple
+
+166
+00:06:01,805 --> 00:06:03,345
+analysis of a situation,
+
+167
+00:06:04,045 --> 00:06:06,225
+you can show a graph
+and it makes sense.
+
+168
+00:06:07,440 --> 00:06:08,800
+When you want
+information about
+
+169
+00:06:08,800 --> 00:06:10,480
+some kind of entity,
+for instance,
+
+170
+00:06:10,480 --> 00:06:12,480
+company a, everything
+is really close.
+
+171
+00:06:12,480 --> 00:06:14,425
+So I want things
+about company a.
+
+172
+00:06:14,745 --> 00:06:16,905
+Like, everything is
+one hop, two hop,
+
+173
+00:06:16,905 --> 00:06:18,425
+or maybe three hops away,
+
+174
+00:06:18,425 --> 00:06:20,105
+but I get this
+nice image about
+
+175
+00:06:20,105 --> 00:06:21,945
+company a. And
+since everything
+
+176
+00:06:21,945 --> 00:06:23,705
+is really
+dynamically structured
+
+177
+00:06:23,705 --> 00:06:25,710
+and you're not limited
+to any schema,
+
+178
+00:06:26,890 --> 00:06:29,390
+you can simply add
+more data easily,
+
+179
+00:06:29,930 --> 00:06:31,370
+connect it to
+company a if it's
+
+180
+00:06:31,370 --> 00:06:32,830
+relevant to company a.
+
+181
+00:06:33,195 --> 00:06:34,315
+And when you have,
+
+182
+00:06:35,355 --> 00:06:37,935
+started growing a nice
+knowledge graph,
+
+183
+00:06:38,075 --> 00:06:39,615
+then you can infer knowledge
+
+184
+00:06:39,835 --> 00:06:42,015
+directly from that graph,
+
+185
+00:06:43,780 --> 00:06:45,780
+simply by traversing
+it or running
+
+186
+00:06:45,780 --> 00:06:47,880
+simple, graph algorithms.
+
+187
+00:06:49,540 --> 00:06:51,140
+And later on, you can use that
+
+188
+00:06:51,140 --> 00:06:52,805
+graph as it grows and grows.
+
+189
+00:06:52,805 --> 00:06:54,245
+They have a really
+great knowledge
+
+190
+00:06:54,245 --> 00:06:56,005
+base for AI as we're gonna see
+
+191
+00:06:56,005 --> 00:06:57,065
+in a few slides.
+
+192
+00:07:01,780 --> 00:07:04,820
+So we started
+thinking we wanna
+
+193
+00:07:04,820 --> 00:07:05,860
+grow an old graph,
+
+194
+00:07:05,860 --> 00:07:08,095
+and I'll illustrate
+how things work,
+
+195
+00:07:08,335 --> 00:07:09,375
+when it comes to sales and
+
+196
+00:07:09,375 --> 00:07:10,435
+marketing at the end.
+
+197
+00:07:11,055 --> 00:07:11,875
+First off,
+
+198
+00:07:12,415 --> 00:07:14,415
+company a enrolled into into
+
+199
+00:07:14,415 --> 00:07:16,290
+this program to
+become a distributor
+
+200
+00:07:16,590 --> 00:07:19,330
+or buy products for itself.
+
+201
+00:07:20,110 --> 00:07:21,150
+What it was enrolling,
+
+202
+00:07:21,150 --> 00:07:22,450
+get some basic information.
+
+203
+00:07:22,745 --> 00:07:25,225
+It says that it's
+part of the IoT and,
+
+204
+00:07:25,705 --> 00:07:26,665
+the NAR industries,
+
+205
+00:07:26,665 --> 00:07:28,185
+and it's it's
+a builder in those
+
+206
+00:07:28,185 --> 00:07:31,320
+industry. Later on,
+
+207
+00:07:32,180 --> 00:07:34,020
+we started saving
+some internal
+
+208
+00:07:34,020 --> 00:07:35,720
+information. Through
+sales transaction,
+
+209
+00:07:35,780 --> 00:07:37,220
+company a went on and bought
+
+210
+00:07:37,220 --> 00:07:38,840
+product six and product y,
+
+211
+00:07:39,060 --> 00:07:41,135
+and we connected company a to
+
+212
+00:07:41,135 --> 00:07:42,975
+those products in our
+knowledge graph.
+
+213
+00:07:42,975 --> 00:07:45,375
+And as a side effect,
+
+214
+00:07:45,375 --> 00:07:47,135
+we got that company
+a is interested
+
+215
+00:07:47,135 --> 00:07:48,515
+in data center products.
+
+216
+00:07:51,570 --> 00:07:53,510
+Then looking at
+company a's website,
+
+217
+00:07:54,290 --> 00:07:56,450
+we we've noticed
+our smart medical
+
+218
+00:07:56,450 --> 00:07:57,730
+devices. So maybe we can add
+
+219
+00:07:57,730 --> 00:08:01,965
+this edge of company
+a to the health
+
+220
+00:08:01,965 --> 00:08:03,085
+care industry. Then there was
+
+221
+00:08:03,085 --> 00:08:05,085
+a social media
+tweet that company
+
+222
+00:08:05,085 --> 00:08:06,765
+b have invested in company a,
+
+223
+00:08:06,765 --> 00:08:08,740
+so we can connect
+company a with
+
+224
+00:08:08,740 --> 00:08:11,160
+company b. And
+if we're lucky,
+
+225
+00:08:11,700 --> 00:08:14,020
+we may have company b in our
+
+226
+00:08:14,020 --> 00:08:14,580
+knowledge graph,
+
+227
+00:08:14,580 --> 00:08:15,960
+and then we get
+some secondhand
+
+228
+00:08:16,545 --> 00:08:18,165
+information about company a.
+
+229
+00:08:20,625 --> 00:08:22,545
+Company a went on and browsed
+
+230
+00:08:22,545 --> 00:08:24,065
+intel dot com, and we recorded
+
+231
+00:08:24,065 --> 00:08:25,765
+that activity. And there was
+
+232
+00:08:25,890 --> 00:08:27,250
+more and more activities which
+
+233
+00:08:27,250 --> 00:08:30,390
+we recorded and
+added edges for.
+
+234
+00:08:31,170 --> 00:08:33,590
+And what's interesting is that
+
+235
+00:08:33,730 --> 00:08:35,915
+we started only with what we
+
+236
+00:08:35,915 --> 00:08:38,315
+were told about
+company a given
+
+237
+00:08:38,315 --> 00:08:39,455
+by company a.
+
+238
+00:08:39,915 --> 00:08:43,195
+And this union of internal and
+
+239
+00:08:43,195 --> 00:08:45,450
+external data
+sources can create
+
+240
+00:08:45,450 --> 00:08:47,130
+a really strong
+knowledge base,
+
+241
+00:08:47,130 --> 00:08:49,230
+which is basically the basic
+
+242
+00:08:49,530 --> 00:08:51,070
+basis of our knowledge graph.
+
+243
+00:08:51,770 --> 00:08:53,130
+You can simply take any piece
+
+244
+00:08:53,130 --> 00:08:54,505
+of information you get about
+
+245
+00:08:54,505 --> 00:08:56,345
+company a and edit
+as you're not
+
+246
+00:08:56,345 --> 00:08:59,085
+restricted, to any
+specific schema.
+
+247
+00:09:00,025 --> 00:09:03,600
+And this information,
+and this is key,
+
+248
+00:09:03,600 --> 00:09:06,000
+will not be hidden
+somewhere in
+
+249
+00:09:06,000 --> 00:09:07,440
+some other data sources.
+
+250
+00:09:07,440 --> 00:09:09,120
+You can simply
+query about company
+
+251
+00:09:09,120 --> 00:09:12,785
+a and everything, by
+the number of hops,
+
+252
+00:09:12,785 --> 00:09:14,385
+and you will get
+all the information
+
+253
+00:09:14,385 --> 00:09:17,045
+about company a and
+anything related.
+
+254
+00:09:18,065 --> 00:09:20,780
+You can then if
+you wanna train
+
+255
+00:09:20,780 --> 00:09:23,740
+a model relating
+companies, you can say,
+
+256
+00:09:23,740 --> 00:09:25,660
+I wanna extract
+features about,
+
+257
+00:09:25,980 --> 00:09:27,500
+company a. So maybe I'll I'll
+
+258
+00:09:27,500 --> 00:09:28,480
+do it by proximity,
+
+259
+00:09:28,620 --> 00:09:30,765
+and I can rank those features
+
+260
+00:09:31,225 --> 00:09:34,205
+by any graph logic,
+I determine or,
+
+261
+00:09:34,425 --> 00:09:35,945
+for instance, by the distance
+
+262
+00:09:35,945 --> 00:09:36,985
+from the company I know.
+
+263
+00:09:36,985 --> 00:09:38,585
+And then I get
+a set of features
+
+264
+00:09:38,585 --> 00:09:40,430
+to train my AI model.
+
+265
+00:09:41,930 --> 00:09:43,210
+And if we think about it,
+
+266
+00:09:43,530 --> 00:09:45,210
+most of these
+things are facts.
+
+267
+00:09:45,210 --> 00:09:46,730
+And using the knowledge graph
+
+268
+00:09:46,730 --> 00:09:48,410
+algorithms, we
+can generate more
+
+269
+00:09:48,410 --> 00:09:49,715
+and more edges with
+some confidence
+
+270
+00:09:49,715 --> 00:09:52,055
+that as our assumption,
+
+271
+00:09:52,515 --> 00:09:54,595
+is and was and still that we
+
+272
+00:09:54,595 --> 00:09:57,370
+live in a world
+where we always
+
+273
+00:09:57,370 --> 00:09:59,290
+have only part
+of the knowledge
+
+274
+00:09:59,290 --> 00:10:01,150
+even if we have all the data.
+
+275
+00:10:01,770 --> 00:10:02,830
+So in a graph,
+
+276
+00:10:03,370 --> 00:10:05,905
+this is is very easy to extend
+
+277
+00:10:05,905 --> 00:10:07,585
+our knowledge by adding more
+
+278
+00:10:07,585 --> 00:10:10,225
+edges between existing nodes,
+
+279
+00:10:10,225 --> 00:10:12,325
+between existing data points,
+
+280
+00:10:12,740 --> 00:10:14,840
+simply generating
+more knowledge
+
+281
+00:10:14,900 --> 00:10:16,840
+with data that we
+already have.
+
+282
+00:10:20,545 --> 00:10:21,425
+And let's move,
+
+283
+00:10:21,665 --> 00:10:23,685
+to the more technical part or
+
+284
+00:10:23,745 --> 00:10:25,445
+that the idea or the solution
+
+285
+00:10:25,585 --> 00:10:28,225
+that we built in order to make
+
+286
+00:10:28,225 --> 00:10:29,845
+this graph grow.
+
+287
+00:10:30,450 --> 00:10:32,850
+So identifying information was
+
+288
+00:10:32,850 --> 00:10:35,270
+basically flowing in
+through the system.
+
+289
+00:10:35,970 --> 00:10:38,375
+We've decided to
+build a stream
+
+290
+00:10:38,375 --> 00:10:39,355
+processing system.
+
+291
+00:10:39,495 --> 00:10:40,955
+Specifically, we build one
+
+292
+00:10:41,015 --> 00:10:43,015
+asynchronously to make it also
+
+293
+00:10:43,015 --> 00:10:43,755
+more efficient.
+
+294
+00:10:44,695 --> 00:10:46,395
+And we start thinking
+what would,
+
+295
+00:10:47,370 --> 00:10:49,470
+what we would need
+for such a system.
+
+296
+00:10:50,170 --> 00:10:52,670
+And we've identified several
+
+297
+00:10:52,730 --> 00:10:55,530
+capabilities we believe are
+
+298
+00:10:55,530 --> 00:10:57,645
+crucial for this process,
+
+299
+00:10:58,345 --> 00:10:59,405
+and we've designed,
+
+300
+00:11:00,745 --> 00:11:02,105
+respective component for each
+
+301
+00:11:02,105 --> 00:11:03,545
+one of them. So if we look at
+
+302
+00:11:03,545 --> 00:11:05,065
+the architecture
+in high level,
+
+303
+00:11:05,065 --> 00:11:06,700
+and again, this is
+an abstraction,
+
+304
+00:11:06,760 --> 00:11:08,440
+the capabilities are the key
+
+305
+00:11:08,440 --> 00:11:09,260
+things here.
+
+306
+00:11:10,360 --> 00:11:11,820
+We see that we have
+a microservice
+
+307
+00:11:11,960 --> 00:11:13,720
+architecture, and
+we have a component
+
+308
+00:11:13,720 --> 00:11:15,320
+for each capability
+we're gonna
+
+309
+00:11:15,320 --> 00:11:16,875
+talk about. And
+we have a message
+
+310
+00:11:16,875 --> 00:11:18,635
+bus since everything
+is asynchronous.
+
+311
+00:11:18,635 --> 00:11:20,255
+We have a message
+bus in the middle
+
+312
+00:11:20,315 --> 00:11:22,335
+which synchronizes things.
+
+313
+00:11:23,035 --> 00:11:25,360
+And there are
+loaders which load
+
+314
+00:11:25,360 --> 00:11:27,220
+internal data. And since we
+
+315
+00:11:27,680 --> 00:11:28,800
+because this is the basic
+
+316
+00:11:28,800 --> 00:11:30,720
+information we
+have and we knew
+
+317
+00:11:30,720 --> 00:11:32,005
+we wanted to load it,
+
+318
+00:11:32,485 --> 00:11:34,185
+But then we knew we wanted to
+
+319
+00:11:34,405 --> 00:11:36,165
+transform it
+somehow into graph
+
+320
+00:11:36,165 --> 00:11:37,945
+formation, so created
+the transformers,
+
+321
+00:11:38,085 --> 00:11:39,305
+which is the second
+capability.
+
+322
+00:11:39,930 --> 00:11:41,690
+We want to enrich
+this internal
+
+323
+00:11:41,690 --> 00:11:43,790
+data with external
+information.
+
+324
+00:11:44,250 --> 00:11:45,710
+So we created the extractors,
+
+325
+00:11:46,010 --> 00:11:47,290
+which go out to the web and
+
+326
+00:11:47,290 --> 00:11:49,245
+fetch new information about
+
+327
+00:11:49,405 --> 00:11:50,205
+internal information where all
+
+328
+00:11:50,205 --> 00:11:51,265
+they have.
+
+329
+00:11:52,125 --> 00:11:53,745
+Everything needed
+to be persisted
+
+330
+00:11:53,805 --> 00:11:54,765
+into a graph database,
+
+331
+00:11:54,765 --> 00:11:56,125
+so we created
+the graph builder.
+
+332
+00:11:56,125 --> 00:11:57,905
+And to keep everything
+up to date,
+
+333
+00:11:58,400 --> 00:12:00,240
+specifically external
+information,
+
+334
+00:12:00,240 --> 00:12:01,460
+we created refreshers.
+
+335
+00:12:04,640 --> 00:12:05,920
+And let's talk a little bit
+
+336
+00:12:05,920 --> 00:12:07,780
+about each one of
+those capabilities
+
+337
+00:12:08,305 --> 00:12:12,225
+and, what we
+believe we need in
+
+338
+00:12:12,225 --> 00:12:13,525
+order to make this happen.
+
+339
+00:12:14,065 --> 00:12:14,965
+So the loaders,
+
+340
+00:12:15,930 --> 00:12:18,010
+they import internal
+data as I stated,
+
+341
+00:12:18,010 --> 00:12:19,610
+and they support a variety of
+
+342
+00:12:19,610 --> 00:12:20,650
+sources and formats.
+
+343
+00:12:20,650 --> 00:12:22,250
+It's it's kind of
+a plug in system.
+
+344
+00:12:22,250 --> 00:12:23,875
+It's a microservice based,
+
+345
+00:12:24,355 --> 00:12:26,435
+architecture, and
+they work with
+
+346
+00:12:26,435 --> 00:12:27,575
+the push or pull.
+
+347
+00:12:27,715 --> 00:12:29,955
+They can query daily from SQL
+
+348
+00:12:29,955 --> 00:12:32,070
+database or can
+they can get a push
+
+349
+00:12:32,070 --> 00:12:33,590
+notification from
+the size five
+
+350
+00:12:33,590 --> 00:12:35,930
+system that the CSV
+have just arrived.
+
+351
+00:12:36,150 --> 00:12:37,450
+They load the data.
+
+352
+00:12:37,750 --> 00:12:40,885
+They convert it
+into JSON format
+
+353
+00:12:40,945 --> 00:12:43,105
+and publish it to the message
+
+354
+00:12:43,105 --> 00:12:45,105
+bus to later be
+transformed and
+
+355
+00:12:45,105 --> 00:12:46,545
+persistent. So the loaders are
+
+356
+00:12:46,545 --> 00:12:49,000
+fairly simple. The
+second capability,
+
+357
+00:12:49,780 --> 00:12:51,140
+this is actually the basic
+
+358
+00:12:51,140 --> 00:12:52,500
+processing unit of the system
+
+359
+00:12:52,500 --> 00:12:53,400
+are the transformers.
+
+360
+00:12:55,220 --> 00:12:58,105
+And these do the most,
+let's say,
+
+361
+00:12:59,045 --> 00:13:01,285
+probably are
+the most busy logic
+
+362
+00:13:01,285 --> 00:13:03,465
+wise as they
+convert information
+
+363
+00:13:04,085 --> 00:13:05,125
+into graph semantics,
+
+364
+00:13:05,125 --> 00:13:06,185
+into graph formations.
+
+365
+00:13:06,720 --> 00:13:07,520
+They're always on.
+
+366
+00:13:07,520 --> 00:13:08,820
+They're all they
+asynchronous.
+
+367
+00:13:08,960 --> 00:13:09,700
+They're stateless,
+
+368
+00:13:09,840 --> 00:13:11,300
+which make them by nature
+
+369
+00:13:11,680 --> 00:13:14,500
+extremely fault
+tolerant and scalable.
+
+370
+00:13:15,405 --> 00:13:16,925
+We specifically use the Kafka
+
+371
+00:13:16,925 --> 00:13:17,905
+streams technology,
+
+372
+00:13:17,965 --> 00:13:19,665
+but you can use
+whatever you want.
+
+373
+00:13:21,165 --> 00:13:23,090
+The transformers know how to
+
+374
+00:13:23,330 --> 00:13:25,090
+transform information
+into graph
+
+375
+00:13:25,090 --> 00:13:28,870
+formations by
+configurations per entity.
+
+376
+00:13:29,170 --> 00:13:31,625
+This specific
+transformer knows
+
+377
+00:13:31,625 --> 00:13:33,725
+how to transform
+product information,
+
+378
+00:13:34,425 --> 00:13:36,425
+which it gets from
+internal data
+
+379
+00:13:36,425 --> 00:13:39,310
+or external data into
+nodes and edges.
+
+380
+00:13:39,310 --> 00:13:41,730
+And it does so simply
+by configuration.
+
+381
+00:13:42,270 --> 00:13:44,270
+We've created
+a nice YAML based
+
+382
+00:13:44,270 --> 00:13:46,750
+DSL that tells which fields
+
+383
+00:13:46,750 --> 00:13:48,995
+become which node and which,
+
+384
+00:13:49,455 --> 00:13:51,935
+field becomes which edge and
+
+385
+00:13:51,935 --> 00:13:53,635
+which nodes it connects.
+
+386
+00:13:53,935 --> 00:13:54,975
+And it goes on and on.
+
+387
+00:13:54,975 --> 00:13:56,575
+And this DSL became more and
+
+388
+00:13:56,575 --> 00:13:59,170
+more robust up until a system
+
+389
+00:13:59,170 --> 00:14:02,710
+analyst can simply
+configure any new,
+
+390
+00:14:03,570 --> 00:14:05,270
+source information it found,
+
+391
+00:14:05,555 --> 00:14:08,115
+it finds in order to instruct
+
+392
+00:14:08,115 --> 00:14:09,715
+the transformer
+how to transform
+
+393
+00:14:09,715 --> 00:14:11,655
+this information into
+nodes and edges.
+
+394
+00:14:12,275 --> 00:14:14,115
+So that's, let's
+say, like the,
+
+395
+00:14:14,435 --> 00:14:18,120
+middleman, the expert
+in the middle.
+
+396
+00:14:19,380 --> 00:14:20,660
+Since the internal information
+
+397
+00:14:20,660 --> 00:14:22,875
+is not enough, we we created
+
+398
+00:14:22,875 --> 00:14:23,615
+the extractors,
+
+399
+00:14:23,675 --> 00:14:25,295
+which actually trans extends
+
+400
+00:14:25,675 --> 00:14:29,295
+transformers. They
+also transform
+
+401
+00:14:29,355 --> 00:14:31,135
+the information into
+graph formations,
+
+402
+00:14:31,240 --> 00:14:33,240
+but they also enrich it with
+
+403
+00:14:33,240 --> 00:14:34,360
+some external information.
+
+404
+00:14:34,360 --> 00:14:35,800
+So on top of being configured
+
+405
+00:14:35,800 --> 00:14:38,140
+per entity, per product,
+in this case,
+
+406
+00:14:38,395 --> 00:14:40,155
+they're also configured
+per data source.
+
+407
+00:14:40,155 --> 00:14:41,695
+You would need
+to instruct them
+
+408
+00:14:42,075 --> 00:14:43,935
+how to get this
+external information
+
+409
+00:14:44,235 --> 00:14:45,435
+and what to do with it,
+
+410
+00:14:45,435 --> 00:14:47,055
+with what kind of
+post processing
+
+411
+00:14:47,115 --> 00:14:48,550
+to do with it when they,
+
+412
+00:14:48,950 --> 00:14:51,050
+retrieve that information
+the information
+
+413
+00:14:51,110 --> 00:14:52,790
+. For instance,
+running matching
+
+414
+00:14:52,790 --> 00:14:55,110
+algorithms of
+sorts and scoring
+
+415
+00:14:55,110 --> 00:14:56,550
+the validity of
+the information
+
+416
+00:14:56,550 --> 00:14:58,775
+they just got. They
+just received,
+
+417
+00:14:58,775 --> 00:14:59,515
+that is.
+
+418
+00:15:01,335 --> 00:15:03,255
+The next capability
+is the most
+
+419
+00:15:03,255 --> 00:15:05,355
+b d the like,
+the busiest place
+
+420
+00:15:05,500 --> 00:15:07,920
+in our system is
+the graph builder.
+
+421
+00:15:08,220 --> 00:15:10,400
+It's only sure is to translate
+
+422
+00:15:10,540 --> 00:15:12,560
+those graph formations into
+
+423
+00:15:12,620 --> 00:15:13,760
+graph query language.
+
+424
+00:15:13,900 --> 00:15:15,755
+In our case, we support Cypher
+
+425
+00:15:15,755 --> 00:15:17,355
+as we work with Neo four j.
+
+426
+00:15:17,355 --> 00:15:19,515
+It's the most
+prevalent, I think,
+
+427
+00:15:19,515 --> 00:15:20,975
+GQLs out there.
+
+428
+00:15:21,515 --> 00:15:23,180
+And the graph builder,
+
+429
+00:15:23,180 --> 00:15:25,120
+you can think about it
+like a microservice
+
+430
+00:15:25,420 --> 00:15:26,300
+data layer.
+
+431
+00:15:26,300 --> 00:15:28,940
+Nobody writes to the graph
+
+432
+00:15:28,940 --> 00:15:31,040
+database by but
+the graph builder
+
+433
+00:15:31,135 --> 00:15:32,495
+Since you wanna
+keep everything
+
+434
+00:15:32,495 --> 00:15:34,175
+in check, you don't want any
+
+435
+00:15:34,175 --> 00:15:35,555
+other processes disturbing,
+
+436
+00:15:36,335 --> 00:15:38,275
+your throughput
+or the integrity
+
+437
+00:15:38,735 --> 00:15:40,140
+of your knowledge graph.
+
+438
+00:15:40,300 --> 00:15:41,340
+The Graph Builder,
+
+439
+00:15:41,340 --> 00:15:43,200
+same as every other
+mod microservice,
+
+440
+00:15:43,580 --> 00:15:44,640
+is very scalable.
+
+441
+00:15:44,700 --> 00:15:46,720
+So you can scale
+it out or in,
+
+442
+00:15:47,180 --> 00:15:49,020
+depending what throughput you
+
+443
+00:15:49,020 --> 00:15:51,415
+need and what
+resources you have.
+
+444
+00:15:52,195 --> 00:15:53,315
+And if you're worried about
+
+445
+00:15:53,315 --> 00:15:55,895
+the graph database we
+chose, Neo four j.
+
+446
+00:15:56,515 --> 00:15:58,370
+So when we started working at
+
+447
+00:15:58,450 --> 00:15:59,830
+two or three years ago,
+
+448
+00:16:00,450 --> 00:16:02,470
+we've examined many
+graph databases.
+
+449
+00:16:02,530 --> 00:16:04,370
+We found Neo four
+j to be the most
+
+450
+00:16:04,370 --> 00:16:07,775
+mature and and
+fairly stable one.
+
+451
+00:16:08,075 --> 00:16:09,515
+It's really easy to use.
+
+452
+00:16:09,835 --> 00:16:10,795
+It supports Cypher,
+
+453
+00:16:10,795 --> 00:16:13,930
+which actually
+decouples us from
+
+454
+00:16:13,930 --> 00:16:15,290
+Neo four j as we can always
+
+455
+00:16:15,290 --> 00:16:16,890
+switch to other databases that
+
+456
+00:16:16,890 --> 00:16:18,830
+support Cypher, that
+work with Cypher.
+
+457
+00:16:19,210 --> 00:16:20,810
+But for me and and a lot of
+
+458
+00:16:20,810 --> 00:16:22,775
+other people,
+the the best selling
+
+459
+00:16:22,775 --> 00:16:23,975
+point was the great UI.
+
+460
+00:16:23,975 --> 00:16:25,655
+You you remember
+that we talked
+
+461
+00:16:26,215 --> 00:16:29,115
+I I talked. You
+listen about, decks.
+
+462
+00:16:29,410 --> 00:16:30,850
+The it's easy to explain.
+
+463
+00:16:30,850 --> 00:16:32,290
+Well, it's easy to explain if
+
+464
+00:16:32,290 --> 00:16:34,450
+you have a UI. If you
+don't have a UI,
+
+465
+00:16:34,450 --> 00:16:35,810
+it's very hard to explain.
+
+466
+00:16:35,810 --> 00:16:38,265
+So, this is actually
+a screenshot
+
+467
+00:16:38,265 --> 00:16:39,385
+we're gonna talk a little bit
+
+468
+00:16:39,385 --> 00:16:41,145
+about later that I took a year
+
+469
+00:16:41,145 --> 00:16:43,165
+ago from our knowledge graph.
+
+470
+00:16:46,490 --> 00:16:48,190
+The last component
+of refreshers,
+
+471
+00:16:48,330 --> 00:16:49,450
+they're fairly simple.
+
+472
+00:16:49,450 --> 00:16:52,090
+They are the only
+one that query
+
+473
+00:16:52,090 --> 00:16:54,125
+the graph as they
+simply traverse
+
+474
+00:16:54,185 --> 00:16:56,765
+the graph looking
+for stale nodes.
+
+475
+00:16:57,705 --> 00:17:00,125
+Once they find
+the stale node,
+
+476
+00:17:00,505 --> 00:17:02,365
+they trigger an extractor.
+
+477
+00:17:02,650 --> 00:17:04,510
+In this case,
+a product extractor,
+
+478
+00:17:05,530 --> 00:17:08,410
+in order to fetch
+and refresh that,
+
+479
+00:17:09,130 --> 00:17:12,245
+data or that information
+in the graph,
+
+480
+00:17:12,305 --> 00:17:14,545
+and they move on to look for
+
+481
+00:17:14,545 --> 00:17:16,005
+other failed notes.
+
+482
+00:17:16,065 --> 00:17:17,825
+And if you wanna
+keep your graph
+
+483
+00:17:17,825 --> 00:17:19,840
+up to date, you
+should have a few
+
+484
+00:17:19,840 --> 00:17:21,440
+running and traversing
+the graph.
+
+485
+00:17:21,440 --> 00:17:23,040
+They're like
+agents looking for
+
+486
+00:17:23,040 --> 00:17:25,860
+old nodes and edges
+and updating them,
+
+487
+00:17:26,720 --> 00:17:28,105
+as time goes by.
+
+488
+00:17:29,705 --> 00:17:31,005
+So this was the architecture.
+
+489
+00:17:32,265 --> 00:17:34,745
+But let's talk a little bit
+
+490
+00:17:34,745 --> 00:17:37,405
+about what we did with and how
+
+491
+00:17:38,560 --> 00:17:40,640
+about what what the graph
+
+492
+00:17:40,640 --> 00:17:42,260
+structure actually
+looks like.
+
+493
+00:17:43,120 --> 00:17:44,960
+So the first thing
+that we will
+
+494
+00:17:44,960 --> 00:17:46,420
+approach with, like,
+
+495
+00:17:46,595 --> 00:17:48,375
+some kind of proof
+of concept,
+
+496
+00:17:48,915 --> 00:17:52,035
+was we the business wanted to
+
+497
+00:17:52,035 --> 00:17:54,035
+get a view of customers and
+
+498
+00:17:54,035 --> 00:17:55,335
+their partner companies.
+
+499
+00:17:56,300 --> 00:17:58,060
+So how would you how would we
+
+500
+00:17:58,060 --> 00:18:00,000
+configure the system to get
+
+501
+00:18:00,460 --> 00:18:02,000
+partner companies for,
+
+502
+00:18:02,940 --> 00:18:05,135
+inter customers
+or companies we
+
+503
+00:18:05,135 --> 00:18:07,455
+already have. So we configured
+
+504
+00:18:07,455 --> 00:18:10,095
+the system in this
+manner. Right?
+
+505
+00:18:10,095 --> 00:18:12,335
+We needed a few
+loaders, sales,
+
+506
+00:18:12,335 --> 00:18:13,715
+company, product.
+
+507
+00:18:15,600 --> 00:18:16,740
+We needed the corresponding
+
+508
+00:18:17,600 --> 00:18:18,800
+transformer for each one of
+
+509
+00:18:18,800 --> 00:18:20,420
+those loaders so
+we can transform
+
+510
+00:18:20,720 --> 00:18:22,500
+this information into
+graph formations.
+
+511
+00:18:22,960 --> 00:18:25,525
+And the key
+configuration here,
+
+512
+00:18:25,525 --> 00:18:26,345
+the key implementation,
+
+513
+00:18:26,405 --> 00:18:28,505
+it was the partner
+extractor. Right?
+
+514
+00:18:29,125 --> 00:18:30,325
+The partner extractor was
+
+515
+00:18:30,325 --> 00:18:31,785
+implemented by crawling,
+
+516
+00:18:32,990 --> 00:18:35,570
+partner page in
+the company website,
+
+517
+00:18:36,430 --> 00:18:39,150
+analyzing the logos
+through deep
+
+518
+00:18:39,150 --> 00:18:39,870
+learning models,
+
+519
+00:18:39,870 --> 00:18:41,655
+and connecting
+the company with
+
+520
+00:18:41,655 --> 00:18:43,195
+their partner company's URLs.
+
+521
+00:18:43,335 --> 00:18:45,255
+To in order to keep
+this up to date,
+
+522
+00:18:45,255 --> 00:18:47,515
+we also, put in
+partner refresh.
+
+523
+00:18:47,895 --> 00:18:49,415
+And after configuring
+the system
+
+524
+00:18:49,415 --> 00:18:51,530
+this way and letting
+it work for a few,
+
+525
+00:18:52,250 --> 00:18:53,150
+a few days,
+
+526
+00:18:54,570 --> 00:18:58,815
+we got this nice
+graph as we can
+
+527
+00:18:58,815 --> 00:19:00,575
+infer knowledge directly from
+
+528
+00:19:00,575 --> 00:19:02,335
+simply by granting
+it and getting
+
+529
+00:19:02,335 --> 00:19:04,675
+this nice, UI.
+
+530
+00:19:05,860 --> 00:19:08,020
+And what we see
+here is that we
+
+531
+00:19:08,020 --> 00:19:10,500
+have company URL cell and some
+
+532
+00:19:10,500 --> 00:19:11,240
+other companies.
+
+533
+00:19:11,860 --> 00:19:15,215
+And here we can
+see an image of
+
+534
+00:19:16,555 --> 00:19:17,995
+two companies that buy things
+
+535
+00:19:17,995 --> 00:19:20,255
+from Intel and their
+partner companies.
+
+536
+00:19:21,130 --> 00:19:22,810
+So if we look at specifically
+
+537
+00:19:22,810 --> 00:19:24,570
+the graph formation
+we chose to
+
+538
+00:19:24,570 --> 00:19:27,370
+use and since this
+is, let's say,
+
+539
+00:19:27,370 --> 00:19:29,230
+quite different than
+you would expect,
+
+540
+00:19:30,025 --> 00:19:31,705
+basically, in order to keep
+
+541
+00:19:31,705 --> 00:19:32,605
+things dynamic,
+
+542
+00:19:34,025 --> 00:19:35,965
+everything that has more than
+
+543
+00:19:36,505 --> 00:19:39,165
+a single relationship
+is a node.
+
+544
+00:19:39,530 --> 00:19:42,090
+As you cannot connect a single
+
+545
+00:19:42,090 --> 00:19:43,770
+edge between more
+than two nodes.
+
+546
+00:19:43,770 --> 00:19:47,130
+Right? URL can be
+used by several
+
+547
+00:19:47,130 --> 00:19:50,195
+companies, so we
+deemed it a note.
+
+548
+00:19:50,815 --> 00:19:53,135
+Sale is an action
+of purchase,
+
+549
+00:19:53,135 --> 00:19:55,375
+you can say.
+Company a purchased
+
+550
+00:19:55,375 --> 00:19:56,115
+this product,
+
+551
+00:19:56,670 --> 00:19:58,530
+but it's also
+a sales transaction
+
+552
+00:19:58,990 --> 00:20:00,510
+that may have different
+
+553
+00:20:00,510 --> 00:20:02,530
+relationships such
+as buyer, seller,
+
+554
+00:20:03,070 --> 00:20:05,195
+product, etcetera.
+
+555
+00:20:05,735 --> 00:20:08,315
+So we made it a node as well.
+
+556
+00:20:08,455 --> 00:20:11,035
+So we were pro nodes,
+
+557
+00:20:12,100 --> 00:20:14,360
+as it makes things
+more easy to manage,
+
+558
+00:20:14,500 --> 00:20:15,480
+easy to persist,
+
+559
+00:20:15,780 --> 00:20:18,360
+and you would not lose
+any information.
+
+560
+00:20:18,980 --> 00:20:20,900
+But while but while it's great
+
+561
+00:20:20,900 --> 00:20:23,685
+for inferring
+simple or inferring
+
+562
+00:20:23,685 --> 00:20:25,365
+knowledge directly
+from the graph
+
+563
+00:20:25,365 --> 00:20:26,505
+by simple queries,
+
+564
+00:20:26,725 --> 00:20:28,325
+it is not optimal for training
+
+565
+00:20:28,325 --> 00:20:30,165
+machine learning models as we
+
+566
+00:20:30,165 --> 00:20:31,060
+will soon see.
+
+567
+00:20:33,780 --> 00:20:36,920
+Another principle,
+we found important,
+
+568
+00:20:38,375 --> 00:20:40,375
+was to keep trace,
+as I mentioned,
+
+569
+00:20:40,375 --> 00:20:42,795
+of information and
+where it comes from,
+
+570
+00:20:43,895 --> 00:20:45,550
+as well as the option
+that there
+
+571
+00:20:45,550 --> 00:20:47,550
+could be inconsistencies when
+
+572
+00:20:47,550 --> 00:20:49,150
+retrieving data from external
+
+573
+00:20:49,150 --> 00:20:51,390
+data sources. And
+this was the key
+
+574
+00:20:51,390 --> 00:20:53,045
+feature, like, enriching with
+
+575
+00:20:53,045 --> 00:20:53,865
+external information.
+
+576
+00:20:54,245 --> 00:20:55,065
+And I'll illustrate.
+
+577
+00:20:58,405 --> 00:20:59,840
+We remember company a.
+
+578
+00:21:00,400 --> 00:21:03,120
+So maybe we went
+on out to some
+
+579
+00:21:03,120 --> 00:21:05,120
+company a's Wiki
+page and we've
+
+580
+00:21:05,120 --> 00:21:07,300
+classified that
+this Wiki page,
+
+581
+00:21:09,425 --> 00:21:11,265
+let's say, predicted
+that company
+
+582
+00:21:11,265 --> 00:21:13,765
+a belongs to
+the cloud industry
+
+583
+00:21:14,465 --> 00:21:16,085
+with some sort
+of probability.
+
+584
+00:21:16,890 --> 00:21:17,770
+So we can do this,
+
+585
+00:21:17,770 --> 00:21:19,210
+but then we lost a lot of
+
+586
+00:21:19,210 --> 00:21:20,490
+information along the way.
+
+587
+00:21:20,490 --> 00:21:24,570
+Like, we lost that
+company a belongs
+
+588
+00:21:24,570 --> 00:21:26,350
+to the cloud industry through
+
+589
+00:21:26,735 --> 00:21:28,275
+this Wiki page, which also,
+
+590
+00:21:29,215 --> 00:21:30,575
+talks about NAR and,
+
+591
+00:21:30,735 --> 00:21:34,815
+also what if company
+a has another
+
+592
+00:21:34,815 --> 00:21:36,650
+Wiki page. So we don't want to
+
+593
+00:21:36,650 --> 00:21:38,750
+keep track of all
+these things,
+
+594
+00:21:39,290 --> 00:21:41,370
+and then maybe
+company a belongs
+
+595
+00:21:41,370 --> 00:21:43,310
+to the software
+industry through
+
+596
+00:21:43,395 --> 00:21:44,835
+some Wiki page and the cloud
+
+597
+00:21:44,835 --> 00:21:46,275
+industry through
+another Wiki page.
+
+598
+00:21:46,275 --> 00:21:47,395
+And maybe later on,
+
+599
+00:21:47,395 --> 00:21:50,055
+we would like to
+run an algorithm
+
+600
+00:21:50,470 --> 00:21:52,230
+on top of all our Wiki pages
+
+601
+00:21:52,230 --> 00:21:55,030
+class reclassifying
+them since we got,
+
+602
+00:21:55,030 --> 00:21:56,650
+like, a better algorithm.
+
+603
+00:21:57,270 --> 00:21:58,950
+And we do not have to,
+
+604
+00:21:59,430 --> 00:22:01,985
+touch or change anything with
+
+605
+00:22:01,985 --> 00:22:04,145
+company a since
+everything goes
+
+606
+00:22:04,145 --> 00:22:05,525
+through those Wiki pages.
+
+607
+00:22:05,825 --> 00:22:08,680
+So that just gives us more
+
+608
+00:22:08,680 --> 00:22:10,600
+flexibility and we don't lose
+
+609
+00:22:10,600 --> 00:22:11,340
+any information,
+
+610
+00:22:11,720 --> 00:22:13,560
+which is basically
+we want a good
+
+611
+00:22:13,560 --> 00:22:17,505
+knowledge base. So
+we kept everything.
+
+612
+00:22:19,725 --> 00:22:20,865
+Having said that,
+
+613
+00:22:22,205 --> 00:22:23,905
+what I said about
+machine learning,
+
+614
+00:22:24,490 --> 00:22:28,090
+this may require
+to query a fab
+
+615
+00:22:28,090 --> 00:22:30,570
+graph for training machine
+
+616
+00:22:30,570 --> 00:22:32,030
+learning and
+artificial intelligence
+
+617
+00:22:32,090 --> 00:22:36,485
+models. As knowledge graph
+
+618
+00:22:36,485 --> 00:22:38,665
+algorithms usually
+aim to capture
+
+619
+00:22:38,725 --> 00:22:40,485
+some sort of
+correlation between
+
+620
+00:22:40,485 --> 00:22:42,160
+nodes and edges.
+
+621
+00:22:42,540 --> 00:22:45,520
+It link prediction,
+entity resolution,
+
+622
+00:22:45,820 --> 00:22:46,960
+for instance, deduplication,
+
+623
+00:22:47,340 --> 00:22:50,295
+classification, by using other
+
+624
+00:22:50,295 --> 00:22:52,535
+nodes or maybe even link based
+
+625
+00:22:52,535 --> 00:22:54,235
+clustering. All of these,
+
+626
+00:22:54,775 --> 00:22:57,240
+can be done usually
+by predicting
+
+627
+00:22:57,240 --> 00:22:59,480
+the existence of
+a a triplet via
+
+628
+00:22:59,480 --> 00:23:01,180
+some sort of score function.
+
+629
+00:23:01,800 --> 00:23:03,240
+So when you wanna train your
+
+630
+00:23:03,240 --> 00:23:05,260
+algorithm on top of
+a knowledge graph,
+
+631
+00:23:05,925 --> 00:23:10,085
+this simply won't
+work as there
+
+632
+00:23:10,085 --> 00:23:12,425
+are these Wiki page
+intermediate nodes.
+
+633
+00:23:13,530 --> 00:23:15,470
+And they disturb the algorithm
+
+634
+00:23:15,690 --> 00:23:17,530
+because it doesn't need it in
+
+635
+00:23:17,530 --> 00:23:19,050
+order to predict
+the edge between
+
+636
+00:23:19,050 --> 00:23:21,070
+company a and
+the cloud industry.
+
+637
+00:23:22,795 --> 00:23:25,375
+So this would be
+a better choice
+
+638
+00:23:25,995 --> 00:23:27,835
+for the algorithm or the only
+
+639
+00:23:27,835 --> 00:23:29,195
+choice that the algorithm can
+
+640
+00:23:29,195 --> 00:23:31,190
+run on top of.
+
+641
+00:23:31,190 --> 00:23:31,930
+But fortunately,
+
+642
+00:23:32,390 --> 00:23:35,290
+this transition
+this transition
+
+643
+00:23:35,350 --> 00:23:36,870
+between the full
+blown knowledge
+
+644
+00:23:36,870 --> 00:23:39,210
+graph into a sub graph
+for the algorithm
+
+645
+00:23:39,590 --> 00:23:41,515
+is usually very
+fast complexity
+
+646
+00:23:41,655 --> 00:23:42,875
+as well as code wise,
+
+647
+00:23:43,415 --> 00:23:45,255
+at least according to our data
+
+648
+00:23:45,255 --> 00:23:47,435
+scientists as this
+is what they do.
+
+649
+00:23:47,575 --> 00:23:50,830
+They query for a subgraph and
+
+650
+00:23:50,830 --> 00:23:53,010
+train the model on top of it.
+
+651
+00:23:54,670 --> 00:23:57,150
+I just wanted to
+see where I stand,
+
+652
+00:23:57,950 --> 00:23:58,770
+time wise.
+
+653
+00:24:02,465 --> 00:24:04,165
+So the last piece I wanna,
+
+654
+00:24:04,545 --> 00:24:07,605
+touch upon is when
+you have a really
+
+655
+00:24:07,905 --> 00:24:09,990
+reliable, knowledge graph,
+
+656
+00:24:10,450 --> 00:24:12,390
+we can create new knowledge
+
+657
+00:24:12,530 --> 00:24:14,310
+using the graph
+we already have
+
+658
+00:24:14,370 --> 00:24:16,610
+and enriching it without going
+
+659
+00:24:16,610 --> 00:24:20,025
+to outside sources
+using knowledge
+
+660
+00:24:20,025 --> 00:24:20,845
+graph algorithms.
+
+661
+00:24:21,305 --> 00:24:23,145
+And this is a paper we've,
+
+662
+00:24:23,545 --> 00:24:25,805
+published about
+a year ago showing
+
+663
+00:24:26,170 --> 00:24:27,930
+how we used our
+knowledge graph
+
+664
+00:24:27,930 --> 00:24:30,090
+in order to perform customer
+
+665
+00:24:30,090 --> 00:24:31,790
+segmentation into verticals,
+
+666
+00:24:32,410 --> 00:24:33,930
+and the specific deep learning
+
+667
+00:24:33,930 --> 00:24:35,895
+and machine learning
+models used
+
+668
+00:24:35,895 --> 00:24:36,875
+in this study,
+
+669
+00:24:37,495 --> 00:24:39,275
+relay on Wikipedia information
+
+670
+00:24:39,495 --> 00:24:41,815
+as well as home page
+information and,
+
+671
+00:24:41,815 --> 00:24:44,210
+of course,
+internal information
+
+672
+00:24:44,270 --> 00:24:46,130
+we already knew about
+those companies.
+
+673
+00:24:46,750 --> 00:24:48,370
+And all of the above,
+
+674
+00:24:48,990 --> 00:24:50,830
+could be found in our
+knowledge graph,
+
+675
+00:24:50,830 --> 00:24:51,905
+our knowledge base,
+
+676
+00:24:52,705 --> 00:24:55,045
+is thus and and thus enabled
+
+677
+00:24:55,105 --> 00:24:57,105
+this research. And if you find
+
+678
+00:24:57,105 --> 00:24:58,325
+this idea intriguing,
+
+679
+00:24:59,025 --> 00:25:00,145
+you can give it a look at,
+
+680
+00:25:00,530 --> 00:25:03,030
+Google Scholar or
+the Intel AI website.
+
+681
+00:25:04,690 --> 00:25:07,555
+So this was, like,
+an overview of what,
+
+682
+00:25:07,955 --> 00:25:09,635
+we were trying to solve in our
+
+683
+00:25:09,635 --> 00:25:11,555
+sales AI platform and how we
+
+684
+00:25:11,555 --> 00:25:12,855
+grow a knowledge graph.
+
+685
+00:25:13,075 --> 00:25:14,755
+A little bit glimpse
+of the architecture
+
+686
+00:25:14,755 --> 00:25:16,195
+and the capabilities we found
+
+687
+00:25:16,195 --> 00:25:18,110
+were crucial in order to make
+
+688
+00:25:18,110 --> 00:25:20,590
+this happen. And
+I've I hope you
+
+689
+00:25:20,590 --> 00:25:21,570
+found this interesting.
+
+690
+00:25:22,270 --> 00:25:24,530
+And, I believe I'm I'm done,
+
+691
+00:25:24,755 --> 00:25:29,415
+and I'm open to questions.
+
+692
+00:25:41,600 --> 00:25:43,120
+We do have a couple
+of questions
+
+693
+00:25:43,120 --> 00:25:45,215
+for you, actually. Okay.
+
+694
+00:25:45,215 --> 00:25:47,475
+So some people some
+people were asking,
+
+695
+00:25:48,255 --> 00:25:50,815
+like, if how did you manage to
+
+696
+00:25:50,815 --> 00:25:53,790
+use Neo four j, with
+triples and the,
+
+697
+00:25:54,190 --> 00:25:56,110
+semantics part and
+all of that stuff.
+
+698
+00:25:56,110 --> 00:25:57,470
+But, actually, they already
+
+699
+00:25:57,470 --> 00:25:58,990
+answered among themselves that
+
+700
+00:25:58,990 --> 00:26:00,190
+there is a plug in that,
+
+701
+00:26:00,555 --> 00:26:02,315
+for that from Neo four j that
+
+702
+00:26:02,315 --> 00:26:03,455
+allows you to do that.
+
+703
+00:26:03,915 --> 00:26:04,915
+So I'm going to Okay.
+
+704
+00:26:05,115 --> 00:26:07,135
+Give you a more
+specific question,
+
+705
+00:26:07,355 --> 00:26:08,895
+which is, what is the schema
+
+706
+00:26:08,955 --> 00:26:10,460
+that you keep inside Kafka?
+
+707
+00:26:11,100 --> 00:26:13,260
+And if you serialize
+your graph data,
+
+708
+00:26:13,260 --> 00:26:15,280
+JSON or something similar.
+
+709
+00:26:16,260 --> 00:26:19,825
+So, what was the schema that
+
+710
+00:26:20,445 --> 00:26:22,285
+what's the schema that you use
+
+711
+00:26:22,285 --> 00:26:26,625
+inside Kafka?
+What do you mean?
+
+712
+00:26:28,790 --> 00:26:31,350
+This is the question.
+It's, no.
+
+713
+00:26:31,350 --> 00:26:34,310
+So I I I'll I'll be
+happy to answer it,
+
+714
+00:26:34,310 --> 00:26:36,635
+but I I don't really I don't
+
+715
+00:26:36,635 --> 00:26:38,495
+really understand
+the question.
+
+716
+00:26:39,115 --> 00:26:41,355
+So, basically, whoever asked
+
+717
+00:26:41,355 --> 00:26:43,435
+the question, it's
+probably a good
+
+718
+00:26:43,435 --> 00:26:46,120
+question. So you
+can ask me, like,
+
+719
+00:26:46,120 --> 00:26:47,980
+in Slack. Maybe we can talk,
+
+720
+00:26:48,200 --> 00:26:49,640
+and you can explain
+the question,
+
+721
+00:26:49,640 --> 00:26:51,500
+and then I'll
+answer it. Maybe.
+
+722
+00:26:52,600 --> 00:26:57,535
+Okay. So let's
+see what else we
+
+723
+00:26:57,535 --> 00:27:00,015
+got there for you. Right.
+
+724
+00:27:00,015 --> 00:27:02,240
+We have a question from who's
+
+725
+00:27:02,240 --> 00:27:04,080
+asking how would analysts or
+
+726
+00:27:04,080 --> 00:27:06,340
+business users,
+gather insights,
+
+727
+00:27:06,640 --> 00:27:07,920
+from your knowledge graph,
+
+728
+00:27:07,920 --> 00:27:10,240
+or is it only for use by data
+
+729
+00:27:10,240 --> 00:27:15,485
+scientists? Oh,
+so, for leads,
+
+730
+00:27:15,545 --> 00:27:18,665
+like, the beginning
+of the process
+
+731
+00:27:18,665 --> 00:27:20,365
+finding, simple insights,
+
+732
+00:27:20,540 --> 00:27:22,060
+like the partner
+company insights
+
+733
+00:27:22,060 --> 00:27:22,880
+we saw.
+
+734
+00:27:23,260 --> 00:27:25,100
+They can system analysts can,
+
+735
+00:27:25,420 --> 00:27:28,860
+take this query
+the graph looking
+
+736
+00:27:28,860 --> 00:27:31,165
+for some manually looking for
+
+737
+00:27:31,165 --> 00:27:33,165
+some insights before we start
+
+738
+00:27:33,165 --> 00:27:34,225
+automating them,
+
+739
+00:27:34,525 --> 00:27:36,605
+showing those snapshots
+to the business
+
+740
+00:27:36,605 --> 00:27:38,785
+units to see if
+they're viable.
+
+741
+00:27:39,050 --> 00:27:41,870
+And if they are, we
+can start building,
+
+742
+00:27:42,570 --> 00:27:45,230
+more robust models
+and solutions
+
+743
+00:27:45,370 --> 00:27:48,305
+that will they won't
+need the graph
+
+744
+00:27:48,525 --> 00:27:52,225
+image anymore like
+the the drawing.
+
+745
+00:27:52,445 --> 00:27:54,145
+They will simply get
+the recommendation,
+
+746
+00:27:55,200 --> 00:27:56,660
+according to the graph.
+
+747
+00:27:57,920 --> 00:27:59,920
+But this is mainly
+the querying
+
+748
+00:27:59,920 --> 00:28:00,960
+is done for,
+
+749
+00:28:02,345 --> 00:28:05,065
+for the first
+stages when you're
+
+750
+00:28:05,065 --> 00:28:07,865
+looking for hints of things
+
+751
+00:28:07,865 --> 00:28:09,805
+which you can, get,
+
+752
+00:28:10,980 --> 00:28:12,920
+benefits from
+opportunities from.
+
+753
+00:28:14,580 --> 00:28:17,940
+Okay. There's another
+question from,
+
+754
+00:28:18,420 --> 00:28:20,035
+Matthias Sisbuie,
+
+755
+00:28:20,095 --> 00:28:21,715
+if I'm pronouncing correctly,
+
+756
+00:28:22,255 --> 00:28:23,615
+who's asking whether you can
+
+757
+00:28:23,615 --> 00:28:25,635
+speak about
+the iterative process
+
+758
+00:28:25,695 --> 00:28:27,935
+to build, such to build this
+
+759
+00:28:27,935 --> 00:28:28,675
+from scratch.
+
+760
+00:28:31,040 --> 00:28:32,320
+So, actually,
+
+761
+00:28:32,320 --> 00:28:34,880
+it's not it's as
+as you've seen,
+
+762
+00:28:34,880 --> 00:28:36,160
+it it's composed of, like,
+
+763
+00:28:36,160 --> 00:28:37,380
+five different microservices
+
+764
+00:28:37,760 --> 00:28:39,060
+with a message bus.
+
+765
+00:28:41,665 --> 00:28:43,025
+So this is more of a software
+
+766
+00:28:43,025 --> 00:28:45,425
+engineering question
+because we first,
+
+767
+00:28:45,425 --> 00:28:48,030
+we put everything
+into place, like,
+
+768
+00:28:48,030 --> 00:28:49,170
+all these capabilities,
+
+769
+00:28:49,310 --> 00:28:52,270
+and they were empty. Right?
+
+770
+00:28:52,270 --> 00:28:53,410
+They did, like,
+
+771
+00:28:54,030 --> 00:28:55,710
+simple things or
+they almost did
+
+772
+00:28:55,710 --> 00:28:57,390
+nothing. And then we started
+
+773
+00:28:57,855 --> 00:28:59,235
+once everything was ticking,
+
+774
+00:28:59,855 --> 00:29:02,435
+we started putting
+in the logic
+
+775
+00:29:02,975 --> 00:29:04,035
+inside the system.
+
+776
+00:29:04,655 --> 00:29:07,450
+And, so but that's
+an iterative,
+
+777
+00:29:08,070 --> 00:29:09,370
+microservice framework,
+
+778
+00:29:10,150 --> 00:29:11,850
+development process we use,
+
+779
+00:29:12,390 --> 00:29:13,190
+most of the times.
+
+780
+00:29:13,190 --> 00:29:16,995
+We put, the entire
+framework, like,
+
+781
+00:29:17,295 --> 00:29:18,995
+the key things in
+the framework.
+
+782
+00:29:19,615 --> 00:29:21,455
+We mock it, and
+then we started
+
+783
+00:29:21,455 --> 00:29:24,880
+putting the logic
+inside. Okay.
+
+784
+00:29:25,900 --> 00:29:27,340
+I have another question from
+
+785
+00:29:27,340 --> 00:29:29,340
+Deborah who's asking if you
+
+786
+00:29:29,340 --> 00:29:31,725
+could further
+expand on how you
+
+787
+00:29:31,885 --> 00:29:32,625
+handle entity resolution,
+
+788
+00:29:33,805 --> 00:29:35,885
+meaning how the loaders and
+
+789
+00:29:35,885 --> 00:29:37,805
+transformers know that two
+
+790
+00:29:37,805 --> 00:29:40,180
+websites are referring
+to company a,
+
+791
+00:29:40,420 --> 00:29:41,720
+but they're, for instance,
+
+792
+00:29:41,780 --> 00:29:42,600
+spelled differently.
+
+793
+00:29:47,525 --> 00:29:49,225
+I'm not sure I I understand,
+
+794
+00:29:49,285 --> 00:29:50,425
+but I'll try. Like,
+
+795
+00:29:51,365 --> 00:29:53,685
+the way we transform this
+
+796
+00:29:53,685 --> 00:29:56,425
+information into
+graph formations,
+
+797
+00:29:57,620 --> 00:30:00,020
+Currently, we did
+an expert that
+
+798
+00:30:00,020 --> 00:30:04,340
+would manually define
+using this YAML,
+
+799
+00:30:04,660 --> 00:30:07,145
+DSL we created which piece of
+
+800
+00:30:07,145 --> 00:30:08,765
+information turns into what.
+
+801
+00:30:09,065 --> 00:30:11,245
+But it does so one
+time as usually
+
+802
+00:30:11,305 --> 00:30:12,285
+we work with,
+
+803
+00:30:12,985 --> 00:30:15,960
+APIs which return
+data in a known
+
+804
+00:30:15,960 --> 00:30:17,000
+structure. Right?
+
+805
+00:30:17,000 --> 00:30:18,040
+Like, you get the JSON,
+
+806
+00:30:18,040 --> 00:30:19,580
+you know what
+fields to expect.
+
+807
+00:30:20,280 --> 00:30:22,140
+So we do that for
+each entity.
+
+808
+00:30:22,405 --> 00:30:24,325
+But we do it one
+time and we let
+
+809
+00:30:24,325 --> 00:30:28,345
+it run on all of
+the same type entities,
+
+810
+00:30:28,805 --> 00:30:33,140
+if that was the question.
+I'm not sure.
+
+811
+00:30:33,140 --> 00:30:34,420
+But even if it wasn't,
+
+812
+00:30:34,420 --> 00:30:35,700
+I think I think the question
+
+813
+00:30:35,700 --> 00:30:37,560
+probably refers to entity
+
+814
+00:30:37,700 --> 00:30:38,885
+disambiguation. Say,
+
+815
+00:30:38,885 --> 00:30:40,165
+which is a very well known and
+
+816
+00:30:40,165 --> 00:30:42,405
+very thorny issue
+in Novice Graph.
+
+817
+00:30:42,405 --> 00:30:44,645
+So how do you Oh, okay. Okay.
+
+818
+00:30:44,645 --> 00:30:46,325
+So when you get the external
+
+819
+00:30:46,325 --> 00:30:48,050
+information and you wanna make
+
+820
+00:30:48,050 --> 00:30:50,310
+sure it belongs indeed
+to the company,
+
+821
+00:30:50,690 --> 00:30:52,870
+like the example
+with the Wiki page.
+
+822
+00:30:53,250 --> 00:30:54,230
+So we ran,
+
+823
+00:30:54,895 --> 00:30:56,835
+when we fetch external
+information,
+
+824
+00:30:56,895 --> 00:30:58,735
+we always have a matching
+
+825
+00:30:58,735 --> 00:31:01,855
+algorithm that
+matches the internal
+
+826
+00:31:01,855 --> 00:31:04,070
+entity that we already know is
+
+827
+00:31:04,070 --> 00:31:06,550
+correct by company a with some
+
+828
+00:31:06,550 --> 00:31:08,550
+external information
+we got from
+
+829
+00:31:08,550 --> 00:31:10,470
+this Wiki page
+that claims it's
+
+830
+00:31:10,470 --> 00:31:11,265
+company a.
+
+831
+00:31:12,545 --> 00:31:15,125
+And we do this cross matching
+
+832
+00:31:15,185 --> 00:31:18,645
+algorithm and we
+give it, a score.
+
+833
+00:31:19,090 --> 00:31:21,330
+Like the. What I
+I I think it's
+
+834
+00:31:21,330 --> 00:31:22,850
+confidence level that I wrote
+
+835
+00:31:22,850 --> 00:31:24,390
+here and we give it a score,
+
+836
+00:31:24,770 --> 00:31:27,490
+how much we believe
+that company
+
+837
+00:31:27,490 --> 00:31:29,075
+a actually, like,
+
+838
+00:31:29,075 --> 00:31:30,995
+this Wiki page
+actually belongs
+
+839
+00:31:30,995 --> 00:31:33,235
+to company a. We do not make
+
+840
+00:31:33,235 --> 00:31:34,695
+this a strict connection.
+
+841
+00:31:35,155 --> 00:31:36,435
+It's kind of
+a loose connection
+
+842
+00:31:36,435 --> 00:31:37,715
+with some certainty level.
+
+843
+00:31:37,715 --> 00:31:38,275
+So if you know,
+
+844
+00:31:38,275 --> 00:31:40,020
+it's query the graph and say,
+
+845
+00:31:40,020 --> 00:31:42,120
+I want only weekly information
+
+846
+00:31:42,180 --> 00:31:44,980
+about company a, which,
+
+847
+00:31:45,460 --> 00:31:48,575
+is above ninety
+percent, certainty,
+
+848
+00:31:48,955 --> 00:31:52,335
+like, confidence,
+if it makes sense.
+
+849
+00:31:52,715 --> 00:31:54,555
+Okay. There's a quick one,
+
+850
+00:31:55,035 --> 00:31:56,155
+and I'm guessing the answer is
+
+851
+00:31:56,155 --> 00:31:57,275
+probably no, but I'm going to
+
+852
+00:31:57,275 --> 00:31:58,540
+ask you anyway if
+you have, like,
+
+853
+00:31:58,540 --> 00:31:59,840
+a gift card for this.
+
+854
+00:32:03,100 --> 00:32:04,140
+Fortunately, no.
+
+855
+00:32:04,140 --> 00:32:05,420
+I'm saying
+fortunately because,
+
+856
+00:32:05,660 --> 00:32:07,020
+the the process of getting,
+
+857
+00:32:07,485 --> 00:32:07,965
+extremely difficult.
+
+858
+00:32:07,965 --> 00:32:08,820
+I would love to do so.
+
+859
+00:32:08,820 --> 00:32:17,680
+I cannot do it on
+my own. So no.
+
+860
+00:32:17,680 --> 00:32:19,520
+I I I don't, but
+I I'll be I'll
+
+861
+00:32:19,520 --> 00:32:22,240
+be glad to
+contribute any piece
+
+862
+00:32:22,240 --> 00:32:25,120
+of knowledge that I have to
+
+863
+00:32:25,120 --> 00:32:26,500
+anyone that wanna talk.
+
+864
+00:32:26,635 --> 00:32:28,575
+I'll I'll do it for
+free and for fun.
+
+865
+00:32:29,835 --> 00:32:30,955
+That's that's fair enough.
+
+866
+00:32:30,955 --> 00:32:32,395
+You know, an open
+invitation to
+
+867
+00:32:32,395 --> 00:32:35,055
+people as well. Yeah.
+
+868
+00:32:35,720 --> 00:32:37,240
+I have a there's another one
+
+869
+00:32:37,240 --> 00:32:38,600
+from Mark who's
+asking something
+
+870
+00:32:38,600 --> 00:32:39,800
+quite fundamental, actually.
+
+871
+00:32:39,800 --> 00:32:41,400
+Why are you using
+your message bus?
+
+872
+00:32:41,640 --> 00:32:42,920
+Couldn't you work directly on
+
+873
+00:32:42,920 --> 00:32:43,900
+the graph database?
+
+874
+00:32:48,385 --> 00:32:49,425
+Well, that's, again,
+
+875
+00:32:49,425 --> 00:32:50,785
+a software engineering one.
+
+876
+00:32:51,105 --> 00:32:54,470
+Since you wanna
+you wanna control
+
+877
+00:32:55,010 --> 00:32:56,530
+one of the basic things with
+
+878
+00:32:56,530 --> 00:32:57,730
+asynchronous system that you
+
+879
+00:32:57,730 --> 00:32:59,590
+wanna control the throughput.
+
+880
+00:33:00,245 --> 00:33:03,045
+You would don't want
+burst to turn down,
+
+881
+00:33:03,045 --> 00:33:05,525
+like, destroy your system.
+
+882
+00:33:05,525 --> 00:33:06,725
+That's why we have Kafka.
+
+883
+00:33:06,725 --> 00:33:08,245
+You have back
+what's called back
+
+884
+00:33:08,245 --> 00:33:10,640
+pressure. If you got a lot of
+
+885
+00:33:10,640 --> 00:33:12,480
+information flowing in and you
+
+886
+00:33:12,480 --> 00:33:13,680
+don't have enough connections
+
+887
+00:33:13,680 --> 00:33:15,360
+to the database
+and the throughput
+
+888
+00:33:15,360 --> 00:33:16,640
+of the database is not enough
+
+889
+00:33:16,640 --> 00:33:18,260
+because there's an IO limit,
+
+890
+00:33:18,865 --> 00:33:20,625
+the bottleneck
+will probably be
+
+891
+00:33:20,625 --> 00:33:22,405
+your graph build. Right?
+
+892
+00:33:22,865 --> 00:33:24,305
+And you want things, like,
+
+893
+00:33:24,305 --> 00:33:26,725
+to queue up behind
+your graph builder.
+
+894
+00:33:27,025 --> 00:33:29,750
+You don't want the the service
+
+895
+00:33:29,750 --> 00:33:31,510
+itself trying to
+create a graph
+
+896
+00:33:31,510 --> 00:33:33,030
+because a lot of services will
+
+897
+00:33:33,030 --> 00:33:34,790
+try to create a graph and they
+
+898
+00:33:34,790 --> 00:33:35,845
+just bring it down.
+
+899
+00:33:35,925 --> 00:33:37,385
+You wanna control
+the throughput,
+
+900
+00:33:37,685 --> 00:33:39,205
+and that's one of the reasons
+
+901
+00:33:39,205 --> 00:33:40,485
+you use the message bus and
+
+902
+00:33:40,485 --> 00:33:42,165
+the one of the reasons Lambda
+
+903
+00:33:42,165 --> 00:33:44,745
+functions use, SQS, etcetera.
+
+904
+00:33:47,610 --> 00:33:48,830
+Okay. Makes sense.
+
+905
+00:33:49,690 --> 00:33:51,770
+I think we're good, actually.
+
+906
+00:33:51,770 --> 00:33:53,565
+I mean, we can as you said,
+
+907
+00:33:53,565 --> 00:33:54,685
+you're on Slack as well,
+
+908
+00:33:54,685 --> 00:33:56,225
+so you can continue
+the conversation
+
+909
+00:33:56,285 --> 00:33:57,805
+there if people have even more
+
+910
+00:33:57,805 --> 00:33:58,925
+specific questions because I
+
+911
+00:33:58,925 --> 00:34:00,365
+think some of them
+were actually
+
+912
+00:34:00,365 --> 00:34:01,585
+quite specific already.
+
+913
+00:34:02,470 --> 00:34:04,310
+So I guess we're
+good to wrap up.
+
+914
+00:34:04,310 --> 00:34:05,930
+Thank you once again, Aran,
+
+915
+00:34:06,070 --> 00:34:09,205
+and we'll see you.
+Thank you. Thank you.
+
+916
+00:34:09,205 --> 00:34:11,465
+Bye bye. Cheers. Bye.
+

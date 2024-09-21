@@ -1,0 +1,4281 @@
+1
+00:00:04,640 --> 00:00:06,400
+Hello. good morning.
+
+2
+00:00:06,400 --> 00:00:07,680
+Well, at least
+good morning here
+
+3
+00:00:07,680 --> 00:00:08,340
+in California.
+
+4
+00:00:09,920 --> 00:00:11,280
+my name is Jens Asman,
+
+5
+00:00:11,280 --> 00:00:13,220
+and I'm the CEO
+of France Inc.
+
+6
+00:00:14,095 --> 00:00:15,775
+And our core product that most
+
+7
+00:00:15,775 --> 00:00:18,335
+of you know about
+is is a knowledge
+
+8
+00:00:18,335 --> 00:00:19,795
+graph tool called
+AllegoGraph.
+
+9
+00:00:21,375 --> 00:00:23,295
+and today, I'm going to talk
+
+10
+00:00:23,295 --> 00:00:25,955
+about the last
+fetched stitches
+
+11
+00:00:26,095 --> 00:00:28,575
+of dark data. So
+for a long time,
+
+12
+00:00:28,575 --> 00:00:30,320
+well, most of the people in
+
+13
+00:00:30,320 --> 00:00:31,760
+the audience know
+what dark data is.
+
+14
+00:00:31,760 --> 00:00:33,120
+It's a for a long time,
+
+15
+00:00:33,120 --> 00:00:34,880
+it was just all
+the unstructured text,
+
+16
+00:00:34,880 --> 00:00:36,900
+but there's actually
+even a bigger
+
+17
+00:00:37,840 --> 00:00:39,680
+pool of dark data
+in the enterprise,
+
+18
+00:00:39,680 --> 00:00:42,020
+and that is
+spoken conversations
+
+19
+00:00:42,240 --> 00:00:44,400
+between customers and company
+
+20
+00:00:44,400 --> 00:00:46,775
+representatives.
+And so today,
+
+21
+00:00:46,775 --> 00:00:48,295
+I'm going to talk
+about how you
+
+22
+00:00:48,295 --> 00:00:50,075
+can combine speech technology
+
+23
+00:00:50,775 --> 00:00:52,135
+with knowledge
+graphs and about
+
+24
+00:00:52,135 --> 00:00:53,655
+some of the things
+that we learned
+
+25
+00:00:53,655 --> 00:00:54,935
+in the last four years that
+
+26
+00:00:54,935 --> 00:00:57,755
+we've been deep into,
+speech technology,
+
+27
+00:00:57,895 --> 00:00:59,355
+NLP, and knowledge graphs.
+
+28
+00:01:00,530 --> 00:01:01,190
+So, personally,
+
+29
+00:01:02,850 --> 00:01:05,330
+I worked in the early
+late nineties,
+
+30
+00:01:05,330 --> 00:01:06,930
+in the early two thousands in
+
+31
+00:01:06,930 --> 00:01:10,390
+the at the the Dutch,
+telecom lab,
+
+32
+00:01:10,530 --> 00:01:12,370
+and we were doing or we were
+
+33
+00:01:12,370 --> 00:01:13,970
+working on early versions of
+
+34
+00:01:13,970 --> 00:01:16,735
+Siri and early
+versions of iPads,
+
+35
+00:01:16,735 --> 00:01:19,055
+and I was writing
+articles about how,
+
+36
+00:01:19,055 --> 00:01:20,335
+for example, on an iPad,
+
+37
+00:01:20,335 --> 00:01:22,895
+you could use speech input to
+
+38
+00:01:22,895 --> 00:01:24,835
+write your emails and then use
+
+39
+00:01:24,895 --> 00:01:27,535
+your pen to correct
+the mistakes
+
+40
+00:01:27,535 --> 00:01:29,855
+that you made. and
+we were looking
+
+41
+00:01:29,855 --> 00:01:31,730
+at systems like Siri where we
+
+42
+00:01:31,730 --> 00:01:33,090
+had a combination of human
+
+43
+00:01:33,090 --> 00:01:34,130
+assistance and,
+
+44
+00:01:34,770 --> 00:01:36,210
+and and and speech and and
+
+45
+00:01:36,210 --> 00:01:38,230
+assistance done by
+speech technology.
+
+46
+00:01:38,930 --> 00:01:40,230
+And it was wonderful,
+
+47
+00:01:40,290 --> 00:01:41,970
+wonderful world at work,
+
+48
+00:01:41,970 --> 00:01:44,505
+but I was kind of
+always a little
+
+49
+00:01:44,505 --> 00:01:46,105
+bit hesitant,
+and I never could
+
+50
+00:01:46,105 --> 00:01:48,585
+believe that this
+could come to a real,
+
+51
+00:01:48,585 --> 00:01:50,025
+real systems. Yeah.
+
+52
+00:01:50,025 --> 00:01:52,125
+So and even in two
+thousand fourteen,
+
+53
+00:01:54,345 --> 00:01:56,345
+that there were articles like
+
+54
+00:01:56,345 --> 00:01:57,785
+this where people
+would say, well,
+
+55
+00:01:57,785 --> 00:01:58,685
+it's peace recognition,
+
+56
+00:01:58,905 --> 00:02:01,320
+the unreachable frontier.
+
+57
+00:02:01,320 --> 00:02:03,240
+And here's an article by James
+
+58
+00:02:03,240 --> 00:02:04,760
+Kendrick that says voice input
+
+59
+00:02:04,760 --> 00:02:06,760
+has been a pipe
+dream since Star
+
+60
+00:02:06,760 --> 00:02:08,280
+Trek with crew members talking
+
+61
+00:02:08,280 --> 00:02:09,660
+into the air and the computers
+
+62
+00:02:09,720 --> 00:02:11,900
+understanding every
+spoken word word.
+
+63
+00:02:12,200 --> 00:02:14,025
+And he claims
+speech technology
+
+64
+00:02:14,025 --> 00:02:15,465
+can only do ninety
+five percent,
+
+65
+00:02:15,465 --> 00:02:17,325
+which I think he
+still was high.
+
+66
+00:02:18,025 --> 00:02:19,705
+But be that as it may,
+
+67
+00:02:19,705 --> 00:02:22,585
+my company my my
+customers are really,
+
+68
+00:02:22,585 --> 00:02:24,265
+really happy with
+ninety five percent.
+
+69
+00:02:24,265 --> 00:02:26,765
+Yeah? Because, I mean,
+until recently,
+
+70
+00:02:27,140 --> 00:02:28,500
+they had all that dark data,
+
+71
+00:02:28,500 --> 00:02:29,800
+all these spoken
+conversations,
+
+72
+00:02:29,860 --> 00:02:31,380
+and they couldn't do
+anything with it.
+
+73
+00:02:31,380 --> 00:02:33,540
+But ninety five
+percent is ninety
+
+74
+00:02:33,540 --> 00:02:35,460
+five percent more
+than they ever
+
+75
+00:02:35,460 --> 00:02:37,560
+could do before, even
+infinitely more.
+
+76
+00:02:38,020 --> 00:02:39,460
+So what I'm gonna talk about
+
+77
+00:02:39,460 --> 00:02:42,765
+today is what text
+analytics, NLP,
+
+78
+00:02:42,985 --> 00:02:43,785
+knowledge graphs,
+
+79
+00:02:43,785 --> 00:02:45,545
+and speech technology
+can do for
+
+80
+00:02:45,545 --> 00:02:47,005
+your enterprise or
+your enterprise
+
+81
+00:02:47,065 --> 00:02:48,445
+customer. Right?
+
+82
+00:02:48,905 --> 00:02:50,525
+And so, of course,
+
+83
+00:02:50,585 --> 00:02:52,025
+a lot of you guys will be in,
+
+84
+00:02:52,265 --> 00:02:54,285
+the area of NLP and
+text analytics,
+
+85
+00:02:54,470 --> 00:02:56,230
+and it's a booming
+market. Yeah.
+
+86
+00:02:56,230 --> 00:02:57,990
+So they expect in two thousand
+
+87
+00:02:57,990 --> 00:03:00,390
+twenty four, text analytics is
+
+88
+00:03:00,390 --> 00:03:02,330
+already close to a nine
+billion dollar,
+
+89
+00:03:02,950 --> 00:03:05,430
+industry, but
+speech is growing
+
+90
+00:03:05,430 --> 00:03:06,310
+even faster.
+
+91
+00:03:06,310 --> 00:03:08,730
+Yeah. I mean,
+analytics insights
+
+92
+00:03:08,790 --> 00:03:11,085
+estimates that in two thousand
+
+93
+00:03:11,085 --> 00:03:13,185
+twenty five, the recognition
+
+94
+00:03:13,565 --> 00:03:14,925
+the voice recognition market
+
+95
+00:03:14,925 --> 00:03:16,525
+will be close to thirty one
+
+96
+00:03:16,525 --> 00:03:17,905
+billion dollars. Yeah.
+
+97
+00:03:18,925 --> 00:03:20,685
+And speech technology
+is becoming
+
+98
+00:03:20,685 --> 00:03:21,885
+part of everyday life.
+
+99
+00:03:21,885 --> 00:03:23,325
+I I never would have imagined
+
+100
+00:03:23,325 --> 00:03:24,365
+that we've got to that point,
+
+101
+00:03:24,365 --> 00:03:26,130
+but we have now gotten
+to that point.
+
+102
+00:03:27,010 --> 00:03:29,090
+I I'm a big, big fan of,
+
+103
+00:03:29,330 --> 00:03:31,650
+of Google Voice technology and
+
+104
+00:03:31,650 --> 00:03:32,710
+their Google Assistant.
+
+105
+00:03:33,250 --> 00:03:36,290
+I never ever type
+an a text message.
+
+106
+00:03:36,290 --> 00:03:39,110
+I only always will say
+my text messages.
+
+107
+00:03:40,785 --> 00:03:43,825
+I think it's Google
+is better than Siri,
+
+108
+00:03:43,825 --> 00:03:45,605
+but people might
+disagree, obviously.
+
+109
+00:03:46,065 --> 00:03:46,945
+And then, of course,
+
+110
+00:03:46,945 --> 00:03:48,305
+a lot of you guys will already
+
+111
+00:03:48,305 --> 00:03:49,505
+have an Alexa in your home,
+
+112
+00:03:49,505 --> 00:03:51,445
+or you will use
+Cortana or Windows,
+
+113
+00:03:51,665 --> 00:03:54,030
+or you will use something
+that IBM made,
+
+114
+00:03:54,030 --> 00:03:56,610
+but it's become part
+of everyday life.
+
+115
+00:03:56,670 --> 00:03:59,470
+Yeah? And it's not only that
+
+116
+00:03:59,470 --> 00:04:02,110
+these big companies
+create those
+
+117
+00:04:02,110 --> 00:04:03,470
+technologies, but they also
+
+118
+00:04:03,470 --> 00:04:05,235
+provide APIs to it. Yeah.
+
+119
+00:04:05,235 --> 00:04:06,915
+So here's a two
+thousand eighteen
+
+120
+00:04:06,915 --> 00:04:08,295
+comparison where they look at
+
+121
+00:04:08,675 --> 00:04:10,515
+what Amazon, Google, IBM,
+
+122
+00:04:10,515 --> 00:04:11,895
+and all the others are doing.
+
+123
+00:04:12,515 --> 00:04:14,215
+And, I'll leave it
+in my presentation.
+
+124
+00:04:14,275 --> 00:04:15,975
+But what you actually can see
+
+125
+00:04:16,195 --> 00:04:17,495
+is that even now,
+
+126
+00:04:19,230 --> 00:04:21,230
+the speech to text is good.
+
+127
+00:04:21,230 --> 00:04:22,670
+It's never get to the point
+
+128
+00:04:22,670 --> 00:04:24,350
+where speech to
+text is excellent.
+
+129
+00:04:24,350 --> 00:04:26,030
+So we have for Amazon,
+
+130
+00:04:26,030 --> 00:04:27,230
+speech to text is good.
+
+131
+00:04:27,230 --> 00:04:29,470
+For Google, speech to text is
+
+132
+00:04:29,470 --> 00:04:30,290
+is intermediate.
+
+133
+00:04:31,615 --> 00:04:33,635
+for IBM Watson, it's good.
+
+134
+00:04:33,775 --> 00:04:36,195
+So it's getting there,
+yeah, these APIs.
+
+135
+00:04:37,375 --> 00:04:38,415
+and one of the big problems,
+
+136
+00:04:38,415 --> 00:04:39,935
+and I'm gonna talk
+about it today,
+
+137
+00:04:39,935 --> 00:04:41,855
+is that you really need to be
+
+138
+00:04:41,855 --> 00:04:43,075
+able to customize,
+
+139
+00:04:44,580 --> 00:04:46,500
+for your if you wanna
+create a service
+
+140
+00:04:46,500 --> 00:04:47,800
+based on speech technology,
+
+141
+00:04:48,340 --> 00:04:49,700
+you'll find that there's a lot
+
+142
+00:04:49,700 --> 00:04:52,260
+of domain words
+that these speech
+
+143
+00:04:52,260 --> 00:04:54,100
+recognizers don't do yet.
+
+144
+00:04:54,100 --> 00:04:55,220
+I mean, they're getting better
+
+145
+00:04:55,220 --> 00:04:55,940
+at day over day,
+
+146
+00:04:55,940 --> 00:04:57,695
+but you need to be able to
+
+147
+00:04:57,695 --> 00:04:58,335
+customize them.
+
+148
+00:04:58,335 --> 00:04:59,615
+And that is where right now
+
+149
+00:04:59,615 --> 00:05:01,295
+the the the biggest problem is
+
+150
+00:05:01,295 --> 00:05:02,595
+with using these
+technologies,
+
+151
+00:05:02,655 --> 00:05:04,515
+but I'll talk about
+it today. Yeah.
+
+152
+00:05:05,215 --> 00:05:08,015
+And so say you're working for
+
+153
+00:05:08,015 --> 00:05:09,775
+a big enterprise or a big
+
+154
+00:05:09,775 --> 00:05:11,795
+enterprise is your
+customer. Yeah.
+
+155
+00:05:12,470 --> 00:05:13,750
+What can you do with spoken,
+
+156
+00:05:14,230 --> 00:05:15,450
+conversations? Well,
+
+157
+00:05:15,590 --> 00:05:17,030
+if you look at what people now
+
+158
+00:05:17,030 --> 00:05:18,870
+do with NLP, it's
+mostly focused
+
+159
+00:05:18,870 --> 00:05:20,330
+on regular text
+and documents.
+
+160
+00:05:21,110 --> 00:05:22,710
+But, believe me,
+
+161
+00:05:22,710 --> 00:05:24,390
+practices for
+text analytics on
+
+162
+00:05:24,390 --> 00:05:26,230
+documents cannot directly be
+
+163
+00:05:26,230 --> 00:05:27,610
+applied to spoken
+conversations.
+
+164
+00:05:28,575 --> 00:05:30,495
+We find that normal human
+
+165
+00:05:30,495 --> 00:05:32,355
+conversations are
+so informal,
+
+166
+00:05:33,375 --> 00:05:35,535
+yeah, that it just
+it just won't work.
+
+167
+00:05:35,535 --> 00:05:37,535
+Yeah. So we had to work for
+
+168
+00:05:37,535 --> 00:05:38,735
+the last four years to,
+
+169
+00:05:40,720 --> 00:05:44,160
+to really see what
+NLP techniques
+
+170
+00:05:44,160 --> 00:05:45,860
+we efficiently and effectively
+
+171
+00:05:46,080 --> 00:05:48,580
+could use for,
+spoken combinations.
+
+172
+00:05:49,040 --> 00:05:51,040
+And so today, I
+will discuss a use
+
+173
+00:05:51,040 --> 00:05:53,040
+case that we did or that we do
+
+174
+00:05:53,040 --> 00:05:54,820
+with an intelligent
+call center.
+
+175
+00:05:54,960 --> 00:05:57,905
+The call center that
+we work with is,
+
+176
+00:05:58,305 --> 00:06:00,305
+a company in Atlanta called n
+
+177
+00:06:00,305 --> 00:06:02,645
+three n three results.
+
+178
+00:06:03,665 --> 00:06:05,445
+they have about
+fifteen hundred,
+
+179
+00:06:08,705 --> 00:06:09,925
+call center operators.
+
+180
+00:06:10,385 --> 00:06:11,525
+We call them BDRs.
+
+181
+00:06:13,610 --> 00:06:14,890
+Nearly all of
+these people have
+
+182
+00:06:14,890 --> 00:06:16,170
+a college degree.
+
+183
+00:06:16,170 --> 00:06:17,770
+So it's an intelligent call
+
+184
+00:06:17,770 --> 00:06:19,450
+center and a high
+end call center
+
+185
+00:06:19,450 --> 00:06:21,690
+in the sense that
+they don't do
+
+186
+00:06:21,690 --> 00:06:24,570
+just simple scripts,
+you know,
+
+187
+00:06:24,570 --> 00:06:26,430
+the people that call
+you every day,
+
+188
+00:06:26,715 --> 00:06:27,835
+and in most cases,
+
+189
+00:06:27,835 --> 00:06:29,435
+just following
+a a dumb script.
+
+190
+00:06:29,435 --> 00:06:30,235
+Now these people,
+
+191
+00:06:30,235 --> 00:06:31,695
+before they make
+a phone call,
+
+192
+00:06:31,995 --> 00:06:33,835
+they first will
+investigate the person,
+
+193
+00:06:33,835 --> 00:06:34,495
+the company,
+
+194
+00:06:35,275 --> 00:06:37,355
+and then only
+then will they do
+
+195
+00:06:37,355 --> 00:06:38,315
+a a call.
+
+196
+00:06:38,315 --> 00:06:40,175
+So it's it's for the it's it's
+
+197
+00:06:40,650 --> 00:06:42,410
+more expensive,
+but it's, yeah,
+
+198
+00:06:42,410 --> 00:06:43,950
+it's it's high end.
+
+199
+00:06:44,410 --> 00:06:47,210
+And in order to be
+get better at this,
+
+200
+00:06:47,210 --> 00:06:49,050
+they have been
+developing a lot of AI,
+
+201
+00:06:49,050 --> 00:06:50,090
+and we're happy that we could
+
+202
+00:06:50,090 --> 00:06:50,910
+help with that.
+
+203
+00:06:50,970 --> 00:06:52,330
+And so they got to the point
+
+204
+00:06:52,330 --> 00:06:54,490
+that then Accenture
+took them over,
+
+205
+00:06:54,890 --> 00:06:56,385
+two months ago. Alright.
+
+206
+00:06:56,385 --> 00:06:58,325
+So this is the the call
+center company,
+
+207
+00:06:58,625 --> 00:07:00,085
+that, we work for.
+
+208
+00:07:00,625 --> 00:07:05,045
+And so we have
+a knowledge graph
+
+209
+00:07:05,265 --> 00:07:06,625
+for this call center company
+
+210
+00:07:06,625 --> 00:07:09,060
+that is mostly based on just,
+
+211
+00:07:09,620 --> 00:07:10,820
+structured data. Yeah.
+
+212
+00:07:10,820 --> 00:07:12,820
+So you have you wanna
+build a knowledge
+
+213
+00:07:12,820 --> 00:07:13,940
+graph for your call center,
+
+214
+00:07:13,940 --> 00:07:15,620
+whether it's CRM
+sales calls or
+
+215
+00:07:15,620 --> 00:07:16,600
+technical support.
+
+216
+00:07:16,820 --> 00:07:18,020
+I mean, what are
+the things that
+
+217
+00:07:18,020 --> 00:07:19,540
+you wanna record and what you
+
+218
+00:07:19,540 --> 00:07:20,740
+can learn just by looking at
+
+219
+00:07:20,740 --> 00:07:22,340
+the structured
+data in your CRM
+
+220
+00:07:22,340 --> 00:07:23,475
+databases and and,
+
+221
+00:07:23,715 --> 00:07:25,555
+all the other
+systems that keep
+
+222
+00:07:25,555 --> 00:07:26,915
+track of what's
+going on in your
+
+223
+00:07:26,915 --> 00:07:28,195
+call center. Well,
+
+224
+00:07:28,195 --> 00:07:29,555
+you wanna know what companies
+
+225
+00:07:29,555 --> 00:07:31,155
+and individuals did I talk to
+
+226
+00:07:31,155 --> 00:07:32,755
+before and who's
+the best person
+
+227
+00:07:32,755 --> 00:07:35,075
+to talk to, and
+what did I learn
+
+228
+00:07:35,075 --> 00:07:36,515
+about that company
+or the person
+
+229
+00:07:36,515 --> 00:07:37,290
+in my call.
+
+230
+00:07:37,370 --> 00:07:38,650
+That's right. And
+then your hope
+
+231
+00:07:38,650 --> 00:07:40,430
+that your people will
+make good notes.
+
+232
+00:07:41,130 --> 00:07:42,810
+and is the person
+that I talked
+
+233
+00:07:42,810 --> 00:07:44,090
+to still working
+for that company?
+
+234
+00:07:44,090 --> 00:07:45,470
+Maybe you have to
+go to LinkedIn.
+
+235
+00:07:45,610 --> 00:07:47,050
+Which of my salespeople made
+
+236
+00:07:47,050 --> 00:07:48,490
+the most sales and why?
+
+237
+00:07:48,490 --> 00:07:51,945
+What, or what sales agent is
+
+238
+00:07:51,945 --> 00:07:53,565
+more effective for
+what technology
+
+239
+00:07:53,625 --> 00:07:56,905
+or what kind of
+service, etcetera,
+
+240
+00:07:56,905 --> 00:07:58,105
+etcetera. So you can imagine
+
+241
+00:07:58,105 --> 00:07:59,965
+there's a lot of
+things that you can,
+
+242
+00:08:01,465 --> 00:08:02,985
+put in your knowledge graph to
+
+243
+00:08:02,985 --> 00:08:04,800
+make your sales
+processes better.
+
+244
+00:08:05,360 --> 00:08:07,920
+And so here is a a picture of
+
+245
+00:08:07,920 --> 00:08:09,860
+a little part of
+the knowledge graph.
+
+246
+00:08:11,840 --> 00:08:13,200
+we call it
+the corporate memory
+
+247
+00:08:13,200 --> 00:08:14,720
+knowledge graph, yeah,
+
+248
+00:08:14,720 --> 00:08:16,560
+that can answer a lot
+of the questions
+
+249
+00:08:16,560 --> 00:08:19,135
+that I just, showed
+you in that slide.
+
+250
+00:08:19,275 --> 00:08:20,955
+And this is
+a picture of Graph,
+
+251
+00:08:20,955 --> 00:08:23,375
+which is our,
+visualization tool
+
+252
+00:08:23,675 --> 00:08:25,215
+on top of AllegoGraph.
+
+253
+00:08:25,435 --> 00:08:27,995
+And here you see that m three
+
+254
+00:08:27,995 --> 00:08:29,055
+might have a client,
+
+255
+00:08:29,115 --> 00:08:30,875
+like Rocket Cloud Services or
+
+256
+00:08:30,875 --> 00:08:32,575
+DigitalOcean Cloud Services.
+
+257
+00:08:33,690 --> 00:08:35,150
+And then when you
+have a client,
+
+258
+00:08:35,530 --> 00:08:37,370
+you do multiple campaigns for
+
+259
+00:08:37,370 --> 00:08:39,370
+the same client or to focus on
+
+260
+00:08:39,370 --> 00:08:40,110
+one particular,
+
+261
+00:08:40,970 --> 00:08:42,250
+element that you wanna sell in
+
+262
+00:08:42,250 --> 00:08:43,470
+this particular campaign.
+
+263
+00:08:44,010 --> 00:08:45,370
+And then you will
+have the sales
+
+264
+00:08:45,370 --> 00:08:48,270
+agents here that work
+for a campaign,
+
+265
+00:08:49,065 --> 00:08:49,885
+but, obviously,
+
+266
+00:08:50,505 --> 00:08:52,045
+they work for
+multiple campaigns,
+
+267
+00:08:52,185 --> 00:08:53,785
+and they have a start time and
+
+268
+00:08:53,785 --> 00:08:55,965
+an end time. So we we kind of
+
+269
+00:08:56,505 --> 00:08:58,025
+know when people
+started working
+
+270
+00:08:58,025 --> 00:08:59,065
+for the campaign and when they
+
+271
+00:08:59,065 --> 00:08:59,885
+stopped working.
+
+272
+00:09:00,025 --> 00:09:00,985
+And then on the other end,
+
+273
+00:09:00,985 --> 00:09:02,185
+you have the customers
+that you
+
+274
+00:09:02,185 --> 00:09:02,825
+try to call.
+
+275
+00:09:02,825 --> 00:09:04,390
+You have, just for fun,
+
+276
+00:09:04,390 --> 00:09:06,410
+CVS Oakland or Acme Bread.
+
+277
+00:09:06,710 --> 00:09:08,230
+And then you have
+contact people
+
+278
+00:09:08,230 --> 00:09:09,750
+that initially worked for this
+
+279
+00:09:09,750 --> 00:09:11,110
+company here and now work for
+
+280
+00:09:11,110 --> 00:09:12,170
+this company here.
+
+281
+00:09:12,950 --> 00:09:14,550
+we know a little bit
+about the company
+
+282
+00:09:14,550 --> 00:09:16,145
+and what they sell and what
+
+283
+00:09:16,145 --> 00:09:18,705
+technology they
+already have. Yeah.
+
+284
+00:09:18,705 --> 00:09:20,645
+And then there are the events
+
+285
+00:09:21,025 --> 00:09:23,505
+between the call center agents
+
+286
+00:09:23,505 --> 00:09:24,705
+and the customers.
+
+287
+00:09:24,705 --> 00:09:26,545
+Yeah. And these are
+the core events,
+
+288
+00:09:26,545 --> 00:09:27,905
+the emails that get sent in
+
+289
+00:09:27,905 --> 00:09:29,605
+the forced calls. Right?
+
+290
+00:09:29,665 --> 00:09:31,810
+So you can imagine
+this is a kind
+
+291
+00:09:31,810 --> 00:09:33,730
+of an impressionistic
+view of,
+
+292
+00:09:33,970 --> 00:09:35,270
+our our knowledge graph.
+
+293
+00:09:35,890 --> 00:09:38,530
+But what we found
+out that, okay,
+
+294
+00:09:38,530 --> 00:09:40,050
+there's already billions of
+
+295
+00:09:40,050 --> 00:09:42,550
+triples just in
+the structured data,
+
+296
+00:09:42,865 --> 00:09:44,545
+but the real interesting data
+
+297
+00:09:44,545 --> 00:09:45,905
+is in the voice calls, yeah,
+
+298
+00:09:45,905 --> 00:09:47,925
+or in the emails between,
+
+299
+00:09:49,185 --> 00:09:51,025
+call center agents and contact
+
+300
+00:09:51,025 --> 00:09:52,385
+persons that work
+for companies.
+
+301
+00:09:52,385 --> 00:09:54,785
+Yeah. So this is
+where all the magic
+
+302
+00:09:54,785 --> 00:09:56,065
+happens. So what
+do you have to
+
+303
+00:09:56,065 --> 00:09:58,020
+do to get the interesting data
+
+304
+00:09:58,020 --> 00:09:59,240
+out of these voice calls?
+
+305
+00:09:59,300 --> 00:10:02,040
+Well, you need to do
+speech technology.
+
+306
+00:10:02,340 --> 00:10:02,840
+Yeah.
+
+307
+00:10:03,140 --> 00:10:04,740
+And then once you do that,
+
+308
+00:10:04,740 --> 00:10:07,080
+what you really
+want is to help
+
+309
+00:10:07,300 --> 00:10:09,300
+the call center
+agents in real time.
+
+310
+00:10:09,300 --> 00:10:10,740
+Yeah. So there's this dream of
+
+311
+00:10:10,740 --> 00:10:12,905
+real time decision
+support. Yeah.
+
+312
+00:10:12,905 --> 00:10:13,725
+For example,
+
+313
+00:10:15,145 --> 00:10:16,825
+where is a particular agent in
+
+314
+00:10:16,825 --> 00:10:18,025
+the sales cycle? Yeah.
+
+315
+00:10:18,025 --> 00:10:19,645
+Did she move
+the process forward?
+
+316
+00:10:21,465 --> 00:10:22,745
+and and so one of the things
+
+317
+00:10:22,745 --> 00:10:24,185
+that you'll see several times
+
+318
+00:10:24,185 --> 00:10:25,385
+is the word bent,
+
+319
+00:10:25,385 --> 00:10:28,250
+which stands for
+budget, authority,
+
+320
+00:10:28,870 --> 00:10:30,390
+need, and time line. Yeah.
+
+321
+00:10:30,390 --> 00:10:32,810
+So what you really
+want is that
+
+322
+00:10:33,190 --> 00:10:35,910
+your sales agent
+make sure that
+
+323
+00:10:35,910 --> 00:10:38,150
+before you hand
+off a particular
+
+324
+00:10:38,150 --> 00:10:39,510
+customer that you talk to to
+
+325
+00:10:39,510 --> 00:10:42,585
+your big client
+that will finalize
+
+326
+00:10:42,585 --> 00:10:43,725
+the sale, for example,
+
+327
+00:10:44,025 --> 00:10:45,865
+that you really know
+that the person
+
+328
+00:10:45,865 --> 00:10:47,865
+you talk to has
+a budget, yeah,
+
+329
+00:10:47,865 --> 00:10:48,925
+can make a decision,
+
+330
+00:10:49,305 --> 00:10:50,925
+actually said that
+he needs something,
+
+331
+00:10:51,145 --> 00:10:52,665
+and knows when he needs it.
+
+332
+00:10:52,665 --> 00:10:54,745
+Right? Okay. So
+that is just one
+
+333
+00:10:54,745 --> 00:10:56,160
+thing that that you can help
+
+334
+00:10:56,160 --> 00:10:57,200
+sales agents like, hey.
+
+335
+00:10:57,200 --> 00:10:58,720
+You didn't talk about
+the budget there.
+
+336
+00:10:58,720 --> 00:10:59,940
+Please ask about that.
+
+337
+00:11:00,480 --> 00:11:03,200
+Then and these are all common
+
+338
+00:11:03,200 --> 00:11:04,560
+sense things, but
+should I correct
+
+339
+00:11:04,560 --> 00:11:06,100
+for open and
+closed questions?
+
+340
+00:11:07,040 --> 00:11:11,335
+we find that
+certain call center
+
+341
+00:11:11,335 --> 00:11:13,255
+agents talk way
+more about product
+
+342
+00:11:13,255 --> 00:11:14,615
+categories,
+whereas others talk
+
+343
+00:11:14,615 --> 00:11:15,735
+more about sellable products.
+
+344
+00:11:15,735 --> 00:11:17,015
+So we find that usually it's
+
+345
+00:11:17,015 --> 00:11:18,215
+better to talk about products
+
+346
+00:11:18,215 --> 00:11:20,155
+that you can
+actually buy. Yeah?
+
+347
+00:11:20,535 --> 00:11:22,455
+Or how can you
+help call center
+
+348
+00:11:22,455 --> 00:11:24,160
+agents when your
+customer talks
+
+349
+00:11:24,160 --> 00:11:25,440
+about a competitive product?
+
+350
+00:11:25,440 --> 00:11:27,040
+What you really want is when
+
+351
+00:11:27,040 --> 00:11:28,320
+this competitive product is
+
+352
+00:11:28,320 --> 00:11:30,480
+mentioned that you
+provide a battle
+
+353
+00:11:30,480 --> 00:11:31,600
+card in real time.
+
+354
+00:11:31,600 --> 00:11:33,520
+Battle card is
+a card that gives
+
+355
+00:11:33,520 --> 00:11:35,120
+you the main
+arguments against,
+
+356
+00:11:35,360 --> 00:11:37,220
+your, well,
+competitive product.
+
+357
+00:11:37,565 --> 00:11:39,885
+Or it's also very
+important that
+
+358
+00:11:39,885 --> 00:11:41,425
+if you talk to a customer,
+
+359
+00:11:43,565 --> 00:11:45,325
+that you know in what
+industry it is,
+
+360
+00:11:45,325 --> 00:11:47,085
+yeah, and what job title and
+
+361
+00:11:47,085 --> 00:11:48,605
+what his main use case is.
+
+362
+00:11:48,605 --> 00:11:50,125
+Again, if you
+don't know that,
+
+363
+00:11:50,125 --> 00:11:51,960
+then your sales call
+is kinda useless.
+
+364
+00:11:51,960 --> 00:11:53,660
+So you need to know
+all these things.
+
+365
+00:11:53,880 --> 00:11:55,500
+So we help with that too.
+
+366
+00:11:55,800 --> 00:11:57,240
+And sometimes you
+even wanna do
+
+367
+00:11:57,240 --> 00:11:57,960
+real time routing.
+
+368
+00:11:57,960 --> 00:11:59,080
+If you see that the customer
+
+369
+00:11:59,080 --> 00:12:00,540
+wants to know about
+video conferencing,
+
+370
+00:12:01,480 --> 00:12:03,000
+well, maybe Joe
+knows more about
+
+371
+00:12:03,000 --> 00:12:04,200
+it and just switch
+while you're
+
+372
+00:12:04,200 --> 00:12:05,955
+in the call. Alright.
+
+373
+00:12:06,095 --> 00:12:08,015
+So these are just
+part of the dream
+
+374
+00:12:08,015 --> 00:12:09,535
+of real time
+decision support.
+
+375
+00:12:09,535 --> 00:12:12,255
+But then if you analyze
+the voice calls,
+
+376
+00:12:12,255 --> 00:12:13,795
+you also can do
+regular analytics
+
+377
+00:12:13,855 --> 00:12:15,315
+that you never
+could do before.
+
+378
+00:12:15,535 --> 00:12:17,235
+Yeah. So for example,
+
+379
+00:12:17,990 --> 00:12:19,030
+what are the features and
+
+380
+00:12:19,030 --> 00:12:20,150
+functions that the customer
+
+381
+00:12:20,150 --> 00:12:21,430
+talks about the most? Yeah?
+
+382
+00:12:21,430 --> 00:12:23,530
+Or do we see that
+there's momentum
+
+383
+00:12:23,830 --> 00:12:25,930
+for a particular
+product that,
+
+384
+00:12:27,030 --> 00:12:28,150
+whether it's your own product
+
+385
+00:12:28,150 --> 00:12:29,190
+that you're trying to sell or
+
+386
+00:12:29,190 --> 00:12:30,230
+a competitor product?
+
+387
+00:12:30,230 --> 00:12:31,990
+Yeah? And if
+the customer talks
+
+388
+00:12:31,990 --> 00:12:33,645
+about a particular
+type of product,
+
+389
+00:12:33,645 --> 00:12:34,625
+what is the sentiment?
+
+390
+00:12:35,085 --> 00:12:37,325
+Or why is agent x so good at
+
+391
+00:12:37,325 --> 00:12:38,925
+selling product
+y and way better
+
+392
+00:12:38,925 --> 00:12:40,385
+than any other of the agents?
+
+393
+00:12:41,405 --> 00:12:43,325
+and, again, there's
+a lot of analytics,
+
+394
+00:12:43,325 --> 00:12:45,350
+and this is just
+a few of the tens
+
+395
+00:12:45,350 --> 00:12:47,270
+and tens of kind of analytics
+
+396
+00:12:47,270 --> 00:12:50,170
+that we do on top
+of the calls.
+
+397
+00:12:50,950 --> 00:12:53,910
+Alright. So now so
+we have the speech
+
+398
+00:12:53,910 --> 00:12:55,510
+technology, and
+I'll give a demo
+
+399
+00:12:55,510 --> 00:12:56,410
+in a few minutes.
+
+400
+00:12:56,870 --> 00:12:59,335
+But all of this
+is based on our
+
+401
+00:12:59,335 --> 00:13:00,775
+architecture for how we deal
+
+402
+00:13:00,775 --> 00:13:04,135
+with speech and text in our,
+
+403
+00:13:04,455 --> 00:13:06,635
+Allego graph knowledge
+graph platform.
+
+404
+00:13:06,855 --> 00:13:10,375
+So we can deal with only with
+
+405
+00:13:10,375 --> 00:13:11,895
+with any kind of input. Yeah.
+
+406
+00:13:11,895 --> 00:13:14,160
+So, obviously,
+we can deal with
+
+407
+00:13:14,160 --> 00:13:15,840
+regular text that you find in
+
+408
+00:13:15,840 --> 00:13:17,860
+a in an email,
+chat, etcetera.
+
+409
+00:13:18,640 --> 00:13:20,340
+we do a lot of work
+with documents
+
+410
+00:13:20,560 --> 00:13:22,480
+where we use and
+we can take any
+
+411
+00:13:22,480 --> 00:13:24,240
+kind of documents and then use
+
+412
+00:13:24,240 --> 00:13:26,295
+a tool called Apache Tika to
+
+413
+00:13:26,295 --> 00:13:27,815
+turn it into XML and turn it
+
+414
+00:13:27,815 --> 00:13:28,955
+into smaller pieces,
+
+415
+00:13:30,455 --> 00:13:31,915
+or we use voice to text,
+
+416
+00:13:32,535 --> 00:13:34,075
+and we ingest it
+in AllegroGraph.
+
+417
+00:13:34,135 --> 00:13:35,895
+And so now we
+have fragments of
+
+418
+00:13:35,895 --> 00:13:39,990
+text in our database,
+
+419
+00:13:39,990 --> 00:13:41,690
+but they're just unenriched,
+
+420
+00:13:41,830 --> 00:13:43,450
+just dumb pieces of text.
+
+421
+00:13:44,710 --> 00:13:46,310
+If you wanna
+analyze that text,
+
+422
+00:13:46,310 --> 00:13:49,050
+you obviously
+need a taxonomy.
+
+423
+00:13:50,630 --> 00:13:52,250
+So say you're trying to sell,
+
+424
+00:13:53,715 --> 00:13:56,355
+a sustain a a product around
+
+425
+00:13:56,355 --> 00:13:57,315
+sustainability, well,
+
+426
+00:13:57,315 --> 00:13:58,935
+then you better
+have a taxonomy,
+
+427
+00:13:59,555 --> 00:14:01,415
+yeah, that knows
+all the important
+
+428
+00:14:01,475 --> 00:14:03,735
+words related to
+sustainability.
+
+429
+00:14:04,275 --> 00:14:06,055
+Or if you're selling
+a particular
+
+430
+00:14:06,275 --> 00:14:12,430
+product for, one
+of your clients,
+
+431
+00:14:12,650 --> 00:14:14,330
+well, you better have every
+
+432
+00:14:14,330 --> 00:14:16,890
+product that
+the sales agent or
+
+433
+00:14:16,890 --> 00:14:18,250
+the customer talk
+about and have
+
+434
+00:14:18,250 --> 00:14:20,250
+it in your taxonomy
+with the pref
+
+435
+00:14:20,250 --> 00:14:22,910
+labels and the alt
+labels and the whole,
+
+436
+00:14:23,665 --> 00:14:26,005
+hierarchy of of
+important concepts
+
+437
+00:14:26,145 --> 00:14:27,285
+in in your data.
+
+438
+00:14:27,745 --> 00:14:29,905
+Yeah. So we work
+with tools like
+
+439
+00:14:29,905 --> 00:14:31,825
+Smart Logic or Pool Party to
+
+440
+00:14:31,825 --> 00:14:32,725
+create these taxonomies.
+
+441
+00:14:32,945 --> 00:14:34,705
+We export the taxonomies in
+
+442
+00:14:34,705 --> 00:14:37,185
+AllegroGraph, and now
+we can go to work.
+
+443
+00:14:37,185 --> 00:14:38,100
+Right? So,
+
+444
+00:14:39,620 --> 00:14:41,140
+we can take the taxonomy and
+
+445
+00:14:41,140 --> 00:14:41,960
+text fragments,
+
+446
+00:14:42,020 --> 00:14:43,640
+give it to our
+entity extractor,
+
+447
+00:14:45,380 --> 00:14:47,140
+and put the entities back into
+
+448
+00:14:47,140 --> 00:14:48,100
+the knowledge graph.
+
+449
+00:14:48,100 --> 00:14:49,960
+In that way, enrich the text.
+
+450
+00:14:50,255 --> 00:14:51,955
+Now we have our own internal
+
+451
+00:14:52,015 --> 00:14:53,475
+entity extractor
+in AllegoGraph
+
+452
+00:14:53,855 --> 00:14:55,855
+because we deal with very
+
+453
+00:14:55,855 --> 00:14:57,295
+complicated product names,
+
+454
+00:14:57,295 --> 00:15:01,535
+and there's not
+a single entity
+
+455
+00:15:01,535 --> 00:15:02,815
+extract on the on the market
+
+456
+00:15:02,815 --> 00:15:04,495
+that is really
+good at it unless
+
+457
+00:15:04,495 --> 00:15:06,660
+you provide every
+alt label that
+
+458
+00:15:06,660 --> 00:15:08,100
+you can imagine
+for a particular
+
+459
+00:15:08,100 --> 00:15:10,660
+product. but we found
+that for product,
+
+460
+00:15:10,660 --> 00:15:11,780
+it's just better to just have
+
+461
+00:15:11,780 --> 00:15:12,840
+your own heuristic,
+
+462
+00:15:13,140 --> 00:15:14,660
+entity extractor so that you
+
+463
+00:15:14,660 --> 00:15:15,940
+don't have to
+provide all these
+
+464
+00:15:15,940 --> 00:15:16,980
+alt labels. Anyway,
+
+465
+00:15:16,980 --> 00:15:18,820
+that is so we can use external
+
+466
+00:15:18,820 --> 00:15:20,680
+entity extractors
+that we have around.
+
+467
+00:15:22,565 --> 00:15:24,165
+Then, obviously,
+you wanna have,
+
+468
+00:15:24,725 --> 00:15:26,485
+the sentiment in the text.
+
+469
+00:15:26,485 --> 00:15:28,025
+So we have a sentiment
+analyzer,
+
+470
+00:15:28,085 --> 00:15:30,185
+and we add sentiment
+back to the text.
+
+471
+00:15:31,685 --> 00:15:33,960
+sometimes you wanna know what
+
+472
+00:15:33,960 --> 00:15:35,480
+kind of conversation
+you're in.
+
+473
+00:15:35,480 --> 00:15:37,240
+For example, you
+have a conversation
+
+474
+00:15:37,240 --> 00:15:38,120
+and you wanna know,
+
+475
+00:15:38,120 --> 00:15:39,580
+is this a direct sales,
+
+476
+00:15:40,040 --> 00:15:42,220
+or is this a request
+for technical help,
+
+477
+00:15:42,760 --> 00:15:45,800
+or does the customer
+wanna replace
+
+478
+00:15:45,800 --> 00:15:49,635
+all their technology that you
+
+479
+00:15:49,635 --> 00:15:51,475
+already have or just
+wanna optimize it,
+
+480
+00:15:51,475 --> 00:15:52,455
+etcetera, etcetera.
+
+481
+00:15:53,075 --> 00:15:54,755
+So we do a lot
+of work where we
+
+482
+00:15:54,755 --> 00:15:57,575
+label conversations
+partly automatic,
+
+483
+00:15:57,635 --> 00:16:00,455
+partly by using,
+humans in the loop.
+
+484
+00:16:00,515 --> 00:16:00,995
+Yeah.
+
+485
+00:16:00,995 --> 00:16:02,375
+And once we have the labels
+
+486
+00:16:02,435 --> 00:16:03,415
+added to conversations,
+
+487
+00:16:04,910 --> 00:16:06,850
+we give that to our
+own text classifier.
+
+488
+00:16:07,790 --> 00:16:08,990
+we have our own internal one,
+
+489
+00:16:08,990 --> 00:16:10,430
+but you can use external ones
+
+490
+00:16:10,430 --> 00:16:12,130
+if you want to. Yeah.
+
+491
+00:16:12,270 --> 00:16:13,810
+And we even put
+the classification
+
+492
+00:16:14,110 --> 00:16:17,230
+model in the the knowledge
+graph itself.
+
+493
+00:16:17,230 --> 00:16:19,070
+So the the classifier becomes
+
+494
+00:16:19,070 --> 00:16:20,325
+part of the knowledge graph.
+
+495
+00:16:20,805 --> 00:16:22,245
+And now when we're in a new
+
+496
+00:16:22,245 --> 00:16:24,825
+conversation and someone
+starts to talk,
+
+497
+00:16:25,365 --> 00:16:26,665
+within a few sentences,
+
+498
+00:16:27,125 --> 00:16:29,065
+we already know what kind of,
+
+499
+00:16:31,365 --> 00:16:32,325
+conversation does this,
+
+500
+00:16:32,325 --> 00:16:34,005
+and we can start giving real
+
+501
+00:16:34,005 --> 00:16:35,910
+time help to the the call
+center agents.
+
+502
+00:16:36,390 --> 00:16:38,150
+The name another
+important part
+
+503
+00:16:38,150 --> 00:16:39,610
+is that you really
+wanna know,
+
+504
+00:16:40,550 --> 00:16:41,670
+especially when you build
+
+505
+00:16:41,670 --> 00:16:42,790
+recommendation engines,
+
+506
+00:16:42,790 --> 00:16:44,470
+is what are the terms that are
+
+507
+00:16:44,470 --> 00:16:46,630
+usually used together
+with other terms.
+
+508
+00:16:46,630 --> 00:16:49,275
+So we do a lot of work
+on co occurrence,
+
+509
+00:16:49,495 --> 00:16:51,915
+correlations, odd
+ratios between terms,
+
+510
+00:16:52,135 --> 00:16:55,275
+and we use that
+for, our, well,
+
+511
+00:16:55,815 --> 00:16:57,575
+recommendations and and and
+
+512
+00:16:57,575 --> 00:16:59,255
+other things. And once you've
+
+513
+00:16:59,255 --> 00:17:00,055
+done all of that,
+
+514
+00:17:00,055 --> 00:17:01,735
+then the fun can start and you
+
+515
+00:17:01,735 --> 00:17:05,170
+can do a semantic
+search and and,
+
+516
+00:17:05,290 --> 00:17:06,270
+semantic exploration.
+
+517
+00:17:06,970 --> 00:17:08,670
+You can apply your analytics,
+
+518
+00:17:09,290 --> 00:17:10,830
+and you can do FR queries,
+
+519
+00:17:10,890 --> 00:17:12,250
+or you can provide real time
+
+520
+00:17:12,250 --> 00:17:13,050
+decision support.
+
+521
+00:17:13,050 --> 00:17:14,830
+So this is kind of
+a little overview.
+
+522
+00:17:16,330 --> 00:17:18,410
+This is kind of
+an overview of,
+
+523
+00:17:20,445 --> 00:17:22,445
+our our system. Alright.
+
+524
+00:17:22,445 --> 00:17:24,765
+So but I promise
+to talk a little
+
+525
+00:17:24,765 --> 00:17:26,145
+bit more about our taxonomy
+
+526
+00:17:26,285 --> 00:17:27,905
+trained speech recognizer.
+
+527
+00:17:29,725 --> 00:17:32,225
+so as I said before,
+
+528
+00:17:32,365 --> 00:17:35,060
+one of the problems
+with the commercial
+
+529
+00:17:35,120 --> 00:17:37,440
+speech recognizers
+that you can buy,
+
+530
+00:17:37,440 --> 00:17:39,380
+yeah, or get
+a subscription for
+
+531
+00:17:39,840 --> 00:17:41,040
+is that they're really good at
+
+532
+00:17:41,040 --> 00:17:45,380
+regular language
+but fail, at,
+
+533
+00:17:47,120 --> 00:17:49,300
+product names, yeah,
+at regular names.
+
+534
+00:17:49,755 --> 00:17:52,555
+So what you really
+want is a speech
+
+535
+00:17:52,555 --> 00:17:55,035
+recognizer that you can train
+
+536
+00:17:55,035 --> 00:17:57,035
+from a taxonomy. So
+that's what we did.
+
+537
+00:17:57,035 --> 00:18:01,695
+We took, we we we
+created several,
+
+538
+00:18:02,315 --> 00:18:04,370
+tools where we can
+take an an existing
+
+539
+00:18:04,370 --> 00:18:05,810
+taxonomy with the prev labels
+
+540
+00:18:05,810 --> 00:18:06,870
+and the alt labels,
+
+541
+00:18:07,410 --> 00:18:10,230
+use that to train
+the speech recognizer.
+
+542
+00:18:12,050 --> 00:18:14,870
+and then when you get
+the transcription
+
+543
+00:18:15,010 --> 00:18:16,470
+from your speech recognizer,
+
+544
+00:18:16,530 --> 00:18:17,655
+you'll find that
+the quality of
+
+545
+00:18:17,655 --> 00:18:19,755
+the text output
+is way better.
+
+546
+00:18:21,415 --> 00:18:23,035
+That makes it that the entity
+
+547
+00:18:23,095 --> 00:18:24,475
+extractor is way better,
+
+548
+00:18:25,095 --> 00:18:26,535
+and the output of
+your entities.
+
+549
+00:18:26,535 --> 00:18:28,215
+And so the whole quality gets
+
+550
+00:18:28,215 --> 00:18:29,515
+better by having a taxonomy
+
+551
+00:18:29,655 --> 00:18:30,795
+trained speech recognizer.
+
+552
+00:18:31,440 --> 00:18:32,640
+So that is the thing that we
+
+553
+00:18:32,640 --> 00:18:35,140
+specialize in. So,
+
+554
+00:18:35,600 --> 00:18:37,120
+here is a little
+demo of that.
+
+555
+00:18:37,120 --> 00:18:38,480
+Let me see if I have a better
+
+556
+00:18:38,480 --> 00:18:39,460
+version of that.
+
+557
+00:18:39,520 --> 00:18:41,620
+So for example,
+
+558
+00:18:42,320 --> 00:18:47,335
+after every after every sales
+
+559
+00:18:47,335 --> 00:18:49,675
+call that people
+do, they are,
+
+560
+00:18:50,695 --> 00:18:53,415
+required to fill in a summary
+
+561
+00:18:53,415 --> 00:18:54,615
+of what they talked about with
+
+562
+00:18:54,615 --> 00:18:55,195
+the customer.
+
+563
+00:18:55,255 --> 00:18:57,815
+We call that a a note
+taking app.
+
+564
+00:18:57,815 --> 00:18:59,175
+And in that note taking app,
+
+565
+00:18:59,175 --> 00:19:00,055
+we wanna know, okay,
+
+566
+00:19:00,055 --> 00:19:01,435
+what products were mentioned,
+
+567
+00:19:02,100 --> 00:19:04,100
+where the competitors
+mentioned,
+
+568
+00:19:04,100 --> 00:19:05,400
+what's the job title,
+
+569
+00:19:05,700 --> 00:19:07,560
+did people talk about the band
+
+570
+00:19:07,620 --> 00:19:09,480
+categories that I
+talked about before.
+
+571
+00:19:10,180 --> 00:19:10,920
+And so,
+
+572
+00:19:12,260 --> 00:19:16,545
+let's see if I can
+find this here.
+
+573
+00:19:16,685 --> 00:19:17,505
+Yeah. Here.
+
+574
+00:19:18,365 --> 00:19:19,905
+So here, we have someone,
+
+575
+00:19:21,965 --> 00:19:24,525
+that uses this
+little application.
+
+576
+00:19:24,525 --> 00:19:25,825
+Let me see how that goes.
+
+577
+00:19:25,965 --> 00:19:27,405
+So I talked to Bob Johnson.
+
+578
+00:19:27,405 --> 00:19:29,425
+He's a VP of
+engineering for the.
+
+579
+00:19:31,730 --> 00:19:34,130
+They said he they want to buy
+
+580
+00:19:34,130 --> 00:19:36,310
+some routers, and,
+specifically,
+
+581
+00:19:37,170 --> 00:19:39,730
+they consider Cisco
+RB two hundred
+
+582
+00:19:39,730 --> 00:19:42,150
+fifteen w and,
+
+583
+00:19:43,170 --> 00:19:49,455
+Jupyter CTP two
+thousand fifty six.
+
+584
+00:19:49,455 --> 00:19:51,215
+Yeah. And we can't really hear
+
+585
+00:19:51,215 --> 00:19:54,275
+the audio. Oh, okay.
+So, basically yeah.
+
+586
+00:19:57,695 --> 00:19:58,015
+Okay.
+
+587
+00:19:58,015 --> 00:20:00,290
+Let me just then do this.
+
+588
+00:20:00,290 --> 00:20:01,570
+We trained this beforehand.
+
+589
+00:20:01,570 --> 00:20:02,930
+Let me just explain
+what happened.
+
+590
+00:20:02,930 --> 00:20:05,030
+Yeah? So, basically,
+this is a person,
+
+591
+00:20:07,010 --> 00:20:08,850
+talking to this application to
+
+592
+00:20:08,850 --> 00:20:10,290
+give a summary of
+what was talked
+
+593
+00:20:10,290 --> 00:20:12,610
+about and the output
+of why and
+
+594
+00:20:12,610 --> 00:20:14,450
+and what you saw
+here move around
+
+595
+00:20:14,450 --> 00:20:16,325
+is the same thing you
+see on your phone.
+
+596
+00:20:16,325 --> 00:20:17,445
+That's why you're
+talking through
+
+597
+00:20:17,445 --> 00:20:18,965
+your phone. You see
+that the speech
+
+598
+00:20:18,965 --> 00:20:20,405
+recognizes making corrections
+
+599
+00:20:20,405 --> 00:20:22,005
+on the fly to get better
+
+600
+00:20:22,005 --> 00:20:23,685
+interpretations. But what we
+
+601
+00:20:23,685 --> 00:20:25,865
+then do is we take
+out the entities
+
+602
+00:20:26,245 --> 00:20:27,285
+that are important to us,
+
+603
+00:20:27,285 --> 00:20:28,405
+like the products mentioned,
+
+604
+00:20:28,405 --> 00:20:29,845
+the competitors,
+the job title,
+
+605
+00:20:29,845 --> 00:20:30,780
+and the band title.
+
+606
+00:20:31,340 --> 00:20:34,300
+So let me go here and go back
+
+607
+00:20:34,300 --> 00:20:36,560
+to my presentation. Yeah.
+
+608
+00:20:36,860 --> 00:20:39,820
+But the important
+thing is the important
+
+609
+00:20:39,820 --> 00:20:42,860
+thing is that once we're done
+
+610
+00:20:42,860 --> 00:20:43,840
+with this conversation,
+
+611
+00:20:44,220 --> 00:20:46,640
+the entire
+conversation will be
+
+612
+00:20:47,155 --> 00:20:48,515
+instantly in our
+knowledge graph.
+
+613
+00:20:48,515 --> 00:20:52,275
+So what you see
+here is for this
+
+614
+00:20:52,275 --> 00:20:53,875
+particular little session that
+
+615
+00:20:53,875 --> 00:20:55,395
+you just saw, and
+I'm sorry that
+
+616
+00:20:55,395 --> 00:20:57,255
+the speech quality
+wasn't better,
+
+617
+00:20:58,850 --> 00:20:59,970
+We see that there was this
+
+618
+00:20:59,970 --> 00:21:00,950
+particular session.
+
+619
+00:21:01,010 --> 00:21:03,330
+There's a bunch of phrases in
+
+620
+00:21:03,330 --> 00:21:05,090
+this session. One of them was
+
+621
+00:21:05,170 --> 00:21:06,530
+so I talked to Bob Johnson,
+
+622
+00:21:06,530 --> 00:21:07,590
+so VP of engineering.
+
+623
+00:21:09,890 --> 00:21:11,570
+And this is
+the text fragment,
+
+624
+00:21:11,570 --> 00:21:13,010
+and then here is the result of
+
+625
+00:21:13,010 --> 00:21:14,055
+entity extraction.
+
+626
+00:21:14,055 --> 00:21:15,495
+And we found that, okay,
+
+627
+00:21:15,495 --> 00:21:16,855
+there was a job title in this
+
+628
+00:21:16,855 --> 00:21:17,495
+particular phrase.
+
+629
+00:21:17,495 --> 00:21:18,795
+It's VP of engineering,
+
+630
+00:21:19,335 --> 00:21:21,975
+which is has a broader
+contact person.
+
+631
+00:21:21,975 --> 00:21:23,815
+So these are terms that come
+
+632
+00:21:23,815 --> 00:21:24,635
+from a taxonomy.
+
+633
+00:21:25,335 --> 00:21:29,290
+And here we see, that
+is another phrase,
+
+634
+00:21:29,290 --> 00:21:31,790
+and here was about some
+of the technologies
+
+635
+00:21:32,010 --> 00:21:33,290
+. And we'll find that in this
+
+636
+00:21:33,290 --> 00:21:34,270
+particular phrase,
+
+637
+00:21:34,650 --> 00:21:36,910
+we then found
+the Jupyter routers.
+
+638
+00:21:37,770 --> 00:21:39,290
+well, anyway, as you can see,
+
+639
+00:21:39,290 --> 00:21:40,110
+various products.
+
+640
+00:21:40,730 --> 00:21:43,405
+So within a second
+after you're
+
+641
+00:21:43,405 --> 00:21:45,325
+done talking,
+it's already part
+
+642
+00:21:45,325 --> 00:21:46,685
+of your knowledge graph,
+
+643
+00:21:46,685 --> 00:21:48,865
+and you can do analytics
+on top of that.
+
+644
+00:21:49,245 --> 00:21:50,785
+Now what did we learn,
+
+645
+00:21:52,605 --> 00:21:53,805
+during these last four years
+
+646
+00:21:53,805 --> 00:21:55,485
+that we've been
+specializing on
+
+647
+00:21:55,485 --> 00:21:57,085
+speech technology and NLP with
+
+648
+00:21:57,085 --> 00:21:57,780
+knowledge graphs?
+
+649
+00:22:04,500 --> 00:22:05,700
+so the first thing
+that I already
+
+650
+00:22:05,700 --> 00:22:07,060
+talked about is
+that most speech
+
+651
+00:22:07,060 --> 00:22:09,140
+to text systems fail on very
+
+652
+00:22:09,140 --> 00:22:10,580
+specific domain words. Yeah?
+
+653
+00:22:10,580 --> 00:22:12,260
+What's product names,
+medical terms,
+
+654
+00:22:12,260 --> 00:22:13,480
+financial terms, etcetera.
+
+655
+00:22:13,965 --> 00:22:16,545
+And the customization
+is in its infancy.
+
+656
+00:22:17,245 --> 00:22:20,285
+So what you really need is get
+
+657
+00:22:20,285 --> 00:22:22,045
+really good at
+customization in
+
+658
+00:22:22,045 --> 00:22:23,745
+a very short amount of time.
+
+659
+00:22:23,965 --> 00:22:26,045
+Because our
+customer gets a new
+
+660
+00:22:26,045 --> 00:22:27,485
+campaign, and they can't wait
+
+661
+00:22:27,485 --> 00:22:29,185
+weeks to train a new model.
+
+662
+00:22:29,530 --> 00:22:31,370
+They they want
+to start working
+
+663
+00:22:31,370 --> 00:22:32,010
+the next day.
+
+664
+00:22:32,010 --> 00:22:33,950
+So we spend a lot of time on
+
+665
+00:22:34,010 --> 00:22:35,470
+the customization processes.
+
+666
+00:22:36,010 --> 00:22:37,210
+And for static domains,
+
+667
+00:22:37,210 --> 00:22:38,750
+we can train language models,
+
+668
+00:22:38,970 --> 00:22:40,730
+but we also use speech to text
+
+669
+00:22:40,730 --> 00:22:42,250
+systems that allow
+you to train
+
+670
+00:22:42,250 --> 00:22:43,070
+using phonetics.
+
+671
+00:22:43,290 --> 00:22:44,655
+That's a very important one.
+
+672
+00:22:45,775 --> 00:22:47,935
+Then, in the audience,
+
+673
+00:22:47,935 --> 00:22:49,215
+there are undoubtedly people
+
+674
+00:22:49,215 --> 00:22:50,915
+that built their
+own taxonomies,
+
+675
+00:22:51,295 --> 00:22:52,995
+but I can tell
+you that building
+
+676
+00:22:54,175 --> 00:22:56,755
+the old labels for terms,
+
+677
+00:22:57,360 --> 00:22:59,440
+that you normally do
+for text is really,
+
+678
+00:22:59,440 --> 00:23:00,800
+really different than when you
+
+679
+00:23:00,800 --> 00:23:02,260
+do it for spoken
+conversations.
+
+680
+00:23:02,480 --> 00:23:02,980
+Yeah?
+
+681
+00:23:03,200 --> 00:23:04,880
+The sales agent will say cat
+
+682
+00:23:04,880 --> 00:23:06,800
+nine k instead of
+Cisco Catalyst
+
+683
+00:23:06,800 --> 00:23:08,420
+nine thousand l. Right?
+
+684
+00:23:08,960 --> 00:23:11,625
+So it's a lot of
+work for us to
+
+685
+00:23:11,625 --> 00:23:13,145
+get this done.
+And then there's
+
+686
+00:23:13,145 --> 00:23:14,265
+the issue with numbering.
+
+687
+00:23:14,265 --> 00:23:16,105
+Just a simple issue
+with the word
+
+688
+00:23:16,105 --> 00:23:18,105
+nine thousand
+hundred twenty one
+
+689
+00:23:18,105 --> 00:23:20,025
+or ninety one
+hundred twenty one,
+
+690
+00:23:20,025 --> 00:23:21,720
+yeah, or nine one two one.
+
+691
+00:23:21,880 --> 00:23:23,560
+There's so many
+ways that people
+
+692
+00:23:23,560 --> 00:23:24,600
+can say these numbers.
+
+693
+00:23:24,600 --> 00:23:25,980
+So you need to
+deal with that.
+
+694
+00:23:26,440 --> 00:23:29,000
+Then it's pretty hard that are
+
+695
+00:23:29,400 --> 00:23:31,480
+it's it's a a problem that
+
+696
+00:23:31,560 --> 00:23:33,400
+especially with
+short words. Yeah.
+
+697
+00:23:33,400 --> 00:23:35,320
+They overlap too often with
+
+698
+00:23:35,320 --> 00:23:36,940
+the regular English terms.
+
+699
+00:23:37,055 --> 00:23:38,415
+So we spend a lot of time on
+
+700
+00:23:38,415 --> 00:23:41,295
+making sure that
+we actually get
+
+701
+00:23:41,295 --> 00:23:42,495
+the right word when we train
+
+702
+00:23:42,495 --> 00:23:43,855
+the systems. And then,
+
+703
+00:23:44,095 --> 00:23:45,295
+there's all these
+little tricks
+
+704
+00:23:45,295 --> 00:23:46,095
+that you learn, like,
+
+705
+00:23:46,095 --> 00:23:47,535
+don't put the client
+name before
+
+706
+00:23:47,535 --> 00:23:48,575
+every product name.
+
+707
+00:23:48,575 --> 00:23:50,675
+So in a Cisco catalog,
+
+708
+00:23:52,380 --> 00:23:55,100
+every word is
+prefaced by the word
+
+709
+00:23:55,100 --> 00:23:57,040
+Cisco. But the problem is,
+
+710
+00:23:58,540 --> 00:24:00,780
+that if you do that
+also in your,
+
+711
+00:24:01,420 --> 00:24:02,940
+in your when you train your
+
+712
+00:24:02,940 --> 00:24:04,240
+speech recognizer,
+
+713
+00:24:04,865 --> 00:24:06,465
+that the thing becomes
+way too greedy.
+
+714
+00:24:06,465 --> 00:24:06,785
+Yeah?
+
+715
+00:24:06,785 --> 00:24:08,465
+And all the words
+become Cisco.
+
+716
+00:24:08,465 --> 00:24:09,745
+So you don't wanna
+do that thing.
+
+717
+00:24:09,745 --> 00:24:12,325
+So anyway and this is
+just a few things.
+
+718
+00:24:12,945 --> 00:24:14,225
+I mean, there's
+there's literally
+
+719
+00:24:14,225 --> 00:24:15,265
+hundreds of little things that
+
+720
+00:24:15,265 --> 00:24:16,625
+you learn when
+you try to train
+
+721
+00:24:16,625 --> 00:24:18,885
+these systems in
+a very fast way.
+
+722
+00:24:19,200 --> 00:24:20,740
+And we actually
+wrote an application
+
+723
+00:24:20,800 --> 00:24:22,160
+just to deal with numbers and
+
+724
+00:24:22,160 --> 00:24:24,640
+product names to to
+create a proposal
+
+725
+00:24:24,640 --> 00:24:25,920
+for phonetics, and,
+
+726
+00:24:26,240 --> 00:24:27,680
+you can contact
+me later on how
+
+727
+00:24:27,680 --> 00:24:28,500
+we do that.
+
+728
+00:24:29,040 --> 00:24:30,560
+Then lesson three is,
+
+729
+00:24:31,615 --> 00:24:32,975
+you need a speech recognition
+
+730
+00:24:32,975 --> 00:24:34,655
+assist a speech
+recognizer that
+
+731
+00:24:34,655 --> 00:24:36,015
+provides both real time and
+
+732
+00:24:36,015 --> 00:24:37,395
+batch processing, obviously.
+
+733
+00:24:38,415 --> 00:24:40,195
+if you wanna do
+real time decision
+
+734
+00:24:40,655 --> 00:24:42,895
+support, you better
+do real time
+
+735
+00:24:42,895 --> 00:24:46,110
+processing. One of the issues
+
+736
+00:24:46,110 --> 00:24:47,470
+is when you saw my demo,
+
+737
+00:24:47,470 --> 00:24:49,410
+you saw that
+the speech recognizer
+
+738
+00:24:49,470 --> 00:24:51,470
+was correcting itself
+all the time.
+
+739
+00:24:51,470 --> 00:24:53,070
+Yeah. So one of
+the big questions
+
+740
+00:24:53,070 --> 00:24:54,590
+is how can how
+long can you wait
+
+741
+00:24:54,590 --> 00:24:55,970
+till you trust
+the transcription?
+
+742
+00:24:56,605 --> 00:24:58,445
+And, obviously,
+for some things,
+
+743
+00:24:58,445 --> 00:25:00,545
+you don't need to
+do real time,
+
+744
+00:25:01,165 --> 00:25:03,085
+processing batch processing is
+
+745
+00:25:03,085 --> 00:25:03,745
+good enough.
+
+746
+00:25:04,605 --> 00:25:06,785
+but not all speech recognizers
+
+747
+00:25:06,925 --> 00:25:08,125
+are really good at real time
+
+748
+00:25:08,125 --> 00:25:09,105
+decision support.
+
+749
+00:25:10,100 --> 00:25:11,320
+Then another thing is,
+
+750
+00:25:11,700 --> 00:25:13,940
+we as human beings are really
+
+751
+00:25:13,940 --> 00:25:17,540
+good at separating
+who's who's talking,
+
+752
+00:25:17,540 --> 00:25:19,480
+who's saying what. Right?
+
+753
+00:25:20,340 --> 00:25:23,485
+But it's still an active area
+
+754
+00:25:23,485 --> 00:25:26,845
+of research, yeah,
+to do it, for,
+
+755
+00:25:26,845 --> 00:25:29,165
+say, spoken
+conversations where
+
+756
+00:25:29,165 --> 00:25:30,785
+you don't have
+any visual help.
+
+757
+00:25:31,085 --> 00:25:32,765
+Yeah. And it's very important
+
+758
+00:25:32,765 --> 00:25:35,185
+because what we find
+is, initially,
+
+759
+00:25:35,325 --> 00:25:36,945
+we were just taking
+a transcription
+
+760
+00:25:37,165 --> 00:25:39,540
+of both the agent
+and the customers
+
+761
+00:25:39,540 --> 00:25:40,520
+at the same time,
+
+762
+00:25:41,220 --> 00:25:44,280
+but the results weren't
+that valuable.
+
+763
+00:25:44,420 --> 00:25:45,780
+What really makes a difference
+
+764
+00:25:45,780 --> 00:25:47,700
+is if you can split
+what the customer
+
+765
+00:25:47,700 --> 00:25:49,560
+is saying about a product
+or competitor,
+
+766
+00:25:49,620 --> 00:25:52,145
+etcetera, and what
+the agent is saying.
+
+767
+00:25:52,145 --> 00:25:54,005
+Yeah. And so right now,
+
+768
+00:25:54,305 --> 00:25:55,665
+we don't trust the speech
+
+769
+00:25:55,665 --> 00:25:57,825
+recognition systems
+too much to,
+
+770
+00:25:58,385 --> 00:25:59,905
+tell you who's speaking,
+
+771
+00:25:59,905 --> 00:26:01,585
+but we try to do
+it at the level
+
+772
+00:26:01,585 --> 00:26:03,925
+of the the the telephone
+routers.
+
+773
+00:26:04,340 --> 00:26:05,460
+But the problem
+with the telephone
+
+774
+00:26:05,460 --> 00:26:07,300
+routers is that
+it's also fairly
+
+775
+00:26:07,300 --> 00:26:08,440
+new to all of them,
+
+776
+00:26:09,220 --> 00:26:10,900
+because they were
+always used well,
+
+777
+00:26:10,900 --> 00:26:12,360
+they were built for regular
+
+778
+00:26:12,580 --> 00:26:15,460
+human to human
+conversations and not to,
+
+779
+00:26:15,780 --> 00:26:17,480
+help speech
+recognition systems.
+
+780
+00:26:17,565 --> 00:26:20,045
+So, again, this is all fairly
+
+781
+00:26:20,045 --> 00:26:21,425
+new and exciting research.
+
+782
+00:26:22,925 --> 00:26:25,025
+then some speech recognizers.
+
+783
+00:26:25,965 --> 00:26:27,585
+So the other thing is you can
+
+784
+00:26:28,045 --> 00:26:30,840
+so speech recognizers
+make mistakes.
+
+785
+00:26:31,700 --> 00:26:31,860
+Right?
+
+786
+00:26:31,860 --> 00:26:33,720
+So you get
+a transcription back.
+
+787
+00:26:34,340 --> 00:26:36,580
+but some speech
+recognizers give
+
+788
+00:26:36,580 --> 00:26:38,740
+you for a phrase or a word
+
+789
+00:26:38,740 --> 00:26:39,720
+multiple interpretations.
+
+790
+00:26:40,420 --> 00:26:42,360
+So then in your
+entity recognizer
+
+791
+00:26:42,500 --> 00:26:43,560
+or phrase recognizer,
+
+792
+00:26:43,620 --> 00:26:45,285
+you can still do a lot of,
+
+793
+00:26:45,685 --> 00:26:47,305
+post processing. Yeah.
+
+794
+00:26:48,085 --> 00:26:50,565
+and so, again, if you wanna
+
+795
+00:26:50,565 --> 00:26:51,765
+choose a speech recognizer,
+
+796
+00:26:51,765 --> 00:26:53,125
+you better get one
+that gives you,
+
+797
+00:26:53,365 --> 00:26:55,225
+multiple interpretations
+of words.
+
+798
+00:26:57,365 --> 00:26:58,805
+and then how well does your
+
+799
+00:26:58,805 --> 00:27:00,585
+speech recognizer with
+other languages,
+
+800
+00:27:01,100 --> 00:27:02,720
+and are they all of
+the same quality?
+
+801
+00:27:03,180 --> 00:27:04,780
+Well, some of you
+live in the world
+
+802
+00:27:04,780 --> 00:27:06,700
+of text analytics, and,
+
+803
+00:27:09,180 --> 00:27:11,580
+you probably know that even if
+
+804
+00:27:11,580 --> 00:27:14,620
+you just do NLP
+on static text,
+
+805
+00:27:14,620 --> 00:27:15,820
+yeah, there's a difference in
+
+806
+00:27:15,820 --> 00:27:16,755
+the quality of,
+
+807
+00:27:17,715 --> 00:27:19,715
+the the the languages
+even within
+
+808
+00:27:19,715 --> 00:27:21,255
+the same product. Yeah.
+
+809
+00:27:21,555 --> 00:27:22,675
+The product might be really,
+
+810
+00:27:22,675 --> 00:27:25,255
+really good for, English,
+
+811
+00:27:25,395 --> 00:27:28,215
+but then way worse
+for, say, Korean.
+
+812
+00:27:28,755 --> 00:27:29,190
+Yeah.
+
+813
+00:27:29,350 --> 00:27:31,110
+Maybe because for English,
+
+814
+00:27:31,110 --> 00:27:33,030
+they use WordNet, internally,
+
+815
+00:27:33,030 --> 00:27:33,830
+but for Korean,
+
+816
+00:27:33,830 --> 00:27:35,750
+they only use lists
+or words. Yeah?
+
+817
+00:27:35,750 --> 00:27:36,710
+So you get different.
+
+818
+00:27:36,710 --> 00:27:38,230
+But in speed
+recognition system,
+
+819
+00:27:38,230 --> 00:27:40,170
+it's even more
+pronounced. Yeah?
+
+820
+00:27:40,390 --> 00:27:41,750
+So when you look at the speech
+
+821
+00:27:41,750 --> 00:27:42,550
+recognition system,
+
+822
+00:27:42,550 --> 00:27:44,905
+you also wanna
+look at how good
+
+823
+00:27:44,905 --> 00:27:46,265
+are they for multiple dialects
+
+824
+00:27:46,265 --> 00:27:47,485
+of English or Spanish.
+
+825
+00:27:47,865 --> 00:27:49,065
+And some of them are starting
+
+826
+00:27:49,065 --> 00:27:50,905
+to specialize to
+kinda recognize
+
+827
+00:27:50,905 --> 00:27:52,445
+almost all kinds of English,
+
+828
+00:27:53,385 --> 00:27:54,685
+or all kinds of Spanish,
+
+829
+00:27:54,825 --> 00:27:57,085
+and some of them only
+do one dialect.
+
+830
+00:27:57,690 --> 00:28:00,350
+So and then on top
+of all of this,
+
+831
+00:28:01,450 --> 00:28:07,150
+if you, like we do,
+work on on creating,
+
+832
+00:28:09,945 --> 00:28:11,305
+speech recognition systems for
+
+833
+00:28:11,305 --> 00:28:12,665
+multiple language as well.
+
+834
+00:28:12,665 --> 00:28:14,445
+It's a huge problem that if
+
+835
+00:28:14,505 --> 00:28:15,705
+the people that work for you
+
+836
+00:28:15,705 --> 00:28:16,905
+don't speak all
+these languages,
+
+837
+00:28:16,905 --> 00:28:18,665
+so that's
+a a little additional
+
+838
+00:28:18,665 --> 00:28:20,445
+problem that you might
+wanna deal with.
+
+839
+00:28:21,145 --> 00:28:22,445
+Then quality control.
+
+840
+00:28:23,225 --> 00:28:25,400
+so we learned that,
+
+841
+00:28:25,780 --> 00:28:28,260
+automated testing
+is like, well,
+
+842
+00:28:28,260 --> 00:28:29,800
+everywhere. It's
+very important.
+
+843
+00:28:29,860 --> 00:28:32,020
+So we have for every campaign
+
+844
+00:28:32,020 --> 00:28:32,980
+and for every language,
+
+845
+00:28:32,980 --> 00:28:34,360
+a gold standard conversation,
+
+846
+00:28:34,420 --> 00:28:36,440
+and then we run it
+every x minutes
+
+847
+00:28:36,820 --> 00:28:38,020
+to see if the right words and
+
+848
+00:28:38,020 --> 00:28:39,240
+the phrases come back.
+
+849
+00:28:39,795 --> 00:28:41,475
+And we also found
+that you can't
+
+850
+00:28:41,475 --> 00:28:43,235
+do it without
+a human in the loop
+
+851
+00:28:43,235 --> 00:28:44,915
+because if you train a speech
+
+852
+00:28:44,915 --> 00:28:47,095
+recognized on your
+text taxonomies,
+
+853
+00:28:47,955 --> 00:28:49,875
+some of the regular English or
+
+854
+00:28:49,875 --> 00:28:51,335
+any other language
+deteriorates,
+
+855
+00:28:51,890 --> 00:28:53,730
+and only a human
+can detect that
+
+856
+00:28:53,730 --> 00:28:54,530
+can detect that.
+
+857
+00:28:54,530 --> 00:28:57,910
+So we try to avoid,
+an I'm sorry.
+
+858
+00:28:57,970 --> 00:28:59,810
+Now I'm going too fast. Yeah.
+
+859
+00:28:59,810 --> 00:29:01,970
+So only a human
+can detect that,
+
+860
+00:29:01,970 --> 00:29:03,810
+so we always have
+a human being
+
+861
+00:29:03,810 --> 00:29:05,330
+that at least
+does some quality
+
+862
+00:29:05,330 --> 00:29:07,365
+control to see where we are.
+
+863
+00:29:07,365 --> 00:29:12,105
+And, what this person actually
+
+864
+00:29:12,165 --> 00:29:14,165
+most looks at is
+to avoid false
+
+865
+00:29:14,165 --> 00:29:14,885
+positives. Yeah.
+
+866
+00:29:14,885 --> 00:29:16,665
+We don't wanna
+tell our customer
+
+867
+00:29:17,205 --> 00:29:20,265
+that in conversations,
+a particular,
+
+868
+00:29:22,010 --> 00:29:24,190
+product was mentioned
+too many times.
+
+869
+00:29:24,250 --> 00:29:27,610
+We rather we rather
+not recognize
+
+870
+00:29:27,610 --> 00:29:28,890
+the term and miss some words
+
+871
+00:29:28,890 --> 00:29:30,350
+than that we tell the customer
+
+872
+00:29:30,650 --> 00:29:32,410
+that there are too
+many of a particular
+
+873
+00:29:32,410 --> 00:29:33,210
+word recognized.
+
+874
+00:29:33,210 --> 00:29:34,905
+And, again, you need automated
+
+875
+00:29:34,965 --> 00:29:36,165
+testing and a human
+little loop
+
+876
+00:29:36,165 --> 00:29:38,325
+to deal with that. Alright.
+
+877
+00:29:38,325 --> 00:29:39,145
+So concluding,
+
+878
+00:29:40,405 --> 00:29:42,185
+if you wanna do
+a speech technology
+
+879
+00:29:42,405 --> 00:29:44,745
+project, we are really
+happy to help,
+
+880
+00:29:45,845 --> 00:29:47,690
+and help you to incorporate,
+
+881
+00:29:48,470 --> 00:29:49,910
+the output of
+speech technology
+
+882
+00:29:49,910 --> 00:29:51,590
+in your knowledge
+graphs because
+
+883
+00:29:51,590 --> 00:29:52,790
+there's really some amazing
+
+884
+00:29:52,790 --> 00:29:54,390
+business benefits
+in all of that,
+
+885
+00:29:54,390 --> 00:29:56,310
+and it's really,
+really fun to do.
+
+886
+00:29:56,310 --> 00:29:57,590
+So thank you for
+your attention,
+
+887
+00:29:57,590 --> 00:29:59,450
+and maybe there are
+some questions.
+
+888
+00:30:05,215 --> 00:30:06,435
+Thank you for your talk.
+
+889
+00:30:07,135 --> 00:30:10,275
+it was great, as
+usual, I should say.
+
+890
+00:30:11,055 --> 00:30:12,655
+We we have one
+question here in
+
+891
+00:30:12,655 --> 00:30:13,315
+the chat,
+
+892
+00:30:14,975 --> 00:30:20,550
+about how you combine speech
+
+893
+00:30:20,550 --> 00:30:25,610
+analytics and EU,
+GDPR regulations.
+
+894
+00:30:27,750 --> 00:30:30,410
+how is that working together?
+
+895
+00:30:33,175 --> 00:30:36,855
+Well, the same kind of applies
+
+896
+00:30:36,855 --> 00:30:38,135
+in the United States too.
+
+897
+00:30:38,135 --> 00:30:40,635
+Some states allow
+you to record,
+
+898
+00:30:42,055 --> 00:30:44,090
+conversations
+with permission.
+
+899
+00:30:44,710 --> 00:30:46,630
+Some states allow
+you to record
+
+900
+00:30:46,630 --> 00:30:47,450
+without permission.
+
+901
+00:30:48,230 --> 00:30:49,590
+but in a country
+like Germany,
+
+902
+00:30:49,590 --> 00:30:51,050
+nothing is allowed. Yeah.
+
+903
+00:30:51,430 --> 00:30:54,730
+But the laws have not been yet
+
+904
+00:30:54,790 --> 00:30:58,025
+really defined
+for listening in
+
+905
+00:30:58,025 --> 00:31:00,765
+using speech technology.
+
+906
+00:31:01,065 --> 00:31:04,905
+Right? So it does
+not so you are
+
+907
+00:31:04,905 --> 00:31:08,505
+allowed to listen
+in with a an an
+
+908
+00:31:08,505 --> 00:31:10,780
+automated system and extract
+
+909
+00:31:10,780 --> 00:31:12,700
+the most important
+words out of a text.
+
+910
+00:31:12,700 --> 00:31:14,960
+There's no one I
+haven't seen yet,
+
+911
+00:31:16,140 --> 00:31:17,280
+anyone that would,
+
+912
+00:31:19,260 --> 00:31:20,540
+forbid you to do that.
+
+913
+00:31:20,540 --> 00:31:21,340
+Although, of course,
+
+914
+00:31:21,340 --> 00:31:23,995
+the GDPR still
+completely applies
+
+915
+00:31:23,995 --> 00:31:26,475
+because even if
+you get elements
+
+916
+00:31:26,475 --> 00:31:28,415
+out of a a conversation,
+
+917
+00:31:28,635 --> 00:31:31,355
+that's coupled to
+a particular customer,
+
+918
+00:31:31,355 --> 00:31:32,795
+and that customer, of course,
+
+919
+00:31:32,795 --> 00:31:33,935
+is under the GDPR.
+
+920
+00:31:33,995 --> 00:31:36,330
+So if you wanna
+forget about it,
+
+921
+00:31:36,330 --> 00:31:37,870
+then you have to be
+able to forget.
+
+922
+00:31:37,930 --> 00:31:39,370
+But remember,
+when I showed you
+
+923
+00:31:39,370 --> 00:31:42,030
+my picture of,
+a knowledge graph,
+
+924
+00:31:43,290 --> 00:31:45,370
+we do have because
+we have this
+
+925
+00:31:45,370 --> 00:31:46,010
+knowledge graph,
+
+926
+00:31:46,010 --> 00:31:48,955
+we actually know
+every word that
+
+927
+00:31:48,955 --> 00:31:51,135
+every customer ever
+ever uttered.
+
+928
+00:31:51,675 --> 00:31:53,115
+Right? So we can we actually
+
+929
+00:31:53,115 --> 00:31:55,215
+have a system where
+we can forget.
+
+930
+00:31:55,435 --> 00:31:56,955
+Yeah. Because we
+have completely
+
+931
+00:31:56,955 --> 00:31:57,455
+documented.
+
+932
+00:31:58,795 --> 00:32:00,555
+But it's a it's
+a very complicated
+
+933
+00:32:00,555 --> 00:32:01,835
+topic for call center.
+
+934
+00:32:01,835 --> 00:32:02,895
+Really, really complicated.
+
+935
+00:32:06,580 --> 00:32:08,260
+another question
+from Frederick
+
+936
+00:32:08,260 --> 00:32:10,040
+Landbisque. Bisque,
+
+937
+00:32:10,260 --> 00:32:11,460
+did you acquire from that
+
+938
+00:32:11,620 --> 00:32:13,460
+foundational
+taxonomies to jump
+
+939
+00:32:13,460 --> 00:32:14,360
+start the training,
+
+940
+00:32:14,900 --> 00:32:17,480
+or and or or have
+you incorporated
+
+941
+00:32:17,780 --> 00:32:19,865
+open vocabularies
+in in your system?
+
+942
+00:32:19,865 --> 00:32:20,545
+Actually, we,
+
+943
+00:32:22,945 --> 00:32:24,945
+so one of the fears of any
+
+944
+00:32:24,945 --> 00:32:27,345
+customer is that they have to
+
+945
+00:32:27,345 --> 00:32:29,285
+do all
+the taxonomy development
+
+946
+00:32:29,425 --> 00:32:30,725
+all the way from the start.
+
+947
+00:32:30,945 --> 00:32:34,940
+Yeah. And so we
+use, at at entry,
+
+948
+00:32:34,940 --> 00:32:37,680
+use the the, want technology.
+
+949
+00:32:37,820 --> 00:32:39,180
+There's a company
+called want,
+
+950
+00:32:39,180 --> 00:32:42,460
+w a n d, yeah, that
+provides some,
+
+951
+00:32:42,780 --> 00:32:43,760
+foundation taxonomies.
+
+952
+00:32:44,540 --> 00:32:46,140
+And so you can
+start with those,
+
+953
+00:32:46,140 --> 00:32:47,360
+and then you can expand.
+
+954
+00:32:48,245 --> 00:32:49,765
+These wall taxonomies
+don't have
+
+955
+00:32:49,765 --> 00:32:50,565
+many alt labels,
+
+956
+00:32:50,565 --> 00:32:52,325
+but at least it's
+always a great
+
+957
+00:32:52,325 --> 00:32:54,965
+start of the core
+hierarchy that
+
+958
+00:32:54,965 --> 00:32:56,505
+applies in
+the particular domain.
+

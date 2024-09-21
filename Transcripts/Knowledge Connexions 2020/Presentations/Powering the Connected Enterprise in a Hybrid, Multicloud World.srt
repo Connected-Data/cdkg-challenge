@@ -1,0 +1,4987 @@
+1
+00:00:07,900 --> 00:00:09,420
+Hi, everyone. I'm
+Kendall Clark,
+
+2
+00:00:09,420 --> 00:00:11,280
+CEO and cofounder at Stardog.
+
+3
+00:00:11,765 --> 00:00:13,045
+I'm pleased to be talking with
+
+4
+00:00:13,045 --> 00:00:14,665
+you today at the twenty twenty
+
+5
+00:00:15,205 --> 00:00:16,585
+knowledge connections
+conference.
+
+6
+00:00:17,205 --> 00:00:18,245
+I've been working in knowledge
+
+7
+00:00:18,245 --> 00:00:19,605
+graphs and AI since nineteen
+
+8
+00:00:19,605 --> 00:00:20,885
+ninety nine in a variety of
+
+9
+00:00:20,885 --> 00:00:22,325
+roles from r and d,
+
+10
+00:00:22,325 --> 00:00:24,345
+standards work at
+the w three c,
+
+11
+00:00:24,405 --> 00:00:25,605
+to building a knowledge graph
+
+12
+00:00:25,605 --> 00:00:26,665
+startup at Stardog.
+
+13
+00:00:27,710 --> 00:00:28,910
+Today, I'm going to be talking
+
+14
+00:00:28,910 --> 00:00:30,290
+with you about
+the disconnected
+
+15
+00:00:30,350 --> 00:00:31,970
+data world in which
+we find ourselves,
+
+16
+00:00:32,270 --> 00:00:33,330
+how we got here,
+
+17
+00:00:33,550 --> 00:00:34,830
+and the path that I can see to
+
+18
+00:00:34,830 --> 00:00:35,890
+get us out of it.
+
+19
+00:00:36,190 --> 00:00:37,550
+I know you are
+all familiar with
+
+20
+00:00:37,550 --> 00:00:38,850
+the data silo problem,
+
+21
+00:00:39,150 --> 00:00:40,350
+but I think it's helpful to
+
+22
+00:00:40,350 --> 00:00:42,285
+reexamine it, break it down to
+
+23
+00:00:42,285 --> 00:00:44,065
+see how it has
+evolved over time
+
+24
+00:00:44,285 --> 00:00:45,805
+to help us better address it
+
+25
+00:00:45,805 --> 00:00:46,545
+going forward.
+
+26
+00:00:48,685 --> 00:00:49,885
+The future we're all driving
+
+27
+00:00:49,885 --> 00:00:51,085
+towards in the knowledge graph
+
+28
+00:00:51,085 --> 00:00:53,105
+community is the connected
+enterprise,
+
+29
+00:00:53,900 --> 00:00:55,340
+A way of managing data,
+
+30
+00:00:55,340 --> 00:00:56,940
+no matter its type or location
+
+31
+00:00:56,940 --> 00:00:59,420
+or format, to connect it where
+
+32
+00:00:59,420 --> 00:01:01,680
+it's most useful at
+the compute layer,
+
+33
+00:01:02,140 --> 00:01:03,500
+and to connect it in the way
+
+34
+00:01:03,500 --> 00:01:05,180
+that's most useful
+based on what
+
+35
+00:01:05,180 --> 00:01:07,360
+it means, not on
+its location.
+
+36
+00:01:08,365 --> 00:01:10,845
+We at Startog are to our core
+
+37
+00:01:10,845 --> 00:01:12,365
+concerned with this issue of
+
+38
+00:01:12,365 --> 00:01:13,505
+bringing the differentiated
+
+39
+00:01:13,645 --> 00:01:15,265
+power of semantic
+graph technology
+
+40
+00:01:15,965 --> 00:01:18,045
+to enterprise data to solve
+
+41
+00:01:18,045 --> 00:01:19,345
+the data silo problem.
+
+42
+00:01:20,125 --> 00:01:21,930
+And today, I'm going to share
+
+43
+00:01:21,930 --> 00:01:23,290
+with you several new features
+
+44
+00:01:23,290 --> 00:01:25,290
+of the startup
+platform that are
+
+45
+00:01:25,290 --> 00:01:27,450
+taking us to the next step in
+
+46
+00:01:27,450 --> 00:01:29,290
+connecting data in what is
+
+47
+00:01:29,290 --> 00:01:31,370
+increasingly
+a hybrid and multi
+
+48
+00:01:31,370 --> 00:01:33,845
+cloud world. Finally,
+
+49
+00:01:33,845 --> 00:01:35,045
+I'll be leaving about ten or
+
+50
+00:01:35,045 --> 00:01:36,245
+fifteen minutes for questions
+
+51
+00:01:36,245 --> 00:01:37,385
+at the end of my talk,
+
+52
+00:01:37,525 --> 00:01:38,725
+and I'm really looking forward
+
+53
+00:01:38,725 --> 00:01:40,745
+to hearing those
+and and speaking
+
+54
+00:01:40,965 --> 00:01:41,865
+with you directly.
+
+55
+00:01:42,965 --> 00:01:44,985
+So before we dive in,
+
+56
+00:01:45,045 --> 00:01:47,285
+let's take a little
+bit talk a little
+
+57
+00:01:47,285 --> 00:01:48,985
+bit about who we
+are at Stardog.
+
+58
+00:01:49,420 --> 00:01:50,940
+Stardog is
+the leading enterprise
+
+59
+00:01:50,940 --> 00:01:52,000
+knowledge graph platform.
+
+60
+00:01:52,140 --> 00:01:53,740
+While many graph vendors focus
+
+61
+00:01:53,740 --> 00:01:55,680
+on graph for better
+data storage,
+
+62
+00:01:56,220 --> 00:01:58,220
+we focus on applying graph for
+
+63
+00:01:58,220 --> 00:01:59,280
+better data management.
+
+64
+00:02:00,060 --> 00:02:01,900
+We have customers
+all over the world,
+
+65
+00:02:01,900 --> 00:02:04,720
+but primarily in the e
+EU and in the US,
+
+66
+00:02:05,045 --> 00:02:06,565
+and those clients are focused
+
+67
+00:02:06,565 --> 00:02:08,025
+in a few select industries,
+
+68
+00:02:08,165 --> 00:02:09,465
+health care and
+life sciences,
+
+69
+00:02:09,925 --> 00:02:12,505
+financial services,
+and manufacturing.
+
+70
+00:02:13,845 --> 00:02:15,765
+So I'll begin this
+talk with a little
+
+71
+00:02:15,765 --> 00:02:16,665
+history lesson.
+
+72
+00:02:18,260 --> 00:02:19,240
+Digital transformation,
+
+73
+00:02:19,540 --> 00:02:20,900
+in addition to
+being, of course,
+
+74
+00:02:20,900 --> 00:02:22,260
+an overused term that makes us
+
+75
+00:02:22,260 --> 00:02:23,960
+all groan or or
+roll our eyes,
+
+76
+00:02:24,180 --> 00:02:26,040
+has actually become
+very relevant,
+
+77
+00:02:26,420 --> 00:02:28,420
+in this long awful
+pandemic year
+
+78
+00:02:28,420 --> 00:02:29,400
+of twenty twenty.
+
+79
+00:02:30,100 --> 00:02:31,940
+When I started in
+AI and knowledge
+
+80
+00:02:31,940 --> 00:02:34,425
+graphs, this move to
+digital was new,
+
+81
+00:02:34,485 --> 00:02:36,265
+and it was already
+hard enough.
+
+82
+00:02:36,725 --> 00:02:38,405
+And that was in the purely
+
+83
+00:02:38,405 --> 00:02:39,365
+relational world,
+
+84
+00:02:39,365 --> 00:02:40,645
+the world before the web,
+
+85
+00:02:40,645 --> 00:02:42,105
+before the commercial
+Internet,
+
+86
+00:02:42,565 --> 00:02:43,605
+when the problem was,
+
+87
+00:02:43,925 --> 00:02:45,445
+mostly just a bunch
+of relational
+
+88
+00:02:45,445 --> 00:02:47,750
+databases that lived in an on
+
+89
+00:02:47,750 --> 00:02:48,810
+prem data center.
+
+90
+00:02:49,750 --> 00:02:51,350
+What's happened since then?
+
+91
+00:02:51,350 --> 00:02:52,550
+In particular, what's happened
+
+92
+00:02:52,550 --> 00:02:53,850
+to data landscape?
+
+93
+00:02:54,550 --> 00:02:56,250
+Well, a lot's
+happened, of course.
+
+94
+00:02:56,550 --> 00:02:57,990
+First, the nature
+of enterprise
+
+95
+00:02:57,990 --> 00:02:59,530
+data has changed
+dramatically.
+
+96
+00:03:00,365 --> 00:03:01,645
+Today, we deal with data that
+
+97
+00:03:01,645 --> 00:03:03,165
+is structured.
+Yes, of course,
+
+98
+00:03:03,165 --> 00:03:04,605
+but also unstructured and semi
+
+99
+00:03:04,605 --> 00:03:06,365
+structured. The
+enterprise data
+
+100
+00:03:06,365 --> 00:03:07,965
+landscape is highly subject to
+
+101
+00:03:07,965 --> 00:03:09,565
+change as the rate of data
+
+102
+00:03:09,565 --> 00:03:10,925
+collection has
+accelerated with
+
+103
+00:03:10,925 --> 00:03:13,585
+the exponential
+growth of networks.
+
+104
+00:03:14,050 --> 00:03:15,730
+First broadband
+and now of course
+
+105
+00:03:15,730 --> 00:03:18,210
+five g. And as businesses have
+
+106
+00:03:18,210 --> 00:03:20,870
+grown bigger and
+become more complex,
+
+107
+00:03:21,330 --> 00:03:22,690
+and for many of
+today's leading
+
+108
+00:03:22,690 --> 00:03:24,230
+companies, their
+core intellectual
+
+109
+00:03:24,290 --> 00:03:26,310
+property really has
+become their data.
+
+110
+00:03:26,875 --> 00:03:28,235
+What we've been
+calling the data
+
+111
+00:03:28,235 --> 00:03:30,555
+silo problem has
+actually gotten
+
+112
+00:03:30,555 --> 00:03:31,455
+a lot worse.
+
+113
+00:03:32,235 --> 00:03:33,775
+According to a recent survey,
+
+114
+00:03:34,235 --> 00:03:35,755
+forty percent of
+companies that
+
+115
+00:03:35,755 --> 00:03:37,695
+consider themselves
+data driven
+
+116
+00:03:38,235 --> 00:03:40,015
+have more than fifty core
+
+117
+00:03:40,480 --> 00:03:41,860
+disconnected data silos.
+
+118
+00:03:42,800 --> 00:03:44,400
+The data silos
+strictly speaking
+
+119
+00:03:44,400 --> 00:03:45,140
+are problematic.
+
+120
+00:03:45,840 --> 00:03:47,440
+Data separated at the storage
+
+121
+00:03:47,440 --> 00:03:49,040
+layer allows for local control
+
+122
+00:03:49,040 --> 00:03:49,700
+and governance,
+
+123
+00:03:49,760 --> 00:03:51,540
+which businesses
+of course need.
+
+124
+00:03:51,920 --> 00:03:54,255
+Often data separation
+is is a requirement
+
+125
+00:03:54,255 --> 00:03:55,555
+of policy and compliance.
+
+126
+00:03:56,495 --> 00:03:58,435
+However, in our interconnected
+
+127
+00:03:58,735 --> 00:04:00,515
+complex fast moving world,
+
+128
+00:04:01,215 --> 00:04:02,895
+maximizing the value of data
+
+129
+00:04:02,895 --> 00:04:04,435
+requires connecting it.
+
+130
+00:04:04,815 --> 00:04:06,255
+A business with loads of data
+
+131
+00:04:06,255 --> 00:04:07,855
+and lots of disconnected data
+
+132
+00:04:07,855 --> 00:04:09,910
+silos is really no
+more intelligent
+
+133
+00:04:09,910 --> 00:04:11,350
+and therefore no
+more adaptable
+
+134
+00:04:11,350 --> 00:04:12,870
+to change, able
+to take advantage
+
+135
+00:04:12,870 --> 00:04:13,930
+of new market opportunities,
+
+136
+00:04:14,470 --> 00:04:15,990
+or more responsive to customer
+
+137
+00:04:15,990 --> 00:04:18,330
+needs than
+the purely relational
+
+138
+00:04:18,790 --> 00:04:20,570
+on prem data center businesses
+
+139
+00:04:21,030 --> 00:04:23,110
+that ruled the world
+just twenty
+
+140
+00:04:23,110 --> 00:04:23,930
+years ago.
+
+141
+00:04:25,245 --> 00:04:26,365
+And this is only looking at
+
+142
+00:04:26,365 --> 00:04:28,285
+the problem purely
+from the business
+
+143
+00:04:28,285 --> 00:04:29,965
+perspective. When
+we start looking
+
+144
+00:04:29,965 --> 00:04:31,725
+at the problem as experienced
+
+145
+00:04:31,725 --> 00:04:33,665
+by boots on the ground
+data people,
+
+146
+00:04:33,965 --> 00:04:35,505
+the people who need
+to operationalize
+
+147
+00:04:35,725 --> 00:04:37,165
+all this stuff and stitch all
+
+148
+00:04:37,165 --> 00:04:38,625
+these different
+pieces together,
+
+149
+00:04:39,040 --> 00:04:41,440
+the complexity
+of the data data
+
+150
+00:04:41,440 --> 00:04:43,460
+silo problem just increases.
+
+151
+00:04:44,480 --> 00:04:45,680
+For better or for worse,
+
+152
+00:04:45,680 --> 00:04:47,220
+this is the nature
+of the beast.
+
+153
+00:04:47,920 --> 00:04:49,600
+Enterprise data
+will either save
+
+154
+00:04:49,600 --> 00:04:52,825
+us all or well,
+it'll save us all,
+
+155
+00:04:52,825 --> 00:04:53,945
+but only if it doesn't kill us
+
+156
+00:04:53,945 --> 00:04:56,425
+all first. As
+the world develops
+
+157
+00:04:56,425 --> 00:04:57,565
+new ways to communicate,
+
+158
+00:04:57,625 --> 00:04:58,985
+businesses will have new types
+
+159
+00:04:58,985 --> 00:05:00,605
+of data to mine for insight.
+
+160
+00:05:00,985 --> 00:05:02,265
+But for us data folks,
+
+161
+00:05:02,265 --> 00:05:03,705
+we'll have a new data problem
+
+162
+00:05:03,705 --> 00:05:05,645
+to try to connect
+into the hole.
+
+163
+00:05:06,200 --> 00:05:08,040
+And I haven't even
+started talking
+
+164
+00:05:08,040 --> 00:05:10,140
+yet about the data
+location issue.
+
+165
+00:05:10,840 --> 00:05:13,100
+Alright. So that brings
+us to the cloud.
+
+166
+00:05:13,880 --> 00:05:15,080
+let's talk about
+the cloud a bit
+
+167
+00:05:15,080 --> 00:05:16,360
+because it's starting to seem
+
+168
+00:05:16,360 --> 00:05:18,360
+like people think the cloud
+
+169
+00:05:18,360 --> 00:05:19,580
+could be magic.
+
+170
+00:05:20,085 --> 00:05:21,205
+But we data people,
+
+171
+00:05:21,205 --> 00:05:22,825
+we don't believe in magic.
+
+172
+00:05:23,365 --> 00:05:24,825
+So the cloud is happening.
+
+173
+00:05:25,125 --> 00:05:26,645
+It's been happening
+for, what,
+
+174
+00:05:26,645 --> 00:05:27,785
+ten, fifteen years.
+
+175
+00:05:28,485 --> 00:05:30,025
+How is the cloud's development
+
+176
+00:05:30,085 --> 00:05:31,925
+impacting the evolution
+of the data
+
+177
+00:05:31,925 --> 00:05:32,985
+management landscape?
+
+178
+00:05:33,450 --> 00:05:34,890
+We started with
+the business and
+
+179
+00:05:34,890 --> 00:05:36,330
+its on prem data
+center full of
+
+180
+00:05:36,330 --> 00:05:37,230
+relational databases,
+
+181
+00:05:37,610 --> 00:05:39,210
+and then this data
+center started
+
+182
+00:05:39,210 --> 00:05:40,730
+filling up with
+data silos full
+
+183
+00:05:40,730 --> 00:05:42,890
+of different kinds of data,
+
+184
+00:05:42,890 --> 00:05:44,030
+data of different types.
+
+185
+00:05:44,570 --> 00:05:46,090
+Now we add to that a remote
+
+186
+00:05:46,090 --> 00:05:47,195
+cloud data center.
+
+187
+00:05:47,195 --> 00:05:48,895
+And, yeah, the same phenomenon
+
+188
+00:05:48,955 --> 00:05:51,035
+of varying data
+types piling up
+
+189
+00:05:51,035 --> 00:05:52,395
+in different data silos is
+
+190
+00:05:52,395 --> 00:05:53,455
+happening there too.
+
+191
+00:05:54,875 --> 00:05:56,315
+While moving data to the cloud
+
+192
+00:05:56,315 --> 00:05:57,215
+has many benefits,
+
+193
+00:05:57,915 --> 00:05:59,835
+better connecting your data is
+
+194
+00:05:59,835 --> 00:06:01,055
+not one of them.
+
+195
+00:06:01,700 --> 00:06:03,240
+There are many
+different flavors
+
+196
+00:06:03,300 --> 00:06:05,160
+to cloud implementations
+as well.
+
+197
+00:06:05,540 --> 00:06:06,180
+There's, of course,
+
+198
+00:06:06,180 --> 00:06:07,860
+the public cloud where cloud
+
+199
+00:06:07,860 --> 00:06:09,620
+resources are accessed
+via the public
+
+200
+00:06:09,620 --> 00:06:11,860
+Internet, and there's
+private cloud,
+
+201
+00:06:11,860 --> 00:06:13,380
+which is dedicated to a single
+
+202
+00:06:13,380 --> 00:06:14,840
+organization with
+the infrastructure
+
+203
+00:06:15,140 --> 00:06:16,200
+located somewhere.
+
+204
+00:06:16,745 --> 00:06:17,625
+maybe it's, in fact,
+
+205
+00:06:17,625 --> 00:06:19,225
+better that we
+don't know actually
+
+206
+00:06:19,225 --> 00:06:21,005
+where, but it's not accessible
+
+207
+00:06:21,065 --> 00:06:22,125
+to the public Internet.
+
+208
+00:06:22,425 --> 00:06:23,465
+And there's hybrid cloud,
+
+209
+00:06:23,465 --> 00:06:25,145
+which is a combination of both
+
+210
+00:06:25,145 --> 00:06:26,125
+public and private.
+
+211
+00:06:27,785 --> 00:06:29,625
+Now for software vendors and
+
+212
+00:06:29,625 --> 00:06:30,505
+business leaders,
+
+213
+00:06:30,505 --> 00:06:32,480
+the CEO or CFO perhaps,
+
+214
+00:06:33,360 --> 00:06:35,940
+Hybrid clearly is
+the best option.
+
+215
+00:06:36,240 --> 00:06:38,100
+It offers the ease,
+scalability,
+
+216
+00:06:38,480 --> 00:06:40,080
+and access to the catalog of
+
+217
+00:06:40,080 --> 00:06:42,000
+apps that is the hallmark of
+
+218
+00:06:42,000 --> 00:06:44,000
+the public cloud while also
+
+219
+00:06:44,000 --> 00:06:45,780
+providing the security,
+performance,
+
+220
+00:06:45,920 --> 00:06:48,065
+and cost saving benefits that
+
+221
+00:06:48,065 --> 00:06:49,605
+characterize
+the private cloud.
+
+222
+00:06:50,305 --> 00:06:52,225
+It even lets
+organizations migrate
+
+223
+00:06:52,225 --> 00:06:53,445
+to the cloud piecemeal.
+
+224
+00:06:53,665 --> 00:06:55,585
+That's great. In fact,
+
+225
+00:06:55,585 --> 00:06:57,025
+you've probably
+started to notice
+
+226
+00:06:57,025 --> 00:06:58,085
+in your own organization,
+
+227
+00:06:58,145 --> 00:06:59,925
+especially if it's
+particularly large,
+
+228
+00:07:00,370 --> 00:07:02,450
+that there has been
+a bit of a pendulum
+
+229
+00:07:02,450 --> 00:07:04,450
+effect lately here with
+
+230
+00:07:04,450 --> 00:07:05,970
+organizations going all in on
+
+231
+00:07:05,970 --> 00:07:07,570
+the cloud and now
+starting some
+
+232
+00:07:07,570 --> 00:07:08,770
+of them to swing back towards
+
+233
+00:07:08,770 --> 00:07:10,930
+the private cloud
+and even growing
+
+234
+00:07:10,930 --> 00:07:12,770
+talk about repatriation or
+
+235
+00:07:12,770 --> 00:07:15,090
+repatriating some
+of their cloud
+
+236
+00:07:15,090 --> 00:07:17,415
+data assets from public
+back to private.
+
+237
+00:07:18,355 --> 00:07:20,035
+Either way, the cloud is here
+
+238
+00:07:20,035 --> 00:07:21,655
+to stay no matter
+what incarnation
+
+239
+00:07:21,715 --> 00:07:23,495
+it takes. We all
+understand that.
+
+240
+00:07:24,435 --> 00:07:26,275
+And honestly, all of that is
+
+241
+00:07:26,275 --> 00:07:27,715
+probably complex enough.
+
+242
+00:07:27,715 --> 00:07:29,475
+Right? But, alas,
+
+243
+00:07:29,475 --> 00:07:30,915
+we have one more
+turn of the screw
+
+244
+00:07:30,915 --> 00:07:33,290
+to consider. the place where
+
+245
+00:07:33,290 --> 00:07:35,870
+the world is headed
+isn't the cloud,
+
+246
+00:07:35,930 --> 00:07:37,290
+one magical place where all
+
+247
+00:07:37,290 --> 00:07:38,910
+the data is already
+connected.
+
+248
+00:07:39,370 --> 00:07:41,150
+The place we're
+headed is hybrid
+
+249
+00:07:41,210 --> 00:07:43,370
+multi cloud. Now
+I just told you
+
+250
+00:07:43,370 --> 00:07:44,915
+about hybrid,
+public and private.
+
+251
+00:07:45,155 --> 00:07:46,675
+Now let's take take a look at
+
+252
+00:07:46,675 --> 00:07:48,615
+the final driver
+for complexity,
+
+253
+00:07:48,755 --> 00:07:50,135
+the multi cloud part.
+
+254
+00:07:51,075 --> 00:07:53,075
+There are now, I
+think by my count,
+
+255
+00:07:53,075 --> 00:07:54,995
+by all claim,
+four cloud vendors
+
+256
+00:07:54,995 --> 00:07:57,475
+that really matter,
+at least next year.
+
+257
+00:07:57,475 --> 00:07:58,755
+Next year, who knows?
+
+258
+00:07:58,755 --> 00:07:59,975
+Maybe there'll be five.
+
+259
+00:08:00,170 --> 00:08:01,530
+So we, the data people,
+
+260
+00:08:01,530 --> 00:08:02,970
+have also got the diversity of
+
+261
+00:08:02,970 --> 00:08:05,150
+the cloud vendor
+offerings to deal with,
+
+262
+00:08:05,210 --> 00:08:08,670
+a w AWS, of course,
+Azure, GCP,
+
+263
+00:08:08,890 --> 00:08:09,870
+and now Oracle.
+
+264
+00:08:11,050 --> 00:08:11,930
+In all likelihood,
+
+265
+00:08:11,930 --> 00:08:13,470
+if you work for
+a big organization,
+
+266
+00:08:13,995 --> 00:08:15,435
+you have a vendor
+that your org
+
+267
+00:08:15,435 --> 00:08:16,955
+picked for public cloud and
+
+268
+00:08:16,955 --> 00:08:18,235
+maybe a different vendor that
+
+269
+00:08:18,235 --> 00:08:20,335
+you use for some
+legacy assets,
+
+270
+00:08:20,475 --> 00:08:21,835
+and then perhaps a third that
+
+271
+00:08:21,835 --> 00:08:23,115
+was brought into the mix when
+
+272
+00:08:23,115 --> 00:08:24,655
+you acquired a competitor.
+
+273
+00:08:25,915 --> 00:08:28,360
+Even worse, this multi cloud
+
+274
+00:08:28,360 --> 00:08:29,880
+phenomenon is not
+something that
+
+275
+00:08:29,880 --> 00:08:31,660
+defines only large
+enterprises.
+
+276
+00:08:32,360 --> 00:08:34,220
+Up to ninety percent
+of all businesses,
+
+277
+00:08:34,440 --> 00:08:37,020
+including small and
+medium sized ones,
+
+278
+00:08:37,320 --> 00:08:38,780
+use more than one cloud.
+
+279
+00:08:39,075 --> 00:08:40,275
+Or as we should say,
+
+280
+00:08:40,275 --> 00:08:41,975
+we should really say
+us data people.
+
+281
+00:08:42,195 --> 00:08:44,035
+They have data assets in more
+
+282
+00:08:44,035 --> 00:08:45,015
+than one cloud.
+
+283
+00:08:45,955 --> 00:08:47,875
+Just as with
+the flexibility and
+
+284
+00:08:47,875 --> 00:08:49,095
+hybrid cloud considerations,
+
+285
+00:08:49,315 --> 00:08:50,755
+there are benefits to choosing
+
+286
+00:08:50,755 --> 00:08:51,975
+multiple cloud providers,
+
+287
+00:08:52,490 --> 00:08:54,090
+like avoiding vendor lock in,
+
+288
+00:08:54,090 --> 00:08:55,450
+getting the right
+tool for the right
+
+289
+00:08:55,450 --> 00:08:56,510
+problem, resiliency.
+
+290
+00:08:57,450 --> 00:08:59,950
+But proliferating disconnected
+
+291
+00:09:00,170 --> 00:09:01,950
+assets across multi clouds
+
+292
+00:09:02,410 --> 00:09:04,670
+represents an old
+familiar problem,
+
+293
+00:09:04,890 --> 00:09:06,190
+difficulty
+with interoperability
+
+294
+00:09:06,490 --> 00:09:08,135
+and governance and portability
+
+295
+00:09:08,355 --> 00:09:09,095
+and management.
+
+296
+00:09:10,115 --> 00:09:11,075
+And in reality,
+
+297
+00:09:11,075 --> 00:09:13,075
+all of this cloud
+complexity is
+
+298
+00:09:13,075 --> 00:09:15,415
+making the data silo
+problem worse,
+
+299
+00:09:15,475 --> 00:09:17,715
+not better, which
+in turn makes
+
+300
+00:09:17,715 --> 00:09:19,495
+digital transformation
+harder,
+
+301
+00:09:19,795 --> 00:09:20,615
+not easier.
+
+302
+00:09:21,580 --> 00:09:23,600
+In the hybrid multi
+cloud world,
+
+303
+00:09:23,660 --> 00:09:25,520
+data is more
+physically separated,
+
+304
+00:09:25,900 --> 00:09:27,600
+making it difficult to unify,
+
+305
+00:09:27,980 --> 00:09:30,160
+which makes it even
+harder to connect.
+
+306
+00:09:30,860 --> 00:09:32,220
+And of course, public cloud
+
+307
+00:09:32,220 --> 00:09:34,080
+vendors understand
+this very well,
+
+308
+00:09:34,225 --> 00:09:35,505
+and so they're charging in and
+
+309
+00:09:35,505 --> 00:09:38,165
+out fees and other,
+approaches,
+
+310
+00:09:38,625 --> 00:09:40,225
+charging you every time you
+
+311
+00:09:40,225 --> 00:09:41,685
+consolidate data physically.
+
+312
+00:09:42,145 --> 00:09:43,425
+They certainly want your
+
+313
+00:09:43,425 --> 00:09:45,125
+organization to
+be very happy,
+
+314
+00:09:45,345 --> 00:09:48,805
+but only within their
+walled garden.
+
+315
+00:09:49,540 --> 00:09:50,440
+And it gets better.
+
+316
+00:09:50,500 --> 00:09:52,600
+Data is not often
+easily extractable
+
+317
+00:09:52,740 --> 00:09:54,440
+from prepackaged
+SaaS applications,
+
+318
+00:09:55,140 --> 00:09:57,300
+which rarely
+provide real access
+
+319
+00:09:57,300 --> 00:09:59,220
+to the underlining
+to the underlying
+
+320
+00:09:59,220 --> 00:09:59,960
+data storage.
+
+321
+00:10:00,820 --> 00:10:01,940
+I think by this point,
+
+322
+00:10:01,940 --> 00:10:03,220
+I've conveyed the extent of
+
+323
+00:10:03,220 --> 00:10:04,920
+the problem of
+disconnected data
+
+324
+00:10:05,215 --> 00:10:07,055
+and that the slope
+of this curve
+
+325
+00:10:07,055 --> 00:10:08,835
+is really getting worse.
+
+326
+00:10:10,175 --> 00:10:11,535
+The problem has
+only compounded
+
+327
+00:10:11,535 --> 00:10:12,895
+over the years
+as these amazing
+
+328
+00:10:12,895 --> 00:10:15,055
+new technologies
+have made data
+
+329
+00:10:15,055 --> 00:10:17,315
+people wanna tear
+their hair out.
+
+330
+00:10:17,600 --> 00:10:19,200
+I know I'm preaching
+to the choir here,
+
+331
+00:10:19,200 --> 00:10:20,560
+but it's important
+to understand
+
+332
+00:10:20,560 --> 00:10:22,640
+how we got to this place if
+
+333
+00:10:22,640 --> 00:10:24,400
+we're going to
+figure out the best
+
+334
+00:10:24,400 --> 00:10:25,140
+way forward.
+
+335
+00:10:25,680 --> 00:10:28,720
+So let's pause
+for a second and
+
+336
+00:10:28,720 --> 00:10:30,320
+reground ourselves in why we
+
+337
+00:10:30,320 --> 00:10:32,340
+have all this data
+to begin with.
+
+338
+00:10:33,415 --> 00:10:34,615
+Perhaps that seems
+like a silly
+
+339
+00:10:34,615 --> 00:10:36,395
+thing to do especially
+at this event,
+
+340
+00:10:36,775 --> 00:10:37,815
+but with any problem,
+
+341
+00:10:37,815 --> 00:10:39,015
+you need to figure
+out where you
+
+342
+00:10:39,015 --> 00:10:40,935
+want to be at
+the end if you're
+
+343
+00:10:40,935 --> 00:10:42,235
+going to make real progress.
+
+344
+00:10:43,095 --> 00:10:46,510
+So I think we have
+data for insight.
+
+345
+00:10:46,810 --> 00:10:49,390
+We integrate it, mash
+it up, model it,
+
+346
+00:10:49,450 --> 00:10:50,830
+transform it for the purposes
+
+347
+00:10:50,890 --> 00:10:52,590
+of deriving new knowledge.
+
+348
+00:10:53,130 --> 00:10:54,570
+Whether our job is to optimize
+
+349
+00:10:54,570 --> 00:10:56,250
+a business process to increase
+
+350
+00:10:56,250 --> 00:10:58,990
+profits or to
+develop a vaccine
+
+351
+00:10:59,530 --> 00:11:00,750
+to a deadly pandemic,
+
+352
+00:11:01,305 --> 00:11:03,225
+Data serves the ends of human
+
+353
+00:11:03,225 --> 00:11:05,145
+knowledge and know
+how or really
+
+354
+00:11:05,145 --> 00:11:06,525
+what's the point of it.
+
+355
+00:11:07,305 --> 00:11:09,225
+I'm reminded here
+of Metcalfe's law,
+
+356
+00:11:09,225 --> 00:11:10,365
+the network effect,
+
+357
+00:11:10,505 --> 00:11:12,585
+that the bigger and
+denser a network
+
+358
+00:11:12,585 --> 00:11:14,845
+becomes, the more
+valuable it is.
+
+359
+00:11:15,700 --> 00:11:16,980
+Now that means there's a kind
+
+360
+00:11:16,980 --> 00:11:18,900
+of jujitsu move available to
+
+361
+00:11:18,900 --> 00:11:20,820
+enterprises if
+we can help them
+
+362
+00:11:20,820 --> 00:11:23,060
+pull it off. We can't actually
+
+363
+00:11:23,060 --> 00:11:24,920
+go from the awful unproductive
+
+364
+00:11:25,140 --> 00:11:27,300
+data silo problem to a value
+
+365
+00:11:27,300 --> 00:11:29,220
+creation network inside every
+
+366
+00:11:29,220 --> 00:11:30,040
+large enterprise,
+
+367
+00:11:30,725 --> 00:11:32,165
+But that's only going to be
+
+368
+00:11:32,165 --> 00:11:34,325
+possible if we're
+able if you're
+
+369
+00:11:34,325 --> 00:11:36,325
+able to make these
+value creating
+
+370
+00:11:36,325 --> 00:11:37,865
+connections in the data.
+
+371
+00:11:38,645 --> 00:11:40,565
+Now clearly,
+especially at this
+
+372
+00:11:40,565 --> 00:11:42,665
+conference, this is
+a graph problem.
+
+373
+00:11:42,885 --> 00:11:44,425
+You all already know this.
+
+374
+00:11:44,725 --> 00:11:47,350
+Now the great news,
+and frankly,
+
+375
+00:11:47,350 --> 00:11:48,070
+if you're like me,
+
+376
+00:11:48,070 --> 00:11:49,590
+we all want some
+more good news
+
+377
+00:11:49,590 --> 00:11:51,350
+this year, is that
+people outside
+
+378
+00:11:51,350 --> 00:11:52,710
+of our community are starting
+
+379
+00:11:52,710 --> 00:11:54,070
+to realize that
+this is a graph
+
+380
+00:11:54,070 --> 00:11:56,410
+problem too. I'll
+give you an example.
+
+381
+00:11:56,470 --> 00:11:58,170
+Back in April, we saw Gartner
+
+382
+00:11:58,230 --> 00:11:59,210
+publish the headline,
+
+383
+00:11:59,675 --> 00:12:01,355
+COVID nineteen demands urgent
+
+384
+00:12:01,355 --> 00:12:03,035
+use of graph data
+management and
+
+385
+00:12:03,035 --> 00:12:05,035
+analytics, and
+they've continued
+
+386
+00:12:05,035 --> 00:12:06,395
+to advocate for
+the adoption of
+
+387
+00:12:06,395 --> 00:12:07,835
+data fabrics of
+which knowledge
+
+388
+00:12:07,835 --> 00:12:09,295
+graphs form a core part.
+
+389
+00:12:09,995 --> 00:12:11,435
+Now I'm really pleased to see
+
+390
+00:12:11,435 --> 00:12:12,940
+the increased
+adoption of graph
+
+391
+00:12:12,940 --> 00:12:14,400
+in the market and
+the acknowledgment
+
+392
+00:12:14,700 --> 00:12:16,620
+of of its power
+to address some
+
+393
+00:12:16,620 --> 00:12:18,140
+of the biggest
+problems plaguing
+
+394
+00:12:18,140 --> 00:12:18,960
+data management,
+
+395
+00:12:19,420 --> 00:12:21,040
+including the data
+silo problem.
+
+396
+00:12:21,660 --> 00:12:22,800
+But a graph database,
+
+397
+00:12:22,940 --> 00:12:24,620
+no matter what
+variety of graph
+
+398
+00:12:24,620 --> 00:12:26,345
+database, in and
+of itself will
+
+399
+00:12:26,345 --> 00:12:27,865
+not solve the complex problem
+
+400
+00:12:27,865 --> 00:12:29,405
+I've been describing so far.
+
+401
+00:12:29,705 --> 00:12:31,305
+We need to go
+where the data is
+
+402
+00:12:31,305 --> 00:12:33,385
+and layer over data graph
+
+403
+00:12:33,385 --> 00:12:35,305
+capabilities that
+can adapt with
+
+404
+00:12:35,305 --> 00:12:35,965
+the business.
+
+405
+00:12:37,240 --> 00:12:38,680
+Now as I said at
+the beginning,
+
+406
+00:12:38,680 --> 00:12:40,700
+the future we
+envision at StarDog,
+
+407
+00:12:40,760 --> 00:12:42,120
+and I think I speak in this
+
+408
+00:12:42,120 --> 00:12:43,820
+sense for the whole
+community here,
+
+409
+00:12:43,880 --> 00:12:45,260
+is the connected enterprise.
+
+410
+00:12:46,040 --> 00:12:47,560
+And we don't just
+talk about it,
+
+411
+00:12:47,560 --> 00:12:49,020
+but we're helping
+our customers
+
+412
+00:12:49,080 --> 00:12:50,700
+achieve it, through StarDog,
+
+413
+00:12:51,325 --> 00:12:52,225
+our data platform,
+
+414
+00:12:52,285 --> 00:12:53,565
+including a third generation
+
+415
+00:12:53,565 --> 00:12:54,865
+virtualization engine,
+
+416
+00:12:55,005 --> 00:12:56,705
+an expanding
+connector universe,
+
+417
+00:12:57,085 --> 00:12:58,845
+and the recently
+announced StarDog
+
+418
+00:12:58,845 --> 00:13:00,925
+Cloud. Now I wanna
+spend some,
+
+419
+00:13:01,165 --> 00:13:02,525
+time and the rest of this talk
+
+420
+00:13:02,525 --> 00:13:04,610
+diving into each one
+of these in turn.
+
+421
+00:13:05,890 --> 00:13:07,570
+Now for us, virtualization has
+
+422
+00:13:07,570 --> 00:13:09,010
+been key to StarDog's product
+
+423
+00:13:09,010 --> 00:13:10,550
+vision since our inception.
+
+424
+00:13:11,490 --> 00:13:13,190
+Data virtualization
+as a capability
+
+425
+00:13:13,250 --> 00:13:14,690
+in the relational data model
+
+426
+00:13:14,690 --> 00:13:15,990
+world is not new,
+
+427
+00:13:16,130 --> 00:13:17,810
+but StarDog has been a leader
+
+428
+00:13:17,810 --> 00:13:18,870
+in graph virtualization.
+
+429
+00:13:20,165 --> 00:13:21,685
+As I said, we're now building
+
+430
+00:13:21,685 --> 00:13:23,205
+the third generation virtual
+
+431
+00:13:23,205 --> 00:13:24,885
+graph engine
+inside the StartUp
+
+432
+00:13:24,885 --> 00:13:27,225
+platform with lots
+of innovation
+
+433
+00:13:27,605 --> 00:13:29,685
+still to come. We call this
+
+434
+00:13:29,685 --> 00:13:31,305
+capability virtual graphs,
+
+435
+00:13:31,780 --> 00:13:33,700
+and it's special
+made for varied
+
+436
+00:13:33,700 --> 00:13:35,480
+data with
+conflicting definitions
+
+437
+00:13:35,540 --> 00:13:37,300
+or changing schemas or uneven
+
+438
+00:13:37,300 --> 00:13:39,220
+properties, just the type of
+
+439
+00:13:39,220 --> 00:13:40,980
+data you encounter daily in
+
+440
+00:13:40,980 --> 00:13:41,640
+the enterprise.
+
+441
+00:13:42,900 --> 00:13:44,580
+Now two features of startup's
+
+442
+00:13:44,580 --> 00:13:46,245
+virtualization capability in
+
+443
+00:13:46,245 --> 00:13:47,365
+particular here stand out,
+
+444
+00:13:47,365 --> 00:13:49,865
+and I wanna share them
+with you briefly.
+
+445
+00:13:50,245 --> 00:13:52,325
+First, Stardog virtual graphs
+
+446
+00:13:52,325 --> 00:13:55,225
+or are what we call
+schema multi tenant,
+
+447
+00:13:55,605 --> 00:13:57,205
+which means that many schemas
+
+448
+00:13:57,205 --> 00:13:58,825
+or models can
+exist simultaneously
+
+449
+00:13:59,125 --> 00:14:00,105
+inside of Stardog.
+
+450
+00:14:00,580 --> 00:14:01,780
+But this as we all know,
+
+451
+00:14:01,780 --> 00:14:03,460
+there is isn't
+ever going to be
+
+452
+00:14:03,460 --> 00:14:05,000
+one schema for
+the whole enterprise.
+
+453
+00:14:05,380 --> 00:14:07,140
+And all those
+schemas and models
+
+454
+00:14:07,140 --> 00:14:08,980
+can exist at the storage and
+
+455
+00:14:08,980 --> 00:14:10,600
+compute layers of
+the platform.
+
+456
+00:14:11,620 --> 00:14:13,460
+Second, startup virtual graphs
+
+457
+00:14:13,460 --> 00:14:14,980
+also offer what
+we call virtual
+
+458
+00:14:14,980 --> 00:14:17,455
+transparency, which
+means the platform
+
+459
+00:14:17,455 --> 00:14:18,975
+is able to answer queries over
+
+460
+00:14:18,975 --> 00:14:20,495
+all the connected data silos
+
+461
+00:14:20,495 --> 00:14:21,615
+that feed into the start of
+
+462
+00:14:21,615 --> 00:14:23,375
+enterprise knowledge
+graph without
+
+463
+00:14:23,375 --> 00:14:25,135
+anyone having to know exactly
+
+464
+00:14:25,135 --> 00:14:27,155
+where any of the data
+really lives.
+
+465
+00:14:27,695 --> 00:14:29,295
+We call that connecting data
+
+466
+00:14:29,295 --> 00:14:31,375
+based on what it
+means at the compute
+
+467
+00:14:31,375 --> 00:14:33,610
+layer and not at
+the storage layer.
+
+468
+00:14:33,750 --> 00:14:34,950
+And we think that's key to
+
+469
+00:14:34,950 --> 00:14:36,470
+thriving in the hybrid multi
+
+470
+00:14:36,470 --> 00:14:39,830
+cloud world. And
+we're not done yet.
+
+471
+00:14:39,830 --> 00:14:41,190
+We're pushing
+the envelope here
+
+472
+00:14:41,190 --> 00:14:42,810
+with upcoming
+platform releases,
+
+473
+00:14:43,110 --> 00:14:44,710
+and I'm going to dive
+into the details
+
+474
+00:14:44,710 --> 00:14:45,830
+of some of those and and tell
+
+475
+00:14:45,830 --> 00:14:47,050
+you about them first.
+
+476
+00:14:47,635 --> 00:14:48,515
+But before I do that,
+
+477
+00:14:48,515 --> 00:14:49,875
+let me bucket them here to get
+
+478
+00:14:49,875 --> 00:14:51,075
+us started and
+just say they'll
+
+479
+00:14:51,075 --> 00:14:52,695
+come in about four different,
+
+480
+00:14:53,475 --> 00:14:54,275
+categories. First,
+
+481
+00:14:54,275 --> 00:14:55,495
+scalability and performance.
+
+482
+00:14:56,035 --> 00:14:57,655
+Second, convenience
+and usability.
+
+483
+00:14:57,875 --> 00:14:58,695
+Third, resilience.
+
+484
+00:14:59,155 --> 00:15:01,015
+Fourth, expressivity
+and reach.
+
+485
+00:15:01,190 --> 00:15:02,310
+So first, let's talk about
+
+486
+00:15:02,310 --> 00:15:03,450
+scalability and performance.
+
+487
+00:15:04,310 --> 00:15:06,390
+We started
+replatforming StarDog
+
+488
+00:15:06,390 --> 00:15:07,670
+as a software system of about
+
+489
+00:15:07,670 --> 00:15:09,430
+a million lines of code from
+
+490
+00:15:09,430 --> 00:15:11,510
+pure Java to Kubernetes about
+
+491
+00:15:11,510 --> 00:15:13,350
+two years ago, and the payoff
+
+492
+00:15:13,350 --> 00:15:15,130
+is really starting
+to arrive now.
+
+493
+00:15:15,625 --> 00:15:16,905
+The scale and
+performance of our
+
+494
+00:15:16,905 --> 00:15:18,605
+virtual graph service
+is increasing
+
+495
+00:15:18,665 --> 00:15:20,505
+dramatically in
+Kubernetes with
+
+496
+00:15:20,505 --> 00:15:22,285
+its elastic scaling ability.
+
+497
+00:15:22,665 --> 00:15:23,785
+In upcoming releases,
+
+498
+00:15:23,785 --> 00:15:25,065
+the system will pull data from
+
+499
+00:15:25,065 --> 00:15:26,665
+data silos to be
+stored in local
+
+500
+00:15:26,665 --> 00:15:27,945
+cache nodes that
+are managed by
+
+501
+00:15:27,945 --> 00:15:30,440
+Kubernetes. This
+scalability is
+
+502
+00:15:30,440 --> 00:15:31,420
+created dynamically,
+
+503
+00:15:31,720 --> 00:15:33,240
+and it's based on latency and
+
+504
+00:15:33,240 --> 00:15:34,300
+throughput requirements,
+
+505
+00:15:34,760 --> 00:15:36,460
+and it's continuously updated
+
+506
+00:15:36,520 --> 00:15:37,980
+to minimize stale data.
+
+507
+00:15:38,360 --> 00:15:39,880
+This is leading
+us to see about
+
+508
+00:15:39,880 --> 00:15:42,060
+a five fold speed
+up and performance
+
+509
+00:15:42,120 --> 00:15:44,220
+in virtual graphs in startup.
+
+510
+00:15:44,615 --> 00:15:46,295
+Not only is is that the result
+
+511
+00:15:46,295 --> 00:15:47,755
+of of moving to Kubernetes,
+
+512
+00:15:48,295 --> 00:15:49,575
+but it's also the result of
+
+513
+00:15:49,575 --> 00:15:51,255
+continuous innovation
+in the query
+
+514
+00:15:51,255 --> 00:15:53,095
+translation and
+execution process
+
+515
+00:15:53,095 --> 00:15:54,315
+internal to the system.
+
+516
+00:15:54,695 --> 00:15:55,815
+We're starting to see in many
+
+517
+00:15:55,815 --> 00:15:57,595
+benchmarks virtual
+graph performance
+
+518
+00:15:58,850 --> 00:16:00,450
+matching, the performance of
+
+519
+00:16:00,450 --> 00:16:01,750
+queries on local data.
+
+520
+00:16:02,130 --> 00:16:03,650
+We've also improved
+handling and
+
+521
+00:16:03,650 --> 00:16:05,010
+intermediate query
+results from
+
+522
+00:16:05,010 --> 00:16:05,890
+virtual graphs,
+
+523
+00:16:05,890 --> 00:16:07,170
+and we're storing
+those results
+
+524
+00:16:07,170 --> 00:16:08,450
+in such a way as to minimize
+
+525
+00:16:08,450 --> 00:16:10,930
+system pauses and avoid out of
+
+526
+00:16:10,930 --> 00:16:13,055
+memory errors, and the like.
+
+527
+00:16:13,295 --> 00:16:14,675
+And we've
+improved materialization
+
+528
+00:16:14,975 --> 00:16:16,035
+performance as well.
+
+529
+00:16:16,095 --> 00:16:17,375
+The now the result of all this
+
+530
+00:16:17,375 --> 00:16:19,135
+is that when
+dealing with large
+
+531
+00:16:19,135 --> 00:16:20,835
+data sources and
+results sets,
+
+532
+00:16:20,895 --> 00:16:22,655
+these changes
+dramatically import
+
+533
+00:16:22,815 --> 00:16:24,735
+improve performance in real
+
+534
+00:16:24,735 --> 00:16:25,715
+world use cases.
+
+535
+00:16:26,610 --> 00:16:28,130
+Now it's also leading to much
+
+536
+00:16:28,130 --> 00:16:29,490
+better performance
+of the virtual
+
+537
+00:16:29,490 --> 00:16:31,170
+transparency capability I told
+
+538
+00:16:31,170 --> 00:16:32,930
+you about before to better
+
+539
+00:16:32,930 --> 00:16:35,810
+optimize virtual queries over
+
+540
+00:16:35,810 --> 00:16:37,030
+many data sources.
+
+541
+00:16:37,650 --> 00:16:39,430
+Now second, convenience
+and usability,
+
+542
+00:16:40,335 --> 00:16:41,455
+improvements, especially for
+
+543
+00:16:41,455 --> 00:16:43,075
+enterprise scale use cases.
+
+544
+00:16:43,855 --> 00:16:45,215
+Now as many of you know,
+
+545
+00:16:45,215 --> 00:16:46,335
+when you bring a new capable
+
+546
+00:16:46,335 --> 00:16:47,855
+capability into the market,
+
+547
+00:16:47,855 --> 00:16:49,535
+it's typical to focus first on
+
+548
+00:16:49,535 --> 00:16:51,295
+making it work and making it
+
+549
+00:16:51,295 --> 00:16:53,475
+work fast and then
+making it easy.
+
+550
+00:16:53,780 --> 00:16:55,300
+We've also been
+working hard on
+
+551
+00:16:55,300 --> 00:16:56,420
+convenience and usability of
+
+552
+00:16:56,420 --> 00:16:57,640
+StartOgg's graph
+virtualization.
+
+553
+00:16:58,740 --> 00:17:00,820
+I'll mention a few areas of,
+
+554
+00:17:01,300 --> 00:17:02,280
+improvement briefly.
+
+555
+00:17:03,140 --> 00:17:04,920
+First, we've made
+the virtualization
+
+556
+00:17:05,060 --> 00:17:06,260
+of StartOgg work better with
+
+557
+00:17:06,260 --> 00:17:07,960
+the StartOgg cluster for high
+
+558
+00:17:08,405 --> 00:17:09,625
+availability and scale,
+
+559
+00:17:10,005 --> 00:17:11,285
+including optimizing how we
+
+560
+00:17:11,285 --> 00:17:12,905
+handle and distribute
+the metadata
+
+561
+00:17:13,045 --> 00:17:14,805
+about data silos that StarDog
+
+562
+00:17:14,805 --> 00:17:15,465
+is connecting.
+
+563
+00:17:16,005 --> 00:17:17,625
+Faster, more
+resilient metadata
+
+564
+00:17:17,685 --> 00:17:19,465
+ingestion means
+StarDog users,
+
+565
+00:17:20,005 --> 00:17:21,305
+get their job done faster.
+
+566
+00:17:22,325 --> 00:17:24,150
+Second, we've also introduced
+
+567
+00:17:24,150 --> 00:17:25,830
+finer grained access control
+
+568
+00:17:25,830 --> 00:17:27,530
+over the virtualized
+data sources.
+
+569
+00:17:27,830 --> 00:17:29,590
+Now the access
+control rules for
+
+570
+00:17:29,590 --> 00:17:31,210
+a data source can be specified
+
+571
+00:17:31,270 --> 00:17:32,470
+separately from the virtual
+
+572
+00:17:32,470 --> 00:17:34,890
+graphs created over
+those data sources.
+
+573
+00:17:35,405 --> 00:17:37,245
+That means access
+control policies
+
+574
+00:17:37,245 --> 00:17:39,665
+can be set once perhaps
+by IT security,
+
+575
+00:17:39,885 --> 00:17:41,325
+and then all the rest
+of the start
+
+576
+00:17:41,325 --> 00:17:43,245
+up knowledge graph abides by
+
+577
+00:17:43,245 --> 00:17:43,985
+those policies.
+
+578
+00:17:44,445 --> 00:17:45,965
+And that leads
+to better access
+
+579
+00:17:45,965 --> 00:17:46,945
+control sooner.
+
+580
+00:17:47,565 --> 00:17:49,345
+In fact, most
+start up customers
+
+581
+00:17:49,740 --> 00:17:51,500
+link these policies
+to existing
+
+582
+00:17:51,500 --> 00:17:53,440
+active directory
+and LDAP groups
+
+583
+00:17:53,820 --> 00:17:55,340
+so that the existing role
+
+584
+00:17:55,340 --> 00:17:56,940
+hierarchy in
+the enterprise will
+
+585
+00:17:56,940 --> 00:17:58,220
+be leveraged and respected
+
+586
+00:17:58,220 --> 00:18:00,460
+automatically.
+Start up connect
+
+587
+00:18:00,460 --> 00:18:01,980
+silos no matter
+where we find them,
+
+588
+00:18:01,980 --> 00:18:03,360
+including IT security.
+
+589
+00:18:03,985 --> 00:18:05,605
+Next, we've improved
+resilience.
+
+590
+00:18:06,385 --> 00:18:08,145
+One thing we
+quickly learned in
+
+591
+00:18:08,145 --> 00:18:09,505
+the first generation virtual
+
+592
+00:18:09,505 --> 00:18:11,125
+graph engine inside of Stardog
+
+593
+00:18:11,345 --> 00:18:12,865
+is that a database
+somewhere in
+
+594
+00:18:12,865 --> 00:18:14,145
+the enterprise
+that's connected
+
+595
+00:18:14,145 --> 00:18:16,245
+via Stardog may be misbehaving
+
+596
+00:18:16,545 --> 00:18:17,685
+or poorly connected.
+
+597
+00:18:17,840 --> 00:18:19,280
+And, yeah, you guessed it,
+
+598
+00:18:19,280 --> 00:18:21,600
+startup users
+blame startup such
+
+599
+00:18:21,600 --> 00:18:22,260
+as life.
+
+600
+00:18:22,960 --> 00:18:24,580
+So we've also worked
+hard recently
+
+601
+00:18:24,640 --> 00:18:26,100
+to increase platform
+resilience,
+
+602
+00:18:26,800 --> 00:18:28,400
+especially when handling slow
+
+603
+00:18:28,400 --> 00:18:29,700
+external data sources.
+
+604
+00:18:30,325 --> 00:18:32,085
+When a downstream data source
+
+605
+00:18:32,085 --> 00:18:33,785
+is unusually slow to respond,
+
+606
+00:18:34,085 --> 00:18:36,165
+that affects query
+times and latency,
+
+607
+00:18:36,165 --> 00:18:37,765
+and in extreme
+cases results in
+
+608
+00:18:37,765 --> 00:18:40,085
+timeouts, which
+is a bad customer
+
+609
+00:18:40,085 --> 00:18:42,565
+experience. Recently,
+
+610
+00:18:42,565 --> 00:18:44,005
+we've improved how we handle
+
+611
+00:18:44,005 --> 00:18:45,950
+these cases so as not to waste
+
+612
+00:18:45,950 --> 00:18:48,270
+cluster resources or to affect
+
+613
+00:18:48,270 --> 00:18:49,870
+other work occurring
+in the start
+
+614
+00:18:49,870 --> 00:18:51,790
+up cluster. Connections and
+
+615
+00:18:51,790 --> 00:18:53,310
+queries to external
+sources are
+
+616
+00:18:53,310 --> 00:18:54,990
+now retried automatically to
+
+617
+00:18:54,990 --> 00:18:56,590
+work around
+intermittent issues
+
+618
+00:18:56,590 --> 00:18:57,950
+and provide a better customer
+
+619
+00:18:57,950 --> 00:19:01,115
+experience. Finally,
+
+620
+00:19:01,175 --> 00:19:02,795
+we've improved
+the expressivity
+
+621
+00:19:02,935 --> 00:19:04,535
+and reach of our virtual graph
+
+622
+00:19:04,535 --> 00:19:06,775
+capability to include text and
+
+623
+00:19:06,775 --> 00:19:08,875
+geospatial indexing
+of data silos.
+
+624
+00:19:10,615 --> 00:19:12,615
+StartUp now extends text and
+
+625
+00:19:12,615 --> 00:19:14,930
+geospatial indexing
+over virtual
+
+626
+00:19:14,930 --> 00:19:15,990
+graph data sources.
+
+627
+00:19:16,290 --> 00:19:17,730
+These indexes are updated
+
+628
+00:19:17,730 --> 00:19:19,650
+seamlessly and
+automatically so
+
+629
+00:19:19,650 --> 00:19:21,410
+that full text search and
+
+630
+00:19:21,410 --> 00:19:23,270
+geospatial queries
+can be executed
+
+631
+00:19:23,810 --> 00:19:25,430
+at the compute
+layer in StarDog
+
+632
+00:19:26,050 --> 00:19:27,350
+without requiring modification
+
+633
+00:19:27,410 --> 00:19:29,705
+of the data in
+the storage layer
+
+634
+00:19:29,705 --> 00:19:32,745
+externally. And
+StarDog has also
+
+635
+00:19:32,745 --> 00:19:34,185
+recently expanded the universe
+
+636
+00:19:34,185 --> 00:19:36,205
+of sources you can
+connect to virtually.
+
+637
+00:19:36,745 --> 00:19:38,585
+We've provided graph virtual
+
+638
+00:19:38,585 --> 00:19:39,785
+graph connectors for core
+
+639
+00:19:39,785 --> 00:19:41,980
+databases for
+quite some time.
+
+640
+00:19:42,360 --> 00:19:44,200
+But now we offer
+virtual graphs
+
+641
+00:19:44,200 --> 00:19:46,360
+capability connectors to about
+
+642
+00:19:46,360 --> 00:19:48,460
+forty or fifty of
+the most common
+
+643
+00:19:48,520 --> 00:19:49,580
+enterprise applications.
+
+644
+00:19:50,520 --> 00:19:51,880
+And we think in the connected
+
+645
+00:19:51,880 --> 00:19:54,315
+enterprise data
+sources like HubSpot,
+
+646
+00:19:55,015 --> 00:19:56,715
+Salesforce, Eloqua,
+
+647
+00:19:57,175 --> 00:20:00,875
+and SAP matter just
+as much as Oracle,
+
+648
+00:20:01,095 --> 00:20:02,875
+Postgres, and MongoDB.
+
+649
+00:20:04,135 --> 00:20:06,000
+A big focus for
+us going forward
+
+650
+00:20:06,000 --> 00:20:07,360
+is connecting enterprise data
+
+651
+00:20:07,360 --> 00:20:08,660
+silos that aren't databases,
+
+652
+00:20:08,800 --> 00:20:10,180
+but rather they're APIs,
+
+653
+00:20:10,720 --> 00:20:12,580
+cloud based SaaS
+apps, and more.
+
+654
+00:20:12,880 --> 00:20:14,400
+You can, actually
+head over and
+
+655
+00:20:14,400 --> 00:20:15,920
+see a full list of
+this expanded,
+
+656
+00:20:16,160 --> 00:20:17,520
+virtual graph
+connected universe
+
+657
+00:20:17,520 --> 00:20:18,820
+at start up dot com.
+
+658
+00:20:19,355 --> 00:20:20,715
+We've made this
+investment because
+
+659
+00:20:20,715 --> 00:20:22,475
+we take our mission
+to go wherever
+
+660
+00:20:22,475 --> 00:20:24,475
+the data is and
+connect it quite
+
+661
+00:20:24,475 --> 00:20:26,475
+seriously. The hybrid multi
+
+662
+00:20:26,475 --> 00:20:28,235
+cloud world needs
+a cost effective
+
+663
+00:20:28,235 --> 00:20:29,755
+way to connect and query all
+
+664
+00:20:29,755 --> 00:20:31,455
+the data sources in
+the enterprise.
+
+665
+00:20:32,160 --> 00:20:33,360
+And that means I'm especially
+
+666
+00:20:33,360 --> 00:20:35,220
+excited to share
+this next step
+
+667
+00:20:35,360 --> 00:20:36,180
+on that journey.
+
+668
+00:20:36,960 --> 00:20:38,000
+About two weeks ago,
+
+669
+00:20:38,000 --> 00:20:40,100
+we quietly announced
+startup cloud,
+
+670
+00:20:40,480 --> 00:20:42,100
+the first cloud
+native enterprise
+
+671
+00:20:42,160 --> 00:20:43,300
+knowledge graph platform.
+
+672
+00:20:44,665 --> 00:20:46,665
+Now not only do we connect all
+
+673
+00:20:46,665 --> 00:20:48,185
+on prem data, but
+we also connect
+
+674
+00:20:48,185 --> 00:20:50,125
+data in and from
+the cloud too.
+
+675
+00:20:51,225 --> 00:20:53,145
+Again, the real driving force
+
+676
+00:20:53,145 --> 00:20:54,665
+behind this launch is the need
+
+677
+00:20:54,665 --> 00:20:56,125
+for end to end connectivity
+
+678
+00:20:56,905 --> 00:20:58,605
+across the entire enterprise
+
+679
+00:20:58,905 --> 00:20:59,805
+data ecosystem.
+
+680
+00:21:01,130 --> 00:21:02,590
+Now that so many organizations
+
+681
+00:21:02,810 --> 00:21:04,970
+are moving so much
+data to the cloud,
+
+682
+00:21:04,970 --> 00:21:06,590
+to the hybrid multi cloud,
+
+683
+00:21:07,530 --> 00:21:09,210
+start StartUp is
+following them
+
+684
+00:21:09,210 --> 00:21:10,970
+there to help them
+connect those
+
+685
+00:21:10,970 --> 00:21:12,650
+sources to the ones
+they already
+
+686
+00:21:12,650 --> 00:21:14,110
+have connected on prem.
+
+687
+00:21:15,125 --> 00:21:16,965
+Startup cloud is
+deployed as a managed
+
+688
+00:21:16,965 --> 00:21:18,885
+service and offers
+all the benefits
+
+689
+00:21:18,885 --> 00:21:20,885
+of all the benefits
+that benefits
+
+690
+00:21:20,885 --> 00:21:22,585
+that you've come
+to expect from
+
+691
+00:21:22,805 --> 00:21:24,185
+cloud based data management,
+
+692
+00:21:24,405 --> 00:21:25,705
+twenty four seven application
+
+693
+00:21:25,765 --> 00:21:27,860
+monitoring, service level
+
+694
+00:21:27,860 --> 00:21:30,360
+guaranteed uptime,
+automatic updates,
+
+695
+00:21:30,580 --> 00:21:32,040
+elastically scalable
+infrastructure.
+
+696
+00:21:32,660 --> 00:21:33,940
+You can deploy it
+in your private
+
+697
+00:21:33,940 --> 00:21:35,220
+cloud or in hybrid cloud
+
+698
+00:21:35,220 --> 00:21:37,320
+environments and
+easily connects
+
+699
+00:21:37,380 --> 00:21:39,880
+all all on prem and
+cloud data sources.
+
+700
+00:21:40,485 --> 00:21:42,245
+I'm, really super
+excited about
+
+701
+00:21:42,245 --> 00:21:43,525
+this launch of StartUp Cloud.
+
+702
+00:21:43,525 --> 00:21:45,285
+Like I said, we
+released it just
+
+703
+00:21:45,285 --> 00:21:46,005
+a few weeks ago,
+
+704
+00:21:46,005 --> 00:21:47,285
+and I can't wait
+to see what our
+
+705
+00:21:47,285 --> 00:21:48,405
+early adopters, friends,
+
+706
+00:21:48,405 --> 00:21:50,905
+and customers do with
+this new service.
+
+707
+00:21:51,445 --> 00:21:51,945
+Okay.
+
+708
+00:21:52,400 --> 00:21:54,240
+So I've been talking now for
+
+709
+00:21:54,240 --> 00:21:55,220
+about twenty minutes,
+
+710
+00:21:55,360 --> 00:21:56,640
+which means I haven't learned
+
+711
+00:21:56,640 --> 00:21:58,980
+anything new in at
+least twenty minutes.
+
+712
+00:21:59,280 --> 00:22:00,560
+I'd like to conclude my talk
+
+713
+00:22:00,560 --> 00:22:02,480
+today first by
+thanking you for
+
+714
+00:22:02,480 --> 00:22:04,980
+attending, your
+virtual attendance
+
+715
+00:22:05,365 --> 00:22:06,725
+and attention to my talk about
+
+716
+00:22:06,965 --> 00:22:07,845
+In part in part for that
+
+717
+00:22:07,845 --> 00:22:09,865
+virtualization is
+a is a delightful
+
+718
+00:22:10,085 --> 00:22:12,505
+irony that I'm happy to note.
+
+719
+00:22:12,965 --> 00:22:14,245
+we have a lot of
+exciting stuff
+
+720
+00:22:14,245 --> 00:22:15,205
+going on at StarDog,
+
+721
+00:22:15,205 --> 00:22:16,405
+and it's really a pleasure to
+
+722
+00:22:16,405 --> 00:22:17,925
+share it and really share some
+
+723
+00:22:17,925 --> 00:22:19,610
+of it first with
+you all today.
+
+724
+00:22:20,170 --> 00:22:21,210
+We think you're the frontline
+
+725
+00:22:21,210 --> 00:22:22,330
+in this effort to wrangle
+
+726
+00:22:22,330 --> 00:22:24,090
+enterprise data into
+useful control,
+
+727
+00:22:24,090 --> 00:22:25,530
+and our goal at
+Start aug is to
+
+728
+00:22:25,530 --> 00:22:27,230
+make that job easier for you.
+
+729
+00:22:27,770 --> 00:22:29,690
+And when your job
+is easier and
+
+730
+00:22:29,690 --> 00:22:31,530
+you can fully
+connect data across
+
+731
+00:22:31,530 --> 00:22:33,230
+types and locations
+and vendors,
+
+732
+00:22:34,575 --> 00:22:36,175
+across all these various data
+
+733
+00:22:36,175 --> 00:22:37,695
+silos I've talked
+about today,
+
+734
+00:22:37,695 --> 00:22:39,555
+you can deliver
+better insights
+
+735
+00:22:39,695 --> 00:22:40,675
+to your organization.
+
+736
+00:22:41,535 --> 00:22:42,975
+In the end, that's
+what the startup
+
+737
+00:22:42,975 --> 00:22:44,015
+is really all about.
+
+738
+00:22:44,015 --> 00:22:44,895
+And I think it's what this
+
+739
+00:22:44,895 --> 00:22:46,355
+community is
+really all about,
+
+740
+00:22:46,655 --> 00:22:48,415
+actionable knowledge
+to make a better
+
+741
+00:22:48,415 --> 00:22:50,700
+world. This year
+of twenty twenty
+
+742
+00:22:50,760 --> 00:22:52,440
+has fully demonstrated
+the importance
+
+743
+00:22:52,440 --> 00:22:53,580
+of connected data.
+
+744
+00:22:53,800 --> 00:22:55,080
+The world in which we live is
+
+745
+00:22:55,080 --> 00:22:56,780
+complicated, intertwined,
+
+746
+00:22:57,080 --> 00:22:58,140
+rapidly evolving,
+
+747
+00:22:58,520 --> 00:22:59,960
+and everyone who studies these
+
+748
+00:22:59,960 --> 00:23:01,240
+trends think
+they're just going
+
+749
+00:23:01,240 --> 00:23:02,300
+to accelerate.
+
+750
+00:23:03,085 --> 00:23:04,605
+In an interconnected world,
+
+751
+00:23:04,605 --> 00:23:06,145
+we need connected data.
+
+752
+00:23:07,005 --> 00:23:09,185
+Well, I think we
+here all know,
+
+753
+00:23:09,725 --> 00:23:10,785
+data is interconnected.
+
+754
+00:23:10,925 --> 00:23:13,005
+So perhaps more precisely,
+I should say,
+
+755
+00:23:13,005 --> 00:23:14,445
+we need to be
+able to see these
+
+756
+00:23:14,445 --> 00:23:15,805
+interconnections because then
+
+757
+00:23:15,805 --> 00:23:17,985
+we can predict things
+that might happen.
+
+758
+00:23:18,530 --> 00:23:19,990
+Then we can be
+more resilient,
+
+759
+00:23:20,530 --> 00:23:21,350
+more effective,
+
+760
+00:23:21,650 --> 00:23:23,250
+and more able to conquer all
+
+761
+00:23:23,250 --> 00:23:24,950
+the challenges
+that lie ahead.
+
+762
+00:23:25,970 --> 00:23:26,710
+Thank you.
+
+763
+00:24:06,810 --> 00:24:08,990
+can you elaborate
+on Stardog Studio?
+
+764
+00:24:11,850 --> 00:24:13,870
+sure. Happy to. hi, Olivier.
+
+765
+00:24:15,465 --> 00:24:16,905
+Startup studio is our,
+
+766
+00:24:17,225 --> 00:24:19,005
+IDE integrated development
+
+767
+00:24:19,065 --> 00:24:21,245
+environment for implementing
+
+768
+00:24:21,545 --> 00:24:22,525
+start up applications.
+
+769
+00:24:22,745 --> 00:24:23,545
+And so it's,
+
+770
+00:24:24,425 --> 00:24:26,105
+really a programmer's
+tool that
+
+771
+00:24:26,105 --> 00:24:28,930
+has support for
+all of the core
+
+772
+00:24:28,930 --> 00:24:30,610
+languages that make
+up the knowledge
+
+773
+00:24:30,610 --> 00:24:33,810
+graph stack,
+Sparkle, Shackle,
+
+774
+00:24:33,810 --> 00:24:37,970
+RDF, OWL, our rule syntax,
+
+775
+00:24:37,970 --> 00:24:40,625
+our mapping syntax,
+all of those bits.
+
+776
+00:24:41,085 --> 00:24:42,925
+it is a web
+application available
+
+777
+00:24:42,925 --> 00:24:44,225
+at start dot studio.
+
+778
+00:24:45,085 --> 00:24:46,525
+I'm not sure who
+was responsible
+
+779
+00:24:46,525 --> 00:24:48,125
+for that global
+top level domain,
+
+780
+00:24:48,125 --> 00:24:50,065
+but we're we're taking
+advantage of it.
+
+781
+00:24:50,525 --> 00:24:52,685
+and that's available
+for use for free.
+
+782
+00:24:52,685 --> 00:24:55,190
+It's it's part of
+our product suite,
+
+783
+00:24:55,190 --> 00:24:58,570
+but it's, a free tool
+for anyone to use.
+
+784
+00:24:58,870 --> 00:25:00,950
+And it is also on the way to
+
+785
+00:25:00,950 --> 00:25:03,350
+migrating to become
+the beginning
+
+786
+00:25:03,350 --> 00:25:05,270
+of the user interface
+for the start
+
+787
+00:25:05,270 --> 00:25:06,250
+on cloud product.
+
+788
+00:25:06,945 --> 00:25:09,205
+And I'll I'll just say briefly
+
+789
+00:25:09,585 --> 00:25:11,345
+some of the what
+we're focusing
+
+790
+00:25:11,345 --> 00:25:13,745
+heavily on this
+tool to move it
+
+791
+00:25:13,745 --> 00:25:16,145
+from being purely a sort of
+
+792
+00:25:16,145 --> 00:25:18,885
+software developer ID kind of
+
+793
+00:25:19,410 --> 00:25:20,610
+platform to being much more
+
+794
+00:25:20,610 --> 00:25:23,170
+visual with the mutual support
+
+795
+00:25:23,170 --> 00:25:25,250
+for search and
+query as well as
+
+796
+00:25:25,250 --> 00:25:26,450
+the mapping as well as mapping
+
+797
+00:25:26,450 --> 00:25:27,970
+and modeling, and that should
+
+798
+00:25:27,970 --> 00:25:29,730
+be start being available in
+
+799
+00:25:29,970 --> 00:25:31,830
+January February of
+this next year.
+
+800
+00:25:37,665 --> 00:25:40,965
+Great. another question from
+
+801
+00:25:41,345 --> 00:25:42,485
+Pallavi Karant.
+
+802
+00:25:44,865 --> 00:25:46,385
+Yeah. Would like to know if
+
+803
+00:25:46,385 --> 00:25:48,245
+reasoning on
+multishema graphs.
+
+804
+00:25:50,850 --> 00:25:51,570
+Yeah. Yeah. Thank you.
+
+805
+00:25:51,570 --> 00:25:52,550
+I can see the question.
+
+806
+00:25:53,330 --> 00:25:54,290
+good good morning.
+
+807
+00:25:54,290 --> 00:25:56,610
+Good afternoon,
+Pallavi. yeah.
+
+808
+00:25:56,610 --> 00:25:58,530
+So I talked about
+the scheme of
+
+809
+00:25:58,530 --> 00:26:00,470
+multi tenancy in start,
+
+810
+00:26:00,530 --> 00:26:02,770
+which is just the idea that
+
+811
+00:26:02,770 --> 00:26:06,075
+there isn't one
+schema in a startup
+
+812
+00:26:06,075 --> 00:26:06,955
+knowledge graph.
+
+813
+00:26:06,955 --> 00:26:09,035
+There may be many
+and that these
+
+814
+00:26:09,035 --> 00:26:10,555
+are independent of each other
+
+815
+00:26:10,555 --> 00:26:13,375
+and in fact they
+may be inconsistent
+
+816
+00:26:13,515 --> 00:26:14,235
+with each other.
+
+817
+00:26:14,235 --> 00:26:16,895
+They may one schema
+may have a definition
+
+818
+00:26:16,955 --> 00:26:19,515
+of important concept or a rule
+
+819
+00:26:19,515 --> 00:26:22,410
+that's quite at
+odds with that.
+
+820
+00:26:24,150 --> 00:26:25,510
+A definition of a concept or
+
+821
+00:26:25,510 --> 00:26:26,390
+rule in another schema,
+
+822
+00:26:26,390 --> 00:26:28,090
+and that's just perfectly fine
+
+823
+00:26:28,470 --> 00:26:29,290
+and reasoning.
+
+824
+00:26:30,470 --> 00:26:33,335
+in start of takes
+account of or
+
+825
+00:26:33,335 --> 00:26:35,335
+uses the definitions in one of
+
+826
+00:26:35,335 --> 00:26:37,735
+those schemas. So
+that's the reason
+
+827
+00:26:37,735 --> 00:26:40,375
+they're sort of separated
+is so that so,
+
+828
+00:26:40,375 --> 00:26:41,655
+for instance, reasoning and
+
+829
+00:26:41,655 --> 00:26:42,695
+query answering and machine
+
+830
+00:26:42,695 --> 00:26:43,895
+learning the other
+services that
+
+831
+00:26:43,895 --> 00:26:45,830
+the platform provides can take
+
+832
+00:26:45,830 --> 00:26:47,110
+account of the definitions and
+
+833
+00:26:47,110 --> 00:26:49,190
+the schema information sort of
+
+834
+00:26:49,190 --> 00:26:50,230
+separately at the same time.
+
+835
+00:26:50,230 --> 00:26:50,950
+So yeah,
+
+836
+00:26:50,950 --> 00:26:53,670
+reasoning does work or is
+
+837
+00:26:53,670 --> 00:26:55,670
+integrated with
+the schema multi
+
+838
+00:26:55,670 --> 00:26:56,170
+tenancy.
+
+839
+00:27:02,215 --> 00:27:05,335
+Great. Mark from Mark.
+
+840
+00:27:05,335 --> 00:27:07,355
+Does the SAP
+connector all support
+
+841
+00:27:07,495 --> 00:27:09,095
+support document
+retrieval like
+
+842
+00:27:09,095 --> 00:27:12,315
+fetching an invoice
+and PDF format?
+
+843
+00:27:13,335 --> 00:27:16,150
+Yeah. Thank you. Hi mark.
+
+844
+00:27:17,890 --> 00:27:20,550
+the sap connector as presently
+
+845
+00:27:22,130 --> 00:27:25,250
+constituted searches the what
+
+846
+00:27:25,250 --> 00:27:27,170
+we call maybe the metadata of
+
+847
+00:27:27,170 --> 00:27:28,210
+the of the back end.
+
+848
+00:27:28,210 --> 00:27:30,710
+It is not yet able
+to do document
+
+849
+00:27:31,645 --> 00:27:32,365
+retrieval, although that's
+
+850
+00:27:32,365 --> 00:27:33,565
+something we've
+been taking a look
+
+851
+00:27:33,565 --> 00:27:35,005
+at as you may or
+may not know,
+
+852
+00:27:35,005 --> 00:27:37,645
+StarDog includes
+a subsystem we
+
+853
+00:27:37,645 --> 00:27:40,045
+call bites which
+is the NLP and
+
+854
+00:27:40,045 --> 00:27:43,185
+document storage
+layer of the system,
+
+855
+00:27:44,300 --> 00:27:46,140
+which allows us to
+store documents
+
+856
+00:27:46,140 --> 00:27:48,320
+index index them
+for later query
+
+857
+00:27:48,780 --> 00:27:49,760
+within the system.
+
+858
+00:27:50,380 --> 00:27:51,580
+those documents can be stored
+
+859
+00:27:51,580 --> 00:27:53,740
+in HDFS and s three and a few
+
+860
+00:27:53,740 --> 00:27:55,500
+other places. And,
+
+861
+00:27:55,820 --> 00:27:57,020
+one of the things
+we're looking
+
+862
+00:27:57,020 --> 00:27:58,895
+at in the future is being able
+
+863
+00:27:58,895 --> 00:28:00,595
+to pull documents out of SAP
+
+864
+00:28:00,735 --> 00:28:02,595
+into the local
+Stardock store.
+
+865
+00:28:04,175 --> 00:28:05,855
+not not that's not working,
+
+866
+00:28:05,855 --> 00:28:07,395
+or we haven't added
+that capability
+
+867
+00:28:07,455 --> 00:28:08,115
+just yet.
+
+868
+00:28:11,455 --> 00:28:14,390
+Great. Another one
+from Olivier.
+
+869
+00:28:14,390 --> 00:28:15,430
+With regard to tech search,
+
+870
+00:28:15,430 --> 00:28:17,130
+do you rely upon
+the underlying
+
+871
+00:28:17,190 --> 00:28:18,710
+tech search
+facilities or do you
+
+872
+00:28:18,710 --> 00:28:20,330
+have your own index in stack?
+
+873
+00:28:21,830 --> 00:28:23,130
+hello again, Olivier.
+
+874
+00:28:24,150 --> 00:28:25,990
+if a combination
+of those two are,
+
+875
+00:28:26,390 --> 00:28:27,690
+the the search capabilities
+
+876
+00:28:27,830 --> 00:28:29,885
+inside of Startog are based on
+
+877
+00:28:29,885 --> 00:28:33,805
+a at this point pretty heavily
+
+878
+00:28:33,805 --> 00:28:35,585
+modified version of lucine.
+
+879
+00:28:36,445 --> 00:28:39,325
+So we we we use
+lucine and then
+
+880
+00:28:39,325 --> 00:28:41,725
+we have built up over the last
+
+881
+00:28:41,725 --> 00:28:44,350
+few years of I
+wouldn't say a fork,
+
+882
+00:28:44,350 --> 00:28:47,550
+but a a heavily
+customized leucine
+
+883
+00:28:47,550 --> 00:28:49,170
+layer and that provides the,
+
+884
+00:28:51,150 --> 00:28:53,090
+the smart the the search
+capabilities.
+
+885
+00:28:54,430 --> 00:28:56,270
+we're we're also
+we we have a road
+
+886
+00:28:56,270 --> 00:28:57,630
+map item for second half of
+
+887
+00:28:57,630 --> 00:28:59,525
+twenty twenty one to move more
+
+888
+00:28:59,525 --> 00:29:00,905
+in an elastic search,
+
+889
+00:29:02,325 --> 00:29:03,705
+sort of
+distributed architecture
+
+890
+00:29:03,765 --> 00:29:04,165
+for that.
+
+891
+00:29:04,165 --> 00:29:06,485
+But presently,
+it's a it's a kind
+
+892
+00:29:06,485 --> 00:29:08,265
+of modified version
+of BlueCeam.
+
+893
+00:29:10,565 --> 00:29:12,600
+Great. And from Veronica,
+
+894
+00:29:12,600 --> 00:29:13,560
+thank you for great talk.
+
+895
+00:29:13,560 --> 00:29:14,620
+You mentioned scalability.
+
+896
+00:29:14,920 --> 00:29:17,080
+What are the limitations of
+
+897
+00:29:17,080 --> 00:29:18,780
+Stardock around scalability?
+
+898
+00:29:21,480 --> 00:29:22,780
+good question. Hi, Veronica.
+
+899
+00:29:26,195 --> 00:29:28,695
+Well, it's it's
+a bit dependent
+
+900
+00:29:28,835 --> 00:29:30,515
+on what features
+of the system.
+
+901
+00:29:30,515 --> 00:29:32,515
+You mean
+the the machine learning
+
+902
+00:29:32,515 --> 00:29:34,035
+and the text search
+and the query
+
+903
+00:29:34,035 --> 00:29:35,555
+answering all scales sort of
+
+904
+00:29:35,555 --> 00:29:37,255
+differently, but let's just
+
+905
+00:29:37,475 --> 00:29:38,675
+restrict ourselves to query
+
+906
+00:29:38,675 --> 00:29:40,490
+answering one of the things I
+
+907
+00:29:40,490 --> 00:29:41,850
+wanted to do and
+we'll talk and
+
+908
+00:29:41,850 --> 00:29:43,210
+and we've we've a bit run out
+
+909
+00:29:43,210 --> 00:29:44,890
+of time is we'll be releasing
+
+910
+00:29:44,890 --> 00:29:46,410
+some benchmarking in the in
+
+911
+00:29:46,410 --> 00:29:48,250
+the new year. I
+wanted to announce
+
+912
+00:29:48,250 --> 00:29:49,530
+that here I'll
+I'll just softly
+
+913
+00:29:49,530 --> 00:29:51,630
+mention it in the Q and a.
+
+914
+00:29:52,650 --> 00:29:56,615
+We have been testing
+single node,
+
+915
+00:29:57,075 --> 00:29:58,375
+StarDog query,
+
+916
+00:29:59,075 --> 00:30:01,635
+Sparkle query answering
+to the hundred
+
+917
+00:30:01,635 --> 00:30:03,735
+and fifty billion
+triple layer,
+
+918
+00:30:04,275 --> 00:30:05,175
+level recently,
+
+919
+00:30:07,600 --> 00:30:09,700
+which is a a a a pretty big
+
+920
+00:30:11,840 --> 00:30:13,680
+expansion of of where
+we are presently.
+
+921
+00:30:13,680 --> 00:30:15,840
+So I expect you
+all to see that
+
+922
+00:30:15,840 --> 00:30:17,760
+available, and we do monthly
+
+923
+00:30:17,760 --> 00:30:19,040
+releases sometime in the first
+
+924
+00:30:19,040 --> 00:30:20,340
+quarter of this next year.
+
+925
+00:30:23,085 --> 00:30:23,885
+And then as I said,
+
+926
+00:30:23,885 --> 00:30:25,245
+there's lots of other aspects
+
+927
+00:30:25,245 --> 00:30:25,905
+of scalability.
+
+928
+00:30:26,045 --> 00:30:27,745
+Happy to answer
+a a follow-up.
+
+929
+00:30:30,765 --> 00:30:31,265
+Grace.
+
+930
+00:30:33,380 --> 00:30:35,060
+Jean from Jean,
+
+931
+00:30:35,060 --> 00:30:36,580
+what is the best
+way to integrate
+
+932
+00:30:36,580 --> 00:30:39,700
+data using virtualization like
+
+933
+00:30:39,700 --> 00:30:41,940
+Denodo or by exposing data in
+
+934
+00:30:41,940 --> 00:30:43,960
+open data format like RDF?
+
+935
+00:30:44,660 --> 00:30:45,620
+In the latter case,
+
+936
+00:30:45,620 --> 00:30:48,235
+it imposes to set up sparkle
+
+937
+00:30:48,295 --> 00:30:49,975
+access point for
+each data source.
+
+938
+00:30:49,975 --> 00:30:54,055
+Correct? Question mark. yes.
+
+939
+00:30:54,295 --> 00:30:55,975
+that's one way to
+do it in the latter
+
+940
+00:30:55,975 --> 00:30:58,395
+case in your in your
+a b disjunct there.
+
+941
+00:30:59,335 --> 00:31:00,135
+there's, you know,
+
+942
+00:31:00,135 --> 00:31:01,995
+alternative in
+the b case where
+
+943
+00:31:02,230 --> 00:31:04,710
+start out also
+includes a native
+
+944
+00:31:04,710 --> 00:31:06,630
+ETL capability that's actually
+
+945
+00:31:06,630 --> 00:31:08,230
+powered by the same
+mappings and
+
+946
+00:31:08,230 --> 00:31:09,270
+modeling that powers our
+
+947
+00:31:09,270 --> 00:31:10,490
+virtualization capability.
+
+948
+00:31:10,870 --> 00:31:13,270
+So you can always
+ETL data into
+
+949
+00:31:13,270 --> 00:31:14,950
+the platform if that's what's
+
+950
+00:31:14,950 --> 00:31:16,250
+sort of required operationally
+
+951
+00:31:17,435 --> 00:31:18,795
+but I think the other thing I
+
+952
+00:31:18,795 --> 00:31:20,095
+wanna say is
+our virtualization
+
+953
+00:31:20,315 --> 00:31:22,315
+capability and
+the way it the way
+
+954
+00:31:22,315 --> 00:31:25,755
+it works is it it treats other
+
+955
+00:31:25,755 --> 00:31:27,755
+data sources as
+if they were in
+
+956
+00:31:27,755 --> 00:31:30,335
+this open data
+format like RDF,
+
+957
+00:31:31,570 --> 00:31:32,810
+and that and
+that's what I mean
+
+958
+00:31:32,810 --> 00:31:34,410
+by talking about
+connecting data
+
+959
+00:31:34,410 --> 00:31:35,770
+at the compute
+layer rather than
+
+960
+00:31:35,770 --> 00:31:36,910
+at the storage layer.
+
+961
+00:31:37,210 --> 00:31:39,370
+So, Denodo, which is a a very
+
+962
+00:31:39,370 --> 00:31:42,030
+fine relational
+probably the leading
+
+963
+00:31:42,090 --> 00:31:43,790
+relational
+virtualization platform
+
+964
+00:31:44,385 --> 00:31:46,645
+does all of this at
+the storage layer,
+
+965
+00:31:47,185 --> 00:31:49,885
+in terms of of
+SQL as they have
+
+966
+00:31:49,885 --> 00:31:50,805
+a different model.
+
+967
+00:31:51,265 --> 00:31:54,385
+And and and that
+means that SQL
+
+968
+00:31:54,385 --> 00:31:55,765
+or relational
+based virtualization
+
+969
+00:31:56,385 --> 00:31:57,745
+inherits the limitations of
+
+970
+00:31:57,745 --> 00:31:59,090
+the relational data model.
+
+971
+00:31:59,170 --> 00:32:00,790
+So when I said in my talk that
+
+972
+00:32:01,170 --> 00:32:02,770
+connecting data in the widest
+
+973
+00:32:02,770 --> 00:32:04,210
+scale of the enterprise
+is a graph
+
+974
+00:32:04,210 --> 00:32:05,890
+problem, it's really a graph
+
+975
+00:32:05,890 --> 00:32:06,770
+data model problem,
+
+976
+00:32:06,770 --> 00:32:08,450
+which is really say
+it's not a relational
+
+977
+00:32:08,450 --> 00:32:09,670
+data model problem.
+
+978
+00:32:10,770 --> 00:32:12,290
+so in some sense,
+that distinction,
+
+979
+00:32:12,290 --> 00:32:13,430
+you know, using virtualization
+
+980
+00:32:13,650 --> 00:32:15,815
+or using an open data
+format like RDF,
+
+981
+00:32:15,955 --> 00:32:17,555
+what startup is
+doing is making
+
+982
+00:32:17,555 --> 00:32:19,575
+those really to be
+the same thing.
+
+983
+00:32:22,195 --> 00:32:23,095
+Thanks, Kendall.
+
+984
+00:32:24,035 --> 00:32:26,435
+also from Veronica,
+second question.
+
+985
+00:32:26,435 --> 00:32:28,055
+You mentioned
+Shackle support.
+
+986
+00:32:28,900 --> 00:32:30,820
+Do you full shackle
+supports as
+
+987
+00:32:30,820 --> 00:32:32,660
+described in the w three c
+
+988
+00:32:32,660 --> 00:32:33,060
+recommendation?
+
+989
+00:32:35,860 --> 00:32:38,260
+yes. We do. I I
+there may be a few
+
+990
+00:32:38,260 --> 00:32:39,620
+tiny bit of pieces,
+
+991
+00:32:39,860 --> 00:32:41,380
+in core cases of the spec that
+
+992
+00:32:41,380 --> 00:32:42,280
+we don't support,
+
+993
+00:32:42,605 --> 00:32:44,785
+but it is substantially
+full support.
+
+994
+00:32:44,845 --> 00:32:46,785
+I can't help but
+point out that
+
+995
+00:32:47,165 --> 00:32:49,165
+star dog integrity constraint
+
+996
+00:32:49,165 --> 00:32:51,085
+validation system,
+
+997
+00:32:51,085 --> 00:32:52,525
+which shipped for
+the first time
+
+998
+00:32:52,525 --> 00:32:54,525
+in twenty eleven,
+
+999
+00:32:54,525 --> 00:32:56,930
+I believe predated the shackle
+
+1000
+00:32:56,990 --> 00:32:59,970
+standards work by
+many years and
+
+1001
+00:33:00,030 --> 00:33:02,050
+after supporting
+in the marketplace
+
+1002
+00:33:02,190 --> 00:33:03,870
+commercially start
+off integrity
+
+1003
+00:33:03,870 --> 00:33:04,770
+constraint validation,
+
+1004
+00:33:05,070 --> 00:33:06,750
+which used Allison tax rather
+
+1005
+00:33:06,750 --> 00:33:08,690
+than RDF and taxes
+and shackle.
+
+1006
+00:33:09,215 --> 00:33:11,055
+We recently
+announced deprecation
+
+1007
+00:33:11,055 --> 00:33:13,455
+of ICB and we're
+sort of all in
+
+1008
+00:33:13,455 --> 00:33:14,735
+on shackle because the market
+
+1009
+00:33:14,735 --> 00:33:15,855
+has spoken and
+the market wants
+
+1010
+00:33:15,855 --> 00:33:17,455
+to use shackle and
+and that's fine.
+
+1011
+00:33:17,455 --> 00:33:19,295
+So we're really
+proud of the work
+
+1012
+00:33:19,295 --> 00:33:22,655
+we did to pioneer
+data validation
+
+1013
+00:33:22,655 --> 00:33:24,880
+in the RF world and again,
+
+1014
+00:33:24,880 --> 00:33:26,800
+II think there
+may be a few very
+
+1015
+00:33:26,800 --> 00:33:29,600
+tiny cases as you
+probably know
+
+1016
+00:33:29,600 --> 00:33:31,680
+Veronica specifications can be
+
+1017
+00:33:31,680 --> 00:33:35,360
+quite complex
+things with often
+
+1018
+00:33:35,360 --> 00:33:37,060
+times requirements
+or capabilities
+
+1019
+00:33:37,200 --> 00:33:39,365
+that are that are
+that have a sort
+
+1020
+00:33:39,365 --> 00:33:41,865
+of smaller commercial impact.
+
+1021
+00:33:41,925 --> 00:33:43,685
+So I believe our
+shackle support
+
+1022
+00:33:43,685 --> 00:33:45,065
+is substantially complete.
+
+1023
+00:33:50,725 --> 00:33:51,545
+Thanks Kendall.
+
+1024
+00:33:55,630 --> 00:33:57,250
+so, Ellie, question.
+
+1025
+00:33:57,390 --> 00:33:58,990
+What kinds of
+applications would
+
+1026
+00:33:58,990 --> 00:34:01,410
+the start up team be
+delighted to see?
+
+1027
+00:34:02,190 --> 00:34:05,390
+Oh, well, I mean,
+strictly speaking,
+
+1028
+00:34:05,390 --> 00:34:07,405
+very big ones that are in
+
+1029
+00:34:07,405 --> 00:34:09,185
+production and
+and strategically
+
+1030
+00:34:09,405 --> 00:34:11,025
+essential to large
+enterprises.
+
+1031
+00:34:11,165 --> 00:34:13,265
+That's our that's our thing.
+
+1032
+00:34:15,085 --> 00:34:16,785
+I can say a little bit
+less facetiously.
+
+1033
+00:34:18,525 --> 00:34:23,130
+I think Applications
+so II think
+
+1034
+00:34:23,130 --> 00:34:24,570
+our first start on
+cloud customer,
+
+1035
+00:34:24,570 --> 00:34:25,690
+which I'm not
+quite ready to be
+
+1036
+00:34:25,690 --> 00:34:27,690
+able to talk about
+will will be
+
+1037
+00:34:27,690 --> 00:34:30,510
+pulling together over several
+
+1038
+00:34:30,570 --> 00:34:32,170
+different cloud and on prem
+
+1039
+00:34:32,170 --> 00:34:34,175
+environments, one of the IT
+
+1040
+00:34:34,175 --> 00:34:36,015
+world's largest supply chains
+
+1041
+00:34:36,015 --> 00:34:37,715
+with respect to resellers
+
+1042
+00:34:37,935 --> 00:34:39,555
+customers product information
+
+1043
+00:34:40,735 --> 00:34:42,735
+support so that
+they're thinking
+
+1044
+00:34:42,735 --> 00:34:45,790
+about this as
+their product and
+
+1045
+00:34:45,790 --> 00:34:48,270
+channel graph,
+product and channel
+
+1046
+00:34:48,270 --> 00:34:49,090
+knowledge graph.
+
+1047
+00:34:49,150 --> 00:34:52,830
+And this is a real
+a very large,
+
+1048
+00:34:53,550 --> 00:34:54,990
+technology company, you know,
+
+1049
+00:34:54,990 --> 00:34:57,550
+a real stalwart of
+the of the Fortune
+
+1050
+00:34:57,550 --> 00:34:58,290
+five hundred.
+
+1051
+00:34:58,845 --> 00:35:01,505
+And it'll be
+a great example of
+
+1052
+00:35:01,965 --> 00:35:03,965
+this thesis that we have that
+
+1053
+00:35:03,965 --> 00:35:08,445
+the hybrid multi
+cloud development
+
+1054
+00:35:08,445 --> 00:35:10,045
+is really making
+the data problem
+
+1055
+00:35:10,045 --> 00:35:12,300
+harder, which means we need to
+
+1056
+00:35:12,300 --> 00:35:14,480
+be more thoughtful
+and intentional
+
+1057
+00:35:14,620 --> 00:35:16,220
+about data management systems
+
+1058
+00:35:16,220 --> 00:35:17,900
+that address that kind of
+
+1059
+00:35:17,900 --> 00:35:19,040
+complexity and diversity.
+
+1060
+00:35:19,100 --> 00:35:23,820
+So, any new customers
+are great,
+
+1061
+00:35:23,820 --> 00:35:25,100
+but I suspect we would be
+
+1062
+00:35:25,100 --> 00:35:26,445
+especially happy to see ones
+
+1063
+00:35:26,445 --> 00:35:29,085
+that are using our
+capabilities to,
+
+1064
+00:35:29,485 --> 00:35:32,285
+connect data across
+hybrid multi
+
+1065
+00:35:32,285 --> 00:35:33,665
+cloud data assets.
+
+1066
+00:35:36,205 --> 00:35:38,045
+Great. And then one minute,
+
+1067
+00:35:38,045 --> 00:35:40,945
+one more question.
+and I do yeah.
+
+1068
+00:35:41,085 --> 00:35:42,420
+We'll reiterate the Slack.
+
+1069
+00:35:42,980 --> 00:35:44,660
+Will will continue
+after this.
+
+1070
+00:35:44,660 --> 00:35:46,340
+From Jean, for good
+data governance,
+
+1071
+00:35:46,340 --> 00:35:48,740
+is it advisable that very IT
+
+1072
+00:35:49,460 --> 00:35:51,560
+every IT project
+provides an application
+
+1073
+00:35:51,700 --> 00:35:52,520
+data model?
+
+1074
+00:35:53,140 --> 00:35:54,740
+UML is better than nothing,
+
+1075
+00:35:54,740 --> 00:35:57,220
+but not inter interpretable by
+
+1076
+00:35:57,220 --> 00:35:59,575
+a machine. Is it realistic to
+
+1077
+00:35:59,575 --> 00:36:01,355
+request an owl instead,
+
+1078
+00:36:01,415 --> 00:36:03,035
+which requires new
+competencies,
+
+1079
+00:36:03,335 --> 00:36:04,875
+which are not well
+known presently?
+
+1080
+00:36:07,175 --> 00:36:08,375
+well, I for Jean,
+
+1081
+00:36:08,375 --> 00:36:09,895
+I appreciate the very simple
+
+1082
+00:36:09,895 --> 00:36:11,355
+question here at the end.
+
+1083
+00:36:11,895 --> 00:36:13,195
+that that one's a doozy.
+
+1084
+00:36:13,470 --> 00:36:14,750
+let me just try
+to take a crack
+
+1085
+00:36:14,750 --> 00:36:17,150
+at it by saying that
+there's a couple
+
+1086
+00:36:17,150 --> 00:36:19,230
+options. I don't
+know that an owl
+
+1087
+00:36:19,230 --> 00:36:22,210
+model for every
+application is required,
+
+1088
+00:36:22,430 --> 00:36:24,590
+certainly not
+a deno like a new
+
+1089
+00:36:24,590 --> 00:36:27,505
+owl model Often
+what's required
+
+1090
+00:36:27,505 --> 00:36:30,005
+is the subset of
+the applications
+
+1091
+00:36:30,225 --> 00:36:31,905
+data model that
+should be exposed
+
+1092
+00:36:31,905 --> 00:36:34,485
+publicly, can be
+exposed publicly
+
+1093
+00:36:34,625 --> 00:36:36,705
+with lightweight RDF schema or
+
+1094
+00:36:36,705 --> 00:36:37,905
+with a little bit of hour or
+
+1095
+00:36:37,905 --> 00:36:39,425
+with no hours. So that's often
+
+1096
+00:36:39,425 --> 00:36:42,000
+sufficient. I'll
+also point out
+
+1097
+00:36:42,000 --> 00:36:43,680
+that there is a lot
+of work, I think,
+
+1098
+00:36:43,680 --> 00:36:46,080
+supported by the o
+g and a variety
+
+1099
+00:36:46,080 --> 00:36:47,680
+of vendors who were probably
+
+1100
+00:36:47,680 --> 00:36:49,360
+part of this community or at
+
+1101
+00:36:49,360 --> 00:36:52,400
+this conference
+to make a subset
+
+1102
+00:36:52,400 --> 00:36:55,940
+of UML semantics
+in UML diagrams
+
+1103
+00:36:56,935 --> 00:36:58,455
+machine interpreter will by
+
+1104
+00:36:58,455 --> 00:37:01,515
+giving
+an algorithmic translation
+
+1105
+00:37:01,575 --> 00:37:03,015
+to owl to subsets of owl.
+
+1106
+00:37:03,015 --> 00:37:05,735
+So all is not
+lost with respect
+
+1107
+00:37:05,735 --> 00:37:07,515
+to Uml and machine
+interpretability.
+
+1108
+00:37:08,135 --> 00:37:09,735
+That's that's you
+know only for
+
+1109
+00:37:09,735 --> 00:37:13,170
+some a subclass of of
+all uml diagrams.
+
+1110
+00:37:13,230 --> 00:37:14,830
+So I don't think
+for instance,
+
+1111
+00:37:14,830 --> 00:37:15,970
+the sequence and interaction
+
+1112
+00:37:16,030 --> 00:37:17,250
+diagrams count there,
+
+1113
+00:37:17,310 --> 00:37:18,910
+but the sort of
+uml diagram you
+
+1114
+00:37:18,910 --> 00:37:20,210
+use for a data model,
+
+1115
+00:37:21,070 --> 00:37:23,150
+may well be
+interpretable by my
+
+1116
+00:37:23,150 --> 00:37:25,330
+machine by being
+translated to a so,
+
+1117
+00:37:26,005 --> 00:37:27,205
+I'd encourage you to look into
+
+1118
+00:37:27,205 --> 00:37:28,585
+that if if you have it.
+

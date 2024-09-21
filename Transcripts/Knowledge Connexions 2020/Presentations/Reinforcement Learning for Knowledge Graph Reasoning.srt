@@ -1,0 +1,9110 @@
+1
+00:00:03,540 --> 00:00:04,980
+I'm very excited to be here
+
+2
+00:00:04,980 --> 00:00:06,660
+today and talk about knowledge
+
+3
+00:00:06,660 --> 00:00:07,480
+graph reasoning.
+
+4
+00:00:07,700 --> 00:00:09,860
+So inferring new
+knowledge from
+
+5
+00:00:09,860 --> 00:00:11,965
+existing knowledge bases and
+
+6
+00:00:11,965 --> 00:00:13,405
+especially the application of
+
+7
+00:00:13,405 --> 00:00:15,185
+reinforcement learning
+in this problem.
+
+8
+00:00:16,765 --> 00:00:18,465
+There are lots of intelligent
+
+9
+00:00:18,685 --> 00:00:20,205
+applications we can build in
+
+10
+00:00:20,205 --> 00:00:21,725
+the enterprise, for example,
+
+11
+00:00:21,725 --> 00:00:23,565
+question answering,
+semantic search,
+
+12
+00:00:23,565 --> 00:00:25,885
+chatbots. Behind all these
+
+13
+00:00:25,885 --> 00:00:26,865
+exciting applications,
+
+14
+00:00:27,380 --> 00:00:29,240
+knowledge graph is
+a strong powerhouse.
+
+15
+00:00:30,260 --> 00:00:32,840
+So, lots of times
+we can leverage
+
+16
+00:00:33,300 --> 00:00:34,920
+graphs such as contacts,
+
+17
+00:00:35,780 --> 00:00:37,300
+contacts we build from email
+
+18
+00:00:37,300 --> 00:00:39,240
+list or your phone
+contact list,
+
+19
+00:00:39,460 --> 00:00:40,760
+or product graph,
+
+20
+00:00:41,195 --> 00:00:42,875
+a graph which contains product
+
+21
+00:00:42,875 --> 00:00:44,235
+information and how different
+
+22
+00:00:44,235 --> 00:00:45,775
+products related
+to each other,
+
+23
+00:00:45,995 --> 00:00:48,155
+as well common sense
+knowledge graphs,
+
+24
+00:00:48,155 --> 00:00:49,595
+such as those open domain
+
+25
+00:00:49,595 --> 00:00:50,715
+knowledge graph you can find
+
+26
+00:00:50,715 --> 00:00:52,895
+from Wikipedia or
+other organizations.
+
+27
+00:00:54,930 --> 00:00:56,770
+There are typically two types
+
+28
+00:00:56,770 --> 00:00:58,690
+of operations we
+need to run on
+
+29
+00:00:58,690 --> 00:00:59,910
+the Knowledge Graph.
+
+30
+00:01:00,130 --> 00:01:01,170
+Throughout this talk,
+
+31
+00:01:01,170 --> 00:01:03,650
+I will assume a plain
+graph structure,
+
+32
+00:01:03,650 --> 00:01:05,170
+which means our graph can be
+
+33
+00:01:05,170 --> 00:01:07,590
+represented in
+sets of triples.
+
+34
+00:01:09,765 --> 00:01:11,765
+Currently, there
+are some advanced
+
+35
+00:01:11,765 --> 00:01:12,905
+knowledge graph, for example,
+
+36
+00:01:13,045 --> 00:01:14,505
+involves meta information,
+
+37
+00:01:15,125 --> 00:01:17,845
+and we leave those
+out of the scope
+
+38
+00:01:17,845 --> 00:01:18,745
+for this talk.
+
+39
+00:01:19,765 --> 00:01:21,765
+We can search this
+knowledge graph,
+
+40
+00:01:21,765 --> 00:01:23,950
+which means given a query,
+
+41
+00:01:23,950 --> 00:01:25,550
+we can simply perform facts
+
+42
+00:01:25,550 --> 00:01:27,150
+lookup using some
+formal current
+
+43
+00:01:27,150 --> 00:01:28,690
+languages such as sparkle.
+
+44
+00:01:29,390 --> 00:01:30,450
+Like here, we ask,
+
+45
+00:01:30,750 --> 00:01:32,690
+where was Barack Obama going?
+
+46
+00:01:33,070 --> 00:01:33,950
+Within the knowledge graph,
+
+47
+00:01:33,950 --> 00:01:35,090
+we can find Honolulu.
+
+48
+00:01:36,425 --> 00:01:37,865
+However, a lot of times,
+
+49
+00:01:37,865 --> 00:01:39,065
+we need to perform much more
+
+50
+00:01:39,065 --> 00:01:40,665
+than this because
+knowledge graphs,
+
+51
+00:01:40,665 --> 00:01:42,845
+they are intrinsically
+incomplete.
+
+52
+00:01:43,385 --> 00:01:44,825
+So, a lot of times,
+
+53
+00:01:44,825 --> 00:01:46,345
+the facts we care about might
+
+54
+00:01:46,345 --> 00:01:47,740
+not present in the graph.
+
+55
+00:01:47,820 --> 00:01:49,760
+So for example,
+as we shown here,
+
+56
+00:01:50,140 --> 00:01:50,940
+through the relation,
+
+57
+00:01:50,940 --> 00:01:52,880
+Barack Obama was
+born in Honolulu,
+
+58
+00:01:52,940 --> 00:01:56,000
+and Honolulu has
+a Hawaii is a capital
+
+59
+00:01:56,060 --> 00:01:59,840
+of Honolulu is
+a capital of Hawaii.
+
+60
+00:02:00,175 --> 00:02:02,175
+We can possibly
+infer that Barack
+
+61
+00:02:02,175 --> 00:02:03,795
+Obama was also
+born in Hawaii.
+
+62
+00:02:03,935 --> 00:02:05,295
+Similarly, we can also infer
+
+63
+00:02:05,295 --> 00:02:07,395
+Barack Obama was born
+in United States.
+
+64
+00:02:09,375 --> 00:02:10,895
+Therefore, reasoning is a core
+
+65
+00:02:10,895 --> 00:02:13,070
+problem for knowledge
+graphs as most,
+
+66
+00:02:13,310 --> 00:02:14,990
+very often, it is
+impossible for
+
+67
+00:02:14,990 --> 00:02:17,310
+us to curate or even store all
+
+68
+00:02:17,310 --> 00:02:19,410
+facts possible in your
+knowledge graph.
+
+69
+00:02:20,430 --> 00:02:21,390
+So in this talk,
+
+70
+00:02:21,390 --> 00:02:23,010
+we mainly talk about reasoning
+
+71
+00:02:23,070 --> 00:02:25,630
+approaches. I will cover three
+
+72
+00:02:25,630 --> 00:02:27,150
+different types of
+reasoning approach,
+
+73
+00:02:27,150 --> 00:02:28,645
+which are commonly used for
+
+74
+00:02:28,645 --> 00:02:29,545
+knowledge graphs,
+
+75
+00:02:31,045 --> 00:02:32,405
+which includes knowledge graph
+
+76
+00:02:32,405 --> 00:02:34,345
+embeddings, past
+ranking algorithms,
+
+77
+00:02:34,565 --> 00:02:36,425
+and sequential
+decision making.
+
+78
+00:02:36,485 --> 00:02:38,325
+And we can see RL
+actually plays
+
+79
+00:02:38,325 --> 00:02:40,645
+a significant role in how fast
+
+80
+00:02:40,645 --> 00:02:42,405
+learning better multi hop
+
+81
+00:02:42,405 --> 00:02:43,625
+reasoning algorithms.
+
+82
+00:02:46,810 --> 00:02:47,930
+Let's dive into
+knowledge graph
+
+83
+00:02:47,930 --> 00:02:49,530
+embeddings. A lot of you might
+
+84
+00:02:49,530 --> 00:02:51,310
+be familiar with
+this approach.
+
+85
+00:02:51,770 --> 00:02:53,290
+Knowledge graph
+embeddings was,
+
+86
+00:02:53,770 --> 00:02:54,910
+convulsed earlier,
+
+87
+00:02:55,050 --> 00:02:57,685
+so it is probably
+one of the first
+
+88
+00:02:57,745 --> 00:02:59,425
+continuous
+representation learning
+
+89
+00:02:59,425 --> 00:03:01,105
+algorithms even before deep
+
+90
+00:03:01,105 --> 00:03:02,885
+neural network got on fire.
+
+91
+00:03:03,585 --> 00:03:05,785
+So, what is knowledge
+graph embedding?
+
+92
+00:03:05,785 --> 00:03:07,925
+So, basically, in
+this approach,
+
+93
+00:03:08,480 --> 00:03:10,500
+we learn
+continuous representations
+
+94
+00:03:10,880 --> 00:03:12,640
+for the entities
+and the relations
+
+95
+00:03:12,640 --> 00:03:13,780
+in the knowledge graph.
+
+96
+00:03:14,240 --> 00:03:16,180
+Given a fact triple
+which contains
+
+97
+00:03:16,240 --> 00:03:18,260
+two entities and
+the target relation,
+
+98
+00:03:18,560 --> 00:03:20,095
+knowledge graph
+embedding method
+
+99
+00:03:20,175 --> 00:03:22,015
+comes up with
+scoring functions,
+
+100
+00:03:22,015 --> 00:03:23,235
+which takes
+the representations
+
+101
+00:03:23,295 --> 00:03:24,755
+for the entities and relations
+
+102
+00:03:24,975 --> 00:03:26,495
+and try to predict a score,
+
+103
+00:03:26,495 --> 00:03:27,935
+representing whether the fact
+
+104
+00:03:27,935 --> 00:03:29,715
+is likely to be true or not.
+
+105
+00:03:30,815 --> 00:03:31,535
+Over the years,
+
+106
+00:03:31,535 --> 00:03:33,395
+there has been many fantastic
+
+107
+00:03:33,615 --> 00:03:35,135
+scoring function
+being proposed,
+
+108
+00:03:35,135 --> 00:03:36,580
+like like shown here.
+
+109
+00:03:36,720 --> 00:03:38,740
+They have different forms of
+
+110
+00:03:38,800 --> 00:03:40,240
+manipulating
+the embeddings and
+
+111
+00:03:40,240 --> 00:03:42,320
+they have different space and
+
+112
+00:03:42,320 --> 00:03:43,620
+time inference complexity.
+
+113
+00:03:48,105 --> 00:03:50,365
+One particular interesting
+
+114
+00:03:51,065 --> 00:03:52,505
+knowledge graph
+embedding approach,
+
+115
+00:03:52,505 --> 00:03:54,265
+which I'm going
+to cover next,
+
+116
+00:03:54,265 --> 00:03:55,325
+is convolution.
+
+117
+00:03:56,185 --> 00:03:57,705
+It's two d
+convolutional knowledge
+
+118
+00:03:57,705 --> 00:03:58,445
+graph embedding,
+
+119
+00:03:58,665 --> 00:04:01,085
+which is basically
+using convolution
+
+120
+00:04:01,145 --> 00:04:03,085
+networks to learn
+the scoring function.
+
+121
+00:04:04,330 --> 00:04:06,510
+Here is just a brief overview
+
+122
+00:04:06,650 --> 00:04:09,150
+of what this graph
+embedding looks like.
+
+123
+00:04:10,490 --> 00:04:16,110
+Given your source entity, E1,
+
+124
+00:04:16,250 --> 00:04:17,630
+and the target relation,
+
+125
+00:04:19,035 --> 00:04:21,355
+We represent them
+both as a dense
+
+126
+00:04:21,355 --> 00:04:25,375
+vector of the same dimension.
+
+127
+00:04:26,635 --> 00:04:28,235
+The method basically proposed
+
+128
+00:04:28,235 --> 00:04:29,375
+convolutional networks,
+
+129
+00:04:29,755 --> 00:04:32,160
+which passes through
+the continuation
+
+130
+00:04:32,380 --> 00:04:34,140
+of these two embeddings and
+
+131
+00:04:34,140 --> 00:04:35,920
+generates a new
+representation.
+
+132
+00:04:36,300 --> 00:04:37,820
+And this new representation is
+
+133
+00:04:37,820 --> 00:04:40,400
+used in a dot product
+with a target
+
+134
+00:04:40,780 --> 00:04:41,980
+embedding e two.
+
+135
+00:04:41,980 --> 00:04:43,680
+And this way, we
+get prediction
+
+136
+00:04:43,740 --> 00:04:47,265
+scores for
+the potential knowledge
+
+137
+00:04:47,265 --> 00:04:47,765
+facts.
+
+138
+00:04:48,145 --> 00:04:50,385
+We train such
+knowledge embedding
+
+139
+00:04:50,385 --> 00:04:52,465
+functions by scoring facts
+
+140
+00:04:52,465 --> 00:04:53,905
+observed in
+the partial knowledge
+
+141
+00:04:53,905 --> 00:04:56,005
+graphs higher than
+those not observed.
+
+142
+00:04:57,745 --> 00:04:59,525
+This method is
+able to generalize
+
+143
+00:04:59,665 --> 00:05:02,900
+to unseen knowledge
+graph facts because,
+
+144
+00:05:03,140 --> 00:05:04,740
+we we will be doing negative
+
+145
+00:05:04,740 --> 00:05:06,120
+sampling during the training.
+
+146
+00:05:06,500 --> 00:05:07,860
+So, instead of, like,
+
+147
+00:05:07,860 --> 00:05:09,720
+pushing the scores
+of all observed
+
+148
+00:05:10,500 --> 00:05:12,680
+facts down, we sample
+the negatives.
+
+149
+00:05:12,820 --> 00:05:15,080
+So hopefully,
+the false negatives,
+
+150
+00:05:15,375 --> 00:05:16,355
+their score will eventually
+
+151
+00:05:16,575 --> 00:05:18,035
+going up after the training.
+
+152
+00:05:20,015 --> 00:05:21,695
+This is a SOTA model proposed
+
+153
+00:05:21,695 --> 00:05:22,755
+in twenty eighteen,
+
+154
+00:05:22,815 --> 00:05:24,435
+and I believe in
+the literature
+
+155
+00:05:24,495 --> 00:05:26,035
+there are better
+scoring functions
+
+156
+00:05:26,175 --> 00:05:27,155
+proposed afterwards.
+
+157
+00:05:27,535 --> 00:05:28,815
+So it will be interesting to
+
+158
+00:05:28,815 --> 00:05:30,255
+refer to the literature
+for more
+
+159
+00:05:30,255 --> 00:05:33,450
+details. Knowledge
+graph embeddings
+
+160
+00:05:33,590 --> 00:05:34,630
+have higher accuracy.
+
+161
+00:05:34,630 --> 00:05:36,230
+This has been tested on many
+
+162
+00:05:36,230 --> 00:05:37,290
+knowledge graph benchmarks.
+
+163
+00:05:37,670 --> 00:05:39,430
+However, there are
+some downsides
+
+164
+00:05:39,430 --> 00:05:40,330
+for this method.
+
+165
+00:05:40,470 --> 00:05:42,010
+One is they lack
+interpretability,
+
+166
+00:05:42,390 --> 00:05:44,250
+because after I got a score,
+
+167
+00:05:44,435 --> 00:05:46,355
+scoring of a particular
+knowledge fact,
+
+168
+00:05:46,355 --> 00:05:48,695
+it is hard for me
+to judge whether
+
+169
+00:05:49,235 --> 00:05:50,675
+prediction is correct or not,
+
+170
+00:05:50,675 --> 00:05:52,135
+whether I can trust
+this prediction
+
+171
+00:05:52,275 --> 00:05:53,955
+because there's not so much
+
+172
+00:05:53,955 --> 00:05:56,055
+interpretability around it.
+
+173
+00:05:57,010 --> 00:05:58,610
+Second, this method doesn't
+
+174
+00:05:58,610 --> 00:06:00,770
+perform very well for rare or
+
+175
+00:06:00,770 --> 00:06:02,610
+unseen entities
+because they're
+
+176
+00:06:02,610 --> 00:06:03,410
+entity embeddings.
+
+177
+00:06:03,410 --> 00:06:04,690
+We cannot learn them well.
+
+178
+00:06:04,690 --> 00:06:06,050
+Therefore, during test time,
+
+179
+00:06:06,050 --> 00:06:07,570
+it's harder for
+such methods to
+
+180
+00:06:07,570 --> 00:06:10,290
+generalize. That's why we came
+
+181
+00:06:10,290 --> 00:06:13,175
+to a second category
+of algorithm
+
+182
+00:06:13,175 --> 00:06:14,375
+for nulligraphic reasoning,
+
+183
+00:06:14,375 --> 00:06:16,715
+which is parse
+based algorithms.
+
+184
+00:06:18,295 --> 00:06:19,675
+For the parse
+based algorithms,
+
+185
+00:06:19,975 --> 00:06:21,995
+whenever it tries to predict
+
+186
+00:06:22,295 --> 00:06:23,735
+the possible relations between
+
+187
+00:06:23,735 --> 00:06:24,395
+two entities,
+
+188
+00:06:24,775 --> 00:06:29,810
+it looks at the path
+in the partial
+
+189
+00:06:29,810 --> 00:06:31,170
+only graph that
+connecting these
+
+190
+00:06:31,170 --> 00:06:33,330
+two entities and
+use these paths
+
+191
+00:06:33,330 --> 00:06:36,150
+as features for
+scoring the likelihood
+
+192
+00:06:36,530 --> 00:06:38,950
+of a particular relation.
+
+193
+00:06:39,465 --> 00:06:40,345
+So, for example,
+
+194
+00:06:40,345 --> 00:06:42,105
+as like shown in the example
+
+195
+00:06:42,105 --> 00:06:43,145
+knowledge graph here,
+
+196
+00:06:43,145 --> 00:06:44,505
+so the example knowledge graph
+
+197
+00:06:44,505 --> 00:06:46,265
+is basically a knowledge graph
+
+198
+00:06:46,265 --> 00:06:48,365
+storing information
+around movies,
+
+199
+00:06:48,425 --> 00:06:49,725
+directors, and actors.
+
+200
+00:06:50,265 --> 00:06:51,545
+And here we want to learn,
+
+201
+00:06:52,250 --> 00:06:53,850
+does Tom Hanks and Steven
+
+202
+00:06:53,850 --> 00:06:55,550
+Spielberg has a collaborator
+
+203
+00:06:55,850 --> 00:06:58,110
+relationship? So path
+based algorithm,
+
+204
+00:06:58,410 --> 00:07:01,070
+it will it will try to find
+
+205
+00:07:01,610 --> 00:07:03,550
+possible paths that
+are connecting
+
+206
+00:07:03,770 --> 00:07:05,790
+Tom Hanks and Steven Spielberg
+
+207
+00:07:06,265 --> 00:07:07,785
+and try to use those paths to
+
+208
+00:07:07,785 --> 00:07:09,785
+predict whether there could be
+
+209
+00:07:09,785 --> 00:07:12,025
+a direct connection related to
+
+210
+00:07:12,025 --> 00:07:13,885
+collaborator between
+these two entities.
+
+211
+00:07:14,665 --> 00:07:15,945
+For example, there are some
+
+212
+00:07:15,945 --> 00:07:17,245
+sample paths shown here.
+
+213
+00:07:18,265 --> 00:07:19,305
+We could trace a path.
+
+214
+00:07:19,305 --> 00:07:20,905
+For example, Tom
+Hanks has been
+
+215
+00:07:20,905 --> 00:07:22,900
+cast in the movie, The Post,
+
+216
+00:07:23,120 --> 00:07:23,840
+and The Post,
+
+217
+00:07:24,640 --> 00:07:26,820
+has students still
+work as a director.
+
+218
+00:07:27,040 --> 00:07:27,840
+Therefore, Tom,
+
+219
+00:07:28,160 --> 00:07:29,520
+Hanks and still work has
+
+220
+00:07:29,520 --> 00:07:31,060
+collaborated before.
+
+221
+00:07:31,440 --> 00:07:32,800
+there could also be some paths
+
+222
+00:07:32,800 --> 00:07:34,180
+which is not very
+informative.
+
+223
+00:07:34,240 --> 00:07:35,140
+So for example,
+
+224
+00:07:35,715 --> 00:07:39,235
+we saw Tom Hanks
+is casted in per,
+
+225
+00:07:39,635 --> 00:07:42,055
+in the post the prod the post
+
+226
+00:07:42,355 --> 00:07:44,215
+is produced in
+the United States,
+
+227
+00:07:44,515 --> 00:07:46,515
+while Steven Spielberg is also
+
+228
+00:07:46,515 --> 00:07:47,555
+lived in United States.
+
+229
+00:07:47,555 --> 00:07:49,255
+But this is not
+a very informative
+
+230
+00:07:49,960 --> 00:07:51,500
+task to predict
+the collaborator
+
+231
+00:07:51,720 --> 00:07:52,220
+relationship.
+
+232
+00:07:53,720 --> 00:07:55,720
+In terms of how
+we represent in
+
+233
+00:07:55,720 --> 00:07:57,800
+the past, sometimes
+we could in
+
+234
+00:07:57,960 --> 00:08:00,280
+include intermediate
+notes on the past,
+
+235
+00:08:00,280 --> 00:08:01,420
+such as the post.
+
+236
+00:08:02,925 --> 00:08:04,545
+But a lot of oftentimes,
+
+237
+00:08:04,685 --> 00:08:07,165
+we don't need to
+include the the
+
+238
+00:08:07,165 --> 00:08:08,225
+intermediate entity,
+
+239
+00:08:08,285 --> 00:08:10,685
+but only the relations
+in between.
+
+240
+00:08:10,685 --> 00:08:12,625
+This is because sometimes
+the intermediate
+
+241
+00:08:13,485 --> 00:08:15,425
+entity is not a matter
+for the inference
+
+242
+00:08:15,485 --> 00:08:17,085
+. So for example,
+in this case,
+
+243
+00:08:17,085 --> 00:08:19,220
+as long as we know Tom has has
+
+244
+00:08:19,220 --> 00:08:21,220
+casted in some movie directed
+
+245
+00:08:21,220 --> 00:08:22,280
+by Steven Spielberg,
+
+246
+00:08:22,420 --> 00:08:24,520
+we can infer that they
+have a collaborator
+
+247
+00:08:24,820 --> 00:08:27,080
+relationship. we
+don't need to know,
+
+248
+00:08:27,540 --> 00:08:29,320
+what exactly movie it is.
+
+249
+00:08:30,020 --> 00:08:31,620
+So that's why a lot of past
+
+250
+00:08:31,620 --> 00:08:33,000
+ranking based algorithms,
+
+251
+00:08:33,225 --> 00:08:34,925
+they don't include
+the intermediate
+
+252
+00:08:35,145 --> 00:08:36,365
+entities as a representation.
+
+253
+00:08:38,025 --> 00:08:40,045
+So the knowledge
+graph is big.
+
+254
+00:08:40,425 --> 00:08:42,585
+there is a,
+immediate question,
+
+255
+00:08:42,585 --> 00:08:44,185
+which is how do we find such
+
+256
+00:08:44,185 --> 00:08:45,325
+inference pass?
+
+257
+00:08:46,540 --> 00:08:48,320
+Obviously, one
+could do exhaustive
+
+258
+00:08:48,460 --> 00:08:51,420
+search. we could
+try to find all
+
+259
+00:08:51,420 --> 00:08:52,860
+possible paths
+connecting the two
+
+260
+00:08:52,860 --> 00:08:54,700
+entities. sometimes we can't
+
+261
+00:08:54,700 --> 00:08:57,020
+efficiently,
+achieve this through
+
+262
+00:08:57,020 --> 00:08:58,480
+dynamic programming.
+
+263
+00:08:59,025 --> 00:09:01,225
+However, the number
+of paths in
+
+264
+00:09:01,225 --> 00:09:02,225
+a lot of monoclonal graph
+
+265
+00:09:02,225 --> 00:09:04,005
+connecting two
+entities is large.
+
+266
+00:09:05,345 --> 00:09:07,445
+Using such a large
+feature vector,
+
+267
+00:09:09,425 --> 00:09:10,065
+a lot of times,
+
+268
+00:09:10,065 --> 00:09:11,825
+we will learn leads to poor
+
+269
+00:09:11,825 --> 00:09:12,885
+learning performance.
+
+270
+00:09:13,910 --> 00:09:16,230
+So that's why, later works has
+
+271
+00:09:16,230 --> 00:09:18,070
+been trying to
+look at how could
+
+272
+00:09:18,070 --> 00:09:20,410
+we effectively identify paths
+
+273
+00:09:20,550 --> 00:09:22,890
+that are
+potentially informative
+
+274
+00:09:23,190 --> 00:09:24,250
+for our inference.
+
+275
+00:09:24,550 --> 00:09:26,410
+So for example,
+early works before,
+
+276
+00:09:27,245 --> 00:09:29,425
+deep new deep learning
+has taken off.
+
+277
+00:09:30,045 --> 00:09:31,905
+they have tried the data
+driven methods.
+
+278
+00:09:31,965 --> 00:09:33,725
+For example, try
+to come up with
+
+279
+00:09:33,725 --> 00:09:35,725
+discrete heuristics that help
+
+280
+00:09:35,725 --> 00:09:37,245
+us to select the better path.
+
+281
+00:09:37,245 --> 00:09:38,925
+For example, we can only we we
+
+282
+00:09:38,925 --> 00:09:39,985
+only keep paths,
+
+283
+00:09:40,470 --> 00:09:42,790
+that is supported
+by some training
+
+284
+00:09:42,790 --> 00:09:44,550
+facts, or we only keep paths
+
+285
+00:09:44,550 --> 00:09:46,630
+that have leads to some target
+
+286
+00:09:46,630 --> 00:09:48,170
+entities on the training,
+
+287
+00:09:48,870 --> 00:09:51,430
+on the training
+set and use them
+
+288
+00:09:51,430 --> 00:09:53,775
+as features. And in term,
+
+289
+00:09:54,255 --> 00:09:56,095
+when I say using
+paths as features,
+
+290
+00:09:56,095 --> 00:09:57,235
+though, in the literature,
+
+291
+00:09:57,295 --> 00:09:59,135
+there's also different
+ways to do that.
+
+292
+00:09:59,135 --> 00:10:00,175
+So sometimes, like,
+
+293
+00:10:00,495 --> 00:10:02,575
+we we can we can come up with
+
+294
+00:10:02,575 --> 00:10:04,815
+a score associated
+with with each path.
+
+295
+00:10:04,815 --> 00:10:05,570
+So So for example,
+
+296
+00:10:05,570 --> 00:10:06,950
+the random walk probability
+
+297
+00:10:07,090 --> 00:10:08,450
+represented by the pass.
+
+298
+00:10:08,450 --> 00:10:10,450
+Or sometimes, we could come up
+
+299
+00:10:10,450 --> 00:10:11,990
+with embedding
+based approach.
+
+300
+00:10:12,850 --> 00:10:15,510
+We are able to identify
+the intermediate
+
+301
+00:10:15,570 --> 00:10:16,930
+entity embedding as well as
+
+302
+00:10:16,930 --> 00:10:18,745
+the relation embeddings
+on the pass.
+
+303
+00:10:18,825 --> 00:10:20,125
+And then we can effectively
+
+304
+00:10:20,185 --> 00:10:22,265
+aggregate those embeddings to
+
+305
+00:10:22,265 --> 00:10:24,765
+use those as
+a feature representation
+
+306
+00:10:24,825 --> 00:10:27,145
+for the pass. And then we use
+
+307
+00:10:27,145 --> 00:10:30,185
+those all and we aggregate all
+
+308
+00:10:30,185 --> 00:10:31,945
+the possible pass find between
+
+309
+00:10:31,945 --> 00:10:32,685
+two entities,
+
+310
+00:10:34,090 --> 00:10:35,530
+and use those as features to
+
+311
+00:10:35,530 --> 00:10:36,830
+predict the target relation.
+
+312
+00:10:41,130 --> 00:10:42,730
+Most recently,
+after deep learning
+
+313
+00:10:42,730 --> 00:10:43,790
+has taken off,
+
+314
+00:10:45,145 --> 00:10:46,905
+some work has proposed an even
+
+315
+00:10:46,905 --> 00:10:48,985
+more effective
+way to find such
+
+316
+00:10:48,985 --> 00:10:49,785
+inference paths,
+
+317
+00:10:49,785 --> 00:10:51,565
+which is use
+reinforcement learning.
+
+318
+00:10:53,065 --> 00:10:54,505
+because we need to search for
+
+319
+00:10:54,505 --> 00:10:55,305
+informative paths,
+
+320
+00:10:55,305 --> 00:10:57,005
+so why not train
+a reinforcement
+
+321
+00:10:57,145 --> 00:10:58,930
+learning agent to effectively
+
+322
+00:10:58,990 --> 00:11:01,010
+help us to search
+the informative
+
+323
+00:11:01,070 --> 00:11:02,770
+path between two entities?
+
+324
+00:11:03,150 --> 00:11:05,090
+This is how, this is what,
+
+325
+00:11:06,430 --> 00:11:09,810
+a very famous work
+Deepass has has done.
+
+326
+00:11:09,950 --> 00:11:11,470
+So basically, this work learn
+
+327
+00:11:11,470 --> 00:11:13,265
+a policy based
+engine to sample
+
+328
+00:11:13,265 --> 00:11:14,945
+the most informative
+pass between
+
+329
+00:11:14,945 --> 00:11:16,945
+two entities. And how it works
+
+330
+00:11:16,945 --> 00:11:18,965
+is it learns
+the policy network
+
+331
+00:11:19,025 --> 00:11:21,685
+and start from
+the source entity.
+
+332
+00:11:22,385 --> 00:11:24,065
+the agent basically
+uses policy
+
+333
+00:11:24,065 --> 00:11:26,390
+network to to pick the most
+
+334
+00:11:26,390 --> 00:11:28,470
+promising pass
+extension at each
+
+335
+00:11:28,470 --> 00:11:31,130
+step until it reaches
+a target entity.
+
+336
+00:11:32,550 --> 00:11:35,290
+We reward the agent
+by a hybrid
+
+337
+00:11:35,430 --> 00:11:36,950
+reward defined
+by the following
+
+338
+00:11:36,950 --> 00:11:37,690
+three terms.
+
+339
+00:11:38,550 --> 00:11:41,505
+One is about search
+correctness.
+
+340
+00:11:41,725 --> 00:11:42,765
+So, basically, if, like,
+
+341
+00:11:42,765 --> 00:11:44,445
+the path reach
+the correct target
+
+342
+00:11:44,445 --> 00:11:46,845
+entity, we give
+the agent a policy
+
+343
+00:11:46,845 --> 00:11:47,725
+reward. Otherwise,
+
+344
+00:11:47,725 --> 00:11:49,265
+we give it a negative reward.
+
+345
+00:11:49,325 --> 00:11:50,945
+And, also, like,
+regarding efficiency,
+
+346
+00:11:51,085 --> 00:11:51,965
+so a lot of times,
+
+347
+00:11:51,965 --> 00:11:53,725
+we prefer short inference pass
+
+348
+00:11:53,725 --> 00:11:55,390
+over long inference pass.
+
+349
+00:11:55,630 --> 00:11:58,770
+So, we have
+a efficiency reward,
+
+350
+00:12:00,430 --> 00:12:03,070
+reversely proportional
+to the length
+
+351
+00:12:03,070 --> 00:12:04,510
+of the pass. And also,
+
+352
+00:12:04,510 --> 00:12:06,370
+there is a diversity reverse
+
+353
+00:12:06,510 --> 00:12:08,110
+term in the sense that we want
+
+354
+00:12:08,110 --> 00:12:09,870
+the pass searched by the agent
+
+355
+00:12:09,870 --> 00:12:11,775
+to be diverse. A
+new path should
+
+356
+00:12:11,775 --> 00:12:13,695
+should be less similar to what
+
+357
+00:12:13,695 --> 00:12:15,235
+the path we have
+already found.
+
+358
+00:12:16,335 --> 00:12:17,055
+And we can,
+
+359
+00:12:17,295 --> 00:12:20,735
+and we can formulate
+everything as in a,
+
+360
+00:12:20,975 --> 00:12:22,415
+reinforced learning framework
+
+361
+00:12:22,415 --> 00:12:24,195
+and trained using
+policy gradient.
+
+362
+00:12:24,800 --> 00:12:26,640
+And specifically
+for this work,
+
+363
+00:12:26,880 --> 00:12:29,200
+there is, it
+proposed some more
+
+364
+00:12:29,200 --> 00:12:30,960
+techniques to help the model
+
+365
+00:12:30,960 --> 00:12:32,480
+learn better. So one,
+
+366
+00:12:32,480 --> 00:12:34,160
+it's because there is a huge
+
+367
+00:12:34,160 --> 00:12:36,180
+number of paths
+between two entities.
+
+368
+00:12:36,320 --> 00:12:37,940
+Sometimes if we're
+just naively
+
+369
+00:12:38,000 --> 00:12:39,220
+run policy gradient,
+
+370
+00:12:41,295 --> 00:12:42,815
+the the agent basically cannot
+
+371
+00:12:42,815 --> 00:12:44,255
+hit any positive targets and
+
+372
+00:12:44,255 --> 00:12:45,695
+the training cannot go on.
+
+373
+00:12:45,695 --> 00:12:46,975
+So for this work,
+
+374
+00:12:47,295 --> 00:12:49,055
+it use a common
+techniques used
+
+375
+00:12:49,055 --> 00:12:50,575
+in reinforcement learning,
+
+376
+00:12:50,575 --> 00:12:52,515
+which is first using
+t shirt forcing.
+
+377
+00:12:53,170 --> 00:12:55,510
+We're first
+using bidirectional
+
+378
+00:12:56,770 --> 00:12:59,110
+beam search to find promising
+
+379
+00:12:59,250 --> 00:13:00,870
+paths connecting
+two entities.
+
+380
+00:13:01,330 --> 00:13:04,050
+We use supervised learning to
+
+381
+00:13:04,050 --> 00:13:05,410
+force a policy network,
+
+382
+00:13:05,410 --> 00:13:07,430
+to force being
+able to hit those
+
+383
+00:13:08,105 --> 00:13:09,965
+paths find by
+the bidirectional
+
+384
+00:13:10,505 --> 00:13:12,025
+beam search. Later,
+
+385
+00:13:12,025 --> 00:13:13,645
+we retrain the policy network
+
+386
+00:13:13,705 --> 00:13:15,145
+with
+the reinforcement learning
+
+387
+00:13:15,145 --> 00:13:16,425
+framework. This,
+
+388
+00:13:16,905 --> 00:13:19,065
+this matter could
+help the agent
+
+389
+00:13:19,065 --> 00:13:19,965
+learns better.
+
+390
+00:13:21,330 --> 00:13:23,170
+This is
+reinforcement learning's
+
+391
+00:13:23,170 --> 00:13:25,270
+application in path
+finding algorithms.
+
+392
+00:13:25,970 --> 00:13:27,410
+Remember, the end goal here is
+
+393
+00:13:27,410 --> 00:13:29,650
+to identify
+an informative path
+
+394
+00:13:29,650 --> 00:13:32,130
+connecting two
+entities and use
+
+395
+00:13:32,130 --> 00:13:33,990
+them to predict
+new relations.
+
+396
+00:13:35,515 --> 00:13:37,855
+These, task based algorithms,
+
+397
+00:13:38,075 --> 00:13:39,435
+they're great in terms of they
+
+398
+00:13:39,435 --> 00:13:40,095
+are explicable.
+
+399
+00:13:40,635 --> 00:13:43,515
+Also, after several years of
+
+400
+00:13:43,515 --> 00:13:44,875
+development, now
+their performance
+
+401
+00:13:44,875 --> 00:13:45,835
+is also competitive.
+
+402
+00:13:45,835 --> 00:13:48,880
+They are they
+works pretty well
+
+403
+00:13:49,120 --> 00:13:51,040
+when we want to when we know
+
+404
+00:13:51,040 --> 00:13:53,040
+the source and target entities
+
+405
+00:13:53,040 --> 00:13:54,800
+we care about,
+and we just want
+
+406
+00:13:54,800 --> 00:13:56,900
+to query whether
+these two entities,
+
+407
+00:13:57,440 --> 00:14:00,260
+subject to a certain
+relations or not.
+
+408
+00:14:01,695 --> 00:14:03,535
+Also, because, we noticed that
+
+409
+00:14:03,535 --> 00:14:05,215
+sometimes the harsh
+features do
+
+410
+00:14:05,215 --> 00:14:07,155
+not need to include
+entity information.
+
+411
+00:14:07,615 --> 00:14:09,375
+So this algorithm can work for
+
+412
+00:14:09,375 --> 00:14:10,655
+rare or unseen entities.
+
+413
+00:14:10,655 --> 00:14:12,415
+Because if we have
+an unseen entity,
+
+414
+00:14:12,415 --> 00:14:14,995
+we can just find
+the past it has.
+
+415
+00:14:15,530 --> 00:14:17,630
+it has connections
+to the existing
+
+416
+00:14:17,690 --> 00:14:18,890
+nodes in another graph.
+
+417
+00:14:18,890 --> 00:14:19,370
+And then, like,
+
+418
+00:14:19,370 --> 00:14:21,550
+we can base on
+the pass to infer
+
+419
+00:14:21,610 --> 00:14:24,170
+whether the entity
+has a relation to,
+
+420
+00:14:24,410 --> 00:14:26,030
+to the source
+entities or not.
+
+421
+00:14:26,730 --> 00:14:28,330
+However, a caveat
+for this type
+
+422
+00:14:28,330 --> 00:14:29,930
+of approach is that they're
+
+423
+00:14:29,930 --> 00:14:32,305
+inefficient for the questions
+
+424
+00:14:32,305 --> 00:14:34,145
+where the source
+entity is specified,
+
+425
+00:14:34,145 --> 00:14:35,765
+the target relation
+is specified,
+
+426
+00:14:36,225 --> 00:14:37,665
+but the target
+entities are not
+
+427
+00:14:37,665 --> 00:14:38,785
+specified. So for example,
+
+428
+00:14:38,785 --> 00:14:40,305
+if instead of
+asking whether Tom
+
+429
+00:14:40,305 --> 00:14:41,825
+Hanks and Steven Spielberg has
+
+430
+00:14:41,825 --> 00:14:43,605
+collaborated before,
+
+431
+00:14:43,825 --> 00:14:45,845
+we just ask who
+has collaborated
+
+432
+00:14:45,985 --> 00:14:46,965
+with Tom Hanks.
+
+433
+00:14:47,800 --> 00:14:49,880
+In this case, this
+this have, sort of,
+
+434
+00:14:49,880 --> 00:14:51,400
+becomes very efficient because
+
+435
+00:14:51,400 --> 00:14:54,540
+we need to enumerate,
+basically,
+
+436
+00:14:54,760 --> 00:14:56,840
+all paths between
+Tom Hanks and
+
+437
+00:14:56,840 --> 00:14:58,440
+any other entities in another
+
+438
+00:14:58,440 --> 00:15:00,380
+graph and use them
+for the prediction.
+
+439
+00:15:01,055 --> 00:15:04,495
+So this has proposed
+an efficiency here.
+
+440
+00:15:04,495 --> 00:15:06,515
+So how we how do we
+solve this problem?
+
+441
+00:15:07,375 --> 00:15:10,175
+So this brings us to
+the scenario where,
+
+442
+00:15:10,415 --> 00:15:12,195
+we cause a knowledge
+graph reasoning,
+
+443
+00:15:12,495 --> 00:15:13,875
+sequential decision making.
+
+444
+00:15:14,340 --> 00:15:16,440
+So this is a very
+cl collaborative
+
+445
+00:15:16,500 --> 00:15:19,300
+framework, proposed in two
+
+446
+00:15:19,300 --> 00:15:20,500
+thousand eighteen by,
+
+447
+00:15:21,220 --> 00:15:22,760
+by the model called
+the Minerva.
+
+448
+00:15:23,060 --> 00:15:23,800
+So basically,
+
+449
+00:15:24,660 --> 00:15:27,060
+we realized for the problem
+
+450
+00:15:27,060 --> 00:15:28,915
+where target the source entity
+
+451
+00:15:28,915 --> 00:15:30,275
+is known and
+the targeted relation
+
+452
+00:15:30,275 --> 00:15:32,195
+is known, we can directly
+
+453
+00:15:32,195 --> 00:15:33,635
+formulate it as a sequential
+
+454
+00:15:33,635 --> 00:15:34,935
+decision making problem.
+
+455
+00:15:35,235 --> 00:15:36,755
+What what I mean by that is we
+
+456
+00:15:36,755 --> 00:15:38,455
+can start from
+the source entity
+
+457
+00:15:38,515 --> 00:15:40,275
+and just directly
+jump into a knowledge
+
+458
+00:15:40,275 --> 00:15:41,875
+graph and search
+for the potential
+
+459
+00:15:41,875 --> 00:15:42,775
+target entity.
+
+460
+00:15:43,820 --> 00:15:44,940
+So for example, as here,
+
+461
+00:15:44,940 --> 00:15:47,260
+we start from ten Hanks and we
+
+462
+00:15:47,260 --> 00:15:49,740
+sequentially extend
+the the search
+
+463
+00:15:49,740 --> 00:15:51,260
+parse in the knowledge graph
+
+464
+00:15:51,260 --> 00:15:54,400
+until we reach the a potential
+
+465
+00:15:54,460 --> 00:15:56,540
+target entity. If
+we reach a correct
+
+466
+00:15:56,540 --> 00:15:58,160
+answer, then we just stop.
+
+467
+00:15:59,445 --> 00:16:01,685
+How do we train an agent to
+
+468
+00:16:01,685 --> 00:16:02,645
+perform this search?
+
+469
+00:16:02,645 --> 00:16:05,145
+So go from the source
+entity and
+
+470
+00:16:05,605 --> 00:16:07,685
+stop at the correct
+target entity.
+
+471
+00:16:07,685 --> 00:16:09,045
+This can also be trained using
+
+472
+00:16:09,045 --> 00:16:10,185
+reinforcement learning.
+
+473
+00:16:12,820 --> 00:16:14,660
+Let's zoom into the formal
+
+474
+00:16:14,660 --> 00:16:15,880
+reinforcement
+learning formulation
+
+475
+00:16:15,940 --> 00:16:16,760
+of this problem.
+
+476
+00:16:18,340 --> 00:16:20,600
+Typically, when we look
+at the reinforcement
+
+477
+00:16:20,660 --> 00:16:21,720
+learning framework,
+
+478
+00:16:22,100 --> 00:16:23,480
+we will look at the following
+
+479
+00:16:23,540 --> 00:16:24,280
+five components.
+
+480
+00:16:24,645 --> 00:16:25,545
+So the environment,
+
+481
+00:16:25,685 --> 00:16:27,765
+what is is defined
+as a state,
+
+482
+00:16:27,765 --> 00:16:28,885
+what are the actions,
+
+483
+00:16:28,885 --> 00:16:30,165
+what are the what are the,
+
+484
+00:16:30,405 --> 00:16:32,085
+what are the state
+how are the state
+
+485
+00:16:32,085 --> 00:16:33,225
+transactions defined,
+
+486
+00:16:33,285 --> 00:16:35,125
+and what are
+the rewards should we,
+
+487
+00:16:35,365 --> 00:16:36,965
+should we provide to the agent
+
+488
+00:16:36,965 --> 00:16:37,705
+during learning.
+
+489
+00:16:38,360 --> 00:16:39,720
+So in this case,
+
+490
+00:16:39,720 --> 00:16:41,720
+our environment is
+basically a knowledge
+
+491
+00:16:41,720 --> 00:16:46,040
+graph. And we also
+have, we also know,
+
+492
+00:16:46,280 --> 00:16:47,880
+what is a source
+entity we cares
+
+493
+00:16:47,880 --> 00:16:49,160
+about and what is the target
+
+494
+00:16:49,160 --> 00:16:50,540
+relations we care about.
+
+495
+00:16:52,105 --> 00:16:54,365
+For the state, it's basically
+
+496
+00:16:55,465 --> 00:16:57,705
+the current entity
+we are at in
+
+497
+00:16:57,705 --> 00:16:58,765
+a knowledge graph.
+
+498
+00:17:00,185 --> 00:17:02,185
+Also, we we also
+include the source
+
+499
+00:17:02,185 --> 00:17:04,540
+entity and and target relation
+
+500
+00:17:04,600 --> 00:17:06,200
+because because we can also we
+
+501
+00:17:06,200 --> 00:17:07,420
+can always see them.
+
+502
+00:17:07,480 --> 00:17:10,060
+So we formulate
+this as a partial
+
+503
+00:17:10,200 --> 00:17:12,460
+sequential a partial
+partially observed,
+
+504
+00:17:13,160 --> 00:17:14,840
+sequential decision
+making process
+
+505
+00:17:14,840 --> 00:17:17,495
+because, at each state state,
+
+506
+00:17:17,495 --> 00:17:19,415
+we do not assume that we see
+
+507
+00:17:19,415 --> 00:17:20,935
+the entire knowledge
+graph environment.
+
+508
+00:17:20,935 --> 00:17:23,575
+We basically assume
+we see the current
+
+509
+00:17:23,575 --> 00:17:24,955
+entity and its neighborhood.
+
+510
+00:17:25,895 --> 00:17:27,675
+So we start from
+the source entity,
+
+511
+00:17:27,975 --> 00:17:29,755
+and the action
+space is basically
+
+512
+00:17:30,120 --> 00:17:31,880
+all the other
+entities connected
+
+513
+00:17:31,880 --> 00:17:33,100
+with the current entity.
+
+514
+00:17:33,160 --> 00:17:35,180
+And our goal is to
+find a potential
+
+515
+00:17:35,240 --> 00:17:36,860
+edge among all
+these connections
+
+516
+00:17:37,080 --> 00:17:38,940
+for us to extend
+the next step.
+
+517
+00:17:41,720 --> 00:17:42,940
+And, so,
+
+518
+00:17:43,525 --> 00:17:46,005
+Once the agent finds
+the next step,
+
+519
+00:17:46,005 --> 00:17:49,225
+it transits to a new
+state and so on.
+
+520
+00:17:49,285 --> 00:17:50,405
+Basically, it performed this
+
+521
+00:17:50,405 --> 00:17:52,165
+type of multi hop
+search in a large
+
+522
+00:17:52,165 --> 00:17:54,005
+graph until it has
+reached a maximum
+
+523
+00:17:54,005 --> 00:17:55,385
+number of steps.
+
+524
+00:17:57,390 --> 00:17:59,470
+The entities it
+arrives in the end
+
+525
+00:17:59,470 --> 00:18:01,330
+is used as
+a predictive answer.
+
+526
+00:18:02,190 --> 00:18:04,210
+If the predictive answer is
+
+527
+00:18:04,270 --> 00:18:06,930
+the same as a target
+entity, then great.
+
+528
+00:18:07,470 --> 00:18:08,450
+The search is successful.
+
+529
+00:18:08,590 --> 00:18:11,395
+We give the agent,
+reward one,
+
+530
+00:18:11,395 --> 00:18:13,155
+for example. And
+if it is not,
+
+531
+00:18:13,555 --> 00:18:15,395
+we could give it
+an active reward or,
+
+532
+00:18:15,395 --> 00:18:16,275
+like in this work,
+
+533
+00:18:16,275 --> 00:18:17,975
+we just give it
+a zero reward.
+
+534
+00:18:19,635 --> 00:18:21,635
+And we can use policy gradient
+
+535
+00:18:21,635 --> 00:18:23,750
+again to learn
+which actions to
+
+536
+00:18:23,750 --> 00:18:25,610
+choose at a given state.
+
+537
+00:18:27,510 --> 00:18:29,910
+For the policy
+gradient framework,
+
+538
+00:18:29,910 --> 00:18:31,850
+we basically need
+a policy function,
+
+539
+00:18:32,070 --> 00:18:34,010
+which defines at a particular
+
+540
+00:18:34,070 --> 00:18:38,725
+state what is the probability
+
+541
+00:18:38,785 --> 00:18:41,425
+distribution among
+my next action
+
+542
+00:18:41,425 --> 00:18:42,545
+like it's shown here.
+
+543
+00:18:42,545 --> 00:18:45,045
+It's typically parameterized.
+
+544
+00:18:46,705 --> 00:18:49,105
+For the particular deep
+
+545
+00:18:49,105 --> 00:18:50,485
+reinforcement
+learning frameworks
+
+546
+00:18:50,545 --> 00:18:52,730
+we talk about, we parametrize
+
+547
+00:18:52,950 --> 00:18:55,750
+a policy function
+using basically
+
+548
+00:18:55,750 --> 00:18:56,890
+a deep neural network.
+
+549
+00:18:57,510 --> 00:18:59,830
+It takes into
+account the current
+
+550
+00:18:59,830 --> 00:19:00,650
+search history,
+
+551
+00:19:01,510 --> 00:19:03,110
+which entity I'm
+currently at,
+
+552
+00:19:03,110 --> 00:19:05,075
+as well as, what,
+
+553
+00:19:05,315 --> 00:19:07,735
+the potential
+actions I can take.
+
+554
+00:19:07,795 --> 00:19:11,315
+So the history is
+represented as,
+
+555
+00:19:12,355 --> 00:19:14,115
+the sequence of represent
+
+556
+00:19:14,275 --> 00:19:16,595
+representations
+of the relation
+
+557
+00:19:16,595 --> 00:19:18,115
+embedding and intermediate and
+
+558
+00:19:18,115 --> 00:19:21,150
+entity embedding SC,
+in the history.
+
+559
+00:19:21,250 --> 00:19:22,770
+And we also used,
+
+560
+00:19:23,090 --> 00:19:25,510
+LSTM to encode
+this representation
+
+561
+00:19:25,650 --> 00:19:28,530
+history. And for
+the action space,
+
+562
+00:19:28,530 --> 00:19:30,850
+similarly, going from,
+
+563
+00:19:31,410 --> 00:19:34,615
+my current entity
+e t to the next,
+
+564
+00:19:35,415 --> 00:19:36,615
+to the next state,
+
+565
+00:19:36,615 --> 00:19:39,115
+the action is defined
+by the edge label,
+
+566
+00:19:39,655 --> 00:19:41,995
+we need to traverse
+and the entity
+
+567
+00:19:42,535 --> 00:19:45,035
+that that's taken
+us from that edge.
+
+568
+00:19:45,670 --> 00:19:48,390
+We concatenated the edge label
+
+569
+00:19:48,390 --> 00:19:49,530
+and the entity representation
+
+570
+00:19:49,750 --> 00:19:50,970
+as an action representation.
+
+571
+00:19:53,190 --> 00:19:54,730
+Combining the representations
+
+572
+00:19:54,950 --> 00:19:56,170
+from these two sides,
+
+573
+00:19:56,790 --> 00:19:59,025
+the policy network
+could output
+
+574
+00:19:59,325 --> 00:20:01,565
+a distribution
+over all possible
+
+575
+00:20:01,565 --> 00:20:03,745
+actions. So pi theta
+is a distribution
+
+576
+00:20:03,805 --> 00:20:06,605
+function, and
+the pi theta over
+
+577
+00:20:06,605 --> 00:20:07,905
+all the potential actions,
+
+578
+00:20:08,685 --> 00:20:10,045
+the value will sum to one.
+
+579
+00:20:10,045 --> 00:20:11,425
+It's a probability
+distribution.
+
+580
+00:20:13,740 --> 00:20:16,480
+And so this framework can be
+
+581
+00:20:16,540 --> 00:20:18,320
+trained using
+a standard reinforced
+
+582
+00:20:18,380 --> 00:20:20,540
+algorithm. So what it does is
+
+583
+00:20:20,540 --> 00:20:21,360
+during training,
+
+584
+00:20:21,660 --> 00:20:26,560
+it has an agent
+draw out from,
+
+585
+00:20:27,385 --> 00:20:29,565
+the target entity
+most multiple times.
+
+586
+00:20:29,945 --> 00:20:31,705
+And the the way to go out,
+
+587
+00:20:31,945 --> 00:20:33,865
+we sample how it
+should perform
+
+588
+00:20:33,865 --> 00:20:36,025
+the next step based
+on the current
+
+589
+00:20:36,025 --> 00:20:36,925
+policy function.
+
+590
+00:20:37,225 --> 00:20:39,405
+So based on
+the current distribution
+
+591
+00:20:39,465 --> 00:20:40,345
+of the policy function,
+
+592
+00:20:40,345 --> 00:20:42,525
+we sample an edge
+it should extend.
+
+593
+00:20:42,870 --> 00:20:46,070
+And, we can perform
+such or go out many,
+
+594
+00:20:46,070 --> 00:20:47,530
+many times during training.
+
+595
+00:20:47,990 --> 00:20:49,270
+And, if, like,
+
+596
+00:20:49,270 --> 00:20:52,230
+if the pass route hit
+a target entity,
+
+597
+00:20:52,230 --> 00:20:53,670
+we give it a policy
+or reward.
+
+598
+00:20:53,670 --> 00:20:55,370
+Otherwise, it
+received nothing.
+
+599
+00:20:55,775 --> 00:20:57,055
+So through this way,
+
+600
+00:20:57,055 --> 00:20:58,995
+we can update the parameters,
+
+601
+00:20:59,775 --> 00:21:01,535
+defining the policy
+net network
+
+602
+00:21:01,535 --> 00:21:03,555
+by maximizing
+the expected reward.
+
+603
+00:21:03,615 --> 00:21:04,895
+So all these can
+be carried out
+
+604
+00:21:04,895 --> 00:21:06,275
+using standard reinforcement
+
+605
+00:21:06,575 --> 00:21:07,555
+reinforced training.
+
+606
+00:21:08,980 --> 00:21:13,720
+However, as shown,
+in the main work,
+
+607
+00:21:14,260 --> 00:21:16,020
+so models are trained using
+
+608
+00:21:16,020 --> 00:21:17,460
+vanilla reinforcement learning
+
+609
+00:21:17,460 --> 00:21:18,280
+such a way.
+
+610
+00:21:19,140 --> 00:21:20,280
+In terms of performance,
+
+611
+00:21:20,420 --> 00:21:22,360
+they
+significantly underperform
+
+612
+00:21:22,935 --> 00:21:24,695
+KG embedding
+methods on several
+
+613
+00:21:24,695 --> 00:21:26,715
+base on several
+benchmark datasets.
+
+614
+00:21:27,735 --> 00:21:29,975
+So this enables
+us to zoom into
+
+615
+00:21:29,975 --> 00:21:31,255
+this approach. Because we like
+
+616
+00:21:31,255 --> 00:21:32,795
+this approach, it enables
+
+617
+00:21:32,935 --> 00:21:34,695
+effective power search in
+
+618
+00:21:34,695 --> 00:21:35,380
+Knowledge Graph.
+
+619
+00:21:35,460 --> 00:21:36,980
+So and, also, it is able to
+
+620
+00:21:36,980 --> 00:21:38,820
+produce the answer
+and the inference
+
+621
+00:21:38,820 --> 00:21:39,540
+pass at the same time.
+
+622
+00:21:39,540 --> 00:21:41,460
+So it is a very
+powerful powerful
+
+623
+00:21:41,460 --> 00:21:42,780
+framework. But because,
+
+624
+00:21:43,140 --> 00:21:45,380
+because the it's,
+
+625
+00:21:45,780 --> 00:21:47,460
+because of the stretch
+of learning
+
+626
+00:21:47,460 --> 00:21:48,580
+both the inference pass and
+
+627
+00:21:48,580 --> 00:21:50,680
+the target energy
+at the same time,
+
+628
+00:21:51,505 --> 00:21:53,745
+the framework is not
+trivial to train.
+
+629
+00:21:53,745 --> 00:21:55,345
+So we want to examine what are
+
+630
+00:21:55,345 --> 00:21:58,305
+the challenges
+in training this
+
+631
+00:21:58,305 --> 00:21:59,665
+framework. How
+could we overcome
+
+632
+00:21:59,665 --> 00:22:01,365
+those challenges and
+make it better?
+
+633
+00:22:02,305 --> 00:22:03,025
+So first of all,
+
+634
+00:22:03,025 --> 00:22:04,865
+one thing we
+noticed is a sparse
+
+635
+00:22:04,865 --> 00:22:05,845
+reward problem.
+
+636
+00:22:06,030 --> 00:22:09,150
+So remember, remember,
+at the beginning,
+
+637
+00:22:09,150 --> 00:22:10,990
+we we said in
+knowledge graphs,
+
+638
+00:22:10,990 --> 00:22:12,430
+there because knowledge graphs
+
+639
+00:22:12,430 --> 00:22:13,250
+are incomplete,
+
+640
+00:22:13,310 --> 00:22:14,750
+so there is a lot of false
+
+641
+00:22:14,750 --> 00:22:16,290
+negatives in knowledge graph.
+
+642
+00:22:17,230 --> 00:22:18,750
+there so for
+example, if, like,
+
+643
+00:22:18,750 --> 00:22:21,545
+my search pass hit
+Steven Spielberg,
+
+644
+00:22:22,005 --> 00:22:24,245
+but because, this is a missing
+
+645
+00:22:24,245 --> 00:22:25,605
+fact in the knowledge graph,
+
+646
+00:22:25,605 --> 00:22:27,625
+so I can only get
+zero reward.
+
+647
+00:22:27,685 --> 00:22:28,485
+Although this is,
+
+648
+00:22:28,725 --> 00:22:31,525
+Steven Spielberg is
+actually a correct
+
+649
+00:22:31,525 --> 00:22:33,705
+entity. It should
+have a better
+
+650
+00:22:33,765 --> 00:22:35,465
+reward than just a zero.
+
+651
+00:22:35,990 --> 00:22:37,590
+But if we just use a vanilla
+
+652
+00:22:37,590 --> 00:22:38,870
+reinforcement
+learning algorithm
+
+653
+00:22:38,870 --> 00:22:40,650
+and give it
+a discrete reward,
+
+654
+00:22:40,710 --> 00:22:42,330
+we cannot capture such cases.
+
+655
+00:22:43,430 --> 00:22:44,410
+So that's why,
+
+656
+00:22:45,110 --> 00:22:47,190
+in our work presented in two
+
+657
+00:22:47,190 --> 00:22:48,010
+thousand eighteen,
+
+658
+00:22:48,150 --> 00:22:50,490
+so we propose a reward
+shaping approach.
+
+659
+00:22:50,955 --> 00:22:51,755
+So instead of, like,
+
+660
+00:22:51,755 --> 00:22:53,515
+giving this discrete reward to
+
+661
+00:22:53,515 --> 00:22:55,995
+the agent, we want
+to give them soft,
+
+662
+00:22:56,315 --> 00:22:58,795
+soft rewards. So
+the idea behind
+
+663
+00:22:58,795 --> 00:23:01,595
+it is we want for
+each potential
+
+664
+00:23:01,595 --> 00:23:03,595
+target entity
+the agent is able
+
+665
+00:23:03,595 --> 00:23:05,295
+to hit during its training,
+
+666
+00:23:05,490 --> 00:23:07,570
+We want to provide a soft
+
+667
+00:23:07,570 --> 00:23:09,590
+estimation of
+whether that entity
+
+668
+00:23:09,730 --> 00:23:11,730
+is likely to be a false to be
+
+669
+00:23:11,730 --> 00:23:13,110
+a false negative or not.
+
+670
+00:23:13,890 --> 00:23:16,130
+And how do we, estimate that?
+
+671
+00:23:16,130 --> 00:23:17,970
+So recall
+the knowledge embedding
+
+672
+00:23:17,970 --> 00:23:19,810
+method we surveyed
+in the first
+
+673
+00:23:19,810 --> 00:23:20,755
+part of this talk.
+
+674
+00:23:20,755 --> 00:23:22,915
+So we basically
+use a knowledge
+
+675
+00:23:22,915 --> 00:23:24,055
+embedding approach.
+
+676
+00:23:24,195 --> 00:23:26,135
+So we represent
+every entities,
+
+677
+00:23:26,755 --> 00:23:28,435
+in the every entities
+in the knowledge
+
+678
+00:23:28,435 --> 00:23:30,115
+graph is represented
+as an embedding.
+
+679
+00:23:30,115 --> 00:23:31,475
+And then we also
+know the target
+
+680
+00:23:31,475 --> 00:23:33,395
+relation. So we can just call
+
+681
+00:23:33,395 --> 00:23:35,710
+off the shelf,
+we can just call
+
+682
+00:23:35,710 --> 00:23:36,910
+off the shelf knowledge graph
+
+683
+00:23:36,910 --> 00:23:38,750
+embedding functions and using
+
+684
+00:23:38,750 --> 00:23:41,150
+that not a scoring function as
+
+685
+00:23:41,150 --> 00:23:42,910
+a scoring function here to
+
+686
+00:23:42,910 --> 00:23:44,530
+estimate the sought reward.
+
+687
+00:23:45,710 --> 00:23:46,830
+And in our work,
+
+688
+00:23:46,830 --> 00:23:48,175
+we'll use the state of the art
+
+689
+00:23:48,975 --> 00:23:50,255
+convolutional knowledge graph
+
+690
+00:23:50,255 --> 00:23:51,235
+embedding networks.
+
+691
+00:23:53,215 --> 00:23:54,915
+Basically, for
+all the potential
+
+692
+00:23:55,455 --> 00:23:56,975
+targets hated by
+the agent during
+
+693
+00:23:56,975 --> 00:23:58,915
+the training, we
+run the embeddings
+
+694
+00:23:59,055 --> 00:24:01,295
+of the source entity
+and the current
+
+695
+00:24:01,295 --> 00:24:03,390
+candidate entity
+and the target
+
+696
+00:24:03,390 --> 00:24:04,350
+relations through the,
+
+697
+00:24:04,750 --> 00:24:06,830
+combi scoring function,
+
+698
+00:24:06,830 --> 00:24:08,030
+and then we get
+to the software
+
+699
+00:24:08,030 --> 00:24:08,770
+word estimation.
+
+700
+00:24:08,990 --> 00:24:10,030
+So in this case,
+
+701
+00:24:10,270 --> 00:24:11,950
+if our agent hit a potential
+
+702
+00:24:11,950 --> 00:24:12,690
+false negatives,
+
+703
+00:24:12,750 --> 00:24:14,190
+instead of getting zero,
+
+704
+00:24:14,190 --> 00:24:15,810
+it is able to get
+a continuous,
+
+705
+00:24:16,910 --> 00:24:19,605
+re reward value
+so as to how it
+
+706
+00:24:19,605 --> 00:24:20,425
+trains better.
+
+707
+00:24:22,725 --> 00:24:23,785
+The other challenge,
+
+708
+00:24:24,325 --> 00:24:26,805
+in this training
+is the code of
+
+709
+00:24:26,805 --> 00:24:28,105
+spirits paths problem.
+
+710
+00:24:28,245 --> 00:24:30,405
+Recall that there
+could be a huge
+
+711
+00:24:30,405 --> 00:24:31,845
+number of paths connecting NA
+
+712
+00:24:31,845 --> 00:24:33,520
+to entities in
+the Knowledge Graph.
+
+713
+00:24:34,160 --> 00:24:37,280
+Some of the paths,
+like we we we we,
+
+714
+00:24:37,840 --> 00:24:39,440
+revealed earlier in the talk,
+
+715
+00:24:39,440 --> 00:24:41,120
+some of the paths,
+they are informative,
+
+716
+00:24:41,120 --> 00:24:42,580
+but some paths are
+not informative
+
+717
+00:24:42,640 --> 00:24:44,260
+at all, like shown here.
+
+718
+00:24:44,400 --> 00:24:46,720
+So here, path one and two,
+
+719
+00:24:46,720 --> 00:24:47,825
+they actually couldn't.
+
+720
+00:24:47,825 --> 00:24:49,105
+So although they connect these
+
+721
+00:24:49,105 --> 00:24:50,785
+two entities,
+they they are not
+
+722
+00:24:50,785 --> 00:24:52,565
+useful for predicting
+a collaborator
+
+723
+00:24:52,785 --> 00:24:55,125
+relationship. only
+pass three is.
+
+724
+00:24:55,585 --> 00:24:57,265
+However, if it
+just not naively
+
+725
+00:24:57,265 --> 00:24:58,165
+run reinforce,
+
+726
+00:24:58,705 --> 00:25:02,160
+because the design
+of the training
+
+727
+00:25:02,160 --> 00:25:04,020
+algorithm, reinforce
+has a tendency
+
+728
+00:25:04,640 --> 00:25:07,620
+for the agent to
+stick to a pass
+
+729
+00:25:07,680 --> 00:25:09,360
+which it has seen
+before and has
+
+730
+00:25:09,360 --> 00:25:10,800
+received a positive reward.
+
+731
+00:25:10,800 --> 00:25:12,880
+Because remember,
+during training,
+
+732
+00:25:12,880 --> 00:25:15,115
+we sample the pass
+using the current
+
+733
+00:25:15,115 --> 00:25:16,735
+parameters of
+the policy function.
+
+734
+00:25:16,795 --> 00:25:18,875
+So if, a particular pass has
+
+735
+00:25:18,875 --> 00:25:20,815
+received a positive
+reward before,
+
+736
+00:25:21,675 --> 00:25:23,595
+it is likely to have higher
+
+737
+00:25:23,595 --> 00:25:25,595
+policy representation
+in the policy
+
+738
+00:25:25,595 --> 00:25:28,270
+function so that
+your agent will
+
+739
+00:25:28,270 --> 00:25:30,190
+likely be sampling that pass
+
+740
+00:25:30,190 --> 00:25:31,250
+more and more often.
+
+741
+00:25:31,390 --> 00:25:33,010
+This way, we ended
+up reinforcing
+
+742
+00:25:33,230 --> 00:25:35,570
+agent with respect to
+the spurious pass,
+
+743
+00:25:35,790 --> 00:25:36,990
+which is not what we want.
+
+744
+00:25:36,990 --> 00:25:38,750
+We want them to be able to re
+
+745
+00:25:38,830 --> 00:25:41,090
+reinforce against
+the informative pass.
+
+746
+00:25:42,165 --> 00:25:44,885
+But, but effectively
+identifying the,
+
+747
+00:25:45,205 --> 00:25:46,645
+the informative pass during
+
+748
+00:25:46,645 --> 00:25:48,105
+training is actually
+very hard.
+
+749
+00:25:48,245 --> 00:25:50,645
+So one thing we could do is,
+
+750
+00:25:51,365 --> 00:25:53,205
+we could at least help prevent
+
+751
+00:25:53,205 --> 00:25:55,360
+the agent from being stuck to
+
+752
+00:25:55,360 --> 00:25:56,740
+an uninformed tail pass.
+
+753
+00:25:56,880 --> 00:25:59,780
+So this, so we do
+this by using,
+
+754
+00:26:00,240 --> 00:26:02,020
+a technique we call
+action dropout.
+
+755
+00:26:02,320 --> 00:26:04,260
+So, basically, we we randomly
+
+756
+00:26:05,120 --> 00:26:08,275
+mask certain actions
+in the policy
+
+757
+00:26:08,275 --> 00:26:10,355
+function to make
+sure that the agent
+
+758
+00:26:10,355 --> 00:26:12,675
+is able to jump
+into a different
+
+759
+00:26:12,675 --> 00:26:14,695
+state next time when
+I do a selection.
+
+760
+00:26:14,915 --> 00:26:16,195
+So for the here,
+
+761
+00:26:16,195 --> 00:26:17,715
+maybe the current
+policy function
+
+762
+00:26:17,715 --> 00:26:18,835
+tells us, okay,
+
+763
+00:26:18,835 --> 00:26:20,615
+there is zero point
+six probability
+
+764
+00:26:20,755 --> 00:26:22,775
+the agent should go to e two,
+
+765
+00:26:23,350 --> 00:26:24,150
+not the others.
+
+766
+00:26:24,150 --> 00:26:25,510
+All the other entities have
+
+767
+00:26:25,510 --> 00:26:28,410
+pretty small, pretty
+small probability.
+
+768
+00:26:28,950 --> 00:26:31,050
+So here, what we
+do is we apply,
+
+769
+00:26:32,070 --> 00:26:35,030
+a binary mask
+randomly generated
+
+770
+00:26:35,030 --> 00:26:36,655
+at each training step against
+
+771
+00:26:36,655 --> 00:26:39,075
+the current policy function.
+
+772
+00:26:40,015 --> 00:26:40,895
+You can see here,
+
+773
+00:26:40,895 --> 00:26:43,475
+our random mask
+happens to mask
+
+774
+00:26:43,615 --> 00:26:45,715
+the high probability
+action e2.
+
+775
+00:26:47,295 --> 00:26:48,735
+Once we did the masking,
+
+776
+00:26:48,735 --> 00:26:50,595
+we renormalized and recompute
+
+777
+00:26:50,655 --> 00:26:51,235
+the policy,
+
+778
+00:26:51,770 --> 00:26:53,670
+I recompute
+the policy distribution
+
+779
+00:26:53,730 --> 00:26:55,570
+again. And this time,
+
+780
+00:26:55,730 --> 00:26:56,850
+instead of going to e two,
+
+781
+00:26:56,850 --> 00:26:58,050
+the agent has a higher power
+
+782
+00:26:58,050 --> 00:26:59,410
+probability just
+like the e one.
+
+783
+00:26:59,410 --> 00:27:00,950
+So this way, we can encourage
+
+784
+00:27:01,010 --> 00:27:03,410
+the agent to explore
+more diverse
+
+785
+00:27:03,410 --> 00:27:04,470
+paths during training.
+
+786
+00:27:05,145 --> 00:27:06,505
+And if you're familiar with,
+
+787
+00:27:07,145 --> 00:27:10,025
+techniques such as,
+epsilon drop so,
+
+788
+00:27:10,425 --> 00:27:11,245
+epsilon exploration.
+
+789
+00:27:11,865 --> 00:27:15,545
+So the the intuition of this
+
+790
+00:27:15,545 --> 00:27:16,905
+approach is
+specifically similar
+
+791
+00:27:16,905 --> 00:27:17,920
+similar to that.
+
+792
+00:27:18,400 --> 00:27:19,920
+This is to incur
+encourage the agent
+
+793
+00:27:19,920 --> 00:27:21,200
+to search for a more diverse
+
+794
+00:27:21,200 --> 00:27:22,660
+cycle pass during the training
+
+795
+00:27:22,720 --> 00:27:24,640
+to avoid it, from
+getting stuck
+
+796
+00:27:24,640 --> 00:27:26,960
+to some false,
+net to some false
+
+797
+00:27:26,960 --> 00:27:27,460
+positives.
+
+798
+00:27:31,785 --> 00:27:32,825
+With these two techniques,
+
+799
+00:27:32,825 --> 00:27:35,705
+we evaluate
+algorithms on several
+
+800
+00:27:35,705 --> 00:27:37,805
+KG benchmarks, as shown here.
+
+801
+00:27:37,945 --> 00:27:40,105
+The benchmarks comes from very
+
+802
+00:27:40,105 --> 00:27:41,545
+different domains
+and they were
+
+803
+00:27:41,545 --> 00:27:43,085
+widely used in the community.
+
+804
+00:27:43,880 --> 00:27:46,040
+And, they also
+demonstrate a different
+
+805
+00:27:46,040 --> 00:27:47,660
+degree of connection and,
+
+806
+00:27:48,840 --> 00:27:49,820
+and different skills.
+
+807
+00:27:50,840 --> 00:27:53,180
+So we compare our method,
+
+808
+00:27:53,320 --> 00:27:54,920
+combining rewards
+shaping action
+
+809
+00:27:54,920 --> 00:27:57,500
+dropout with two
+groups of algorithms.
+
+810
+00:27:58,045 --> 00:27:59,725
+One group is a multi
+hop knowledge
+
+811
+00:27:59,725 --> 00:28:01,105
+graph reasoning approach.
+
+812
+00:28:01,245 --> 00:28:03,965
+So this covers,
+the past, for example,
+
+813
+00:28:03,965 --> 00:28:05,325
+past ranking algorithms we
+
+814
+00:28:05,325 --> 00:28:08,925
+surveyed before,
+and also, like,
+
+815
+00:28:08,925 --> 00:28:12,870
+algorithm, and also,
+algorithms from,
+
+816
+00:28:13,350 --> 00:28:15,270
+other multi hop
+reasoning families,
+
+817
+00:28:15,270 --> 00:28:16,550
+which we didn't
+talk about here,
+
+818
+00:28:16,550 --> 00:28:17,750
+for example, like,
+
+819
+00:28:17,750 --> 00:28:19,290
+neurological prong programming
+
+820
+00:28:19,670 --> 00:28:20,650
+and and others.
+
+821
+00:28:23,510 --> 00:28:25,690
+So we, so as we
+see the results,
+
+822
+00:28:25,945 --> 00:28:29,225
+the dark blue bar
+is our algorithm,
+
+823
+00:28:29,225 --> 00:28:30,925
+which basically
+combined vanilla
+
+824
+00:28:30,985 --> 00:28:33,005
+policy gradient with
+reward shipping.
+
+825
+00:28:33,945 --> 00:28:35,645
+We see our
+approach consistently
+
+826
+00:28:36,425 --> 00:28:37,945
+improve over
+the state of the art
+
+827
+00:28:37,945 --> 00:28:39,865
+for multi hop
+reasoning compared
+
+828
+00:28:39,865 --> 00:28:43,870
+to previous algorithms,
+all benchmarks.
+
+829
+00:28:44,410 --> 00:28:46,330
+So it is comparable or surpass
+
+830
+00:28:46,330 --> 00:28:47,770
+the previous state
+of the art.
+
+831
+00:28:47,770 --> 00:28:49,210
+And then we see that this our
+
+832
+00:28:49,450 --> 00:28:50,170
+this algorithm,
+
+833
+00:28:50,170 --> 00:28:52,570
+because it it it
+simply does, like,
+
+834
+00:28:52,570 --> 00:28:54,615
+given the topic entity,
+
+835
+00:28:54,615 --> 00:28:56,775
+it simply runs
+a search instead
+
+836
+00:28:56,775 --> 00:28:58,775
+of doing, candidate answering
+
+837
+00:28:58,775 --> 00:28:59,915
+enumeration, for example.
+
+838
+00:29:00,295 --> 00:29:02,715
+This this algorithm
+is very scalable.
+
+839
+00:29:03,095 --> 00:29:05,015
+As we we shown
+here for several
+
+840
+00:29:05,015 --> 00:29:06,075
+previous algorithms,
+
+841
+00:29:06,455 --> 00:29:08,695
+they actually
+couldn't scale up
+
+842
+00:29:08,695 --> 00:29:11,170
+on large scale
+knowledge graphs.
+
+843
+00:29:12,430 --> 00:29:14,610
+However, we also
+compare the performance
+
+844
+00:29:14,910 --> 00:29:18,670
+with, the family sorry.
+
+845
+00:29:18,670 --> 00:29:19,790
+We also conform,
+
+846
+00:29:20,030 --> 00:29:21,310
+compare the performance with
+
+847
+00:29:21,310 --> 00:29:22,670
+the family of knowledge graph
+
+848
+00:29:22,670 --> 00:29:23,490
+embedding algorithms.
+
+849
+00:29:24,750 --> 00:29:27,365
+And and as we see
+those yellow bars,
+
+850
+00:29:27,365 --> 00:29:29,465
+we saw first first,
+the trend is that,
+
+851
+00:29:29,765 --> 00:29:31,765
+typically, knowledge graph
+
+852
+00:29:31,765 --> 00:29:33,705
+embedding methods
+all to perform
+
+853
+00:29:33,845 --> 00:29:35,845
+pass based algorithms on these
+
+854
+00:29:35,845 --> 00:29:39,205
+benchmarks. as I
+mentioned before,
+
+855
+00:29:39,605 --> 00:29:42,040
+so one one
+explanation explanation
+
+856
+00:29:42,260 --> 00:29:43,460
+for that is,
+
+857
+00:29:44,100 --> 00:29:46,020
+learning the inference path is
+
+858
+00:29:46,020 --> 00:29:48,040
+a harder problem
+than just learning,
+
+859
+00:29:48,500 --> 00:29:49,800
+the existing facts.
+
+860
+00:29:50,260 --> 00:29:52,600
+However, you can
+see our algorithm
+
+861
+00:29:52,820 --> 00:29:54,260
+using this reward shaping,
+
+862
+00:29:54,260 --> 00:29:55,640
+using knowledge
+graph embedding,
+
+863
+00:29:55,865 --> 00:29:57,945
+we can consistently
+match the SOTA
+
+864
+00:29:57,945 --> 00:29:58,905
+knowledge graph embedding
+
+865
+00:29:58,905 --> 00:30:00,605
+performance on all
+the benchmarks.
+
+866
+00:30:00,745 --> 00:30:02,905
+So we are the only
+one multi hop
+
+867
+00:30:02,905 --> 00:30:04,045
+reasoning approach,
+
+868
+00:30:04,985 --> 00:30:06,605
+that can do this at a time.
+
+869
+00:30:07,625 --> 00:30:09,940
+So this is, a pleasant results
+
+870
+00:30:09,940 --> 00:30:11,720
+because we are now combining,
+
+871
+00:30:11,780 --> 00:30:13,220
+basically, the the good parts
+
+872
+00:30:13,220 --> 00:30:15,300
+of both words. Our method is
+
+873
+00:30:15,300 --> 00:30:17,540
+explainable, but also,
+performance wise,
+
+874
+00:30:17,540 --> 00:30:19,160
+this has also become
+competitive.
+
+875
+00:30:20,500 --> 00:30:21,780
+So I wanna show some,
+
+876
+00:30:22,420 --> 00:30:24,200
+qualitative results.
+
+877
+00:30:24,235 --> 00:30:26,635
+So let's see a particular
+example and,
+
+878
+00:30:26,635 --> 00:30:27,915
+like, what a search process
+
+879
+00:30:27,915 --> 00:30:29,375
+the model is able to find.
+
+880
+00:30:29,435 --> 00:30:31,355
+So, again, this
+is the knowledge
+
+881
+00:30:31,355 --> 00:30:33,935
+graph with respect to
+actors and movies.
+
+882
+00:30:34,235 --> 00:30:36,795
+And here, so we have
+a query, which is,
+
+883
+00:30:36,795 --> 00:30:38,635
+like, we ask the profession of
+
+884
+00:30:38,635 --> 00:30:39,295
+a particular,
+
+885
+00:30:40,210 --> 00:30:42,070
+people node inside the graph.
+
+886
+00:30:42,850 --> 00:30:46,150
+So, these are
+the search paths,
+
+887
+00:30:46,530 --> 00:30:49,190
+our algorithm is
+able to, to return.
+
+888
+00:30:49,810 --> 00:30:51,570
+it's it's it returns multiple
+
+889
+00:30:51,570 --> 00:30:52,710
+search paths and multiple,
+
+890
+00:30:53,170 --> 00:30:55,995
+possible answers
+because, sometimes,
+
+891
+00:30:56,535 --> 00:30:58,295
+we we we actually
+deal with very,
+
+892
+00:30:58,295 --> 00:30:59,735
+very often the case
+that we have
+
+893
+00:30:59,735 --> 00:31:01,095
+a query and there has to be
+
+894
+00:31:01,095 --> 00:31:02,875
+multiple answers in
+the Knowledge Graph.
+
+895
+00:31:03,415 --> 00:31:05,415
+And, if you look
+into the past,
+
+896
+00:31:05,415 --> 00:31:07,675
+so I think, the past
+mostly represent,
+
+897
+00:31:07,975 --> 00:31:11,570
+relations such as
+Laura has, freedom,
+
+898
+00:31:11,570 --> 00:31:14,550
+Laura is, winner
+of SAGA award,
+
+899
+00:31:14,690 --> 00:31:17,190
+and Don has also won
+SAGA award before.
+
+900
+00:31:17,330 --> 00:31:18,770
+So Laura and Don should have
+
+901
+00:31:18,770 --> 00:31:19,590
+the same profession.
+
+902
+00:31:20,370 --> 00:31:23,795
+or, Laura and Richard,
+
+903
+00:31:23,855 --> 00:31:27,395
+they have jointly
+one, ensemble to,
+
+904
+00:31:28,095 --> 00:31:29,635
+jointly one or together.
+
+905
+00:31:29,775 --> 00:31:31,555
+So, Laura and Richard,
+
+906
+00:31:31,935 --> 00:31:33,790
+they should have
+the same profession.
+
+907
+00:31:33,950 --> 00:31:35,890
+So these are all
+very intuitive
+
+908
+00:31:36,030 --> 00:31:37,790
+and informative
+reasoning paths,
+
+909
+00:31:37,790 --> 00:31:38,770
+which is great.
+
+910
+00:31:39,870 --> 00:31:40,930
+there are some,
+
+911
+00:31:41,230 --> 00:31:42,670
+reasoning paths which
+are not so great.
+
+912
+00:31:42,670 --> 00:31:44,450
+So for example,
+like, we see Laura,
+
+913
+00:31:45,470 --> 00:31:47,390
+has nationality,
+United Kingdom,
+
+914
+00:31:47,390 --> 00:31:48,855
+and Ricky also
+has nationality,
+
+915
+00:31:49,075 --> 00:31:49,258
+United Kingdom.
+
+916
+00:31:49,349 --> 00:31:49,715
+so Laura and Ricky,
+
+917
+00:31:50,195 --> 00:31:52,675
+should have the same
+profession.
+
+918
+00:31:52,675 --> 00:31:56,115
+This is not true,
+but, good thing is,
+
+919
+00:31:56,115 --> 00:31:58,435
+like, after
+reinforced learning,
+
+920
+00:31:58,435 --> 00:31:59,955
+we are able to run
+this type of,
+
+921
+00:32:00,115 --> 00:32:01,255
+low competence pass lower.
+
+922
+00:32:04,280 --> 00:32:06,120
+And some interesting
+fact is that,
+
+923
+00:32:06,440 --> 00:32:08,220
+so this graph
+actually represents
+
+924
+00:32:08,360 --> 00:32:10,120
+a click in another graph.
+
+925
+00:32:10,440 --> 00:32:13,000
+so it is mostly about the cast
+
+926
+00:32:13,000 --> 00:32:15,080
+of crew of the famous British
+
+927
+00:32:15,080 --> 00:32:16,300
+show Downton Abbey.
+
+928
+00:32:18,175 --> 00:32:19,475
+Cool. In summary,
+
+929
+00:32:20,735 --> 00:32:22,175
+so for the sequential
+multi hop
+
+930
+00:32:22,175 --> 00:32:24,015
+reasoning, with reinforced
+
+931
+00:32:24,015 --> 00:32:24,915
+learning approach,
+
+932
+00:32:25,055 --> 00:32:26,735
+so this type of algorithm is
+
+933
+00:32:26,735 --> 00:32:27,955
+effective to answer,
+
+934
+00:32:28,495 --> 00:32:30,015
+the type of query where your
+
+935
+00:32:30,015 --> 00:32:31,615
+source entity and
+target relation
+
+936
+00:32:31,615 --> 00:32:33,140
+is known and you want to know
+
+937
+00:32:33,200 --> 00:32:34,880
+all the possible
+other entities
+
+938
+00:32:34,880 --> 00:32:37,060
+in other graph
+that demonstrates
+
+939
+00:32:37,280 --> 00:32:38,800
+such relation with respect to
+
+940
+00:32:38,800 --> 00:32:39,780
+the topic entity,
+
+941
+00:32:40,320 --> 00:32:42,000
+it is able to return multiple
+
+942
+00:32:42,000 --> 00:32:42,980
+predictive answers.
+
+943
+00:32:43,280 --> 00:32:45,300
+Because once we
+learn the reinforced
+
+944
+00:32:45,520 --> 00:32:46,500
+learning policy,
+
+945
+00:32:47,535 --> 00:32:49,235
+we can use best
+of first search
+
+946
+00:32:49,935 --> 00:32:54,415
+to search for
+multiple paths and
+
+947
+00:32:54,415 --> 00:32:56,095
+return the scoring
+for each path
+
+948
+00:32:56,095 --> 00:32:57,615
+and therefore
+effectively return
+
+949
+00:32:57,615 --> 00:33:00,100
+multiple possible
+answers for the query.
+
+950
+00:33:01,780 --> 00:33:03,720
+It can also be used to solve,
+
+951
+00:33:04,260 --> 00:33:05,780
+the type of queries where,
+
+952
+00:33:05,940 --> 00:33:08,520
+we ask whether e s and e t
+
+953
+00:33:08,660 --> 00:33:10,420
+demonstrate certain
+relations or not.
+
+954
+00:33:11,140 --> 00:33:12,820
+but, I think,
+
+955
+00:33:12,980 --> 00:33:14,340
+one could imagine
+it takes some
+
+956
+00:33:14,340 --> 00:33:16,485
+extra efforts there,
+because, like,
+
+957
+00:33:16,485 --> 00:33:18,425
+in this case, we
+need to do, like,
+
+958
+00:33:18,725 --> 00:33:20,165
+given all possible target
+
+959
+00:33:20,165 --> 00:33:21,685
+relations we cared about with
+
+960
+00:33:21,685 --> 00:33:23,125
+search from
+the source entity,
+
+961
+00:33:23,125 --> 00:33:24,645
+and then we see whether ETS in
+
+962
+00:33:24,645 --> 00:33:26,345
+our return of search stat.
+
+963
+00:33:26,725 --> 00:33:28,885
+So, so I think there are some
+
+964
+00:33:28,885 --> 00:33:31,000
+trade offs between this this
+
+965
+00:33:31,000 --> 00:33:32,280
+group of sequential multi hop
+
+966
+00:33:32,280 --> 00:33:33,560
+reasoning algorithms compared
+
+967
+00:33:33,560 --> 00:33:35,160
+to the pass based
+algorithms we
+
+968
+00:33:35,160 --> 00:33:36,140
+just talked about.
+
+969
+00:33:36,600 --> 00:33:37,800
+But one could choose,
+
+970
+00:33:37,800 --> 00:33:39,400
+depends on
+the application needs,
+
+971
+00:33:39,400 --> 00:33:41,080
+which family of algorithms we
+
+972
+00:33:41,080 --> 00:33:41,900
+want to use.
+
+973
+00:33:44,055 --> 00:33:46,395
+To summarize, for
+today's talk,
+
+974
+00:33:49,415 --> 00:33:50,775
+we introduced knowledge graph
+
+975
+00:33:50,775 --> 00:33:52,135
+reasoning techniques because
+
+976
+00:33:52,135 --> 00:33:53,575
+knowledge graph reasoning is
+
+977
+00:33:53,575 --> 00:33:54,935
+critical for knowledge graph
+
+978
+00:33:54,935 --> 00:33:56,810
+based applications
+since knowledge
+
+979
+00:33:56,810 --> 00:33:58,110
+graphs, they are intrinsically
+
+980
+00:33:58,250 --> 00:34:00,570
+incomplete. so we always need
+
+981
+00:34:00,570 --> 00:34:03,690
+to use inference
+to generate new
+
+982
+00:34:03,690 --> 00:34:06,250
+facts that are currently not
+
+983
+00:34:06,250 --> 00:34:07,710
+stored in the knowledge base.
+
+984
+00:34:08,090 --> 00:34:10,055
+And reinforcement
+learning approaches,
+
+985
+00:34:10,115 --> 00:34:11,475
+especially nowadays deep
+
+986
+00:34:11,475 --> 00:34:12,615
+reinforcement approach,
+
+987
+00:34:13,075 --> 00:34:14,435
+they are a strong family of
+
+988
+00:34:14,435 --> 00:34:16,535
+algorithms for
+learning informative
+
+989
+00:34:16,675 --> 00:34:17,655
+reasoning paths.
+
+990
+00:34:18,915 --> 00:34:20,675
+And these type
+of algorithms is
+
+991
+00:34:20,675 --> 00:34:22,295
+also time and
+space efficient.
+
+992
+00:34:23,550 --> 00:34:25,550
+And I also introduced one of,
+
+993
+00:34:25,950 --> 00:34:28,370
+the models per we
+per we proposed,
+
+994
+00:34:28,510 --> 00:34:30,670
+which combines vanilla policy
+
+995
+00:34:30,670 --> 00:34:32,190
+network with knowledge graph
+
+996
+00:34:32,190 --> 00:34:33,650
+embedding based
+rework shipping.
+
+997
+00:34:33,870 --> 00:34:34,830
+So that one is,
+
+998
+00:34:35,725 --> 00:34:37,585
+one of the first
+algorithm we saw,
+
+999
+00:34:37,965 --> 00:34:39,645
+which performs
+sequential multi
+
+1000
+00:34:39,645 --> 00:34:41,165
+hop reasoning but also match
+
+1001
+00:34:41,165 --> 00:34:42,445
+the performance of knowledge
+
+1002
+00:34:42,445 --> 00:34:44,125
+graph embedding approaches on
+
+1003
+00:34:44,125 --> 00:34:45,505
+multiple benchmark datasets.
+
+1004
+00:34:45,885 --> 00:34:47,565
+And for few future work,
+
+1005
+00:34:48,125 --> 00:34:50,560
+there there are more,
+exciting works,
+
+1006
+00:34:51,120 --> 00:34:52,820
+proposed after us.
+
+1007
+00:34:52,960 --> 00:34:55,600
+So, we we should
+definitely look
+
+1008
+00:34:55,600 --> 00:34:58,160
+into more core
+really reinforced
+
+1009
+00:34:58,160 --> 00:34:58,980
+learning research,
+
+1010
+00:34:59,600 --> 00:35:01,440
+to find ways to
+resolve a challenge
+
+1011
+00:35:01,440 --> 00:35:03,200
+that is either generic towards
+
+1012
+00:35:03,200 --> 00:35:04,675
+reinforcement learning or,
+
+1013
+00:35:05,235 --> 00:35:07,255
+they become knowledge
+graph specific.
+
+1014
+00:35:07,555 --> 00:35:08,755
+But, I think, overall,
+
+1015
+00:35:08,755 --> 00:35:10,375
+this is a very
+exciting resource
+
+1016
+00:35:10,435 --> 00:35:12,195
+space too. and, also,
+
+1017
+00:35:12,195 --> 00:35:13,975
+we have open source
+of algorithms.
+
+1018
+00:35:14,115 --> 00:35:15,555
+If you want to play with it,
+
+1019
+00:35:15,555 --> 00:35:17,155
+you can visit our open source
+
+1020
+00:35:17,155 --> 00:35:19,640
+link on GitHub.
+Thank you very much.
+
+1021
+00:35:19,640 --> 00:35:21,320
+talk about knowledge
+graph reasoning.
+
+1022
+00:35:21,540 --> 00:35:23,700
+So inferring new
+knowledge from
+
+1023
+00:35:23,700 --> 00:35:25,805
+existing knowledge bases and
+
+1024
+00:35:25,805 --> 00:35:27,245
+especially the application of
+
+1025
+00:35:27,245 --> 00:35:29,025
+reinforcement learning
+in this problem.
+
+1026
+00:35:30,605 --> 00:35:32,305
+There are lots of intelligent
+
+1027
+00:35:32,525 --> 00:35:34,045
+applications we can build in
+
+1028
+00:35:34,045 --> 00:35:35,565
+the enterprise, for example,
+
+1029
+00:35:35,565 --> 00:35:37,405
+question answering,
+semantic search,
+
+1030
+00:35:37,405 --> 00:35:39,725
+chatbots. Behind all these
+
+1031
+00:35:39,725 --> 00:35:40,705
+exciting applications,
+
+1032
+00:35:41,220 --> 00:35:43,080
+knowledge graph is
+a strong powerhouse.
+
+1033
+00:35:44,100 --> 00:35:46,680
+So, lots of times
+we can leverage
+
+1034
+00:35:47,140 --> 00:35:48,760
+graphs such as contacts,
+
+1035
+00:35:49,620 --> 00:35:51,140
+contacts we build from email
+
+1036
+00:35:51,140 --> 00:35:53,080
+list or your phone
+contact list,
+
+1037
+00:35:53,300 --> 00:35:54,600
+or product graph,
+
+1038
+00:35:55,035 --> 00:35:56,715
+a graph which contains product
+
+1039
+00:35:56,715 --> 00:35:58,075
+information and how different
+
+1040
+00:35:58,075 --> 00:35:59,615
+products related
+to each other,
+
+1041
+00:35:59,835 --> 00:36:01,995
+as well common sense
+knowledge graphs,
+
+1042
+00:36:01,995 --> 00:36:03,435
+such as those open domain
+
+1043
+00:36:03,435 --> 00:36:04,555
+knowledge graph you can find
+
+1044
+00:36:04,555 --> 00:36:06,735
+from Wikipedia or
+other organizations.
+
+1045
+00:36:08,770 --> 00:36:10,610
+There are typically two types
+
+1046
+00:36:10,610 --> 00:36:12,530
+of operations we
+need to run on
+
+1047
+00:36:12,530 --> 00:36:13,750
+the Knowledge Graph.
+
+1048
+00:36:13,970 --> 00:36:15,010
+Throughout this talk,
+
+1049
+00:36:15,010 --> 00:36:17,490
+I will assume a plain
+graph structure,
+
+1050
+00:36:17,490 --> 00:36:19,010
+which means our graph can be
+
+1051
+00:36:19,010 --> 00:36:21,430
+represented in
+sets of triples.
+
+1052
+00:36:23,605 --> 00:36:25,605
+Currently, there
+are some advanced
+
+1053
+00:36:25,605 --> 00:36:26,745
+knowledge graph, for example,
+
+1054
+00:36:26,885 --> 00:36:28,345
+involves meta information,
+
+1055
+00:36:28,965 --> 00:36:31,685
+and we leave those
+out of the scope
+
+1056
+00:36:31,685 --> 00:36:32,585
+for this talk.
+
+1057
+00:36:33,605 --> 00:36:35,605
+We can search this
+knowledge graph,
+
+1058
+00:36:35,605 --> 00:36:37,790
+which means given a query,
+
+1059
+00:36:37,790 --> 00:36:39,390
+we can simply perform facts
+
+1060
+00:36:39,390 --> 00:36:40,990
+lookup using some
+formal current
+
+1061
+00:36:40,990 --> 00:36:42,530
+languages such as sparkle.
+
+1062
+00:36:43,230 --> 00:36:44,290
+Like here, we ask,
+
+1063
+00:36:44,590 --> 00:36:46,530
+where was Barack Obama going?
+
+1064
+00:36:46,910 --> 00:36:47,790
+Within the knowledge graph,
+
+1065
+00:36:47,790 --> 00:36:48,930
+we can find Honolulu.
+
+1066
+00:36:50,265 --> 00:36:51,705
+However, a lot of times,
+
+1067
+00:36:51,705 --> 00:36:52,905
+we need to perform much more
+
+1068
+00:36:52,905 --> 00:36:54,505
+than this because
+knowledge graphs,
+
+1069
+00:36:54,505 --> 00:36:56,685
+they are intrinsically
+incomplete.
+
+1070
+00:36:57,225 --> 00:36:58,665
+So, a lot of times,
+
+1071
+00:36:58,665 --> 00:37:00,185
+the facts we care about might
+
+1072
+00:37:00,185 --> 00:37:01,580
+not present in the graph.
+
+1073
+00:37:01,660 --> 00:37:03,600
+So for example,
+as we shown here,
+
+1074
+00:37:03,980 --> 00:37:04,780
+through the relation,
+
+1075
+00:37:04,780 --> 00:37:06,720
+Barack Obama was
+born in Honolulu,
+
+1076
+00:37:06,780 --> 00:37:09,840
+and Honolulu has
+a Hawaii is a capital
+
+1077
+00:37:09,900 --> 00:37:13,680
+of Honolulu is
+a capital of Hawaii.
+
+1078
+00:37:14,015 --> 00:37:16,015
+We can possibly
+infer that Barack
+
+1079
+00:37:16,015 --> 00:37:17,635
+Obama was also
+born in Hawaii.
+
+1080
+00:37:17,775 --> 00:37:19,135
+Similarly, we can also infer
+
+1081
+00:37:19,135 --> 00:37:21,235
+Barack Obama was born
+in United States.
+
+1082
+00:37:23,215 --> 00:37:24,735
+Therefore, reasoning is a core
+
+1083
+00:37:24,735 --> 00:37:26,910
+problem for knowledge
+graphs as most,
+
+1084
+00:37:27,150 --> 00:37:28,830
+very often, it is
+impossible for
+
+1085
+00:37:28,830 --> 00:37:31,150
+us to curate or even store all
+
+1086
+00:37:31,150 --> 00:37:33,250
+facts possible in your
+knowledge graph.
+
+1087
+00:37:34,270 --> 00:37:35,230
+So in this talk,
+
+1088
+00:37:35,230 --> 00:37:36,850
+we mainly talk about reasoning
+
+1089
+00:37:36,910 --> 00:37:39,470
+approaches. I will cover three
+
+1090
+00:37:39,470 --> 00:37:40,990
+different types of
+reasoning approach,
+
+1091
+00:37:40,990 --> 00:37:42,485
+which are commonly used for
+
+1092
+00:37:42,485 --> 00:37:43,385
+knowledge graphs,
+
+1093
+00:37:44,885 --> 00:37:46,245
+which includes knowledge graph
+
+1094
+00:37:46,245 --> 00:37:48,185
+embeddings, past
+ranking algorithms,
+
+1095
+00:37:48,405 --> 00:37:50,265
+and sequential
+decision making.
+
+1096
+00:37:50,325 --> 00:37:52,165
+And we can see RL
+actually plays
+
+1097
+00:37:52,165 --> 00:37:54,485
+a significant role in how fast
+
+1098
+00:37:54,485 --> 00:37:56,245
+learning better multi hop
+
+1099
+00:37:56,245 --> 00:37:57,465
+reasoning algorithms.
+
+1100
+00:38:00,650 --> 00:38:01,770
+Let's dive into
+knowledge graph
+
+1101
+00:38:01,770 --> 00:38:03,370
+embeddings. A lot of you might
+
+1102
+00:38:03,370 --> 00:38:05,150
+be familiar with
+this approach.
+
+1103
+00:38:05,610 --> 00:38:07,130
+Knowledge graph
+embeddings was,
+
+1104
+00:38:07,610 --> 00:38:08,750
+convulsed earlier,
+
+1105
+00:38:08,890 --> 00:38:11,525
+so it is probably
+one of the first
+
+1106
+00:38:11,585 --> 00:38:13,265
+continuous
+representation learning
+
+1107
+00:38:13,265 --> 00:38:14,945
+algorithms even before deep
+
+1108
+00:38:14,945 --> 00:38:16,725
+neural network got on fire.
+
+1109
+00:38:17,425 --> 00:38:19,625
+So, what is knowledge
+graph embedding?
+
+1110
+00:38:19,625 --> 00:38:21,765
+So, basically, in
+this approach,
+
+1111
+00:38:22,320 --> 00:38:24,340
+we learn
+continuous representations
+
+1112
+00:38:24,720 --> 00:38:26,480
+for the entities
+and the relations
+
+1113
+00:38:26,480 --> 00:38:27,620
+in the knowledge graph.
+
+1114
+00:38:28,080 --> 00:38:30,020
+Given a fact triple
+which contains
+
+1115
+00:38:30,080 --> 00:38:32,100
+two entities and
+the target relation,
+
+1116
+00:38:32,400 --> 00:38:33,935
+knowledge graph
+embedding method
+
+1117
+00:38:34,015 --> 00:38:35,855
+comes up with
+scoring functions,
+
+1118
+00:38:35,855 --> 00:38:37,075
+which takes
+the representations
+
+1119
+00:38:37,135 --> 00:38:38,595
+for the entities and relations
+
+1120
+00:38:38,815 --> 00:38:40,335
+and try to predict a score,
+
+1121
+00:38:40,335 --> 00:38:41,775
+representing whether the fact
+
+1122
+00:38:41,775 --> 00:38:43,555
+is likely to be true or not.
+
+1123
+00:38:44,655 --> 00:38:45,375
+Over the years,
+
+1124
+00:38:45,375 --> 00:38:47,235
+there has been many fantastic
+
+1125
+00:38:47,455 --> 00:38:48,975
+scoring function
+being proposed,
+
+1126
+00:38:48,975 --> 00:38:50,420
+like like shown here.
+
+1127
+00:38:50,560 --> 00:38:52,580
+They have different forms of
+
+1128
+00:38:52,640 --> 00:38:54,080
+manipulating
+the embeddings and
+
+1129
+00:38:54,080 --> 00:38:56,160
+they have different space and
+
+1130
+00:38:56,160 --> 00:38:57,460
+time inference complexity.
+
+1131
+00:39:01,945 --> 00:39:04,205
+One particular interesting
+
+1132
+00:39:04,905 --> 00:39:06,345
+knowledge graph
+embedding approach,
+
+1133
+00:39:06,345 --> 00:39:08,105
+which I'm going
+to cover next,
+
+1134
+00:39:08,105 --> 00:39:09,165
+is convolution.
+
+1135
+00:39:10,025 --> 00:39:11,545
+It's two d
+convolutional knowledge
+
+1136
+00:39:11,545 --> 00:39:12,285
+graph embedding,
+
+1137
+00:39:12,505 --> 00:39:14,925
+which is basically
+using convolution
+
+1138
+00:39:14,985 --> 00:39:16,925
+networks to learn
+the scoring function.
+
+1139
+00:39:18,170 --> 00:39:20,350
+Here is just a brief overview
+
+1140
+00:39:20,490 --> 00:39:22,990
+of what this graph
+embedding looks like.
+
+1141
+00:39:24,330 --> 00:39:29,950
+Given your source entity, E1,
+
+1142
+00:39:30,090 --> 00:39:31,470
+and the target relation,
+
+1143
+00:39:32,875 --> 00:39:35,195
+We represent them
+both as a dense
+
+1144
+00:39:35,195 --> 00:39:39,215
+vector of the same dimension.
+
+1145
+00:39:40,475 --> 00:39:42,075
+The method basically proposed
+
+1146
+00:39:42,075 --> 00:39:43,215
+convolutional networks,
+
+1147
+00:39:43,595 --> 00:39:46,000
+which passes through
+the continuation
+
+1148
+00:39:46,220 --> 00:39:47,980
+of these two embeddings and
+
+1149
+00:39:47,980 --> 00:39:49,760
+generates a new
+representation.
+
+1150
+00:39:50,140 --> 00:39:51,660
+And this new representation is
+
+1151
+00:39:51,660 --> 00:39:54,240
+used in a dot product
+with a target
+
+1152
+00:39:54,620 --> 00:39:55,820
+embedding e two.
+
+1153
+00:39:55,820 --> 00:39:57,520
+And this way, we
+get prediction
+
+1154
+00:39:57,580 --> 00:40:01,105
+scores for
+the potential knowledge
+
+1155
+00:40:01,105 --> 00:40:01,605
+facts.
+
+1156
+00:40:01,985 --> 00:40:04,225
+We train such
+knowledge embedding
+
+1157
+00:40:04,225 --> 00:40:06,305
+functions by scoring facts
+
+1158
+00:40:06,305 --> 00:40:07,745
+observed in
+the partial knowledge
+
+1159
+00:40:07,745 --> 00:40:09,845
+graphs higher than
+those not observed.
+
+1160
+00:40:11,585 --> 00:40:13,365
+This method is
+able to generalize
+
+1161
+00:40:13,505 --> 00:40:16,740
+to unseen knowledge
+graph facts because,
+
+1162
+00:40:16,980 --> 00:40:18,580
+we we will be doing negative
+
+1163
+00:40:18,580 --> 00:40:19,960
+sampling during the training.
+
+1164
+00:40:20,340 --> 00:40:21,700
+So, instead of, like,
+
+1165
+00:40:21,700 --> 00:40:23,560
+pushing the scores
+of all observed
+
+1166
+00:40:24,340 --> 00:40:26,520
+facts down, we sample
+the negatives.
+
+1167
+00:40:26,660 --> 00:40:28,920
+So hopefully,
+the false negatives,
+
+1168
+00:40:29,215 --> 00:40:30,195
+their score will eventually
+
+1169
+00:40:30,415 --> 00:40:31,875
+going up after the training.
+
+1170
+00:40:33,855 --> 00:40:35,535
+This is a SOTA model proposed
+
+1171
+00:40:35,535 --> 00:40:36,595
+in twenty eighteen,
+
+1172
+00:40:36,655 --> 00:40:38,275
+and I believe in
+the literature
+
+1173
+00:40:38,335 --> 00:40:39,875
+there are better
+scoring functions
+
+1174
+00:40:40,015 --> 00:40:40,995
+proposed afterwards.
+
+1175
+00:40:41,375 --> 00:40:42,655
+So it will be interesting to
+
+1176
+00:40:42,655 --> 00:40:44,095
+refer to the literature
+for more
+
+1177
+00:40:44,095 --> 00:40:47,290
+details. Knowledge
+graph embeddings
+
+1178
+00:40:47,430 --> 00:40:48,470
+have higher accuracy.
+
+1179
+00:40:48,470 --> 00:40:50,070
+This has been tested on many
+
+1180
+00:40:50,070 --> 00:40:51,130
+knowledge graph benchmarks.
+
+1181
+00:40:51,510 --> 00:40:53,270
+However, there are
+some downsides
+
+1182
+00:40:53,270 --> 00:40:54,170
+for this method.
+
+1183
+00:40:54,310 --> 00:40:55,850
+One is they lack
+interpretability,
+
+1184
+00:40:56,230 --> 00:40:58,090
+because after I got a score,
+
+1185
+00:40:58,275 --> 00:41:00,195
+scoring of a particular
+knowledge fact,
+
+1186
+00:41:00,195 --> 00:41:02,535
+it is hard for me
+to judge whether
+
+1187
+00:41:03,075 --> 00:41:04,515
+prediction is correct or not,
+
+1188
+00:41:04,515 --> 00:41:05,975
+whether I can trust
+this prediction
+
+1189
+00:41:06,115 --> 00:41:07,795
+because there's not so much
+
+1190
+00:41:07,795 --> 00:41:09,895
+interpretability around it.
+
+1191
+00:41:10,850 --> 00:41:12,450
+Second, this method doesn't
+
+1192
+00:41:12,450 --> 00:41:14,610
+perform very well for rare or
+
+1193
+00:41:14,610 --> 00:41:16,450
+unseen entities
+because they're
+
+1194
+00:41:16,450 --> 00:41:17,250
+entity embeddings.
+
+1195
+00:41:17,250 --> 00:41:18,530
+We cannot learn them well.
+
+1196
+00:41:18,530 --> 00:41:19,890
+Therefore, during test time,
+
+1197
+00:41:19,890 --> 00:41:21,410
+it's harder for
+such methods to
+
+1198
+00:41:21,410 --> 00:41:24,130
+generalize. That's why we came
+
+1199
+00:41:24,130 --> 00:41:27,015
+to a second category
+of algorithm
+
+1200
+00:41:27,015 --> 00:41:28,215
+for nulligraphic reasoning,
+
+1201
+00:41:28,215 --> 00:41:30,555
+which is parse
+based algorithms.
+
+1202
+00:41:32,135 --> 00:41:33,515
+For the parse
+based algorithms,
+
+1203
+00:41:33,815 --> 00:41:35,835
+whenever it tries to predict
+
+1204
+00:41:36,135 --> 00:41:37,575
+the possible relations between
+
+1205
+00:41:37,575 --> 00:41:38,235
+two entities,
+
+1206
+00:41:38,615 --> 00:41:43,650
+it looks at the path
+in the partial
+
+1207
+00:41:43,650 --> 00:41:45,010
+only graph that
+connecting these
+
+1208
+00:41:45,010 --> 00:41:47,170
+two entities and
+use these paths
+
+1209
+00:41:47,170 --> 00:41:49,990
+as features for
+scoring the likelihood
+
+1210
+00:41:50,370 --> 00:41:52,790
+of a particular relation.
+
+1211
+00:41:53,305 --> 00:41:54,185
+So, for example,
+
+1212
+00:41:54,185 --> 00:41:55,945
+as like shown in the example
+
+1213
+00:41:55,945 --> 00:41:56,985
+knowledge graph here,
+
+1214
+00:41:56,985 --> 00:41:58,345
+so the example knowledge graph
+
+1215
+00:41:58,345 --> 00:42:00,105
+is basically a knowledge graph
+
+1216
+00:42:00,105 --> 00:42:02,205
+storing information
+around movies,
+
+1217
+00:42:02,265 --> 00:42:03,565
+directors, and actors.
+
+1218
+00:42:04,105 --> 00:42:05,385
+And here we want to learn,
+
+1219
+00:42:06,090 --> 00:42:07,690
+does Tom Hanks and Steven
+
+1220
+00:42:07,690 --> 00:42:09,390
+Spielberg has a collaborator
+
+1221
+00:42:09,690 --> 00:42:11,950
+relationship? So path
+based algorithm,
+
+1222
+00:42:12,250 --> 00:42:14,910
+it will it will try to find
+
+1223
+00:42:15,450 --> 00:42:17,390
+possible paths that
+are connecting
+
+1224
+00:42:17,610 --> 00:42:19,630
+Tom Hanks and Steven Spielberg
+
+1225
+00:42:20,105 --> 00:42:21,625
+and try to use those paths to
+
+1226
+00:42:21,625 --> 00:42:23,625
+predict whether there could be
+
+1227
+00:42:23,625 --> 00:42:25,865
+a direct connection related to
+
+1228
+00:42:25,865 --> 00:42:27,725
+collaborator between
+these two entities.
+
+1229
+00:42:28,505 --> 00:42:29,785
+For example, there are some
+
+1230
+00:42:29,785 --> 00:42:31,085
+sample paths shown here.
+
+1231
+00:42:32,105 --> 00:42:33,145
+We could trace a path.
+
+1232
+00:42:33,145 --> 00:42:34,745
+For example, Tom
+Hanks has been
+
+1233
+00:42:34,745 --> 00:42:36,740
+cast in the movie, The Post,
+
+1234
+00:42:36,960 --> 00:42:37,680
+and The Post,
+
+1235
+00:42:38,480 --> 00:42:40,660
+has students still
+work as a director.
+
+1236
+00:42:40,880 --> 00:42:41,680
+Therefore, Tom,
+
+1237
+00:42:42,000 --> 00:42:43,360
+Hanks and still work has
+
+1238
+00:42:43,360 --> 00:42:44,900
+collaborated before.
+
+1239
+00:42:45,280 --> 00:42:46,640
+there could also be some paths
+
+1240
+00:42:46,640 --> 00:42:48,020
+which is not very
+informative.
+
+1241
+00:42:48,080 --> 00:42:48,980
+So for example,
+
+1242
+00:42:49,555 --> 00:42:53,075
+we saw Tom Hanks
+is casted in per,
+
+1243
+00:42:53,475 --> 00:42:55,895
+in the post the prod the post
+
+1244
+00:42:56,195 --> 00:42:58,055
+is produced in
+the United States,
+
+1245
+00:42:58,355 --> 00:43:00,355
+while Steven Spielberg is also
+
+1246
+00:43:00,355 --> 00:43:01,395
+lived in United States.
+
+1247
+00:43:01,395 --> 00:43:03,095
+But this is not
+a very informative
+
+1248
+00:43:03,800 --> 00:43:05,340
+task to predict
+the collaborator
+
+1249
+00:43:05,560 --> 00:43:06,060
+relationship.
+
+1250
+00:43:07,560 --> 00:43:09,560
+In terms of how
+we represent in
+
+1251
+00:43:09,560 --> 00:43:11,640
+the past, sometimes
+we could in
+
+1252
+00:43:11,800 --> 00:43:14,120
+include intermediate
+notes on the past,
+
+1253
+00:43:14,120 --> 00:43:15,260
+such as the post.
+
+1254
+00:43:16,765 --> 00:43:18,385
+But a lot of oftentimes,
+
+1255
+00:43:18,525 --> 00:43:21,005
+we don't need to
+include the the
+
+1256
+00:43:21,005 --> 00:43:22,065
+intermediate entity,
+
+1257
+00:43:22,125 --> 00:43:24,525
+but only the relations
+in between.
+
+1258
+00:43:24,525 --> 00:43:26,465
+This is because sometimes
+the intermediate
+
+1259
+00:43:27,325 --> 00:43:29,265
+entity is not a matter
+for the inference
+
+1260
+00:43:29,325 --> 00:43:30,925
+. So for example,
+in this case,
+
+1261
+00:43:30,925 --> 00:43:33,060
+as long as we know Tom has has
+
+1262
+00:43:33,060 --> 00:43:35,060
+casted in some movie directed
+
+1263
+00:43:35,060 --> 00:43:36,120
+by Steven Spielberg,
+
+1264
+00:43:36,260 --> 00:43:38,360
+we can infer that they
+have a collaborator
+
+1265
+00:43:38,660 --> 00:43:40,920
+relationship. we
+don't need to know,
+
+1266
+00:43:41,380 --> 00:43:43,160
+what exactly movie it is.
+
+1267
+00:43:43,860 --> 00:43:45,460
+So that's why a lot of past
+
+1268
+00:43:45,460 --> 00:43:46,840
+ranking based algorithms,
+
+1269
+00:43:47,065 --> 00:43:48,765
+they don't include
+the intermediate
+
+1270
+00:43:48,985 --> 00:43:50,205
+entities as a representation.
+
+1271
+00:43:51,865 --> 00:43:53,885
+So the knowledge
+graph is big.
+
+1272
+00:43:54,265 --> 00:43:56,425
+there is a,
+immediate question,
+
+1273
+00:43:56,425 --> 00:43:58,025
+which is how do we find such
+
+1274
+00:43:58,025 --> 00:43:59,165
+inference pass?
+
+1275
+00:44:00,380 --> 00:44:02,160
+Obviously, one
+could do exhaustive
+
+1276
+00:44:02,300 --> 00:44:05,260
+search. we could
+try to find all
+
+1277
+00:44:05,260 --> 00:44:06,700
+possible paths
+connecting the two
+
+1278
+00:44:06,700 --> 00:44:08,540
+entities. sometimes we can't
+
+1279
+00:44:08,540 --> 00:44:10,860
+efficiently,
+achieve this through
+
+1280
+00:44:10,860 --> 00:44:12,320
+dynamic programming.
+
+1281
+00:44:12,865 --> 00:44:15,065
+However, the number
+of paths in
+
+1282
+00:44:15,065 --> 00:44:16,065
+a lot of monoclonal graph
+
+1283
+00:44:16,065 --> 00:44:17,845
+connecting two
+entities is large.
+
+1284
+00:44:19,185 --> 00:44:21,285
+Using such a large
+feature vector,
+
+1285
+00:44:23,265 --> 00:44:23,905
+a lot of times,
+
+1286
+00:44:23,905 --> 00:44:25,665
+we will learn leads to poor
+
+1287
+00:44:25,665 --> 00:44:26,725
+learning performance.
+
+1288
+00:44:27,750 --> 00:44:30,070
+So that's why, later works has
+
+1289
+00:44:30,070 --> 00:44:31,910
+been trying to
+look at how could
+
+1290
+00:44:31,910 --> 00:44:34,250
+we effectively identify paths
+
+1291
+00:44:34,390 --> 00:44:36,730
+that are
+potentially informative
+
+1292
+00:44:37,030 --> 00:44:38,090
+for our inference.
+
+1293
+00:44:38,390 --> 00:44:40,250
+So for example,
+early works before,
+
+1294
+00:44:41,085 --> 00:44:43,265
+deep new deep learning
+has taken off.
+
+1295
+00:44:43,885 --> 00:44:45,745
+they have tried the data
+driven methods.
+
+1296
+00:44:45,805 --> 00:44:47,565
+For example, try
+to come up with
+
+1297
+00:44:47,565 --> 00:44:49,565
+discrete heuristics that help
+
+1298
+00:44:49,565 --> 00:44:51,085
+us to select the better path.
+
+1299
+00:44:51,085 --> 00:44:52,765
+For example, we can only we we
+
+1300
+00:44:52,765 --> 00:44:53,825
+only keep paths,
+
+1301
+00:44:54,310 --> 00:44:56,630
+that is supported
+by some training
+
+1302
+00:44:56,630 --> 00:44:58,390
+facts, or we only keep paths
+
+1303
+00:44:58,390 --> 00:45:00,470
+that have leads to some target
+
+1304
+00:45:00,470 --> 00:45:02,010
+entities on the training,
+
+1305
+00:45:02,710 --> 00:45:05,270
+on the training
+set and use them
+
+1306
+00:45:05,270 --> 00:45:07,615
+as features. And in term,
+
+1307
+00:45:08,095 --> 00:45:09,935
+when I say using
+paths as features,
+
+1308
+00:45:09,935 --> 00:45:11,075
+though, in the literature,
+
+1309
+00:45:11,135 --> 00:45:12,975
+there's also different
+ways to do that.
+
+1310
+00:45:12,975 --> 00:45:14,015
+So sometimes, like,
+
+1311
+00:45:14,335 --> 00:45:16,415
+we we can we can come up with
+
+1312
+00:45:16,415 --> 00:45:18,655
+a score associated
+with with each path.
+
+1313
+00:45:18,655 --> 00:45:19,410
+So So for example,
+
+1314
+00:45:19,410 --> 00:45:20,790
+the random walk probability
+
+1315
+00:45:20,930 --> 00:45:22,290
+represented by the pass.
+
+1316
+00:45:22,290 --> 00:45:24,290
+Or sometimes, we could come up
+
+1317
+00:45:24,290 --> 00:45:25,830
+with embedding
+based approach.
+
+1318
+00:45:26,690 --> 00:45:29,350
+We are able to identify
+the intermediate
+
+1319
+00:45:29,410 --> 00:45:30,770
+entity embedding as well as
+
+1320
+00:45:30,770 --> 00:45:32,585
+the relation embeddings
+on the pass.
+
+1321
+00:45:32,665 --> 00:45:33,965
+And then we can effectively
+
+1322
+00:45:34,025 --> 00:45:36,105
+aggregate those embeddings to
+
+1323
+00:45:36,105 --> 00:45:38,605
+use those as
+a feature representation
+
+1324
+00:45:38,665 --> 00:45:40,985
+for the pass. And then we use
+
+1325
+00:45:40,985 --> 00:45:44,025
+those all and we aggregate all
+
+1326
+00:45:44,025 --> 00:45:45,785
+the possible pass find between
+
+1327
+00:45:45,785 --> 00:45:46,525
+two entities,
+
+1328
+00:45:47,930 --> 00:45:49,370
+and use those as features to
+
+1329
+00:45:49,370 --> 00:45:50,670
+predict the target relation.
+
+1330
+00:45:54,970 --> 00:45:56,570
+Most recently,
+after deep learning
+
+1331
+00:45:56,570 --> 00:45:57,630
+has taken off,
+
+1332
+00:45:58,985 --> 00:46:00,745
+some work has proposed an even
+
+1333
+00:46:00,745 --> 00:46:02,825
+more effective
+way to find such
+
+1334
+00:46:02,825 --> 00:46:03,625
+inference paths,
+
+1335
+00:46:03,625 --> 00:46:05,405
+which is use
+reinforcement learning.
+
+1336
+00:46:06,905 --> 00:46:08,345
+because we need to search for
+
+1337
+00:46:08,345 --> 00:46:09,145
+informative paths,
+
+1338
+00:46:09,145 --> 00:46:10,845
+so why not train
+a reinforcement
+
+1339
+00:46:10,985 --> 00:46:12,770
+learning agent to effectively
+
+1340
+00:46:12,830 --> 00:46:14,850
+help us to search
+the informative
+
+1341
+00:46:14,910 --> 00:46:16,610
+path between two entities?
+
+1342
+00:46:16,990 --> 00:46:18,930
+This is how, this is what,
+
+1343
+00:46:20,270 --> 00:46:23,650
+a very famous work
+Deepass has has done.
+
+1344
+00:46:23,790 --> 00:46:25,310
+So basically, this work learn
+
+1345
+00:46:25,310 --> 00:46:27,105
+a policy based
+engine to sample
+
+1346
+00:46:27,105 --> 00:46:28,785
+the most informative
+pass between
+
+1347
+00:46:28,785 --> 00:46:30,785
+two entities. And how it works
+
+1348
+00:46:30,785 --> 00:46:32,805
+is it learns
+the policy network
+
+1349
+00:46:32,865 --> 00:46:35,525
+and start from
+the source entity.
+
+1350
+00:46:36,225 --> 00:46:37,905
+the agent basically
+uses policy
+
+1351
+00:46:37,905 --> 00:46:40,230
+network to to pick the most
+
+1352
+00:46:40,230 --> 00:46:42,310
+promising pass
+extension at each
+
+1353
+00:46:42,310 --> 00:46:44,970
+step until it reaches
+a target entity.
+
+1354
+00:46:46,390 --> 00:46:49,130
+We reward the agent
+by a hybrid
+
+1355
+00:46:49,270 --> 00:46:50,790
+reward defined
+by the following
+
+1356
+00:46:50,790 --> 00:46:51,530
+three terms.
+
+1357
+00:46:52,390 --> 00:46:55,345
+One is about search
+correctness.
+
+1358
+00:46:55,565 --> 00:46:56,605
+So, basically, if, like,
+
+1359
+00:46:56,605 --> 00:46:58,285
+the path reach
+the correct target
+
+1360
+00:46:58,285 --> 00:47:00,685
+entity, we give
+the agent a policy
+
+1361
+00:47:00,685 --> 00:47:01,565
+reward. Otherwise,
+
+1362
+00:47:01,565 --> 00:47:03,105
+we give it a negative reward.
+
+1363
+00:47:03,165 --> 00:47:04,785
+And, also, like,
+regarding efficiency,
+
+1364
+00:47:04,925 --> 00:47:05,805
+so a lot of times,
+
+1365
+00:47:05,805 --> 00:47:07,565
+we prefer short inference pass
+
+1366
+00:47:07,565 --> 00:47:09,230
+over long inference pass.
+
+1367
+00:47:09,470 --> 00:47:12,610
+So, we have
+a efficiency reward,
+
+1368
+00:47:14,270 --> 00:47:16,910
+reversely proportional
+to the length
+
+1369
+00:47:16,910 --> 00:47:18,350
+of the pass. And also,
+
+1370
+00:47:18,350 --> 00:47:20,210
+there is a diversity reverse
+
+1371
+00:47:20,350 --> 00:47:21,950
+term in the sense that we want
+
+1372
+00:47:21,950 --> 00:47:23,710
+the pass searched by the agent
+
+1373
+00:47:23,710 --> 00:47:25,615
+to be diverse. A
+new path should
+
+1374
+00:47:25,615 --> 00:47:27,535
+should be less similar to what
+
+1375
+00:47:27,535 --> 00:47:29,075
+the path we have
+already found.
+
+1376
+00:47:30,175 --> 00:47:30,895
+And we can,
+
+1377
+00:47:31,135 --> 00:47:34,575
+and we can formulate
+everything as in a,
+
+1378
+00:47:34,815 --> 00:47:36,255
+reinforced learning framework
+
+1379
+00:47:36,255 --> 00:47:38,035
+and trained using
+policy gradient.
+
+1380
+00:47:38,640 --> 00:47:40,480
+And specifically
+for this work,
+
+1381
+00:47:40,720 --> 00:47:43,040
+there is, it
+proposed some more
+
+1382
+00:47:43,040 --> 00:47:44,800
+techniques to help the model
+
+1383
+00:47:44,800 --> 00:47:46,320
+learn better. So one,
+
+1384
+00:47:46,320 --> 00:47:48,000
+it's because there is a huge
+
+1385
+00:47:48,000 --> 00:47:50,020
+number of paths
+between two entities.
+
+1386
+00:47:50,160 --> 00:47:51,780
+Sometimes if we're
+just naively
+
+1387
+00:47:51,840 --> 00:47:53,060
+run policy gradient,
+
+1388
+00:47:55,135 --> 00:47:56,655
+the the agent basically cannot
+
+1389
+00:47:56,655 --> 00:47:58,095
+hit any positive targets and
+
+1390
+00:47:58,095 --> 00:47:59,535
+the training cannot go on.
+
+1391
+00:47:59,535 --> 00:48:00,815
+So for this work,
+
+1392
+00:48:01,135 --> 00:48:02,895
+it use a common
+techniques used
+
+1393
+00:48:02,895 --> 00:48:04,415
+in reinforcement learning,
+
+1394
+00:48:04,415 --> 00:48:06,355
+which is first using
+t shirt forcing.
+
+1395
+00:48:07,010 --> 00:48:09,350
+We're first
+using bidirectional
+
+1396
+00:48:10,610 --> 00:48:12,950
+beam search to find promising
+
+1397
+00:48:13,090 --> 00:48:14,710
+paths connecting
+two entities.
+
+1398
+00:48:15,170 --> 00:48:17,890
+We use supervised learning to
+
+1399
+00:48:17,890 --> 00:48:19,250
+force a policy network,
+
+1400
+00:48:19,250 --> 00:48:21,270
+to force being
+able to hit those
+
+1401
+00:48:21,945 --> 00:48:23,805
+paths find by
+the bidirectional
+
+1402
+00:48:24,345 --> 00:48:25,865
+beam search. Later,
+
+1403
+00:48:25,865 --> 00:48:27,485
+we retrain the policy network
+
+1404
+00:48:27,545 --> 00:48:28,985
+with
+the reinforcement learning
+
+1405
+00:48:28,985 --> 00:48:30,265
+framework. This,
+
+1406
+00:48:30,745 --> 00:48:32,905
+this matter could
+help the agent
+
+1407
+00:48:32,905 --> 00:48:33,805
+learns better.
+
+1408
+00:48:35,170 --> 00:48:37,010
+This is
+reinforcement learning's
+
+1409
+00:48:37,010 --> 00:48:39,110
+application in path
+finding algorithms.
+
+1410
+00:48:39,810 --> 00:48:41,250
+Remember, the end goal here is
+
+1411
+00:48:41,250 --> 00:48:43,490
+to identify
+an informative path
+
+1412
+00:48:43,490 --> 00:48:45,970
+connecting two
+entities and use
+
+1413
+00:48:45,970 --> 00:48:47,830
+them to predict
+new relations.
+
+1414
+00:48:49,355 --> 00:48:51,695
+These, task based algorithms,
+
+1415
+00:48:51,915 --> 00:48:53,275
+they're great in terms of they
+
+1416
+00:48:53,275 --> 00:48:53,935
+are explicable.
+
+1417
+00:48:54,475 --> 00:48:57,355
+Also, after several years of
+
+1418
+00:48:57,355 --> 00:48:58,715
+development, now
+their performance
+
+1419
+00:48:58,715 --> 00:48:59,675
+is also competitive.
+
+1420
+00:48:59,675 --> 00:49:02,720
+They are they
+works pretty well
+
+1421
+00:49:02,960 --> 00:49:04,880
+when we want to when we know
+
+1422
+00:49:04,880 --> 00:49:06,880
+the source and target entities
+
+1423
+00:49:06,880 --> 00:49:08,640
+we care about,
+and we just want
+
+1424
+00:49:08,640 --> 00:49:10,740
+to query whether
+these two entities,
+
+1425
+00:49:11,280 --> 00:49:14,100
+subject to a certain
+relations or not.
+
+1426
+00:49:15,535 --> 00:49:17,375
+Also, because, we noticed that
+
+1427
+00:49:17,375 --> 00:49:19,055
+sometimes the harsh
+features do
+
+1428
+00:49:19,055 --> 00:49:20,995
+not need to include
+entity information.
+
+1429
+00:49:21,455 --> 00:49:23,215
+So this algorithm can work for
+
+1430
+00:49:23,215 --> 00:49:24,495
+rare or unseen entities.
+
+1431
+00:49:24,495 --> 00:49:26,255
+Because if we have
+an unseen entity,
+
+1432
+00:49:26,255 --> 00:49:28,835
+we can just find
+the past it has.
+
+1433
+00:49:29,370 --> 00:49:31,470
+it has connections
+to the existing
+
+1434
+00:49:31,530 --> 00:49:32,730
+nodes in another graph.
+
+1435
+00:49:32,730 --> 00:49:33,210
+And then, like,
+
+1436
+00:49:33,210 --> 00:49:35,390
+we can base on
+the pass to infer
+
+1437
+00:49:35,450 --> 00:49:38,010
+whether the entity
+has a relation to,
+
+1438
+00:49:38,250 --> 00:49:39,870
+to the source
+entities or not.
+
+1439
+00:49:40,570 --> 00:49:42,170
+However, a caveat
+for this type
+
+1440
+00:49:42,170 --> 00:49:43,770
+of approach is that they're
+
+1441
+00:49:43,770 --> 00:49:46,145
+inefficient for the questions
+
+1442
+00:49:46,145 --> 00:49:47,985
+where the source
+entity is specified,
+
+1443
+00:49:47,985 --> 00:49:49,605
+the target relation
+is specified,
+
+1444
+00:49:50,065 --> 00:49:51,505
+but the target
+entities are not
+
+1445
+00:49:51,505 --> 00:49:52,625
+specified. So for example,
+
+1446
+00:49:52,625 --> 00:49:54,145
+if instead of
+asking whether Tom
+
+1447
+00:49:54,145 --> 00:49:55,665
+Hanks and Steven Spielberg has
+
+1448
+00:49:55,665 --> 00:49:57,445
+collaborated before,
+
+1449
+00:49:57,665 --> 00:49:59,685
+we just ask who
+has collaborated
+
+1450
+00:49:59,825 --> 00:50:00,805
+with Tom Hanks.
+
+1451
+00:50:01,640 --> 00:50:03,720
+In this case, this
+this have, sort of,
+
+1452
+00:50:03,720 --> 00:50:05,240
+becomes very efficient because
+
+1453
+00:50:05,240 --> 00:50:08,380
+we need to enumerate,
+basically,
+
+1454
+00:50:08,600 --> 00:50:10,680
+all paths between
+Tom Hanks and
+
+1455
+00:50:10,680 --> 00:50:12,280
+any other entities in another
+
+1456
+00:50:12,280 --> 00:50:14,220
+graph and use them
+for the prediction.
+
+1457
+00:50:14,895 --> 00:50:18,335
+So this has proposed
+an efficiency here.
+
+1458
+00:50:18,335 --> 00:50:20,355
+So how we how do we
+solve this problem?
+
+1459
+00:50:21,215 --> 00:50:24,015
+So this brings us to
+the scenario where,
+
+1460
+00:50:24,255 --> 00:50:26,035
+we cause a knowledge
+graph reasoning,
+
+1461
+00:50:26,335 --> 00:50:27,715
+sequential decision making.
+
+1462
+00:50:28,180 --> 00:50:30,280
+So this is a very
+cl collaborative
+
+1463
+00:50:30,340 --> 00:50:33,140
+framework, proposed in two
+
+1464
+00:50:33,140 --> 00:50:34,340
+thousand eighteen by,
+
+1465
+00:50:35,060 --> 00:50:36,600
+by the model called
+the Minerva.
+
+1466
+00:50:36,900 --> 00:50:37,640
+So basically,
+
+1467
+00:50:38,500 --> 00:50:40,900
+we realized for the problem
+
+1468
+00:50:40,900 --> 00:50:42,755
+where target the source entity
+
+1469
+00:50:42,755 --> 00:50:44,115
+is known and
+the targeted relation
+
+1470
+00:50:44,115 --> 00:50:46,035
+is known, we can directly
+
+1471
+00:50:46,035 --> 00:50:47,475
+formulate it as a sequential
+
+1472
+00:50:47,475 --> 00:50:48,775
+decision making problem.
+
+1473
+00:50:49,075 --> 00:50:50,595
+What what I mean by that is we
+
+1474
+00:50:50,595 --> 00:50:52,295
+can start from
+the source entity
+
+1475
+00:50:52,355 --> 00:50:54,115
+and just directly
+jump into a knowledge
+
+1476
+00:50:54,115 --> 00:50:55,715
+graph and search
+for the potential
+
+1477
+00:50:55,715 --> 00:50:56,615
+target entity.
+
+1478
+00:50:57,660 --> 00:50:58,780
+So for example, as here,
+
+1479
+00:50:58,780 --> 00:51:01,100
+we start from ten Hanks and we
+
+1480
+00:51:01,100 --> 00:51:03,580
+sequentially extend
+the the search
+
+1481
+00:51:03,580 --> 00:51:05,100
+parse in the knowledge graph
+
+1482
+00:51:05,100 --> 00:51:08,240
+until we reach the a potential
+
+1483
+00:51:08,300 --> 00:51:10,380
+target entity. If
+we reach a correct
+
+1484
+00:51:10,380 --> 00:51:12,000
+answer, then we just stop.
+
+1485
+00:51:13,285 --> 00:51:15,525
+How do we train an agent to
+
+1486
+00:51:15,525 --> 00:51:16,485
+perform this search?
+
+1487
+00:51:16,485 --> 00:51:18,985
+So go from the source
+entity and
+
+1488
+00:51:19,445 --> 00:51:21,525
+stop at the correct
+target entity.
+
+1489
+00:51:21,525 --> 00:51:22,885
+This can also be trained using
+
+1490
+00:51:22,885 --> 00:51:24,025
+reinforcement learning.
+
+1491
+00:51:26,660 --> 00:51:28,500
+Let's zoom into the formal
+
+1492
+00:51:28,500 --> 00:51:29,720
+reinforcement
+learning formulation
+
+1493
+00:51:29,780 --> 00:51:30,600
+of this problem.
+
+1494
+00:51:32,180 --> 00:51:34,440
+Typically, when we look
+at the reinforcement
+
+1495
+00:51:34,500 --> 00:51:35,560
+learning framework,
+
+1496
+00:51:35,940 --> 00:51:37,320
+we will look at the following
+
+1497
+00:51:37,380 --> 00:51:38,120
+five components.
+
+1498
+00:51:38,485 --> 00:51:39,385
+So the environment,
+
+1499
+00:51:39,525 --> 00:51:41,605
+what is is defined
+as a state,
+
+1500
+00:51:41,605 --> 00:51:42,725
+what are the actions,
+
+1501
+00:51:42,725 --> 00:51:44,005
+what are the what are the,
+
+1502
+00:51:44,245 --> 00:51:45,925
+what are the state
+how are the state
+
+1503
+00:51:45,925 --> 00:51:47,065
+transactions defined,
+
+1504
+00:51:47,125 --> 00:51:48,965
+and what are
+the rewards should we,
+
+1505
+00:51:49,205 --> 00:51:50,805
+should we provide to the agent
+
+1506
+00:51:50,805 --> 00:51:51,545
+during learning.
+
+1507
+00:51:52,200 --> 00:51:53,560
+So in this case,
+
+1508
+00:51:53,560 --> 00:51:55,560
+our environment is
+basically a knowledge
+
+1509
+00:51:55,560 --> 00:51:59,880
+graph. And we also
+have, we also know,
+
+1510
+00:52:00,120 --> 00:52:01,720
+what is a source
+entity we cares
+
+1511
+00:52:01,720 --> 00:52:03,000
+about and what is the target
+
+1512
+00:52:03,000 --> 00:52:04,380
+relations we care about.
+
+1513
+00:52:05,945 --> 00:52:08,205
+For the state, it's basically
+
+1514
+00:52:09,305 --> 00:52:11,545
+the current entity
+we are at in
+
+1515
+00:52:11,545 --> 00:52:12,605
+a knowledge graph.
+
+1516
+00:52:14,025 --> 00:52:16,025
+Also, we we also
+include the source
+
+1517
+00:52:16,025 --> 00:52:18,380
+entity and and target relation
+
+1518
+00:52:18,440 --> 00:52:20,040
+because because we can also we
+
+1519
+00:52:20,040 --> 00:52:21,260
+can always see them.
+
+1520
+00:52:21,320 --> 00:52:23,900
+So we formulate
+this as a partial
+
+1521
+00:52:24,040 --> 00:52:26,300
+sequential a partial
+partially observed,
+
+1522
+00:52:27,000 --> 00:52:28,680
+sequential decision
+making process
+
+1523
+00:52:28,680 --> 00:52:31,335
+because, at each state state,
+
+1524
+00:52:31,335 --> 00:52:33,255
+we do not assume that we see
+
+1525
+00:52:33,255 --> 00:52:34,775
+the entire knowledge
+graph environment.
+
+1526
+00:52:34,775 --> 00:52:37,415
+We basically assume
+we see the current
+
+1527
+00:52:37,415 --> 00:52:38,795
+entity and its neighborhood.
+
+1528
+00:52:39,735 --> 00:52:41,515
+So we start from
+the source entity,
+
+1529
+00:52:41,815 --> 00:52:43,595
+and the action
+space is basically
+
+1530
+00:52:43,960 --> 00:52:45,720
+all the other
+entities connected
+
+1531
+00:52:45,720 --> 00:52:46,940
+with the current entity.
+
+1532
+00:52:47,000 --> 00:52:49,020
+And our goal is to
+find a potential
+
+1533
+00:52:49,080 --> 00:52:50,700
+edge among all
+these connections
+
+1534
+00:52:50,920 --> 00:52:52,780
+for us to extend
+the next step.
+
+1535
+00:52:55,560 --> 00:52:56,780
+And, so,
+
+1536
+00:52:57,365 --> 00:52:59,845
+Once the agent finds
+the next step,
+
+1537
+00:52:59,845 --> 00:53:03,065
+it transits to a new
+state and so on.
+
+1538
+00:53:03,125 --> 00:53:04,245
+Basically, it performed this
+
+1539
+00:53:04,245 --> 00:53:06,005
+type of multi hop
+search in a large
+
+1540
+00:53:06,005 --> 00:53:07,845
+graph until it has
+reached a maximum
+
+1541
+00:53:07,845 --> 00:53:09,225
+number of steps.
+
+1542
+00:53:11,230 --> 00:53:13,310
+The entities it
+arrives in the end
+
+1543
+00:53:13,310 --> 00:53:15,170
+is used as
+a predictive answer.
+
+1544
+00:53:16,030 --> 00:53:18,050
+If the predictive answer is
+
+1545
+00:53:18,110 --> 00:53:20,770
+the same as a target
+entity, then great.
+
+1546
+00:53:21,310 --> 00:53:22,290
+The search is successful.
+
+1547
+00:53:22,430 --> 00:53:25,235
+We give the agent,
+reward one,
+
+1548
+00:53:25,235 --> 00:53:26,995
+for example. And
+if it is not,
+
+1549
+00:53:27,395 --> 00:53:29,235
+we could give it
+an active reward or,
+
+1550
+00:53:29,235 --> 00:53:30,115
+like in this work,
+
+1551
+00:53:30,115 --> 00:53:31,815
+we just give it
+a zero reward.
+
+1552
+00:53:33,475 --> 00:53:35,475
+And we can use policy gradient
+
+1553
+00:53:35,475 --> 00:53:37,590
+again to learn
+which actions to
+
+1554
+00:53:37,590 --> 00:53:39,450
+choose at a given state.
+
+1555
+00:53:41,350 --> 00:53:43,750
+For the policy
+gradient framework,
+
+1556
+00:53:43,750 --> 00:53:45,690
+we basically need
+a policy function,
+
+1557
+00:53:45,910 --> 00:53:47,850
+which defines at a particular
+
+1558
+00:53:47,910 --> 00:53:52,565
+state what is the probability
+
+1559
+00:53:52,625 --> 00:53:55,265
+distribution among
+my next action
+
+1560
+00:53:55,265 --> 00:53:56,385
+like it's shown here.
+
+1561
+00:53:56,385 --> 00:53:58,885
+It's typically parameterized.
+
+1562
+00:54:00,545 --> 00:54:02,945
+For the particular deep
+
+1563
+00:54:02,945 --> 00:54:04,325
+reinforcement
+learning frameworks
+
+1564
+00:54:04,385 --> 00:54:06,570
+we talk about, we parametrize
+
+1565
+00:54:06,790 --> 00:54:09,590
+a policy function
+using basically
+
+1566
+00:54:09,590 --> 00:54:10,730
+a deep neural network.
+
+1567
+00:54:11,350 --> 00:54:13,670
+It takes into
+account the current
+
+1568
+00:54:13,670 --> 00:54:14,490
+search history,
+
+1569
+00:54:15,350 --> 00:54:16,950
+which entity I'm
+currently at,
+
+1570
+00:54:16,950 --> 00:54:18,915
+as well as, what,
+
+1571
+00:54:19,155 --> 00:54:21,575
+the potential
+actions I can take.
+
+1572
+00:54:21,635 --> 00:54:25,155
+So the history is
+represented as,
+
+1573
+00:54:26,195 --> 00:54:27,955
+the sequence of represent
+
+1574
+00:54:28,115 --> 00:54:30,435
+representations
+of the relation
+
+1575
+00:54:30,435 --> 00:54:31,955
+embedding and intermediate and
+
+1576
+00:54:31,955 --> 00:54:34,990
+entity embedding SC,
+in the history.
+
+1577
+00:54:35,090 --> 00:54:36,610
+And we also used,
+
+1578
+00:54:36,930 --> 00:54:39,350
+LSTM to encode
+this representation
+
+1579
+00:54:39,490 --> 00:54:42,370
+history. And for
+the action space,
+
+1580
+00:54:42,370 --> 00:54:44,690
+similarly, going from,
+
+1581
+00:54:45,250 --> 00:54:48,455
+my current entity
+e t to the next,
+
+1582
+00:54:49,255 --> 00:54:50,455
+to the next state,
+
+1583
+00:54:50,455 --> 00:54:52,955
+the action is defined
+by the edge label,
+
+1584
+00:54:53,495 --> 00:54:55,835
+we need to traverse
+and the entity
+
+1585
+00:54:56,375 --> 00:54:58,875
+that that's taken
+us from that edge.
+
+1586
+00:54:59,510 --> 00:55:02,230
+We concatenated the edge label
+
+1587
+00:55:02,230 --> 00:55:03,370
+and the entity representation
+
+1588
+00:55:03,590 --> 00:55:04,810
+as an action representation.
+
+1589
+00:55:07,030 --> 00:55:08,570
+Combining the representations
+
+1590
+00:55:08,790 --> 00:55:10,010
+from these two sides,
+
+1591
+00:55:10,630 --> 00:55:12,865
+the policy network
+could output
+
+1592
+00:55:13,165 --> 00:55:15,405
+a distribution
+over all possible
+
+1593
+00:55:15,405 --> 00:55:17,585
+actions. So pi theta
+is a distribution
+
+1594
+00:55:17,645 --> 00:55:20,445
+function, and
+the pi theta over
+
+1595
+00:55:20,445 --> 00:55:21,745
+all the potential actions,
+
+1596
+00:55:22,525 --> 00:55:23,885
+the value will sum to one.
+
+1597
+00:55:23,885 --> 00:55:25,265
+It's a probability
+distribution.
+
+1598
+00:55:27,580 --> 00:55:30,320
+And so this framework can be
+
+1599
+00:55:30,380 --> 00:55:32,160
+trained using
+a standard reinforced
+
+1600
+00:55:32,220 --> 00:55:34,380
+algorithm. So what it does is
+
+1601
+00:55:34,380 --> 00:55:35,200
+during training,
+
+1602
+00:55:35,500 --> 00:55:40,400
+it has an agent
+draw out from,
+
+1603
+00:55:41,225 --> 00:55:43,405
+the target entity
+most multiple times.
+
+1604
+00:55:43,785 --> 00:55:45,545
+And the the way to go out,
+
+1605
+00:55:45,785 --> 00:55:47,705
+we sample how it
+should perform
+
+1606
+00:55:47,705 --> 00:55:49,865
+the next step based
+on the current
+
+1607
+00:55:49,865 --> 00:55:50,765
+policy function.
+
+1608
+00:55:51,065 --> 00:55:53,245
+So based on
+the current distribution
+
+1609
+00:55:53,305 --> 00:55:54,185
+of the policy function,
+
+1610
+00:55:54,185 --> 00:55:56,365
+we sample an edge
+it should extend.
+
+1611
+00:55:56,710 --> 00:55:59,910
+And, we can perform
+such or go out many,
+
+1612
+00:55:59,910 --> 00:56:01,370
+many times during training.
+
+1613
+00:56:01,830 --> 00:56:03,110
+And, if, like,
+
+1614
+00:56:03,110 --> 00:56:06,070
+if the pass route hit
+a target entity,
+
+1615
+00:56:06,070 --> 00:56:07,510
+we give it a policy
+or reward.
+
+1616
+00:56:07,510 --> 00:56:09,210
+Otherwise, it
+received nothing.
+
+1617
+00:56:09,615 --> 00:56:10,895
+So through this way,
+
+1618
+00:56:10,895 --> 00:56:12,835
+we can update the parameters,
+
+1619
+00:56:13,615 --> 00:56:15,375
+defining the policy
+net network
+
+1620
+00:56:15,375 --> 00:56:17,395
+by maximizing
+the expected reward.
+
+1621
+00:56:17,455 --> 00:56:18,735
+So all these can
+be carried out
+
+1622
+00:56:18,735 --> 00:56:20,115
+using standard reinforcement
+
+1623
+00:56:20,415 --> 00:56:21,395
+reinforced training.
+
+1624
+00:56:22,820 --> 00:56:27,560
+However, as shown,
+in the main work,
+
+1625
+00:56:28,100 --> 00:56:29,860
+so models are trained using
+
+1626
+00:56:29,860 --> 00:56:31,300
+vanilla reinforcement learning
+
+1627
+00:56:31,300 --> 00:56:32,120
+such a way.
+
+1628
+00:56:32,980 --> 00:56:34,120
+In terms of performance,
+
+1629
+00:56:34,260 --> 00:56:36,200
+they
+significantly underperform
+
+1630
+00:56:36,775 --> 00:56:38,535
+KG embedding
+methods on several
+
+1631
+00:56:38,535 --> 00:56:40,555
+base on several
+benchmark datasets.
+
+1632
+00:56:41,575 --> 00:56:43,815
+So this enables
+us to zoom into
+
+1633
+00:56:43,815 --> 00:56:45,095
+this approach. Because we like
+
+1634
+00:56:45,095 --> 00:56:46,635
+this approach, it enables
+
+1635
+00:56:46,775 --> 00:56:48,535
+effective power search in
+
+1636
+00:56:48,535 --> 00:56:49,220
+Knowledge Graph.
+
+1637
+00:56:49,300 --> 00:56:50,820
+So and, also, it is able to
+
+1638
+00:56:50,820 --> 00:56:52,660
+produce the answer
+and the inference
+
+1639
+00:56:52,660 --> 00:56:53,380
+pass at the same time.
+
+1640
+00:56:53,380 --> 00:56:55,300
+So it is a very
+powerful powerful
+
+1641
+00:56:55,300 --> 00:56:56,620
+framework. But because,
+
+1642
+00:56:56,980 --> 00:56:59,220
+because the it's,
+
+1643
+00:56:59,620 --> 00:57:01,300
+because of the stretch
+of learning
+
+1644
+00:57:01,300 --> 00:57:02,420
+both the inference pass and
+
+1645
+00:57:02,420 --> 00:57:04,520
+the target energy
+at the same time,
+
+1646
+00:57:05,345 --> 00:57:07,585
+the framework is not
+trivial to train.
+
+1647
+00:57:07,585 --> 00:57:09,185
+So we want to examine what are
+
+1648
+00:57:09,185 --> 00:57:12,145
+the challenges
+in training this
+
+1649
+00:57:12,145 --> 00:57:13,505
+framework. How
+could we overcome
+
+1650
+00:57:13,505 --> 00:57:15,205
+those challenges and
+make it better?
+
+1651
+00:57:16,145 --> 00:57:16,865
+So first of all,
+
+1652
+00:57:16,865 --> 00:57:18,705
+one thing we
+noticed is a sparse
+
+1653
+00:57:18,705 --> 00:57:19,685
+reward problem.
+
+1654
+00:57:19,870 --> 00:57:22,990
+So remember, remember,
+at the beginning,
+
+1655
+00:57:22,990 --> 00:57:24,830
+we we said in
+knowledge graphs,
+
+1656
+00:57:24,830 --> 00:57:26,270
+there because knowledge graphs
+
+1657
+00:57:26,270 --> 00:57:27,090
+are incomplete,
+
+1658
+00:57:27,150 --> 00:57:28,590
+so there is a lot of false
+
+1659
+00:57:28,590 --> 00:57:30,130
+negatives in knowledge graph.
+
+1660
+00:57:31,070 --> 00:57:32,590
+there so for
+example, if, like,
+
+1661
+00:57:32,590 --> 00:57:35,385
+my search pass hit
+Steven Spielberg,
+
+1662
+00:57:35,845 --> 00:57:38,085
+but because, this is a missing
+
+1663
+00:57:38,085 --> 00:57:39,445
+fact in the knowledge graph,
+
+1664
+00:57:39,445 --> 00:57:41,465
+so I can only get
+zero reward.
+
+1665
+00:57:41,525 --> 00:57:42,325
+Although this is,
+
+1666
+00:57:42,565 --> 00:57:45,365
+Steven Spielberg is
+actually a correct
+
+1667
+00:57:45,365 --> 00:57:47,545
+entity. It should
+have a better
+
+1668
+00:57:47,605 --> 00:57:49,305
+reward than just a zero.
+
+1669
+00:57:49,830 --> 00:57:51,430
+But if we just use a vanilla
+
+1670
+00:57:51,430 --> 00:57:52,710
+reinforcement
+learning algorithm
+
+1671
+00:57:52,710 --> 00:57:54,490
+and give it
+a discrete reward,
+
+1672
+00:57:54,550 --> 00:57:56,170
+we cannot capture such cases.
+
+1673
+00:57:57,270 --> 00:57:58,250
+So that's why,
+
+1674
+00:57:58,950 --> 00:58:01,030
+in our work presented in two
+
+1675
+00:58:01,030 --> 00:58:01,850
+thousand eighteen,
+
+1676
+00:58:01,990 --> 00:58:04,330
+so we propose a reward
+shaping approach.
+
+1677
+00:58:04,795 --> 00:58:05,595
+So instead of, like,
+
+1678
+00:58:05,595 --> 00:58:07,355
+giving this discrete reward to
+
+1679
+00:58:07,355 --> 00:58:09,835
+the agent, we want
+to give them soft,
+
+1680
+00:58:10,155 --> 00:58:12,635
+soft rewards. So
+the idea behind
+
+1681
+00:58:12,635 --> 00:58:15,435
+it is we want for
+each potential
+
+1682
+00:58:15,435 --> 00:58:17,435
+target entity
+the agent is able
+
+1683
+00:58:17,435 --> 00:58:19,135
+to hit during its training,
+
+1684
+00:58:19,330 --> 00:58:21,410
+We want to provide a soft
+
+1685
+00:58:21,410 --> 00:58:23,430
+estimation of
+whether that entity
+
+1686
+00:58:23,570 --> 00:58:25,570
+is likely to be a false to be
+
+1687
+00:58:25,570 --> 00:58:26,950
+a false negative or not.
+
+1688
+00:58:27,730 --> 00:58:29,970
+And how do we, estimate that?
+
+1689
+00:58:29,970 --> 00:58:31,810
+So recall
+the knowledge embedding
+
+1690
+00:58:31,810 --> 00:58:33,650
+method we surveyed
+in the first
+
+1691
+00:58:33,650 --> 00:58:34,595
+part of this talk.
+
+1692
+00:58:34,595 --> 00:58:36,755
+So we basically
+use a knowledge
+
+1693
+00:58:36,755 --> 00:58:37,895
+embedding approach.
+
+1694
+00:58:38,035 --> 00:58:39,975
+So we represent
+every entities,
+
+1695
+00:58:40,595 --> 00:58:42,275
+in the every entities
+in the knowledge
+
+1696
+00:58:42,275 --> 00:58:43,955
+graph is represented
+as an embedding.
+
+1697
+00:58:43,955 --> 00:58:45,315
+And then we also
+know the target
+
+1698
+00:58:45,315 --> 00:58:47,235
+relation. So we can just call
+
+1699
+00:58:47,235 --> 00:58:49,550
+off the shelf,
+we can just call
+
+1700
+00:58:49,550 --> 00:58:50,750
+off the shelf knowledge graph
+
+1701
+00:58:50,750 --> 00:58:52,590
+embedding functions and using
+
+1702
+00:58:52,590 --> 00:58:54,990
+that not a scoring function as
+
+1703
+00:58:54,990 --> 00:58:56,750
+a scoring function here to
+
+1704
+00:58:56,750 --> 00:58:58,370
+estimate the sought reward.
+
+1705
+00:58:59,550 --> 00:59:00,670
+And in our work,
+
+1706
+00:59:00,670 --> 00:59:02,015
+we'll use the state of the art
+
+1707
+00:59:02,815 --> 00:59:04,095
+convolutional knowledge graph
+
+1708
+00:59:04,095 --> 00:59:05,075
+embedding networks.
+
+1709
+00:59:07,055 --> 00:59:08,755
+Basically, for
+all the potential
+
+1710
+00:59:09,295 --> 00:59:10,815
+targets hated by
+the agent during
+
+1711
+00:59:10,815 --> 00:59:12,755
+the training, we
+run the embeddings
+
+1712
+00:59:12,895 --> 00:59:15,135
+of the source entity
+and the current
+
+1713
+00:59:15,135 --> 00:59:17,230
+candidate entity
+and the target
+
+1714
+00:59:17,230 --> 00:59:18,190
+relations through the,
+
+1715
+00:59:18,590 --> 00:59:20,670
+combi scoring function,
+
+1716
+00:59:20,670 --> 00:59:21,870
+and then we get
+to the software
+
+1717
+00:59:21,870 --> 00:59:22,610
+word estimation.
+
+1718
+00:59:22,830 --> 00:59:23,870
+So in this case,
+
+1719
+00:59:24,110 --> 00:59:25,790
+if our agent hit a potential
+
+1720
+00:59:25,790 --> 00:59:26,530
+false negatives,
+
+1721
+00:59:26,590 --> 00:59:28,030
+instead of getting zero,
+
+1722
+00:59:28,030 --> 00:59:29,650
+it is able to get
+a continuous,
+
+1723
+00:59:30,750 --> 00:59:33,445
+re reward value
+so as to how it
+
+1724
+00:59:33,445 --> 00:59:34,265
+trains better.
+
+1725
+00:59:36,565 --> 00:59:37,625
+The other challenge,
+
+1726
+00:59:38,165 --> 00:59:40,645
+in this training
+is the code of
+
+1727
+00:59:40,645 --> 00:59:41,945
+spirits paths problem.
+
+1728
+00:59:42,085 --> 00:59:44,245
+Recall that there
+could be a huge
+
+1729
+00:59:44,245 --> 00:59:45,685
+number of paths connecting NA
+
+1730
+00:59:45,685 --> 00:59:47,360
+to entities in
+the Knowledge Graph.
+
+1731
+00:59:48,000 --> 00:59:51,120
+Some of the paths,
+like we we we we,
+
+1732
+00:59:51,680 --> 00:59:53,280
+revealed earlier in the talk,
+
+1733
+00:59:53,280 --> 00:59:54,960
+some of the paths,
+they are informative,
+
+1734
+00:59:54,960 --> 00:59:56,420
+but some paths are
+not informative
+
+1735
+00:59:56,480 --> 00:59:58,100
+at all, like shown here.
+
+1736
+00:59:58,240 --> 01:60:00,560
+So here, path one and two,
+
+1737
+01:60:00,560 --> 01:60:01,665
+they actually couldn't.
+
+1738
+01:60:01,665 --> 01:60:02,945
+So although they connect these
+
+1739
+01:60:02,945 --> 01:60:04,625
+two entities,
+they they are not
+
+1740
+01:60:04,625 --> 01:60:06,405
+useful for predicting
+a collaborator
+
+1741
+01:60:06,625 --> 01:60:08,965
+relationship. only
+pass three is.
+
+1742
+01:60:09,425 --> 01:60:11,105
+However, if it
+just not naively
+
+1743
+01:60:11,105 --> 01:60:12,005
+run reinforce,
+
+1744
+01:60:12,545 --> 01:60:16,000
+because the design
+of the training
+
+1745
+01:60:16,000 --> 01:60:17,860
+algorithm, reinforce
+has a tendency
+
+1746
+01:60:18,480 --> 01:60:21,460
+for the agent to
+stick to a pass
+
+1747
+01:60:21,520 --> 01:60:23,200
+which it has seen
+before and has
+
+1748
+01:60:23,200 --> 01:60:24,640
+received a positive reward.
+
+1749
+01:60:24,640 --> 01:60:26,720
+Because remember,
+during training,
+
+1750
+01:60:26,720 --> 01:60:28,955
+we sample the pass
+using the current
+
+1751
+01:60:28,955 --> 01:60:30,575
+parameters of
+the policy function.
+
+1752
+01:60:30,635 --> 01:60:32,715
+So if, a particular pass has
+
+1753
+01:60:32,715 --> 01:60:34,655
+received a positive
+reward before,
+
+1754
+01:60:35,515 --> 01:60:37,435
+it is likely to have higher
+
+1755
+01:60:37,435 --> 01:60:39,435
+policy representation
+in the policy
+
+1756
+01:60:39,435 --> 01:60:42,110
+function so that
+your agent will
+
+1757
+01:60:42,110 --> 01:60:44,030
+likely be sampling that pass
+
+1758
+01:60:44,030 --> 01:60:45,090
+more and more often.
+
+1759
+01:60:45,230 --> 01:60:46,850
+This way, we ended
+up reinforcing
+
+1760
+01:60:47,070 --> 01:60:49,410
+agent with respect to
+the spurious pass,
+
+1761
+01:60:49,630 --> 01:60:50,830
+which is not what we want.
+
+1762
+01:60:50,830 --> 01:60:52,590
+We want them to be able to re
+
+1763
+01:60:52,670 --> 01:60:54,930
+reinforce against
+the informative pass.
+
+1764
+01:60:56,005 --> 01:60:58,725
+But, but effectively
+identifying the,
+
+1765
+01:60:59,045 --> 01:61:00,485
+the informative pass during
+
+1766
+01:61:00,485 --> 01:61:01,945
+training is actually
+very hard.
+
+1767
+01:61:02,085 --> 01:61:04,485
+So one thing we could do is,
+
+1768
+01:61:05,205 --> 01:61:07,045
+we could at least help prevent
+
+1769
+01:61:07,045 --> 01:61:09,200
+the agent from being stuck to
+
+1770
+01:61:09,200 --> 01:61:10,580
+an uninformed tail pass.
+
+1771
+01:61:10,720 --> 01:61:13,620
+So this, so we do
+this by using,
+
+1772
+01:61:14,080 --> 01:61:15,860
+a technique we call
+action dropout.
+
+1773
+01:61:16,160 --> 01:61:18,100
+So, basically, we we randomly
+
+1774
+01:61:18,960 --> 01:61:22,115
+mask certain actions
+in the policy
+
+1775
+01:61:22,115 --> 01:61:24,195
+function to make
+sure that the agent
+
+1776
+01:61:24,195 --> 01:61:26,515
+is able to jump
+into a different
+
+1777
+01:61:26,515 --> 01:61:28,535
+state next time when
+I do a selection.
+
+1778
+01:61:28,755 --> 01:61:30,035
+So for the here,
+
+1779
+01:61:30,035 --> 01:61:31,555
+maybe the current
+policy function
+
+1780
+01:61:31,555 --> 01:61:32,675
+tells us, okay,
+
+1781
+01:61:32,675 --> 01:61:34,455
+there is zero point
+six probability
+
+1782
+01:61:34,595 --> 01:61:36,615
+the agent should go to e two,
+
+1783
+01:61:37,190 --> 01:61:37,990
+not the others.
+
+1784
+01:61:37,990 --> 01:61:39,350
+All the other entities have
+
+1785
+01:61:39,350 --> 01:61:42,250
+pretty small, pretty
+small probability.
+
+1786
+01:61:42,790 --> 01:61:44,890
+So here, what we
+do is we apply,
+
+1787
+01:61:45,910 --> 01:61:48,870
+a binary mask
+randomly generated
+
+1788
+01:61:48,870 --> 01:61:50,495
+at each training step against
+
+1789
+01:61:50,495 --> 01:61:52,915
+the current policy function.
+
+1790
+01:61:53,855 --> 01:61:54,735
+You can see here,
+
+1791
+01:61:54,735 --> 01:61:57,315
+our random mask
+happens to mask
+
+1792
+01:61:57,455 --> 01:61:59,555
+the high probability
+action e2.
+
+1793
+01:62:01,135 --> 01:62:02,575
+Once we did the masking,
+
+1794
+01:62:02,575 --> 01:62:04,435
+we renormalized and recompute
+
+1795
+01:62:04,495 --> 01:62:05,075
+the policy,
+
+1796
+01:62:05,610 --> 01:62:07,510
+I recompute
+the policy distribution
+
+1797
+01:62:07,570 --> 01:62:09,410
+again. And this time,
+
+1798
+01:62:09,570 --> 01:62:10,690
+instead of going to e two,
+
+1799
+01:62:10,690 --> 01:62:11,890
+the agent has a higher power
+
+1800
+01:62:11,890 --> 01:62:13,250
+probability just
+like the e one.
+
+1801
+01:62:13,250 --> 01:62:14,790
+So this way, we can encourage
+
+1802
+01:62:14,850 --> 01:62:17,250
+the agent to explore
+more diverse
+
+1803
+01:62:17,250 --> 01:62:18,310
+paths during training.
+
+1804
+01:62:18,985 --> 01:62:20,345
+And if you're familiar with,
+
+1805
+01:62:20,985 --> 01:62:23,865
+techniques such as,
+epsilon drop so,
+
+1806
+01:62:24,265 --> 01:62:25,085
+epsilon exploration.
+
+1807
+01:62:25,705 --> 01:62:29,385
+So the the intuition of this
+
+1808
+01:62:29,385 --> 01:62:30,745
+approach is
+specifically similar
+
+1809
+01:62:30,745 --> 01:62:31,760
+similar to that.
+
+1810
+01:62:32,240 --> 01:62:33,760
+This is to incur
+encourage the agent
+
+1811
+01:62:33,760 --> 01:62:35,040
+to search for a more diverse
+
+1812
+01:62:35,040 --> 01:62:36,500
+cycle pass during the training
+
+1813
+01:62:36,560 --> 01:62:38,480
+to avoid it, from
+getting stuck
+
+1814
+01:62:38,480 --> 01:62:40,800
+to some false,
+net to some false
+
+1815
+01:62:40,800 --> 01:62:41,300
+positives.
+
+1816
+01:62:45,625 --> 01:62:46,665
+With these two techniques,
+
+1817
+01:62:46,665 --> 01:62:49,545
+we evaluate
+algorithms on several
+
+1818
+01:62:49,545 --> 01:62:51,645
+KG benchmarks, as shown here.
+
+1819
+01:62:51,785 --> 01:62:53,945
+The benchmarks comes from very
+
+1820
+01:62:53,945 --> 01:62:55,385
+different domains
+and they were
+
+1821
+01:62:55,385 --> 01:62:56,925
+widely used in the community.
+
+1822
+01:62:57,720 --> 01:62:59,880
+And, they also
+demonstrate a different
+
+1823
+01:62:59,880 --> 01:63:01,500
+degree of connection and,
+
+1824
+01:63:02,680 --> 01:63:03,660
+and different skills.
+
+1825
+01:63:04,680 --> 01:63:07,020
+So we compare our method,
+
+1826
+01:63:07,160 --> 01:63:08,760
+combining rewards
+shaping action
+
+1827
+01:63:08,760 --> 01:63:11,340
+dropout with two
+groups of algorithms.
+
+1828
+01:63:11,885 --> 01:63:13,565
+One group is a multi
+hop knowledge
+
+1829
+01:63:13,565 --> 01:63:14,945
+graph reasoning approach.
+
+1830
+01:63:15,085 --> 01:63:17,805
+So this covers,
+the past, for example,
+
+1831
+01:63:17,805 --> 01:63:19,165
+past ranking algorithms we
+
+1832
+01:63:19,165 --> 01:63:22,765
+surveyed before,
+and also, like,
+
+1833
+01:63:22,765 --> 01:63:26,710
+algorithm, and also,
+algorithms from,
+
+1834
+01:63:27,190 --> 01:63:29,110
+other multi hop
+reasoning families,
+
+1835
+01:63:29,110 --> 01:63:30,390
+which we didn't
+talk about here,
+
+1836
+01:63:30,390 --> 01:63:31,590
+for example, like,
+
+1837
+01:63:31,590 --> 01:63:33,130
+neurological prong programming
+
+1838
+01:63:33,510 --> 01:63:34,490
+and and others.
+
+1839
+01:63:37,350 --> 01:63:39,530
+So we, so as we
+see the results,
+
+1840
+01:63:39,785 --> 01:63:43,065
+the dark blue bar
+is our algorithm,
+
+1841
+01:63:43,065 --> 01:63:44,765
+which basically
+combined vanilla
+
+1842
+01:63:44,825 --> 01:63:46,845
+policy gradient with
+reward shipping.
+
+1843
+01:63:47,785 --> 01:63:49,485
+We see our
+approach consistently
+
+1844
+01:63:50,265 --> 01:63:51,785
+improve over
+the state of the art
+
+1845
+01:63:51,785 --> 01:63:53,705
+for multi hop
+reasoning compared
+
+1846
+01:63:53,705 --> 01:63:57,710
+to previous algorithms,
+all benchmarks.
+
+1847
+01:63:58,250 --> 01:64:00,170
+So it is comparable or surpass
+
+1848
+01:64:00,170 --> 01:64:01,610
+the previous state
+of the art.
+
+1849
+01:64:01,610 --> 01:64:03,050
+And then we see that this our
+
+1850
+01:64:03,290 --> 01:64:04,010
+this algorithm,
+
+1851
+01:64:04,010 --> 01:64:06,410
+because it it it
+simply does, like,
+
+1852
+01:64:06,410 --> 01:64:08,455
+given the topic entity,
+
+1853
+01:64:08,455 --> 01:64:10,615
+it simply runs
+a search instead
+
+1854
+01:64:10,615 --> 01:64:12,615
+of doing, candidate answering
+
+1855
+01:64:12,615 --> 01:64:13,755
+enumeration, for example.
+
+1856
+01:64:14,135 --> 01:64:16,555
+This this algorithm
+is very scalable.
+
+1857
+01:64:16,935 --> 01:64:18,855
+As we we shown
+here for several
+
+1858
+01:64:18,855 --> 01:64:19,915
+previous algorithms,
+
+1859
+01:64:20,295 --> 01:64:22,535
+they actually
+couldn't scale up
+
+1860
+01:64:22,535 --> 01:64:25,010
+on large scale
+knowledge graphs.
+
+1861
+01:64:26,270 --> 01:64:28,450
+However, we also
+compare the performance
+
+1862
+01:64:28,750 --> 01:64:32,510
+with, the family sorry.
+
+1863
+01:64:32,510 --> 01:64:33,630
+We also conform,
+
+1864
+01:64:33,870 --> 01:64:35,150
+compare the performance with
+
+1865
+01:64:35,150 --> 01:64:36,510
+the family of knowledge graph
+
+1866
+01:64:36,510 --> 01:64:37,330
+embedding algorithms.
+
+1867
+01:64:38,590 --> 01:64:41,205
+And and as we see
+those yellow bars,
+
+1868
+01:64:41,205 --> 01:64:43,305
+we saw first first,
+the trend is that,
+
+1869
+01:64:43,605 --> 01:64:45,605
+typically, knowledge graph
+
+1870
+01:64:45,605 --> 01:64:47,545
+embedding methods
+all to perform
+
+1871
+01:64:47,685 --> 01:64:49,685
+pass based algorithms on these
+
+1872
+01:64:49,685 --> 01:64:53,045
+benchmarks. as I
+mentioned before,
+
+1873
+01:64:53,445 --> 01:64:55,880
+so one one
+explanation explanation
+
+1874
+01:64:56,100 --> 01:64:57,300
+for that is,
+
+1875
+01:64:57,940 --> 01:64:59,860
+learning the inference path is
+
+1876
+01:64:59,860 --> 01:65:01,880
+a harder problem
+than just learning,
+
+1877
+01:65:02,340 --> 01:65:03,640
+the existing facts.
+
+1878
+01:65:04,100 --> 01:65:06,440
+However, you can
+see our algorithm
+
+1879
+01:65:06,660 --> 01:65:08,100
+using this reward shaping,
+
+1880
+01:65:08,100 --> 01:65:09,480
+using knowledge
+graph embedding,
+
+1881
+01:65:09,705 --> 01:65:11,785
+we can consistently
+match the SOTA
+
+1882
+01:65:11,785 --> 01:65:12,745
+knowledge graph embedding
+
+1883
+01:65:12,745 --> 01:65:14,445
+performance on all
+the benchmarks.
+
+1884
+01:65:14,585 --> 01:65:16,745
+So we are the only
+one multi hop
+
+1885
+01:65:16,745 --> 01:65:17,885
+reasoning approach,
+
+1886
+01:65:18,825 --> 01:65:20,445
+that can do this at a time.
+
+1887
+01:65:21,465 --> 01:65:23,780
+So this is, a pleasant results
+
+1888
+01:65:23,780 --> 01:65:25,560
+because we are now combining,
+
+1889
+01:65:25,620 --> 01:65:27,060
+basically, the the good parts
+
+1890
+01:65:27,060 --> 01:65:29,140
+of both words. Our method is
+
+1891
+01:65:29,140 --> 01:65:31,380
+explainable, but also,
+performance wise,
+
+1892
+01:65:31,380 --> 01:65:33,000
+this has also become
+competitive.
+
+1893
+01:65:34,340 --> 01:65:35,620
+So I wanna show some,
+
+1894
+01:65:36,260 --> 01:65:38,040
+qualitative results.
+
+1895
+01:65:38,075 --> 01:65:40,475
+So let's see a particular
+example and,
+
+1896
+01:65:40,475 --> 01:65:41,755
+like, what a search process
+
+1897
+01:65:41,755 --> 01:65:43,215
+the model is able to find.
+
+1898
+01:65:43,275 --> 01:65:45,195
+So, again, this
+is the knowledge
+
+1899
+01:65:45,195 --> 01:65:47,775
+graph with respect to
+actors and movies.
+
+1900
+01:65:48,075 --> 01:65:50,635
+And here, so we have
+a query, which is,
+
+1901
+01:65:50,635 --> 01:65:52,475
+like, we ask the profession of
+
+1902
+01:65:52,475 --> 01:65:53,135
+a particular,
+
+1903
+01:65:54,050 --> 01:65:55,910
+people node inside the graph.
+
+1904
+01:65:56,690 --> 01:65:59,990
+So, these are
+the search paths,
+
+1905
+01:66:00,370 --> 01:66:03,030
+our algorithm is
+able to, to return.
+
+1906
+01:66:03,650 --> 01:66:05,410
+it's it's it returns multiple
+
+1907
+01:66:05,410 --> 01:66:06,550
+search paths and multiple,
+
+1908
+01:66:07,010 --> 01:66:09,835
+possible answers
+because, sometimes,
+
+1909
+01:66:10,375 --> 01:66:12,135
+we we we actually
+deal with very,
+
+1910
+01:66:12,135 --> 01:66:13,575
+very often the case
+that we have
+
+1911
+01:66:13,575 --> 01:66:14,935
+a query and there has to be
+
+1912
+01:66:14,935 --> 01:66:16,715
+multiple answers in
+the Knowledge Graph.
+
+1913
+01:66:17,255 --> 01:66:19,255
+And, if you look
+into the past,
+
+1914
+01:66:19,255 --> 01:66:21,515
+so I think, the past
+mostly represent,
+
+1915
+01:66:21,815 --> 01:66:25,410
+relations such as
+Laura has, freedom,
+
+1916
+01:66:25,410 --> 01:66:28,390
+Laura is, winner
+of SAGA award,
+
+1917
+01:66:28,530 --> 01:66:31,030
+and Don has also won
+SAGA award before.
+
+1918
+01:66:31,170 --> 01:66:32,610
+So Laura and Don should have
+
+1919
+01:66:32,610 --> 01:66:33,430
+the same profession.
+
+1920
+01:66:34,210 --> 01:66:37,635
+or, Laura and Richard,
+
+1921
+01:66:37,695 --> 01:66:41,235
+they have jointly
+one, ensemble to,
+
+1922
+01:66:41,935 --> 01:66:43,475
+jointly one or together.
+
+1923
+01:66:43,615 --> 01:66:45,395
+So, Laura and Richard,
+
+1924
+01:66:45,775 --> 01:66:47,630
+they should have
+the same profession.
+
+1925
+01:66:47,790 --> 01:66:49,730
+So these are all
+very intuitive
+
+1926
+01:66:49,870 --> 01:66:51,630
+and informative
+reasoning paths,
+
+1927
+01:66:51,630 --> 01:66:52,610
+which is great.
+
+1928
+01:66:53,710 --> 01:66:54,770
+there are some,
+
+1929
+01:66:55,070 --> 01:66:56,510
+reasoning paths which
+are not so great.
+
+1930
+01:66:56,510 --> 01:66:58,290
+So for example,
+like, we see Laura,
+
+1931
+01:66:59,310 --> 01:67:01,230
+has nationality,
+United Kingdom,
+
+1932
+01:67:01,230 --> 01:67:02,695
+and Ricky also
+has nationality,
+
+1933
+01:67:02,915 --> 01:67:03,098
+United Kingdom.
+
+1934
+01:67:03,189 --> 01:67:03,555
+so Laura and Ricky,
+
+1935
+01:67:04,035 --> 01:67:06,515
+should have the same
+profession.
+
+1936
+01:67:06,515 --> 01:67:09,955
+This is not true,
+but, good thing is,
+
+1937
+01:67:09,955 --> 01:67:12,275
+like, after
+reinforced learning,
+
+1938
+01:67:12,275 --> 01:67:13,795
+we are able to run
+this type of,
+
+1939
+01:67:13,955 --> 01:67:15,095
+low competence pass lower.
+
+1940
+01:67:18,120 --> 01:67:19,960
+And some interesting
+fact is that,
+
+1941
+01:67:20,280 --> 01:67:22,060
+so this graph
+actually represents
+
+1942
+01:67:22,200 --> 01:67:23,960
+a click in another graph.
+
+1943
+01:67:24,280 --> 01:67:26,840
+so it is mostly about the cast
+
+1944
+01:67:26,840 --> 01:67:28,920
+of crew of the famous British
+
+1945
+01:67:28,920 --> 01:67:30,140
+show Downton Abbey.
+
+1946
+01:67:32,015 --> 01:67:33,315
+Cool. In summary,
+
+1947
+01:67:34,575 --> 01:67:36,015
+so for the sequential
+multi hop
+
+1948
+01:67:36,015 --> 01:67:37,855
+reasoning, with reinforced
+
+1949
+01:67:37,855 --> 01:67:38,755
+learning approach,
+
+1950
+01:67:38,895 --> 01:67:40,575
+so this type of algorithm is
+
+1951
+01:67:40,575 --> 01:67:41,795
+effective to answer,
+
+1952
+01:67:42,335 --> 01:67:43,855
+the type of query where your
+
+1953
+01:67:43,855 --> 01:67:45,455
+source entity and
+target relation
+
+1954
+01:67:45,455 --> 01:67:46,980
+is known and you want to know
+
+1955
+01:67:47,040 --> 01:67:48,720
+all the possible
+other entities
+
+1956
+01:67:48,720 --> 01:67:50,900
+in other graph
+that demonstrates
+
+1957
+01:67:51,120 --> 01:67:52,640
+such relation with respect to
+
+1958
+01:67:52,640 --> 01:67:53,620
+the topic entity,
+
+1959
+01:67:54,160 --> 01:67:55,840
+it is able to return multiple
+
+1960
+01:67:55,840 --> 01:67:56,820
+predictive answers.
+
+1961
+01:67:57,120 --> 01:67:59,140
+Because once we
+learn the reinforced
+
+1962
+01:67:59,360 --> 01:68:00,340
+learning policy,
+
+1963
+01:68:01,375 --> 01:68:03,075
+we can use best
+of first search
+
+1964
+01:68:03,775 --> 01:68:08,255
+to search for
+multiple paths and
+
+1965
+01:68:08,255 --> 01:68:09,935
+return the scoring
+for each path
+
+1966
+01:68:09,935 --> 01:68:11,455
+and therefore
+effectively return
+
+1967
+01:68:11,455 --> 01:68:13,940
+multiple possible
+answers for the query.
+
+1968
+01:68:15,620 --> 01:68:17,560
+It can also be used to solve,
+
+1969
+01:68:18,100 --> 01:68:19,620
+the type of queries where,
+
+1970
+01:68:19,780 --> 01:68:22,360
+we ask whether e s and e t
+
+1971
+01:68:22,500 --> 01:68:24,260
+demonstrate certain
+relations or not.
+
+1972
+01:68:24,980 --> 01:68:26,660
+but, I think,
+
+1973
+01:68:26,820 --> 01:68:28,180
+one could imagine
+it takes some
+
+1974
+01:68:28,180 --> 01:68:30,325
+extra efforts there,
+because, like,
+
+1975
+01:68:30,325 --> 01:68:32,265
+in this case, we
+need to do, like,
+
+1976
+01:68:32,565 --> 01:68:34,005
+given all possible target
+
+1977
+01:68:34,005 --> 01:68:35,525
+relations we cared about with
+
+1978
+01:68:35,525 --> 01:68:36,965
+search from
+the source entity,
+
+1979
+01:68:36,965 --> 01:68:38,485
+and then we see whether ETS in
+
+1980
+01:68:38,485 --> 01:68:40,185
+our return of search stat.
+
+1981
+01:68:40,565 --> 01:68:42,725
+So, so I think there are some
+
+1982
+01:68:42,725 --> 01:68:44,840
+trade offs between this this
+
+1983
+01:68:44,840 --> 01:68:46,120
+group of sequential multi hop
+
+1984
+01:68:46,120 --> 01:68:47,400
+reasoning algorithms compared
+
+1985
+01:68:47,400 --> 01:68:49,000
+to the pass based
+algorithms we
+
+1986
+01:68:49,000 --> 01:68:49,980
+just talked about.
+
+1987
+01:68:50,440 --> 01:68:51,640
+But one could choose,
+
+1988
+01:68:51,640 --> 01:68:53,240
+depends on
+the application needs,
+
+1989
+01:68:53,240 --> 01:68:54,920
+which family of algorithms we
+
+1990
+01:68:54,920 --> 01:68:55,740
+want to use.
+
+1991
+01:68:57,895 --> 01:69:00,235
+To summarize, for
+today's talk,
+
+1992
+01:69:03,255 --> 01:69:04,615
+we introduced knowledge graph
+
+1993
+01:69:04,615 --> 01:69:05,975
+reasoning techniques because
+
+1994
+01:69:05,975 --> 01:69:07,415
+knowledge graph reasoning is
+
+1995
+01:69:07,415 --> 01:69:08,775
+critical for knowledge graph
+
+1996
+01:69:08,775 --> 01:69:10,650
+based applications
+since knowledge
+
+1997
+01:69:10,650 --> 01:69:11,950
+graphs, they are intrinsically
+
+1998
+01:69:12,090 --> 01:69:14,410
+incomplete. so we always need
+
+1999
+01:69:14,410 --> 01:69:17,530
+to use inference
+to generate new
+
+2000
+01:69:17,530 --> 01:69:20,090
+facts that are currently not
+
+2001
+01:69:20,090 --> 01:69:21,550
+stored in the knowledge base.
+
+2002
+01:69:21,930 --> 01:69:23,895
+And reinforcement
+learning approaches,
+
+2003
+01:69:23,955 --> 01:69:25,315
+especially nowadays deep
+
+2004
+01:69:25,315 --> 01:69:26,455
+reinforcement approach,
+
+2005
+01:69:26,915 --> 01:69:28,275
+they are a strong family of
+
+2006
+01:69:28,275 --> 01:69:30,375
+algorithms for
+learning informative
+
+2007
+01:69:30,515 --> 01:69:31,495
+reasoning paths.
+
+2008
+01:69:32,755 --> 01:69:34,515
+And these type
+of algorithms is
+
+2009
+01:69:34,515 --> 01:69:36,135
+also time and
+space efficient.
+
+2010
+01:69:37,390 --> 01:69:39,390
+And I also introduced one of,
+
+2011
+01:69:39,790 --> 01:69:42,210
+the models per we
+per we proposed,
+
+2012
+01:69:42,350 --> 01:69:44,510
+which combines vanilla policy
+
+2013
+01:69:44,510 --> 01:69:46,030
+network with knowledge graph
+
+2014
+01:69:46,030 --> 01:69:47,490
+embedding based
+rework shipping.
+
+2015
+01:69:47,710 --> 01:69:48,670
+So that one is,
+
+2016
+01:69:49,565 --> 01:69:51,425
+one of the first
+algorithm we saw,
+
+2017
+01:69:51,805 --> 01:69:53,485
+which performs
+sequential multi
+
+2018
+01:69:53,485 --> 01:69:55,005
+hop reasoning but also match
+
+2019
+01:69:55,005 --> 01:69:56,285
+the performance of knowledge
+
+2020
+01:69:56,285 --> 01:69:57,965
+graph embedding approaches on
+
+2021
+01:69:57,965 --> 01:69:59,345
+multiple benchmark datasets.
+
+2022
+01:69:59,725 --> 01:70:01,405
+And for few future work,
+
+2023
+01:70:01,965 --> 01:70:04,400
+there there are more,
+exciting works,
+
+2024
+01:70:04,960 --> 01:70:06,660
+proposed after us.
+
+2025
+01:70:06,800 --> 01:70:09,440
+So, we we should
+definitely look
+
+2026
+01:70:09,440 --> 01:70:12,000
+into more core
+really reinforced
+
+2027
+01:70:12,000 --> 01:70:12,820
+learning research,
+
+2028
+01:70:13,440 --> 01:70:15,280
+to find ways to
+resolve a challenge
+
+2029
+01:70:15,280 --> 01:70:17,040
+that is either generic towards
+
+2030
+01:70:17,040 --> 01:70:18,515
+reinforcement learning or,
+
+2031
+01:70:19,075 --> 01:70:21,095
+they become knowledge
+graph specific.
+
+2032
+01:70:21,395 --> 01:70:22,595
+But, I think, overall,
+
+2033
+01:70:22,595 --> 01:70:24,215
+this is a very
+exciting resource
+
+2034
+01:70:24,275 --> 01:70:26,035
+space too. and, also,
+
+2035
+01:70:26,035 --> 01:70:27,815
+we have open source
+of algorithms.
+
+2036
+01:70:27,955 --> 01:70:29,395
+If you want to play with it,
+
+2037
+01:70:29,395 --> 01:70:30,995
+you can visit our open source
+
+2038
+01:70:30,995 --> 01:70:33,480
+link on GitHub.
+Thank you very much.
+
+2039
+01:70:33,880 --> 01:70:35,820
+I'm happy to take
+questions from here.
+

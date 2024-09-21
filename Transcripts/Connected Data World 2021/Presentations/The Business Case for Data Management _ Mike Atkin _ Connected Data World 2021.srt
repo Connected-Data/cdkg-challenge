@@ -1,0 +1,3655 @@
+1
+00:00:07,520 --> 00:00:08,740
+Hi. Greetings, everybody.
+
+2
+00:00:09,200 --> 00:00:10,260
+My name is Mike.
+
+3
+00:00:10,635 --> 00:00:11,755
+I'm going to present,
+
+4
+00:00:12,075 --> 00:00:14,415
+the business case for Semantic
+
+5
+00:00:14,795 --> 00:00:15,695
+Data Management.
+
+6
+00:00:16,475 --> 00:00:19,035
+This is a consolidation
+of what
+
+7
+00:00:19,035 --> 00:00:20,780
+I've learned over
+the past almost
+
+8
+00:00:20,780 --> 00:00:24,960
+four decades of being
+the therapist,
+
+9
+00:00:25,340 --> 00:00:27,660
+scribe, and analyst
+for the data
+
+10
+00:00:27,660 --> 00:00:28,800
+management industry.
+
+11
+00:00:33,945 --> 00:00:35,005
+Alright. So first,
+
+12
+00:00:35,065 --> 00:00:36,845
+let's start off
+by understanding
+
+13
+00:00:36,905 --> 00:00:39,720
+that there is a prime goal,
+
+14
+00:00:39,720 --> 00:00:41,180
+what I call a prime directive
+
+15
+00:00:41,560 --> 00:00:42,540
+for data management,
+
+16
+00:00:42,840 --> 00:00:45,400
+and that is to ensure that all
+
+17
+00:00:45,400 --> 00:00:48,035
+the users have trust
+and confidence
+
+18
+00:00:48,095 --> 00:00:49,775
+that the data that
+they're using
+
+19
+00:00:49,775 --> 00:00:50,675
+for their applications,
+
+20
+00:00:52,015 --> 00:00:53,235
+is true to origin.
+
+21
+00:00:53,615 --> 00:00:54,915
+And they should do so,
+
+22
+00:00:55,800 --> 00:00:57,740
+without the need
+for reconciliation
+
+23
+00:00:58,840 --> 00:01:01,180
+and without the need
+for multiple
+
+24
+00:01:01,320 --> 00:01:02,460
+data transformations.
+
+25
+00:01:03,235 --> 00:01:04,115
+If you think about it,
+
+26
+00:01:04,115 --> 00:01:06,055
+and we put this in
+context for you,
+
+27
+00:01:06,275 --> 00:01:07,735
+you have a right to,
+
+28
+00:01:08,035 --> 00:01:09,555
+want I'm gonna say a right to
+
+29
+00:01:09,555 --> 00:01:11,840
+expect the data that you're
+
+30
+00:01:11,840 --> 00:01:15,140
+using to be true to
+original intent.
+
+31
+00:01:15,360 --> 00:01:18,260
+Right? Not transformed, not,
+
+32
+00:01:19,235 --> 00:01:20,695
+mismatched or incongruent,
+
+33
+00:01:22,035 --> 00:01:24,675
+because it represents
+real things.
+
+34
+00:01:24,675 --> 00:01:26,375
+Right? So it should be defined
+
+35
+00:01:26,900 --> 00:01:29,240
+at the most granular atomic
+
+36
+00:01:29,380 --> 00:01:32,580
+level to actually be able to
+
+37
+00:01:32,580 --> 00:01:35,080
+capture the reality
+of the things
+
+38
+00:01:35,140 --> 00:01:36,120
+that it's represented.
+
+39
+00:01:38,425 --> 00:01:40,665
+It should be available
+when you need it,
+
+40
+00:01:40,665 --> 00:01:43,465
+when, when your,
+analysts want it.
+
+41
+00:01:43,465 --> 00:01:44,840
+They should be
+able to get it,
+
+42
+00:01:45,720 --> 00:01:48,200
+themselves as they think about
+
+43
+00:01:48,200 --> 00:01:49,100
+what they need.
+
+44
+00:01:49,160 --> 00:01:51,820
+So it's a key part
+of your asset
+
+45
+00:01:52,120 --> 00:01:53,805
+inventory along with your
+
+46
+00:01:53,805 --> 00:01:55,505
+processes and
+your technologies
+
+47
+00:01:56,045 --> 00:01:56,945
+and your requirements.
+
+48
+00:01:58,365 --> 00:02:00,305
+The format should support,
+
+49
+00:02:01,970 --> 00:02:03,570
+scenario based
+analytics. Right?
+
+50
+00:02:03,570 --> 00:02:05,030
+You you don't want it to be
+
+51
+00:02:05,410 --> 00:02:08,130
+stuck in the rigid
+technology that,
+
+52
+00:02:08,450 --> 00:02:10,585
+you have to then
+kind of unravel
+
+53
+00:02:10,645 --> 00:02:11,925
+before you can use. Right?
+
+54
+00:02:11,925 --> 00:02:13,305
+So it should be flexible.
+
+55
+00:02:15,365 --> 00:02:17,205
+We need it to be traceable as
+
+56
+00:02:17,205 --> 00:02:20,280
+it flows across
+our systems and
+
+57
+00:02:20,280 --> 00:02:22,440
+through our calculations and
+
+58
+00:02:22,440 --> 00:02:24,540
+into our aggregation
+processes.
+
+59
+00:02:27,215 --> 00:02:28,815
+We'd like it to
+be testable for
+
+60
+00:02:28,815 --> 00:02:29,795
+fit for purpose,
+
+61
+00:02:30,095 --> 00:02:31,855
+to make sure it matches all
+
+62
+00:02:31,855 --> 00:02:33,650
+the logic requirements for
+
+63
+00:02:33,890 --> 00:02:35,890
+processing as well
+as the quality
+
+64
+00:02:35,890 --> 00:02:36,850
+requirements, and that should
+
+65
+00:02:36,850 --> 00:02:38,150
+be done automatically.
+
+66
+00:02:40,130 --> 00:02:41,615
+We'd like it to be
+self describing
+
+67
+00:02:41,615 --> 00:02:43,635
+so that the meaning
+of the data
+
+68
+00:02:43,855 --> 00:02:46,115
+is embedded in
+the content itself
+
+69
+00:02:46,415 --> 00:02:47,455
+and reusable. Right?
+
+70
+00:02:47,455 --> 00:02:49,270
+There's building blocks for us
+
+71
+00:02:49,270 --> 00:02:51,610
+to put the data to work.
+
+72
+00:02:52,870 --> 00:02:54,550
+And I will tell you that this
+
+73
+00:02:54,550 --> 00:02:55,930
+is all completely achievable.
+
+74
+00:02:56,150 --> 00:02:58,330
+That's completely
+achievable right now.
+
+75
+00:02:59,665 --> 00:03:01,845
+Without a huge investment
+in technology,
+
+76
+00:03:02,465 --> 00:03:04,965
+but it does
+require organizational
+
+77
+00:03:05,345 --> 00:03:07,765
+adjustment. And in
+order to do that,
+
+78
+00:03:07,830 --> 00:03:10,790
+the, the stakeholders must
+
+79
+00:03:10,790 --> 00:03:12,070
+understand it. They must have
+
+80
+00:03:12,070 --> 00:03:15,370
+cognition about
+the problem and the,
+
+81
+00:03:16,265 --> 00:03:18,045
+pathway to solutions.
+
+82
+00:03:18,585 --> 00:03:21,165
+And there must be
+leadership because,
+
+83
+00:03:21,545 --> 00:03:22,985
+this is an act of change,
+
+84
+00:03:22,985 --> 00:03:24,345
+and we wanna make sure that we
+
+85
+00:03:24,345 --> 00:03:26,030
+can deal with
+the organizational
+
+86
+00:03:26,250 --> 00:03:27,710
+challenges that exist.
+
+87
+00:03:27,770 --> 00:03:29,230
+And those are the primary
+
+88
+00:03:29,370 --> 00:03:31,930
+obstacles for implementing any
+
+89
+00:03:31,930 --> 00:03:34,330
+new paradigm change that this
+
+90
+00:03:34,330 --> 00:03:36,815
+represents. So
+let's take a look
+
+91
+00:03:36,815 --> 00:03:39,215
+at the challenges. Right?
+
+92
+00:03:39,695 --> 00:03:41,075
+So first we should recognize
+
+93
+00:03:41,135 --> 00:03:42,355
+that there are,
+
+94
+00:03:43,190 --> 00:03:45,510
+an infrastructure based on
+
+95
+00:03:45,510 --> 00:03:46,810
+relational technologies,
+
+96
+00:03:48,150 --> 00:03:50,150
+that are well over
+fifty years old.
+
+97
+00:03:50,150 --> 00:03:52,010
+It's a lifetime
+in technology.
+
+98
+00:03:54,775 --> 00:03:57,175
+That technology
+sometimes leads
+
+99
+00:03:57,175 --> 00:03:59,415
+to wrong outcomes
+that seem like
+
+100
+00:03:59,415 --> 00:04:00,395
+they are appropriate,
+
+101
+00:04:00,620 --> 00:04:02,460
+but actually wind
+up being false
+
+102
+00:04:02,460 --> 00:04:04,560
+narratives in
+today's technology
+
+103
+00:04:04,780 --> 00:04:07,120
+environment. And
+that's compounded
+
+104
+00:04:07,180 --> 00:04:08,995
+by cultural obstacles,
+
+105
+00:04:09,535 --> 00:04:11,475
+associated with
+organizational change.
+
+106
+00:04:11,615 --> 00:04:12,895
+Alright. So let's take a look
+
+107
+00:04:12,895 --> 00:04:14,835
+at these things
+at in in-depth.
+
+108
+00:04:15,430 --> 00:04:16,950
+Right? And the technology,
+of course,
+
+109
+00:04:16,950 --> 00:04:17,990
+is the biggest part of it,
+
+110
+00:04:17,990 --> 00:04:19,510
+but we have
+fragmentation of our
+
+111
+00:04:19,510 --> 00:04:21,130
+technology, and we
+all know that.
+
+112
+00:04:21,190 --> 00:04:23,735
+Silos exist,
+functional silos,
+
+113
+00:04:24,275 --> 00:04:27,095
+process silos,
+business silos,
+
+114
+00:04:27,475 --> 00:04:28,855
+geographic silos.
+
+115
+00:04:29,480 --> 00:04:31,400
+And those silos are managed
+
+116
+00:04:31,400 --> 00:04:33,240
+independently.
+And sometimes we
+
+117
+00:04:33,240 --> 00:04:35,240
+have technology
+that is different
+
+118
+00:04:35,240 --> 00:04:37,685
+in each silo. That technology
+
+119
+00:04:37,745 --> 00:04:41,525
+is driven by proprietary
+data models,
+
+120
+00:04:41,905 --> 00:04:44,325
+proprietary quality engines,
+
+121
+00:04:44,545 --> 00:04:46,005
+proprietary glossaries,
+
+122
+00:04:46,600 --> 00:04:48,140
+and they don't
+match each other.
+
+123
+00:04:48,280 --> 00:04:50,060
+So we've done things
+independently,
+
+124
+00:04:51,160 --> 00:04:51,980
+not reusable.
+
+125
+00:04:53,240 --> 00:04:55,985
+We're looking at
+an environment
+
+126
+00:04:55,985 --> 00:04:57,825
+where we have a couple
+pair. Right?
+
+127
+00:04:57,825 --> 00:04:59,765
+Location based processing,
+
+128
+00:05:00,145 --> 00:05:02,405
+where you have
+a column and a row,
+
+129
+00:05:02,850 --> 00:05:05,030
+you know, expressed as a table
+
+130
+00:05:05,730 --> 00:05:08,610
+linked with joins
+and keys where
+
+131
+00:05:08,610 --> 00:05:10,345
+relationships have
+been constructed
+
+132
+00:05:10,345 --> 00:05:12,265
+explicitly, and
+we've done stuff
+
+133
+00:05:12,265 --> 00:05:13,865
+to optimize because
+we have lots
+
+134
+00:05:13,865 --> 00:05:15,805
+of data that we
+have to manage.
+
+135
+00:05:17,280 --> 00:05:18,720
+We've been copying data and
+
+136
+00:05:18,720 --> 00:05:20,580
+moving into the silos and
+
+137
+00:05:20,720 --> 00:05:21,920
+torturing it to death and
+
+138
+00:05:21,920 --> 00:05:23,600
+transforming it
+and renaming it
+
+139
+00:05:23,600 --> 00:05:25,860
+to make sure that it
+fits the glossary
+
+140
+00:05:26,355 --> 00:05:28,435
+that drives the software that
+
+141
+00:05:28,435 --> 00:05:30,195
+propels the data model that
+
+142
+00:05:30,195 --> 00:05:31,255
+drives the application.
+
+143
+00:05:33,235 --> 00:05:35,640
+That has result in a brittle
+
+144
+00:05:35,940 --> 00:05:37,640
+infrastructure that
+is inflexible,
+
+145
+00:05:37,860 --> 00:05:40,100
+and sometimes we are afraid to
+
+146
+00:05:40,100 --> 00:05:41,800
+change it, not
+well documented,
+
+147
+00:05:42,405 --> 00:05:44,105
+and it drives critical
+applications.
+
+148
+00:05:44,885 --> 00:05:46,565
+This is what we refer to as
+
+149
+00:05:46,565 --> 00:05:47,625
+technical debt,
+
+150
+00:05:48,005 --> 00:05:49,685
+plus we have hard time tracing
+
+151
+00:05:49,685 --> 00:05:51,285
+it as it flows
+through our systems,
+
+152
+00:05:51,285 --> 00:05:54,220
+both technical lineage
+and the business
+
+153
+00:05:54,220 --> 00:05:55,840
+provenance for
+the calculations.
+
+154
+00:05:56,940 --> 00:05:59,575
+You combine that with concepts
+
+155
+00:05:59,635 --> 00:06:00,835
+that seem appropriate,
+
+156
+00:06:00,835 --> 00:06:03,015
+like the single
+version of the truth,
+
+157
+00:06:03,075 --> 00:06:04,595
+which was appropriate when you
+
+158
+00:06:04,595 --> 00:06:06,775
+only had one
+repository of data.
+
+159
+00:06:07,060 --> 00:06:08,900
+But now we
+the reality is there
+
+160
+00:06:08,900 --> 00:06:10,580
+are many, and we're not gonna
+
+161
+00:06:10,580 --> 00:06:12,340
+be able to get our arms around
+
+162
+00:06:12,340 --> 00:06:14,505
+all of the repositories of all
+
+163
+00:06:14,505 --> 00:06:16,285
+of our functional applications
+
+164
+00:06:16,585 --> 00:06:17,725
+across the world.
+
+165
+00:06:18,505 --> 00:06:20,685
+So we just have
+to kind of accept
+
+166
+00:06:20,985 --> 00:06:23,290
+that standard standardization
+
+167
+00:06:23,430 --> 00:06:25,930
+of meaning is,
+a better strategy
+
+168
+00:06:26,310 --> 00:06:28,250
+than trying to force
+fit everything
+
+169
+00:06:28,550 --> 00:06:30,890
+into a single model
+or into a centralized
+
+170
+00:06:30,950 --> 00:06:33,425
+repository. And
+that model itself,
+
+171
+00:06:33,425 --> 00:06:35,745
+right, we we we
+understand the value
+
+172
+00:06:35,745 --> 00:06:37,445
+of a canonical model describes
+
+173
+00:06:37,585 --> 00:06:39,205
+relationships. Right?
+That's important.
+
+174
+00:06:40,280 --> 00:06:41,640
+But having one model that
+
+175
+00:06:41,640 --> 00:06:42,620
+describes everything,
+
+176
+00:06:43,800 --> 00:06:45,000
+is just not practical.
+
+177
+00:06:45,000 --> 00:06:46,760
+It would be out of date before
+
+178
+00:06:46,760 --> 00:06:47,480
+it was finished,
+
+179
+00:06:47,480 --> 00:06:48,680
+and you would spend all your
+
+180
+00:06:48,680 --> 00:06:50,865
+time trying to catch up with
+
+181
+00:06:50,865 --> 00:06:52,085
+the pace of your activity,
+
+182
+00:06:52,305 --> 00:06:54,485
+and that is not what
+we're trying to do.
+
+183
+00:06:55,745 --> 00:06:56,545
+These problems,
+
+184
+00:06:56,545 --> 00:06:58,510
+these technological
+problems and
+
+185
+00:06:58,510 --> 00:07:00,270
+objective problems lead us to
+
+186
+00:07:00,270 --> 00:07:01,950
+the two big
+challenges. Right?
+
+187
+00:07:01,950 --> 00:07:05,090
+We have, multiple
+identifiers.
+
+188
+00:07:06,975 --> 00:07:10,435
+We have, codes all
+over our systems.
+
+189
+00:07:10,975 --> 00:07:13,295
+We've changed and
+modified those
+
+190
+00:07:13,295 --> 00:07:14,755
+for various contacts.
+
+191
+00:07:15,560 --> 00:07:17,160
+We're we're we're
+having a difficult
+
+192
+00:07:17,160 --> 00:07:18,840
+time making sure that this is
+
+193
+00:07:18,840 --> 00:07:21,080
+the same as that,
+which is compounded,
+
+194
+00:07:21,080 --> 00:07:22,620
+of course, because there's no
+
+195
+00:07:22,760 --> 00:07:24,300
+meaning that's
+been locked down.
+
+196
+00:07:24,685 --> 00:07:27,085
+And and meaning
+is is different
+
+197
+00:07:27,085 --> 00:07:29,025
+when you have, front office
+
+198
+00:07:29,085 --> 00:07:31,405
+transactions process
+versus a back
+
+199
+00:07:31,405 --> 00:07:34,530
+office legal and,
+a settlement process.
+
+200
+00:07:35,230 --> 00:07:38,610
+So identity and
+meaning, have become,
+
+201
+00:07:39,710 --> 00:07:43,405
+incongruent. You
+combine that with,
+
+202
+00:07:44,025 --> 00:07:45,225
+you know, it seems
+logical. Right?
+
+203
+00:07:45,225 --> 00:07:47,485
+We try to create a a,
+
+204
+00:07:48,360 --> 00:07:50,440
+an application
+for an important
+
+205
+00:07:50,440 --> 00:07:51,880
+customer, but we do that over
+
+206
+00:07:51,880 --> 00:07:53,020
+and over and over again,
+
+207
+00:07:53,400 --> 00:07:55,100
+making lots of
+micro decisions,
+
+208
+00:07:55,615 --> 00:07:58,195
+becomes hardwired and
+yet another silo.
+
+209
+00:07:59,455 --> 00:08:01,055
+Without business
+rules that have
+
+210
+00:08:01,055 --> 00:08:01,795
+been documented,
+
+211
+00:08:02,015 --> 00:08:03,395
+they're not machine
+executable,
+
+212
+00:08:04,060 --> 00:08:05,900
+and we're operating off of,
+
+213
+00:08:06,220 --> 00:08:07,900
+next quarter spreadsheet with
+
+214
+00:08:07,900 --> 00:08:09,040
+the pace of business,
+
+215
+00:08:09,420 --> 00:08:10,700
+trying to push things,
+
+216
+00:08:10,860 --> 00:08:12,765
+so we wind up doing mostly
+
+217
+00:08:12,765 --> 00:08:14,765
+tactical activities to get us
+
+218
+00:08:14,765 --> 00:08:16,765
+out of the fire rather than
+
+219
+00:08:16,765 --> 00:08:18,705
+looking at
+the problem strategically
+
+220
+00:08:19,325 --> 00:08:20,810
+as one that you can fix.
+
+221
+00:08:20,970 --> 00:08:23,450
+And we have to
+be careful about
+
+222
+00:08:23,450 --> 00:08:25,210
+this quest for
+magic solutions.
+
+223
+00:08:25,210 --> 00:08:26,890
+Right? Everybody that sells
+
+224
+00:08:26,890 --> 00:08:29,545
+technology always
+says, you know,
+
+225
+00:08:29,545 --> 00:08:31,545
+this is the one
+solution you need.
+
+226
+00:08:31,545 --> 00:08:32,585
+It might even seem like I'm
+
+227
+00:08:32,585 --> 00:08:33,385
+gonna sell magic,
+
+228
+00:08:33,385 --> 00:08:36,125
+but this is really
+just conceptual,
+
+229
+00:08:37,590 --> 00:08:39,450
+understanding of
+how things work.
+
+230
+00:08:40,230 --> 00:08:41,510
+Right? So if you look at those
+
+231
+00:08:41,510 --> 00:08:42,510
+challenges, and now let's take
+
+232
+00:08:42,510 --> 00:08:43,770
+a look now at the implications
+
+233
+00:08:43,830 --> 00:08:44,605
+of those challenges.
+
+234
+00:08:44,605 --> 00:08:46,445
+And these are
+actual quotes that
+
+235
+00:08:46,445 --> 00:08:48,625
+I've been collecting
+over the years
+
+236
+00:08:48,685 --> 00:08:51,425
+from people who are
+going through the,
+
+237
+00:08:51,485 --> 00:08:53,105
+kind of, the data journey.
+
+238
+00:08:53,560 --> 00:08:56,060
+First one is, we can't
+find this stuff.
+
+239
+00:08:56,360 --> 00:08:57,720
+Right? We don't
+have a connected
+
+240
+00:08:57,720 --> 00:08:59,260
+inventory of our assets.
+
+241
+00:09:00,120 --> 00:09:01,660
+We made lots of copies.
+
+242
+00:09:03,935 --> 00:09:06,335
+We, we've changed
+those copies.
+
+243
+00:09:06,335 --> 00:09:07,935
+We don't have
+a process to prevent
+
+244
+00:09:07,935 --> 00:09:10,095
+duplication, so we don't know
+
+245
+00:09:10,095 --> 00:09:11,615
+where to go to get the data.
+
+246
+00:09:11,615 --> 00:09:13,250
+So it's a big problem of even
+
+247
+00:09:13,250 --> 00:09:15,410
+what exists and where do I get
+
+248
+00:09:15,410 --> 00:09:17,990
+it multiplied by,
+
+249
+00:09:18,930 --> 00:09:20,025
+the fact that it
+doesn't match.
+
+250
+00:09:20,025 --> 00:09:21,225
+Right? So we have a hard time
+
+251
+00:09:21,225 --> 00:09:22,845
+integrating it, linking it,
+
+252
+00:09:22,905 --> 00:09:24,505
+making sure that
+this is the same
+
+253
+00:09:24,505 --> 00:09:25,785
+as that, and,
+
+254
+00:09:26,105 --> 00:09:28,025
+we miss new we
+have this problem
+
+255
+00:09:28,025 --> 00:09:30,410
+of same word,
+different meaning,
+
+256
+00:09:30,950 --> 00:09:32,650
+different words,
+same meaning.
+
+257
+00:09:34,310 --> 00:09:36,810
+A nuance is not passed
+across processes,
+
+258
+00:09:37,485 --> 00:09:39,345
+and it comes from
+using nomenclature
+
+259
+00:09:39,645 --> 00:09:41,265
+as the key for its activity.
+
+260
+00:09:41,485 --> 00:09:43,085
+I love this quote
+at the end, right,
+
+261
+00:09:43,085 --> 00:09:45,085
+where it says, my projects end
+
+262
+00:09:45,085 --> 00:09:47,770
+up as expensive death marches
+
+263
+00:09:48,310 --> 00:09:50,090
+of cleansing, reconciliation,
+
+264
+00:09:50,470 --> 00:09:52,630
+manipulation just to
+make the software
+
+265
+00:09:52,630 --> 00:09:54,705
+work. And that
+story gets repeated
+
+266
+00:09:55,005 --> 00:09:56,145
+over and over again.
+
+267
+00:09:57,405 --> 00:10:00,145
+Because we're doing
+it, in our silos,
+
+268
+00:10:00,445 --> 00:10:03,230
+we, began a local IT group to
+
+269
+00:10:03,230 --> 00:10:04,670
+build it specifically for me.
+
+270
+00:10:04,670 --> 00:10:06,190
+So we're not
+coordinating across
+
+271
+00:10:06,190 --> 00:10:08,050
+processes, and
+there's conflicts
+
+272
+00:10:08,110 --> 00:10:11,090
+and priorities and
+winds up, being,
+
+273
+00:10:11,855 --> 00:10:12,695
+a bunch of,
+
+274
+00:10:14,055 --> 00:10:16,375
+independently defined designed
+
+275
+00:10:16,375 --> 00:10:19,440
+activities that leads to,
+
+276
+00:10:20,300 --> 00:10:22,380
+a lack of confidence
+in usually
+
+277
+00:10:22,380 --> 00:10:24,060
+in technology for
+being able to
+
+278
+00:10:24,060 --> 00:10:25,340
+implement what we want.
+
+279
+00:10:25,340 --> 00:10:26,780
+And you pull it
+all together and
+
+280
+00:10:26,780 --> 00:10:28,365
+what we have is the lack of
+
+281
+00:10:28,365 --> 00:10:30,065
+trust in the data.
+
+282
+00:10:30,765 --> 00:10:32,785
+It's not fit for purpose.
+
+283
+00:10:32,845 --> 00:10:35,005
+We spend seventy
+percent of our
+
+284
+00:10:35,005 --> 00:10:38,680
+time doing data
+janitorial work
+
+285
+00:10:38,740 --> 00:10:40,680
+just to make sure
+that the data
+
+286
+00:10:40,740 --> 00:10:42,200
+is right for an application.
+
+287
+00:10:42,260 --> 00:10:44,680
+We do that over and
+over and over again.
+
+288
+00:10:44,935 --> 00:10:47,515
+I call this the bad data tax.
+
+289
+00:10:47,895 --> 00:10:49,575
+And I've done I've
+done the research.
+
+290
+00:10:49,575 --> 00:10:50,855
+Actually, I've done
+the research twice,
+
+291
+00:10:50,855 --> 00:10:52,375
+once with IBM and another time
+
+292
+00:10:52,375 --> 00:10:55,210
+with PwC to,
+
+293
+00:10:55,330 --> 00:10:56,930
+validate that this is at least
+
+294
+00:10:56,930 --> 00:10:58,930
+thirty percent of
+your operating
+
+295
+00:10:58,930 --> 00:11:00,770
+expense just wasted. Right?
+
+296
+00:11:00,770 --> 00:11:02,450
+And we've allowed data to lose
+
+297
+00:11:02,450 --> 00:11:04,725
+consistency and
+precision of meaning.
+
+298
+00:11:05,105 --> 00:11:07,365
+We've got it stuck
+in these rigid,
+
+299
+00:11:08,385 --> 00:11:09,365
+ancient technology,
+
+300
+00:11:10,225 --> 00:11:12,485
+environments so that we can't
+
+301
+00:11:12,930 --> 00:11:14,850
+do what we need to in terms of
+
+302
+00:11:14,850 --> 00:11:16,530
+automation and
+straight through
+
+303
+00:11:16,530 --> 00:11:18,610
+processing. We're not getting
+
+304
+00:11:18,610 --> 00:11:21,195
+leverage off of our expensive
+
+305
+00:11:21,335 --> 00:11:22,635
+technology investments.
+
+306
+00:11:23,255 --> 00:11:25,515
+We have these
+complex analytical
+
+307
+00:11:25,655 --> 00:11:26,935
+models that,
+
+308
+00:11:27,255 --> 00:11:28,930
+we're just spending all this
+
+309
+00:11:28,930 --> 00:11:30,610
+time trying to
+make sure the data
+
+310
+00:11:30,610 --> 00:11:32,210
+works and the models
+don't match,
+
+311
+00:11:32,210 --> 00:11:33,830
+and we're running around doing
+
+312
+00:11:34,050 --> 00:11:36,150
+fire drills and putting
+out brush fires.
+
+313
+00:11:36,485 --> 00:11:37,605
+And mostly we're missing
+
+314
+00:11:37,605 --> 00:11:39,205
+opportunities for
+upselling and
+
+315
+00:11:39,205 --> 00:11:40,665
+cross selling and innovation.
+
+316
+00:11:42,085 --> 00:11:44,180
+We can't understand
+context for
+
+317
+00:11:44,180 --> 00:11:46,600
+legal or for finance
+or for marketing.
+
+318
+00:11:46,980 --> 00:11:47,700
+And, of course,
+
+319
+00:11:47,940 --> 00:11:49,240
+I'm in the financial
+industry.
+
+320
+00:11:49,620 --> 00:11:51,720
+The regulators
+have a hard time
+
+321
+00:11:51,860 --> 00:11:53,725
+unraveling
+the aggregates because
+
+322
+00:11:53,725 --> 00:11:55,005
+they're trying to
+feed different
+
+323
+00:11:55,005 --> 00:11:57,985
+models looking
+at systemic risk
+
+324
+00:11:58,125 --> 00:11:59,585
+types of, applications.
+
+325
+00:12:00,365 --> 00:12:03,380
+The truth is not
+gonna fix this
+
+326
+00:12:03,520 --> 00:12:05,360
+by continuing to do the same
+
+327
+00:12:05,360 --> 00:12:07,220
+thing over and over
+and over again.
+
+328
+00:12:07,280 --> 00:12:08,560
+You're not gonna fix this by
+
+329
+00:12:08,560 --> 00:12:11,060
+adopting more
+proprietary schemas,
+
+330
+00:12:11,825 --> 00:12:13,685
+managing that rigid pipeline,
+
+331
+00:12:14,225 --> 00:12:16,885
+or trying to force
+fit data into
+
+332
+00:12:17,265 --> 00:12:18,945
+legacy data models that were
+
+333
+00:12:18,945 --> 00:12:21,080
+created for specific
+applications.
+
+334
+00:12:22,820 --> 00:12:24,180
+We have to look at this thing
+
+335
+00:12:24,180 --> 00:12:27,560
+differently, which
+is why I focus on,
+
+336
+00:12:28,585 --> 00:12:29,785
+these two concepts. Right?
+
+337
+00:12:29,785 --> 00:12:31,305
+I'm not gonna shy
+away from them.
+
+338
+00:12:31,305 --> 00:12:32,605
+One is semantic.
+
+339
+00:12:32,905 --> 00:12:34,205
+It just says meaning,
+
+340
+00:12:34,985 --> 00:12:36,765
+and the other one
+is standards.
+
+341
+00:12:37,300 --> 00:12:39,960
+So these are wonderful ideas.
+
+342
+00:12:40,340 --> 00:12:43,080
+We should not worry
+about the the,
+
+343
+00:12:43,380 --> 00:12:45,640
+the dreaded o word of ontology
+
+344
+00:12:45,700 --> 00:12:49,975
+is a fantastic Let me see if I
+
+345
+00:12:49,975 --> 00:12:51,595
+can demystify this for you.
+
+346
+00:12:52,695 --> 00:12:55,980
+Starts with, four concepts,
+
+347
+00:12:56,440 --> 00:12:58,840
+four standards
+concepts of which
+
+348
+00:12:58,840 --> 00:13:01,020
+is a scaffolding for
+everything else.
+
+349
+00:13:01,240 --> 00:13:02,120
+Right? And the first one,
+
+350
+00:13:02,120 --> 00:13:04,695
+the most important
+one is the ability
+
+351
+00:13:05,475 --> 00:13:09,255
+to reconcile identity
+against a single,
+
+352
+00:13:09,555 --> 00:13:10,775
+permanent, unique,
+
+353
+00:13:10,835 --> 00:13:13,015
+unchangeable identifier
+in the cloud.
+
+354
+00:13:13,220 --> 00:13:14,500
+You know, it's a, you know,
+
+355
+00:13:14,500 --> 00:13:16,440
+individualized
+resource identifier
+
+356
+00:13:16,740 --> 00:13:18,440
+or a resource locator.
+
+357
+00:13:18,580 --> 00:13:19,800
+Forget what it's called.
+
+358
+00:13:20,155 --> 00:13:22,815
+It is a ability
+to have a single
+
+359
+00:13:23,115 --> 00:13:25,675
+precise granular
+identifier for
+
+360
+00:13:25,675 --> 00:13:28,770
+everything to which
+all of the other
+
+361
+00:13:28,770 --> 00:13:30,690
+systems get linked to. Right?
+
+362
+00:13:30,690 --> 00:13:32,530
+So you should think of this as
+
+363
+00:13:32,530 --> 00:13:34,310
+the Rosetta Stone capability
+
+364
+00:13:35,090 --> 00:13:37,725
+that allows you to not have to
+
+365
+00:13:37,725 --> 00:13:39,805
+move the data.
+You just link it
+
+366
+00:13:39,805 --> 00:13:43,185
+up to its identity
+in the cloud.
+
+367
+00:13:44,300 --> 00:13:46,640
+You combine that
+with ontologies.
+
+368
+00:13:46,700 --> 00:13:48,220
+Right? So there there are two
+
+369
+00:13:48,220 --> 00:13:49,180
+sides of this coin.
+
+370
+00:13:49,180 --> 00:13:51,935
+First is, can we
+model precision?
+
+371
+00:13:51,995 --> 00:13:53,675
+And and the answer
+is yes. We can.
+
+372
+00:13:53,675 --> 00:13:55,215
+Right? We know how to capture
+
+373
+00:13:55,595 --> 00:13:58,155
+what subject matter
+experts tell
+
+374
+00:13:58,155 --> 00:13:59,850
+us to in the way things work,
+
+375
+00:14:00,090 --> 00:14:01,710
+boxes and line diagrams.
+
+376
+00:14:02,410 --> 00:14:04,490
+But the magic here is that we
+
+377
+00:14:04,490 --> 00:14:07,070
+can express it
+now in standards
+
+378
+00:14:07,725 --> 00:14:10,525
+using the triples,
+the other word,
+
+379
+00:14:10,525 --> 00:14:12,305
+the gift of the Department
+of Defense.
+
+380
+00:14:12,765 --> 00:14:13,885
+Understanding triples is
+
+381
+00:14:13,885 --> 00:14:15,580
+straightforward.
+Just recognize
+
+382
+00:14:15,800 --> 00:14:17,000
+that couple pair,
+
+383
+00:14:17,000 --> 00:14:18,300
+current relational technology
+
+384
+00:14:18,440 --> 00:14:19,720
+is location based. Right?
+
+385
+00:14:19,720 --> 00:14:22,460
+It's a column row
+with tables,
+
+386
+00:14:22,520 --> 00:14:24,565
+joins, keys, and explicitly
+
+387
+00:14:24,625 --> 00:14:25,445
+defined relationships.
+
+388
+00:14:26,225 --> 00:14:28,325
+A triple is a sentence
+structure.
+
+389
+00:14:28,625 --> 00:14:29,905
+Two nouns, they
+call them subject
+
+390
+00:14:29,905 --> 00:14:31,825
+and object, linked by a verb
+
+391
+00:14:31,825 --> 00:14:32,645
+called a predicate.
+
+392
+00:14:33,060 --> 00:14:34,760
+All of those things
+are precisely
+
+393
+00:14:34,900 --> 00:14:37,080
+defined at their most
+granular level.
+
+394
+00:14:37,540 --> 00:14:39,160
+So they become building blocks
+
+395
+00:14:39,380 --> 00:14:40,900
+that you can then reuse for
+
+396
+00:14:40,900 --> 00:14:42,815
+applications because
+they capture
+
+397
+00:14:42,815 --> 00:14:45,615
+concepts. It's
+not necessary to
+
+398
+00:14:45,615 --> 00:14:48,015
+be an expert at how to write,
+
+399
+00:14:49,775 --> 00:14:51,510
+SPARQL queries, but,
+
+400
+00:14:51,670 --> 00:14:53,270
+you should
+understand the basic
+
+401
+00:14:53,270 --> 00:14:54,890
+philosophy behind
+how it works.
+
+402
+00:14:54,950 --> 00:14:55,830
+And then, of course,
+
+403
+00:14:55,830 --> 00:14:57,750
+the final part is
+business rules
+
+404
+00:14:57,750 --> 00:15:01,295
+that are also, machine
+executable in,
+
+405
+00:15:01,695 --> 00:15:02,915
+a semantic language.
+
+406
+00:15:03,055 --> 00:15:05,715
+So rules and
+identity and meaning
+
+407
+00:15:05,855 --> 00:15:07,475
+come together. You
+should remember
+
+408
+00:15:07,535 --> 00:15:10,140
+the semantic trinity. Right?
+
+409
+00:15:10,160 --> 00:15:13,380
+Identify, describe,
+and express.
+
+410
+00:15:14,000 --> 00:15:14,900
+That's the goal.
+
+411
+00:15:15,360 --> 00:15:16,580
+With those standards,
+
+412
+00:15:16,800 --> 00:15:19,745
+we get these fantastic
+capabilities.
+
+413
+00:15:20,445 --> 00:15:22,305
+Right? So the first one is,
+
+414
+00:15:23,405 --> 00:15:25,405
+quality by math. Right?
+
+415
+00:15:25,405 --> 00:15:27,550
+It's they're all
+axiomatic statements,
+
+416
+00:15:27,630 --> 00:15:29,070
+and and if it doesn't match
+
+417
+00:15:29,070 --> 00:15:30,530
+the structure of
+the ontology,
+
+418
+00:15:30,910 --> 00:15:32,190
+then it doesn't get imported
+
+419
+00:15:32,190 --> 00:15:32,990
+into the system.
+
+420
+00:15:32,990 --> 00:15:35,230
+So bad data cannot
+get into your
+
+421
+00:15:35,230 --> 00:15:36,110
+system in the first place.
+
+422
+00:15:36,110 --> 00:15:37,310
+You're not running
+around trying
+
+423
+00:15:37,310 --> 00:15:38,695
+to find it and clean it.
+
+424
+00:15:39,395 --> 00:15:40,375
+It's done automatically.
+
+425
+00:15:41,715 --> 00:15:42,695
+These are concepts.
+
+426
+00:15:43,155 --> 00:15:44,995
+They're like tinker
+toy building
+
+427
+00:15:44,995 --> 00:15:46,595
+blocks that you just kind of
+
+428
+00:15:46,595 --> 00:15:48,380
+create and put together,
+
+429
+00:15:48,520 --> 00:15:50,140
+and you get to reuse them
+
+430
+00:15:50,360 --> 00:15:51,740
+application by application.
+
+431
+00:15:52,120 --> 00:15:54,300
+So you take identity
+and meaning,
+
+432
+00:15:54,675 --> 00:15:56,295
+and you add to that time,
+
+433
+00:15:56,435 --> 00:15:58,595
+and you can express
+almost every
+
+434
+00:15:58,595 --> 00:16:00,295
+context with those
+three things.
+
+435
+00:16:00,435 --> 00:16:01,955
+And source is
+important because
+
+436
+00:16:01,955 --> 00:16:03,575
+you want to make
+sure the quality
+
+437
+00:16:03,635 --> 00:16:07,150
+of the data is fit for
+its intended use.
+
+438
+00:16:07,150 --> 00:16:08,830
+Right? So this is all mostly
+
+439
+00:16:08,830 --> 00:16:10,430
+about describing the data,
+
+440
+00:16:10,430 --> 00:16:11,570
+not about the values.
+
+441
+00:16:12,005 --> 00:16:14,805
+Sometimes it's
+critical for you
+
+442
+00:16:14,805 --> 00:16:17,065
+to multisource or triangulate
+
+443
+00:16:17,445 --> 00:16:19,125
+to make sure that the value is
+
+444
+00:16:19,125 --> 00:16:20,230
+accurate as well.
+
+445
+00:16:21,350 --> 00:16:22,730
+With semantic standards,
+
+446
+00:16:22,870 --> 00:16:25,030
+we can and actually
+because it's
+
+447
+00:16:25,030 --> 00:16:26,250
+linked to the identifier,
+
+448
+00:16:26,950 --> 00:16:28,805
+we can track it as it flows
+
+449
+00:16:28,805 --> 00:16:30,105
+across all of our systems,
+
+450
+00:16:30,645 --> 00:16:32,585
+goes through our
+calculation engines.
+
+451
+00:16:33,045 --> 00:16:34,885
+We can, manage our,
+
+452
+00:16:35,205 --> 00:16:37,305
+privacy and our
+security concerns.
+
+453
+00:16:37,730 --> 00:16:39,010
+We can prove to our,
+
+454
+00:16:40,050 --> 00:16:41,670
+auditors that we know,
+
+455
+00:16:43,010 --> 00:16:44,690
+how it flows and
+we have a control
+
+456
+00:16:44,690 --> 00:16:46,665
+environment. Governance,
+
+457
+00:16:46,885 --> 00:16:49,065
+which is mostly about quality
+
+458
+00:16:49,205 --> 00:16:51,865
+and definition and
+requirements capture,
+
+459
+00:16:52,005 --> 00:16:53,305
+is all done automatically.
+
+460
+00:16:53,365 --> 00:16:55,065
+So governance
+becomes simplified
+
+461
+00:16:55,750 --> 00:16:56,630
+and valuable. Right?
+
+462
+00:16:56,630 --> 00:16:58,010
+It's not onerous governance.
+
+463
+00:16:58,470 --> 00:17:01,270
+It is what do you
+need and let's
+
+464
+00:17:01,270 --> 00:17:04,545
+go focus on getting it and and
+
+465
+00:17:04,685 --> 00:17:07,265
+integrating it
+into our semantic
+
+466
+00:17:07,325 --> 00:17:10,125
+environment. It's all
+machine readable,
+
+467
+00:17:10,125 --> 00:17:11,885
+so humans can understand it as
+
+468
+00:17:11,885 --> 00:17:12,785
+well as machines,
+
+469
+00:17:13,110 --> 00:17:14,650
+and it's done on
+a continuously
+
+470
+00:17:15,030 --> 00:17:17,110
+tested basis. So
+there's no big
+
+471
+00:17:17,110 --> 00:17:18,950
+bang releases that you have to
+
+472
+00:17:18,950 --> 00:17:20,970
+worry about. You
+can add modular
+
+473
+00:17:21,030 --> 00:17:22,825
+components, and they're always
+
+474
+00:17:23,045 --> 00:17:25,205
+continually tested of whether
+
+475
+00:17:25,205 --> 00:17:27,685
+it is logically valid or of
+
+476
+00:17:27,685 --> 00:17:28,825
+the right structure.
+
+477
+00:17:29,630 --> 00:17:31,010
+So with those capabilities,
+
+478
+00:17:31,870 --> 00:17:33,630
+there are kinda
+two things that
+
+479
+00:17:33,630 --> 00:17:34,350
+I look at.
+
+480
+00:17:34,350 --> 00:17:36,530
+One is why we do it,
+
+481
+00:17:36,965 --> 00:17:38,725
+and the other one
+is what we do.
+
+482
+00:17:38,725 --> 00:17:40,245
+And these kinda cross
+over each other.
+
+483
+00:17:40,245 --> 00:17:41,765
+Right? And we do this for
+
+484
+00:17:41,765 --> 00:17:42,805
+straightforward
+reasons. Right?
+
+485
+00:17:42,805 --> 00:17:44,825
+We wanna operate efficiently.
+
+486
+00:17:44,885 --> 00:17:46,460
+We wanna automate
+our processes.
+
+487
+00:17:46,940 --> 00:17:48,620
+We wanna make
+sure that we have
+
+488
+00:17:48,620 --> 00:17:51,120
+control over
+the data for privacy
+
+489
+00:17:51,260 --> 00:17:53,600
+and for, regulatory
+compliance.
+
+490
+00:17:54,095 --> 00:17:56,355
+We wanna give our
+data scientists
+
+491
+00:17:56,415 --> 00:17:58,675
+flexibility to follow
+their intuition.
+
+492
+00:17:59,215 --> 00:18:01,720
+We wanna be able to
+link up products,
+
+493
+00:18:02,180 --> 00:18:03,940
+transactions, and customers so
+
+494
+00:18:03,940 --> 00:18:05,780
+we can upsell and
+cross sell our
+
+495
+00:18:05,780 --> 00:18:08,340
+activities. We we do that by
+
+496
+00:18:08,340 --> 00:18:09,800
+building connected
+inventories,
+
+497
+00:18:10,845 --> 00:18:12,385
+by facilitating
+the integration
+
+498
+00:18:12,605 --> 00:18:14,385
+of data across our
+organization,
+
+499
+00:18:14,845 --> 00:18:17,565
+and by managing the access to
+
+500
+00:18:17,565 --> 00:18:20,190
+the data at a data
+point level,
+
+501
+00:18:20,190 --> 00:18:22,290
+not a system level,
+a data level,
+
+502
+00:18:22,430 --> 00:18:25,090
+so that we are
+ensured of privacy,
+
+503
+00:18:25,950 --> 00:18:27,250
+management constraints.
+
+504
+00:18:28,495 --> 00:18:30,415
+Let me drill down to this just
+
+505
+00:18:30,415 --> 00:18:31,635
+a little bit deeper.
+
+506
+00:18:32,015 --> 00:18:33,955
+So I think this is
+really the essence
+
+507
+00:18:34,095 --> 00:18:36,495
+of the business value side of
+
+508
+00:18:36,495 --> 00:18:38,070
+the business. Right?
+
+509
+00:18:38,070 --> 00:18:39,770
+And we'll do this
+in the standard
+
+510
+00:18:39,910 --> 00:18:41,610
+three c's of cost,
+capability,
+
+511
+00:18:41,670 --> 00:18:44,090
+and control. So as
+I said before,
+
+512
+00:18:44,495 --> 00:18:46,015
+this is about thirty percent
+
+513
+00:18:46,015 --> 00:18:47,075
+savings minimum,
+
+514
+00:18:47,935 --> 00:18:49,535
+because we've
+standardized meaning
+
+515
+00:18:49,535 --> 00:18:51,455
+and standard identity and we
+
+516
+00:18:51,455 --> 00:18:52,995
+have the entitlement control,
+
+517
+00:18:53,470 --> 00:18:55,490
+Integration becomes
+simplified.
+
+518
+00:18:55,710 --> 00:18:58,050
+We can, get rid of redundant
+
+519
+00:18:58,270 --> 00:19:00,370
+systems and consolidate
+activities,
+
+520
+00:19:00,835 --> 00:19:01,655
+and we can achieve
+automation.
+
+521
+00:19:02,675 --> 00:19:05,235
+So the cost savings alone are
+
+522
+00:19:05,235 --> 00:19:06,915
+overwhelming. But, really,
+
+523
+00:19:06,915 --> 00:19:08,535
+we're doing this
+to facilitate,
+
+524
+00:19:09,235 --> 00:19:10,390
+innovation. Right?
+
+525
+00:19:10,390 --> 00:19:11,830
+We wanna make sure that our
+
+526
+00:19:11,830 --> 00:19:14,550
+analysts can
+follow the what if
+
+527
+00:19:14,550 --> 00:19:16,710
+scenarios that are required so
+
+528
+00:19:16,710 --> 00:19:18,490
+we can test out ideas.
+
+529
+00:19:18,995 --> 00:19:20,035
+We wanna be able to look at
+
+530
+00:19:20,035 --> 00:19:21,655
+things from different
+perspectives,
+
+531
+00:19:21,715 --> 00:19:23,015
+and we don't wanna be,
+
+532
+00:19:23,635 --> 00:19:24,855
+forced to have to restructure
+
+533
+00:19:24,995 --> 00:19:27,230
+data just to look at
+it from a different
+
+534
+00:19:27,230 --> 00:19:29,330
+view, like a risk risk view,
+
+535
+00:19:29,710 --> 00:19:31,550
+not the same thing
+as a legal view,
+
+536
+00:19:31,550 --> 00:19:33,230
+not the same thing as
+a financial view,
+
+537
+00:19:33,230 --> 00:19:35,470
+not the same thing as
+a marketing view,
+
+538
+00:19:35,470 --> 00:19:37,255
+not the same thing as
+a regulatory view.
+
+539
+00:19:37,255 --> 00:19:39,335
+We should be able
+to look at all
+
+540
+00:19:39,335 --> 00:19:39,915
+of that,
+
+541
+00:19:41,255 --> 00:19:43,115
+by asking questions
+of the data
+
+542
+00:19:43,175 --> 00:19:44,740
+rather than
+restructuring its,
+
+543
+00:19:45,300 --> 00:19:46,200
+its format.
+
+544
+00:19:47,140 --> 00:19:49,700
+And then the goal
+is to establish
+
+545
+00:19:49,700 --> 00:19:50,820
+what the regulators in our
+
+546
+00:19:50,820 --> 00:19:52,920
+industry called,
+a control environment,
+
+547
+00:19:53,380 --> 00:19:57,585
+which is defined, attract,
+
+548
+00:19:58,365 --> 00:20:00,045
+with systems of
+record so we can
+
+549
+00:20:00,045 --> 00:20:01,345
+comply with our obligations,
+
+550
+00:20:01,405 --> 00:20:03,165
+so we can aggregate things on
+
+551
+00:20:03,165 --> 00:20:05,430
+a consistent basis across our
+
+552
+00:20:05,430 --> 00:20:07,530
+organization. So when
+you look at that,
+
+553
+00:20:07,830 --> 00:20:10,970
+it's kind of an overwhelming
+value side.
+
+554
+00:20:11,645 --> 00:20:13,005
+But there's a cost
+associated.
+
+555
+00:20:13,005 --> 00:20:13,725
+There are challenges,
+
+556
+00:20:13,725 --> 00:20:15,085
+and and we have to be honest
+
+557
+00:20:15,085 --> 00:20:17,805
+about the challenges
+as well. Right?
+
+558
+00:20:17,805 --> 00:20:19,165
+So let's take a look at this
+
+559
+00:20:19,165 --> 00:20:21,150
+idea of data centric,
+
+560
+00:20:21,150 --> 00:20:22,750
+and and I think
+a lot about this.
+
+561
+00:20:22,750 --> 00:20:23,950
+I'm, like, wondering,
+you know,
+
+562
+00:20:23,950 --> 00:20:25,310
+what exactly does it mean?
+
+563
+00:20:25,310 --> 00:20:27,045
+So I stole this quote.
+
+564
+00:20:28,565 --> 00:20:30,725
+I think sums it up
+properly. Right?
+
+565
+00:20:30,725 --> 00:20:32,185
+It's not about
+the technology.
+
+566
+00:20:32,485 --> 00:20:34,665
+This technology works
+as advertised.
+
+567
+00:20:35,420 --> 00:20:37,180
+This is about cognition and
+
+568
+00:20:37,180 --> 00:20:38,620
+understanding and making sure
+
+569
+00:20:38,620 --> 00:20:41,100
+that people get the joke and
+
+570
+00:20:41,100 --> 00:20:42,480
+believe in the possibility.
+
+571
+00:20:42,540 --> 00:20:43,840
+Because once you do that,
+
+572
+00:20:44,035 --> 00:20:45,795
+it becomes obvious
+that this is
+
+573
+00:20:45,795 --> 00:20:47,175
+the way we should be operating
+
+574
+00:20:47,235 --> 00:20:47,895
+our organization.
+
+575
+00:20:48,995 --> 00:20:50,375
+In order to do that,
+
+576
+00:20:50,755 --> 00:20:54,090
+we have to manage
+two critical,
+
+577
+00:20:55,590 --> 00:20:57,210
+inhibitors to adoption.
+
+578
+00:20:57,750 --> 00:20:59,430
+And the first one
+is really to full.
+
+579
+00:20:59,430 --> 00:21:01,865
+Right? It's what I'll call in
+
+580
+00:21:02,105 --> 00:21:03,325
+organizational inertia.
+
+581
+00:21:04,265 --> 00:21:05,385
+Because not only
+do you have to
+
+582
+00:21:05,385 --> 00:21:08,525
+have this data centric
+orientation of,
+
+583
+00:21:09,990 --> 00:21:11,910
+why we have incongruence and
+
+584
+00:21:11,910 --> 00:21:12,730
+the implications,
+
+585
+00:21:14,070 --> 00:21:15,750
+but you have to be able to,
+
+586
+00:21:17,190 --> 00:21:18,330
+manage the organizational
+
+587
+00:21:18,775 --> 00:21:21,195
+challenges of priorities and
+
+588
+00:21:21,335 --> 00:21:24,215
+politics and
+processes and give
+
+589
+00:21:24,215 --> 00:21:26,135
+appropriate air cover and and
+
+590
+00:21:26,135 --> 00:21:28,670
+allow for
+the infrastructure to
+
+591
+00:21:28,670 --> 00:21:31,090
+be created,
+meaning coordination
+
+592
+00:21:31,310 --> 00:21:33,230
+across your processes and
+
+593
+00:21:33,230 --> 00:21:34,370
+facilitating collaboration.
+
+594
+00:21:34,590 --> 00:21:36,185
+It's a big ask. We know that.
+
+595
+00:21:36,185 --> 00:21:37,865
+But this is really the big
+
+596
+00:21:37,865 --> 00:21:40,265
+challenge is it's not really
+
+597
+00:21:40,265 --> 00:21:40,925
+the technology.
+
+598
+00:21:42,825 --> 00:21:45,330
+There is some
+transformation costs.
+
+599
+00:21:45,730 --> 00:21:47,270
+Right? You do have to have,
+
+600
+00:21:48,210 --> 00:21:50,950
+triple store triple stores and
+
+601
+00:21:51,090 --> 00:21:52,470
+and the tool sets.
+
+602
+00:21:53,595 --> 00:21:55,375
+There is a skill
+set requirements.
+
+603
+00:21:55,755 --> 00:21:58,015
+You must build
+the ontologies correctly,
+
+604
+00:21:58,395 --> 00:22:01,900
+manage pipeline from
+ingestion through,
+
+605
+00:22:02,520 --> 00:22:05,480
+application. So
+this is the this
+
+606
+00:22:05,480 --> 00:22:06,680
+is the other side
+of the coin,
+
+607
+00:22:06,680 --> 00:22:09,115
+and it's a real
+side of the coin.
+
+608
+00:22:09,115 --> 00:22:11,835
+Mostly compounded
+by what I call
+
+609
+00:22:11,835 --> 00:22:14,395
+the four horsemen of the data
+
+610
+00:22:14,395 --> 00:22:15,615
+management apocalypse.
+
+611
+00:22:19,930 --> 00:22:22,430
+Ignorance, arrogance,
+obsolescence,
+
+612
+00:22:22,650 --> 00:22:23,470
+and power.
+
+613
+00:22:24,495 --> 00:22:25,475
+And we all know,
+
+614
+00:22:26,815 --> 00:22:28,255
+they run rampant through lots
+
+615
+00:22:28,255 --> 00:22:28,915
+of organizations,
+
+616
+00:22:29,535 --> 00:22:31,055
+and we have to kind of,
+
+617
+00:22:31,615 --> 00:22:33,380
+manage this organizational
+
+618
+00:22:33,840 --> 00:22:35,360
+challenge because
+we're talking
+
+619
+00:22:35,360 --> 00:22:38,480
+about thinking about
+data in a different
+
+620
+00:22:38,480 --> 00:22:42,285
+way. So we paint
+you a composite
+
+621
+00:22:42,345 --> 00:22:45,085
+picture, and it starts with
+
+622
+00:22:45,385 --> 00:22:46,765
+let's call this
+the infrastructure,
+
+623
+00:22:46,905 --> 00:22:48,345
+and the most important one is
+
+624
+00:22:48,345 --> 00:22:50,450
+this information
+literacy concept
+
+625
+00:22:50,450 --> 00:22:53,570
+of understanding
+the problem and
+
+626
+00:22:53,570 --> 00:22:55,410
+what it means, and why data
+
+627
+00:22:55,410 --> 00:22:56,950
+meaning is not
+data processing,
+
+628
+00:22:57,010 --> 00:22:58,390
+and why this is
+not a technology
+
+629
+00:22:58,610 --> 00:23:01,565
+problem, and the possibilities
+
+630
+00:23:01,565 --> 00:23:05,105
+of fixing this,
+adopting standards,
+
+631
+00:23:07,060 --> 00:23:09,240
+doing appropriate
+data hygiene.
+
+632
+00:23:09,860 --> 00:23:12,260
+You know, regardless
+of how you do this,
+
+633
+00:23:12,260 --> 00:23:13,640
+whether you do a conventional
+
+634
+00:23:13,700 --> 00:23:14,840
+technology or semantic,
+
+635
+00:23:15,025 --> 00:23:16,545
+you have to manage the hygiene
+
+636
+00:23:16,545 --> 00:23:18,305
+of your data. If you're going
+
+637
+00:23:18,305 --> 00:23:19,525
+to do all that work,
+
+638
+00:23:19,745 --> 00:23:20,725
+do it strategically.
+
+639
+00:23:21,665 --> 00:23:23,260
+And that makes
+sure that we have
+
+640
+00:23:23,260 --> 00:23:24,640
+to deal with, organizational,
+
+641
+00:23:25,660 --> 00:23:28,240
+dysfunction and
+and, you know,
+
+642
+00:23:29,500 --> 00:23:30,695
+I've been tracking
+data manager
+
+643
+00:23:30,695 --> 00:23:32,155
+for a while, and I call this
+
+644
+00:23:32,155 --> 00:23:34,235
+little g governance
+in data management.
+
+645
+00:23:34,235 --> 00:23:35,435
+We're doing that pretty well.
+
+646
+00:23:35,435 --> 00:23:36,975
+We've learned
+a lot about that.
+
+647
+00:23:37,035 --> 00:23:38,955
+But big g governance
+of getting
+
+648
+00:23:38,955 --> 00:23:41,650
+the organization
+to adopt a way
+
+649
+00:23:41,650 --> 00:23:42,470
+of thinking,
+
+650
+00:23:43,010 --> 00:23:45,330
+is the challenge that senior
+
+651
+00:23:45,330 --> 00:23:48,070
+execs are responsible
+for implementing.
+
+652
+00:23:48,705 --> 00:23:49,845
+There are some requirements.
+
+653
+00:23:50,305 --> 00:23:51,425
+You know, as I said,
+
+654
+00:23:51,425 --> 00:23:53,525
+cognition and buy
+in is critical.
+
+655
+00:23:53,745 --> 00:23:55,045
+Air cover is critical.
+
+656
+00:23:56,550 --> 00:23:58,950
+Understanding why
+we have a problem
+
+657
+00:23:58,950 --> 00:23:59,770
+and the implications,
+
+658
+00:24:01,030 --> 00:24:02,950
+being able to to think of this
+
+659
+00:24:02,950 --> 00:24:05,050
+strategically, not
+just tactically,
+
+660
+00:24:05,335 --> 00:24:07,175
+you know, fix the problem once
+
+661
+00:24:07,175 --> 00:24:08,715
+and get it off our plate.
+
+662
+00:24:10,775 --> 00:24:14,075
+Please, adopt this
+idea of the semantic
+
+663
+00:24:14,215 --> 00:24:17,080
+trinity of identify,
+describe,
+
+664
+00:24:17,140 --> 00:24:18,840
+and express. Right?
+
+665
+00:24:19,140 --> 00:24:21,400
+Identifiers, common meaning,
+
+666
+00:24:21,700 --> 00:24:24,395
+standards expression
+with an accountability
+
+667
+00:24:24,855 --> 00:24:27,335
+and policy framework
+around it that,
+
+668
+00:24:27,575 --> 00:24:29,675
+helps us with our
+ecosystem management.
+
+669
+00:24:30,830 --> 00:24:32,830
+And then there are
+three big areas.
+
+670
+00:24:32,830 --> 00:24:35,010
+Right? First one is
+the architecture.
+
+671
+00:24:35,470 --> 00:24:36,910
+We talked a little
+bit about this.
+
+672
+00:24:36,910 --> 00:24:38,770
+Right? Identity and
+meaning resolution,
+
+673
+00:24:39,405 --> 00:24:40,685
+expressed in standards with
+
+674
+00:24:40,685 --> 00:24:42,145
+executable business rules,
+
+675
+00:24:42,285 --> 00:24:43,585
+and managing the pipeline,
+
+676
+00:24:43,805 --> 00:24:45,885
+which is itself
+a challenge. Right?
+
+677
+00:24:45,885 --> 00:24:47,745
+You have to manage
+it differently
+
+678
+00:24:48,150 --> 00:24:50,630
+in a semantic world,
+to be able to,
+
+679
+00:24:50,950 --> 00:24:52,470
+you know, triple
+ify it, you know,
+
+680
+00:24:52,470 --> 00:24:54,310
+turn it into triples and align
+
+681
+00:24:54,310 --> 00:24:55,530
+it with just the ontologies.
+
+682
+00:24:56,605 --> 00:24:58,525
+The business case must be made
+
+683
+00:24:58,525 --> 00:25:00,705
+over and over again to
+all the appropriate
+
+684
+00:25:00,765 --> 00:25:03,085
+stakeholders. We have to think
+
+685
+00:25:03,085 --> 00:25:04,980
+about them from
+the building blocks.
+
+686
+00:25:05,140 --> 00:25:05,940
+Right? You know,
+
+687
+00:25:05,940 --> 00:25:08,020
+that is identity
+and meaning and
+
+688
+00:25:08,020 --> 00:25:09,800
+time and source
+giving us context,
+
+689
+00:25:11,380 --> 00:25:13,730
+mathematical quality
+value validation,
+
+690
+00:25:15,215 --> 00:25:17,455
+reusability of
+our concepts and
+
+691
+00:25:17,455 --> 00:25:18,735
+how what does it
+mean to manage
+
+692
+00:25:18,735 --> 00:25:20,915
+in a conceptual
+data environment,
+
+693
+00:25:21,375 --> 00:25:22,995
+and traceability from,
+
+694
+00:25:24,670 --> 00:25:25,810
+through all
+the transformations.
+
+695
+00:25:25,950 --> 00:25:27,810
+The audit is very
+happy about that.
+
+696
+00:25:28,830 --> 00:25:31,390
+The business case of
+the big three c's,
+
+697
+00:25:31,390 --> 00:25:33,250
+right, cost, capability,
+and control,
+
+698
+00:25:33,915 --> 00:25:36,735
+plus the language of,
+
+699
+00:25:37,275 --> 00:25:38,895
+business in terms
+of measurement
+
+700
+00:25:39,035 --> 00:25:40,235
+criteria. Right?
+
+701
+00:25:40,235 --> 00:25:42,075
+Efficiency of use and user
+
+702
+00:25:42,075 --> 00:25:44,460
+experience and
+time to market,
+
+703
+00:25:44,460 --> 00:25:45,660
+and we can prove all this.
+
+704
+00:25:45,660 --> 00:25:47,120
+And we spend a lot of time
+
+705
+00:25:47,340 --> 00:25:48,860
+worrying about
+the measurement criteria,
+
+706
+00:25:48,860 --> 00:25:51,360
+which I'm happy
+to share against
+
+707
+00:25:51,975 --> 00:25:53,735
+the cost of
+conversion. Right?
+
+708
+00:25:53,735 --> 00:25:55,275
+The inertia of our
+organization.
+
+709
+00:25:55,655 --> 00:25:57,095
+This is all real
+stuff. Right?
+
+710
+00:25:57,095 --> 00:25:59,515
+The physical
+infrastructure and
+
+711
+00:26:01,640 --> 00:26:03,080
+transformation
+we have to do to
+
+712
+00:26:03,080 --> 00:26:05,260
+map from conventional
+to semantic.
+
+713
+00:26:06,280 --> 00:26:07,960
+And then there is an operating
+
+714
+00:26:07,960 --> 00:26:09,960
+model that, is required.
+
+715
+00:26:09,960 --> 00:26:12,075
+This is the data
+hygiene operating
+
+716
+00:26:12,075 --> 00:26:13,055
+model, if you will.
+
+717
+00:26:13,115 --> 00:26:14,955
+But I've simplified
+this. Right?
+
+718
+00:26:14,955 --> 00:26:16,555
+So the first part
+of this is to
+
+719
+00:26:16,555 --> 00:26:17,855
+document what exists.
+
+720
+00:26:18,210 --> 00:26:19,270
+Build your inventory,
+
+721
+00:26:19,730 --> 00:26:21,350
+understand the data flow,
+
+722
+00:26:21,730 --> 00:26:22,790
+manage your lineage,
+
+723
+00:26:23,330 --> 00:26:25,030
+then you simplify all that,
+
+724
+00:26:25,545 --> 00:26:27,945
+authorize domains, names,
+
+725
+00:26:27,945 --> 00:26:31,005
+systems of records,
+provisioning points,
+
+726
+00:26:31,465 --> 00:26:33,085
+classification of
+what's important,
+
+727
+00:26:33,880 --> 00:26:34,940
+and data architecture,
+
+728
+00:26:35,640 --> 00:26:37,560
+capturing business
+concepts and
+
+729
+00:26:37,560 --> 00:26:39,500
+translating them
+into data concepts.
+
+730
+00:26:39,720 --> 00:26:42,165
+Let's not underestimate
+the value
+
+731
+00:26:42,165 --> 00:26:43,785
+of this, the importance
+of this.
+
+732
+00:26:44,645 --> 00:26:46,185
+Governance is required.
+
+733
+00:26:46,245 --> 00:26:47,765
+It's gonna be light touch,
+
+734
+00:26:47,765 --> 00:26:49,445
+but you're gonna
+have roles and
+
+735
+00:26:49,445 --> 00:26:52,530
+skills and and policies
+and, you know,
+
+736
+00:26:52,530 --> 00:26:54,390
+appropriate funding and
+
+737
+00:26:54,530 --> 00:26:56,290
+prioritization management and
+
+738
+00:26:56,290 --> 00:26:58,550
+escalation processes
+and all that stuff.
+
+739
+00:26:59,335 --> 00:27:01,575
+And then how we
+talk about it.
+
+740
+00:27:01,575 --> 00:27:03,255
+We talk about it
+differently to
+
+741
+00:27:03,255 --> 00:27:04,935
+business, you know,
+time to market,
+
+742
+00:27:04,935 --> 00:27:07,130
+use cases versus technology,
+
+743
+00:27:07,270 --> 00:27:08,710
+which is about integration and
+
+744
+00:27:08,710 --> 00:27:11,190
+scalability and
+resiliency versus
+
+745
+00:27:11,190 --> 00:27:12,970
+control functions
+about transparency
+
+746
+00:27:13,270 --> 00:27:15,290
+and traceability
+and auditability.
+
+747
+00:27:17,215 --> 00:27:18,175
+So this is,
+
+748
+00:27:18,655 --> 00:27:20,735
+emphasizing
+the importance of,
+
+749
+00:27:21,135 --> 00:27:23,640
+education and
+messaging because
+
+750
+00:27:23,780 --> 00:27:26,120
+buy in is the fundamental task
+
+751
+00:27:26,260 --> 00:27:28,920
+if you're going to go
+in this direction.
+
+752
+00:27:29,700 --> 00:27:31,480
+So here's some
+concluding thoughts.
+
+753
+00:27:32,485 --> 00:27:35,365
+First, implementing a semantic
+
+754
+00:27:35,365 --> 00:27:37,145
+environment can be
+done incrementally,
+
+755
+00:27:37,685 --> 00:27:39,940
+use case by use case. Right?
+
+756
+00:27:39,940 --> 00:27:40,900
+Which is that and that that
+
+757
+00:27:40,900 --> 00:27:42,180
+would be the way
+you would do it,
+
+758
+00:27:42,180 --> 00:27:43,540
+and I would be
+happy to talk to
+
+759
+00:27:43,540 --> 00:27:45,080
+you about what the appropriate
+
+760
+00:27:45,140 --> 00:27:46,900
+priorities are and how you
+
+761
+00:27:46,900 --> 00:27:47,880
+implement that.
+
+762
+00:27:49,195 --> 00:27:51,615
+There is a foundational
+level level.
+
+763
+00:27:52,555 --> 00:27:54,175
+If the engineer
+does correctly,
+
+764
+00:27:54,395 --> 00:27:56,015
+these are concepts,
+
+765
+00:27:56,770 --> 00:27:58,050
+and and we have to be able to
+
+766
+00:27:58,050 --> 00:27:59,510
+capture things like,
+
+767
+00:28:01,090 --> 00:28:03,010
+obligation and commitment and
+
+768
+00:28:03,010 --> 00:28:05,110
+control and party and role.
+
+769
+00:28:05,885 --> 00:28:07,725
+Then you and engineering that
+
+770
+00:28:07,725 --> 00:28:09,325
+is critical because this is
+
+771
+00:28:09,325 --> 00:28:11,005
+the scaffolding from which we
+
+772
+00:28:11,005 --> 00:28:12,065
+build the rest.
+
+773
+00:28:13,770 --> 00:28:15,610
+There is some investment.
+It's not huge.
+
+774
+00:28:15,610 --> 00:28:16,990
+This is not a rip
+and replace,
+
+775
+00:28:17,130 --> 00:28:18,650
+but there is some
+investment in
+
+776
+00:28:18,650 --> 00:28:20,410
+technology. The
+good news is it
+
+777
+00:28:20,410 --> 00:28:22,090
+plays nice with all of your
+
+778
+00:28:22,090 --> 00:28:23,535
+existing environments.
+
+779
+00:28:26,475 --> 00:28:28,735
+You do have to make
+a transition,
+
+780
+00:28:28,795 --> 00:28:30,895
+and business value
+is not always
+
+781
+00:28:31,490 --> 00:28:33,970
+immediately known
+from the first
+
+782
+00:28:33,970 --> 00:28:34,790
+use case,
+
+783
+00:28:34,930 --> 00:28:36,850
+but all the rest of the use
+
+784
+00:28:36,850 --> 00:28:38,390
+cases become a lot easier.
+
+785
+00:28:38,675 --> 00:28:40,935
+So a little bit of
+patience is required.
+
+786
+00:28:42,515 --> 00:28:44,615
+That's why leadership
+is critical,
+
+787
+00:28:44,755 --> 00:28:46,620
+like finding
+the right sponsor,
+
+788
+00:28:46,620 --> 00:28:48,720
+providing the appropriate
+air cover,
+
+789
+00:28:48,780 --> 00:28:50,640
+you know,
+organizational challenges
+
+790
+00:28:50,860 --> 00:28:53,100
+are necessary,
+including the right
+
+791
+00:28:53,100 --> 00:28:55,760
+team leader for your
+semantic journey.
+
+792
+00:28:56,095 --> 00:28:57,695
+And then process. Right?
+
+793
+00:28:57,695 --> 00:29:00,835
+This is a ability
+to engineer,
+
+794
+00:29:01,215 --> 00:29:04,595
+test, add, test,
+
+795
+00:29:06,800 --> 00:29:08,420
+have policies test.
+
+796
+00:29:08,800 --> 00:29:10,100
+Those are all critical.
+
+797
+00:29:10,800 --> 00:29:12,915
+I will make these
+slides available.
+
+798
+00:29:12,915 --> 00:29:14,695
+I did a good big
+Ben Franklin,
+
+799
+00:29:15,475 --> 00:29:17,315
+cost benefit. They're both
+
+800
+00:29:17,315 --> 00:29:18,595
+legitimate size. Right?
+
+801
+00:29:18,595 --> 00:29:20,375
+I think the drivers
+are overwhelming,
+
+802
+00:29:20,950 --> 00:29:22,710
+and this is a strategic value
+
+803
+00:29:22,710 --> 00:29:24,630
+that I would,
+encourage everybody
+
+804
+00:29:24,630 --> 00:29:26,970
+to consider. But managing
+
+805
+00:29:27,030 --> 00:29:29,835
+organizational
+cohesion is not,
+
+806
+00:29:30,155 --> 00:29:34,335
+an insignificant problem.
+So this is me.
+
+807
+00:29:36,160 --> 00:29:37,620
+By all means, reach out.
+
+808
+00:29:37,920 --> 00:29:39,380
+I'm making this
+course available
+
+809
+00:29:39,440 --> 00:29:41,040
+through my friends
+at the Knowledge
+
+810
+00:29:41,040 --> 00:29:41,860
+Graph Conference.
+
+811
+00:29:42,505 --> 00:29:44,605
+Joaquin Melara is the CLL.
+
+812
+00:29:44,665 --> 00:29:46,025
+He's been terrific in helping
+
+813
+00:29:46,025 --> 00:29:47,325
+me get this organized.
+
+814
+00:29:47,465 --> 00:29:49,305
+So thank you for
+your attention,
+
+815
+00:29:49,305 --> 00:29:50,925
+and, good luck to you.
+

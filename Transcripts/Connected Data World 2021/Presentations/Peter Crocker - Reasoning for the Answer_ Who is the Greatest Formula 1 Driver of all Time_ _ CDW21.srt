@@ -1,0 +1,2432 @@
+1
+00:00:06,700 --> 00:00:08,300
+Hello. My name is
+Pete Crocker,
+
+2
+00:00:08,300 --> 00:00:10,060
+and I'm CEO and cofounder of
+
+3
+00:00:10,060 --> 00:00:11,520
+Oxford Semantic Technologies.
+
+4
+00:00:12,535 --> 00:00:13,895
+In this session I'm going to
+
+5
+00:00:13,895 --> 00:00:15,495
+begin by showing you a short
+
+6
+00:00:15,495 --> 00:00:17,335
+demonstration that
+answers the question
+
+7
+00:00:17,335 --> 00:00:18,715
+we posed for this session,
+
+8
+00:00:18,775 --> 00:00:20,455
+who is the greatest
+formula one
+
+9
+00:00:20,455 --> 00:00:21,835
+driver of all time?
+
+10
+00:00:23,080 --> 00:00:24,520
+This is a question that is
+
+11
+00:00:24,520 --> 00:00:25,580
+frequently debated,
+
+12
+00:00:25,640 --> 00:00:27,340
+and a quick search will reveal
+
+13
+00:00:27,480 --> 00:00:29,100
+many contradicting answers.
+
+14
+00:00:29,875 --> 00:00:31,895
+This application is
+powered by AudioFox,
+
+15
+00:00:32,515 --> 00:00:33,795
+our high performance knowledge
+
+16
+00:00:33,795 --> 00:00:35,975
+graph and semantic
+reasoning engine.
+
+17
+00:00:36,515 --> 00:00:37,795
+This demonstration will be
+
+18
+00:00:37,795 --> 00:00:39,710
+followed by a quick
+run through
+
+19
+00:00:39,710 --> 00:00:41,570
+of a series of
+use cases making
+
+20
+00:00:41,630 --> 00:00:43,330
+use of AudioFox today.
+
+21
+00:00:44,110 --> 00:00:46,005
+And finally, we lift the hood
+
+22
+00:00:46,005 --> 00:00:47,205
+on the demonstration and give
+
+23
+00:00:47,205 --> 00:00:49,065
+you some more detail
+behind the engine.
+
+24
+00:00:50,645 --> 00:00:52,585
+If at any point you
+have any questions,
+
+25
+00:00:52,645 --> 00:00:54,110
+please ask them
+in the chat and
+
+26
+00:00:54,110 --> 00:00:55,710
+we'll be happy to
+answer as many
+
+27
+00:00:55,710 --> 00:00:57,010
+as we can. Otherwise,
+
+28
+00:00:57,390 --> 00:00:58,910
+come and find us at our booth
+
+29
+00:00:58,910 --> 00:01:00,030
+during the conference where we
+
+30
+00:01:00,030 --> 00:01:02,210
+will happily go into
+far more detail.
+
+31
+00:01:02,575 --> 00:01:04,115
+So without further ado,
+
+32
+00:01:04,495 --> 00:01:05,875
+let's dive straight in.
+
+33
+00:01:08,655 --> 00:01:10,095
+Our dashboard
+includes a series
+
+34
+00:01:10,095 --> 00:01:11,800
+of controls where you define
+
+35
+00:01:11,800 --> 00:01:13,480
+the question, here on the left
+
+36
+00:01:13,480 --> 00:01:15,960
+hand side. And over
+on the right,
+
+37
+00:01:15,960 --> 00:01:17,400
+a set of information
+boxes that
+
+38
+00:01:17,400 --> 00:01:18,685
+show you some of
+the statistics
+
+39
+00:01:18,845 --> 00:01:20,205
+behind the question
+being asked
+
+40
+00:01:20,205 --> 00:01:21,585
+and the data that's returned.
+
+41
+00:01:22,125 --> 00:01:23,885
+In the middle, we
+have the answer
+
+42
+00:01:23,885 --> 00:01:24,705
+to our question.
+
+43
+00:01:24,925 --> 00:01:26,365
+First, how long the question
+
+44
+00:01:26,365 --> 00:01:28,970
+took and then a chart showing
+
+45
+00:01:28,970 --> 00:01:31,050
+us the score against the time
+
+46
+00:01:31,050 --> 00:01:32,510
+that the driver was racing.
+
+47
+00:01:32,730 --> 00:01:34,330
+So what we're showing here is
+
+48
+00:01:34,330 --> 00:01:36,225
+the race points for the top
+
+49
+00:01:36,225 --> 00:01:38,545
+twenty drivers and the year of
+
+50
+00:01:38,545 --> 00:01:40,065
+the last race in which they
+
+51
+00:01:40,065 --> 00:01:41,425
+participated, all the way up
+
+52
+00:01:41,425 --> 00:01:43,025
+until just a few
+weeks ago when
+
+53
+00:01:43,025 --> 00:01:44,465
+the last race was
+taken here in
+
+54
+00:01:44,465 --> 00:01:45,590
+twenty twenty one.
+
+55
+00:01:46,130 --> 00:01:48,050
+Scrolling down we
+also get a tabular
+
+56
+00:01:48,050 --> 00:01:49,330
+view of the results and we can
+
+57
+00:01:49,330 --> 00:01:51,330
+see here the top ten and a lot
+
+58
+00:01:51,330 --> 00:01:52,870
+more detail and and statistics
+
+59
+00:01:53,085 --> 00:01:54,605
+all organized and ordered by
+
+60
+00:01:54,605 --> 00:01:56,305
+the score based
+on our criteria.
+
+61
+00:01:57,485 --> 00:01:59,005
+To vary the definition
+of our question,
+
+62
+00:01:59,005 --> 00:02:00,285
+we can change
+the scoring system
+
+63
+00:02:00,285 --> 00:02:01,885
+from points to position gained
+
+64
+00:02:01,885 --> 00:02:04,270
+in a race. So what's
+happening here?
+
+65
+00:02:04,270 --> 00:02:05,950
+For every single race ever
+
+66
+00:02:05,950 --> 00:02:07,230
+recorded for formula one,
+
+67
+00:02:07,230 --> 00:02:09,150
+we are looking at the starting
+
+68
+00:02:09,150 --> 00:02:10,450
+position of a driver.
+
+69
+00:02:10,795 --> 00:02:12,475
+We're taking where
+they ended up,
+
+70
+00:02:12,475 --> 00:02:13,915
+and we're taking
+the difference
+
+71
+00:02:13,915 --> 00:02:15,935
+to calculate
+the positions gained
+
+72
+00:02:15,995 --> 00:02:17,455
+during the course
+of that race.
+
+73
+00:02:18,060 --> 00:02:19,420
+We're totaling up all of those
+
+74
+00:02:19,420 --> 00:02:21,680
+differences across
+the entire dataset,
+
+75
+00:02:21,900 --> 00:02:23,420
+and then we're
+ordering to find
+
+76
+00:02:23,420 --> 00:02:25,760
+a person, in this case,
+Fernando Alonso,
+
+77
+00:02:26,165 --> 00:02:28,025
+who's gained
+the most positions
+
+78
+00:02:28,325 --> 00:02:30,745
+over the entire history
+of Formula One.
+
+79
+00:02:31,685 --> 00:02:32,965
+Now that'd be great,
+
+80
+00:02:32,965 --> 00:02:34,870
+but perhaps
+Fernando Alonso was
+
+81
+00:02:34,950 --> 00:02:36,550
+running in a in
+a fabulous piece
+
+82
+00:02:36,550 --> 00:02:37,990
+of equipment, a fabulous car.
+
+83
+00:02:37,990 --> 00:02:39,350
+So what we can
+then go and look
+
+84
+00:02:39,350 --> 00:02:41,270
+at is a comparison of Fernando
+
+85
+00:02:41,270 --> 00:02:43,290
+Alonso only with
+his teammates.
+
+86
+00:02:43,925 --> 00:02:45,685
+How did he do
+against the others
+
+87
+00:02:45,685 --> 00:02:47,925
+running in McLaren
+or Ferrari,
+
+88
+00:02:47,925 --> 00:02:49,445
+for example, when
+he was driving
+
+89
+00:02:49,445 --> 00:02:51,205
+for them? So by
+clicking on teammates,
+
+90
+00:02:51,205 --> 00:02:52,410
+that's exactly what happens.
+
+91
+00:02:52,410 --> 00:02:54,170
+And here, Jonathan
+Palmer jumps
+
+92
+00:02:54,170 --> 00:02:55,310
+to the top of the list.
+
+93
+00:02:56,170 --> 00:02:57,930
+So why why is he at the top?
+
+94
+00:02:57,930 --> 00:02:59,690
+Well, his positions
+gained over
+
+95
+00:02:59,690 --> 00:03:01,305
+the course of history when
+
+96
+00:03:01,305 --> 00:03:02,585
+compared with his teammates
+
+97
+00:03:02,585 --> 00:03:04,505
+gives him a score
+of hundred and
+
+98
+00:03:04,505 --> 00:03:07,065
+eighty six. Okay. But
+let's have a look.
+
+99
+00:03:07,065 --> 00:03:08,845
+He's raced seventy six races.
+
+100
+00:03:09,340 --> 00:03:11,660
+What if, someone else has had
+
+101
+00:03:11,660 --> 00:03:13,340
+a shorter career
+but, again, has,
+
+102
+00:03:13,580 --> 00:03:15,100
+has recorded more positions
+
+103
+00:03:15,100 --> 00:03:16,160
+gained against teammate?
+
+104
+00:03:16,595 --> 00:03:17,955
+Well, again, we can change our
+
+105
+00:03:17,955 --> 00:03:19,635
+calculation, change
+the definition
+
+106
+00:03:19,635 --> 00:03:20,375
+of our question,
+
+107
+00:03:20,835 --> 00:03:22,615
+and this time flip over to
+
+108
+00:03:22,675 --> 00:03:24,055
+calculating an average.
+
+109
+00:03:24,700 --> 00:03:26,060
+Now we start to see our our
+
+110
+00:03:26,060 --> 00:03:27,040
+first sort of problem.
+
+111
+00:03:27,420 --> 00:03:29,180
+We've narrowed the system such
+
+112
+00:03:29,180 --> 00:03:30,620
+that we're gonna be favoring
+
+113
+00:03:30,620 --> 00:03:32,460
+those that have
+had few races,
+
+114
+00:03:32,460 --> 00:03:34,635
+in this case we're
+seeing pretty
+
+115
+00:03:34,635 --> 00:03:36,475
+much the entire field occupied
+
+116
+00:03:36,475 --> 00:03:37,855
+by those with a single race,
+
+117
+00:03:37,915 --> 00:03:39,695
+and they may have
+won that race
+
+118
+00:03:39,995 --> 00:03:41,755
+or come very high in their
+
+119
+00:03:41,755 --> 00:03:42,735
+positions gained.
+
+120
+00:03:43,080 --> 00:03:44,940
+But, really, are
+they the best?
+
+121
+00:03:45,080 --> 00:03:46,840
+They've only raced
+in one race.
+
+122
+00:03:46,840 --> 00:03:48,520
+So let's change the filters of
+
+123
+00:03:48,520 --> 00:03:50,840
+our criteria. We're gonna up
+
+124
+00:03:50,840 --> 00:03:52,380
+the minimum races to five.
+
+125
+00:03:52,515 --> 00:03:53,395
+And while we're here,
+
+126
+00:03:53,395 --> 00:03:55,315
+why don't we put in
+some a requirement
+
+127
+00:03:55,315 --> 00:03:56,535
+for podium positions.
+
+128
+00:03:57,475 --> 00:03:59,095
+And there we see our driving
+
+129
+00:03:59,395 --> 00:04:01,610
+results drop from twenty five
+
+130
+00:04:01,610 --> 00:04:03,370
+thousand to now a field with
+
+131
+00:04:03,370 --> 00:04:04,750
+fourteen thousand results.
+
+132
+00:04:05,370 --> 00:04:06,810
+Our drivers have
+come down from
+
+133
+00:04:06,810 --> 00:04:08,250
+eight hundred and fifty three
+
+134
+00:04:08,250 --> 00:04:09,610
+to a hundred and eighteen that
+
+135
+00:04:09,610 --> 00:04:11,105
+are qualifying
+with that minimum
+
+136
+00:04:11,105 --> 00:04:13,345
+of five and three. Okay.
+
+137
+00:04:13,345 --> 00:04:14,625
+So what have we shown so far?
+
+138
+00:04:14,625 --> 00:04:15,905
+Well, we've been able to make
+
+139
+00:04:15,905 --> 00:04:17,345
+our decision for the question
+
+140
+00:04:17,345 --> 00:04:19,445
+based on race points
+or position gained,
+
+141
+00:04:19,890 --> 00:04:22,230
+whole field teammates
+total and average.
+
+142
+00:04:22,450 --> 00:04:23,570
+Let's come to the final thing
+
+143
+00:04:23,570 --> 00:04:24,770
+that we're gonna consider for
+
+144
+00:04:24,770 --> 00:04:25,510
+this demonstration.
+
+145
+00:04:26,905 --> 00:04:28,425
+When discussing
+this particular
+
+146
+00:04:28,425 --> 00:04:30,745
+application with a former CEO
+
+147
+00:04:30,745 --> 00:04:31,725
+of one of the teams,
+
+148
+00:04:32,025 --> 00:04:34,025
+he suggested that
+weather really
+
+149
+00:04:34,025 --> 00:04:35,910
+tests a driver's skills and
+
+150
+00:04:35,910 --> 00:04:37,130
+ability on the track.
+
+151
+00:04:37,430 --> 00:04:40,250
+So we can filter based
+on the conditions
+
+152
+00:04:40,310 --> 00:04:42,010
+on the day that
+the race took place.
+
+153
+00:04:42,565 --> 00:04:43,845
+At the moment, we're showing
+
+154
+00:04:43,845 --> 00:04:45,225
+results for all conditions,
+
+155
+00:04:45,285 --> 00:04:46,665
+but we can change that.
+
+156
+00:04:46,885 --> 00:04:48,645
+We can go for
+mixed where there
+
+157
+00:04:48,645 --> 00:04:50,405
+was some evidence
+of rain either
+
+158
+00:04:50,405 --> 00:04:53,030
+on the track
+before the race or
+
+159
+00:04:53,030 --> 00:04:54,970
+we had some rain
+during the race.
+
+160
+00:04:55,110 --> 00:04:55,850
+Or, alternatively,
+
+161
+00:04:56,070 --> 00:04:58,490
+we can go for full
+wet race conditions.
+
+162
+00:04:58,710 --> 00:05:00,150
+And here you see there haven't
+
+163
+00:05:00,150 --> 00:05:01,815
+been very many races with wet
+
+164
+00:05:01,895 --> 00:05:03,735
+fifty four that
+are recorded in
+
+165
+00:05:03,735 --> 00:05:05,175
+in our data, but here,
+
+166
+00:05:05,175 --> 00:05:07,335
+this arguably is a really good
+
+167
+00:05:07,335 --> 00:05:09,655
+test of what makes the best
+
+168
+00:05:09,655 --> 00:05:10,875
+formula one driver.
+
+169
+00:05:11,760 --> 00:05:13,040
+Now maybe we think that fifty
+
+170
+00:05:13,040 --> 00:05:14,560
+four is just too low a number
+
+171
+00:05:14,560 --> 00:05:16,340
+to consider in terms
+of number of races.
+
+172
+00:05:16,560 --> 00:05:18,080
+So we'll flip back to a mixed
+
+173
+00:05:18,080 --> 00:05:19,925
+conditions and settle there.
+
+174
+00:05:20,325 --> 00:05:22,485
+And what we see here
+is Ayrton Senna,
+
+175
+00:05:22,485 --> 00:05:24,085
+one of the greatest drivers of
+
+176
+00:05:24,085 --> 00:05:26,185
+all time comes to
+the top shortly
+
+177
+00:05:26,245 --> 00:05:27,720
+followed by James Hunt.
+
+178
+00:05:28,200 --> 00:05:30,780
+And in third place,
+not too far behind,
+
+179
+00:05:31,160 --> 00:05:32,140
+Max Verstappen.
+
+180
+00:05:36,095 --> 00:05:37,215
+If you'd like to try this
+
+181
+00:05:37,215 --> 00:05:38,355
+application for yourself,
+
+182
+00:05:38,415 --> 00:05:41,875
+please head to f one
+dot rdfox dot tech,
+
+183
+00:05:42,440 --> 00:05:43,880
+and I'd be interested to hear
+
+184
+00:05:43,880 --> 00:05:45,820
+how you define
+the question yourself.
+
+185
+00:05:47,320 --> 00:05:48,760
+Please note I've been running
+
+186
+00:05:48,760 --> 00:05:50,120
+this application locally as I
+
+187
+00:05:50,120 --> 00:05:51,355
+wanted to show you the true
+
+188
+00:05:51,355 --> 00:05:52,735
+performance of IDEA Fox.
+
+189
+00:05:53,035 --> 00:05:54,095
+Given our speed,
+
+190
+00:05:54,235 --> 00:05:55,755
+your query times are most
+
+191
+00:05:55,755 --> 00:05:57,135
+certainly going
+to be dominated
+
+192
+00:05:57,515 --> 00:05:59,640
+not by the time it
+takes IDEA Fox,
+
+193
+00:05:59,640 --> 00:06:02,120
+but by the network
+latency between
+
+194
+00:06:02,120 --> 00:06:03,960
+you and the servers
+where we're
+
+195
+00:06:03,960 --> 00:06:06,875
+hosting that service. Okay.
+
+196
+00:06:06,875 --> 00:06:07,855
+So what about,
+
+197
+00:06:08,635 --> 00:06:10,235
+what about
+the company that that
+
+198
+00:06:10,235 --> 00:06:11,935
+produces Alia Fox?
+
+199
+00:06:13,275 --> 00:06:15,115
+We were founded back in twenty
+
+200
+00:06:15,115 --> 00:06:17,220
+seventeen. We're headquartered
+
+201
+00:06:17,360 --> 00:06:18,740
+in Oxford in UK,
+
+202
+00:06:19,200 --> 00:06:21,600
+and we're a spin out
+of the University
+
+203
+00:06:21,600 --> 00:06:22,260
+of Oxford.
+
+204
+00:06:23,655 --> 00:06:25,915
+We're an independent
+software vendor,
+
+205
+00:06:26,055 --> 00:06:28,295
+and we're proud
+to be backed by
+
+206
+00:06:28,295 --> 00:06:30,615
+Samsung Ventures
+who saw promise
+
+207
+00:06:30,615 --> 00:06:32,455
+in the technology
+back in the early
+
+208
+00:06:32,455 --> 00:06:36,600
+days. AudioFox itself is what
+
+209
+00:06:36,600 --> 00:06:38,120
+we think of as
+a a knowledge graph,
+
+210
+00:06:38,120 --> 00:06:39,320
+and plenty have been spoken
+
+211
+00:06:39,320 --> 00:06:40,680
+about knowledge graphs during
+
+212
+00:06:40,680 --> 00:06:41,500
+this conference.
+
+213
+00:06:42,305 --> 00:06:43,845
+But we also consider ourselves
+
+214
+00:06:44,065 --> 00:06:45,665
+a very powerful
+reasoning engine,
+
+215
+00:06:45,665 --> 00:06:47,045
+and more on that to come.
+
+216
+00:06:47,905 --> 00:06:50,510
+We're open standards
+based, built,
+
+217
+00:06:51,370 --> 00:06:52,890
+as you've, as you might have
+
+218
+00:06:52,890 --> 00:06:54,270
+already guessed
+from our heritage,
+
+219
+00:06:54,490 --> 00:06:55,550
+on leading research,
+
+220
+00:06:56,250 --> 00:06:58,090
+and we pride ourselves on on
+
+221
+00:06:58,090 --> 00:07:00,105
+speed and performance
+along with
+
+222
+00:07:00,105 --> 00:07:00,845
+the reasoning.
+
+223
+00:07:01,625 --> 00:07:03,305
+We have fast query times,
+
+224
+00:07:03,305 --> 00:07:04,365
+fast load times,
+
+225
+00:07:04,585 --> 00:07:06,265
+fast materialization
+times when
+
+226
+00:07:06,265 --> 00:07:07,245
+it comes to reasoning.
+
+227
+00:07:07,530 --> 00:07:09,130
+And all of this
+is built on top
+
+228
+00:07:09,130 --> 00:07:11,770
+of the engineering
+and hard hard
+
+229
+00:07:11,770 --> 00:07:13,230
+work that's gone
+into AudioFox.
+
+230
+00:07:14,385 --> 00:07:15,845
+We're based in memory.
+
+231
+00:07:15,905 --> 00:07:19,505
+We're built on c
+plus plus We'll
+
+232
+00:07:19,505 --> 00:07:20,485
+start in finance.
+
+233
+00:07:21,505 --> 00:07:23,420
+Here, rules are used to chase
+
+234
+00:07:23,420 --> 00:07:26,640
+down chains of
+money flows within
+
+235
+00:07:26,700 --> 00:07:28,320
+transactions for a bank.
+
+236
+00:07:29,235 --> 00:07:31,395
+This is in support
+of anti anti
+
+237
+00:07:31,395 --> 00:07:33,575
+money laundering or
+AML applications.
+
+238
+00:07:35,875 --> 00:07:37,830
+Chasing these kind
+of chains are
+
+239
+00:07:37,830 --> 00:07:39,350
+not patterns that
+you can simply
+
+240
+00:07:39,350 --> 00:07:42,170
+detect with regular
+graph type queries.
+
+241
+00:07:43,670 --> 00:07:45,990
+They require vast amounts of
+
+242
+00:07:45,990 --> 00:07:49,285
+numerical and date
+time reasoning,
+
+243
+00:07:49,985 --> 00:07:51,045
+and most importantly,
+
+244
+00:07:51,265 --> 00:07:52,865
+recursion as we
+go through those
+
+245
+00:07:52,865 --> 00:07:53,365
+changes.
+
+246
+00:07:58,040 --> 00:08:00,440
+Next up, we have
+some work done
+
+247
+00:08:00,440 --> 00:08:02,120
+by Samsung Research where they
+
+248
+00:08:02,120 --> 00:08:04,220
+have built
+recommendation systems
+
+249
+00:08:05,875 --> 00:08:08,375
+that run directly on
+the device itself.
+
+250
+00:08:09,635 --> 00:08:10,995
+Here, they're
+providing answers
+
+251
+00:08:10,995 --> 00:08:12,295
+to
+personalized recommendations
+
+252
+00:08:13,060 --> 00:08:15,640
+that take data from the device
+
+253
+00:08:15,940 --> 00:08:17,460
+out on the edge and perform
+
+254
+00:08:17,460 --> 00:08:19,300
+the reasoning
+without that data
+
+255
+00:08:19,300 --> 00:08:21,640
+ever leaving a user's
+trusted device.
+
+256
+00:08:23,315 --> 00:08:24,295
+Samsung Research,
+
+257
+00:08:24,515 --> 00:08:27,075
+in collaboration with
+Oxford University,
+
+258
+00:08:27,075 --> 00:08:28,535
+have recently
+published a paper
+
+259
+00:08:28,675 --> 00:08:30,035
+demonstrating how this can be
+
+260
+00:08:30,035 --> 00:08:32,830
+achieved using RDFox
+on those devices.
+
+261
+00:08:34,330 --> 00:08:36,190
+Festo, the automation
+company,
+
+262
+00:08:36,970 --> 00:08:38,330
+were among the first to see
+
+263
+00:08:38,330 --> 00:08:39,715
+the power of reasoning for
+
+264
+00:08:39,715 --> 00:08:40,935
+building their electronic
+
+265
+00:08:40,995 --> 00:08:42,435
+drivetrain
+configuration engine.
+
+266
+00:08:42,435 --> 00:08:46,515
+This solution computes
+all the possible
+
+267
+00:08:46,515 --> 00:08:47,735
+ways in which their components
+
+268
+00:08:47,795 --> 00:08:49,860
+can be assembled to so solve
+
+269
+00:08:49,860 --> 00:08:51,080
+their clients' needs.
+
+270
+00:08:51,940 --> 00:08:52,920
+Built on RDFox,
+
+271
+00:08:53,300 --> 00:08:55,000
+this replaced an old legacy
+
+272
+00:08:55,140 --> 00:08:57,275
+relational database
+system that
+
+273
+00:08:57,275 --> 00:08:59,435
+took over sixteen
+hours to compute
+
+274
+00:08:59,435 --> 00:09:01,535
+the capabilities those
+compatibilities,
+
+275
+00:09:01,755 --> 00:09:03,435
+sorry, with something that now
+
+276
+00:09:03,435 --> 00:09:04,815
+takes ninety seconds.
+
+277
+00:09:05,110 --> 00:09:06,890
+And so this is all supported
+
+278
+00:09:06,950 --> 00:09:08,170
+with incremental reasoning.
+
+279
+00:09:09,910 --> 00:09:11,850
+This approach
+completely transforms
+
+280
+00:09:11,910 --> 00:09:13,530
+how they think
+about the problem,
+
+281
+00:09:13,590 --> 00:09:14,970
+and as it turns out,
+
+282
+00:09:15,095 --> 00:09:16,775
+has been demonstrated
+to be more
+
+283
+00:09:16,775 --> 00:09:18,395
+accurate than the old system.
+
+284
+00:09:21,175 --> 00:09:23,595
+OST also partners with Sirius
+
+285
+00:09:23,895 --> 00:09:25,720
+Research Center in enabling
+
+286
+00:09:25,720 --> 00:09:27,880
+the digitization
+of large scale
+
+287
+00:09:27,880 --> 00:09:29,020
+engineering tasks.
+
+288
+00:09:29,960 --> 00:09:31,800
+Here, we're
+supporting the design
+
+289
+00:09:31,800 --> 00:09:33,995
+process. Doing things like
+
+290
+00:09:33,995 --> 00:09:35,615
+checking
+engineering constraints
+
+291
+00:09:35,835 --> 00:09:36,975
+at massive scale,
+
+292
+00:09:37,435 --> 00:09:38,955
+building industrial digital
+
+293
+00:09:38,955 --> 00:09:40,735
+twins to support
+their applications.
+
+294
+00:09:44,860 --> 00:09:46,080
+In a medical setting,
+
+295
+00:09:46,220 --> 00:09:49,520
+RDFox is being
+built into power
+
+296
+00:09:49,740 --> 00:09:50,720
+decision support.
+
+297
+00:09:52,115 --> 00:09:53,795
+Here, clinical
+knowledge captured
+
+298
+00:09:53,795 --> 00:09:56,615
+in captured in
+ontologies assists
+
+299
+00:09:56,675 --> 00:09:58,855
+clinicians and
+makes suggestions
+
+300
+00:09:58,995 --> 00:10:00,615
+as they perform
+investigations.
+
+301
+00:10:02,490 --> 00:10:03,790
+In this clinical setting,
+
+302
+00:10:04,090 --> 00:10:06,350
+embedding ARDFox
+within the device
+
+303
+00:10:06,650 --> 00:10:08,490
+allows these
+devices to operate
+
+304
+00:10:08,490 --> 00:10:10,945
+in real time and potentially
+
+305
+00:10:11,005 --> 00:10:12,385
+disconnected from
+the network,
+
+306
+00:10:13,005 --> 00:10:14,845
+providing both resilience and
+
+307
+00:10:14,845 --> 00:10:16,945
+protecting patient
+confidentiality.
+
+308
+00:10:20,110 --> 00:10:21,650
+Finally, Ulm University,
+
+309
+00:10:21,790 --> 00:10:23,570
+in a project
+sponsored by BMW,
+
+310
+00:10:23,790 --> 00:10:26,030
+have used AudioFox
+to integrate
+
+311
+00:10:26,030 --> 00:10:28,610
+data in the field of
+autonomous driving.
+
+312
+00:10:30,035 --> 00:10:31,875
+The need to do so on device is
+
+313
+00:10:31,875 --> 00:10:33,955
+clear as is the need
+for a highly
+
+314
+00:10:33,955 --> 00:10:36,755
+performant decision
+engine, of course,
+
+315
+00:10:36,755 --> 00:10:37,255
+AudioFox.
+
+316
+00:10:40,700 --> 00:10:42,480
+So what makes all
+of this possible?
+
+317
+00:10:42,700 --> 00:10:44,480
+We believe semantic technology
+
+318
+00:10:44,620 --> 00:10:46,640
+is best suited to
+these applications.
+
+319
+00:10:47,485 --> 00:10:49,165
+It provides a highly flexible
+
+320
+00:10:49,165 --> 00:10:50,785
+and adaptable data model.
+
+321
+00:10:51,805 --> 00:10:52,925
+When, for example,
+
+322
+00:10:52,925 --> 00:10:55,425
+we conceptually want
+to map out ideas,
+
+323
+00:10:55,570 --> 00:10:57,510
+we naturally turn
+to drawing graphs.
+
+324
+00:10:59,570 --> 00:11:02,130
+Ontologies then
+support a layering
+
+325
+00:11:02,130 --> 00:11:04,405
+of concepts and
+extend instance
+
+326
+00:11:04,405 --> 00:11:05,865
+data with domain knowledge.
+
+327
+00:11:07,445 --> 00:11:08,425
+Integration, in particular,
+
+328
+00:11:09,285 --> 00:11:10,425
+declarative integration,
+
+329
+00:11:10,485 --> 00:11:11,785
+bring all of this together,
+
+330
+00:11:12,790 --> 00:11:14,950
+the sources needed
+to answer our
+
+331
+00:11:14,950 --> 00:11:17,050
+questions. And finally,
+
+332
+00:11:17,830 --> 00:11:19,990
+reasoning is what makes
+sense of it all.
+
+333
+00:11:19,990 --> 00:11:21,510
+It's required to
+bring together
+
+334
+00:11:21,510 --> 00:11:23,665
+the logic perhaps
+captured within
+
+335
+00:11:23,665 --> 00:11:25,585
+our ontology, the domain logic
+
+336
+00:11:25,585 --> 00:11:28,865
+logic with data and provide
+
+337
+00:11:28,865 --> 00:11:31,125
+intelligence to our
+query answering.
+
+338
+00:11:33,570 --> 00:11:35,330
+AudioFox is our
+answer to these
+
+339
+00:11:35,330 --> 00:11:36,310
+semantic needs.
+
+340
+00:11:36,770 --> 00:11:38,530
+AudioFox provides
+you the power
+
+341
+00:11:38,530 --> 00:11:40,710
+to unlock
+applications previously
+
+342
+00:11:41,010 --> 00:11:41,875
+undreamt of,
+
+343
+00:11:42,755 --> 00:11:45,395
+flexibility for
+how you wish to
+
+344
+00:11:45,395 --> 00:11:46,935
+shape your data
+or the ontologies
+
+345
+00:11:47,075 --> 00:11:48,535
+you wish to bring
+to a problem,
+
+346
+00:11:49,520 --> 00:11:51,700
+Performance, unrivaled
+in the market
+
+347
+00:11:52,480 --> 00:11:54,180
+at the time of
+data importation,
+
+348
+00:11:54,720 --> 00:11:56,100
+reasoning, the analytics,
+
+349
+00:11:56,480 --> 00:11:57,620
+and query answering.
+
+350
+00:11:58,365 --> 00:12:00,445
+And finally, scalability and
+
+351
+00:12:00,445 --> 00:12:02,445
+versatility. The ability to
+
+352
+00:12:02,445 --> 00:12:04,305
+scale from the smallest device
+
+353
+00:12:04,445 --> 00:12:06,530
+up to billions of facts.
+
+354
+00:12:07,230 --> 00:12:08,430
+I'd next like to focus our
+
+355
+00:12:08,430 --> 00:12:09,650
+attention on reasoning.
+
+356
+00:12:10,110 --> 00:12:11,950
+Here I list many aspects of
+
+357
+00:12:11,950 --> 00:12:14,995
+reasoning that are used
+in the applications
+
+358
+00:12:15,135 --> 00:12:16,035
+I covered earlier.
+
+359
+00:12:16,975 --> 00:12:18,515
+As you can see
+from the table,
+
+360
+00:12:18,575 --> 00:12:20,655
+others in this
+space often define
+
+361
+00:12:20,655 --> 00:12:22,610
+reasoning as
+ontological reasoning,
+
+362
+00:12:22,990 --> 00:12:24,930
+and some provide
+even constraints
+
+363
+00:12:25,310 --> 00:12:26,770
+through the likes of Shackle.
+
+364
+00:12:27,150 --> 00:12:28,210
+These are all important.
+
+365
+00:12:28,755 --> 00:12:30,515
+However, AudioFox goes beyond
+
+366
+00:12:30,515 --> 00:12:33,575
+this with graph
+analytics, data,
+
+367
+00:12:33,635 --> 00:12:34,935
+and numerical analysis,
+
+368
+00:12:35,155 --> 00:12:36,460
+the kind of thing you can't
+
+369
+00:12:36,460 --> 00:12:37,920
+imagine some of
+those financial
+
+370
+00:12:37,980 --> 00:12:39,840
+applications being
+possible without.
+
+371
+00:12:40,540 --> 00:12:42,400
+As well as dealing
+with constraints,
+
+372
+00:12:42,700 --> 00:12:44,935
+both locally, we
+can also think
+
+373
+00:12:44,935 --> 00:12:47,175
+of constraints in
+a global setting,
+
+374
+00:12:47,175 --> 00:12:48,315
+considering the constraints
+
+375
+00:12:48,375 --> 00:12:50,155
+across the system as a whole.
+
+376
+00:12:51,140 --> 00:12:52,900
+Finally, we provide
+the ability
+
+377
+00:12:52,900 --> 00:12:54,680
+to combine all of these.
+
+378
+00:12:54,980 --> 00:12:56,980
+You can bring
+aggregation together
+
+379
+00:12:56,980 --> 00:12:57,960
+with recursion,
+
+380
+00:12:58,820 --> 00:13:02,825
+negation with class
+based inferencing.
+
+381
+00:13:05,125 --> 00:13:06,725
+If you get a chance later on
+
+382
+00:13:06,725 --> 00:13:08,085
+during the day to
+join the session
+
+383
+00:13:08,085 --> 00:13:09,705
+with Marcus from Siemens,
+
+384
+00:13:09,840 --> 00:13:11,440
+he has some really
+nice examples
+
+385
+00:13:11,440 --> 00:13:14,000
+where he's using reasoning to
+
+386
+00:13:14,000 --> 00:13:17,005
+perform many of
+the many of the above.
+
+387
+00:13:18,765 --> 00:13:20,685
+Next, let's lift
+the hood on my
+
+388
+00:13:20,685 --> 00:13:21,505
+earlier demonstration.
+
+389
+00:13:22,845 --> 00:13:24,605
+Every time one of
+those controls
+
+390
+00:13:24,605 --> 00:13:26,385
+down the left hand
+side is changed,
+
+391
+00:13:27,490 --> 00:13:29,590
+queries are being
+issued to RDFox.
+
+392
+00:13:30,130 --> 00:13:31,010
+And as you saw,
+
+393
+00:13:31,010 --> 00:13:32,550
+live results are
+being computed
+
+394
+00:13:32,770 --> 00:13:33,670
+in milliseconds.
+
+395
+00:13:35,025 --> 00:13:37,125
+Behind these
+queries, we have,
+
+396
+00:13:37,585 --> 00:13:39,445
+as we saw on the info boxes,
+
+397
+00:13:39,825 --> 00:13:41,205
+over a thousand races,
+
+398
+00:13:42,190 --> 00:13:43,550
+over eight hundred drivers,
+
+399
+00:13:43,550 --> 00:13:46,210
+and fundamental
+to our question,
+
+400
+00:13:46,270 --> 00:13:48,370
+over twenty five
+thousand results
+
+401
+00:13:48,750 --> 00:13:51,795
+consulted and
+calculated against
+
+402
+00:13:52,195 --> 00:13:54,535
+for the score to
+your question.
+
+403
+00:13:56,435 --> 00:13:58,215
+There is no additional cash.
+
+404
+00:13:58,690 --> 00:14:00,230
+We are achieving these results
+
+405
+00:14:00,290 --> 00:14:02,850
+through the hard
+engineering and
+
+406
+00:14:02,850 --> 00:14:04,850
+in memory approach
+that has gone
+
+407
+00:14:04,850 --> 00:14:07,030
+into and is at
+the heart of AudioFox.
+
+408
+00:14:08,635 --> 00:14:10,155
+Reasoning also plays its part
+
+409
+00:14:10,155 --> 00:14:13,215
+in precomputing some
+of the relationships
+
+410
+00:14:13,355 --> 00:14:15,190
+in advance. Note,
+
+411
+00:14:15,650 --> 00:14:17,490
+given the variations possible
+
+412
+00:14:17,490 --> 00:14:18,390
+in our questions,
+
+413
+00:14:18,610 --> 00:14:21,190
+we cannot compute
+the scores in advance,
+
+414
+00:14:21,250 --> 00:14:22,550
+just some of those
+relationships.
+
+415
+00:14:24,565 --> 00:14:26,405
+This graphic shows us how we
+
+416
+00:14:26,405 --> 00:14:27,465
+assembled the data.
+
+417
+00:14:27,925 --> 00:14:29,125
+Let's start with the sources.
+
+418
+00:14:29,125 --> 00:14:30,405
+On the left hand side,
+
+419
+00:14:30,405 --> 00:14:32,090
+we have a database containing
+
+420
+00:14:32,090 --> 00:14:33,770
+all of the race
+data stretching
+
+421
+00:14:33,770 --> 00:14:35,710
+back to the very
+beginning of the sport.
+
+422
+00:14:36,810 --> 00:14:38,945
+We then supplement this with
+
+423
+00:14:38,945 --> 00:14:40,785
+images and weather
+reports drawn
+
+424
+00:14:40,785 --> 00:14:41,845
+from Wikipedia.
+
+425
+00:14:43,265 --> 00:14:44,145
+Once that's done,
+
+426
+00:14:44,145 --> 00:14:46,725
+a small NLP task categorizes
+
+427
+00:14:46,945 --> 00:14:50,050
+the weather text
+into RDF concepts.
+
+428
+00:14:50,270 --> 00:14:52,930
+That's where we get
+our dry conditions,
+
+429
+00:14:52,990 --> 00:14:53,790
+mixed conditions,
+
+430
+00:14:53,790 --> 00:14:55,570
+and and wet conditions from.
+
+431
+00:14:57,555 --> 00:14:58,595
+There are a number of rules in
+
+432
+00:14:58,595 --> 00:15:00,035
+the system. Here I'm showing
+
+433
+00:15:00,035 --> 00:15:00,995
+just one of those,
+
+434
+00:15:01,075 --> 00:15:02,275
+one of the more
+interesting ones
+
+435
+00:15:02,275 --> 00:15:03,635
+where we establish
+a connection
+
+436
+00:15:03,635 --> 00:15:05,420
+between teammates
+through through
+
+437
+00:15:05,420 --> 00:15:06,720
+common race and constructor
+
+438
+00:15:06,780 --> 00:15:10,060
+relationships. Essentially,
+
+439
+00:15:10,060 --> 00:15:11,740
+what's happening
+here is a rule
+
+440
+00:15:11,740 --> 00:15:13,815
+is running as soon as the data
+
+441
+00:15:13,815 --> 00:15:14,855
+is brought into the system.
+
+442
+00:15:14,855 --> 00:15:16,535
+A rule is running that tech
+
+443
+00:15:16,535 --> 00:15:18,555
+compares every single result
+
+444
+00:15:18,775 --> 00:15:20,475
+with other results
+in the system
+
+445
+00:15:21,280 --> 00:15:25,300
+and where it locates
+common races,
+
+446
+00:15:25,520 --> 00:15:26,580
+that's circuits,
+
+447
+00:15:26,960 --> 00:15:28,180
+and common constructors,
+
+448
+00:15:29,005 --> 00:15:30,865
+a new relationship
+is materialized
+
+449
+00:15:31,085 --> 00:15:33,745
+into the graph,
+the teammates result.
+
+450
+00:15:34,045 --> 00:15:35,885
+And this is used
+for those queries
+
+451
+00:15:35,885 --> 00:15:36,945
+where we were running,
+
+452
+00:15:37,610 --> 00:15:38,890
+where we comparing where we
+
+453
+00:15:38,890 --> 00:15:40,730
+change the fields to all field
+
+454
+00:15:40,730 --> 00:15:41,630
+to the teammates.
+
+455
+00:15:43,530 --> 00:15:44,490
+Through that application,
+
+456
+00:15:44,490 --> 00:15:45,770
+we've seen some of the ways in
+
+457
+00:15:45,770 --> 00:15:47,575
+which RDF Fox can
+be integrated
+
+458
+00:15:47,795 --> 00:15:49,015
+into your system.
+
+459
+00:15:49,635 --> 00:15:51,315
+What I'm showing
+here is a much
+
+460
+00:15:51,315 --> 00:15:52,835
+bigger picture with
+all the possible
+
+461
+00:15:52,835 --> 00:15:55,175
+integration points for
+for the technology
+
+462
+00:15:56,290 --> 00:15:57,410
+. Over on the left hand side,
+
+463
+00:15:57,410 --> 00:15:59,190
+we have the external
+integrations,
+
+464
+00:15:59,330 --> 00:16:01,510
+and we were doing some of this
+
+465
+00:16:01,730 --> 00:16:04,390
+when we loaded
+RDF through files
+
+466
+00:16:04,450 --> 00:16:06,345
+and through through SPARQL for
+
+467
+00:16:06,345 --> 00:16:07,325
+our for a demonstration.
+
+468
+00:16:07,785 --> 00:16:08,985
+In addition to RDF,
+
+469
+00:16:08,985 --> 00:16:11,085
+we can be loading relational
+
+470
+00:16:11,145 --> 00:16:12,685
+data through through SQL.
+
+471
+00:16:13,610 --> 00:16:15,630
+We can be loading file based
+
+472
+00:16:16,170 --> 00:16:18,330
+sources and, text
+based sources
+
+473
+00:16:18,330 --> 00:16:20,890
+through Solr to
+provide a a text
+
+474
+00:16:20,890 --> 00:16:21,665
+index as well.
+
+475
+00:16:23,105 --> 00:16:24,065
+On the right hand side,
+
+476
+00:16:24,065 --> 00:16:25,825
+we have various
+development and
+
+477
+00:16:25,825 --> 00:16:28,405
+operations aspects
+to Ardeafox.
+
+478
+00:16:29,490 --> 00:16:31,170
+We provide a console where you
+
+479
+00:16:31,170 --> 00:16:33,590
+can run queries and visualize
+
+480
+00:16:33,810 --> 00:16:36,210
+results to those queries and
+
+481
+00:16:36,210 --> 00:16:37,345
+explore your data.
+
+482
+00:16:37,745 --> 00:16:39,605
+We provide command lines for
+
+483
+00:16:39,745 --> 00:16:41,765
+controlling the running
+of AudioFox.
+
+484
+00:16:42,625 --> 00:16:43,825
+And of course of course,
+
+485
+00:16:43,825 --> 00:16:45,025
+we provide developers and
+
+486
+00:16:45,025 --> 00:16:46,545
+knowledge engineers
+with the tools
+
+487
+00:16:46,545 --> 00:16:48,920
+they need to modify the core
+
+488
+00:16:48,980 --> 00:16:51,240
+assets of any
+solution, Datalog,
+
+489
+00:16:51,380 --> 00:16:53,080
+OWL, Shackle, and Swell.
+
+490
+00:16:55,035 --> 00:16:56,635
+In the middle, we
+see the components
+
+491
+00:16:56,635 --> 00:16:58,975
+that make up the runtime
+of ArduaFox,
+
+492
+00:16:59,195 --> 00:17:00,895
+the sparkle API
+we've already,
+
+493
+00:17:01,515 --> 00:17:03,370
+described. The
+reasoning engine,
+
+494
+00:17:03,370 --> 00:17:06,030
+the piece that's
+performing, the rules,
+
+495
+00:17:06,330 --> 00:17:07,790
+act actioning the rules,
+
+496
+00:17:08,170 --> 00:17:09,945
+for our applications and
+
+497
+00:17:09,945 --> 00:17:11,625
+materializing those results in
+
+498
+00:17:11,625 --> 00:17:13,005
+memory into the graph.
+
+499
+00:17:14,425 --> 00:17:16,505
+We also provide
+a a persistence layer.
+
+500
+00:17:16,505 --> 00:17:18,285
+So we're not only
+running in memory,
+
+501
+00:17:18,345 --> 00:17:19,485
+but the results,
+
+502
+00:17:19,610 --> 00:17:21,450
+the data that's loaded
+and the results
+
+503
+00:17:21,450 --> 00:17:23,050
+of of materialization are
+
+504
+00:17:23,050 --> 00:17:24,570
+persisted to disk should you
+
+505
+00:17:24,570 --> 00:17:26,270
+need to restart the system.
+
+506
+00:17:27,325 --> 00:17:28,845
+And as we've seen
+through applications,
+
+507
+00:17:28,845 --> 00:17:30,445
+all of this can run
+out on the edge
+
+508
+00:17:30,445 --> 00:17:33,505
+on the smallest of
+devices, on premise,
+
+509
+00:17:34,285 --> 00:17:35,505
+or in the cloud.
+
+510
+00:17:36,550 --> 00:17:37,590
+For our cloud support,
+
+511
+00:17:37,590 --> 00:17:39,050
+we provide Docker images,
+
+512
+00:17:39,110 --> 00:17:41,450
+and we have customers
+running on AWS,
+
+513
+00:17:41,670 --> 00:17:43,610
+Google Cloud Platform,
+and Azure.
+
+514
+00:17:45,545 --> 00:17:46,825
+To conclude, we've seen that
+
+515
+00:17:46,825 --> 00:17:48,425
+Ardfox takes you from question
+
+516
+00:17:48,425 --> 00:17:50,045
+to answer in milliseconds.
+
+517
+00:17:51,730 --> 00:17:52,470
+Through reasoning,
+
+518
+00:17:52,610 --> 00:17:54,610
+we unlock a new breed of
+
+519
+00:17:54,610 --> 00:17:56,550
+applications not
+possible before.
+
+520
+00:17:57,650 --> 00:17:59,330
+We're available
+on the smallest
+
+521
+00:17:59,330 --> 00:18:02,325
+of devices to the largest to
+
+522
+00:18:02,325 --> 00:18:04,745
+cope with concerns
+around privacy
+
+523
+00:18:05,365 --> 00:18:07,445
+and tackle some of the largest
+
+524
+00:18:07,445 --> 00:18:08,265
+scale problems.
+
+525
+00:18:09,100 --> 00:18:10,780
+I'll leave you to decide who
+
+526
+00:18:10,780 --> 00:18:11,980
+the best driver is,
+
+527
+00:18:11,980 --> 00:18:14,480
+and we've provided
+the tools for you.
+
+528
+00:18:14,620 --> 00:18:16,080
+If you can define
+the question,
+
+529
+00:18:16,140 --> 00:18:17,420
+the answer is only gonna be
+
+530
+00:18:17,420 --> 00:18:18,415
+milliseconds away.
+
+531
+00:18:18,975 --> 00:18:20,175
+Finally, let me leave you with
+
+532
+00:18:20,175 --> 00:18:21,875
+a quote from one
+of our customers,
+
+533
+00:18:22,015 --> 00:18:22,995
+and I'll paraphrase.
+
+534
+00:18:23,695 --> 00:18:26,090
+Adia Fox makes it possible for
+
+535
+00:18:26,090 --> 00:18:27,550
+us to do the impossible.
+
+536
+00:18:30,410 --> 00:18:31,850
+So do you have something you
+
+537
+00:18:31,850 --> 00:18:32,670
+consider impossible?
+
+538
+00:18:33,135 --> 00:18:34,815
+If so, we'd love
+to hear from you.
+
+539
+00:18:35,215 --> 00:18:36,275
+During this conference,
+
+540
+00:18:36,415 --> 00:18:38,195
+please visit us as our booth.
+
+541
+00:18:38,975 --> 00:18:40,095
+Alternatively, if you're not
+
+542
+00:18:40,095 --> 00:18:41,375
+able to join us there,
+
+543
+00:18:41,375 --> 00:18:42,770
+here are some links for you to
+
+544
+00:18:42,770 --> 00:18:45,810
+follow-up after
+the event. Thank you.
+
+545
+00:18:45,810 --> 00:18:47,730
+And remember, f one dot r d f
+
+546
+00:18:47,730 --> 00:18:49,330
+fox dot tech if you'd like to
+
+547
+00:18:49,330 --> 00:18:50,530
+try and answer
+that question for
+
+548
+00:18:50,530 --> 00:18:51,030
+yourself.
+

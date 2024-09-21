@@ -1,0 +1,4572 @@
+1
+00:00:03,920 --> 00:00:05,760
+Hi, everyone. My name
+is Dave Duggal.
+
+2
+00:00:05,760 --> 00:00:07,600
+I'm the founder and CEO of,
+
+3
+00:00:07,840 --> 00:00:10,240
+Enterpriseweb. really excited
+
+4
+00:00:10,240 --> 00:00:11,520
+to be presenting
+to you today.
+
+5
+00:00:11,520 --> 00:00:13,700
+I I know there's a lot
+of good speakers,
+
+6
+00:00:14,095 --> 00:00:15,535
+and, hopefully, you'll find,
+
+7
+00:00:15,935 --> 00:00:16,675
+our presentation,
+
+8
+00:00:17,535 --> 00:00:18,915
+relevant and compelling.
+
+9
+00:00:19,455 --> 00:00:21,615
+So, the topic is biz dev ops.
+
+10
+00:00:21,615 --> 00:00:23,135
+I I wrote up originally as
+
+11
+00:00:23,135 --> 00:00:24,335
+aligning the business and IT
+
+12
+00:00:24,335 --> 00:00:25,215
+with graphs, but I think in
+
+13
+00:00:25,215 --> 00:00:25,855
+person with graphs,
+
+14
+00:00:25,855 --> 00:00:27,055
+it's more appropriate to say
+
+15
+00:00:27,055 --> 00:00:28,115
+linking the business,
+
+16
+00:00:28,495 --> 00:00:29,795
+and IT with graphs.
+
+17
+00:00:30,090 --> 00:00:32,190
+And, we're gonna
+just present,
+
+18
+00:00:33,050 --> 00:00:34,810
+how our utilization of graphs
+
+19
+00:00:34,810 --> 00:00:37,150
+and what motivates us
+and the capabilities
+
+20
+00:00:37,290 --> 00:00:40,190
+and affordances,
+that we offer.
+
+21
+00:00:40,730 --> 00:00:42,410
+So first, let me
+set this up in
+
+22
+00:00:42,410 --> 00:00:43,850
+a nutshell. Enterprise web is
+
+23
+00:00:43,850 --> 00:00:45,790
+a cloud native
+integration platform,
+
+24
+00:00:45,985 --> 00:00:46,485
+iPaaS.
+
+25
+00:00:47,105 --> 00:00:49,585
+So we're not a graph
+knowledge base.
+
+26
+00:00:49,585 --> 00:00:51,425
+That's, we have one.
+
+27
+00:00:51,425 --> 00:00:53,525
+We incorporate a graph
+knowledge base.
+
+28
+00:00:53,745 --> 00:00:57,125
+It is a part of our
+overall, solution,
+
+29
+00:00:57,825 --> 00:00:59,265
+but we would
+describe ourselves
+
+30
+00:00:59,265 --> 00:01:00,565
+as a cloud native
+integration,
+
+31
+00:01:00,750 --> 00:01:02,190
+really a cloud
+native integration
+
+32
+00:01:02,190 --> 00:01:03,570
+and automation platform.
+
+33
+00:01:03,870 --> 00:01:06,270
+So the iPaaS category has sort
+
+34
+00:01:06,270 --> 00:01:08,270
+of broad has, been broadly
+
+35
+00:01:08,270 --> 00:01:10,030
+conceived as sort of,
+
+36
+00:01:10,270 --> 00:01:11,470
+incorporating a lot of message
+
+37
+00:01:11,470 --> 00:01:12,370
+oriented middleware,
+
+38
+00:01:12,910 --> 00:01:15,330
+in a new modern cloud
+native context.
+
+39
+00:01:15,625 --> 00:01:17,565
+So enterprise web
+is an integration
+
+40
+00:01:17,705 --> 00:01:19,065
+platform. And the point of
+
+41
+00:01:19,065 --> 00:01:20,685
+enterprise web and
+why it's relevant,
+
+42
+00:01:20,985 --> 00:01:23,145
+to the graph communities is to
+
+43
+00:01:23,145 --> 00:01:24,985
+radically simplify
+data center,
+
+44
+00:01:24,985 --> 00:01:26,125
+and venture, and distributed
+
+45
+00:01:26,265 --> 00:01:27,945
+application design,
+deployment,
+
+46
+00:01:27,945 --> 00:01:28,605
+and management.
+
+47
+00:01:29,570 --> 00:01:31,010
+you know, and if
+anybody's worked
+
+48
+00:01:31,010 --> 00:01:33,110
+in that domain of, you know,
+
+49
+00:01:33,410 --> 00:01:34,950
+working with all the various
+
+50
+00:01:35,010 --> 00:01:37,110
+cloud native tool
+chains, Okta and,
+
+51
+00:01:38,130 --> 00:01:40,290
+you know, Amazon Lambda and
+
+52
+00:01:40,290 --> 00:01:41,670
+other tools in the space,
+
+53
+00:01:42,130 --> 00:01:43,510
+they would know that this is,
+
+54
+00:01:44,085 --> 00:01:45,465
+as far as heavy
+heavy engineering.
+
+55
+00:01:46,165 --> 00:01:47,445
+these things are
+difficult even
+
+56
+00:01:47,445 --> 00:01:48,825
+for advanced engineers,
+
+57
+00:01:49,605 --> 00:01:50,885
+working through issues like
+
+58
+00:01:50,885 --> 00:01:53,065
+concurrencies,
+asynchrony concurrency,
+
+59
+00:01:53,845 --> 00:01:55,305
+immutability, impotence.
+
+60
+00:01:55,940 --> 00:01:58,100
+These things are very
+challenging for,
+
+61
+00:01:58,420 --> 00:01:59,640
+even the best engineers.
+
+62
+00:02:00,260 --> 00:02:01,300
+it's challenging to do,
+
+63
+00:02:01,300 --> 00:02:02,660
+and it's usually done in a one
+
+64
+00:02:02,660 --> 00:02:03,880
+off application basis.
+
+65
+00:02:04,180 --> 00:02:05,720
+So we're offering a platform
+
+66
+00:02:06,100 --> 00:02:07,880
+that makes event
+driven applications,
+
+67
+00:02:08,975 --> 00:02:10,595
+model based event
+driven applications,
+
+68
+00:02:11,855 --> 00:02:13,875
+easier to do. Right?
+
+69
+00:02:13,935 --> 00:02:16,175
+And it leverages,
+as I mentioned,
+
+70
+00:02:16,175 --> 00:02:17,795
+a real time graph connected
+
+71
+00:02:18,255 --> 00:02:19,295
+operational model.
+
+72
+00:02:19,295 --> 00:02:20,815
+And I think that's
+really an important
+
+73
+00:02:20,815 --> 00:02:22,675
+difference to call
+out right away.
+
+74
+00:02:22,710 --> 00:02:23,850
+We're talking about
+an operational
+
+75
+00:02:24,070 --> 00:02:25,610
+model. We don't call ourselves
+
+76
+00:02:25,910 --> 00:02:27,830
+we're not doing
+knowledge apps per se.
+
+77
+00:02:27,830 --> 00:02:29,690
+Right? We use
+a knowledge graph.
+
+78
+00:02:30,150 --> 00:02:32,490
+We connect that
+to graph objects
+
+79
+00:02:33,190 --> 00:02:34,310
+in a business domain,
+
+80
+00:02:34,310 --> 00:02:35,610
+an application domain,
+
+81
+00:02:35,905 --> 00:02:37,425
+and we use that to essentially
+
+82
+00:02:37,425 --> 00:02:39,025
+create a context
+aware information
+
+83
+00:02:39,025 --> 00:02:40,705
+system. Right? So that we can
+
+84
+00:02:40,705 --> 00:02:42,705
+control the whole
+system through
+
+85
+00:02:42,705 --> 00:02:44,645
+shared domain semantics
+and metadata,
+
+86
+00:02:45,585 --> 00:02:47,445
+but the intent,
+the motivation,
+
+87
+00:02:47,825 --> 00:02:50,485
+the use is for business
+applications.
+
+88
+00:02:51,920 --> 00:02:54,240
+so and the idea is any of you
+
+89
+00:02:54,240 --> 00:02:55,760
+working in the enterprise or
+
+90
+00:02:55,760 --> 00:02:57,760
+large organizations
+know is that
+
+91
+00:02:57,760 --> 00:02:58,800
+organizations are becoming
+
+92
+00:02:58,800 --> 00:03:00,960
+increasingly fragmented and
+
+93
+00:03:00,960 --> 00:03:02,580
+creating
+an umbrella abstraction
+
+94
+00:03:03,725 --> 00:03:06,305
+over the top of
+their, distributed,
+
+95
+00:03:06,525 --> 00:03:08,465
+diverse dynamic
+IT environments
+
+96
+00:03:09,325 --> 00:03:11,105
+is usually helpful to them.
+
+97
+00:03:11,485 --> 00:03:13,345
+we have customers
+in life sciences
+
+98
+00:03:13,405 --> 00:03:15,985
+and telecom, on
+awards in IoT,
+
+99
+00:03:16,125 --> 00:03:17,940
+etcetera. So we've
+done this in
+
+100
+00:03:17,940 --> 00:03:19,160
+a variety of domains.
+
+101
+00:03:19,300 --> 00:03:23,380
+So it's a generalized
+platform for,
+
+102
+00:03:23,620 --> 00:03:26,920
+graph for, distributed
+applications.
+
+103
+00:03:27,860 --> 00:03:28,820
+So I saw this.
+
+104
+00:03:28,820 --> 00:03:30,440
+I know EK, the EKGF,
+
+105
+00:03:31,060 --> 00:03:33,085
+presented previously
+and we had
+
+106
+00:03:33,085 --> 00:03:34,525
+a panel talk the other day.
+
+107
+00:03:34,525 --> 00:03:35,805
+And I saw this on
+their website,
+
+108
+00:03:35,805 --> 00:03:36,765
+and I hope they
+don't mind that
+
+109
+00:03:36,765 --> 00:03:38,125
+I I put it here with the link
+
+110
+00:03:38,125 --> 00:03:40,065
+and all the proper
+representation here.
+
+111
+00:03:40,765 --> 00:03:42,765
+and I have to say I
+completely agree,
+
+112
+00:03:43,005 --> 00:03:45,265
+with their, maturity model.
+
+113
+00:03:45,325 --> 00:03:46,865
+The only thing I would say is
+
+114
+00:03:48,420 --> 00:03:49,860
+that what they say is gonna be
+
+115
+00:03:49,860 --> 00:03:51,060
+available in twenty
+twenty seven
+
+116
+00:03:51,060 --> 00:03:52,280
+is actually available today.
+
+117
+00:03:52,980 --> 00:03:55,300
+We enable this sort of graph
+
+118
+00:03:55,300 --> 00:03:56,360
+connected environment,
+
+119
+00:03:56,900 --> 00:03:58,740
+real time graph connected
+
+120
+00:03:58,740 --> 00:03:59,985
+environment today.
+
+121
+00:03:59,985 --> 00:04:00,785
+And that's, again,
+
+122
+00:04:00,785 --> 00:04:02,385
+bridging that
+sort of knowledge
+
+123
+00:04:02,385 --> 00:04:04,625
+data and application data with
+
+124
+00:04:04,625 --> 00:04:06,625
+the intent of
+enabling the digital
+
+125
+00:04:06,625 --> 00:04:09,685
+business. So, you know,
+
+126
+00:04:09,745 --> 00:04:12,085
+as to the digital
+business, you know,
+
+127
+00:04:12,200 --> 00:04:15,080
+almost it's a very,
+vague term,
+
+128
+00:04:15,080 --> 00:04:16,360
+just like agile and all these
+
+129
+00:04:16,360 --> 00:04:18,060
+other terms used in
+the IT industry,
+
+130
+00:04:19,240 --> 00:04:20,380
+and it's been elusive.
+
+131
+00:04:20,600 --> 00:04:22,540
+Eighty percent of
+businesses want it,
+
+132
+00:04:23,800 --> 00:04:26,165
+yet fifty from fifty
+one percent of,
+
+133
+00:04:26,485 --> 00:04:27,845
+developers and architects that
+
+134
+00:04:27,845 --> 00:04:30,165
+work on doing digital business
+
+135
+00:04:30,165 --> 00:04:31,845
+transformation say they want
+
+136
+00:04:31,845 --> 00:04:32,825
+another job.
+
+137
+00:04:33,205 --> 00:04:35,305
+That's a pretty
+astounding statistic.
+
+138
+00:04:35,685 --> 00:04:36,965
+you know, that's from November
+
+139
+00:04:36,965 --> 00:04:39,960
+nineteenth of this
+year, so, a week ago.
+
+140
+00:04:40,440 --> 00:04:42,520
+A week or so ago, you know,
+
+141
+00:04:42,520 --> 00:04:43,880
+that half a developer's task
+
+142
+00:04:43,880 --> 00:04:45,400
+with actually realizing and
+
+143
+00:04:45,400 --> 00:04:47,820
+achieving this
+digital business,
+
+144
+00:04:48,520 --> 00:04:49,480
+are going crazy.
+
+145
+00:04:49,480 --> 00:04:50,520
+They need they need help.
+
+146
+00:04:50,520 --> 00:04:52,140
+They need they need
+better abstractions.
+
+147
+00:04:52,360 --> 00:04:53,895
+They need better
+tooling to make
+
+148
+00:04:53,895 --> 00:04:54,875
+their job easy.
+
+149
+00:04:55,335 --> 00:04:56,615
+One of the problems here I'm
+
+150
+00:04:56,615 --> 00:04:58,295
+pointing out, and I
+wanna make sure,
+
+151
+00:04:58,295 --> 00:04:59,655
+you know, I realize
+many of you
+
+152
+00:04:59,655 --> 00:05:01,175
+are focused on graphs and and
+
+153
+00:05:01,175 --> 00:05:02,215
+some of you, I'm sure,
+
+154
+00:05:02,215 --> 00:05:03,415
+are on the operational domain
+
+155
+00:05:03,415 --> 00:05:04,715
+and the application domain.
+
+156
+00:05:04,775 --> 00:05:06,535
+Many of you are
+are more doing,
+
+157
+00:05:07,200 --> 00:05:09,280
+you know, research
+and knowledge
+
+158
+00:05:09,280 --> 00:05:10,820
+graphs and knowledge
+applications,
+
+159
+00:05:11,840 --> 00:05:13,600
+data science. so,
+
+160
+00:05:13,840 --> 00:05:15,200
+I'm trying to give
+some background here.
+
+161
+00:05:15,200 --> 00:05:17,040
+So one of the one
+of the challenges
+
+162
+00:05:17,040 --> 00:05:18,240
+here, if you see
+in the background
+
+163
+00:05:18,240 --> 00:05:20,260
+of this of this
+slide, actually,
+
+164
+00:05:20,575 --> 00:05:22,495
+that diagram is
+the Cloud Native
+
+165
+00:05:22,495 --> 00:05:24,275
+Computing
+Foundation's landscape
+
+166
+00:05:24,655 --> 00:05:26,035
+diagram of their vendors.
+
+167
+00:05:26,335 --> 00:05:27,535
+That's what they expect people
+
+168
+00:05:27,535 --> 00:05:29,955
+to deploy. And it's
+pretty insane.
+
+169
+00:05:30,975 --> 00:05:32,575
+you know, you're by the time
+
+170
+00:05:32,575 --> 00:05:34,515
+you're done integrating
+all those tools,
+
+171
+00:05:35,410 --> 00:05:37,270
+you actually have
+a static siloed
+
+172
+00:05:37,330 --> 00:05:39,250
+solution that's gonna
+be super brittle.
+
+173
+00:05:39,250 --> 00:05:40,290
+Essentially, it's almost like
+
+174
+00:05:40,290 --> 00:05:42,150
+recreating the old
+middleware stack.
+
+175
+00:05:42,290 --> 00:05:43,830
+So businesses need
+to rationalize
+
+176
+00:05:43,890 --> 00:05:45,250
+solution architectures
+to bring
+
+177
+00:05:45,250 --> 00:05:46,550
+order to the increasingly
+
+178
+00:05:46,610 --> 00:05:47,570
+fragmented operations.
+
+179
+00:05:47,570 --> 00:05:49,030
+And, of course,
+our solutions,
+
+180
+00:05:49,325 --> 00:05:50,205
+this is the problem space,
+
+181
+00:05:50,205 --> 00:05:51,085
+and our solution space,
+
+182
+00:05:51,085 --> 00:05:53,165
+which we're gonna
+focus on, is,
+
+183
+00:05:53,485 --> 00:05:57,085
+graph. So there are
+too many tools and,
+
+184
+00:05:57,565 --> 00:05:59,325
+too many tools
+and silos and too
+
+185
+00:05:59,325 --> 00:06:01,025
+little interoperability
+and automation.
+
+186
+00:06:01,580 --> 00:06:03,760
+So IT needs
+a practical approach
+
+187
+00:06:03,900 --> 00:06:05,260
+which abstracts away this
+
+188
+00:06:05,260 --> 00:06:06,640
+distributed systems
+complexity.
+
+189
+00:06:07,260 --> 00:06:09,180
+It's just too darn
+hard. Right?
+
+190
+00:06:09,180 --> 00:06:10,880
+It's, it's it's engineering,
+
+191
+00:06:10,940 --> 00:06:11,600
+it's architecture,
+
+192
+00:06:11,740 --> 00:06:12,880
+it's computer science,
+
+193
+00:06:13,740 --> 00:06:15,120
+it's state management,
+
+194
+00:06:15,260 --> 00:06:16,720
+it's met reliable messaging.
+
+195
+00:06:17,305 --> 00:06:18,605
+This is hard stuff.
+
+196
+00:06:20,105 --> 00:06:21,785
+and so the solution
+is an enterprise
+
+197
+00:06:21,785 --> 00:06:23,305
+web, a real time
+graph connected
+
+198
+00:06:23,305 --> 00:06:25,385
+operational model
+where we take
+
+199
+00:06:25,385 --> 00:06:27,725
+the the business concepts,
+
+200
+00:06:28,665 --> 00:06:31,070
+types and policies that define
+
+201
+00:06:31,530 --> 00:06:32,970
+a business architecture or
+
+202
+00:06:32,970 --> 00:06:34,590
+business at large,
+
+203
+00:06:36,010 --> 00:06:38,170
+and we give it
+to customers out
+
+204
+00:06:38,170 --> 00:06:39,290
+of the box. We
+have essentially
+
+205
+00:06:39,290 --> 00:06:41,050
+a generalized graph domain,
+
+206
+00:06:41,050 --> 00:06:42,330
+so you're not
+building this from
+
+207
+00:06:42,330 --> 00:06:43,395
+scratch every time.
+
+208
+00:06:43,875 --> 00:06:45,475
+We we provide a ready to use
+
+209
+00:06:45,475 --> 00:06:46,995
+model that includes all of our
+
+210
+00:06:46,995 --> 00:06:48,935
+cloud native comp concepts,
+
+211
+00:06:49,235 --> 00:06:50,935
+all the distributed
+systems concepts.
+
+212
+00:06:51,235 --> 00:06:52,675
+We might call it
+the twelve some
+
+213
+00:06:52,675 --> 00:06:54,115
+people who work in that space
+
+214
+00:06:54,115 --> 00:06:55,415
+would call it twelve factor.
+
+215
+00:06:55,635 --> 00:06:56,295
+All these,
+
+216
+00:06:58,230 --> 00:07:00,630
+concepts related
+to working with
+
+217
+00:07:00,630 --> 00:07:02,550
+things like Kubernetes
+and working
+
+218
+00:07:02,550 --> 00:07:04,870
+with events and working
+with messaging,
+
+219
+00:07:04,870 --> 00:07:06,490
+that's all included
+in the system
+
+220
+00:07:06,550 --> 00:07:08,810
+as are generalized
+enterprise concepts,
+
+221
+00:07:09,110 --> 00:07:13,165
+people tables, you
+know, security,
+
+222
+00:07:13,305 --> 00:07:15,565
+authorization,
+organizational units,
+
+223
+00:07:15,945 --> 00:07:17,545
+all the base concepts that you
+
+224
+00:07:17,545 --> 00:07:20,985
+would need to start modeling
+
+225
+00:07:20,985 --> 00:07:22,445
+your organization
+already included.
+
+226
+00:07:22,745 --> 00:07:23,805
+And you could then,
+
+227
+00:07:24,665 --> 00:07:26,760
+import your own models.
+
+228
+00:07:26,760 --> 00:07:28,520
+So whether you
+have a RDF model,
+
+229
+00:07:28,520 --> 00:07:30,200
+a UML model, XML, or JSON,
+
+230
+00:07:30,200 --> 00:07:31,180
+one of the world's largest
+
+231
+00:07:31,400 --> 00:07:33,000
+telecoms gave us a JSON file
+
+232
+00:07:33,000 --> 00:07:34,280
+that represented
+their information
+
+233
+00:07:34,280 --> 00:07:35,880
+model. We uploaded it,
+
+234
+00:07:35,880 --> 00:07:37,000
+did entity extraction,
+
+235
+00:07:37,000 --> 00:07:38,200
+algorithmic mapping,
+
+236
+00:07:38,200 --> 00:07:39,980
+and we brought it
+into our graph
+
+237
+00:07:40,040 --> 00:07:40,940
+in seconds.
+
+238
+00:07:41,895 --> 00:07:43,995
+And these are very
+big organizations
+
+239
+00:07:44,055 --> 00:07:45,755
+with very complex graphs,
+
+240
+00:07:46,055 --> 00:07:47,735
+and we're making that graph
+
+241
+00:07:47,735 --> 00:07:49,815
+tractable and
+transparent for them,
+
+242
+00:07:49,815 --> 00:07:51,415
+something they
+could easily see
+
+243
+00:07:51,415 --> 00:07:52,235
+and manage.
+
+244
+00:07:53,095 --> 00:07:55,740
+And then that graph
+in enterprise web,
+
+245
+00:07:55,740 --> 00:07:57,180
+this the notion of enterprise
+
+246
+00:07:57,180 --> 00:08:00,060
+web is we don't
+stop at the the
+
+247
+00:08:00,060 --> 00:08:00,960
+upper ontology.
+
+248
+00:08:01,580 --> 00:08:03,600
+We don't stop at
+the knowledge graph.
+
+249
+00:08:03,820 --> 00:08:05,900
+We actually then model all
+
+250
+00:08:05,900 --> 00:08:07,420
+solution elements
+or essentially
+
+251
+00:08:07,420 --> 00:08:09,645
+mappings to these
+concepts, types,
+
+252
+00:08:09,645 --> 00:08:12,045
+and policies. And
+when I say all
+
+253
+00:08:12,045 --> 00:08:12,945
+solution elements,
+
+254
+00:08:13,165 --> 00:08:15,025
+I mean not just data access.
+
+255
+00:08:15,245 --> 00:08:16,445
+Right? This is
+not just a simple
+
+256
+00:08:16,445 --> 00:08:17,825
+little GraphQL toy.
+
+257
+00:08:17,965 --> 00:08:18,845
+We're talking about,
+
+258
+00:08:19,245 --> 00:08:21,085
+something that is
+actually gonna,
+
+259
+00:08:21,405 --> 00:08:23,165
+take complex applications like
+
+260
+00:08:23,165 --> 00:08:25,970
+a a Cisco router, to,
+
+261
+00:08:26,450 --> 00:08:29,970
+to or an AWS Amazon
+web services
+
+262
+00:08:29,970 --> 00:08:33,510
+endpoint, or
+a business process,
+
+263
+00:08:34,530 --> 00:08:36,550
+or some other complex artifact
+
+264
+00:08:37,595 --> 00:08:40,575
+or an IoT, physical
+IoT device,
+
+265
+00:08:41,595 --> 00:08:43,515
+and model those almost like
+
+266
+00:08:43,515 --> 00:08:45,935
+digital twins using
+these concepts.
+
+267
+00:08:47,115 --> 00:08:48,815
+And then we're gonna
+give the customers
+
+268
+00:08:48,875 --> 00:08:50,715
+or or they're gaining global
+
+269
+00:08:50,715 --> 00:08:52,390
+transparency and virtually
+
+270
+00:08:52,390 --> 00:08:53,930
+centralized management because
+
+271
+00:08:54,470 --> 00:08:56,230
+no mat despite
+the fact that all
+
+272
+00:08:56,230 --> 00:08:57,510
+the connected elements might
+
+273
+00:08:57,510 --> 00:08:59,350
+truly be heterogeneous
+and they
+
+274
+00:08:59,350 --> 00:09:00,490
+might be distributed,
+
+275
+00:09:00,950 --> 00:09:02,550
+we're making them look as if
+
+276
+00:09:02,550 --> 00:09:03,610
+they are the same.
+
+277
+00:09:03,830 --> 00:09:05,270
+We're making them appear as if
+
+278
+00:09:05,270 --> 00:09:06,090
+they're all local.
+
+279
+00:09:07,265 --> 00:09:08,725
+And we have
+these representations
+
+280
+00:09:08,945 --> 00:09:11,185
+of them, these
+proxies as it were,
+
+281
+00:09:11,185 --> 00:09:12,405
+these digital twins,
+
+282
+00:09:12,545 --> 00:09:14,225
+which they can
+then use to manage
+
+283
+00:09:14,225 --> 00:09:16,325
+and configure with metadata.
+
+284
+00:09:18,880 --> 00:09:20,400
+And it becomes a single source
+
+285
+00:09:20,400 --> 00:09:22,000
+of truth because
+we're actually,
+
+286
+00:09:22,240 --> 00:09:23,780
+because these are
+software objects,
+
+287
+00:09:24,320 --> 00:09:25,700
+mutable software objects,
+
+288
+00:09:25,760 --> 00:09:27,120
+we're actually
+logging all their
+
+289
+00:09:27,120 --> 00:09:29,200
+state as well. So we actually
+
+290
+00:09:29,200 --> 00:09:31,065
+have the state of all
+these objects too,
+
+291
+00:09:31,225 --> 00:09:33,085
+So we can then use
+them in processes.
+
+292
+00:09:33,465 --> 00:09:34,985
+And because we're
+bringing this
+
+293
+00:09:34,985 --> 00:09:36,045
+all with graph,
+
+294
+00:09:36,745 --> 00:09:38,585
+it's giving us is dev ops,
+
+295
+00:09:38,585 --> 00:09:39,465
+which was the, you know,
+
+296
+00:09:39,465 --> 00:09:40,825
+subject of the title
+of the talk.
+
+297
+00:09:40,825 --> 00:09:41,325
+Right?
+
+298
+00:09:41,625 --> 00:09:43,485
+Is, an upper ontology,
+
+299
+00:09:43,545 --> 00:09:45,480
+a knowledge graph to,
+
+300
+00:09:45,880 --> 00:09:47,900
+model your
+organizational concepts
+
+301
+00:09:48,360 --> 00:09:49,960
+and technical
+concepts. Right?
+
+302
+00:09:49,960 --> 00:09:52,380
+So systems concepts
+and enterprise
+
+303
+00:09:52,440 --> 00:09:54,040
+concepts. And then,
+
+304
+00:09:54,360 --> 00:09:56,120
+a logical space where you're
+
+305
+00:09:56,120 --> 00:09:57,260
+mapping all of your.
+
+306
+00:09:58,120 --> 00:10:00,105
+And then the physical
+space, the ops,
+
+307
+00:10:00,265 --> 00:10:00,905
+well, at some point,
+
+308
+00:10:00,905 --> 00:10:01,785
+these all hit the road.
+
+309
+00:10:01,785 --> 00:10:03,305
+Right? They're all residing on
+
+310
+00:10:03,305 --> 00:10:04,905
+databases or they're
+all residing
+
+311
+00:10:04,905 --> 00:10:06,265
+in systems or physical devices
+
+312
+00:10:06,265 --> 00:10:07,705
+somewhere, and
+all those things
+
+313
+00:10:07,705 --> 00:10:09,225
+have to be you have
+to have access.
+
+314
+00:10:09,225 --> 00:10:11,065
+You have to do
+certs and auths,
+
+315
+00:10:11,065 --> 00:10:12,045
+connect to things,
+
+316
+00:10:12,440 --> 00:10:13,240
+integrate with things.
+
+317
+00:10:13,240 --> 00:10:14,540
+You have to manage
+networking.
+
+318
+00:10:15,640 --> 00:10:17,080
+there's a lot of
+complexity that
+
+319
+00:10:17,080 --> 00:10:18,940
+it takes to make
+that all easy.
+
+320
+00:10:19,320 --> 00:10:21,500
+To make things simple
+is very complex.
+
+321
+00:10:22,200 --> 00:10:25,000
+Right? Making very distribute
+
+322
+00:10:25,000 --> 00:10:27,020
+systems simple is
+a very complex
+
+323
+00:10:27,080 --> 00:10:29,045
+task task. It requires high
+
+324
+00:10:29,045 --> 00:10:30,325
+level abstractions and high
+
+325
+00:10:30,325 --> 00:10:31,145
+level programmability.
+
+326
+00:10:32,885 --> 00:10:36,905
+So, with this graph,
+we essentially get,
+
+327
+00:10:37,285 --> 00:10:38,165
+essentially, ooda loops.
+
+328
+00:10:38,165 --> 00:10:39,285
+You know, many of you probably
+
+329
+00:10:39,285 --> 00:10:40,405
+are familiar with
+this concept,
+
+330
+00:10:40,405 --> 00:10:43,290
+the, observe, orient,
+decide, and act.
+
+331
+00:10:43,450 --> 00:10:44,990
+Right? Because we have this
+
+332
+00:10:45,290 --> 00:10:46,670
+because we're a system,
+
+333
+00:10:47,050 --> 00:10:48,350
+event driven system,
+
+334
+00:10:48,650 --> 00:10:49,930
+you can think of us as a cloud
+
+335
+00:10:49,930 --> 00:10:51,790
+native complex event
+driven system.
+
+336
+00:10:52,410 --> 00:10:55,470
+We're gonna observe
+events in our space,
+
+337
+00:10:56,235 --> 00:10:57,695
+things that we're
+connected to.
+
+338
+00:10:57,835 --> 00:10:59,595
+We're going to then interpret
+
+339
+00:10:59,595 --> 00:11:01,035
+events against this graph
+
+340
+00:11:01,035 --> 00:11:02,015
+operational model.
+
+341
+00:11:02,395 --> 00:11:04,475
+Right? And then we're
+going to make,
+
+342
+00:11:04,635 --> 00:11:06,255
+we're gonna translate policies
+
+343
+00:11:06,555 --> 00:11:11,000
+using metadata and,
+relationships to,
+
+344
+00:11:11,240 --> 00:11:12,220
+to make decisions,
+
+345
+00:11:12,600 --> 00:11:14,060
+and then we're gonna
+take actions.
+
+346
+00:11:14,280 --> 00:11:15,820
+Those actions are gonna be,
+
+347
+00:11:16,280 --> 00:11:17,180
+context enhanced,
+
+348
+00:11:17,400 --> 00:11:18,600
+and they're always
+gonna be real
+
+349
+00:11:18,600 --> 00:11:19,960
+time because it's
+an event driven
+
+350
+00:11:19,960 --> 00:11:21,835
+system. Everything
+is happening
+
+351
+00:11:21,975 --> 00:11:24,055
+in real time,
+and the system is
+
+352
+00:11:24,055 --> 00:11:25,115
+managing the consistency,
+
+353
+00:11:25,975 --> 00:11:27,835
+transactional
+integrity, etcetera.
+
+354
+00:11:28,135 --> 00:11:29,675
+And when we say take action,
+
+355
+00:11:29,815 --> 00:11:30,775
+we're not just talking about
+
+356
+00:11:30,775 --> 00:11:31,815
+integration. We're
+talking about
+
+357
+00:11:31,815 --> 00:11:33,355
+integration, orchestration,
+automation,
+
+358
+00:11:34,080 --> 00:11:35,300
+and human tasks.
+
+359
+00:11:35,840 --> 00:11:38,660
+So in a single click
+or a single event,
+
+360
+00:11:39,520 --> 00:11:41,840
+you might be actually
+doing a thousand
+
+361
+00:11:41,840 --> 00:11:42,740
+separate operations,
+
+362
+00:11:44,720 --> 00:11:47,060
+translating objects,
+connecting things,
+
+363
+00:11:49,035 --> 00:11:49,935
+making decisions,
+
+364
+00:11:50,635 --> 00:11:52,095
+and then we might be actually
+
+365
+00:11:52,715 --> 00:11:54,895
+configuring a remote device or
+
+366
+00:11:55,035 --> 00:11:56,015
+a remote function.
+
+367
+00:11:56,235 --> 00:11:58,495
+We might be reporting
+to through the UI,
+
+368
+00:11:59,275 --> 00:12:01,660
+to a user, and that's all
+
+369
+00:12:01,660 --> 00:12:04,160
+happening in in real time.
+
+370
+00:12:04,860 --> 00:12:06,960
+So, that's autonomic control
+
+371
+00:12:07,020 --> 00:12:08,400
+loops using graphs.
+
+372
+00:12:09,820 --> 00:12:12,460
+So, the scope of graph here is
+
+373
+00:12:12,460 --> 00:12:13,420
+different then. Right?
+
+374
+00:12:13,420 --> 00:12:15,495
+We're not just
+talking data and
+
+375
+00:12:15,495 --> 00:12:17,175
+functions. we're
+not just talking
+
+376
+00:12:17,175 --> 00:12:18,055
+about data, but we're talking
+
+377
+00:12:18,055 --> 00:12:18,935
+about data and functions,
+
+378
+00:12:18,935 --> 00:12:19,755
+not just properties,
+
+379
+00:12:19,815 --> 00:12:21,275
+but properties and behaviors,
+
+380
+00:12:21,735 --> 00:12:23,355
+metadata and state,
+
+381
+00:12:23,495 --> 00:12:25,175
+queries and commands. Right?
+
+382
+00:12:25,175 --> 00:12:27,015
+We're controlling
+things. Right?
+
+383
+00:12:27,015 --> 00:12:29,195
+Graph objects and
+graph processes.
+
+384
+00:12:30,460 --> 00:12:31,820
+Right? so we have,
+
+385
+00:12:32,140 --> 00:12:34,620
+our our objects are dag tags,
+
+386
+00:12:34,620 --> 00:12:36,000
+directed acyclic graphs,
+
+387
+00:12:36,060 --> 00:12:37,660
+and our processes are directed
+
+388
+00:12:37,660 --> 00:12:39,260
+acyclic graphs. Right?
+
+389
+00:12:39,260 --> 00:12:40,860
+So everything is graph in
+
+390
+00:12:40,860 --> 00:12:41,835
+enterprise web,
+
+391
+00:12:41,995 --> 00:12:43,615
+and that gives us
+some tremendous,
+
+392
+00:12:43,915 --> 00:12:44,975
+computational power.
+
+393
+00:12:45,195 --> 00:12:46,895
+They are at
+the halfway point.
+
+394
+00:12:47,275 --> 00:12:49,035
+Perfect. Data integration and
+
+395
+00:12:49,035 --> 00:12:50,015
+service orchestration,
+
+396
+00:12:51,435 --> 00:12:52,735
+graph transaction processing,
+
+397
+00:12:52,955 --> 00:12:54,335
+and cloud native deployment.
+
+398
+00:12:54,635 --> 00:12:56,555
+So we're literally
+using graphs
+
+399
+00:12:56,555 --> 00:12:58,290
+to support offer
+one of the world's
+
+400
+00:12:58,290 --> 00:12:59,010
+largest telecoms.
+
+401
+00:12:59,010 --> 00:13:01,430
+We're actually doing
+hybrid multi cloud,
+
+402
+00:13:02,050 --> 00:13:03,170
+support. Right?
+
+403
+00:13:03,170 --> 00:13:04,130
+Where they're actually using
+
+404
+00:13:04,130 --> 00:13:05,110
+enterprise web,
+
+405
+00:13:05,250 --> 00:13:07,330
+onboarding really
+complex solution
+
+406
+00:13:07,330 --> 00:13:08,950
+elements that
+actually support,
+
+407
+00:13:10,290 --> 00:13:13,205
+things like this
+like this webinar,
+
+408
+00:13:14,145 --> 00:13:15,505
+the underlying
+technologies that
+
+409
+00:13:15,505 --> 00:13:16,325
+support it,
+
+410
+00:13:16,625 --> 00:13:19,345
+doing that in four
+g and five g,
+
+411
+00:13:19,345 --> 00:13:20,705
+and doing it in a hybrid multi
+
+412
+00:13:20,705 --> 00:13:21,845
+cloud way where,
+
+413
+00:13:22,545 --> 00:13:24,065
+their customers
+don't know where
+
+414
+00:13:24,065 --> 00:13:25,365
+their service is running.
+
+415
+00:13:25,500 --> 00:13:26,060
+They could actually,
+
+416
+00:13:26,460 --> 00:13:28,640
+it could run-in AWS or Google
+
+417
+00:13:28,940 --> 00:13:31,580
+or in the telecom
+zone cloud or in,
+
+418
+00:13:31,900 --> 00:13:33,740
+Microsoft or in IBM's cloud.
+
+419
+00:13:33,740 --> 00:13:35,260
+And the system is handling all
+
+420
+00:13:35,260 --> 00:13:37,280
+the complexity of mitigating
+
+421
+00:13:37,420 --> 00:13:39,040
+the protocols, the formats,
+
+422
+00:13:39,340 --> 00:13:41,040
+and even the service
+distinctions,
+
+423
+00:13:41,865 --> 00:13:43,305
+configuration
+distinctions between
+
+424
+00:13:43,305 --> 00:13:44,125
+those environments.
+
+425
+00:13:44,585 --> 00:13:46,905
+So, so, again, high level
+
+426
+00:13:46,905 --> 00:13:48,185
+distractions to enable high
+
+427
+00:13:48,185 --> 00:13:49,005
+level programmability.
+
+428
+00:13:50,585 --> 00:13:53,225
+So, picking that back down to
+
+429
+00:13:53,225 --> 00:13:55,650
+brass tacks, in
+enterprise web,
+
+430
+00:13:55,650 --> 00:13:56,850
+everything is graph object.
+
+431
+00:13:56,850 --> 00:13:57,830
+I mentioned that.
+
+432
+00:13:59,090 --> 00:14:00,770
+all graph objects are mapping
+
+433
+00:14:00,770 --> 00:14:01,910
+to a common ontology.
+
+434
+00:14:02,850 --> 00:14:04,230
+types, concepts,
+and policies,
+
+435
+00:14:04,450 --> 00:14:05,350
+I mentioned that.
+
+436
+00:14:05,650 --> 00:14:07,570
+And they're
+persisted as loosely
+
+437
+00:14:07,570 --> 00:14:09,735
+coupled immutable typed self
+
+438
+00:14:09,735 --> 00:14:11,175
+describing software
+objects with
+
+439
+00:14:11,175 --> 00:14:12,695
+REST interfaces. Right?
+
+440
+00:14:12,695 --> 00:14:16,135
+That's, you know,
+you know, you know,
+
+441
+00:14:16,135 --> 00:14:18,215
+nice. Right? This
+is a very rich
+
+442
+00:14:18,215 --> 00:14:19,755
+object with rich types.
+
+443
+00:14:20,135 --> 00:14:21,095
+These these are not,
+
+444
+00:14:21,335 --> 00:14:23,115
+simple objects and
+simple types.
+
+445
+00:14:23,490 --> 00:14:25,830
+They're not, and
+the types are,
+
+446
+00:14:26,370 --> 00:14:29,110
+programmable as well
+and and extensible.
+
+447
+00:14:29,570 --> 00:14:31,490
+So these are not, you know,
+
+448
+00:14:31,490 --> 00:14:32,710
+hard coded types.
+
+449
+00:14:33,890 --> 00:14:35,810
+you know, this is
+a system where
+
+450
+00:14:35,810 --> 00:14:36,850
+even the types are actually
+
+451
+00:14:36,850 --> 00:14:38,070
+graph objects themselves,
+
+452
+00:14:38,835 --> 00:14:41,095
+and all the typing
+is dynamic typing.
+
+453
+00:14:41,475 --> 00:14:44,915
+So, and we're making
+those complex
+
+454
+00:14:44,915 --> 00:14:46,695
+things again as
+simple as possible.
+
+455
+00:14:47,235 --> 00:14:48,375
+All of these objects,
+
+456
+00:14:48,595 --> 00:14:50,455
+because everything
+is an object
+
+457
+00:14:50,515 --> 00:14:51,360
+in in enterprise web,
+
+458
+00:14:51,360 --> 00:14:52,340
+that's an isomorphism.
+
+459
+00:14:52,960 --> 00:14:55,280
+So that gives us common
+common objects,
+
+460
+00:14:55,280 --> 00:14:56,420
+give us common methods,
+
+461
+00:14:56,800 --> 00:14:58,080
+that gives us common controls
+
+462
+00:14:58,080 --> 00:14:58,980
+of these objects.
+
+463
+00:14:59,200 --> 00:15:00,960
+Because all these objects look
+
+464
+00:15:00,960 --> 00:15:02,100
+the same to the system,
+
+465
+00:15:02,240 --> 00:15:03,680
+we can apply common policy
+
+466
+00:15:03,680 --> 00:15:05,140
+management to all
+these objects.
+
+467
+00:15:05,385 --> 00:15:07,325
+They're common,
+common governance,
+
+468
+00:15:07,465 --> 00:15:08,205
+common security,
+
+469
+00:15:09,465 --> 00:15:10,765
+common policy management.
+
+470
+00:15:11,385 --> 00:15:12,985
+they're all indexed
+the same way.
+
+471
+00:15:12,985 --> 00:15:14,425
+They're all tagged
+the same way.
+
+472
+00:15:14,425 --> 00:15:15,545
+They're all version controlled
+
+473
+00:15:15,545 --> 00:15:17,225
+the same way, and they're com
+
+474
+00:15:17,385 --> 00:15:19,020
+all of that is attracted
+from the user.
+
+475
+00:15:20,220 --> 00:15:21,100
+If you wanna know,
+
+476
+00:15:21,100 --> 00:15:22,540
+if you wanna see
+how it's done,
+
+477
+00:15:22,540 --> 00:15:25,200
+it's it's visible to
+the system owner,
+
+478
+00:15:25,580 --> 00:15:27,580
+but it's it's
+hidden because at
+
+479
+00:15:27,580 --> 00:15:29,420
+some level, the person
+at the business
+
+480
+00:15:29,420 --> 00:15:30,220
+application level,
+
+481
+00:15:30,220 --> 00:15:31,760
+the business user
+doesn't care.
+
+482
+00:15:32,140 --> 00:15:34,080
+Business user just
+wants a reliable
+
+483
+00:15:34,140 --> 00:15:37,595
+system. So when we're
+onboarding things,
+
+484
+00:15:38,535 --> 00:15:40,875
+or importing models
+or onboarding
+
+485
+00:15:40,935 --> 00:15:42,455
+code packages or authoring
+
+486
+00:15:42,455 --> 00:15:43,515
+adapters for components,
+
+487
+00:15:43,975 --> 00:15:45,415
+it's all the same approach in
+
+488
+00:15:45,415 --> 00:15:47,255
+enterprise web because,
+essentially,
+
+489
+00:15:47,255 --> 00:15:48,615
+it's all gonna be
+through a modeling
+
+490
+00:15:48,615 --> 00:15:49,115
+environment.
+
+491
+00:15:49,260 --> 00:15:50,620
+It's gonna be
+through a REST API
+
+492
+00:15:50,620 --> 00:15:52,080
+or a JSON based portal.
+
+493
+00:15:52,380 --> 00:15:53,180
+And essentially,
+
+494
+00:15:53,180 --> 00:15:54,960
+we're gonna create
+an object template,
+
+495
+00:15:56,060 --> 00:15:57,420
+and that's gonna interact with
+
+496
+00:15:57,420 --> 00:15:58,320
+our type system.
+
+497
+00:15:59,340 --> 00:16:00,540
+And the type system is gonna
+
+498
+00:16:00,540 --> 00:16:01,840
+interact with
+the upper ontology.
+
+499
+00:16:02,735 --> 00:16:03,935
+The upper ontology is gonna
+
+500
+00:16:03,935 --> 00:16:05,155
+validate the object.
+
+501
+00:16:05,295 --> 00:16:06,175
+It's because, you know,
+
+502
+00:16:06,175 --> 00:16:07,215
+between the type system and
+
+503
+00:16:07,215 --> 00:16:08,815
+the and the domain concepts is
+
+504
+00:16:08,815 --> 00:16:10,035
+gonna apply validations,
+
+505
+00:16:11,615 --> 00:16:13,475
+and then it's gonna attach,
+
+506
+00:16:13,855 --> 00:16:15,295
+entities and
+implementations to
+
+507
+00:16:15,295 --> 00:16:16,700
+it automatically.
+
+508
+00:16:17,560 --> 00:16:18,920
+So these are typed objects
+
+509
+00:16:18,920 --> 00:16:20,200
+regardless of what
+the object is.
+
+510
+00:16:20,200 --> 00:16:21,320
+If you I can import a Word
+
+511
+00:16:21,320 --> 00:16:22,600
+document in enterprise web,
+
+512
+00:16:22,600 --> 00:16:23,980
+it'll automatically introspect
+
+513
+00:16:24,120 --> 00:16:25,020
+that Word document,
+
+514
+00:16:25,480 --> 00:16:26,780
+do the entity extraction,
+
+515
+00:16:26,840 --> 00:16:28,300
+do the algorithmic mapping,
+
+516
+00:16:28,520 --> 00:16:31,000
+same thing for RDF,
+UML, XML, or JSON.
+
+517
+00:16:31,000 --> 00:16:32,225
+But But it's
+the same thing also
+
+518
+00:16:32,225 --> 00:16:33,845
+if you give me
+a code package.
+
+519
+00:16:34,625 --> 00:16:37,505
+Right? So if you
+give me, you know,
+
+520
+00:16:37,505 --> 00:16:39,985
+a a function, an app business
+
+521
+00:16:39,985 --> 00:16:41,425
+application, I can import that
+
+522
+00:16:41,425 --> 00:16:42,505
+application the same way.
+
+523
+00:16:42,505 --> 00:16:43,825
+I can take that code package
+
+524
+00:16:43,825 --> 00:16:46,290
+the same way,
+index it, tag it,
+
+525
+00:16:46,290 --> 00:16:48,850
+etcetera. And I can
+even allow you to,
+
+526
+00:16:49,010 --> 00:16:50,450
+we can even enable
+you to other
+
+527
+00:16:50,450 --> 00:16:52,050
+adapters or things,
+
+528
+00:16:52,210 --> 00:16:53,750
+complex other
+system components.
+
+529
+00:16:54,770 --> 00:16:55,490
+So it's, you know,
+
+530
+00:16:55,490 --> 00:16:57,810
+it's in as I mentioned,
+is it iPaaS?
+
+531
+00:16:57,810 --> 00:16:59,270
+It's an integration platform.
+
+532
+00:16:59,465 --> 00:17:00,985
+So it's built for extension.
+
+533
+00:17:00,985 --> 00:17:02,285
+It's built to be open.
+
+534
+00:17:02,585 --> 00:17:03,865
+So even though that the system
+
+535
+00:17:03,865 --> 00:17:04,765
+is very comprehensive,
+
+536
+00:17:05,465 --> 00:17:06,765
+it's not a closed system.
+
+537
+00:17:06,825 --> 00:17:07,705
+It's completely open.
+
+538
+00:17:07,705 --> 00:17:09,645
+It can work in a very
+federated manner.
+
+539
+00:17:09,865 --> 00:17:11,485
+The system will
+generate properties,
+
+540
+00:17:11,545 --> 00:17:12,445
+autofill parameters.
+
+541
+00:17:13,090 --> 00:17:15,410
+It will also, generate full
+
+542
+00:17:15,410 --> 00:17:16,230
+blown interfaces.
+
+543
+00:17:16,930 --> 00:17:17,890
+And we're not talking about
+
+544
+00:17:17,890 --> 00:17:19,490
+swagger to the extent
+that people
+
+545
+00:17:19,490 --> 00:17:20,690
+are familiar with that,
+
+546
+00:17:20,690 --> 00:17:21,970
+which just creates stubs and
+
+547
+00:17:21,970 --> 00:17:23,830
+then you still manually
+integrate that.
+
+548
+00:17:23,970 --> 00:17:26,275
+Enterprise web, creates,
+
+549
+00:17:27,135 --> 00:17:29,715
+underspecified
+interfaces and then,
+
+550
+00:17:30,095 --> 00:17:32,035
+does all the bindings
+at runtime
+
+551
+00:17:32,095 --> 00:17:33,075
+based on context.
+
+552
+00:17:34,015 --> 00:17:35,535
+It manages all of
+that for you.
+
+553
+00:17:35,535 --> 00:17:37,635
+So it's a very
+interactive process.
+
+554
+00:17:38,200 --> 00:17:40,440
+All the objects
+then are persisted
+
+555
+00:17:40,440 --> 00:17:43,160
+in a cloud native
+backing store and,
+
+556
+00:17:43,320 --> 00:17:44,620
+as immutable objects.
+
+557
+00:17:45,720 --> 00:17:48,060
+And this method of doing this
+
+558
+00:17:48,120 --> 00:17:49,960
+is essentially a model driven
+
+559
+00:17:49,960 --> 00:17:51,480
+process itself
+using those same
+
+560
+00:17:51,480 --> 00:17:52,380
+system technology.
+
+561
+00:17:52,765 --> 00:17:54,605
+It supports version
+control as well,
+
+562
+00:17:54,605 --> 00:17:55,805
+so you can pass through your
+
+563
+00:17:55,805 --> 00:17:56,945
+updates and upgrades,
+
+564
+00:17:57,325 --> 00:17:58,765
+and it will version
+all of this
+
+565
+00:17:58,765 --> 00:17:59,425
+in our system.
+
+566
+00:18:00,845 --> 00:18:03,085
+we wrap all of our objects in
+
+567
+00:18:03,085 --> 00:18:03,985
+software contracts,
+
+568
+00:18:05,020 --> 00:18:06,780
+which provides
+hooks for security
+
+569
+00:18:06,780 --> 00:18:08,320
+governance and
+compliance policies.
+
+570
+00:18:09,020 --> 00:18:11,100
+So, and I'm sure
+I'll get a lot
+
+571
+00:18:11,100 --> 00:18:12,860
+of interesting questions
+in the q and a.
+
+572
+00:18:12,860 --> 00:18:14,300
+I know I'm moving
+very quickly,
+
+573
+00:18:14,300 --> 00:18:16,780
+but I I I really wanna express
+
+574
+00:18:16,780 --> 00:18:18,060
+sort of the breadth
+and richness
+
+575
+00:18:18,060 --> 00:18:19,280
+of our system to you.
+
+576
+00:18:20,395 --> 00:18:21,915
+But the idea again is we're
+
+577
+00:18:21,915 --> 00:18:23,695
+trying to give
+a system that is
+
+578
+00:18:23,835 --> 00:18:24,715
+both easy to use,
+
+579
+00:18:24,715 --> 00:18:26,815
+but also is responsible
+and reliable,
+
+580
+00:18:27,355 --> 00:18:29,215
+right, out of the box.
+
+581
+00:18:29,355 --> 00:18:30,955
+Enterprise Web
+deploys literally
+
+582
+00:18:30,955 --> 00:18:32,235
+in minutes as a cloud native
+
+583
+00:18:32,235 --> 00:18:34,255
+platform itself. It's
+very lightweight.
+
+584
+00:18:34,315 --> 00:18:35,615
+It's completely
+distributable.
+
+585
+00:18:36,480 --> 00:18:37,920
+And we want customers to get,
+
+586
+00:18:38,240 --> 00:18:40,240
+value quickly. So
+we're providing
+
+587
+00:18:40,240 --> 00:18:40,880
+all of these things,
+
+588
+00:18:40,880 --> 00:18:42,880
+and we're enabling
+them to then
+
+589
+00:18:42,880 --> 00:18:46,260
+build out their
+solutions. objects.
+
+590
+00:18:46,320 --> 00:18:47,520
+You know, these
+objects that are
+
+591
+00:18:47,520 --> 00:18:48,560
+wrapped in contracts can then
+
+592
+00:18:48,560 --> 00:18:50,265
+be declaratively
+composed. Right?
+
+593
+00:18:50,345 --> 00:18:51,625
+Once you onboard an object,
+
+594
+00:18:51,625 --> 00:18:52,345
+it goes to that,
+
+595
+00:18:52,665 --> 00:18:54,205
+it's persisted
+in the catalog.
+
+596
+00:18:54,505 --> 00:18:55,785
+Then you can go to a catalog,
+
+597
+00:18:55,785 --> 00:18:57,065
+point and click
+in the catalog,
+
+598
+00:18:57,065 --> 00:18:59,965
+or make references to
+the, the catalog,
+
+599
+00:19:00,505 --> 00:19:02,585
+and, the system
+will handle all
+
+600
+00:19:02,585 --> 00:19:03,890
+of the integration. You.
+
+601
+00:19:03,890 --> 00:19:05,270
+Whether you're
+composing services,
+
+602
+00:19:05,410 --> 00:19:08,690
+tasks, or aggregates, again,
+
+603
+00:19:08,690 --> 00:19:09,890
+see that sort of the notion
+
+604
+00:19:09,890 --> 00:19:11,250
+crossing
+the boundaries between
+
+605
+00:19:11,250 --> 00:19:12,710
+the data space and
+the application
+
+606
+00:19:12,770 --> 00:19:14,690
+space, the system's
+gonna handle
+
+607
+00:19:14,690 --> 00:19:15,810
+both of those for you.
+
+608
+00:19:15,810 --> 00:19:17,010
+No manual integration.
+
+609
+00:19:17,010 --> 00:19:19,350
+The system does all,
+all the binding.
+
+610
+00:19:20,385 --> 00:19:22,705
+Likewise, a process is just
+
+611
+00:19:22,705 --> 00:19:24,465
+another object in
+enterprise web.
+
+612
+00:19:24,465 --> 00:19:26,245
+It's just another DAG object,
+
+613
+00:19:26,705 --> 00:19:28,645
+a directed acyclic
+graph object,
+
+614
+00:19:29,665 --> 00:19:31,025
+with a set of loosely coupled
+
+615
+00:19:31,025 --> 00:19:32,645
+tasks bound by commissions.
+
+616
+00:19:33,510 --> 00:19:35,750
+So the the physics
+of enterprise web,
+
+617
+00:19:35,750 --> 00:19:38,310
+the logic of
+enterprise web, it's,
+
+618
+00:19:38,630 --> 00:19:39,590
+it creates something called
+
+619
+00:19:39,590 --> 00:19:41,350
+homoiconicity. Right?
+
+620
+00:19:41,350 --> 00:19:44,090
+Is that, objects,
+
+621
+00:19:44,470 --> 00:19:46,805
+and transitions are the same
+
+622
+00:19:46,805 --> 00:19:48,185
+thing in enterprise web.
+
+623
+00:19:48,325 --> 00:19:50,185
+It gives us this
+unified theory,
+
+624
+00:19:50,725 --> 00:19:52,485
+a unified theory of types that
+
+625
+00:19:52,485 --> 00:19:54,485
+allows us to, again,
+
+626
+00:19:54,485 --> 00:19:56,025
+get a lot of process
+optimizations.
+
+627
+00:19:57,925 --> 00:19:59,365
+tasks are all connected by
+
+628
+00:19:59,365 --> 00:20:00,085
+conditional links,
+
+629
+00:20:00,085 --> 00:20:02,430
+and it's all event
+driven, event,
+
+630
+00:20:02,570 --> 00:20:05,370
+asynchronous and
+concurrent. Right?
+
+631
+00:20:05,370 --> 00:20:06,570
+So, you know, really high
+
+632
+00:20:06,570 --> 00:20:07,950
+performance and and scalable.
+
+633
+00:20:09,290 --> 00:20:11,370
+So the functionality that
+
+634
+00:20:11,370 --> 00:20:12,250
+enterprise web is,
+
+635
+00:20:12,250 --> 00:20:13,530
+I just described how we model
+
+636
+00:20:13,530 --> 00:20:14,490
+processes as graphs,
+
+637
+00:20:14,490 --> 00:20:15,930
+and customers can
+actually create
+
+638
+00:20:15,930 --> 00:20:18,045
+other processes and
+and essentially
+
+639
+00:20:18,045 --> 00:20:20,045
+be creating new
+capabilities in
+
+640
+00:20:20,045 --> 00:20:21,105
+enterprise web.
+
+641
+00:20:21,805 --> 00:20:23,325
+but we essentially
+give you out
+
+642
+00:20:23,325 --> 00:20:25,405
+of the box all
+the sort of message
+
+643
+00:20:25,405 --> 00:20:26,385
+oriented middleware,
+
+644
+00:20:26,445 --> 00:20:27,565
+the common message oriented
+
+645
+00:20:27,565 --> 00:20:28,465
+middleware capabilities,
+
+646
+00:20:28,685 --> 00:20:29,805
+but they're implemented as
+
+647
+00:20:29,805 --> 00:20:30,785
+serverless functions.
+
+648
+00:20:31,500 --> 00:20:33,420
+They're all called
+on demand and
+
+649
+00:20:33,420 --> 00:20:34,720
+hydrated by the graph.
+
+650
+00:20:36,380 --> 00:20:37,500
+Again, that makes the system
+
+651
+00:20:37,500 --> 00:20:39,280
+very lightweight,
+very efficient,
+
+652
+00:20:39,740 --> 00:20:40,560
+very scalable,
+
+653
+00:20:42,620 --> 00:20:44,860
+and the graph is
+essentially in
+
+654
+00:20:44,860 --> 00:20:46,795
+control of
+the services. Right?
+
+655
+00:20:46,795 --> 00:20:47,935
+So we have stateless,
+
+656
+00:20:48,235 --> 00:20:52,095
+serverless functions
+and a stateful
+
+657
+00:20:52,155 --> 00:20:55,995
+graph. This graph actually is
+
+658
+00:20:55,995 --> 00:20:58,335
+hydrating these
+services on demand.
+
+659
+00:20:58,970 --> 00:21:02,490
+So it's following
+all the tenets of,
+
+660
+00:21:02,810 --> 00:21:03,950
+cloud native computing,
+
+661
+00:21:05,210 --> 00:21:07,230
+and we maintain all
+the scalability,
+
+662
+00:21:07,370 --> 00:21:08,910
+resilient, durability,
+
+663
+00:21:09,450 --> 00:21:11,210
+portability of cloud native
+
+664
+00:21:11,210 --> 00:21:13,695
+computing while creating high
+
+665
+00:21:13,695 --> 00:21:16,275
+efficiency, you know,
+
+666
+00:21:17,055 --> 00:21:18,195
+information system.
+
+667
+00:21:20,015 --> 00:21:21,135
+and this is what we would look
+
+668
+00:21:21,215 --> 00:21:22,255
+I'm just about to wrap up my
+
+669
+00:21:22,255 --> 00:21:23,295
+slides here now.
+
+670
+00:21:23,535 --> 00:21:24,575
+this is what we would look at
+
+671
+00:21:24,575 --> 00:21:26,675
+the application as
+an as an application,
+
+672
+00:21:27,310 --> 00:21:28,590
+and you could see that we're
+
+673
+00:21:28,590 --> 00:21:30,190
+northbound or ping pointing in
+
+674
+00:21:30,190 --> 00:21:33,630
+REST API or JSON UI
+to customer systems,
+
+675
+00:21:33,630 --> 00:21:35,490
+portals, analytics, AI, ML.
+
+676
+00:21:35,630 --> 00:21:36,990
+Now think how exciting that is
+
+677
+00:21:36,990 --> 00:21:37,950
+for you guys who are data
+
+678
+00:21:37,950 --> 00:21:38,910
+scientists who are working in
+
+679
+00:21:38,910 --> 00:21:40,850
+knowledge graphs. Well, gosh.
+
+680
+00:21:40,955 --> 00:21:43,035
+We're a fact model
+that you can
+
+681
+00:21:43,035 --> 00:21:45,035
+reliably call on
+through a JSON
+
+682
+00:21:45,035 --> 00:21:47,675
+UI or a REST API, and
+you can import it,
+
+683
+00:21:47,675 --> 00:21:48,895
+if you have the right
+permissions,
+
+684
+00:21:49,195 --> 00:21:50,895
+you can introspect our graph.
+
+685
+00:21:51,035 --> 00:21:53,215
+You can not only,
+look at our models,
+
+686
+00:21:53,275 --> 00:21:54,475
+you can actually
+look at the run
+
+687
+00:21:54,475 --> 00:21:56,730
+time activity.
+And also then our
+
+688
+00:21:56,730 --> 00:21:58,650
+system could then
+make calls up
+
+689
+00:21:58,650 --> 00:21:59,850
+to higher level systems,
+
+690
+00:21:59,850 --> 00:22:01,390
+higher level
+analytic systems,
+
+691
+00:22:02,170 --> 00:22:02,990
+for optimizations,
+
+692
+00:22:03,210 --> 00:22:05,150
+for broader
+evaluations of state.
+
+693
+00:22:06,090 --> 00:22:07,530
+so enterprise web, you know,
+
+694
+00:22:07,530 --> 00:22:08,810
+one of the challenges
+for the whole
+
+695
+00:22:08,810 --> 00:22:10,575
+graph space is, you know,
+
+696
+00:22:10,575 --> 00:22:11,935
+good inference is,
+
+697
+00:22:12,655 --> 00:22:14,115
+supported by good facts.
+
+698
+00:22:14,655 --> 00:22:17,055
+So we're a great
+fact model for
+
+699
+00:22:17,055 --> 00:22:19,135
+great inference
+models. Right?
+
+700
+00:22:19,135 --> 00:22:20,335
+RDF has its use case.
+
+701
+00:22:20,335 --> 00:22:22,035
+Semantic Web has
+its use case.
+
+702
+00:22:22,190 --> 00:22:24,050
+This is not an either
+or situation.
+
+703
+00:22:24,350 --> 00:22:25,310
+Actually, I would say we're
+
+704
+00:22:25,310 --> 00:22:26,130
+really complimentary.
+
+705
+00:22:27,790 --> 00:22:33,490
+and, that I believe
+is essentially,
+
+706
+00:22:33,870 --> 00:22:35,490
+wrapping up the talk.
+
+707
+00:22:35,870 --> 00:22:37,605
+So how much time
+do I have, Bill?
+
+708
+00:22:38,565 --> 00:22:39,925
+you got about two minutes left
+
+709
+00:22:39,925 --> 00:22:40,405
+on the talk.
+
+710
+00:22:40,405 --> 00:22:41,285
+Okay. So actually,
+
+711
+00:22:41,285 --> 00:22:42,725
+I do actually have
+no slides here.
+
+712
+00:22:42,725 --> 00:22:44,965
+So so just going
+more back into
+
+713
+00:22:44,965 --> 00:22:46,165
+the into theory, right?
+
+714
+00:22:46,165 --> 00:22:47,125
+So some of you are gonna be
+
+715
+00:22:47,125 --> 00:22:48,905
+familiar with, Tokes',
+
+716
+00:22:49,525 --> 00:22:51,600
+life cycle
+information model and
+
+717
+00:22:51,600 --> 00:22:52,800
+this notion of, you know,
+
+718
+00:22:52,800 --> 00:22:54,320
+it's again a maturity
+model like
+
+719
+00:22:54,400 --> 00:22:55,680
+just like the graph knowledge
+
+720
+00:22:55,680 --> 00:22:57,380
+communities maturity model.
+
+721
+00:22:57,920 --> 00:23:00,400
+And generally, most
+people aren't,
+
+722
+00:23:00,800 --> 00:23:02,000
+stuck down at the level of
+
+723
+00:23:02,000 --> 00:23:03,700
+syntactic technical
+interoperability.
+
+724
+00:23:04,400 --> 00:23:05,840
+And enterprise led was driving
+
+725
+00:23:05,840 --> 00:23:07,705
+people towards dynamic and
+
+726
+00:23:07,705 --> 00:23:08,765
+conceptual interoperability.
+
+727
+00:23:09,145 --> 00:23:10,585
+That's where you
+really wanna be.
+
+728
+00:23:10,585 --> 00:23:12,845
+Right? And the way we do that
+
+729
+00:23:12,905 --> 00:23:14,585
+is that we're saying,
+well, actually,
+
+730
+00:23:14,585 --> 00:23:16,425
+it's all software. Right?
+
+731
+00:23:16,425 --> 00:23:17,865
+So we have conceptual layer,
+
+732
+00:23:17,865 --> 00:23:19,805
+a logical layer, and
+a physical layer.
+
+733
+00:23:20,480 --> 00:23:21,920
+And all of those really are
+
+734
+00:23:21,920 --> 00:23:24,080
+models in enterprise
+web because
+
+735
+00:23:24,080 --> 00:23:25,840
+we're gonna bind
+actually physical
+
+736
+00:23:25,840 --> 00:23:27,520
+implementations. Those are
+
+737
+00:23:27,520 --> 00:23:28,800
+something the the physical
+
+738
+00:23:28,800 --> 00:23:30,420
+implementations are derived
+
+739
+00:23:31,040 --> 00:23:33,600
+based on interaction
+context in
+
+740
+00:23:33,600 --> 00:23:34,420
+real time.
+
+741
+00:23:35,115 --> 00:23:36,555
+It's the model space that we
+
+742
+00:23:36,555 --> 00:23:39,295
+preserve and, care
+about. Right?
+
+743
+00:23:39,355 --> 00:23:42,075
+So, enterprise web is actually
+
+744
+00:23:42,075 --> 00:23:45,615
+sent has is using
+the same data
+
+745
+00:23:45,675 --> 00:23:48,410
+structures, the same
+graph object
+
+746
+00:23:48,790 --> 00:23:52,390
+construct, the same
+methods for
+
+747
+00:23:52,390 --> 00:23:53,670
+the conceptual, logical,
+
+748
+00:23:53,670 --> 00:23:54,730
+and physical models,
+
+749
+00:23:56,150 --> 00:23:58,550
+that is an optimization
+then for
+
+750
+00:23:58,550 --> 00:24:00,330
+how we can process
+hyper efficiently
+
+751
+00:24:01,915 --> 00:24:03,675
+and, you know, use knowledge
+
+752
+00:24:03,675 --> 00:24:06,015
+graphs to actually
+do real time
+
+753
+00:24:06,075 --> 00:24:09,135
+applications. And
+just for fun,
+
+754
+00:24:09,595 --> 00:24:11,295
+what does that really
+translate to?
+
+755
+00:24:11,355 --> 00:24:12,975
+It's turtles all
+the way down.
+
+756
+00:24:13,115 --> 00:24:14,575
+Recursive layers
+of abstraction.
+
+757
+00:24:15,000 --> 00:24:16,840
+I mean, this dev ops,
+
+758
+00:24:17,080 --> 00:24:18,120
+some of you might be,
+
+759
+00:24:18,600 --> 00:24:20,200
+familiar with that that saying
+
+760
+00:24:20,200 --> 00:24:21,480
+turtles all the way down.
+
+761
+00:24:21,480 --> 00:24:23,560
+But the idea is that
+the the universe
+
+762
+00:24:23,560 --> 00:24:26,140
+is be is, on the back
+of a turtle,
+
+763
+00:24:26,200 --> 00:24:27,480
+and that turtle is standing on
+
+764
+00:24:27,480 --> 00:24:28,600
+top of another turtle,
+
+765
+00:24:28,600 --> 00:24:29,640
+and that turtle is sitting on
+
+766
+00:24:29,640 --> 00:24:30,855
+top of another turtle.
+
+767
+00:24:30,935 --> 00:24:32,475
+And then when the conversation
+
+768
+00:24:32,535 --> 00:24:34,715
+asks what's holding
+that up that turtle,
+
+769
+00:24:34,775 --> 00:24:35,835
+you're supposed to say,
+
+770
+00:24:36,215 --> 00:24:37,515
+let's change
+the conversation.
+
+771
+00:24:39,415 --> 00:24:40,775
+but the idea is
+that's recursive
+
+772
+00:24:40,775 --> 00:24:41,835
+layers of abstraction.
+
+773
+00:24:42,535 --> 00:24:43,735
+my name is Dave Jagal.
+
+774
+00:24:43,735 --> 00:24:45,255
+I'm the oh, here's
+some article
+
+775
+00:24:45,255 --> 00:24:46,350
+references for you.
+
+776
+00:24:47,070 --> 00:24:48,670
+if you want, I
+believe this deck
+
+777
+00:24:48,670 --> 00:24:49,150
+will be shared,
+
+778
+00:24:49,150 --> 00:24:50,350
+and hopefully these links will
+
+779
+00:24:50,350 --> 00:24:52,210
+be active to get the decks.
+
+780
+00:24:53,710 --> 00:24:54,590
+you could, you know,
+
+781
+00:24:54,590 --> 00:24:57,310
+obviously look us
+up and learn more,
+
+782
+00:24:57,310 --> 00:24:58,990
+or simply contact me.
+
+783
+00:24:58,990 --> 00:25:01,170
+And we'd always be
+delighted to talk,
+
+784
+00:25:01,745 --> 00:25:03,665
+demonstrate, and
+we, of course,
+
+785
+00:25:03,665 --> 00:25:04,945
+just love talking
+about these ideas.
+
+786
+00:25:04,945 --> 00:25:05,905
+We love talking about computer
+
+787
+00:25:05,905 --> 00:25:07,265
+science and we love talking
+
+788
+00:25:07,265 --> 00:25:08,785
+about graphs. So thank you for
+
+789
+00:25:08,785 --> 00:25:09,505
+your time today.
+
+790
+00:25:09,505 --> 00:25:11,045
+I really look forward
+to your questions.
+
+791
+00:25:11,345 --> 00:25:13,025
+I'm absolutely sure you guys
+
+792
+00:25:13,025 --> 00:25:13,665
+won't be shy.
+
+793
+00:25:13,665 --> 00:25:16,250
+I know many of you and,
+
+794
+00:25:17,190 --> 00:25:19,290
+and I hope you won't
+be too rough on me.
+
+795
+00:25:20,550 --> 00:25:22,410
+Well, thank you, Dave.
+
+796
+00:25:22,550 --> 00:25:24,090
+And, yes, indeed,
+
+797
+00:25:25,270 --> 00:25:27,430
+you already have
+a question from
+
+798
+00:25:27,430 --> 00:25:28,490
+the audience here.
+
+799
+00:25:29,245 --> 00:25:30,965
+it's from Jim, who's asking if
+
+800
+00:25:30,965 --> 00:25:32,725
+it's possible to
+make a distinction
+
+801
+00:25:32,725 --> 00:25:34,565
+between existing plant and
+
+802
+00:25:34,565 --> 00:25:38,165
+deprecated assets. I'm sorry.
+
+803
+00:25:38,165 --> 00:25:39,305
+Oh, yes. Absolutely.
+
+804
+00:25:39,605 --> 00:25:41,285
+So everything is everything is
+
+805
+00:25:41,285 --> 00:25:42,840
+an object in enterprise web.
+
+806
+00:25:42,920 --> 00:25:44,280
+All the objects
+have life cycle
+
+807
+00:25:44,280 --> 00:25:46,600
+management. all
+of the concepts
+
+808
+00:25:46,600 --> 00:25:48,460
+in the ontology are objects.
+
+809
+00:25:48,840 --> 00:25:50,300
+They all have life
+cycle management.
+
+810
+00:25:50,600 --> 00:25:53,580
+The ontology itself
+is an object.
+
+811
+00:25:53,960 --> 00:25:55,340
+It's the set of concepts,
+
+812
+00:25:56,135 --> 00:25:57,115
+types and policies.
+
+813
+00:25:57,255 --> 00:25:58,775
+It is an object and it is life
+
+814
+00:25:58,775 --> 00:26:00,375
+cycle managed. So we actually
+
+815
+00:26:00,375 --> 00:26:01,915
+have something called
+the model manager,
+
+816
+00:26:02,135 --> 00:26:03,735
+and the model manager actually
+
+817
+00:26:03,735 --> 00:26:05,275
+gives you a vehicle for the,
+
+818
+00:26:06,215 --> 00:26:08,135
+data scientist or
+architect that is,
+
+819
+00:26:08,375 --> 00:26:10,455
+generally running or
+owns the business
+
+820
+00:26:10,455 --> 00:26:11,550
+architecture, let's say,
+
+821
+00:26:12,350 --> 00:26:13,870
+to go in there and control and
+
+822
+00:26:13,870 --> 00:26:16,690
+then publish, new versions,
+
+823
+00:26:17,710 --> 00:26:20,190
+of the model. and so you can
+
+824
+00:26:20,190 --> 00:26:21,570
+call that a design time,
+
+825
+00:26:21,950 --> 00:26:23,410
+responsibility if you'd like.
+
+826
+00:26:24,110 --> 00:26:26,430
+and so the, model graph model
+
+827
+00:26:26,430 --> 00:26:28,005
+is fully open and extensible,
+
+828
+00:26:28,005 --> 00:26:30,585
+introspectable, navigable.
+
+829
+00:26:31,685 --> 00:26:33,125
+so that's a that's
+a great question,
+
+830
+00:26:33,125 --> 00:26:33,365
+though.
+
+831
+00:26:33,365 --> 00:26:35,285
+So everything is an object.
+
+832
+00:26:35,285 --> 00:26:36,725
+All objects are
+version controlled.
+
+833
+00:26:36,725 --> 00:26:38,425
+They're all indexed.
+They're all tagged.
+
+834
+00:26:38,485 --> 00:26:39,385
+They're all searchable.
+
+835
+00:26:40,480 --> 00:26:41,840
+again, we're
+working in the life
+
+836
+00:26:41,840 --> 00:26:42,740
+sciences, telecom,
+
+837
+00:26:42,800 --> 00:26:44,260
+and other general
+enterprises.
+
+838
+00:26:45,280 --> 00:26:46,800
+you know, telecom
+is considered
+
+839
+00:26:46,800 --> 00:26:47,840
+one of the hardest industries
+
+840
+00:26:47,840 --> 00:26:49,440
+to work in. They haven't we're
+
+841
+00:26:49,440 --> 00:26:50,560
+in production.
+They haven't been
+
+842
+00:26:50,560 --> 00:26:51,620
+able to break it,
+
+843
+00:26:52,000 --> 00:26:53,200
+and they've imported their own
+
+844
+00:26:53,200 --> 00:26:54,080
+information models,
+
+845
+00:26:54,080 --> 00:26:55,575
+and they've managed
+it that way,
+
+846
+00:26:55,655 --> 00:26:57,275
+and they found it
+very extensible.
+
+847
+00:26:57,735 --> 00:26:59,655
+So and they use us they use it
+
+848
+00:26:59,655 --> 00:27:01,015
+as an abstraction over other,
+
+849
+00:27:01,335 --> 00:27:03,995
+technologies as well.
+So great question.
+
+850
+00:27:05,655 --> 00:27:07,735
+I have a read one as well,
+
+851
+00:27:07,735 --> 00:27:09,495
+which I think is
+kind of related.
+
+852
+00:27:09,495 --> 00:27:11,275
+At some point, you
+mentioned that,
+
+853
+00:27:11,680 --> 00:27:13,680
+you treat all the checks and
+
+854
+00:27:13,680 --> 00:27:15,460
+transitions as
+the same thing.
+
+855
+00:27:16,240 --> 00:27:18,320
+would you like to
+elaborate a little
+
+856
+00:27:18,320 --> 00:27:19,440
+bit on that?
+Because, you know,
+
+857
+00:27:19,440 --> 00:27:21,040
+it's not something I guess,
+
+858
+00:27:21,040 --> 00:27:22,080
+if if you have,
+
+859
+00:27:22,480 --> 00:27:24,240
+software engineering
+or technical
+
+860
+00:27:24,240 --> 00:27:25,325
+background, it's not something
+
+861
+00:27:25,325 --> 00:27:26,765
+you can wrap
+yourself your your
+
+862
+00:27:26,765 --> 00:27:27,905
+care needs to be around.
+
+863
+00:27:28,685 --> 00:27:31,005
+Yeah. It it it you
+it is I pointed
+
+864
+00:27:31,005 --> 00:27:32,125
+it out because I
+thought I think
+
+865
+00:27:32,125 --> 00:27:33,965
+some people will
+all appreciate it.
+
+866
+00:27:33,965 --> 00:27:36,145
+It is a it is
+a complex concept.
+
+867
+00:27:36,285 --> 00:27:37,165
+If you think about it,
+
+868
+00:27:37,165 --> 00:27:38,285
+the more transformations you
+
+869
+00:27:38,285 --> 00:27:39,425
+have to do in your pipelines
+
+870
+00:27:40,230 --> 00:27:42,630
+other than let me back
+up another step.
+
+871
+00:27:42,630 --> 00:27:43,910
+The only thing
+that the business
+
+872
+00:27:43,910 --> 00:27:45,750
+cares about is their logic and
+
+873
+00:27:45,750 --> 00:27:47,370
+the objects they
+have access to.
+
+874
+00:27:47,510 --> 00:27:49,670
+We'll stop. No one
+in the business
+
+875
+00:27:49,670 --> 00:27:51,290
+has ever cared
+about technology.
+
+876
+00:27:52,550 --> 00:27:54,890
+It's a utility for
+them to do their job.
+
+877
+00:27:55,305 --> 00:27:56,905
+That's it. That doesn't mean
+
+878
+00:27:56,905 --> 00:27:58,205
+technologies isn't important.
+
+879
+00:27:58,665 --> 00:27:59,965
+So in that context,
+
+880
+00:28:00,425 --> 00:28:01,945
+the more transformations
+the more
+
+881
+00:28:01,945 --> 00:28:02,905
+complex my tool chains,
+
+882
+00:28:02,905 --> 00:28:04,665
+the more complex my
+middleware stacks,
+
+883
+00:28:04,665 --> 00:28:05,945
+even a semantic web stuff,
+
+884
+00:28:05,945 --> 00:28:07,385
+the more the more connections
+
+885
+00:28:07,385 --> 00:28:08,505
+I have between the things and
+
+886
+00:28:08,505 --> 00:28:09,385
+the more transformations that
+
+887
+00:28:09,385 --> 00:28:10,525
+happen through
+those pipelines,
+
+888
+00:28:10,590 --> 00:28:12,050
+and, yes, you can
+do optimizations
+
+889
+00:28:12,110 --> 00:28:13,490
+and things that we
+are all clearly
+
+890
+00:28:14,030 --> 00:28:15,250
+doing lots of
+transformations.
+
+891
+00:28:15,710 --> 00:28:16,910
+But, really, what
+you'd like to
+
+892
+00:28:16,910 --> 00:28:18,130
+do is just do transformations
+
+893
+00:28:18,190 --> 00:28:19,570
+in and transformations out.
+
+894
+00:28:19,950 --> 00:28:20,670
+And you like to,
+
+895
+00:28:20,910 --> 00:28:22,510
+you'd like to
+actually have your
+
+896
+00:28:22,510 --> 00:28:24,990
+system to be as unified as
+
+897
+00:28:24,990 --> 00:28:27,415
+possible to do as many things
+
+898
+00:28:27,415 --> 00:28:29,355
+as possible under
+a common model.
+
+899
+00:28:29,655 --> 00:28:31,435
+And so if you can
+actually have
+
+900
+00:28:31,895 --> 00:28:34,315
+your process, your
+process models
+
+901
+00:28:35,335 --> 00:28:37,115
+so so there's two things,
+
+902
+00:28:37,735 --> 00:28:38,635
+a couple things.
+
+903
+00:28:38,855 --> 00:28:42,370
+A unified object
+model, gives you,
+
+904
+00:28:42,770 --> 00:28:43,490
+common methods.
+
+905
+00:28:43,490 --> 00:28:44,690
+That's a very powerful concept
+
+906
+00:28:44,690 --> 00:28:45,830
+in computer science.
+
+907
+00:28:45,890 --> 00:28:47,030
+So just in general,
+
+908
+00:28:47,170 --> 00:28:49,330
+if I make everything
+look the same,
+
+909
+00:28:49,330 --> 00:28:50,770
+then I can apply
+common policies
+
+910
+00:28:50,770 --> 00:28:52,470
+and common controls on it.
+
+911
+00:28:52,530 --> 00:28:53,890
+That's just a low
+even if you're
+
+912
+00:28:53,890 --> 00:28:55,030
+heterogeneous underneath,
+
+913
+00:28:55,035 --> 00:28:56,235
+that's an abstraction
+that gives
+
+914
+00:28:56,235 --> 00:28:57,275
+me lots of power.
+
+915
+00:28:57,275 --> 00:28:58,815
+If I can do that both over,
+
+916
+00:28:59,515 --> 00:29:02,475
+objects and I could do it over
+
+917
+00:29:02,475 --> 00:29:04,575
+processes, that's
+even more power.
+
+918
+00:29:05,915 --> 00:29:08,095
+we had this back
+in the mainframe,
+
+919
+00:29:08,395 --> 00:29:09,935
+but the mainframe
+wasn't distributed.
+
+920
+00:29:10,640 --> 00:29:13,360
+The mainframe had
+this kind of,
+
+921
+00:29:13,760 --> 00:29:16,500
+isomorphism, this kind
+of homoakinicity.
+
+922
+00:29:17,360 --> 00:29:19,040
+But really it's just another,
+
+923
+00:29:19,040 --> 00:29:20,100
+it's just an abstraction,
+
+924
+00:29:20,560 --> 00:29:21,760
+and if you really wanna look
+
+925
+00:29:21,760 --> 00:29:23,940
+into it I'd recommend,
+my friend Milner,
+
+926
+00:29:24,205 --> 00:29:26,605
+who's no longer with
+us. Rest in peace.
+
+927
+00:29:26,765 --> 00:29:27,805
+but, you know,
+we like to think
+
+928
+00:29:27,805 --> 00:29:29,165
+we stand on the shoulders
+of giants.
+
+929
+00:29:29,405 --> 00:29:31,585
+Strachey, Milner, Malone.
+
+930
+00:29:31,885 --> 00:29:33,325
+you know, many many many of
+
+931
+00:29:33,325 --> 00:29:34,365
+the great greats oh,
+
+932
+00:29:34,365 --> 00:29:35,405
+we like we like fielding.
+
+933
+00:29:35,405 --> 00:29:37,930
+Of course, we like
+Tim Berners Lee and,
+
+934
+00:29:38,630 --> 00:29:40,730
+Deborah McGinnis and and and,
+
+935
+00:29:41,270 --> 00:29:42,950
+Jim Hedler, all
+those all those,
+
+936
+00:29:43,110 --> 00:29:45,110
+folks, we we we stay
+on the shoulders
+
+937
+00:29:45,110 --> 00:29:46,170
+of giants of giants.
+
+938
+00:29:46,230 --> 00:29:48,330
+We're particularly
+fond of of Milner.
+
+939
+00:29:48,470 --> 00:29:52,105
+Milner wrote the ML language.
+
+940
+00:29:52,245 --> 00:29:53,925
+You know, we're very close to
+
+941
+00:29:53,925 --> 00:29:54,585
+those ideas.
+
+942
+00:29:54,885 --> 00:29:56,485
+But his life's work was trying
+
+943
+00:29:56,485 --> 00:29:58,965
+to unify object
+theory and process
+
+944
+00:29:58,965 --> 00:30:00,885
+theory, and he died not having
+
+945
+00:30:00,885 --> 00:30:03,330
+completed it. He
+completed it.
+
+946
+00:30:04,370 --> 00:30:05,670
+We we created that.
+
+947
+00:30:05,890 --> 00:30:07,890
+He would describe
+that as abstract
+
+948
+00:30:07,890 --> 00:30:10,550
+rewriting and
+transition theory.
+
+949
+00:30:11,330 --> 00:30:13,250
+These are very esoteric areas
+
+950
+00:30:13,250 --> 00:30:14,230
+in computer science,
+
+951
+00:30:14,370 --> 00:30:16,050
+but the bottom
+line is it's what
+
+952
+00:30:16,050 --> 00:30:20,175
+gives us the power to
+do what we we do.
+
+953
+00:30:20,175 --> 00:30:22,815
+K. Well, I have
+a a tough choice here.
+
+954
+00:30:22,815 --> 00:30:24,735
+I can ask you a very direct
+
+955
+00:30:24,735 --> 00:30:26,275
+question from from Jean,
+
+956
+00:30:26,655 --> 00:30:28,995
+or I can ask you
+a more complicated
+
+957
+00:30:29,215 --> 00:30:30,015
+question from me.
+
+958
+00:30:30,015 --> 00:30:31,295
+And since times run out,
+
+959
+00:30:31,295 --> 00:30:32,620
+I'm going to go with a direct
+
+960
+00:30:32,620 --> 00:30:33,500
+question from Xin,
+
+961
+00:30:33,500 --> 00:30:35,500
+who's asking how
+much does it cost,
+
+962
+00:30:35,500 --> 00:30:37,120
+and are there several packages
+
+963
+00:30:37,340 --> 00:30:38,460
+with different levels of
+
+964
+00:30:38,460 --> 00:30:40,400
+capabilities and
+different prices?
+
+965
+00:30:42,060 --> 00:30:43,600
+So it's actually super easy.
+
+966
+00:30:43,820 --> 00:30:44,925
+It's one price.
+
+967
+00:30:45,005 --> 00:30:46,545
+It's based on your usage.
+
+968
+00:30:46,765 --> 00:30:48,445
+We've partnered with
+the world's well,
+
+969
+00:30:48,445 --> 00:30:49,965
+you know, I I
+can't we're about
+
+970
+00:30:49,965 --> 00:30:50,925
+to announce shortly that we've
+
+971
+00:30:50,925 --> 00:30:52,765
+partnered with,
+world's largest cloud,
+
+972
+00:30:53,005 --> 00:30:55,825
+providers. It it could
+run on premise.
+
+973
+00:30:55,885 --> 00:30:57,565
+It could run, on any cloud of
+
+974
+00:30:57,565 --> 00:30:59,400
+your choice. It could
+run as a hosted
+
+975
+00:30:59,400 --> 00:31:01,740
+service, and, you literally,
+
+976
+00:31:02,120 --> 00:31:04,460
+are charged by your
+CPU utilization
+
+977
+00:31:05,640 --> 00:31:07,020
+and your number of users.
+
+978
+00:31:07,720 --> 00:31:09,640
+And we've actually
+made it fairly
+
+979
+00:31:09,640 --> 00:31:11,935
+inexpensive, because we want
+
+980
+00:31:11,935 --> 00:31:13,535
+customers to like it,
+
+981
+00:31:13,535 --> 00:31:14,995
+and then we want it to scale.
+
+982
+00:31:15,055 --> 00:31:16,595
+We don't wanna put barriers,
+
+983
+00:31:17,135 --> 00:31:18,575
+in between them and the sale,
+
+984
+00:31:18,575 --> 00:31:20,015
+and we don't wanna
+put barriers
+
+985
+00:31:20,015 --> 00:31:21,375
+on them scaling it.
+
+986
+00:31:21,375 --> 00:31:22,735
+Because what
+happens with every
+
+987
+00:31:22,735 --> 00:31:24,735
+one of our customers is they
+
+988
+00:31:24,735 --> 00:31:27,190
+tend to start small because
+
+989
+00:31:27,190 --> 00:31:28,150
+they're excited about it,
+
+990
+00:31:28,150 --> 00:31:29,530
+but they wanna start small,
+
+991
+00:31:29,590 --> 00:31:30,950
+start on a single
+use case that
+
+992
+00:31:30,950 --> 00:31:32,410
+maybe is a a hard problem,
+
+993
+00:31:32,710 --> 00:31:34,390
+and then they expand
+the abstraction
+
+994
+00:31:34,390 --> 00:31:35,910
+over more and
+more use cases to
+
+995
+00:31:35,910 --> 00:31:37,830
+generalize the and
+take advantage
+
+996
+00:31:37,830 --> 00:31:38,890
+of it as a platform.
+
+997
+00:31:39,350 --> 00:31:40,605
+And that's what we want.
+
+998
+00:31:40,685 --> 00:31:41,885
+We don't care if you start
+
+999
+00:31:41,885 --> 00:31:43,165
+literally using
+it for a single
+
+1000
+00:31:43,165 --> 00:31:44,525
+single application or single
+
+1001
+00:31:44,525 --> 00:31:46,205
+line of business or
+single use case.
+
+1002
+00:31:46,205 --> 00:31:48,065
+It won't cost much
+to start at all.
+
+1003
+00:31:48,285 --> 00:31:49,485
+We generally start giving
+
+1004
+00:31:49,485 --> 00:31:51,325
+customers with, some parties.
+
+1005
+00:31:51,325 --> 00:31:52,925
+We generally do
+pilots anyway.
+
+1006
+00:31:52,925 --> 00:31:54,465
+Those are generally
+at no charge.
+
+1007
+00:31:54,525 --> 00:31:55,980
+We host them. We make them
+
+1008
+00:31:55,980 --> 00:31:58,160
+available to serious
+interested parties.
+
+1009
+00:31:58,460 --> 00:32:01,980
+So, and all
+the objects that you
+
+1010
+00:32:01,980 --> 00:32:03,500
+create on top of
+enterprise web
+
+1011
+00:32:03,500 --> 00:32:05,820
+are yours. Think of us as just
+
+1012
+00:32:05,820 --> 00:32:07,120
+being the enabling
+technology.
+
+1013
+00:32:07,580 --> 00:32:09,340
+If you create objects
+in enterprise web,
+
+1014
+00:32:09,340 --> 00:32:10,400
+those are your objects.
+
+1015
+00:32:11,035 --> 00:32:12,475
+everything can be exported as
+
+1016
+00:32:12,475 --> 00:32:14,155
+RDF or XML or
+anything else that
+
+1017
+00:32:14,155 --> 00:32:15,375
+you want to be.
+
+1018
+00:32:16,395 --> 00:32:18,635
+so, we're not binding you.
+
+1019
+00:32:18,635 --> 00:32:19,775
+It's an open system.
+
+1020
+00:32:20,235 --> 00:32:21,375
+It's meant to enable.
+
+1021
+00:32:21,595 --> 00:32:23,135
+It's not meant to hinder.
+
+1022
+00:32:24,120 --> 00:32:25,560
+We really tried
+as the company's
+
+1023
+00:32:25,560 --> 00:32:26,440
+name is Enterprise Web,
+
+1024
+00:32:26,440 --> 00:32:28,200
+we've tried to
+align our interests
+
+1025
+00:32:28,200 --> 00:32:29,740
+with the enterprise
+interests.
+
+1026
+00:32:30,840 --> 00:32:32,200
+Thank you for that
+question, though.
+
+1027
+00:32:32,200 --> 00:32:32,760
+If there's time,
+
+1028
+00:32:32,760 --> 00:32:33,960
+I'd love to answer that hard
+
+1029
+00:32:33,960 --> 00:32:35,505
+question too because
+I I love it.
+
+1030
+00:32:35,505 --> 00:32:36,005
+It.
+

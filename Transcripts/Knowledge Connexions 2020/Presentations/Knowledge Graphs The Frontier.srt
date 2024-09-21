@@ -1,0 +1,5417 @@
+1
+00:00:03,840 --> 00:00:04,900
+So hi, everyone.
+
+2
+00:00:05,920 --> 00:00:07,540
+Good to see you virtually.
+
+3
+00:00:08,480 --> 00:00:10,340
+I hope everyone
+is staying safe,
+
+4
+00:00:10,720 --> 00:00:12,720
+and, we'll see how this goes.
+
+5
+00:00:12,720 --> 00:00:14,800
+I've never actually
+given a talk
+
+6
+00:00:14,800 --> 00:00:18,025
+on what I think
+the frontier is.
+
+7
+00:00:18,965 --> 00:00:20,885
+So I I'll speak
+for about fifteen
+
+8
+00:00:20,885 --> 00:00:22,005
+minutes, twenty minutes,
+
+9
+00:00:22,645 --> 00:00:23,925
+hopefully no more than that,
+
+10
+00:00:23,925 --> 00:00:25,625
+and then open up
+to questions.
+
+11
+00:00:27,685 --> 00:00:29,385
+Let me make sure
+I time myself.
+
+12
+00:00:30,550 --> 00:00:32,150
+And today's talk
+is going to be
+
+13
+00:00:32,150 --> 00:00:33,190
+very high level.
+
+14
+00:00:33,190 --> 00:00:35,290
+It's not a technical
+talk, although,
+
+15
+00:00:35,990 --> 00:00:37,450
+you know, if you
+want resources,
+
+16
+00:00:37,590 --> 00:00:39,450
+I'm happy to point
+you to that.
+
+17
+00:00:39,590 --> 00:00:41,190
+But today is
+really a very high
+
+18
+00:00:41,190 --> 00:00:43,530
+level talk. Everyone
+is welcome to,
+
+19
+00:00:45,195 --> 00:00:47,055
+hopefully, it's
+accessible to everyone.
+
+20
+00:00:47,755 --> 00:00:49,435
+Alright. So a little
+bit about me.
+
+21
+00:00:49,435 --> 00:00:51,995
+So I am a a professor at USC,
+
+22
+00:00:51,995 --> 00:00:53,695
+the University of
+Southern California.
+
+23
+00:00:54,795 --> 00:00:56,575
+But I think beyond USC,
+
+24
+00:00:56,715 --> 00:00:59,055
+what I like to say
+is my projects
+
+25
+00:00:59,115 --> 00:01:01,170
+define me. So I'm
+very proud of
+
+26
+00:01:01,170 --> 00:01:02,150
+all my projects,
+
+27
+00:01:02,610 --> 00:01:04,290
+everyone who works
+on my projects,
+
+28
+00:01:04,290 --> 00:01:05,830
+everyone I collaborate with,
+
+29
+00:01:07,570 --> 00:01:09,250
+all my students, all my,
+
+30
+00:01:09,570 --> 00:01:11,490
+partners in all of
+these projects,
+
+31
+00:01:11,490 --> 00:01:13,510
+they're all multi
+partner projects.
+
+32
+00:01:14,445 --> 00:01:16,065
+And here are just
+six of them.
+
+33
+00:01:16,845 --> 00:01:18,945
+Almost all involve
+knowledge graphs,
+
+34
+00:01:19,085 --> 00:01:20,945
+some a little bit, unusually,
+
+35
+00:01:21,805 --> 00:01:23,565
+and not in a very
+traditional way.
+
+36
+00:01:23,565 --> 00:01:25,025
+Others are much
+more traditional.
+
+37
+00:01:25,645 --> 00:01:28,360
+So, there's ecommerce where we
+
+38
+00:01:28,360 --> 00:01:31,180
+work a lot with, with
+industry partners.
+
+39
+00:01:32,120 --> 00:01:33,800
+I'll say a little
+bit about that,
+
+40
+00:01:33,800 --> 00:01:35,420
+but, not too much.
+
+41
+00:01:36,520 --> 00:01:38,840
+There are, AI for social good
+
+42
+00:01:38,840 --> 00:01:40,600
+projects that I'm
+very involved in.
+
+43
+00:01:40,600 --> 00:01:42,435
+Human trafficking
+is a big one,
+
+44
+00:01:42,835 --> 00:01:44,535
+but also crisis response.
+
+45
+00:01:47,235 --> 00:01:49,315
+AI networks and society is one
+
+46
+00:01:49,315 --> 00:01:51,395
+where knowledge
+graphs are less
+
+47
+00:01:51,395 --> 00:01:52,435
+traditionally used.
+
+48
+00:01:52,675 --> 00:01:54,115
+It starts intersecting with
+
+49
+00:01:54,115 --> 00:01:55,395
+network signs, actually,
+
+50
+00:01:55,395 --> 00:01:57,350
+and that's that's
+a very interesting
+
+51
+00:01:57,350 --> 00:01:59,610
+way to, think about
+knowledge graphs.
+
+52
+00:01:59,750 --> 00:02:01,430
+And then, some of
+the others are
+
+53
+00:02:01,430 --> 00:02:02,950
+more moonshot projects that I
+
+54
+00:02:02,950 --> 00:02:06,630
+think are really,
+sort of, relevant to,
+
+55
+00:02:07,430 --> 00:02:08,250
+to the frontier.
+
+56
+00:02:08,470 --> 00:02:09,910
+So the common sense reasoning
+
+57
+00:02:09,910 --> 00:02:11,835
+is one project
+where we're trying
+
+58
+00:02:11,835 --> 00:02:14,155
+to get AI to actually
+have common sense,
+
+59
+00:02:14,155 --> 00:02:15,615
+which is a very hard problem,
+
+60
+00:02:16,475 --> 00:02:18,655
+and is very related
+to the frontier
+
+61
+00:02:18,875 --> 00:02:21,515
+that, that we hope knowledge
+
+62
+00:02:21,515 --> 00:02:23,215
+graphs can conquer
+eventually.
+
+63
+00:02:24,390 --> 00:02:26,710
+So let's get started with just
+
+64
+00:02:26,710 --> 00:02:27,990
+what is a knowledge graph.
+
+65
+00:02:27,990 --> 00:02:29,830
+Now, you know, this may seem
+
+66
+00:02:29,830 --> 00:02:30,950
+redundant because,
+
+67
+00:02:31,190 --> 00:02:32,630
+you're in a conference that is
+
+68
+00:02:32,630 --> 00:02:34,330
+named after knowledge graphs,
+
+69
+00:02:34,950 --> 00:02:36,470
+and I I believe we are now in
+
+70
+00:02:36,470 --> 00:02:37,850
+the third day of
+the conference.
+
+71
+00:02:38,070 --> 00:02:40,095
+So, you know, you
+must have seen
+
+72
+00:02:40,095 --> 00:02:41,795
+a lot on knowledge graphs.
+
+73
+00:02:42,095 --> 00:02:44,115
+But I I like to give
+two definitions,
+
+74
+00:02:44,415 --> 00:02:45,535
+you know, just so we are on
+
+75
+00:02:45,535 --> 00:02:46,435
+the same page.
+
+76
+00:02:47,055 --> 00:02:49,935
+Now one definition is the more
+
+77
+00:02:49,935 --> 00:02:51,075
+intuitive one,
+
+78
+00:02:51,215 --> 00:02:53,715
+which is that
+a knowledge graph is,
+
+79
+00:02:55,660 --> 00:02:57,600
+a set of entities, relations,
+
+80
+00:02:57,660 --> 00:02:59,980
+and attributes, you know,
+
+81
+00:02:59,980 --> 00:03:01,660
+that are linked together in in
+
+82
+00:03:01,660 --> 00:03:03,180
+the way that you see over here
+
+83
+00:03:03,180 --> 00:03:07,545
+represented as
+a graph, You know,
+
+84
+00:03:07,545 --> 00:03:08,905
+but but the key thing is what
+
+85
+00:03:08,905 --> 00:03:09,625
+is in the graph.
+
+86
+00:03:09,625 --> 00:03:11,085
+So it's entities, relations,
+
+87
+00:03:11,145 --> 00:03:11,885
+and attributes.
+
+88
+00:03:11,945 --> 00:03:14,045
+Entities like Bob
+Dylan and Steve Jobs,
+
+89
+00:03:14,825 --> 00:03:17,725
+relations like, lives
+in, was born in,
+
+90
+00:03:17,945 --> 00:03:21,005
+and attributes like,
+Robert, the man,
+
+91
+00:03:21,145 --> 00:03:22,680
+you know, the the,
+
+92
+00:03:23,700 --> 00:03:25,620
+what we would
+call the semantic
+
+93
+00:03:25,620 --> 00:03:27,400
+web community as literals.
+
+94
+00:03:28,980 --> 00:03:31,060
+So, you know, it
+can contain a lot
+
+95
+00:03:31,060 --> 00:03:31,780
+more than that,
+
+96
+00:03:31,780 --> 00:03:33,780
+but but these are
+usually the the
+
+97
+00:03:33,780 --> 00:03:35,460
+things that most
+knowledge graphs
+
+98
+00:03:35,460 --> 00:03:37,645
+contain. Now there is a second
+
+99
+00:03:37,645 --> 00:03:39,825
+definition that is
+much more technical,
+
+100
+00:03:40,285 --> 00:03:41,885
+and it's one that you may not
+
+101
+00:03:41,885 --> 00:03:42,925
+have heard before.
+
+102
+00:03:42,925 --> 00:03:44,945
+So I want to make sure
+I give it to you,
+
+103
+00:03:45,085 --> 00:03:47,505
+which is that
+a knowledge graph is,
+
+104
+00:03:48,605 --> 00:03:52,640
+a directed labeled
+multiracial graph,
+
+105
+00:03:54,460 --> 00:03:58,220
+with semantics. So
+I'll repeat that.
+
+106
+00:03:58,220 --> 00:04:00,140
+A knowledge graph
+is a directed
+
+107
+00:04:00,300 --> 00:04:03,200
+you can see their
+directions labeled.
+
+108
+00:04:03,340 --> 00:04:04,940
+There are labels
+on pretty much
+
+109
+00:04:04,940 --> 00:04:08,825
+everything,
+multiracial because
+
+110
+00:04:08,825 --> 00:04:12,605
+there are the edge
+labels are usually,
+
+111
+00:04:13,225 --> 00:04:14,345
+there's more than one.
+
+112
+00:04:14,345 --> 00:04:15,705
+In fact, there's usually more
+
+113
+00:04:15,705 --> 00:04:17,165
+than five or ten even.
+
+114
+00:04:18,265 --> 00:04:19,170
+So in that sense,
+
+115
+00:04:19,170 --> 00:04:20,610
+it's very different
+from a social
+
+116
+00:04:20,610 --> 00:04:21,890
+network where you
+just have one
+
+117
+00:04:21,890 --> 00:04:24,070
+or two relations,
+like friends or,
+
+118
+00:04:24,450 --> 00:04:25,810
+you know, LinkedIn connection
+
+119
+00:04:25,810 --> 00:04:26,690
+or whatever it is.
+
+120
+00:04:26,690 --> 00:04:27,970
+But there's only one or two
+
+121
+00:04:27,970 --> 00:04:29,990
+relations in most
+social networks.
+
+122
+00:04:30,290 --> 00:04:31,730
+In a knowledge graph,
+you have many,
+
+123
+00:04:31,730 --> 00:04:33,110
+many relations usually.
+
+124
+00:04:33,835 --> 00:04:34,975
+And it's what semantics.
+
+125
+00:04:35,115 --> 00:04:36,655
+The labels can't
+be arbitrary.
+
+126
+00:04:36,795 --> 00:04:38,955
+They're not, things that don't
+
+127
+00:04:38,955 --> 00:04:41,055
+make sense, but
+there is something
+
+128
+00:04:41,195 --> 00:04:42,475
+in the knowledge graph,
+
+129
+00:04:42,475 --> 00:04:43,675
+and that's the knowledge in
+
+130
+00:04:43,675 --> 00:04:45,915
+the knowledge graph that makes
+
+131
+00:04:45,915 --> 00:04:49,610
+it amenable to, some
+model of semantics.
+
+132
+00:04:49,910 --> 00:04:51,350
+And I'll say
+a little bit about
+
+133
+00:04:51,350 --> 00:04:52,630
+what we mean by semantics.
+
+134
+00:04:52,630 --> 00:04:54,410
+It's a complicated issue,
+
+135
+00:04:54,550 --> 00:04:56,170
+the the notion of semantics.
+
+136
+00:04:56,630 --> 00:04:57,850
+So that's the definition.
+
+137
+00:04:57,990 --> 00:04:58,810
+Two definitions.
+
+138
+00:04:59,510 --> 00:05:01,690
+One, intuitive, one,
+more technical.
+
+139
+00:05:02,925 --> 00:05:04,605
+I prefer the intuitive one,
+
+140
+00:05:04,605 --> 00:05:06,205
+but you're free to go
+with the technical
+
+141
+00:05:06,205 --> 00:05:09,265
+one as well. Now
+why use KG's?
+
+142
+00:05:10,765 --> 00:05:13,325
+I I like to to
+give a very simple
+
+143
+00:05:13,325 --> 00:05:14,445
+answer to this question.
+
+144
+00:05:14,445 --> 00:05:16,225
+I think there are
+people who are,
+
+145
+00:05:16,650 --> 00:05:18,410
+who give very
+complicated answers
+
+146
+00:05:18,410 --> 00:05:20,010
+to this question where we try
+
+147
+00:05:20,010 --> 00:05:21,450
+to find I I think
+they are trying
+
+148
+00:05:21,450 --> 00:05:22,490
+to answer the question,
+
+149
+00:05:22,490 --> 00:05:24,510
+what are the applications
+of KG's?
+
+150
+00:05:24,890 --> 00:05:26,590
+I think that is
+a different question.
+
+151
+00:05:27,770 --> 00:05:29,370
+The question I want to address
+
+152
+00:05:29,370 --> 00:05:31,275
+is why do we have knowledge
+
+153
+00:05:31,275 --> 00:05:32,815
+graphs to begin with?
+
+154
+00:05:33,675 --> 00:05:35,995
+And it's in order
+to answer that,
+
+155
+00:05:35,995 --> 00:05:37,595
+we should first see what if we
+
+156
+00:05:37,595 --> 00:05:39,995
+didn't have knowledge
+graphs. Right?
+
+157
+00:05:39,995 --> 00:05:41,295
+So what else is there?
+
+158
+00:05:41,435 --> 00:05:43,515
+And there's a broad
+spectrum of things,
+
+159
+00:05:43,515 --> 00:05:45,195
+you know, so I I
+I'm only showing
+
+160
+00:05:45,195 --> 00:05:45,935
+two extremes.
+
+161
+00:05:46,470 --> 00:05:47,830
+One of the extremes is,
+
+162
+00:05:48,550 --> 00:05:49,670
+natural language. Right?
+
+163
+00:05:49,670 --> 00:05:50,790
+So this is something that is
+
+164
+00:05:50,790 --> 00:05:51,930
+very good for humans.
+
+165
+00:05:52,470 --> 00:05:54,150
+So human readability is very
+
+166
+00:05:54,150 --> 00:05:56,150
+high for this
+where, you know,
+
+167
+00:05:56,150 --> 00:05:57,030
+you just read it.
+
+168
+00:05:57,030 --> 00:05:59,515
+You know, you don't
+need, you know,
+
+169
+00:05:59,515 --> 00:06:01,035
+most people can
+read and write.
+
+170
+00:06:01,035 --> 00:06:02,475
+Right? So you can
+just read this
+
+171
+00:06:02,475 --> 00:06:03,995
+and it may it makes
+sense to you.
+
+172
+00:06:03,995 --> 00:06:05,375
+You don't have to think about
+
+173
+00:06:05,435 --> 00:06:06,795
+the meaning of every word.
+
+174
+00:06:06,795 --> 00:06:08,395
+You don't have to
+parse the grammar.
+
+175
+00:06:08,395 --> 00:06:10,095
+It's just happening
+very naturally
+
+176
+00:06:10,235 --> 00:06:11,850
+in your brain, you know,
+
+177
+00:06:11,850 --> 00:06:13,070
+something we don't appreciate
+
+178
+00:06:13,130 --> 00:06:14,890
+often enough. But there's no
+
+179
+00:06:14,890 --> 00:06:17,070
+other animal in
+the animal kingdom
+
+180
+00:06:17,370 --> 00:06:19,390
+that can do it, and we can.
+
+181
+00:06:19,770 --> 00:06:21,950
+So, you know, there's
+human readability.
+
+182
+00:06:22,490 --> 00:06:23,950
+So this is natural language.
+
+183
+00:06:24,375 --> 00:06:25,735
+And then on the left
+hand side,
+
+184
+00:06:25,735 --> 00:06:27,355
+you have this kind
+of very highly
+
+185
+00:06:27,415 --> 00:06:29,255
+structured dataset, you know,
+
+186
+00:06:29,255 --> 00:06:31,015
+with a very formal
+schema, you know,
+
+187
+00:06:31,015 --> 00:06:32,135
+whether that's a relational
+
+188
+00:06:32,135 --> 00:06:34,215
+database model or
+some other schema,
+
+189
+00:06:34,215 --> 00:06:35,975
+but there's usually
+a very formal
+
+190
+00:06:35,975 --> 00:06:38,235
+schema where everything
+is prescribed.
+
+191
+00:06:38,740 --> 00:06:40,420
+You know? So the usually,
+
+192
+00:06:40,420 --> 00:06:41,300
+these are tables,
+
+193
+00:06:41,300 --> 00:06:42,740
+and these things
+you see in here,
+
+194
+00:06:42,740 --> 00:06:43,720
+it's very small.
+
+195
+00:06:43,940 --> 00:06:46,580
+But this is
+a a company, model.
+
+196
+00:06:46,580 --> 00:06:48,600
+So you have a category,
+suppliers,
+
+197
+00:06:49,140 --> 00:06:50,440
+order details, customers,
+
+198
+00:06:50,675 --> 00:06:52,275
+and you have things
+like product ID,
+
+199
+00:06:52,275 --> 00:06:54,195
+product name, category ID.
+
+200
+00:06:54,195 --> 00:06:55,235
+So there's a lot of,
+
+201
+00:06:55,875 --> 00:06:57,955
+very formal semantics
+on the left
+
+202
+00:06:57,955 --> 00:06:59,795
+hand side, whereas
+on the right
+
+203
+00:06:59,795 --> 00:07:01,815
+hand side, you
+have very informal
+
+204
+00:07:01,955 --> 00:07:03,715
+semantics. It's
+not really clear
+
+205
+00:07:03,715 --> 00:07:05,175
+what the semantics are.
+
+206
+00:07:05,740 --> 00:07:07,340
+How do we understand why we
+
+207
+00:07:07,340 --> 00:07:08,800
+understand this
+kind of document?
+
+208
+00:07:09,100 --> 00:07:10,300
+It's it's actually a very
+
+209
+00:07:10,300 --> 00:07:12,400
+complicated problem,
+believe it or not.
+
+210
+00:07:12,620 --> 00:07:13,980
+Philosophers have
+grappled with
+
+211
+00:07:13,980 --> 00:07:15,040
+it over the centuries.
+
+212
+00:07:16,220 --> 00:07:17,740
+You know, cognitive scientists
+
+213
+00:07:17,740 --> 00:07:19,340
+are there's an entire field in
+
+214
+00:07:19,340 --> 00:07:20,800
+cognitive science
+and psychology
+
+215
+00:07:21,395 --> 00:07:22,455
+that looks at language,
+
+216
+00:07:22,515 --> 00:07:24,515
+that why do we why are we able
+
+217
+00:07:24,515 --> 00:07:26,035
+to understand
+language and work
+
+218
+00:07:26,035 --> 00:07:27,975
+with language in
+the way that we do?
+
+219
+00:07:28,595 --> 00:07:30,355
+Now knowledge graphs actually
+
+220
+00:07:30,355 --> 00:07:31,415
+fall in the middle,
+
+221
+00:07:31,555 --> 00:07:32,835
+and I think that's what makes
+
+222
+00:07:32,835 --> 00:07:33,895
+them very attractive.
+
+223
+00:07:34,470 --> 00:07:35,590
+Because on the one hand,
+
+224
+00:07:35,590 --> 00:07:36,630
+we don't need the kind of
+
+225
+00:07:36,630 --> 00:07:37,910
+structure that we
+have on the left
+
+226
+00:07:37,910 --> 00:07:39,510
+hand side. So we can have very
+
+227
+00:07:39,510 --> 00:07:41,430
+semi structured kind of data,
+
+228
+00:07:41,430 --> 00:07:42,410
+which is incomplete.
+
+229
+00:07:42,470 --> 00:07:43,590
+You know, there
+are some things
+
+230
+00:07:43,590 --> 00:07:44,630
+are defined, the other things
+
+231
+00:07:44,630 --> 00:07:45,530
+are not defined.
+
+232
+00:07:45,830 --> 00:07:47,190
+But at the same time,
+
+233
+00:07:47,190 --> 00:07:49,455
+there is something
+about the knowledge
+
+234
+00:07:49,455 --> 00:07:50,835
+graph that is very natural.
+
+235
+00:07:51,215 --> 00:07:52,415
+Like, when you look at this
+
+236
+00:07:52,415 --> 00:07:54,035
+knowledge graph,
+right, it's kind of,
+
+237
+00:07:54,575 --> 00:07:55,935
+again, you don't have to think
+
+238
+00:07:55,935 --> 00:07:57,455
+about it as much as you would
+
+239
+00:07:57,455 --> 00:07:58,435
+for this table.
+
+240
+00:07:58,735 --> 00:08:00,735
+So Bob Dylan created a song,
+
+241
+00:08:00,735 --> 00:08:02,495
+and Bob Dylan was
+born in the US.
+
+242
+00:08:02,495 --> 00:08:03,870
+And, you know,
+these are fairly
+
+243
+00:08:03,870 --> 00:08:06,030
+intuitive facts
+that you see in
+
+244
+00:08:06,030 --> 00:08:07,010
+the knowledge graph.
+
+245
+00:08:07,390 --> 00:08:09,470
+So I like to think
+that the the
+
+246
+00:08:09,470 --> 00:08:10,830
+ideal knowledge graph tries to
+
+247
+00:08:10,830 --> 00:08:12,370
+capture the best
+of both worlds.
+
+248
+00:08:12,670 --> 00:08:14,670
+And this also leads us to why
+
+249
+00:08:14,670 --> 00:08:16,190
+the frontier
+problem is there,
+
+250
+00:08:16,190 --> 00:08:17,825
+what makes a knowledge graph
+
+251
+00:08:17,825 --> 00:08:19,345
+challenging, and what
+are the frontier
+
+252
+00:08:19,345 --> 00:08:21,665
+problems in trying to achieve
+
+253
+00:08:21,665 --> 00:08:24,165
+the perfect balance
+between these two.
+
+254
+00:08:25,345 --> 00:08:27,285
+Alright. So have you
+seen it before?
+
+255
+00:08:27,345 --> 00:08:28,785
+I think you have, you know,
+
+256
+00:08:28,785 --> 00:08:30,085
+probably many times.
+
+257
+00:08:30,450 --> 00:08:31,990
+But, again, just
+to be complete,
+
+258
+00:08:33,170 --> 00:08:34,610
+you know, I'm
+sure everyone has
+
+259
+00:08:34,610 --> 00:08:36,290
+seen it because you must have
+
+260
+00:08:36,290 --> 00:08:37,890
+typed something in Google that
+
+261
+00:08:37,890 --> 00:08:39,430
+brings out something
+like this.
+
+262
+00:08:39,570 --> 00:08:41,330
+Right? And all of these things
+
+263
+00:08:41,330 --> 00:08:42,710
+that you see over here,
+
+264
+00:08:42,845 --> 00:08:44,285
+so this thing on
+the right hand
+
+265
+00:08:44,285 --> 00:08:45,665
+side is a knowledge panel.
+
+266
+00:08:46,045 --> 00:08:47,485
+It comes from
+the Google knowledge
+
+267
+00:08:47,485 --> 00:08:50,285
+graph. The thing on the top
+
+268
+00:08:50,285 --> 00:08:52,045
+where you see the the actual
+
+269
+00:08:52,045 --> 00:08:53,325
+things to do in San Jose,
+
+270
+00:08:53,325 --> 00:08:54,305
+which is a query,
+
+271
+00:08:55,340 --> 00:08:57,180
+is also coming from
+the knowledge graph,
+
+272
+00:08:57,180 --> 00:08:59,100
+but it's linked to
+multimodal data.
+
+273
+00:08:59,100 --> 00:09:00,320
+Right? So there are images.
+
+274
+00:09:01,660 --> 00:09:02,700
+There's the map, right,
+
+275
+00:09:02,700 --> 00:09:03,760
+which is also multimodal.
+
+276
+00:09:04,460 --> 00:09:06,380
+You have other
+things that people
+
+277
+00:09:06,380 --> 00:09:07,100
+have searched for.
+
+278
+00:09:07,100 --> 00:09:08,220
+You have things
+which have been
+
+279
+00:09:08,220 --> 00:09:09,200
+derived from Wikipedia.
+
+280
+00:09:09,755 --> 00:09:11,195
+You have things
+that are coming
+
+281
+00:09:11,195 --> 00:09:12,955
+from third party
+providers, right,
+
+282
+00:09:12,955 --> 00:09:14,555
+the hotel rates and so on.
+
+283
+00:09:14,555 --> 00:09:15,675
+So that there's a,
+
+284
+00:09:16,155 --> 00:09:17,375
+there's a lot of complicated
+
+285
+00:09:17,595 --> 00:09:19,195
+things happening when you type
+
+286
+00:09:19,195 --> 00:09:21,115
+in the query,
+but we should not
+
+287
+00:09:21,115 --> 00:09:22,315
+lose track of the one thing
+
+288
+00:09:22,315 --> 00:09:23,915
+which is which
+makes all of this
+
+289
+00:09:23,915 --> 00:09:25,920
+possible, which is that,
+
+290
+00:09:26,240 --> 00:09:28,160
+Google and the companies that
+
+291
+00:09:28,160 --> 00:09:29,600
+use knowledge graphs for these
+
+292
+00:09:29,600 --> 00:09:31,780
+kinds of problems
+have recognized
+
+293
+00:09:32,480 --> 00:09:35,680
+that San Jose is
+a is an entity.
+
+294
+00:09:35,680 --> 00:09:36,960
+It is it it's a thing.
+
+295
+00:09:36,960 --> 00:09:38,720
+It's not just a set
+of characters.
+
+296
+00:09:38,720 --> 00:09:39,765
+It's not just a string,
+
+297
+00:09:39,765 --> 00:09:41,365
+which is what it
+used to be once
+
+298
+00:09:41,365 --> 00:09:43,605
+upon a time, but it's
+actually a thing.
+
+299
+00:09:43,605 --> 00:09:45,605
+Google can recognize that San
+
+300
+00:09:45,605 --> 00:09:47,545
+Jose corresponds
+to an entity,
+
+301
+00:09:48,725 --> 00:09:49,605
+in the real world,
+
+302
+00:09:49,605 --> 00:09:51,145
+which is in its
+knowledge graph.
+
+303
+00:09:52,310 --> 00:09:53,830
+But it goes much further.
+
+304
+00:09:53,830 --> 00:09:55,510
+What you can also see is that
+
+305
+00:09:55,510 --> 00:09:59,430
+the free spaces to
+visit is a class
+
+306
+00:09:59,430 --> 00:10:01,830
+of things. That also it's able
+
+307
+00:10:01,830 --> 00:10:03,430
+to recognize that this doesn't
+
+308
+00:10:03,430 --> 00:10:04,890
+correspond to one thing,
+
+309
+00:10:05,105 --> 00:10:06,465
+but this is the query.
+
+310
+00:10:06,465 --> 00:10:07,825
+So there's a class of things,
+
+311
+00:10:07,825 --> 00:10:09,525
+which is the places to visit,
+
+312
+00:10:09,985 --> 00:10:12,385
+and it's the it's
+qualified by San Jose.
+
+313
+00:10:12,385 --> 00:10:13,845
+It's linked by San Jose.
+
+314
+00:10:14,065 --> 00:10:15,105
+But, you know, that's really
+
+315
+00:10:15,105 --> 00:10:16,385
+what the user is asking for.
+
+316
+00:10:16,385 --> 00:10:18,965
+The user is asking
+for a set of things,
+
+317
+00:10:19,105 --> 00:10:21,060
+and it's qualified by
+this other thing,
+
+318
+00:10:21,060 --> 00:10:22,280
+which is San Jose.
+
+319
+00:10:22,500 --> 00:10:24,600
+So it's actually
+quite sophisticated,
+
+320
+00:10:24,900 --> 00:10:26,340
+you know, the way
+that it arrives
+
+321
+00:10:26,340 --> 00:10:27,480
+at something like this.
+
+322
+00:10:28,500 --> 00:10:31,940
+And beyond Google,
+there are, you know,
+
+323
+00:10:31,940 --> 00:10:33,620
+enormous use cases today.
+
+324
+00:10:33,620 --> 00:10:35,400
+So this this is sort
+of the application,
+
+325
+00:10:36,535 --> 00:10:37,095
+slide, you know,
+
+326
+00:10:37,095 --> 00:10:38,215
+that who's using the knowledge
+
+327
+00:10:38,215 --> 00:10:39,255
+gaps and why. Again,
+
+328
+00:10:39,255 --> 00:10:40,695
+I'm sure you are very familiar
+
+329
+00:10:40,695 --> 00:10:42,295
+with this, but I I do want to
+
+330
+00:10:42,295 --> 00:10:44,055
+actually see what
+what is going
+
+331
+00:10:44,055 --> 00:10:45,495
+on right now so that we can
+
+332
+00:10:45,495 --> 00:10:47,595
+think about the future,
+the frontier.
+
+333
+00:10:48,050 --> 00:10:49,110
+So in a nonprofit,
+
+334
+00:10:49,250 --> 00:10:51,190
+you have the Wikidata,
+which is,
+
+335
+00:10:52,290 --> 00:10:54,210
+kind of like almost
+like an open
+
+336
+00:10:54,210 --> 00:10:55,490
+source Google
+knowledge graph,
+
+337
+00:10:55,490 --> 00:10:57,090
+although there's
+there's not a direct
+
+338
+00:10:57,090 --> 00:10:58,290
+connection between them.
+
+339
+00:10:58,290 --> 00:10:59,970
+But if you ever
+needed something
+
+340
+00:10:59,970 --> 00:11:01,590
+that looked like
+an open source
+
+341
+00:11:01,885 --> 00:11:02,845
+Google knowledge graph,
+
+342
+00:11:02,845 --> 00:11:04,605
+then this is
+the closest, I think,
+
+343
+00:11:04,605 --> 00:11:05,645
+that would come to it.
+
+344
+00:11:05,645 --> 00:11:07,265
+It's a very big crowdsource
+
+345
+00:11:07,485 --> 00:11:08,945
+knowledge graph that contains
+
+346
+00:11:09,565 --> 00:11:10,845
+a lot of different things that
+
+347
+00:11:10,845 --> 00:11:11,825
+links to Wikipedia,
+
+348
+00:11:12,045 --> 00:11:13,245
+to other knowledge graphs.
+
+349
+00:11:13,245 --> 00:11:14,845
+This is an amazing dataset and
+
+350
+00:11:14,845 --> 00:11:17,290
+it's growing. You know,
+
+351
+00:11:17,290 --> 00:11:18,970
+Microsoft bought LinkedIn and
+
+352
+00:11:18,970 --> 00:11:20,730
+both of them were
+had knowledge
+
+353
+00:11:20,730 --> 00:11:22,170
+graphs or knowledge graph like
+
+354
+00:11:22,170 --> 00:11:23,950
+technology even before
+the acquisition.
+
+355
+00:11:24,490 --> 00:11:25,930
+But certainly, there is,
+
+356
+00:11:26,490 --> 00:11:27,930
+they are very active in in
+
+357
+00:11:27,930 --> 00:11:30,355
+knowledge graphs
+today, as well,
+
+358
+00:11:30,355 --> 00:11:31,635
+especially the the LinkedIn
+
+359
+00:11:31,635 --> 00:11:33,175
+graph is is quite
+sophisticated.
+
+360
+00:11:33,795 --> 00:11:35,875
+It's not like a normal
+social network.
+
+361
+00:11:35,875 --> 00:11:38,055
+Right? It has lots of
+things in it now.
+
+362
+00:11:38,115 --> 00:11:40,595
+Again, skills,
+your connections
+
+363
+00:11:40,595 --> 00:11:42,510
+on LinkedIn, the groups
+you belong to.
+
+364
+00:11:42,590 --> 00:11:44,110
+In general, social media has
+
+365
+00:11:44,110 --> 00:11:46,270
+become very
+sophisticated, and,
+
+366
+00:11:46,830 --> 00:11:48,510
+all the big social
+media companies
+
+367
+00:11:48,510 --> 00:11:49,630
+have something that looks like
+
+368
+00:11:49,630 --> 00:11:51,650
+a knowledge graph
+under the hood.
+
+369
+00:11:52,030 --> 00:11:53,710
+Amazon has been very actively
+
+370
+00:11:53,710 --> 00:11:55,230
+promoting the product
+graph, you know,
+
+371
+00:11:55,230 --> 00:11:56,130
+in many conferences.
+
+372
+00:11:56,350 --> 00:11:57,815
+I think this is
+an amazing thing
+
+373
+00:11:57,815 --> 00:11:59,735
+for ecommerce. It has really
+
+374
+00:11:59,735 --> 00:12:01,415
+made other people in ecommerce
+
+375
+00:12:01,415 --> 00:12:02,555
+sit up and take notice,
+
+376
+00:12:02,855 --> 00:12:04,315
+which I think is very good.
+
+377
+00:12:04,615 --> 00:12:06,135
+And the team is extremely well
+
+378
+00:12:06,135 --> 00:12:07,835
+qualified, very well
+known researchers.
+
+379
+00:12:07,895 --> 00:12:10,410
+They they have done
+really amazing work.
+
+380
+00:12:11,270 --> 00:12:12,470
+Some of the researchers had
+
+381
+00:12:12,470 --> 00:12:13,690
+worked in Google before.
+
+382
+00:12:13,910 --> 00:12:15,510
+So, you know, there's a lot of
+
+383
+00:12:15,510 --> 00:12:16,870
+cross cutting innovation that
+
+384
+00:12:16,870 --> 00:12:18,150
+has happened over the years.
+
+385
+00:12:18,150 --> 00:12:19,590
+And even Uber, I mean,
+
+386
+00:12:19,590 --> 00:12:21,670
+this is a snippet
+that I saw in
+
+387
+00:12:21,670 --> 00:12:22,650
+one of the presentations.
+
+388
+00:12:22,790 --> 00:12:24,635
+I haven't seen too much on it
+
+389
+00:12:24,635 --> 00:12:26,255
+except that it exists.
+
+390
+00:12:26,475 --> 00:12:27,995
+So we'll have to wait and see
+
+391
+00:12:27,995 --> 00:12:30,075
+to see what happens
+and how it uses it.
+
+392
+00:12:30,075 --> 00:12:32,075
+But I I was very encouraged to
+
+393
+00:12:32,075 --> 00:12:34,015
+actually see that
+even Google and,
+
+394
+00:12:34,715 --> 00:12:35,915
+you know, companies that you
+
+395
+00:12:35,915 --> 00:12:38,235
+wouldn't associate
+very strongly with,
+
+396
+00:12:38,235 --> 00:12:41,140
+like, web data or,
+you know, a very,
+
+397
+00:12:41,700 --> 00:12:43,380
+heterogeneous
+data such as what
+
+398
+00:12:43,380 --> 00:12:45,320
+Amazon and LinkedIn
+and Wikidata
+
+399
+00:12:45,460 --> 00:12:47,220
+and Google and all
+these company now.
+
+400
+00:12:47,220 --> 00:12:48,260
+Even they are investing in
+
+401
+00:12:48,260 --> 00:12:48,820
+knowledge graphs.
+
+402
+00:12:48,820 --> 00:12:49,300
+And, of course,
+
+403
+00:12:49,300 --> 00:12:50,660
+there are other health
+care companies.
+
+404
+00:12:50,660 --> 00:12:51,940
+There are other companies.
+
+405
+00:12:51,940 --> 00:12:52,980
+They are all trying to invest
+
+406
+00:12:52,980 --> 00:12:54,435
+in knowledge
+graphs right now.
+
+407
+00:12:54,995 --> 00:12:57,095
+So it's a golden
+era, I think.
+
+408
+00:12:58,355 --> 00:13:00,355
+Alright. So now
+now I I want to
+
+409
+00:13:00,355 --> 00:13:01,735
+start getting
+into the frontier
+
+410
+00:13:01,795 --> 00:13:03,175
+now that we have
+that background
+
+411
+00:13:03,395 --> 00:13:05,475
+in place. And what I'm showing
+
+412
+00:13:05,475 --> 00:13:07,140
+you here is is some of you are
+
+413
+00:13:07,220 --> 00:13:08,340
+probably recognize it.
+
+414
+00:13:08,340 --> 00:13:09,700
+You know, some others may not
+
+415
+00:13:09,700 --> 00:13:10,820
+have seen it, although you've
+
+416
+00:13:10,820 --> 00:13:11,960
+likely heard of it,
+
+417
+00:13:12,100 --> 00:13:17,140
+which is the Gartner's,
+you know,
+
+418
+00:13:17,140 --> 00:13:19,000
+curve for emerging
+technology.
+
+419
+00:13:19,060 --> 00:13:21,480
+So so Gartner
+publishes this for,
+
+420
+00:13:22,195 --> 00:13:23,155
+several different things.
+
+421
+00:13:23,155 --> 00:13:24,435
+There's emerging
+technologies.
+
+422
+00:13:24,435 --> 00:13:25,395
+I believe there's one for
+
+423
+00:13:25,395 --> 00:13:26,355
+strategic technology,
+
+424
+00:13:26,355 --> 00:13:27,315
+something like that.
+
+425
+00:13:27,315 --> 00:13:29,015
+This one is for
+emerging technologies.
+
+426
+00:13:29,315 --> 00:13:31,175
+So to specifically look at,
+
+427
+00:13:31,635 --> 00:13:33,315
+technologies that
+are more cutting
+
+428
+00:13:33,315 --> 00:13:35,240
+edge than others.
+
+429
+00:13:35,700 --> 00:13:37,780
+And as, you know,
+
+430
+00:13:37,780 --> 00:13:39,880
+not very long ago in
+twenty eighteen,
+
+431
+00:13:40,180 --> 00:13:42,020
+we we saw knowledge
+graphs enter
+
+432
+00:13:42,020 --> 00:13:42,920
+into the picture.
+
+433
+00:13:43,220 --> 00:13:44,500
+I think before then,
+
+434
+00:13:44,500 --> 00:13:45,860
+I don't recall seeing it.
+
+435
+00:13:45,860 --> 00:13:46,740
+Maybe it did show up,
+
+436
+00:13:46,740 --> 00:13:48,180
+but I certainly do not recall
+
+437
+00:13:48,180 --> 00:13:49,220
+the phrase knowledge graphs
+
+438
+00:13:49,220 --> 00:13:50,915
+showing up before
+twenty eighteen.
+
+439
+00:13:51,775 --> 00:13:53,375
+But if it did,
+then I'm sure it
+
+440
+00:13:53,375 --> 00:13:55,055
+must have been in this
+early phase also.
+
+441
+00:13:55,055 --> 00:13:56,895
+So according to Gartner,
+
+442
+00:13:56,895 --> 00:13:57,855
+in twenty eighteen,
+
+443
+00:13:57,855 --> 00:14:00,175
+knowledge graphs
+was, you know,
+
+444
+00:14:00,175 --> 00:14:01,375
+on the innovation trigger.
+
+445
+00:14:01,375 --> 00:14:03,055
+It was, I hadn't
+even approached
+
+446
+00:14:03,055 --> 00:14:05,395
+the peak of inflated
+expectations yet,
+
+447
+00:14:06,420 --> 00:14:08,360
+which is in itself
+interesting because,
+
+448
+00:14:08,900 --> 00:14:10,500
+the Google knowledge
+graph was,
+
+449
+00:14:10,500 --> 00:14:12,520
+you know, first, publicized,
+
+450
+00:14:13,140 --> 00:14:14,280
+in twenty eleven.
+
+451
+00:14:14,420 --> 00:14:15,940
+So this was seven years after
+
+452
+00:14:15,940 --> 00:14:17,240
+the Google knowledge graph.
+
+453
+00:14:18,265 --> 00:14:19,785
+And, you know, it's still kind
+
+454
+00:14:19,785 --> 00:14:21,245
+of just climbing up towards
+
+455
+00:14:21,305 --> 00:14:24,525
+the the peak of,
+inflated expectations.
+
+456
+00:14:24,905 --> 00:14:26,185
+You know? So it's it may even
+
+457
+00:14:26,185 --> 00:14:27,865
+have been a little
+bit late, I think,
+
+458
+00:14:27,865 --> 00:14:31,145
+in coming to the,
+coming to this curve.
+
+459
+00:14:31,145 --> 00:14:33,540
+And maybe one
+reason why why it
+
+460
+00:14:33,620 --> 00:14:34,580
+started happening in twenty
+
+461
+00:14:34,580 --> 00:14:36,340
+eighteen is because some of
+
+462
+00:14:36,340 --> 00:14:37,860
+the NLP and some of the deep
+
+463
+00:14:37,860 --> 00:14:38,680
+learning tools,
+
+464
+00:14:39,540 --> 00:14:41,960
+needed to mature
+a little bit before,
+
+465
+00:14:42,020 --> 00:14:43,620
+you know, we realized the full
+
+466
+00:14:43,620 --> 00:14:45,380
+potential of knowledge gaps.
+
+467
+00:14:45,380 --> 00:14:46,980
+And we needed to
+see what Google
+
+468
+00:14:46,980 --> 00:14:47,740
+was doing, you know,
+
+469
+00:14:47,940 --> 00:14:49,275
+what Amazon was doing,
+
+470
+00:14:49,355 --> 00:14:50,875
+what big companies
+are doing so
+
+471
+00:14:50,875 --> 00:14:52,555
+that we can sort of learn from
+
+472
+00:14:52,555 --> 00:14:54,095
+the giants in a way,
+
+473
+00:14:54,795 --> 00:14:56,155
+because they are
+investing a lot
+
+474
+00:14:56,155 --> 00:14:57,215
+into these technologies.
+
+475
+00:14:57,595 --> 00:14:59,035
+So finally, in
+twenty eighteen,
+
+476
+00:14:59,035 --> 00:15:00,815
+we do see knowledge
+graphs come up.
+
+477
+00:15:00,875 --> 00:15:02,655
+Now what happens in
+twenty nineteen?
+
+478
+00:15:03,320 --> 00:15:05,420
+Knowledge graphs climbs
+a little bit up.
+
+479
+00:15:05,640 --> 00:15:07,580
+Right? So that's
+good news, I guess.
+
+480
+00:15:08,360 --> 00:15:11,320
+We also see graph
+analytics, which has,
+
+481
+00:15:11,320 --> 00:15:12,920
+you know, kind
+of very suddenly
+
+482
+00:15:12,920 --> 00:15:13,660
+in a way,
+
+483
+00:15:14,360 --> 00:15:15,880
+because you don't see graph
+
+484
+00:15:15,880 --> 00:15:17,655
+analytics anywhere over here.
+
+485
+00:15:17,735 --> 00:15:21,675
+I mean, in this,
+twenty eighteen curve,
+
+486
+00:15:22,055 --> 00:15:23,415
+you know, we're
+not seeing there's
+
+487
+00:15:23,415 --> 00:15:25,115
+nothing here about
+graph analytics.
+
+488
+00:15:25,655 --> 00:15:27,515
+Right? But then in
+twenty nineteen,
+
+489
+00:15:29,415 --> 00:15:31,035
+you know, we see
+graph analytics
+
+490
+00:15:31,095 --> 00:15:32,970
+and somehow it has
+gone all the way.
+
+491
+00:15:32,970 --> 00:15:36,970
+It has managed to
+bypass, you know,
+
+492
+00:15:36,970 --> 00:15:38,730
+this entire first
+portion of the curve,
+
+493
+00:15:38,730 --> 00:15:40,510
+and it's already
+in the peak of
+
+494
+00:15:40,570 --> 00:15:41,710
+inflated expectations.
+
+495
+00:15:43,370 --> 00:15:44,970
+But, you know,
+I I I think that
+
+496
+00:15:44,970 --> 00:15:46,410
+the two have to
+be thought about
+
+497
+00:15:46,410 --> 00:15:47,530
+together. I think what was
+
+498
+00:15:47,530 --> 00:15:49,795
+happening was that because of
+
+499
+00:15:49,795 --> 00:15:52,395
+Neo four g and some
+of the other graph,
+
+500
+00:15:52,835 --> 00:15:54,995
+databases, you know,
+
+501
+00:15:54,995 --> 00:15:56,595
+they they sort of
+came up and they,
+
+502
+00:15:57,155 --> 00:15:58,835
+they were they
+are closely tied
+
+503
+00:15:58,835 --> 00:15:59,715
+to knowledge graphs,
+
+504
+00:15:59,715 --> 00:16:01,815
+but they are they are
+also, databases.
+
+505
+00:16:02,220 --> 00:16:03,580
+Right? So they
+it's not just for
+
+506
+00:16:03,580 --> 00:16:04,140
+knowledge graphs.
+
+507
+00:16:04,140 --> 00:16:06,140
+You can put any
+graph into some
+
+508
+00:16:06,140 --> 00:16:07,680
+of these, infrastructures.
+
+509
+00:16:08,380 --> 00:16:10,140
+And I think that
+within a year,
+
+510
+00:16:10,140 --> 00:16:11,660
+graph analytics really did go
+
+511
+00:16:11,660 --> 00:16:12,960
+through this amazing journey
+
+512
+00:16:13,100 --> 00:16:15,020
+where it was just able
+to come to this,
+
+513
+00:16:15,665 --> 00:16:17,505
+this path, because of heavy
+
+514
+00:16:17,505 --> 00:16:21,105
+involvement from, from
+industry in this.
+
+515
+00:16:21,105 --> 00:16:22,465
+But knowledge
+graphs is climbing
+
+516
+00:16:22,465 --> 00:16:23,605
+up slowly and steadily.
+
+517
+00:16:23,825 --> 00:16:25,525
+So now we come to
+twenty twenty.
+
+518
+00:16:25,825 --> 00:16:27,525
+Right? This is
+where we are now.
+
+519
+00:16:27,900 --> 00:16:28,700
+So what do we see?
+
+520
+00:16:28,700 --> 00:16:29,580
+And now, again,
+
+521
+00:16:29,580 --> 00:16:30,860
+something really
+interesting has
+
+522
+00:16:30,860 --> 00:16:33,420
+happened, which is
+that, you know,
+
+523
+00:16:33,420 --> 00:16:35,980
+once more, you know,
+
+524
+00:16:35,980 --> 00:16:38,160
+now we're seeing
+ontologies and graphs.
+
+525
+00:16:39,755 --> 00:16:41,195
+You know? And so
+it's not we're
+
+526
+00:16:41,195 --> 00:16:43,295
+not seeing, graph analytics.
+
+527
+00:16:43,355 --> 00:16:44,975
+We're not seeing
+knowledge graphs,
+
+528
+00:16:45,275 --> 00:16:47,115
+but we're seeing
+ontologies and graphs.
+
+529
+00:16:47,115 --> 00:16:48,875
+And it's like, you know,
+
+530
+00:16:48,875 --> 00:16:50,315
+these two things got combined
+
+531
+00:16:50,315 --> 00:16:52,335
+and then it slid down
+a little bit more,
+
+532
+00:16:52,970 --> 00:16:54,730
+And then now we're
+here. Right?
+
+533
+00:16:54,730 --> 00:16:56,890
+So it's kind of
+confusing, I think,
+
+534
+00:16:56,890 --> 00:16:58,010
+a little bit. Right?
+
+535
+00:16:58,010 --> 00:16:59,690
+Which is that, you know,
+
+536
+00:16:59,690 --> 00:17:00,910
+what's happening here?
+
+537
+00:17:01,610 --> 00:17:03,050
+You know, how how
+can something
+
+538
+00:17:03,050 --> 00:17:04,430
+go in just three years?
+
+539
+00:17:05,305 --> 00:17:06,825
+You know, first
+year, then there,
+
+540
+00:17:06,825 --> 00:17:08,505
+then a little bit down,
+a little bit up.
+
+541
+00:17:08,505 --> 00:17:09,305
+You know, we don't know what
+
+542
+00:17:09,305 --> 00:17:10,025
+will happen this year.
+
+543
+00:17:10,025 --> 00:17:10,985
+Will it even show up?
+
+544
+00:17:10,985 --> 00:17:12,505
+Is it now on the plateau of
+
+545
+00:17:12,505 --> 00:17:14,125
+productivity? You don't know.
+
+546
+00:17:14,745 --> 00:17:16,045
+So it's kind of
+an interesting,
+
+547
+00:17:16,680 --> 00:17:18,440
+you know, it seems
+like the consulting
+
+548
+00:17:18,440 --> 00:17:19,880
+companies can't really make up
+
+549
+00:17:19,880 --> 00:17:21,480
+their minds on this is,
+
+550
+00:17:22,040 --> 00:17:23,080
+how I think about it.
+
+551
+00:17:23,080 --> 00:17:24,680
+And it really depends on what
+
+552
+00:17:24,680 --> 00:17:25,880
+they are looking
+at, you know,
+
+553
+00:17:25,880 --> 00:17:27,320
+what applications
+they are looking at,
+
+554
+00:17:27,320 --> 00:17:28,540
+who they're talking to.
+
+555
+00:17:30,495 --> 00:17:31,855
+You know, it's
+really not clear
+
+556
+00:17:31,855 --> 00:17:33,135
+because you can ask some other
+
+557
+00:17:33,135 --> 00:17:34,255
+people and they will tell you
+
+558
+00:17:34,255 --> 00:17:35,295
+that it's on the plateau of
+
+559
+00:17:35,295 --> 00:17:36,575
+productivity,
+that it's already
+
+560
+00:17:36,575 --> 00:17:37,875
+crossed the hype cycle.
+
+561
+00:17:38,095 --> 00:17:39,375
+I it might even have crossed
+
+562
+00:17:39,375 --> 00:17:41,535
+the hype cycle as
+early as twenty
+
+563
+00:17:41,535 --> 00:17:42,915
+seventeen or twenty eighteen,
+
+564
+00:17:43,460 --> 00:17:44,980
+and that now it's actually on
+
+565
+00:17:44,980 --> 00:17:46,200
+the plateau of productivity.
+
+566
+00:17:46,260 --> 00:17:48,420
+So, you know, take
+this with a grain
+
+567
+00:17:48,420 --> 00:17:49,720
+of salt. I mean, basically,
+
+568
+00:17:49,780 --> 00:17:51,960
+if you see this
+again next year,
+
+569
+00:17:52,260 --> 00:17:53,620
+we will see another curve like
+
+570
+00:17:53,620 --> 00:17:54,740
+it next year, you know,
+
+571
+00:17:54,740 --> 00:17:56,120
+not too far from today.
+
+572
+00:17:57,135 --> 00:17:58,415
+We don't know where it might
+
+573
+00:17:58,415 --> 00:18:00,095
+show up and might
+disappear from
+
+574
+00:18:00,095 --> 00:18:01,075
+the globe altogether.
+
+575
+00:18:01,535 --> 00:18:03,455
+So, I think we
+have to take this
+
+576
+00:18:03,455 --> 00:18:04,675
+with a grain of salt,
+
+577
+00:18:04,975 --> 00:18:06,895
+but the encouraging
+thing about
+
+578
+00:18:06,895 --> 00:18:08,495
+this is that it
+does seem to be
+
+579
+00:18:08,495 --> 00:18:09,970
+progressing. Right?
+
+580
+00:18:09,970 --> 00:18:11,090
+I mean, that is the one thing
+
+581
+00:18:11,090 --> 00:18:11,970
+that we see over here,
+
+582
+00:18:11,970 --> 00:18:12,850
+that it is progressing.
+
+583
+00:18:12,850 --> 00:18:14,790
+It started from
+the innovation trigger,
+
+584
+00:18:14,930 --> 00:18:16,130
+then, you know,
+kind of went up,
+
+585
+00:18:16,130 --> 00:18:17,890
+fluctuated, and is now sort of
+
+586
+00:18:17,890 --> 00:18:18,370
+coming down.
+
+587
+00:18:18,370 --> 00:18:20,770
+And, you know, it's it's,
+
+588
+00:18:21,010 --> 00:18:23,330
+we are really in
+a at a time when,
+
+589
+00:18:24,065 --> 00:18:26,565
+this is starting to
+become very mature.
+
+590
+00:18:27,825 --> 00:18:29,265
+And we are seeing a lot of,
+
+591
+00:18:30,785 --> 00:18:32,385
+applications and
+a lot of people
+
+592
+00:18:32,385 --> 00:18:33,745
+involved in this and a lot of
+
+593
+00:18:33,745 --> 00:18:35,985
+companies offering,
+products and,
+
+594
+00:18:36,065 --> 00:18:37,345
+you know, a lot of companies
+
+595
+00:18:37,345 --> 00:18:38,225
+developing their own,
+
+596
+00:18:38,870 --> 00:18:40,070
+knowledge graphs and knowledge
+
+597
+00:18:40,070 --> 00:18:41,930
+graph technologies
+under the hood
+
+598
+00:18:41,990 --> 00:18:43,050
+behind the scenes.
+
+599
+00:18:43,110 --> 00:18:44,630
+So it's a it's a,
+
+600
+00:18:45,190 --> 00:18:46,650
+there's a lot going on.
+
+601
+00:18:48,470 --> 00:18:50,070
+And the other thing I want to
+
+602
+00:18:50,070 --> 00:18:51,430
+point out very briefly is that
+
+603
+00:18:51,430 --> 00:18:52,870
+knowledge graphs
+are really not
+
+604
+00:18:52,870 --> 00:18:54,390
+that new. This is
+something that
+
+605
+00:18:54,390 --> 00:18:57,645
+is not surprising
+to anyone who has,
+
+606
+00:18:58,365 --> 00:19:00,945
+been in AI or NLP
+for a while.
+
+607
+00:19:01,085 --> 00:19:02,525
+In fact, you you go back to
+
+608
+00:19:02,525 --> 00:19:04,785
+the nineteen ninety
+one or even before,
+
+609
+00:19:04,925 --> 00:19:06,305
+and there were
+these conferences,
+
+610
+00:19:06,445 --> 00:19:07,905
+the the message understanding
+
+611
+00:19:08,045 --> 00:19:10,360
+conference, which was a DARPA
+
+612
+00:19:10,360 --> 00:19:11,580
+funded conference.
+
+613
+00:19:12,120 --> 00:19:13,880
+And these were trying
+to construct,
+
+614
+00:19:14,120 --> 00:19:15,660
+what they call
+knowledge bases.
+
+615
+00:19:16,360 --> 00:19:17,960
+Even as far as
+the early nineties,
+
+616
+00:19:17,960 --> 00:19:19,000
+they were trying to extract
+
+617
+00:19:19,000 --> 00:19:21,400
+information and
+using NLP tools,
+
+618
+00:19:21,400 --> 00:19:23,605
+developing NLP
+tools to extract
+
+619
+00:19:23,605 --> 00:19:25,145
+information from text.
+
+620
+00:19:25,925 --> 00:19:27,205
+And at at that time,
+
+621
+00:19:27,205 --> 00:19:28,485
+we call it knowledge bases.
+
+622
+00:19:28,485 --> 00:19:29,765
+So if you go back
+and read some
+
+623
+00:19:29,765 --> 00:19:32,245
+of the NLP tables
+from last twenty,
+
+624
+00:19:32,245 --> 00:19:33,365
+thirty years, you'll see that
+
+625
+00:19:33,365 --> 00:19:34,645
+the term knowledge base is
+
+626
+00:19:34,645 --> 00:19:35,945
+actually not that uncommon.
+
+627
+00:19:36,510 --> 00:19:37,790
+And, you know, so it's been
+
+628
+00:19:37,790 --> 00:19:39,890
+around actually,
+especially in in NLP.
+
+629
+00:19:40,910 --> 00:19:43,170
+Now today, there are multiple
+
+630
+00:19:43,310 --> 00:19:45,090
+fields that are involved.
+
+631
+00:19:45,310 --> 00:19:47,150
+So I suspect there are some of
+
+632
+00:19:47,150 --> 00:19:48,690
+you who are coming
+from the semantic
+
+633
+00:19:48,750 --> 00:19:51,595
+website. The
+Symantec web likes
+
+634
+00:19:51,595 --> 00:19:53,035
+to think sometimes that it has
+
+635
+00:19:53,035 --> 00:19:54,395
+a monopoly on
+knowledge graphs,
+
+636
+00:19:54,395 --> 00:19:55,775
+which is not at all true.
+
+637
+00:19:56,395 --> 00:19:57,515
+I, in particular,
+
+638
+00:19:57,515 --> 00:19:59,195
+like to fight against it even
+
+639
+00:19:59,195 --> 00:20:00,415
+when I attend
+the conferences,
+
+640
+00:20:01,835 --> 00:20:03,035
+which is that, sure,
+
+641
+00:20:03,035 --> 00:20:05,295
+they they have
+formalized some of the,
+
+642
+00:20:06,050 --> 00:20:07,170
+aspects of knowledge graphs,
+
+643
+00:20:07,170 --> 00:20:08,370
+like ontology and so on.
+
+644
+00:20:08,370 --> 00:20:10,050
+We have made a lot of
+progress on that.
+
+645
+00:20:10,050 --> 00:20:11,510
+We have modules like RDF,
+
+646
+00:20:11,730 --> 00:20:13,110
+but they don't
+have a monopoly.
+
+647
+00:20:14,690 --> 00:20:16,130
+You know, we have the NLP,
+
+648
+00:20:16,130 --> 00:20:17,350
+as I was just saying,
+
+649
+00:20:17,410 --> 00:20:18,895
+which is which had also been
+
+650
+00:20:18,895 --> 00:20:20,255
+working on knowledge bases and
+
+651
+00:20:20,255 --> 00:20:22,515
+knowledge base
+construction for a while.
+
+652
+00:20:22,735 --> 00:20:24,095
+Even before that, you know,
+
+653
+00:20:24,415 --> 00:20:26,015
+the AI community
+has been working
+
+654
+00:20:26,015 --> 00:20:27,955
+on graphs for well
+before that.
+
+655
+00:20:28,095 --> 00:20:29,235
+So it's a village.
+
+656
+00:20:29,295 --> 00:20:30,495
+You know, it's not there's no
+
+657
+00:20:30,495 --> 00:20:31,235
+one community.
+
+658
+00:20:32,510 --> 00:20:33,550
+And and that, I hope,
+
+659
+00:20:33,550 --> 00:20:34,850
+will be a very key takeaway
+
+660
+00:20:35,310 --> 00:20:36,670
+because you can't if you if
+
+661
+00:20:36,670 --> 00:20:38,350
+you're only assuming
+the semantic
+
+662
+00:20:38,350 --> 00:20:40,270
+web definition of a knowledge
+
+663
+00:20:40,270 --> 00:20:42,050
+graph or only
+the NLP definition
+
+664
+00:20:42,110 --> 00:20:43,250
+of a knowledge graph,
+
+665
+00:20:43,310 --> 00:20:44,990
+then you're missing
+out on a very
+
+666
+00:20:44,990 --> 00:20:46,130
+big part of the community.
+
+667
+00:20:46,655 --> 00:20:48,255
+And to truly know
+the frontier,
+
+668
+00:20:48,255 --> 00:20:49,775
+you have to look
+at what everyone
+
+669
+00:20:49,775 --> 00:20:51,695
+is doing because, you know,
+
+670
+00:20:51,695 --> 00:20:53,615
+that it's we can't
+ignore, you know,
+
+671
+00:20:53,775 --> 00:20:55,935
+just because, we are not from
+
+672
+00:20:55,935 --> 00:20:58,015
+that community or
+this community or,
+
+673
+00:20:58,015 --> 00:20:59,615
+you know, we can't
+ignore the work
+
+674
+00:20:59,615 --> 00:21:01,215
+that has been
+done in the other
+
+675
+00:21:01,215 --> 00:21:02,810
+communities. So there are lots
+
+676
+00:21:02,810 --> 00:21:04,590
+of people working
+on this concept,
+
+677
+00:21:04,650 --> 00:21:06,350
+sometimes under
+different names.
+
+678
+00:21:07,610 --> 00:21:09,130
+And so there's been a lot more
+
+679
+00:21:09,130 --> 00:21:10,570
+progress than we would like to
+
+680
+00:21:10,570 --> 00:21:12,250
+think because sometimes they
+
+681
+00:21:12,250 --> 00:21:14,410
+will cover a problem
+in NLP that
+
+682
+00:21:14,410 --> 00:21:16,170
+is much better understood in
+
+683
+00:21:16,170 --> 00:21:17,310
+the semantic web.
+
+684
+00:21:17,525 --> 00:21:19,045
+Or sometimes in
+the semantic web,
+
+685
+00:21:19,045 --> 00:21:20,245
+they will try to come up with
+
+686
+00:21:20,245 --> 00:21:21,605
+things that that are actually
+
+687
+00:21:21,605 --> 00:21:23,845
+much better
+understood than NLP
+
+688
+00:21:23,845 --> 00:21:25,445
+and data mining
+in some other,
+
+689
+00:21:26,005 --> 00:21:29,065
+communities. So with that,
+
+690
+00:21:29,365 --> 00:21:31,065
+what is the five
+year frontier?
+
+691
+00:21:32,140 --> 00:21:33,500
+You know, given that so much
+
+692
+00:21:33,500 --> 00:21:34,880
+work has already happened,
+
+693
+00:21:35,500 --> 00:21:37,280
+we are we already have systems
+
+694
+00:21:37,820 --> 00:21:39,820
+for extracting
+knowledge graphs,
+
+695
+00:21:39,820 --> 00:21:43,020
+for, querying
+knowledge graphs.
+
+696
+00:21:43,020 --> 00:21:44,560
+You know, all of
+that has been,
+
+697
+00:21:45,865 --> 00:21:47,805
+you know, applied as
+well as research.
+
+698
+00:21:48,425 --> 00:21:50,205
+So what is the five
+year frontier?
+
+699
+00:21:50,985 --> 00:21:52,765
+I think the the the first,
+
+700
+00:21:53,225 --> 00:21:55,065
+the most important thing and
+
+701
+00:21:55,065 --> 00:21:56,285
+something which is immediate,
+
+702
+00:21:56,345 --> 00:21:57,725
+which is already happening,
+
+703
+00:21:57,960 --> 00:21:59,480
+but it will take four to five
+
+704
+00:21:59,480 --> 00:22:01,500
+years for it to
+truly materialize
+
+705
+00:22:01,720 --> 00:22:02,940
+in a very big way,
+
+706
+00:22:03,400 --> 00:22:05,160
+where it becomes
+commonplace. You know?
+
+707
+00:22:05,160 --> 00:22:06,540
+So once it becomes
+commonplace,
+
+708
+00:22:07,240 --> 00:22:08,520
+you know, that's
+when we know that,
+
+709
+00:22:08,520 --> 00:22:10,280
+yes, you know,
+it's, it's here.
+
+710
+00:22:10,280 --> 00:22:11,660
+It's done. It's
+not the frontier
+
+711
+00:22:11,720 --> 00:22:13,420
+anymore. It's inside
+the frontier.
+
+712
+00:22:14,035 --> 00:22:15,875
+And I think that is to broaden
+
+713
+00:22:15,875 --> 00:22:17,335
+the scope of
+knowledge graphs.
+
+714
+00:22:17,715 --> 00:22:19,795
+So, here are three that that
+
+715
+00:22:19,795 --> 00:22:20,915
+especially excite me.
+
+716
+00:22:20,915 --> 00:22:23,155
+I I I only work
+on one of them.
+
+717
+00:22:23,155 --> 00:22:24,195
+I mean, although I want to get
+
+718
+00:22:24,195 --> 00:22:25,255
+into another one.
+
+719
+00:22:26,035 --> 00:22:27,235
+But here are the three that I
+
+720
+00:22:27,235 --> 00:22:29,015
+think are really ripe
+for disruption.
+
+721
+00:22:29,720 --> 00:22:31,980
+One of them is KGs
+for manufacturing.
+
+722
+00:22:32,280 --> 00:22:34,200
+Here we are thinking
+about the three
+
+723
+00:22:34,200 --> 00:22:35,560
+d printing companies.
+
+724
+00:22:35,560 --> 00:22:36,780
+We're thinking about Siemens,
+
+725
+00:22:38,120 --> 00:22:39,820
+the big manufacturing
+companies.
+
+726
+00:22:40,360 --> 00:22:41,640
+They collect a lot of data.
+
+727
+00:22:41,640 --> 00:22:43,320
+They have invested
+a lot in IoT,
+
+728
+00:22:43,320 --> 00:22:44,460
+Internet of Things.
+
+729
+00:22:44,985 --> 00:22:46,525
+I think the five g revolution
+
+730
+00:22:46,585 --> 00:22:48,105
+is also going to
+be very big for
+
+731
+00:22:48,105 --> 00:22:49,485
+them for that reason.
+
+732
+00:22:50,105 --> 00:22:51,465
+So they have a lot of data.
+
+733
+00:22:51,465 --> 00:22:52,745
+You know, they are investing
+
+734
+00:22:52,745 --> 00:22:53,945
+more and more in
+machine learning
+
+735
+00:22:53,945 --> 00:22:54,685
+and robotics.
+
+736
+00:22:56,185 --> 00:22:58,590
+And so what does it take to
+
+737
+00:22:58,590 --> 00:22:59,950
+actually build
+a knowledge graph
+
+738
+00:22:59,950 --> 00:23:00,610
+for manufacturing?
+
+739
+00:23:00,830 --> 00:23:02,190
+Because it's it's
+a very different
+
+740
+00:23:02,190 --> 00:23:03,630
+kind of knowledge
+graph. Right?
+
+741
+00:23:03,630 --> 00:23:05,070
+It's not like
+the web knowledge
+
+742
+00:23:05,070 --> 00:23:06,430
+graph where you extract things
+
+743
+00:23:06,430 --> 00:23:07,950
+from Wikipedia
+pages and you put
+
+744
+00:23:07,950 --> 00:23:09,170
+them in a search engine.
+
+745
+00:23:09,505 --> 00:23:10,785
+But this this knowledge graph
+
+746
+00:23:10,785 --> 00:23:11,585
+will be very different.
+
+747
+00:23:11,585 --> 00:23:13,665
+It will have time
+series data.
+
+748
+00:23:13,665 --> 00:23:16,705
+It will have, numbers
+and units and,
+
+749
+00:23:17,585 --> 00:23:20,545
+you know, time stamped
+entities and,
+
+750
+00:23:20,785 --> 00:23:22,785
+you know, just a lot
+of data which is,
+
+751
+00:23:23,220 --> 00:23:25,060
+which has very
+unusual model of
+
+752
+00:23:25,060 --> 00:23:26,900
+semantics than than what we
+
+753
+00:23:26,900 --> 00:23:28,580
+would normally
+expect a knowledge
+
+754
+00:23:28,580 --> 00:23:29,400
+graph to have.
+
+755
+00:23:30,260 --> 00:23:32,200
+There's KGs in legal domains.
+
+756
+00:23:33,140 --> 00:23:36,580
+This one is exciting
+because, you know,
+
+757
+00:23:36,580 --> 00:23:37,940
+the legal profession
+has become
+
+758
+00:23:37,940 --> 00:23:38,760
+very complicated.
+
+759
+00:23:39,995 --> 00:23:41,435
+You know, more and more legal
+
+760
+00:23:41,435 --> 00:23:42,795
+firms are actually moving to
+
+761
+00:23:42,795 --> 00:23:43,915
+the model where they're trying
+
+762
+00:23:43,915 --> 00:23:45,835
+to save money. So
+they are willing
+
+763
+00:23:45,835 --> 00:23:47,275
+to invest in technology that
+
+764
+00:23:47,275 --> 00:23:48,715
+will allow them to save money
+
+765
+00:23:48,715 --> 00:23:51,850
+on legal research
+and, you know,
+
+766
+00:23:51,850 --> 00:23:53,390
+finding things that
+are relevant.
+
+767
+00:23:53,770 --> 00:23:55,450
+So I I think we are there are
+
+768
+00:23:55,450 --> 00:23:57,050
+a number of companies
+that already
+
+769
+00:23:57,050 --> 00:23:57,690
+in here.
+
+770
+00:23:57,690 --> 00:23:59,950
+They are primarily NLP based,
+
+771
+00:24:00,490 --> 00:24:01,770
+but I think we will we will
+
+772
+00:24:01,770 --> 00:24:03,290
+start to see a lot
+more knowledge
+
+773
+00:24:03,290 --> 00:24:06,095
+graphs, especially
+for international
+
+774
+00:24:06,235 --> 00:24:08,155
+law firms for, you know,
+
+775
+00:24:08,155 --> 00:24:09,355
+some of the law
+firms that work
+
+776
+00:24:09,355 --> 00:24:10,655
+in many different markets.
+
+777
+00:24:11,755 --> 00:24:13,435
+And then KG is for health and
+
+778
+00:24:13,435 --> 00:24:14,875
+epidemiology.
+This, of course,
+
+779
+00:24:14,875 --> 00:24:16,720
+is very big right now. Right?
+
+780
+00:24:16,720 --> 00:24:19,280
+And, in fact, on this
+point, you know,
+
+781
+00:24:19,280 --> 00:24:21,860
+we recently
+published an article
+
+782
+00:24:21,920 --> 00:24:22,900
+where we discussed,
+
+783
+00:24:23,200 --> 00:24:24,960
+it's kind of almost
+like an opinion
+
+784
+00:24:24,960 --> 00:24:26,420
+piece, but it's
+more scientifically
+
+785
+00:24:26,480 --> 00:24:28,400
+written, which
+is that what are
+
+786
+00:24:28,400 --> 00:24:30,765
+the opportunities
+for knowledge
+
+787
+00:24:30,765 --> 00:24:32,065
+gaps in COVID nineteen.
+
+788
+00:24:32,525 --> 00:24:34,625
+And, you know,
+we it was really
+
+789
+00:24:35,485 --> 00:24:37,565
+encouraging to find that when
+
+790
+00:24:37,565 --> 00:24:39,325
+we wrote this in
+early twenty twenty,
+
+791
+00:24:39,325 --> 00:24:40,525
+by the time it got published,
+
+792
+00:24:40,525 --> 00:24:41,665
+which was very recent,
+
+793
+00:24:42,930 --> 00:24:44,370
+there are already
+three or four
+
+794
+00:24:44,370 --> 00:24:46,450
+different big
+implementations that had,
+
+795
+00:24:47,010 --> 00:24:48,690
+for COVID nineteen
+knowledge graphs.
+
+796
+00:24:48,690 --> 00:24:50,770
+People had released
+a lot of data on,
+
+797
+00:24:51,330 --> 00:24:52,150
+COVID nineteen.
+
+798
+00:24:53,250 --> 00:24:55,490
+And, there's a silver lining
+
+799
+00:24:55,490 --> 00:24:56,550
+behind this pandemic.
+
+800
+00:24:56,610 --> 00:24:58,050
+It's it's really shown us that
+
+801
+00:24:58,050 --> 00:24:59,865
+the world is ready to,
+
+802
+00:25:00,185 --> 00:25:01,705
+adopt new technology,
+you know,
+
+803
+00:25:01,705 --> 00:25:03,405
+including the web
+conferencing,
+
+804
+00:25:03,945 --> 00:25:07,465
+the the, user machine
+learning for,
+
+805
+00:25:07,865 --> 00:25:08,845
+various things.
+
+806
+00:25:10,025 --> 00:25:11,725
+We have seen progress
+in education
+
+807
+00:25:11,785 --> 00:25:13,645
+and government and
+all kinds of things,
+
+808
+00:25:13,760 --> 00:25:15,280
+And I don't think
+we'll go back.
+
+809
+00:25:15,280 --> 00:25:15,680
+Like, you know,
+
+810
+00:25:15,680 --> 00:25:17,380
+once this pandemic is over,
+
+811
+00:25:17,760 --> 00:25:19,120
+some of what we
+had before will
+
+812
+00:25:19,120 --> 00:25:20,240
+come back. That's
+what everyone
+
+813
+00:25:20,240 --> 00:25:21,200
+is saying. You know,
+
+814
+00:25:21,200 --> 00:25:23,140
+everyone can't stay
+isolated forever.
+
+815
+00:25:23,440 --> 00:25:24,960
+But a lot of
+things that we are
+
+816
+00:25:24,960 --> 00:25:26,480
+doing now is actually going to
+
+817
+00:25:26,640 --> 00:25:27,780
+is here to stay.
+
+818
+00:25:28,805 --> 00:25:30,645
+Now the other one for the five
+
+819
+00:25:30,645 --> 00:25:33,065
+year frontiers, KG
+is for social good.
+
+820
+00:25:33,125 --> 00:25:34,245
+This is something that,
+
+821
+00:25:34,565 --> 00:25:36,085
+some of us are very
+interested in,
+
+822
+00:25:36,085 --> 00:25:38,425
+but it's it's growing.
+It's growing.
+
+823
+00:25:39,605 --> 00:25:40,645
+On the right hand side,
+
+824
+00:25:40,645 --> 00:25:42,300
+what you're seeing
+over here is
+
+825
+00:25:42,540 --> 00:25:43,280
+from McKinsey.
+
+826
+00:25:44,460 --> 00:25:45,260
+You know, this is,
+
+827
+00:25:45,580 --> 00:25:47,580
+something that
+McKinsey put out in,
+
+828
+00:25:48,140 --> 00:25:49,040
+fairly recently.
+
+829
+00:25:49,980 --> 00:25:52,640
+And what they tried to do was
+
+830
+00:25:52,940 --> 00:25:54,700
+to figure out, you know,
+
+831
+00:25:54,700 --> 00:25:57,225
+all of these
+different AI tools.
+
+832
+00:25:57,605 --> 00:25:59,545
+Can they be applied
+to these domains?
+
+833
+00:26:00,005 --> 00:26:02,245
+And, to, to what
+extent can they
+
+834
+00:26:02,245 --> 00:26:03,365
+be applied? And
+so if it's like
+
+835
+00:26:03,365 --> 00:26:05,045
+a big circle, that
+means the application
+
+836
+00:26:05,045 --> 00:26:06,345
+is quite big. It's higher.
+
+837
+00:26:06,645 --> 00:26:08,085
+And I want to
+point you to just
+
+838
+00:26:08,085 --> 00:26:10,810
+two things, which
+are, you know,
+
+839
+00:26:10,810 --> 00:26:12,970
+language understanding,
+which is,
+
+840
+00:26:13,130 --> 00:26:14,730
+you know, natural
+language processing,
+
+841
+00:26:14,730 --> 00:26:15,770
+which are very intimately
+
+842
+00:26:15,770 --> 00:26:17,290
+connected to
+knowledge graphs,
+
+843
+00:26:17,290 --> 00:26:18,810
+but also deep learning on
+
+844
+00:26:18,810 --> 00:26:19,790
+structured data.
+
+845
+00:26:20,410 --> 00:26:22,330
+You everyone here
+or most people
+
+846
+00:26:22,330 --> 00:26:23,785
+have probably heard the recent
+
+847
+00:26:23,785 --> 00:26:25,065
+news that came
+out of DeepMind,
+
+848
+00:26:25,065 --> 00:26:26,585
+right, where they were able to
+
+849
+00:26:26,585 --> 00:26:28,745
+solve a problem
+that many people
+
+850
+00:26:28,745 --> 00:26:30,425
+said are are decades away from
+
+851
+00:26:30,425 --> 00:26:31,145
+being solved, you know,
+
+852
+00:26:31,145 --> 00:26:32,845
+which is a protein
+folding problem.
+
+853
+00:26:33,945 --> 00:26:35,225
+That is an example of deep
+
+854
+00:26:35,225 --> 00:26:36,685
+learning on structured data.
+
+855
+00:26:37,900 --> 00:26:39,020
+You know, but we
+also have deep
+
+856
+00:26:39,020 --> 00:26:39,820
+learning on tables.
+
+857
+00:26:39,820 --> 00:26:41,180
+We have deep learning
+on knowledge
+
+858
+00:26:41,180 --> 00:26:42,700
+graphs. So there's
+a this one,
+
+859
+00:26:42,700 --> 00:26:44,160
+I think this is
+very exciting,
+
+860
+00:26:44,540 --> 00:26:46,640
+and we will see
+a lot more to it.
+
+861
+00:26:47,420 --> 00:26:48,780
+So somehow even
+though you don't
+
+862
+00:26:48,780 --> 00:26:50,480
+see the freeze
+knowledge graphs,
+
+863
+00:26:50,585 --> 00:26:52,105
+the knowledge graphs
+are, you know,
+
+864
+00:26:52,105 --> 00:26:54,105
+they are, they
+are very relevant
+
+865
+00:26:54,105 --> 00:26:55,305
+to two or three
+different fields
+
+866
+00:26:55,305 --> 00:26:56,905
+over here. So I think this is
+
+867
+00:26:56,905 --> 00:26:58,105
+very exciting, and this is
+
+868
+00:26:58,105 --> 00:26:59,705
+something where we
+are doing a lot
+
+869
+00:26:59,705 --> 00:27:02,845
+of work. So what's
+the tenure frontier?
+
+870
+00:27:03,910 --> 00:27:05,510
+I think the, you know,
+
+871
+00:27:05,510 --> 00:27:07,290
+the the single
+biggest question
+
+872
+00:27:07,350 --> 00:27:08,630
+that we are dealing with right
+
+873
+00:27:08,630 --> 00:27:11,110
+now as a community is that,
+
+874
+00:27:11,910 --> 00:27:12,970
+what is knowledge?
+
+875
+00:27:13,430 --> 00:27:15,370
+You know, so this is a problem
+
+876
+00:27:15,430 --> 00:27:17,350
+that it's best not to get into
+
+877
+00:27:17,350 --> 00:27:19,050
+a deep discussion about it,
+
+878
+00:27:19,285 --> 00:27:21,205
+But I think this diagram here
+
+879
+00:27:21,205 --> 00:27:22,825
+hopefully conveys to you,
+
+880
+00:27:23,925 --> 00:27:25,445
+why it's a complicated
+question,
+
+881
+00:27:25,445 --> 00:27:27,285
+especially in this era where
+
+882
+00:27:27,285 --> 00:27:29,125
+everyone has
+an opinion and it's
+
+883
+00:27:29,125 --> 00:27:30,645
+it's very difficult
+to separate
+
+884
+00:27:30,645 --> 00:27:33,050
+the opinion from
+the facts. Right?
+
+885
+00:27:33,050 --> 00:27:34,650
+So we are some
+people are saying
+
+886
+00:27:34,650 --> 00:27:37,370
+we are in a post
+truth era. Right?
+
+887
+00:27:37,370 --> 00:27:39,370
+And, we have social media that
+
+888
+00:27:39,370 --> 00:27:40,490
+that you know, everyone just
+
+889
+00:27:40,650 --> 00:27:41,870
+sometimes we have
+contradictions.
+
+890
+00:27:42,090 --> 00:27:44,010
+We have conspiracy theories.
+
+891
+00:27:44,010 --> 00:27:46,570
+You have sarcasm.
+You have beliefs.
+
+892
+00:27:46,570 --> 00:27:47,895
+You have all kinds of things.
+
+893
+00:27:47,975 --> 00:27:50,135
+So, even though this
+is from philosophy,
+
+894
+00:27:50,135 --> 00:27:51,415
+I think you will
+recognize that
+
+895
+00:27:51,415 --> 00:27:52,795
+there's everything
+from guesses
+
+896
+00:27:53,095 --> 00:27:55,895
+to nonsense to knowledge,
+which is very,
+
+897
+00:27:56,615 --> 00:27:57,735
+strong knowledge, you know,
+
+898
+00:27:57,735 --> 00:27:59,275
+kind of like
+scientific knowledge.
+
+899
+00:27:59,495 --> 00:28:00,375
+There's, you know,
+
+900
+00:28:00,375 --> 00:28:01,575
+all the things that are true,
+
+901
+00:28:01,575 --> 00:28:03,435
+but people don't want
+to believe them.
+
+902
+00:28:03,690 --> 00:28:04,970
+They are just pure beliefs.
+
+903
+00:28:04,970 --> 00:28:05,610
+There's knowledge,
+
+904
+00:28:05,610 --> 00:28:06,970
+which is kind of very fuzzy.
+
+905
+00:28:06,970 --> 00:28:09,610
+It's very informed.
+You can't define it.
+
+906
+00:28:09,610 --> 00:28:10,990
+You can't describe it.
+
+907
+00:28:12,010 --> 00:28:12,810
+You know, and then there's
+
+908
+00:28:12,810 --> 00:28:14,330
+knowledge and
+memory, you know,
+
+909
+00:28:14,330 --> 00:28:16,570
+and so on. So it's
+a it's a hard
+
+910
+00:28:16,570 --> 00:28:18,430
+problem. What do we
+mean by knowledge?
+
+911
+00:28:18,735 --> 00:28:20,675
+What goes into our
+knowledge graph?
+
+912
+00:28:20,735 --> 00:28:21,935
+How do we qualify it?
+
+913
+00:28:21,935 --> 00:28:23,555
+How do we reason about it?
+
+914
+00:28:24,175 --> 00:28:25,135
+You know, because so far,
+
+915
+00:28:25,135 --> 00:28:26,255
+we're kind of
+just dealing with
+
+916
+00:28:26,255 --> 00:28:28,335
+this portion in the middle and
+
+917
+00:28:28,335 --> 00:28:30,195
+a very narrow subset of that.
+
+918
+00:28:31,550 --> 00:28:33,310
+And then the other problem is
+
+919
+00:28:33,310 --> 00:28:35,310
+the semantics. So
+if you remember
+
+920
+00:28:35,310 --> 00:28:36,270
+at the very beginning,
+
+921
+00:28:36,270 --> 00:28:38,030
+the definition I had given was
+
+922
+00:28:38,030 --> 00:28:39,810
+that a knowledge graph
+is a multiracial
+
+923
+00:28:40,510 --> 00:28:42,450
+directed labeled graph
+with semantics.
+
+924
+00:28:42,910 --> 00:28:44,030
+But now the question is,
+
+925
+00:28:44,030 --> 00:28:45,010
+what is semantics?
+
+926
+00:28:45,390 --> 00:28:46,850
+What's the meaning
+of meaning?
+
+927
+00:28:48,405 --> 00:28:50,245
+Again, it turns
+out the semantic
+
+928
+00:28:50,245 --> 00:28:52,185
+web community has an ontology
+
+929
+00:28:52,245 --> 00:28:53,605
+or a schema where
+they say that
+
+930
+00:28:53,605 --> 00:28:55,125
+here's the ontology
+and the knowledge
+
+931
+00:28:55,125 --> 00:28:56,645
+graph is defined according to
+
+932
+00:28:56,645 --> 00:28:58,645
+the ontology, and
+they are really
+
+933
+00:28:58,645 --> 00:28:59,765
+coming at it from the very
+
+934
+00:28:59,765 --> 00:29:01,225
+structured side
+of the equation.
+
+935
+00:29:01,610 --> 00:29:03,850
+But then the NLP
+people are seeing,
+
+936
+00:29:03,850 --> 00:29:05,370
+well, you know,
+the the you know,
+
+937
+00:29:05,370 --> 00:29:06,330
+these word embeddings,
+
+938
+00:29:06,330 --> 00:29:07,470
+the deep learning tools,
+
+939
+00:29:07,850 --> 00:29:09,150
+they have a very different
+
+940
+00:29:09,210 --> 00:29:10,430
+conception of semantics.
+
+941
+00:29:10,970 --> 00:29:12,490
+And what they are
+saying is that
+
+942
+00:29:12,490 --> 00:29:15,875
+that word such as
+quark is the meaning
+
+943
+00:29:15,875 --> 00:29:17,875
+of this word can
+only be understood
+
+944
+00:29:17,875 --> 00:29:19,235
+if you know what
+the context of
+
+945
+00:29:19,235 --> 00:29:21,155
+the word is. So here we have
+
+946
+00:29:21,155 --> 00:29:22,435
+three quarks from
+Master Mark.
+
+947
+00:29:22,435 --> 00:29:24,455
+This is from the novels
+Fennegan Smith,
+
+948
+00:29:24,515 --> 00:29:25,895
+an unreadable novel.
+
+949
+00:29:26,515 --> 00:29:28,215
+Quark, one of
+the most influential
+
+950
+00:29:28,275 --> 00:29:30,230
+and modern for
+all for all those
+
+951
+00:29:30,230 --> 00:29:31,190
+of you who are from,
+
+952
+00:29:31,350 --> 00:29:33,270
+who are Star Trek
+fans as I am,
+
+953
+00:29:33,270 --> 00:29:34,790
+this is a character
+on Star Trek.
+
+954
+00:29:34,790 --> 00:29:36,330
+For for those of you
+who are physicists,
+
+955
+00:29:36,870 --> 00:29:39,350
+quark's and have
+obviously a meaning
+
+956
+00:29:39,350 --> 00:29:41,430
+in physics, but quark is also
+
+957
+00:29:41,430 --> 00:29:42,410
+a French cheese.
+
+958
+00:29:43,495 --> 00:29:44,535
+You know, I'm sure there are
+
+959
+00:29:44,535 --> 00:29:45,675
+other meanings as well.
+
+960
+00:29:45,735 --> 00:29:47,815
+So it's not so clear that we
+
+961
+00:29:47,815 --> 00:29:49,095
+actually get something out of
+
+962
+00:29:49,095 --> 00:29:50,615
+a word sitting in isolation or
+
+963
+00:29:50,615 --> 00:29:52,395
+even a concept sitting
+in isolation.
+
+964
+00:29:53,015 --> 00:29:54,955
+The the context is
+very important.
+
+965
+00:29:55,830 --> 00:29:57,770
+And here, this slide
+is from Adobe.
+
+966
+00:29:57,910 --> 00:29:59,190
+Not the slide, but the figure
+
+967
+00:29:59,190 --> 00:30:01,050
+is from Adobe. But basically,
+
+968
+00:30:02,150 --> 00:30:04,150
+the the what they
+are, you know,
+
+969
+00:30:04,150 --> 00:30:06,170
+what what I think
+can be understood
+
+970
+00:30:06,390 --> 00:30:08,330
+from what, everyone
+is discussing
+
+971
+00:30:08,470 --> 00:30:11,015
+about context is that this is
+
+972
+00:30:11,015 --> 00:30:12,155
+a tenure problem.
+
+973
+00:30:12,535 --> 00:30:13,735
+To understand context,
+
+974
+00:30:13,735 --> 00:30:14,955
+to understand semantics,
+
+975
+00:30:15,015 --> 00:30:16,055
+to understand knowledge,
+
+976
+00:30:16,055 --> 00:30:17,515
+these are very hard problems.
+
+977
+00:30:18,215 --> 00:30:19,975
+And if we are able to do it,
+
+978
+00:30:19,975 --> 00:30:22,375
+if ultimately our AI and our
+
+979
+00:30:22,375 --> 00:30:24,315
+knowledge graphs
+are context aware,
+
+980
+00:30:24,560 --> 00:30:26,100
+then we will be
+able to perceive
+
+981
+00:30:26,160 --> 00:30:28,100
+at the same level
+as a human does.
+
+982
+00:30:28,160 --> 00:30:29,520
+And the word
+perceive here should
+
+983
+00:30:29,520 --> 00:30:30,900
+be construed very broadly,
+
+984
+00:30:31,120 --> 00:30:32,820
+where we are able
+to see something
+
+985
+00:30:33,120 --> 00:30:34,160
+or read something.
+
+986
+00:30:34,160 --> 00:30:35,600
+And it's not just a word or
+
+987
+00:30:35,600 --> 00:30:38,240
+the the immediate, impact,
+
+988
+00:30:38,240 --> 00:30:39,680
+but we will be able to see it
+
+989
+00:30:39,680 --> 00:30:40,975
+in its context.
+
+990
+00:30:41,115 --> 00:30:42,475
+And we'll be able
+to understand
+
+991
+00:30:42,475 --> 00:30:43,435
+it in its context,
+
+992
+00:30:43,435 --> 00:30:45,615
+which right now we
+are not able to do.
+
+993
+00:30:46,315 --> 00:30:47,915
+And then just one or two more
+
+994
+00:30:47,915 --> 00:30:49,435
+slides and I'll stop
+for questions.
+
+995
+00:30:49,435 --> 00:30:50,895
+I know I'm running over time.
+
+996
+00:30:51,755 --> 00:30:53,775
+But here's my fifteen
+year frontier.
+
+997
+00:30:54,220 --> 00:30:56,220
+And this is I I won't even try
+
+998
+00:30:56,220 --> 00:30:57,100
+to go beyond that.
+
+999
+00:30:57,100 --> 00:30:58,460
+And, you know, it's not clear
+
+1000
+00:30:58,460 --> 00:31:00,460
+whether this
+fifteen year the,
+
+1001
+00:31:00,460 --> 00:31:01,980
+you know, the longer
+you go out,
+
+1002
+00:31:01,980 --> 00:31:02,780
+you know, the more,
+
+1003
+00:31:03,260 --> 00:31:04,940
+uncertain things
+become. Right?
+
+1004
+00:31:04,940 --> 00:31:06,220
+So we don't know
+if this fifteen
+
+1005
+00:31:06,220 --> 00:31:07,500
+year is actually
+a fifteen year
+
+1006
+00:31:07,500 --> 00:31:08,835
+frontier or it's,
+
+1007
+00:31:08,995 --> 00:31:10,195
+it might actually get done in
+
+1008
+00:31:10,195 --> 00:31:11,395
+eight years. We
+just don't know.
+
+1009
+00:31:11,395 --> 00:31:13,555
+It's extremely uncertain where
+
+1010
+00:31:13,555 --> 00:31:14,695
+this frontier lies.
+
+1011
+00:31:15,235 --> 00:31:18,435
+But I do believe
+that, you know,
+
+1012
+00:31:18,435 --> 00:31:20,135
+the the conversation around
+
+1013
+00:31:20,690 --> 00:31:22,390
+artificial
+general intelligence
+
+1014
+00:31:22,450 --> 00:31:23,750
+is very much active.
+
+1015
+00:31:23,890 --> 00:31:25,510
+You know, a lot of people are
+
+1016
+00:31:25,650 --> 00:31:27,010
+off the view that we are kind
+
+1017
+00:31:27,010 --> 00:31:28,530
+of now moving into this,
+
+1018
+00:31:29,250 --> 00:31:32,390
+EGI era because,
+you know, the ANI,
+
+1019
+00:31:32,935 --> 00:31:34,635
+the artificial narrow
+intelligence,
+
+1020
+00:31:35,735 --> 00:31:37,175
+you know, we're
+kind of there.
+
+1021
+00:31:37,175 --> 00:31:38,935
+You know, we have
+very good tools now,
+
+1022
+00:31:38,935 --> 00:31:40,315
+you know, the deep
+learning tools.
+
+1023
+00:31:40,615 --> 00:31:41,575
+The ANI, you know,
+
+1024
+00:31:41,575 --> 00:31:43,415
+the deep mind tool
+like you just saw,
+
+1025
+00:31:43,415 --> 00:31:44,855
+the protein folding,
+you know,
+
+1026
+00:31:44,855 --> 00:31:46,820
+you might wanna
+look that up or
+
+1027
+00:31:47,520 --> 00:31:49,700
+the Go playing,
+you know, AlphaGo,
+
+1028
+00:31:50,720 --> 00:31:51,780
+which can be Grandmaster.
+
+1029
+00:31:52,080 --> 00:31:53,520
+Those are all
+examples of narrow
+
+1030
+00:31:53,520 --> 00:31:55,120
+intelligence. The
+reason is they
+
+1031
+00:31:55,120 --> 00:31:56,820
+are very good at
+that one task.
+
+1032
+00:31:56,960 --> 00:31:58,260
+Right? But you can't actually
+
+1033
+00:31:58,320 --> 00:31:59,860
+turn them onto other tasks,
+
+1034
+00:31:59,975 --> 00:32:01,755
+not without significant
+recraining,
+
+1035
+00:32:01,975 --> 00:32:04,615
+redoing. A nice story about
+
+1036
+00:32:04,615 --> 00:32:05,735
+the protein folding one,
+
+1037
+00:32:05,735 --> 00:32:07,815
+if you look deep
+into it, is that,
+
+1038
+00:32:07,815 --> 00:32:09,255
+you know, it turns
+out that that
+
+1039
+00:32:09,255 --> 00:32:10,775
+the DeepMind team actually had
+
+1040
+00:32:10,775 --> 00:32:12,315
+to work on that
+for two years.
+
+1041
+00:32:12,615 --> 00:32:13,815
+So when they first started on
+
+1042
+00:32:13,815 --> 00:32:15,675
+that problem almost
+two years ago,
+
+1043
+00:32:15,950 --> 00:32:17,230
+the first system
+that they came
+
+1044
+00:32:17,230 --> 00:32:18,670
+out with for
+protein folding was
+
+1045
+00:32:18,670 --> 00:32:19,630
+really not that great.
+
+1046
+00:32:19,630 --> 00:32:21,150
+It was good, but it was it
+
+1047
+00:32:21,150 --> 00:32:22,350
+wouldn't have made the news in
+
+1048
+00:32:22,350 --> 00:32:24,130
+the way that this
+system just did.
+
+1049
+00:32:24,750 --> 00:32:26,590
+So they they they
+in interviews,
+
+1050
+00:32:26,590 --> 00:32:27,790
+they said that they had to go
+
+1051
+00:32:27,790 --> 00:32:28,990
+back to the drawing
+board a lot
+
+1052
+00:32:28,990 --> 00:32:30,190
+of times. They had to redesign
+
+1053
+00:32:30,190 --> 00:32:32,875
+the network. Then they
+had to clean it.
+
+1054
+00:32:32,875 --> 00:32:34,475
+They had to do a lot
+of trial and error,
+
+1055
+00:32:34,475 --> 00:32:36,015
+and they had to do
+a lot of cleaning,
+
+1056
+00:32:36,235 --> 00:32:37,595
+which they can do because they
+
+1057
+00:32:37,595 --> 00:32:38,735
+have all those resources.
+
+1058
+00:32:39,275 --> 00:32:41,435
+But basically,
+they had to really
+
+1059
+00:32:41,435 --> 00:32:43,035
+approach the problem
+from a very
+
+1060
+00:32:43,035 --> 00:32:44,015
+ANI perspective.
+
+1061
+00:32:45,430 --> 00:32:46,790
+But we're now starting to move
+
+1062
+00:32:46,790 --> 00:32:48,550
+into this field where we are
+
+1063
+00:32:48,550 --> 00:32:49,910
+looking more and
+more in general
+
+1064
+00:32:49,910 --> 00:32:50,950
+intelligence. What do we need
+
+1065
+00:32:50,950 --> 00:32:52,710
+to do to build an AI that can
+
+1066
+00:32:52,710 --> 00:32:53,910
+do many different things at
+
+1067
+00:32:53,910 --> 00:32:56,070
+the same time, and
+what will that take?
+
+1068
+00:32:56,070 --> 00:32:57,670
+And then can we even
+reach this point?
+
+1069
+00:32:57,670 --> 00:32:58,870
+So this it's very uncertain
+
+1070
+00:32:58,870 --> 00:33:00,170
+whether we will get here,
+
+1071
+00:33:00,915 --> 00:33:02,535
+or how long it will take.
+
+1072
+00:33:02,675 --> 00:33:03,875
+And then there is this thing
+
+1073
+00:33:03,875 --> 00:33:05,235
+called a singularity event.
+
+1074
+00:33:05,235 --> 00:33:06,675
+This is where I think we start
+
+1075
+00:33:06,675 --> 00:33:07,895
+moving to science fiction,
+
+1076
+00:33:08,835 --> 00:33:10,835
+but we never know,
+which is that,
+
+1077
+00:33:10,835 --> 00:33:12,135
+you know, the super
+intelligence.
+
+1078
+00:33:12,195 --> 00:33:13,315
+You know, some
+people say, well,
+
+1079
+00:33:13,315 --> 00:33:14,995
+you know, this is coming.
+
+1080
+00:33:14,995 --> 00:33:15,715
+This is coming.
+
+1081
+00:33:15,715 --> 00:33:17,530
+But we first need to come here
+
+1082
+00:33:17,530 --> 00:33:18,890
+and then we have
+to come here.
+
+1083
+00:33:18,890 --> 00:33:21,070
+Right? So in order
+to come from
+
+1084
+00:33:21,130 --> 00:33:22,350
+ANI to AGI,
+
+1085
+00:33:22,970 --> 00:33:24,250
+there are all
+these things that
+
+1086
+00:33:24,250 --> 00:33:26,090
+just listed six six
+different things,
+
+1087
+00:33:26,090 --> 00:33:27,930
+but there are many
+more that all
+
+1088
+00:33:27,930 --> 00:33:28,910
+need to be solved.
+
+1089
+00:33:29,015 --> 00:33:30,395
+You know, so
+causal knowledge,
+
+1090
+00:33:31,735 --> 00:33:33,735
+the, you you know,
+the common sense,
+
+1091
+00:33:33,735 --> 00:33:35,015
+which is something
+we are working on.
+
+1092
+00:33:35,015 --> 00:33:36,155
+It's a four year program.
+
+1093
+00:33:36,375 --> 00:33:39,895
+Context, which I
+sort of, you know,
+
+1094
+00:33:39,895 --> 00:33:41,495
+being context
+aware is the four
+
+1095
+00:33:41,655 --> 00:33:42,775
+is the five year sorry,
+
+1096
+00:33:42,775 --> 00:33:43,835
+a ten year problem.
+
+1097
+00:33:44,055 --> 00:33:45,650
+But then if you
+want to explain
+
+1098
+00:33:45,790 --> 00:33:48,110
+the explain our outputs based
+
+1099
+00:33:48,110 --> 00:33:49,150
+on the context and so on,
+
+1100
+00:33:49,150 --> 00:33:50,830
+that's maybe another
+five years.
+
+1101
+00:33:51,230 --> 00:33:52,910
+How can AI adapt to novelty,
+
+1102
+00:33:52,910 --> 00:33:54,430
+something it has
+never seen before,
+
+1103
+00:33:54,430 --> 00:33:55,730
+not even from a distributional
+
+1104
+00:33:55,950 --> 00:33:58,715
+standpoint? You know,
+
+1105
+00:33:58,715 --> 00:34:00,715
+how do we reason about
+events and time?
+
+1106
+00:34:00,715 --> 00:34:01,435
+Theory of mind,
+
+1107
+00:34:01,435 --> 00:34:02,875
+how do we reason about other
+
+1108
+00:34:02,875 --> 00:34:03,775
+people's beliefs?
+
+1109
+00:34:04,795 --> 00:34:05,995
+This is something we are very
+
+1110
+00:34:05,995 --> 00:34:07,755
+good at doing, but animals are
+
+1111
+00:34:07,755 --> 00:34:09,295
+are not that good at doing.
+
+1112
+00:34:10,020 --> 00:34:11,880
+How do we get
+a machine to do that?
+
+1113
+00:34:12,100 --> 00:34:13,720
+So there are lots
+of interesting,
+
+1114
+00:34:14,740 --> 00:34:16,520
+questions that have
+to be answered.
+
+1115
+00:34:16,660 --> 00:34:18,820
+And, with knowledge
+graphs, you know,
+
+1116
+00:34:18,820 --> 00:34:20,440
+these are very closely related
+
+1117
+00:34:20,580 --> 00:34:23,655
+to knowledge graphs
+because, you know,
+
+1118
+00:34:23,655 --> 00:34:25,655
+the the if we are
+able to solve
+
+1119
+00:34:25,655 --> 00:34:27,895
+some of these issues, then,
+
+1120
+00:34:28,455 --> 00:34:29,975
+we would need to do it for our
+
+1121
+00:34:29,975 --> 00:34:31,015
+knowledge graphs as well.
+
+1122
+00:34:31,015 --> 00:34:32,375
+So, you know, common sense is
+
+1123
+00:34:32,375 --> 00:34:33,415
+kind of knowledge. Right?
+
+1124
+00:34:33,415 --> 00:34:34,695
+We have a lot of facts about
+
+1125
+00:34:34,695 --> 00:34:36,315
+the world in our head,
+
+1126
+00:34:36,470 --> 00:34:38,150
+and that presumably can be
+
+1127
+00:34:38,150 --> 00:34:40,010
+represented as
+a knowledge graph.
+
+1128
+00:34:40,150 --> 00:34:41,830
+Similarly, when we have,
+
+1129
+00:34:42,630 --> 00:34:43,910
+something like
+causal knowledge,
+
+1130
+00:34:43,910 --> 00:34:45,590
+we can represent
+this as a knowledge
+
+1131
+00:34:45,590 --> 00:34:47,750
+graph. But how do we
+make the knowledge
+
+1132
+00:34:47,750 --> 00:34:49,495
+graph more causal? Right?
+
+1133
+00:34:49,495 --> 00:34:51,255
+And so that's
+it's they're very
+
+1134
+00:34:51,255 --> 00:34:52,535
+tied together. So I think by
+
+1135
+00:34:52,535 --> 00:34:53,755
+the time we get here,
+
+1136
+00:34:55,095 --> 00:34:57,175
+the boundary between
+the knowledge
+
+1137
+00:34:57,175 --> 00:34:59,415
+graph and the general AI will
+
+1138
+00:34:59,415 --> 00:35:00,375
+have blurred. They will have
+
+1139
+00:35:00,375 --> 00:35:01,980
+become one and
+the same because,
+
+1140
+00:35:02,380 --> 00:35:03,660
+we need them. It's like you
+
+1141
+00:35:03,740 --> 00:35:05,360
+you're not different
+from your memory.
+
+1142
+00:35:05,580 --> 00:35:07,020
+Right? You can't
+totally separate
+
+1143
+00:35:07,020 --> 00:35:08,300
+a lot of things
+that is that are
+
+1144
+00:35:08,300 --> 00:35:10,000
+in your brain. They
+kind of go together.
+
+1145
+00:35:10,300 --> 00:35:11,900
+So I think that
+is where the true
+
+1146
+00:35:11,900 --> 00:35:13,020
+fifteen year framework lies.
+
+1147
+00:35:13,020 --> 00:35:14,140
+Combining the knowledge graph
+
+1148
+00:35:14,140 --> 00:35:14,960
+with the reasoning,
+
+1149
+00:35:15,020 --> 00:35:17,595
+the the actual intelligence,
+
+1150
+00:35:18,215 --> 00:35:19,655
+it all has to come together in
+
+1151
+00:35:19,655 --> 00:35:20,635
+a single architecture.
+
+1152
+00:35:21,975 --> 00:35:23,195
+So with that,
+
+1153
+00:35:24,215 --> 00:35:26,155
+maybe we have time
+for a few questions.
+
+1154
+00:35:27,655 --> 00:35:29,095
+But I'm happy to connect on
+
+1155
+00:35:29,095 --> 00:35:31,420
+LinkedIn with,
+anyone who has,
+
+1156
+00:35:32,540 --> 00:35:33,660
+who has other questions,
+
+1157
+00:35:33,660 --> 00:35:36,060
+wants to do a deep
+dive into this.
+
+1158
+00:35:36,460 --> 00:35:37,660
+You know, please do reach out
+
+1159
+00:35:37,660 --> 00:35:38,560
+to me on LinkedIn,
+
+1160
+00:35:38,620 --> 00:35:40,460
+and we can also we can have
+
+1161
+00:35:40,460 --> 00:35:43,920
+broader discussions,
+Darren as well.
+
+1162
+00:35:47,645 --> 00:35:48,785
+Thank you, Mayank.
+
+1163
+00:35:49,725 --> 00:35:50,945
+Thank you for your talk.
+
+1164
+00:35:51,645 --> 00:35:55,725
+We do have a couple
+questions,
+
+1165
+00:35:55,725 --> 00:35:58,625
+and I see, some
+more are coming,
+
+1166
+00:36:01,620 --> 00:36:03,300
+on the chat. So, Mayank,
+
+1167
+00:36:03,300 --> 00:36:04,740
+can you can you
+read the chat?
+
+1168
+00:36:04,740 --> 00:36:05,780
+Do you do you want to,
+
+1169
+00:36:06,100 --> 00:36:07,560
+pick up the questions
+yourself?
+
+1170
+00:36:08,260 --> 00:36:10,920
+Sure. So I think,
+one question is,
+
+1171
+00:36:14,195 --> 00:36:16,515
+do McKinsey and
+or others publish
+
+1172
+00:36:16,515 --> 00:36:17,495
+similar charts?
+
+1173
+00:36:17,795 --> 00:36:19,415
+So, Larry, by similar,
+
+1174
+00:36:19,475 --> 00:36:21,075
+I'm I'm I'm assuming that you
+
+1175
+00:36:21,075 --> 00:36:23,475
+are you're you mentioned
+a high curve,
+
+1176
+00:36:23,475 --> 00:36:24,995
+or did you mean
+the other one,
+
+1177
+00:36:24,995 --> 00:36:26,775
+the KG's for social guide?
+
+1178
+00:36:27,840 --> 00:36:29,120
+I think that's
+the high curve.
+
+1179
+00:36:29,120 --> 00:36:30,480
+That's when the you
+were showing
+
+1180
+00:36:30,480 --> 00:36:32,160
+the high curve that
+that question came.
+
+1181
+00:36:32,160 --> 00:36:35,600
+Yeah. I don't
+think I I have not
+
+1182
+00:36:35,600 --> 00:36:37,380
+seen such a slide
+from McKinsey.
+
+1183
+00:36:37,600 --> 00:36:39,220
+I have seen it
+from Accenture,
+
+1184
+00:36:40,385 --> 00:36:41,345
+and from Deloitte.
+
+1185
+00:36:41,345 --> 00:36:42,785
+I think Accenture and Deloitte
+
+1186
+00:36:42,785 --> 00:36:43,985
+definitely come out with,
+
+1187
+00:36:45,105 --> 00:36:46,865
+I haven't seen
+a curve from them.
+
+1188
+00:36:46,865 --> 00:36:49,345
+I have seen, them see, okay,
+
+1189
+00:36:49,345 --> 00:36:51,265
+what are the what are the top
+
+1190
+00:36:51,265 --> 00:36:52,645
+technology trends?
+
+1191
+00:36:52,790 --> 00:36:54,330
+I think if I'm
+remembering correctly,
+
+1192
+00:36:54,390 --> 00:36:56,070
+either from Accenture
+or Deloitte
+
+1193
+00:36:56,070 --> 00:36:57,910
+or both, I know that they come
+
+1194
+00:36:57,910 --> 00:37:00,070
+out with technology
+trends, and,
+
+1195
+00:37:00,390 --> 00:37:02,090
+I have some of them
+on my machine.
+
+1196
+00:37:03,030 --> 00:37:04,630
+But I don't really see a hype
+
+1197
+00:37:04,630 --> 00:37:05,750
+curve as such that they have
+
+1198
+00:37:05,750 --> 00:37:06,970
+come out with. I
+think Dartmouth
+
+1199
+00:37:07,030 --> 00:37:08,375
+has really, know,
+
+1200
+00:37:08,375 --> 00:37:09,655
+if anyone else
+tries to come out
+
+1201
+00:37:09,655 --> 00:37:11,175
+with that, they
+it would probably
+
+1202
+00:37:11,175 --> 00:37:13,015
+look like they
+are imitating and
+
+1203
+00:37:13,015 --> 00:37:14,855
+I'm not sure that that's very
+
+1204
+00:37:14,855 --> 00:37:16,315
+flattering. So,
+
+1205
+00:37:17,095 --> 00:37:18,775
+I haven't seen
+a curve like that
+
+1206
+00:37:18,775 --> 00:37:20,955
+from anywhere from
+anyone except
+
+1207
+00:37:21,680 --> 00:37:22,560
+to to be honest.
+
+1208
+00:37:22,560 --> 00:37:27,300
+So we we have, we
+have, people from,
+
+1209
+00:37:28,080 --> 00:37:31,440
+Deloitte and
+Accenture attending
+
+1210
+00:37:31,440 --> 00:37:33,060
+this conference and and other
+
+1211
+00:37:33,280 --> 00:37:33,780
+consulting.
+

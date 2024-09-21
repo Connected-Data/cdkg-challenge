@@ -1,0 +1,3639 @@
+1
+00:00:03,380 --> 00:00:06,040
+This talk is about
+graph thinking,
+
+2
+00:00:06,580 --> 00:00:08,600
+and the slides are online.
+
+3
+00:00:08,660 --> 00:00:10,440
+There's a URL shown here.
+
+4
+00:00:11,045 --> 00:00:11,845
+Actually, there's a lot of
+
+5
+00:00:11,845 --> 00:00:13,625
+background material,
+a lot of links.
+
+6
+00:00:13,685 --> 00:00:15,625
+Let's, let's consider
+a scenario.
+
+7
+00:00:16,005 --> 00:00:18,165
+There's a village somewhere in
+
+8
+00:00:18,165 --> 00:00:18,825
+the woods.
+
+9
+00:00:20,090 --> 00:00:21,150
+In our village,
+
+10
+00:00:21,610 --> 00:00:23,850
+there's someone named Pat who
+
+11
+00:00:23,850 --> 00:00:25,710
+runs the pub, local pub.
+
+12
+00:00:26,250 --> 00:00:27,870
+Pat has a couple of friends,
+
+13
+00:00:28,090 --> 00:00:29,710
+Hannah and Thomas.
+
+14
+00:00:31,755 --> 00:00:34,175
+Now Hana works the fields,
+
+15
+00:00:34,395 --> 00:00:35,615
+grows the grain.
+
+16
+00:00:36,235 --> 00:00:38,255
+Hana has a friend
+named Aiden.
+
+17
+00:00:39,930 --> 00:00:42,350
+Thomas works poultry,
+
+18
+00:00:42,650 --> 00:00:45,710
+raises hens and
+produces eggs.
+
+19
+00:00:46,635 --> 00:00:48,495
+And Thomas has a friend
+named Brenda.
+
+20
+00:00:50,715 --> 00:00:53,935
+And then Aiden is the miller,
+
+21
+00:00:54,320 --> 00:00:55,220
+Hannah's friend.
+
+22
+00:00:55,360 --> 00:00:57,220
+Hannah sells grain to Aiden.
+
+23
+00:00:57,920 --> 00:00:58,640
+Aiden, in turn,
+
+24
+00:00:58,640 --> 00:00:59,860
+has a friend named Chris.
+
+25
+00:01:01,360 --> 00:01:03,415
+And Brenda, Thomas's friend,
+
+26
+00:01:03,655 --> 00:01:04,795
+works the brewery.
+
+27
+00:01:05,335 --> 00:01:07,275
+Brenda buys grain from Hannah
+
+28
+00:01:07,815 --> 00:01:09,335
+and she makes beer,
+
+29
+00:01:09,335 --> 00:01:10,375
+which she sells to Pat,
+
+30
+00:01:10,375 --> 00:01:11,515
+who runs the pub.
+
+31
+00:01:12,230 --> 00:01:14,090
+Brenda also has
+a friend named Kim.
+
+32
+00:01:15,830 --> 00:01:18,250
+And then Chris,
+Iden's friend,
+
+33
+00:01:19,165 --> 00:01:21,565
+buys eggs from Thomas and buys
+
+34
+00:01:21,565 --> 00:01:23,885
+flour from Iden's mill and
+
+35
+00:01:23,885 --> 00:01:25,905
+produces bread. Chris
+works the bakery.
+
+36
+00:01:26,160 --> 00:01:27,920
+And of course, his
+bread is sold to Pat,
+
+37
+00:01:27,920 --> 00:01:28,900
+who runs the pub.
+
+38
+00:01:29,920 --> 00:01:32,260
+And then there's Kim,
+Brenda's friend.
+
+39
+00:01:32,960 --> 00:01:34,260
+Kim works the recycler,
+
+40
+00:01:34,945 --> 00:01:37,585
+and Kim buys
+organic waste from
+
+41
+00:01:37,585 --> 00:01:41,925
+Thomas and from
+Brenda and Chris
+
+42
+00:01:42,400 --> 00:01:43,840
+and then mix
+fertilizer to sell
+
+43
+00:01:43,840 --> 00:01:45,060
+back to Han.
+
+44
+00:01:47,360 --> 00:01:49,360
+So we had a graph that we
+
+45
+00:01:49,360 --> 00:01:50,260
+described there.
+
+46
+00:01:50,625 --> 00:01:52,025
+Now if we're gonna
+put this into
+
+47
+00:01:52,025 --> 00:01:53,905
+a normalized form
+for a relational
+
+48
+00:01:53,905 --> 00:01:55,665
+database, you see the schema
+
+49
+00:01:55,665 --> 00:01:56,465
+here on the left.
+
+50
+00:01:56,465 --> 00:01:58,145
+You would see maybe six tables
+
+51
+00:01:58,145 --> 00:01:59,925
+if you had a fully
+normalized form.
+
+52
+00:02:00,330 --> 00:02:02,010
+And the thing is,
+
+53
+00:02:02,010 --> 00:02:03,550
+the information about
+the relationships
+
+54
+00:02:03,610 --> 00:02:05,390
+in that village are completely
+
+55
+00:02:05,610 --> 00:02:07,210
+dismantled and destroyed and
+
+56
+00:02:07,210 --> 00:02:09,455
+atomized here by
+having a relational
+
+57
+00:02:09,455 --> 00:02:11,215
+view. How can you look at this
+
+58
+00:02:11,215 --> 00:02:12,995
+and tell what those
+relationships are?
+
+59
+00:02:14,495 --> 00:02:15,375
+On the other hand,
+
+60
+00:02:15,375 --> 00:02:16,595
+if you've got a graph,
+
+61
+00:02:16,870 --> 00:02:18,470
+you're presented with exactly
+
+62
+00:02:18,470 --> 00:02:20,310
+that context:
+the relationships
+
+63
+00:02:20,310 --> 00:02:21,930
+of who knows who
+in this village,
+
+64
+00:02:21,990 --> 00:02:24,090
+who produces what,
+who sells to whom,
+
+65
+00:02:24,505 --> 00:02:26,025
+and just the general flow of
+
+66
+00:02:26,025 --> 00:02:27,885
+commerce that's
+going on around
+
+67
+00:02:28,265 --> 00:02:29,465
+inside of this little Black
+
+68
+00:02:29,465 --> 00:02:30,685
+Forest medieval village.
+
+69
+00:02:31,980 --> 00:02:33,900
+Now the thing is that graphs
+
+70
+00:02:33,900 --> 00:02:35,760
+bring a kind of network view.
+
+71
+00:02:36,620 --> 00:02:38,140
+They bring the data closer to
+
+72
+00:02:38,140 --> 00:02:39,840
+people who can
+make sense of it.
+
+73
+00:02:40,195 --> 00:02:42,455
+This is acknowledging
+the the complexity
+
+74
+00:02:42,595 --> 00:02:43,335
+of the context.
+
+75
+00:02:43,795 --> 00:02:46,035
+This is about
+identifying emergent
+
+76
+00:02:46,035 --> 00:02:47,795
+patterns. This is about being
+
+77
+00:02:47,795 --> 00:02:49,335
+able to make
+informed decisions
+
+78
+00:02:49,400 --> 00:02:51,900
+based on the relationships
+that exist.
+
+79
+00:02:52,840 --> 00:02:54,940
+That is the essence
+of graph thinking.
+
+80
+00:02:55,720 --> 00:02:57,320
+Really it boils
+down to thinking
+
+81
+00:02:57,320 --> 00:02:59,545
+in patterns. So
+let's get a couple
+
+82
+00:02:59,545 --> 00:03:00,685
+of examples here.
+
+83
+00:03:01,385 --> 00:03:03,145
+Hannah's relatively
+new in the village.
+
+84
+00:03:03,145 --> 00:03:04,745
+She'd like to expand
+her business.
+
+85
+00:03:04,745 --> 00:03:06,845
+She's noticed that one
+of her customers,
+
+86
+00:03:06,905 --> 00:03:08,925
+Brenda, happens to
+buy a lot of grain.
+
+87
+00:03:09,440 --> 00:03:11,220
+Now who are
+the other villagers
+
+88
+00:03:11,280 --> 00:03:12,660
+who are similar to Brenda?
+
+89
+00:03:12,720 --> 00:03:13,860
+Perhaps she could upsell.
+
+90
+00:03:14,400 --> 00:03:17,120
+Well, doing a little
+bit of work
+
+91
+00:03:17,120 --> 00:03:17,920
+with the graph here,
+
+92
+00:03:17,920 --> 00:03:19,985
+you can see there's another
+
+93
+00:03:19,985 --> 00:03:22,225
+person named Chris who also
+
+94
+00:03:22,225 --> 00:03:23,365
+sells product to Pat,
+
+95
+00:03:23,425 --> 00:03:24,965
+also sells waste to Canon.
+
+96
+00:03:25,505 --> 00:03:27,980
+You know, maybe Chris's bakery
+
+97
+00:03:28,040 --> 00:03:29,900
+would be a direct
+customer of Hana.
+
+98
+00:03:30,040 --> 00:03:31,560
+I don't know. Selling grain
+
+99
+00:03:31,560 --> 00:03:32,700
+directly to a bakery.
+
+100
+00:03:32,920 --> 00:03:34,715
+Maybe they could
+sprout or make
+
+101
+00:03:34,715 --> 00:03:36,075
+malt or something like that.
+
+102
+00:03:36,075 --> 00:03:37,995
+Hannah is also interested in
+
+103
+00:03:37,995 --> 00:03:39,515
+sponsoring a co
+marketing campaign
+
+104
+00:03:39,515 --> 00:03:40,975
+here in her medieval village.
+
+105
+00:03:41,600 --> 00:03:43,280
+And so she'd like
+to try to help
+
+106
+00:03:43,280 --> 00:03:45,380
+drive the demand
+for more grain.
+
+107
+00:03:45,760 --> 00:03:47,540
+So we can do some
+analysis here.
+
+108
+00:03:48,160 --> 00:03:49,920
+Who are the customers
+of Hannah's
+
+109
+00:03:49,920 --> 00:03:50,660
+grain customers?
+
+110
+00:03:50,765 --> 00:03:51,565
+And so for this,
+
+111
+00:03:51,565 --> 00:03:52,685
+we do some graph reversals.
+
+112
+00:03:52,685 --> 00:03:54,625
+We're looking a couple
+of hops out.
+
+113
+00:03:55,245 --> 00:03:56,525
+We noticed that Chris, Pat,
+
+114
+00:03:56,525 --> 00:03:58,365
+and Kim are each a minimum of
+
+115
+00:03:58,365 --> 00:03:59,425
+two hops away.
+
+116
+00:04:00,540 --> 00:04:02,140
+And it turns out
+we heard about
+
+117
+00:04:02,140 --> 00:04:03,680
+Kim a couple of times here.
+
+118
+00:04:04,780 --> 00:04:06,320
+And just to make it
+more interesting,
+
+119
+00:04:06,780 --> 00:04:09,545
+a tech billionaire uses time
+
+120
+00:04:09,545 --> 00:04:11,385
+travel to relocate
+back to this
+
+121
+00:04:11,385 --> 00:04:13,005
+medieval village in
+the Black Forest.
+
+122
+00:04:13,545 --> 00:04:15,225
+Which businesses are the most
+
+123
+00:04:15,225 --> 00:04:17,305
+influential as
+potential acquisition
+
+124
+00:04:17,305 --> 00:04:19,170
+targets? Well, it turns out if
+
+125
+00:04:19,170 --> 00:04:20,410
+you do some graph algorithms
+
+126
+00:04:20,410 --> 00:04:21,950
+based on this
+data right here,
+
+127
+00:04:23,130 --> 00:04:24,990
+there's a family
+called centrality.
+
+128
+00:04:25,130 --> 00:04:26,225
+There There's
+a variant of this
+
+129
+00:04:26,225 --> 00:04:27,605
+called between the centrality
+
+130
+00:04:27,665 --> 00:04:28,705
+and it's really looking and
+
+131
+00:04:28,705 --> 00:04:30,225
+seeing which nodes are between
+
+132
+00:04:30,225 --> 00:04:31,205
+all the other nodes.
+
+133
+00:04:31,745 --> 00:04:33,105
+If you calculate that out,
+
+134
+00:04:33,105 --> 00:04:36,340
+you find that in fact Hana has
+
+135
+00:04:36,340 --> 00:04:37,860
+the highest ranking there for
+
+136
+00:04:37,860 --> 00:04:38,840
+between and centrality.
+
+137
+00:04:39,220 --> 00:04:40,500
+Chris has the second highest
+
+138
+00:04:40,500 --> 00:04:42,020
+ranking there. So, you know,
+
+139
+00:04:42,020 --> 00:04:43,515
+these are the businesses that
+
+140
+00:04:43,755 --> 00:04:45,195
+probably would be
+your acquisition
+
+141
+00:04:45,195 --> 00:04:47,275
+targets for Musk
+or, you know,
+
+142
+00:04:47,275 --> 00:04:50,155
+whomever. And it's interesting
+
+143
+00:04:50,155 --> 00:04:51,435
+to me that when I first showed
+
+144
+00:04:51,435 --> 00:04:52,750
+this graph to someone who has
+
+145
+00:04:52,750 --> 00:04:53,870
+absolutely no background on
+
+146
+00:04:53,870 --> 00:04:56,190
+graph algorithms,
+my my friend,
+
+147
+00:04:56,190 --> 00:04:58,030
+she was able to
+immediately look
+
+148
+00:04:58,030 --> 00:04:59,490
+at the graph, look at
+the relationships,
+
+149
+00:04:59,550 --> 00:05:01,155
+and say, Hana's really hanging
+
+150
+00:05:01,155 --> 00:05:02,035
+out there. I mean,
+
+151
+00:05:02,035 --> 00:05:04,035
+the person making the grain is
+
+152
+00:05:04,035 --> 00:05:05,075
+raking in the money.
+
+153
+00:05:05,075 --> 00:05:06,355
+And indeed, that's what graph
+
+154
+00:05:06,355 --> 00:05:07,410
+algorithms show.
+
+155
+00:05:08,130 --> 00:05:09,730
+This is about
+the complexity of
+
+156
+00:05:09,730 --> 00:05:11,890
+relationships.
+Now there's a lot
+
+157
+00:05:11,890 --> 00:05:13,410
+of background when we study
+
+158
+00:05:13,410 --> 00:05:14,550
+complexity of relationships.
+
+159
+00:05:15,285 --> 00:05:17,145
+I wanna cover these
+in a couple of ways.
+
+160
+00:05:18,245 --> 00:05:20,005
+If you go back to
+nineteen ninety nine,
+
+161
+00:05:20,005 --> 00:05:22,745
+Dave Snowden was
+a consultant at IBM,
+
+162
+00:05:23,330 --> 00:05:25,670
+and he developed a framework
+
+163
+00:05:25,890 --> 00:05:26,710
+called Kinev,
+
+164
+00:05:27,410 --> 00:05:30,745
+which tries to
+assess a kind of
+
+165
+00:05:30,745 --> 00:05:32,745
+context in which
+business leaders
+
+166
+00:05:32,745 --> 00:05:34,585
+are confronting problems and
+
+167
+00:05:34,585 --> 00:05:36,025
+need to be able
+to apply decision
+
+168
+00:05:36,025 --> 00:05:38,585
+making. You may
+have heard this
+
+169
+00:05:38,585 --> 00:05:40,940
+referenced. It it was where,
+
+170
+00:05:41,380 --> 00:05:44,840
+sort of the origin of
+unknown unknowns,
+
+171
+00:05:45,060 --> 00:05:46,100
+which of course was referenced
+
+172
+00:05:46,100 --> 00:05:47,000
+after nine eleven.
+
+173
+00:05:47,220 --> 00:05:49,160
+But, in the Cynefin
+framework,
+
+174
+00:05:49,395 --> 00:05:50,835
+you proceed from, say,
+
+175
+00:05:50,835 --> 00:05:52,675
+simple context where there are
+
+176
+00:05:52,675 --> 00:05:53,575
+established facts.
+
+177
+00:05:53,955 --> 00:05:54,995
+You just need to go in and
+
+178
+00:05:54,995 --> 00:05:56,515
+categorize the needs and apply
+
+179
+00:05:56,515 --> 00:05:58,050
+the best practices,
+the rules.
+
+180
+00:05:58,370 --> 00:05:59,810
+Or you can progress in more
+
+181
+00:05:59,810 --> 00:06:01,670
+complicated kinds
+of situations
+
+182
+00:06:01,810 --> 00:06:03,890
+where some kind of
+expertise is needed,
+
+183
+00:06:03,890 --> 00:06:04,870
+some kind of analysis.
+
+184
+00:06:04,930 --> 00:06:05,890
+So analysts go in,
+
+185
+00:06:05,890 --> 00:06:06,950
+they assess the facts,
+
+186
+00:06:07,125 --> 00:06:08,185
+they provide their analysis,
+
+187
+00:06:08,405 --> 00:06:09,845
+and then leaders can respond
+
+188
+00:06:09,845 --> 00:06:12,005
+based off that
+analysis, sort of,
+
+189
+00:06:12,005 --> 00:06:14,085
+you know, warehouses
+and business
+
+190
+00:06:14,085 --> 00:06:16,360
+intelligence. But then you can
+
+191
+00:06:16,360 --> 00:06:18,060
+get into more complex business
+
+192
+00:06:18,840 --> 00:06:20,920
+environments where you really
+
+193
+00:06:20,920 --> 00:06:22,120
+must probe the situation.
+
+194
+00:06:22,120 --> 00:06:23,740
+There's no clear answer.
+
+195
+00:06:24,175 --> 00:06:26,655
+And the way through
+it is to be
+
+196
+00:06:26,655 --> 00:06:28,575
+able to sense
+emergent patterns
+
+197
+00:06:28,575 --> 00:06:29,875
+and make informed decisions
+
+198
+00:06:30,175 --> 00:06:32,080
+based off of
+understanding those
+
+199
+00:06:32,080 --> 00:06:34,260
+patterns. And that
+is the complex
+
+200
+00:06:35,360 --> 00:06:37,300
+side of business
+decision making.
+
+201
+00:06:37,520 --> 00:06:38,960
+And increasingly
+in our world,
+
+202
+00:06:38,960 --> 00:06:40,535
+we're seeing more
+and more kinds
+
+203
+00:06:40,535 --> 00:06:42,135
+of complex challenges,
+
+204
+00:06:42,135 --> 00:06:43,335
+whether we're talking about
+
+205
+00:06:43,335 --> 00:06:45,435
+tangled supply
+chains or pandemics
+
+206
+00:06:45,975 --> 00:06:49,115
+or on and on, climate
+change, etcetera.
+
+207
+00:06:50,230 --> 00:06:51,590
+The world of
+business has become
+
+208
+00:06:51,590 --> 00:06:53,030
+increasingly complex as we've
+
+209
+00:06:53,030 --> 00:06:55,190
+globalized, and
+these are the kind
+
+210
+00:06:55,190 --> 00:06:56,630
+of things here that
+must be applied.
+
+211
+00:06:56,630 --> 00:06:59,335
+This type of
+confronting complexity
+
+212
+00:06:59,395 --> 00:07:00,595
+as opposed to
+sweeping it under
+
+213
+00:07:00,595 --> 00:07:02,035
+the rug and just
+trying to apply
+
+214
+00:07:02,035 --> 00:07:02,775
+best practices.
+
+215
+00:07:03,795 --> 00:07:05,955
+Now there's
+a corollary also if
+
+216
+00:07:05,955 --> 00:07:06,855
+you look at pedagogy,
+
+217
+00:07:06,940 --> 00:07:08,400
+if you look at
+learning theory.
+
+218
+00:07:08,620 --> 00:07:09,440
+Susan Ambrose,
+
+219
+00:07:09,820 --> 00:07:11,660
+has a book at
+a two thousand ten
+
+220
+00:07:11,660 --> 00:07:13,120
+called How Learning Works,
+
+221
+00:07:14,060 --> 00:07:16,815
+and part of this
+describes sort
+
+222
+00:07:16,815 --> 00:07:19,255
+of the journey from
+being a novice,
+
+223
+00:07:19,255 --> 00:07:21,015
+a complete beginner
+in a particular
+
+224
+00:07:21,015 --> 00:07:23,255
+subject, advancing
+into someone
+
+225
+00:07:23,255 --> 00:07:24,155
+who's more advanced,
+
+226
+00:07:24,440 --> 00:07:26,120
+becoming more become competent
+
+227
+00:07:26,120 --> 00:07:27,400
+practitioner, and
+then eventually
+
+228
+00:07:27,400 --> 00:07:28,460
+becoming an expert.
+
+229
+00:07:29,160 --> 00:07:31,480
+And what we find as
+we're teaching,
+
+230
+00:07:31,480 --> 00:07:33,400
+as as people are
+learning about
+
+231
+00:07:33,400 --> 00:07:35,225
+a new subject, when
+they're novices,
+
+232
+00:07:35,225 --> 00:07:37,165
+they start out with memorizing
+
+233
+00:07:37,225 --> 00:07:40,445
+some facts, mostly
+disconnected facts.
+
+234
+00:07:41,385 --> 00:07:44,280
+As people become
+more advanced,
+
+235
+00:07:44,280 --> 00:07:45,980
+they gain more understanding.
+
+236
+00:07:46,040 --> 00:07:47,880
+They start to string
+together the facts.
+
+237
+00:07:47,880 --> 00:07:49,740
+You get this kind of
+linear thinking.
+
+238
+00:07:50,895 --> 00:07:52,735
+Amongst competent
+practitioners though,
+
+239
+00:07:52,735 --> 00:07:55,295
+we see really what what could
+
+240
+00:07:55,295 --> 00:07:57,135
+be called decision
+trees cognitive
+
+241
+00:07:57,135 --> 00:07:58,575
+structures that are much more
+
+242
+00:07:58,575 --> 00:08:00,530
+tree like in terms
+of decision making.
+
+243
+00:08:01,170 --> 00:08:03,350
+But when people move into
+
+244
+00:08:03,410 --> 00:08:04,790
+expertise in a field,
+
+245
+00:08:05,410 --> 00:08:07,110
+what we see are essentially
+
+246
+00:08:07,410 --> 00:08:08,950
+learning how to
+break the rules,
+
+247
+00:08:09,535 --> 00:08:11,055
+not just following
+those decision
+
+248
+00:08:11,055 --> 00:08:12,895
+trees blindly,
+but understanding
+
+249
+00:08:12,895 --> 00:08:14,255
+where they apply
+and where they
+
+250
+00:08:14,255 --> 00:08:15,795
+they don't necessarily apply.
+
+251
+00:08:16,175 --> 00:08:18,400
+And that creates
+cognitive structures,
+
+252
+00:08:18,480 --> 00:08:19,900
+which are graphs.
+
+253
+00:08:20,080 --> 00:08:21,600
+We should learn
+something about
+
+254
+00:08:21,600 --> 00:08:24,720
+this that essentially
+when we're
+
+255
+00:08:24,720 --> 00:08:27,460
+talking about
+working in a complex
+
+256
+00:08:27,520 --> 00:08:28,915
+context, when we're talking
+
+257
+00:08:28,915 --> 00:08:31,075
+about learning
+perceived emergent
+
+258
+00:08:31,075 --> 00:08:32,935
+patterns in a in a complex
+
+259
+00:08:33,155 --> 00:08:34,915
+challenging
+situation and being
+
+260
+00:08:34,915 --> 00:08:36,115
+able to gain expertise on how
+
+261
+00:08:36,115 --> 00:08:38,470
+to behave in that
+kind of environment,
+
+262
+00:08:39,170 --> 00:08:41,410
+we need to go move toward more
+
+263
+00:08:41,410 --> 00:08:42,950
+graph like cognitive
+structures.
+
+264
+00:08:43,570 --> 00:08:45,270
+And this should be definitely
+
+265
+00:08:45,330 --> 00:08:48,505
+a clue for the way
+forward with AI.
+
+266
+00:08:49,365 --> 00:08:51,125
+Relational data management and
+
+267
+00:08:51,125 --> 00:08:53,685
+reporting, that all arose from
+
+268
+00:08:53,685 --> 00:08:54,905
+simple business contexts.
+
+269
+00:08:55,490 --> 00:08:56,770
+And that led to
+things like data
+
+270
+00:08:56,770 --> 00:08:58,370
+warehouses and data lakes,
+
+271
+00:08:58,370 --> 00:09:00,070
+practices like business
+intelligence.
+
+272
+00:09:00,930 --> 00:09:03,405
+But the the complexities,
+
+273
+00:09:03,465 --> 00:09:04,985
+the uncertainties
+of the twenty
+
+274
+00:09:04,985 --> 00:09:06,825
+first century,
+this really forces
+
+275
+00:09:06,825 --> 00:09:10,285
+more where leaders
+must increasingly
+
+276
+00:09:10,345 --> 00:09:12,380
+rely on sense making
+by leveraging
+
+277
+00:09:12,380 --> 00:09:14,000
+the use of graph patterns.
+
+278
+00:09:15,180 --> 00:09:16,240
+Now in contrast,
+
+279
+00:09:16,300 --> 00:09:17,340
+there is something called
+
+280
+00:09:17,340 --> 00:09:18,300
+ambiguity aversion.
+
+281
+00:09:18,300 --> 00:09:19,100
+If you look this up,
+
+282
+00:09:19,100 --> 00:09:20,975
+it's it comes from cognitive
+
+283
+00:09:20,975 --> 00:09:22,175
+psychology but also behavioral
+
+284
+00:09:22,175 --> 00:09:24,735
+economics. And it
+has to do with
+
+285
+00:09:24,735 --> 00:09:27,075
+how when faced
+with uncertainty,
+
+286
+00:09:27,860 --> 00:09:29,460
+many people will do exactly
+
+287
+00:09:29,460 --> 00:09:30,100
+the wrong thing.
+
+288
+00:09:30,100 --> 00:09:31,800
+They'll make exactly
+the wrong choice.
+
+289
+00:09:32,180 --> 00:09:35,545
+This is highly
+important for AI
+
+290
+00:09:35,545 --> 00:09:37,245
+applications in
+terms of helping
+
+291
+00:09:37,385 --> 00:09:38,745
+organizations and leaders be
+
+292
+00:09:38,745 --> 00:09:39,785
+able to augment their decision
+
+293
+00:09:39,785 --> 00:09:41,625
+making processes to
+understand that,
+
+294
+00:09:41,625 --> 00:09:42,905
+in fact, some people just try
+
+295
+00:09:42,905 --> 00:09:44,205
+to sweep it under the rug.
+
+296
+00:09:44,560 --> 00:09:46,080
+But really, we
+must be embracing
+
+297
+00:09:46,080 --> 00:09:46,660
+the complexity,
+
+298
+00:09:47,040 --> 00:09:48,720
+working with
+emergent patterns,
+
+299
+00:09:48,720 --> 00:09:50,020
+working with graph thinking.
+
+300
+00:09:50,560 --> 00:09:52,545
+I'd like to acknowledge a good
+
+301
+00:09:52,545 --> 00:09:54,945
+friend colleague,
+Juergen Buehler from,
+
+302
+00:09:55,185 --> 00:09:56,325
+BSF in Germany.
+
+303
+00:09:56,785 --> 00:09:58,705
+Juergen and I put
+together this
+
+304
+00:09:58,705 --> 00:10:01,410
+scenario of
+the village to explore
+
+305
+00:10:01,870 --> 00:10:03,710
+graph thinking and help to
+
+306
+00:10:03,710 --> 00:10:05,010
+illustrate this concept.
+
+307
+00:10:05,550 --> 00:10:06,750
+We have an article also that
+
+308
+00:10:06,750 --> 00:10:08,190
+goes in a bit more detail that
+
+309
+00:10:08,190 --> 00:10:09,170
+that's on Medium.
+
+310
+00:10:09,710 --> 00:10:11,955
+So talking about graphs.
+
+311
+00:10:12,415 --> 00:10:14,255
+You know,
+the the thing is that
+
+312
+00:10:14,255 --> 00:10:15,455
+in business graphs,
+
+313
+00:10:15,455 --> 00:10:16,995
+connected data is everywhere.
+
+314
+00:10:17,775 --> 00:10:19,680
+Now when you talk
+with people,
+
+315
+00:10:19,680 --> 00:10:20,880
+when you teach people about
+
+316
+00:10:20,880 --> 00:10:21,940
+doing data science,
+
+317
+00:10:22,080 --> 00:10:24,260
+when you talk with
+people about data,
+
+318
+00:10:24,480 --> 00:10:25,760
+they typically respond by
+
+319
+00:10:25,760 --> 00:10:27,940
+describing a table,
+rows and columns,
+
+320
+00:10:28,505 --> 00:10:31,245
+rectangles, matrices,
+spreadsheets,
+
+321
+00:10:31,785 --> 00:10:33,725
+reporting tables,
+these kinds of things.
+
+322
+00:10:33,785 --> 00:10:35,545
+People are trained to think in
+
+323
+00:10:35,545 --> 00:10:38,160
+terms of square patterns when
+
+324
+00:10:38,220 --> 00:10:39,440
+they hear the word data.
+
+325
+00:10:40,300 --> 00:10:42,480
+And, okay, that works except
+
+326
+00:10:43,260 --> 00:10:44,960
+when when it's not the case.
+
+327
+00:10:45,580 --> 00:10:47,805
+Spreadsheets, SQL reporting,
+
+328
+00:10:48,025 --> 00:10:49,485
+all these rely on graphs.
+
+329
+00:10:50,185 --> 00:10:51,625
+Within every Excel
+spreadsheet,
+
+330
+00:10:51,625 --> 00:10:52,905
+there's a dependency graph.
+
+331
+00:10:52,905 --> 00:10:54,520
+That's the key to
+calculating it.
+
+332
+00:10:54,760 --> 00:10:56,040
+Within every SQL query,
+
+333
+00:10:56,040 --> 00:10:57,320
+there is a query plan which is
+
+334
+00:10:57,320 --> 00:10:58,600
+directed acyclic graph.
+
+335
+00:10:58,600 --> 00:11:00,280
+There are complex
+ERDs for being
+
+336
+00:11:00,280 --> 00:11:01,400
+able to represent
+the scheme and
+
+337
+00:11:01,400 --> 00:11:03,435
+resolve that. The fact is that
+
+338
+00:11:03,435 --> 00:11:04,735
+these kinds of computational
+
+339
+00:11:04,795 --> 00:11:06,495
+techniques rely on graphs.
+
+340
+00:11:06,715 --> 00:11:08,395
+And in fact the metadata and
+
+341
+00:11:08,395 --> 00:11:10,075
+the business rules
+which go part
+
+342
+00:11:10,075 --> 00:11:12,060
+and parcel with these
+internal graphs,
+
+343
+00:11:12,300 --> 00:11:13,740
+they get obscured by the kind
+
+344
+00:11:13,740 --> 00:11:14,880
+of tabular format.
+
+345
+00:11:15,420 --> 00:11:16,940
+It becomes difficult
+to troubleshoot
+
+346
+00:11:16,940 --> 00:11:18,880
+and test and reuse an audit.
+
+347
+00:11:18,940 --> 00:11:20,060
+It creates technical debt.
+
+348
+00:11:20,060 --> 00:11:21,355
+And if you don't believe me,
+
+349
+00:11:21,515 --> 00:11:22,555
+understand that ninety five
+
+350
+00:11:22,555 --> 00:11:24,175
+percent of the global
+two thousand
+
+351
+00:11:24,395 --> 00:11:25,195
+companies in the world,
+
+352
+00:11:25,195 --> 00:11:27,935
+when they do their
+final tax reporting,
+
+353
+00:11:28,235 --> 00:11:29,710
+the final stages
+of ninety five
+
+354
+00:11:29,710 --> 00:11:31,150
+percent of the firms
+is done in
+
+355
+00:11:31,150 --> 00:11:32,990
+spreadsheets. And
+those spreadsheets
+
+356
+00:11:32,990 --> 00:11:34,270
+are not consistent from one
+
+357
+00:11:34,270 --> 00:11:35,330
+quarter to the next.
+
+358
+00:11:36,035 --> 00:11:38,135
+That is tech debt,
+and it's a problem.
+
+359
+00:11:38,355 --> 00:11:40,035
+Gartner had been somewhat iffy
+
+360
+00:11:40,035 --> 00:11:41,815
+with regards to
+graph technologies.
+
+361
+00:11:42,035 --> 00:11:44,460
+However, in early
+twenty twenty
+
+362
+00:11:44,460 --> 00:11:45,260
+one in February,
+
+363
+00:11:45,420 --> 00:11:46,960
+Gartner did an about a face.
+
+364
+00:11:47,100 --> 00:11:48,160
+They're saying that,
+
+365
+00:11:49,340 --> 00:11:51,065
+graph technologies
+will bump up
+
+366
+00:11:51,145 --> 00:11:52,685
+to eighty percent
+of data analytics,
+
+367
+00:11:53,385 --> 00:11:55,065
+up from ten percent usage in
+
+368
+00:11:55,065 --> 00:11:56,105
+twenty twenty one.
+
+369
+00:11:56,105 --> 00:11:57,545
+Those are very rapid change.
+
+370
+00:11:57,545 --> 00:11:58,985
+And what they're
+pointing toward
+
+371
+00:11:58,985 --> 00:12:01,280
+is this. By exposing metadata
+
+372
+00:12:01,280 --> 00:12:02,160
+and business rules,
+
+373
+00:12:02,160 --> 00:12:03,860
+the very thing
+that gets obscured
+
+374
+00:12:04,320 --> 00:12:06,080
+by spreadsheets and relational
+
+375
+00:12:06,080 --> 00:12:07,705
+databases, which
+leads to tech debt,
+
+376
+00:12:07,785 --> 00:12:09,465
+This is what
+graphs surface and
+
+377
+00:12:09,465 --> 00:12:10,905
+allow domain
+experts to be able
+
+378
+00:12:10,905 --> 00:12:12,825
+to manipulate. And so we're
+
+379
+00:12:12,825 --> 00:12:14,720
+seeing a lot of
+rise of of graph
+
+380
+00:12:14,960 --> 00:12:16,340
+technologies,
+this kind of usage
+
+381
+00:12:16,400 --> 00:12:17,460
+throughout industry.
+
+382
+00:12:18,240 --> 00:12:19,720
+It's appalling to
+me when I talk
+
+383
+00:12:19,720 --> 00:12:20,900
+to people about graphs,
+
+384
+00:12:21,040 --> 00:12:22,240
+they immediately
+say, oh, well,
+
+385
+00:12:22,240 --> 00:12:23,440
+that's that's just for Google
+
+386
+00:12:23,440 --> 00:12:25,235
+or Facebook, which is which is
+
+387
+00:12:25,235 --> 00:12:26,215
+utterly ridiculous.
+
+388
+00:12:26,755 --> 00:12:28,695
+When you look at it
+in the industrial
+
+389
+00:12:28,835 --> 00:12:31,715
+applications, I I
+know use cases,
+
+390
+00:12:31,715 --> 00:12:32,775
+for instance, in manufacturing
+
+391
+00:12:33,155 --> 00:12:35,400
+where one single
+instance within
+
+392
+00:12:35,400 --> 00:12:37,160
+a manufacturing firm of their
+
+393
+00:12:37,160 --> 00:12:37,980
+graph applications,
+
+394
+00:12:38,440 --> 00:12:40,120
+one use case alone is larger
+
+395
+00:12:40,120 --> 00:12:41,400
+than the entirety of Google's
+
+396
+00:12:41,400 --> 00:12:42,220
+knowledge graph.
+
+397
+00:12:42,695 --> 00:12:44,375
+And this particular
+company has
+
+398
+00:12:44,375 --> 00:12:45,735
+dozens and dozens of different
+
+399
+00:12:45,735 --> 00:12:47,815
+use cases. So I I I think that
+
+400
+00:12:47,815 --> 00:12:49,655
+this is a conceit to say that
+
+401
+00:12:49,655 --> 00:12:51,020
+the the Silicon Valley tech
+
+402
+00:12:51,020 --> 00:12:52,800
+firms have a lead in graph.
+
+403
+00:12:52,860 --> 00:12:54,400
+In fact, they're laggards.
+
+404
+00:12:55,100 --> 00:12:56,620
+The real problem with graphs,
+
+405
+00:12:56,620 --> 00:12:58,240
+this is happening
+out in finance,
+
+406
+00:12:58,335 --> 00:12:59,715
+happening in pharma,
+in manufacturing,
+
+407
+00:13:00,175 --> 00:13:03,555
+and a lot of areas of
+regular industry,
+
+408
+00:13:03,935 --> 00:13:05,075
+not tech companies.
+
+409
+00:13:05,270 --> 00:13:06,550
+The common themes that we see
+
+410
+00:13:06,550 --> 00:13:07,830
+have to do with
+data integration
+
+411
+00:13:07,830 --> 00:13:09,050
+across business silos,
+
+412
+00:13:09,750 --> 00:13:12,150
+having to do essentially
+motif mining,
+
+413
+00:13:12,470 --> 00:13:13,830
+understanding data objects as
+
+414
+00:13:13,830 --> 00:13:15,525
+shapes or topologies,
+geometries,
+
+415
+00:13:17,125 --> 00:13:18,405
+grappling with complexity and
+
+416
+00:13:18,405 --> 00:13:20,005
+uncertainty, working on
+
+417
+00:13:20,005 --> 00:13:22,185
+disambiguation
+problems, working on,
+
+418
+00:13:22,405 --> 00:13:24,310
+you know, eliminating
+cycles and data,
+
+419
+00:13:24,590 --> 00:13:25,170
+and also being able to drill
+
+420
+00:13:25,170 --> 00:13:25,350
+down the details,
+
+421
+00:13:25,350 --> 00:13:26,110
+which are which are critical,
+
+422
+00:13:26,110 --> 00:13:26,630
+more important than
+just receiving
+
+423
+00:13:26,630 --> 00:13:28,410
+a bunch of aggregate accounts
+
+424
+00:13:32,475 --> 00:13:33,595
+that you would
+typically get out
+
+425
+00:13:33,595 --> 00:13:34,635
+of a lot of BI tools.
+
+426
+00:13:34,875 --> 00:13:36,795
+You know, I'll point
+out a few here.
+
+427
+00:13:36,795 --> 00:13:39,535
+Fudome, with Albert
+Lezlo, Barbasi,
+
+428
+00:13:39,675 --> 00:13:42,140
+really, brilliant
+work is they've
+
+429
+00:13:42,140 --> 00:13:44,640
+invented the term of
+network medicine.
+
+430
+00:13:45,100 --> 00:13:46,140
+And there's a nature article
+
+431
+00:13:46,140 --> 00:13:47,340
+that describes what
+they're doing.
+
+432
+00:13:47,580 --> 00:13:48,835
+If you haven't
+seen this so far,
+
+433
+00:13:48,835 --> 00:13:50,195
+it's one of
+the most sophisticated
+
+434
+00:13:50,195 --> 00:13:51,635
+uses of CRAP technologies and
+
+435
+00:13:51,635 --> 00:13:53,415
+probably some of
+the most major
+
+436
+00:13:53,875 --> 00:13:55,875
+impact of what we'll see in
+
+437
+00:13:55,875 --> 00:13:57,590
+terms of of human outcomes.
+
+438
+00:13:58,790 --> 00:13:59,430
+Also, you know,
+
+439
+00:13:59,430 --> 00:14:00,870
+I'll point to drug discovery
+
+440
+00:14:00,870 --> 00:14:02,630
+from companies
+like Novartis and
+
+441
+00:14:02,630 --> 00:14:04,230
+AstraZeneca, and we can talk
+
+442
+00:14:04,230 --> 00:14:05,690
+about Roche and many others.
+
+443
+00:14:06,310 --> 00:14:07,785
+I'm pointing here
+especially to,
+
+444
+00:14:08,425 --> 00:14:10,025
+Stephen Reilings talks out of
+
+445
+00:14:10,025 --> 00:14:11,625
+Novartis using graphs for,
+
+446
+00:14:11,865 --> 00:14:12,685
+drug discovery,
+
+447
+00:14:13,305 --> 00:14:14,980
+Connor Hill at AstraZeneca,
+
+448
+00:14:16,000 --> 00:14:17,380
+in manufacturing.
+
+449
+00:14:17,520 --> 00:14:19,060
+I mentioned about
+my colleague,
+
+450
+00:14:19,120 --> 00:14:21,940
+Jurgen Buehler at BASF, also,
+
+451
+00:14:22,575 --> 00:14:24,015
+Stefan Lempater and Thomas
+
+452
+00:14:24,015 --> 00:14:25,395
+Hjubauer at Siemens.
+
+453
+00:14:26,255 --> 00:14:27,935
+You know, definitely
+in the tech firms,
+
+454
+00:14:27,935 --> 00:14:29,535
+you do see things
+like Amazon's
+
+455
+00:14:29,535 --> 00:14:31,570
+product graph, and definitely
+
+456
+00:14:31,570 --> 00:14:33,170
+Luna Dom is doing some amazing
+
+457
+00:14:33,170 --> 00:14:35,650
+work there. Mark Grover was
+
+458
+00:14:35,650 --> 00:14:37,330
+formerly product
+manager of data
+
+459
+00:14:37,330 --> 00:14:39,415
+at Lyft. He's done
+some amazing work,
+
+460
+00:14:39,975 --> 00:14:41,415
+talking about their use cases
+
+461
+00:14:41,415 --> 00:14:43,595
+for metadata management
+using graphs.
+
+462
+00:14:44,775 --> 00:14:47,175
+Refinitiv and
+Bloomberg and others,
+
+463
+00:14:47,175 --> 00:14:48,535
+of course, in in
+the tech space,
+
+464
+00:14:48,535 --> 00:14:49,710
+but, you know, Tom Baker and
+
+465
+00:14:49,710 --> 00:14:50,670
+others talking about that with
+
+466
+00:14:50,670 --> 00:14:53,070
+fintech data. And,
+and certainly,
+
+467
+00:14:53,470 --> 00:14:54,590
+if you get a chance,
+
+468
+00:14:54,590 --> 00:14:55,950
+check out some of
+the talks from
+
+469
+00:14:55,950 --> 00:14:58,615
+Charles Hay, Sheng Ma Hay at,
+
+470
+00:14:58,935 --> 00:15:00,635
+Ant Financial on
+what they're doing.
+
+471
+00:15:01,495 --> 00:15:03,575
+And and if I were trying to to
+
+472
+00:15:03,575 --> 00:15:05,210
+sort of paraphrase a lot of
+
+473
+00:15:05,210 --> 00:15:06,430
+these industry presentations
+
+474
+00:15:06,490 --> 00:15:07,790
+about levering craft
+technologies,
+
+475
+00:15:09,450 --> 00:15:10,890
+one of the models
+that I use to
+
+476
+00:15:10,890 --> 00:15:12,395
+try to understand these these
+
+477
+00:15:12,395 --> 00:15:14,475
+case studies is
+essentially this
+
+478
+00:15:14,475 --> 00:15:16,255
+triangle of know
+your business,
+
+479
+00:15:16,555 --> 00:15:18,415
+know your customer,
+and know your data.
+
+480
+00:15:18,635 --> 00:15:20,555
+So this is a a bit of rounding
+
+481
+00:15:20,555 --> 00:15:22,080
+the edges, but it's it's sort
+
+482
+00:15:22,080 --> 00:15:23,360
+of a a middle model for me to
+
+483
+00:15:23,360 --> 00:15:26,560
+try to understand
+how are these
+
+484
+00:15:26,560 --> 00:15:28,420
+use cases related
+to each other.
+
+485
+00:15:29,885 --> 00:15:31,085
+Okay. Let me shift
+gears a bit.
+
+486
+00:15:31,085 --> 00:15:32,125
+Let me talk a little bit about
+
+487
+00:15:32,125 --> 00:15:33,085
+the graph theory because I I
+
+488
+00:15:33,085 --> 00:15:34,605
+think it's very important for
+
+489
+00:15:34,605 --> 00:15:36,385
+understanding how
+do we leverage
+
+490
+00:15:36,525 --> 00:15:37,905
+what's happening in hardware.
+
+491
+00:15:38,270 --> 00:15:39,550
+I'll just say that.
+
+492
+00:15:39,550 --> 00:15:42,750
+So, we've had really good math
+
+493
+00:15:42,750 --> 00:15:44,110
+to handle graphs
+for a long time.
+
+494
+00:15:44,110 --> 00:15:45,890
+And a typical kind of thing is
+
+495
+00:15:46,535 --> 00:15:48,295
+it's inside of algebraic
+graph theory.
+
+496
+00:15:48,295 --> 00:15:49,655
+The idea is you have a complex
+
+497
+00:15:49,655 --> 00:15:51,495
+graph and you can
+take parts of
+
+498
+00:15:51,495 --> 00:15:53,175
+it and push it into a vector.
+
+499
+00:15:53,175 --> 00:15:54,395
+You can vectorize it.
+
+500
+00:15:54,535 --> 00:15:55,655
+And and we do this when we're
+
+501
+00:15:55,655 --> 00:15:57,640
+training neural
+networks a lot.
+
+502
+00:15:58,200 --> 00:15:59,580
+Alternatively,
+you could take,
+
+503
+00:16:00,600 --> 00:16:02,600
+and represent the edges and
+
+504
+00:16:02,600 --> 00:16:04,125
+relationships in a graph by
+
+505
+00:16:04,125 --> 00:16:04,785
+using something,
+
+506
+00:16:05,165 --> 00:16:06,465
+a matrix representation.
+
+507
+00:16:06,525 --> 00:16:08,145
+So non negative matrix
+factorization,
+
+508
+00:16:08,605 --> 00:16:10,305
+using things like
+an adjacency matrix.
+
+509
+00:16:10,765 --> 00:16:12,125
+Or you can get a little bit
+
+510
+00:16:12,125 --> 00:16:14,550
+complex and use
+something called
+
+511
+00:16:14,550 --> 00:16:16,070
+a tensor, which is essentially
+
+512
+00:16:16,070 --> 00:16:17,990
+like a three an n
+dimensional matrix,
+
+513
+00:16:17,990 --> 00:16:19,990
+if you will. So
+there's ways to
+
+514
+00:16:19,990 --> 00:16:21,930
+go between what
+we call algebraic
+
+515
+00:16:22,070 --> 00:16:24,285
+objects, vectors,
+matrices, tensors,
+
+516
+00:16:24,425 --> 00:16:26,585
+and graphs. You can transform
+
+517
+00:16:26,585 --> 00:16:27,405
+back and forth.
+
+518
+00:16:27,865 --> 00:16:29,245
+And for a long time,
+
+519
+00:16:29,860 --> 00:16:31,940
+the trick was to
+use the matrix
+
+520
+00:16:31,940 --> 00:16:33,380
+approach. There's something
+
+521
+00:16:33,380 --> 00:16:34,660
+called non negative matrix
+
+522
+00:16:34,660 --> 00:16:38,285
+factorization, which
+says, for instance,
+
+523
+00:16:38,285 --> 00:16:40,205
+we'll run page rank.
+We'll take a graph.
+
+524
+00:16:40,205 --> 00:16:41,805
+We'll make a big
+matrix out of it.
+
+525
+00:16:41,805 --> 00:16:42,845
+We'll apply a lot of linear
+
+526
+00:16:42,845 --> 00:16:44,705
+algebra and do
+a lot of transforms
+
+527
+00:16:44,845 --> 00:16:46,120
+and compute up the results,
+
+528
+00:16:46,120 --> 00:16:47,720
+the rankings that we need.
+
+529
+00:16:47,720 --> 00:16:49,320
+And there's some
+really fascinating
+
+530
+00:16:49,320 --> 00:16:50,680
+work on this. I
+definitely point
+
+531
+00:16:50,680 --> 00:16:53,320
+you toward Tim Davis
+at Texas a and m.
+
+532
+00:16:53,320 --> 00:16:55,765
+He runs the, Sparse
+Matrix Museum.
+
+533
+00:16:55,905 --> 00:16:57,125
+You see pictured there,
+
+534
+00:16:57,425 --> 00:16:59,445
+also David Glack at
+Purdue and others.
+
+535
+00:17:00,545 --> 00:17:01,665
+You know, some
+of these folks,
+
+536
+00:17:01,825 --> 00:17:02,545
+Tim Davis, of course,
+
+537
+00:17:02,545 --> 00:17:03,685
+have been working
+on graphBLAST.
+
+538
+00:17:04,130 --> 00:17:05,490
+Really fascinating
+work in terms
+
+539
+00:17:05,490 --> 00:17:06,230
+of factorization,
+
+540
+00:17:06,530 --> 00:17:07,890
+but that's kind of what we've
+
+541
+00:17:07,890 --> 00:17:08,530
+seen in the past.
+
+542
+00:17:08,530 --> 00:17:09,670
+There's been a lot of that.
+
+543
+00:17:09,970 --> 00:17:11,890
+Sometimes you can't just get
+
+544
+00:17:11,890 --> 00:17:13,565
+away with this trick of taking
+
+545
+00:17:13,565 --> 00:17:15,405
+a complex graph and a lot of
+
+546
+00:17:15,405 --> 00:17:17,005
+symbolic relationships
+and take
+
+547
+00:17:17,005 --> 00:17:18,525
+that information and making it
+
+548
+00:17:18,525 --> 00:17:20,225
+all numeric and then
+number crunching.
+
+549
+00:17:20,925 --> 00:17:23,310
+Sometimes you
+have to work with
+
+550
+00:17:23,310 --> 00:17:25,070
+symbolic. So certainly when
+
+551
+00:17:25,070 --> 00:17:26,610
+you're working on
+graph visualizations,
+
+552
+00:17:26,910 --> 00:17:28,110
+when you're calculating deep
+
+553
+00:17:28,110 --> 00:17:29,570
+learning models,
+training them,
+
+554
+00:17:29,870 --> 00:17:31,470
+when you're
+recalculating graph
+
+555
+00:17:31,470 --> 00:17:33,195
+algorithms, you need to take
+
+556
+00:17:33,195 --> 00:17:34,395
+your graph and
+put in some sort
+
+557
+00:17:34,395 --> 00:17:36,155
+of numeric
+representation usually
+
+558
+00:17:36,155 --> 00:17:36,895
+to be efficient.
+
+559
+00:17:37,915 --> 00:17:39,115
+But when you're working with
+
+560
+00:17:39,115 --> 00:17:40,015
+natural language,
+
+561
+00:17:40,230 --> 00:17:41,210
+when you're understanding
+
+562
+00:17:41,430 --> 00:17:43,050
+regulatory compliance audits,
+
+563
+00:17:43,110 --> 00:17:44,550
+when you have
+human loop, like,
+
+564
+00:17:44,550 --> 00:17:46,170
+some type of active
+learning situations,
+
+565
+00:17:46,310 --> 00:17:47,530
+when you're trying
+to represent
+
+566
+00:17:47,855 --> 00:17:49,775
+rules from domain expertise or
+
+567
+00:17:49,775 --> 00:17:51,315
+explainable AI,
+
+568
+00:17:51,375 --> 00:17:52,655
+these are cases where you need
+
+569
+00:17:52,655 --> 00:17:54,115
+to work more in the symbolic
+
+570
+00:17:54,255 --> 00:17:56,480
+representation. So,
+
+571
+00:17:56,800 --> 00:17:58,820
+what I recommend is this thing
+
+572
+00:17:58,880 --> 00:18:00,900
+with all apologies
+to Daniel Kahneman,
+
+573
+00:18:01,600 --> 00:18:03,715
+what I call thinking
+sparse and dense.
+
+574
+00:18:03,955 --> 00:18:05,235
+And this is the idea that when
+
+575
+00:18:05,235 --> 00:18:06,615
+you're in a data workflow
+
+576
+00:18:06,995 --> 00:18:08,355
+describing a pipeline and all
+
+577
+00:18:08,355 --> 00:18:09,555
+the transformations
+across the data
+
+578
+00:18:09,555 --> 00:18:11,635
+workflow, there
+are stages that
+
+579
+00:18:11,635 --> 00:18:13,650
+are more sparse
+and stages that
+
+580
+00:18:13,650 --> 00:18:14,630
+are more dense.
+
+581
+00:18:14,930 --> 00:18:15,970
+Typically, when you're doing
+
+582
+00:18:15,970 --> 00:18:16,950
+your data preparation,
+
+583
+00:18:17,890 --> 00:18:19,090
+it's usually more sparse.
+
+584
+00:18:19,090 --> 00:18:20,585
+You pull things together and
+
+585
+00:18:20,585 --> 00:18:22,025
+oftentimes these
+are relatively
+
+586
+00:18:22,025 --> 00:18:22,925
+bandwidth limited.
+
+587
+00:18:23,385 --> 00:18:25,225
+But then when you go
+and train a model,
+
+588
+00:18:25,225 --> 00:18:26,585
+for instance,
+it's probably more
+
+589
+00:18:26,585 --> 00:18:27,485
+compute limited.
+
+590
+00:18:27,740 --> 00:18:28,700
+And that's not always the case
+
+591
+00:18:28,700 --> 00:18:30,220
+when you're doing
+a deep learning model.
+
+592
+00:18:30,220 --> 00:18:31,740
+You know, parts of
+a deep learning
+
+593
+00:18:31,740 --> 00:18:32,780
+model, of course,
+
+594
+00:18:32,780 --> 00:18:33,740
+the convolution layers,
+
+595
+00:18:33,740 --> 00:18:35,040
+those will be
+compute limited.
+
+596
+00:18:35,100 --> 00:18:36,720
+A lot of vector
+processing there.
+
+597
+00:18:37,475 --> 00:18:38,595
+But when you have to calculate
+
+598
+00:18:38,595 --> 00:18:40,055
+a loss function in
+deep learning,
+
+599
+00:18:40,835 --> 00:18:41,975
+this is bandwidth limited.
+
+600
+00:18:42,355 --> 00:18:44,355
+So thinking sparse and dense
+
+601
+00:18:44,355 --> 00:18:46,090
+across a problem, you know,
+
+602
+00:18:46,090 --> 00:18:48,110
+typically once
+you've calculated
+
+603
+00:18:48,170 --> 00:18:49,130
+and trained your model,
+
+604
+00:18:49,130 --> 00:18:50,410
+then you have to apply it with
+
+605
+00:18:50,410 --> 00:18:51,050
+real world data.
+
+606
+00:18:51,050 --> 00:18:52,490
+So you sort of
+shift from sparse
+
+607
+00:18:52,490 --> 00:18:53,870
+to dense back to sparse.
+
+608
+00:18:54,975 --> 00:18:57,535
+We go through this in
+a lot more detail.
+
+609
+00:18:57,535 --> 00:18:59,535
+Dean Wampler and I
+did a a report,
+
+610
+00:18:59,775 --> 00:19:01,310
+working with the open source
+
+611
+00:19:01,470 --> 00:19:02,290
+machine learning,
+
+612
+00:19:02,750 --> 00:19:04,530
+technology leads at NVIDIA,
+
+613
+00:19:05,230 --> 00:19:06,190
+earlier this year,
+
+614
+00:19:06,190 --> 00:19:07,470
+and it's a free
+download if you
+
+615
+00:19:07,470 --> 00:19:09,010
+wanna check. It's
+called hardware
+
+616
+00:19:09,070 --> 00:19:09,870
+greater than software,
+
+617
+00:19:09,870 --> 00:19:10,850
+greater than process.
+
+618
+00:19:11,375 --> 00:19:13,295
+And at the core
+of this is this
+
+619
+00:19:13,295 --> 00:19:15,615
+mathematical idea that we can
+
+620
+00:19:15,615 --> 00:19:17,135
+go from a relatively complex
+
+621
+00:19:17,135 --> 00:19:18,735
+graph and then project it into
+
+622
+00:19:18,735 --> 00:19:20,115
+some other sort of space,
+
+623
+00:19:20,300 --> 00:19:22,300
+reshape it as a matrix,
+
+624
+00:19:22,300 --> 00:19:23,520
+reshape it as a tensor,
+
+625
+00:19:23,740 --> 00:19:26,000
+do our calculation,
+transform it back,
+
+626
+00:19:26,140 --> 00:19:28,455
+and then populate the answers
+
+627
+00:19:28,455 --> 00:19:30,155
+that that we've gained
+to the calculation
+
+628
+00:19:30,375 --> 00:19:31,435
+back into the graph.
+
+629
+00:19:31,655 --> 00:19:33,335
+So a lot of transforms
+and inverse
+
+630
+00:19:33,335 --> 00:19:36,120
+transforms. And this is really
+
+631
+00:19:36,120 --> 00:19:37,720
+crucial for being
+able to leverage
+
+632
+00:19:37,720 --> 00:19:38,680
+contemporary hardware.
+
+633
+00:19:38,680 --> 00:19:39,800
+And there's a whole bunch of
+
+634
+00:19:39,800 --> 00:19:41,320
+evolution going
+on right now in
+
+635
+00:19:41,320 --> 00:19:43,020
+the hardware side
+for accelerators,
+
+636
+00:19:43,160 --> 00:19:45,385
+for GPUs and FPGAs
+and others,
+
+637
+00:19:45,385 --> 00:19:48,105
+etcetera. What this points to
+
+638
+00:19:48,105 --> 00:19:50,425
+is a general kind of narrative
+
+639
+00:19:50,425 --> 00:19:52,590
+in data science
+about, you know,
+
+640
+00:19:52,590 --> 00:19:54,030
+starting with
+unstructured data
+
+641
+00:19:54,030 --> 00:19:55,550
+and progressing
+to more and more
+
+642
+00:19:55,550 --> 00:19:56,990
+structure and then leveraging
+
+643
+00:19:56,990 --> 00:19:57,650
+that structure.
+
+644
+00:19:58,190 --> 00:19:59,650
+And that is
+about dimensionality
+
+645
+00:19:59,950 --> 00:20:01,810
+and how to really
+manage dimensionality.
+
+646
+00:20:02,335 --> 00:20:04,015
+It's a really
+essential component
+
+647
+00:20:04,015 --> 00:20:06,015
+of this trade up
+between numeric
+
+648
+00:20:06,015 --> 00:20:07,155
+and symbolic representation
+
+649
+00:20:07,295 --> 00:20:08,175
+being able to shift back and
+
+650
+00:20:08,175 --> 00:20:09,235
+forth to those transforms.
+
+651
+00:20:09,570 --> 00:20:12,290
+So it's it's a lot
+of how we're
+
+652
+00:20:12,290 --> 00:20:14,150
+projecting this
+notion of graph
+
+653
+00:20:14,450 --> 00:20:15,270
+data science,
+
+654
+00:20:15,570 --> 00:20:17,670
+how to apply
+graph technologies
+
+655
+00:20:17,810 --> 00:20:19,715
+in a very formal
+way at different
+
+656
+00:20:19,715 --> 00:20:21,075
+points in a workflow
+and how to
+
+657
+00:20:21,075 --> 00:20:22,115
+really manage and get the best
+
+658
+00:20:22,115 --> 00:20:22,755
+leverage out of it.
+
+659
+00:20:22,755 --> 00:20:25,635
+There's a GitHub
+repo and a community
+
+660
+00:20:25,635 --> 00:20:27,015
+of developers around it.
+
+661
+00:20:27,580 --> 00:20:29,660
+Really, we we wanna
+tackle a few things,
+
+662
+00:20:29,660 --> 00:20:31,500
+but, you know,
+some of the main
+
+663
+00:20:31,500 --> 00:20:33,900
+parts about this
+were that there's
+
+664
+00:20:33,900 --> 00:20:34,940
+a lot of great tools,
+
+665
+00:20:34,940 --> 00:20:36,300
+and they don't
+necessarily play
+
+666
+00:20:36,300 --> 00:20:37,135
+well with each other.
+
+667
+00:20:37,215 --> 00:20:38,575
+There's a lot of
+camps that are
+
+668
+00:20:38,575 --> 00:20:40,255
+working graph technologies,
+
+669
+00:20:40,255 --> 00:20:40,815
+different parts,
+
+670
+00:20:40,815 --> 00:20:41,775
+but they weren't
+really talking
+
+671
+00:20:41,775 --> 00:20:42,595
+with each other.
+
+672
+00:20:42,735 --> 00:20:43,935
+And we wanted something that
+
+673
+00:20:43,935 --> 00:20:45,455
+would would work well in open
+
+674
+00:20:45,455 --> 00:20:46,335
+source with, you know,
+
+675
+00:20:46,335 --> 00:20:47,700
+a typical data science,
+
+676
+00:20:47,920 --> 00:20:50,080
+py data type
+technology stack.
+
+677
+00:20:50,080 --> 00:20:51,120
+But at the same time,
+
+678
+00:20:51,120 --> 00:20:52,960
+still be very suitable for for
+
+679
+00:20:52,960 --> 00:20:54,320
+parallelization
+with things like
+
+680
+00:20:54,320 --> 00:20:56,515
+Dask and Ray and RAPIDS and
+
+681
+00:20:56,515 --> 00:20:57,415
+Spark and that.
+
+682
+00:20:58,755 --> 00:21:00,115
+So we've been working on a lot
+
+683
+00:21:00,115 --> 00:21:00,695
+of integration.
+
+684
+00:21:00,755 --> 00:21:02,535
+We pull together
+a lot of packages
+
+685
+00:21:02,595 --> 00:21:04,455
+into this kind of
+abstraction layer.
+
+686
+00:21:04,960 --> 00:21:07,920
+And I I want to show a few of
+
+687
+00:21:07,920 --> 00:21:10,240
+these here. You know,
+
+688
+00:21:10,240 --> 00:21:11,840
+one is just when
+you're building
+
+689
+00:21:11,840 --> 00:21:13,625
+the graph, if you want to work
+
+690
+00:21:13,625 --> 00:21:15,885
+with w three c
+standards, RDF,
+
+691
+00:21:16,425 --> 00:21:18,685
+composing, graphs
+out of triples,
+
+692
+00:21:19,465 --> 00:21:21,485
+basically, being
+able to use a number
+
+693
+00:21:21,650 --> 00:21:23,110
+of different controlled
+vocabularies.
+
+694
+00:21:24,530 --> 00:21:25,970
+So we support this and make it
+
+695
+00:21:25,970 --> 00:21:28,130
+a lot simpler than
+the low level
+
+696
+00:21:28,130 --> 00:21:29,090
+tools like you would see in
+
+697
+00:21:29,090 --> 00:21:29,910
+already ebblib.
+
+698
+00:21:30,675 --> 00:21:32,835
+So with KGLab, you can define
+
+699
+00:21:32,835 --> 00:21:35,495
+your namespaces,
+instantiate a graph,
+
+700
+00:21:35,795 --> 00:21:36,995
+and then just start adding
+
+701
+00:21:36,995 --> 00:21:38,035
+different nodes to it,
+
+702
+00:21:38,035 --> 00:21:39,175
+leveraging those namespaces.
+
+703
+00:21:39,320 --> 00:21:40,600
+If you're familiar
+with w three c,
+
+704
+00:21:40,600 --> 00:21:41,960
+there's, like,
+a dozen different
+
+705
+00:21:41,960 --> 00:21:43,420
+standards for how
+to serialize.
+
+706
+00:21:43,800 --> 00:21:44,360
+And, of course,
+
+707
+00:21:44,360 --> 00:21:46,200
+we pick up support for those
+
+708
+00:21:46,200 --> 00:21:47,560
+along with making
+use of things
+
+709
+00:21:47,560 --> 00:21:49,945
+like Pathlib and
+FS spec codecs
+
+710
+00:21:49,945 --> 00:21:50,825
+and all that. Of course,
+
+711
+00:21:50,825 --> 00:21:52,605
+this has gone into
+RDF lib six,
+
+712
+00:21:53,145 --> 00:21:54,665
+but we definitely
+have support there.
+
+713
+00:21:54,665 --> 00:21:55,785
+You know, along with this,
+
+714
+00:21:55,785 --> 00:21:57,305
+a bunch of other
+formats too if
+
+715
+00:21:57,305 --> 00:21:59,570
+you wanna work
+with dot or or,
+
+716
+00:21:59,970 --> 00:22:01,090
+d max or in, you know,
+
+717
+00:22:01,090 --> 00:22:02,790
+some of these as
+well as CSVs.
+
+718
+00:22:03,010 --> 00:22:04,210
+But the interesting thing that
+
+719
+00:22:04,210 --> 00:22:05,970
+we found is that Apache Arrow
+
+720
+00:22:05,970 --> 00:22:08,355
+and Apache Parquet are orders
+
+721
+00:22:08,355 --> 00:22:10,215
+of magnitude more efficient,
+
+722
+00:22:10,755 --> 00:22:11,875
+actually more than two orders
+
+723
+00:22:11,875 --> 00:22:12,915
+of magnitude more
+efficient than,
+
+724
+00:22:12,915 --> 00:22:14,295
+say, using something like CSVs
+
+725
+00:22:14,355 --> 00:22:15,810
+or or some of
+the forms of, like,
+
+726
+00:22:15,810 --> 00:22:17,910
+w three c standards
+for serialization.
+
+727
+00:22:18,610 --> 00:22:20,790
+So, we highly recommend
+using these,
+
+728
+00:22:21,570 --> 00:22:23,365
+and, and it really fits with
+
+729
+00:22:23,525 --> 00:22:25,365
+large distributed
+graphs, by the way.
+
+730
+00:22:25,365 --> 00:22:26,725
+There's a number of excellent
+
+731
+00:22:26,725 --> 00:22:28,725
+tools in
+the visualization space.
+
+732
+00:22:28,725 --> 00:22:31,100
+These don't necessarily blend
+
+733
+00:22:31,100 --> 00:22:33,340
+all that well with,
+say, RDF lib.
+
+734
+00:22:33,340 --> 00:22:35,020
+So we built out
+paths to be able
+
+735
+00:22:35,020 --> 00:22:36,960
+to do the transforms
+back and forth.
+
+736
+00:22:37,100 --> 00:22:38,860
+Here, I'm showing how
+to do a transform
+
+737
+00:22:38,860 --> 00:22:40,080
+for something called pyvis.
+
+738
+00:22:40,355 --> 00:22:41,795
+We have integrations
+with Cairo
+
+739
+00:22:41,795 --> 00:22:43,315
+and Matplotlib, of course,
+
+740
+00:22:43,555 --> 00:22:45,235
+but also with our
+forensic Graphistry,
+
+741
+00:22:45,235 --> 00:22:46,195
+which I highly recommend.
+
+742
+00:22:46,195 --> 00:22:47,495
+It's a GPU accelerated.
+
+743
+00:22:47,930 --> 00:22:50,010
+As far as querying, you know,
+
+744
+00:22:50,010 --> 00:22:51,390
+you can do sparkle queries,
+
+745
+00:22:51,690 --> 00:22:53,850
+but then you get back a named
+
+746
+00:22:53,850 --> 00:22:56,465
+tuple iterator or
+a pandas data frame.
+
+747
+00:22:56,545 --> 00:22:57,825
+Again, something that's just
+
+748
+00:22:57,825 --> 00:23:00,405
+much easier to use
+with the PyData
+
+749
+00:23:00,465 --> 00:23:01,205
+tech stack.
+
+750
+00:23:03,105 --> 00:23:04,065
+Shackle is, I think,
+
+751
+00:23:04,065 --> 00:23:05,780
+one of the one of my favorite
+
+752
+00:23:05,780 --> 00:23:07,540
+more recent
+additions to w three
+
+753
+00:23:07,540 --> 00:23:09,140
+c stack and
+certainly being able
+
+754
+00:23:09,140 --> 00:23:11,140
+to do shape constraints for
+
+755
+00:23:11,140 --> 00:23:12,280
+validation and prescription.
+
+756
+00:23:12,975 --> 00:23:14,175
+Really a lot of
+great use cases
+
+757
+00:23:14,175 --> 00:23:15,315
+like unit tests.
+
+758
+00:23:15,935 --> 00:23:17,295
+Of course, there's
+a there's a wide
+
+759
+00:23:17,295 --> 00:23:18,335
+range of different types of
+
+760
+00:23:18,335 --> 00:23:19,135
+graph algorithms,
+
+761
+00:23:19,135 --> 00:23:20,975
+but we provided pathways for
+
+762
+00:23:20,975 --> 00:23:22,530
+integration of
+network x, iGraph,
+
+763
+00:23:22,530 --> 00:23:24,130
+and, of course, cuGraph for,
+
+764
+00:23:24,530 --> 00:23:27,250
+out of RAPIDS for GPU use.
+
+765
+00:23:27,250 --> 00:23:28,370
+And and we've been looking at
+
+766
+00:23:28,370 --> 00:23:29,810
+graph tools as
+well to integrate
+
+767
+00:23:29,810 --> 00:23:31,775
+that further. There's been so
+
+768
+00:23:31,775 --> 00:23:33,055
+much going on in this field of
+
+769
+00:23:33,055 --> 00:23:34,675
+graph neural
+networks and PyTorch
+
+770
+00:23:34,735 --> 00:23:35,715
+geometric etcetera.
+
+771
+00:23:36,255 --> 00:23:38,195
+And so we we do
+support pathways
+
+772
+00:23:38,255 --> 00:23:39,455
+for integration with PyTorch
+
+773
+00:23:39,455 --> 00:23:41,600
+geometric and
+there's also some
+
+774
+00:23:41,600 --> 00:23:42,900
+inference that's
+been integrated
+
+775
+00:23:42,960 --> 00:23:44,880
+in terms of using statistical
+
+776
+00:23:44,880 --> 00:23:46,480
+relational learning that is to
+
+777
+00:23:46,480 --> 00:23:47,760
+say probabilistic graphs.
+
+778
+00:23:47,760 --> 00:23:50,485
+You can provide rules that are
+
+779
+00:23:50,485 --> 00:23:52,325
+probabilistic predicates and
+
+780
+00:23:52,325 --> 00:23:54,805
+then run probabilistic soft
+
+781
+00:23:54,805 --> 00:23:56,265
+logic on them, for instance.
+
+782
+00:23:57,570 --> 00:23:59,410
+And I find this is really,
+
+783
+00:23:59,410 --> 00:24:00,690
+really useful
+because it's a way
+
+784
+00:24:00,690 --> 00:24:03,510
+of representing
+uncertainty per node,
+
+785
+00:24:03,570 --> 00:24:05,915
+per edge, but
+also for parts of
+
+786
+00:24:05,915 --> 00:24:06,815
+the graph overall.
+
+787
+00:24:07,835 --> 00:24:08,315
+And, of course,
+
+788
+00:24:08,315 --> 00:24:09,835
+there's a lot of
+other types of
+
+789
+00:24:09,835 --> 00:24:11,355
+inference when we
+talk about graphs.
+
+790
+00:24:11,355 --> 00:24:13,460
+We could be doing closures in
+
+791
+00:24:13,460 --> 00:24:15,700
+OWL or RDFS. We could be doing
+
+792
+00:24:15,700 --> 00:24:17,080
+transitive and SCAs.
+
+793
+00:24:17,380 --> 00:24:18,980
+Of course, deep learning graph
+
+794
+00:24:18,980 --> 00:24:20,760
+neural networks is
+a form of inference.
+
+795
+00:24:21,295 --> 00:24:22,495
+There's also, you know,
+
+796
+00:24:22,495 --> 00:24:23,775
+types of inference that can be
+
+797
+00:24:23,775 --> 00:24:25,375
+drawn from graph algorithm use
+
+798
+00:24:25,375 --> 00:24:26,115
+such as clustering.
+
+799
+00:24:26,735 --> 00:24:28,095
+There's creative ways to do
+
+800
+00:24:28,095 --> 00:24:29,155
+inference with shackle.
+
+801
+00:24:30,000 --> 00:24:31,520
+What I want to point out here
+
+802
+00:24:31,520 --> 00:24:32,880
+is that not all of these are
+
+803
+00:24:32,880 --> 00:24:33,520
+quite the same.
+
+804
+00:24:33,520 --> 00:24:34,900
+In fact, you can plot them.
+
+805
+00:24:35,280 --> 00:24:37,440
+Some are better in terms of
+
+806
+00:24:37,440 --> 00:24:39,300
+formalism and more
+analytic solutions.
+
+807
+00:24:39,685 --> 00:24:41,205
+Others are better at working
+
+808
+00:24:41,205 --> 00:24:43,125
+with messy noisy data and
+
+809
+00:24:43,125 --> 00:24:44,405
+represent and being able to
+
+810
+00:24:44,405 --> 00:24:45,385
+represent uncertainty.
+
+811
+00:24:46,325 --> 00:24:47,765
+The point that
+we wanna make is
+
+812
+00:24:47,765 --> 00:24:49,780
+mix and match. For
+a given use case.
+
+813
+00:24:49,780 --> 00:24:51,380
+Find out how can
+you blend these
+
+814
+00:24:51,380 --> 00:24:54,420
+together. We see
+how these types
+
+815
+00:24:54,420 --> 00:24:56,275
+of operations fit
+in at each point.
+
+816
+00:24:56,675 --> 00:24:57,395
+Thank you very much.
+
+817
+00:24:57,395 --> 00:24:58,595
+If you wanna get
+a hold of me,
+
+818
+00:24:58,595 --> 00:24:59,655
+here are some links.
+
+819
+00:25:00,115 --> 00:25:01,395
+Look forward to talking to you
+
+820
+00:25:01,395 --> 00:25:02,915
+on Twitter and
+throughout the rest
+
+821
+00:25:02,915 --> 00:25:03,560
+of the conference
+

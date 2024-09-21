@@ -1,0 +1,2024 @@
+1
+00:00:06,100 --> 00:00:07,000
+Hello, everyone.
+
+2
+00:00:07,220 --> 00:00:09,400
+Welcome to this talk
+on implementing
+
+3
+00:00:09,460 --> 00:00:11,400
+informed consent with
+knowledge graphs.
+
+4
+00:00:11,715 --> 00:00:13,415
+My name is Anelioa Kurteva,
+
+5
+00:00:14,515 --> 00:00:16,355
+and I'm a PhD researcher at
+
+6
+00:00:16,355 --> 00:00:18,215
+the Semantic
+Technology Institute
+
+7
+00:00:18,275 --> 00:00:19,815
+at the University
+of Innsbruck.
+
+8
+00:00:20,930 --> 00:00:23,250
+Currently, I am interested in
+
+9
+00:00:23,250 --> 00:00:24,930
+my PhD in knowledge graphs,
+
+10
+00:00:24,930 --> 00:00:26,950
+the semantic web
+privacy, GDPR,
+
+11
+00:00:27,010 --> 00:00:28,450
+and human computer
+interaction,
+
+12
+00:00:28,450 --> 00:00:30,635
+and how they can work together
+
+13
+00:00:30,775 --> 00:00:35,175
+to solve issues such
+as, consent in,
+
+14
+00:00:35,335 --> 00:00:38,800
+different domains.
+So let's begin.
+
+15
+00:00:39,660 --> 00:00:41,020
+A bit of
+background information
+
+16
+00:00:41,020 --> 00:00:43,340
+on GDPR first. So GDPR became
+
+17
+00:00:43,340 --> 00:00:45,825
+applicable in May of twenty
+
+18
+00:00:45,825 --> 00:00:47,685
+eighteen in all member states
+
+19
+00:00:47,905 --> 00:00:50,065
+to harmonize data
+privacy laws across,
+
+20
+00:00:50,305 --> 00:00:52,385
+Europe. GDPR's main aim is to
+
+21
+00:00:52,385 --> 00:00:54,065
+give control to
+individuals over
+
+22
+00:00:54,065 --> 00:00:55,170
+their personal data,
+
+23
+00:00:55,330 --> 00:00:57,810
+and it introduced
+the notion of
+
+24
+00:00:57,810 --> 00:00:58,870
+informed consent.
+
+25
+00:00:59,810 --> 00:01:02,310
+And, also, GDPR views consent
+
+26
+00:01:02,685 --> 00:01:04,445
+as one of its legal basis for
+
+27
+00:01:04,445 --> 00:01:05,185
+data processing.
+
+28
+00:01:05,805 --> 00:01:06,605
+But, of course,
+
+29
+00:01:06,605 --> 00:01:08,365
+there are hefty fines for not
+
+30
+00:01:08,365 --> 00:01:09,825
+being compliant with GDPR.
+
+31
+00:01:10,300 --> 00:01:12,240
+Up to ten million
+or two percent,
+
+32
+00:01:12,700 --> 00:01:15,520
+of the firm's worldwide
+annual revenue.
+
+33
+00:01:17,020 --> 00:01:19,200
+So what is consent
+according to GDPR?
+
+34
+00:01:19,725 --> 00:01:22,125
+So consent according
+to article
+
+35
+00:01:22,125 --> 00:01:24,465
+four of GDPR is
+any freely given,
+
+36
+00:01:24,845 --> 00:01:25,965
+specific, informed,
+
+37
+00:01:25,965 --> 00:01:29,560
+and unambiguous
+indication, of the data,
+
+38
+00:01:30,180 --> 00:01:32,180
+subject agreement
+to the processing
+
+39
+00:01:32,180 --> 00:01:35,320
+of personal data
+related to him or her.
+
+40
+00:01:36,185 --> 00:01:37,325
+And to be more specific,
+
+41
+00:01:37,625 --> 00:01:39,645
+what is exactly
+informed consent?
+
+42
+00:01:40,025 --> 00:01:41,705
+So before the data subjects
+
+43
+00:01:41,705 --> 00:01:43,625
+grant consent, they
+should be married,
+
+44
+00:01:43,625 --> 00:01:46,170
+aware of information
+such as who
+
+45
+00:01:46,250 --> 00:01:47,470
+who is the data controller,
+
+46
+00:01:47,690 --> 00:01:49,470
+what kind of data
+will be used,
+
+47
+00:01:49,610 --> 00:01:51,790
+for what purposes is
+the data required,
+
+48
+00:01:52,010 --> 00:01:53,545
+how the data will be used,
+
+49
+00:01:53,625 --> 00:01:55,245
+how the data will
+be processed,
+
+50
+00:01:55,305 --> 00:01:56,905
+where the data
+will be stored,
+
+51
+00:01:56,905 --> 00:01:58,445
+with whom will be shared.
+
+52
+00:01:58,985 --> 00:02:00,265
+And, of course,
+
+53
+00:02:00,730 --> 00:02:02,090
+much more information that can
+
+54
+00:02:02,090 --> 00:02:03,630
+be provided here
+to individuals
+
+55
+00:02:03,770 --> 00:02:04,990
+so they're more informed.
+
+56
+00:02:06,170 --> 00:02:08,170
+So here come two projects that
+
+57
+00:02:08,170 --> 00:02:09,530
+I'm currently working on and
+
+58
+00:02:09,530 --> 00:02:12,365
+that also consider,
+GDPR and consent.
+
+59
+00:02:12,365 --> 00:02:14,705
+We have the company, project,
+
+60
+00:02:15,085 --> 00:02:17,245
+whose goal, is to,
+
+61
+00:02:17,565 --> 00:02:19,165
+develop an open platform on
+
+62
+00:02:19,165 --> 00:02:20,440
+which private and public
+
+63
+00:02:20,440 --> 00:02:21,880
+institutions can
+create different
+
+64
+00:02:21,880 --> 00:02:23,740
+campaigns. And a campaigning
+
+65
+00:02:23,800 --> 00:02:25,960
+company is a specific request
+
+66
+00:02:25,960 --> 00:02:28,540
+for a data from
+individuals, and,
+
+67
+00:02:29,145 --> 00:02:30,925
+that data will be analyzed.
+
+68
+00:02:31,145 --> 00:02:33,225
+The main focus for
+now is vehicle
+
+69
+00:02:33,225 --> 00:02:34,505
+sensor data, and, actually,
+
+70
+00:02:34,505 --> 00:02:37,405
+company runs in
+Hanover, Germany.
+
+71
+00:02:38,260 --> 00:02:40,340
+And the second project
+is the Smashfit
+
+72
+00:02:40,340 --> 00:02:42,840
+project whose goal
+is to establish
+
+73
+00:02:42,900 --> 00:02:45,140
+a framework, for secure and
+
+74
+00:02:45,140 --> 00:02:47,055
+trusted sharing of,
+
+75
+00:02:47,695 --> 00:02:49,395
+personal data and industrial
+
+76
+00:02:49,455 --> 00:02:52,415
+data streams across
+different silos and,
+
+77
+00:02:52,895 --> 00:02:54,020
+smart cities, for example,
+
+78
+00:02:54,020 --> 00:02:55,440
+which I'll talk a bit a bit,
+
+79
+00:02:56,560 --> 00:02:57,620
+further in the presentation.
+
+80
+00:02:59,520 --> 00:03:02,020
+And, yes, consent
+in smart cities.
+
+81
+00:03:02,435 --> 00:03:06,115
+So in a smart city,
+consent is,
+
+82
+00:03:06,675 --> 00:03:08,275
+consent and also the data of
+
+83
+00:03:08,275 --> 00:03:09,635
+the individuals can be spread
+
+84
+00:03:09,635 --> 00:03:11,335
+across multiple
+different zeroes,
+
+85
+00:03:11,460 --> 00:03:13,640
+which are databases,
+locations,
+
+86
+00:03:13,700 --> 00:03:15,140
+people, and can be used for
+
+87
+00:03:15,140 --> 00:03:16,660
+different purposes
+by different
+
+88
+00:03:16,660 --> 00:03:17,640
+entities simultaneously.
+
+89
+00:03:18,340 --> 00:03:19,860
+Here on the side,
+you can see,
+
+90
+00:03:20,340 --> 00:03:21,575
+smart city domains.
+
+91
+00:03:21,575 --> 00:03:24,155
+We have smart retail,
+smart mobility,
+
+92
+00:03:24,295 --> 00:03:26,075
+smart health,
+smart government,
+
+93
+00:03:26,375 --> 00:03:28,155
+education, smart homes.
+
+94
+00:03:28,990 --> 00:03:31,630
+And, the other goal is to
+
+95
+00:03:31,630 --> 00:03:32,850
+implement the consent,
+
+96
+00:03:33,630 --> 00:03:35,410
+in a way that does
+not distribute
+
+97
+00:03:35,965 --> 00:03:37,725
+the data flow between those
+
+98
+00:03:37,725 --> 00:03:39,245
+silos while still
+being compliant
+
+99
+00:03:39,245 --> 00:03:41,645
+with GDPR. And
+consent in smart
+
+100
+00:03:41,645 --> 00:03:42,925
+cities is actually one of,
+
+101
+00:03:43,165 --> 00:03:44,600
+the use cases that inspired
+
+102
+00:03:44,600 --> 00:03:45,800
+the smart chip project,
+
+103
+00:03:45,800 --> 00:03:48,620
+which you can also
+have a look at.
+
+104
+00:03:49,640 --> 00:03:51,560
+So the main challenges that
+
+105
+00:03:51,560 --> 00:03:55,215
+we've identified are,
+responsibilities.
+
+106
+00:03:56,075 --> 00:03:57,835
+Who is responsible for what?
+
+107
+00:03:57,835 --> 00:04:00,660
+Who records
+the consent? Storage.
+
+108
+00:04:00,720 --> 00:04:02,160
+Where is the consent stored?
+
+109
+00:04:02,160 --> 00:04:03,540
+What privacy and security
+
+110
+00:04:03,600 --> 00:04:04,980
+mechanisms are in place?
+
+111
+00:04:05,120 --> 00:04:06,720
+Who has access to the consent
+
+112
+00:04:06,720 --> 00:04:07,835
+and also to the data?
+
+113
+00:04:07,915 --> 00:04:09,595
+And can the consent
+decision of
+
+114
+00:04:09,595 --> 00:04:11,615
+the individual be
+changed without the,
+
+115
+00:04:12,235 --> 00:04:14,155
+his knowledge? Also,
+
+116
+00:04:14,155 --> 00:04:15,515
+what are the implications of
+
+117
+00:04:15,515 --> 00:04:16,575
+revoking consent?
+
+118
+00:04:17,100 --> 00:04:19,420
+How can a user revoke
+their consent?
+
+119
+00:04:19,420 --> 00:04:21,580
+And what happens
+to the data and
+
+120
+00:04:21,580 --> 00:04:22,940
+the processes that,
+
+121
+00:04:23,820 --> 00:04:25,660
+use the consent
+after the consent
+
+122
+00:04:25,660 --> 00:04:26,400
+is revoked?
+
+123
+00:04:26,985 --> 00:04:28,605
+And finally, awareness,
+
+124
+00:04:28,825 --> 00:04:30,265
+awareness of what it means to
+
+125
+00:04:30,265 --> 00:04:31,885
+give consent and
+the implications
+
+126
+00:04:32,025 --> 00:04:32,845
+that follow.
+
+127
+00:04:34,610 --> 00:04:35,830
+Some knowledge graphs,
+
+128
+00:04:36,050 --> 00:04:38,630
+which I'm sure most
+of you are aware of,
+
+129
+00:04:38,770 --> 00:04:40,530
+they can be used as
+a consent solution,
+
+130
+00:04:40,530 --> 00:04:42,450
+and they have many
+benefits that
+
+131
+00:04:42,450 --> 00:04:44,595
+can be related to
+consent, but,
+
+132
+00:04:44,595 --> 00:04:45,735
+of course, are not limited.
+
+133
+00:04:46,115 --> 00:04:47,555
+For example, knowledge graph
+
+134
+00:04:47,555 --> 00:04:49,315
+provide transparency because
+
+135
+00:04:49,315 --> 00:04:50,915
+data is bought in
+human readable
+
+136
+00:04:50,915 --> 00:04:52,295
+and machine readable formats.
+
+137
+00:04:52,690 --> 00:04:53,670
+They provide traceability,
+
+138
+00:04:53,890 --> 00:04:55,430
+which when it
+comes to consent,
+
+139
+00:04:55,970 --> 00:04:58,370
+is really, crucial because,
+
+140
+00:04:58,690 --> 00:05:01,110
+it provides provenance,
+information.
+
+141
+00:05:01,715 --> 00:05:02,675
+We can use different,
+
+142
+00:05:02,995 --> 00:05:04,915
+ontologies for
+provenance events
+
+143
+00:05:04,915 --> 00:05:07,475
+and time stamp, data.
+
+144
+00:05:07,475 --> 00:05:09,575
+So we preserve
+the records of consent,
+
+145
+00:05:09,890 --> 00:05:11,650
+when the consent
+decision was made,
+
+146
+00:05:11,650 --> 00:05:13,910
+when it was changed,
+and more.
+
+147
+00:05:14,130 --> 00:05:15,810
+We have also
+knowledge discovery.
+
+148
+00:05:15,810 --> 00:05:17,410
+We can discover
+different patterns
+
+149
+00:05:17,410 --> 00:05:18,150
+and consistencies,
+
+150
+00:05:18,925 --> 00:05:20,385
+security and privacy issues.
+
+151
+00:05:20,925 --> 00:05:22,445
+We can perform reasoning on
+
+152
+00:05:22,445 --> 00:05:23,085
+knowledge graphs,
+
+153
+00:05:23,085 --> 00:05:24,525
+which is especially useful for
+
+154
+00:05:24,525 --> 00:05:26,065
+GDPR compliance checking.
+
+155
+00:05:26,550 --> 00:05:28,090
+We can understand connections
+
+156
+00:05:28,150 --> 00:05:29,590
+between data. For example,
+
+157
+00:05:29,590 --> 00:05:31,270
+how a third party gain access
+
+158
+00:05:31,270 --> 00:05:32,810
+to specific user data.
+
+159
+00:05:33,190 --> 00:05:33,830
+And, of course,
+
+160
+00:05:33,830 --> 00:05:35,270
+knowledge graphs
+provide a common
+
+161
+00:05:35,270 --> 00:05:36,855
+understanding
+across all entities
+
+162
+00:05:36,855 --> 00:05:39,175
+in the smart cities
+of the notion
+
+163
+00:05:39,175 --> 00:05:42,155
+of consent and
+many more concepts
+
+164
+00:05:42,455 --> 00:05:44,155
+that exist in the domain.
+
+165
+00:05:45,880 --> 00:05:48,600
+So we performed a survey,
+
+166
+00:05:48,600 --> 00:05:50,200
+which you can check to have,
+
+167
+00:05:50,520 --> 00:05:52,940
+input to the reference
+on semantic
+
+168
+00:05:53,000 --> 00:05:54,140
+models for consent.
+
+169
+00:05:54,535 --> 00:05:55,175
+And, of course,
+
+170
+00:05:55,175 --> 00:05:56,775
+work has been done
+through the years,
+
+171
+00:05:56,775 --> 00:05:59,095
+and several
+ontologies exist as
+
+172
+00:05:59,095 --> 00:06:00,935
+you can see. However,
+
+173
+00:06:00,935 --> 00:06:02,715
+we've identified
+common limitations.
+
+174
+00:06:03,100 --> 00:06:04,780
+There these
+ontologies are either
+
+175
+00:06:04,780 --> 00:06:05,740
+too general because,
+
+176
+00:06:05,900 --> 00:06:06,940
+they're part of project,
+
+177
+00:06:06,940 --> 00:06:08,380
+and these projects have their
+
+178
+00:06:08,380 --> 00:06:10,400
+own use cases. And
+this the ontologies
+
+179
+00:06:10,620 --> 00:06:13,785
+also focus only on
+these, use cases.
+
+180
+00:06:14,325 --> 00:06:16,085
+The ontologies, yes,
+
+181
+00:06:16,085 --> 00:06:18,345
+they represent only
+consent sometimes,
+
+182
+00:06:18,645 --> 00:06:21,370
+which, means that no other
+
+183
+00:06:21,370 --> 00:06:23,870
+information about
+the data itself,
+
+184
+00:06:24,410 --> 00:06:25,930
+or the processing
+that's applied
+
+185
+00:06:25,930 --> 00:06:27,310
+to the data is modeled.
+
+186
+00:06:27,905 --> 00:06:29,605
+And, some of the ontologies,
+
+187
+00:06:30,705 --> 00:06:33,025
+do not model
+consent state state
+
+188
+00:06:33,025 --> 00:06:35,925
+changes such as
+revoked, withdrawn,
+
+189
+00:06:37,080 --> 00:06:38,680
+etcetera. And,
+
+190
+00:06:39,160 --> 00:06:41,320
+most of the ontologies are not
+
+191
+00:06:41,320 --> 00:06:43,100
+open access, which
+can complicate
+
+192
+00:06:43,240 --> 00:06:43,980
+their reuse.
+
+193
+00:06:46,135 --> 00:06:47,415
+Current goals of,
+
+194
+00:06:47,655 --> 00:06:49,355
+the projects that
+I presented,
+
+195
+00:06:49,575 --> 00:06:50,935
+Kompano and, SmashIt,
+
+196
+00:06:50,935 --> 00:06:52,535
+is to implement the life cycle
+
+197
+00:06:52,535 --> 00:06:54,360
+of informed consent
+with knowledge
+
+198
+00:06:54,360 --> 00:06:56,700
+graphs. And when we
+say life cycle,
+
+199
+00:06:57,320 --> 00:06:58,060
+we view,
+
+200
+00:06:58,600 --> 00:07:00,280
+here on the side the different
+
+201
+00:07:00,280 --> 00:07:01,660
+steps that can be undertaken
+
+202
+00:07:01,960 --> 00:07:03,420
+when dealing with consent.
+
+203
+00:07:03,705 --> 00:07:05,225
+We have the request
+of consent,
+
+204
+00:07:05,225 --> 00:07:06,685
+the comprehension of consent,
+
+205
+00:07:06,745 --> 00:07:08,205
+the decision about consent,
+
+206
+00:07:08,505 --> 00:07:09,705
+and the use of consent.
+
+207
+00:07:09,705 --> 00:07:13,150
+And all of these,
+stages also consists,
+
+208
+00:07:13,790 --> 00:07:15,870
+of, different sub
+steps that can
+
+209
+00:07:15,870 --> 00:07:17,630
+be taken, different,
+
+210
+00:07:18,030 --> 00:07:19,630
+tools and approaches that can
+
+211
+00:07:19,630 --> 00:07:22,355
+be adopted when it comes to
+
+212
+00:07:22,355 --> 00:07:24,775
+the management of
+consent at each stage.
+
+213
+00:07:25,315 --> 00:07:27,075
+And the next goal is to raise
+
+214
+00:07:27,075 --> 00:07:28,355
+the awareness about what it
+
+215
+00:07:28,355 --> 00:07:30,615
+means to give consent
+and the implications
+
+216
+00:07:30,755 --> 00:07:31,720
+that follow.
+
+217
+00:07:32,980 --> 00:07:34,340
+So the first step that we took
+
+218
+00:07:34,340 --> 00:07:35,620
+is to model a sample,
+
+219
+00:07:35,620 --> 00:07:37,720
+a campaign in
+the company or project.
+
+220
+00:07:38,100 --> 00:07:39,160
+The campaign is called,
+
+221
+00:07:39,780 --> 00:07:41,485
+and it's actually
+a real campaign
+
+222
+00:07:41,485 --> 00:07:42,925
+that was run by the Tyrolian
+
+223
+00:07:42,925 --> 00:07:44,465
+government here in Austria,
+
+224
+00:07:45,005 --> 00:07:46,625
+a couple of years ago.
+
+225
+00:07:46,925 --> 00:07:48,445
+The main date of interest in
+
+226
+00:07:48,445 --> 00:07:49,735
+that campaign was to,
+
+227
+00:07:50,440 --> 00:07:52,840
+GPS data from car drivers in
+
+228
+00:07:52,840 --> 00:07:54,360
+the area of Innsbruck up to
+
+229
+00:07:54,360 --> 00:07:55,820
+fifteen kilometers away,
+
+230
+00:07:56,200 --> 00:07:58,300
+and the data was
+stored anonymously
+
+231
+00:07:58,600 --> 00:08:00,865
+in a central database
+in Kuchstein
+
+232
+00:08:01,005 --> 00:08:02,945
+or by owned by
+the government.
+
+233
+00:08:03,725 --> 00:08:06,605
+Upon the user, consent,
+the data was,
+
+234
+00:08:07,325 --> 00:08:09,590
+or will be also, up to today,
+
+235
+00:08:09,650 --> 00:08:12,390
+shared with, STI Innsbruck,
+
+236
+00:08:12,690 --> 00:08:13,970
+which is my research group,
+
+237
+00:08:14,210 --> 00:08:18,070
+and we run different
+processing connect.
+
+238
+00:08:20,055 --> 00:08:21,835
+So based on that
+simple campaign,
+
+239
+00:08:22,215 --> 00:08:26,375
+we created our, main
+ontology and then,
+
+240
+00:08:26,935 --> 00:08:29,680
+we added data and
+created the the
+
+241
+00:08:29,680 --> 00:08:31,620
+knowledge graph, which
+you can see here.
+
+242
+00:08:31,760 --> 00:08:33,300
+It's quite simple
+and represents
+
+243
+00:08:33,360 --> 00:08:34,740
+currently only one campaign.
+
+244
+00:08:34,800 --> 00:08:37,535
+Rosa Finn's book has
+presented earlier,
+
+245
+00:08:37,535 --> 00:08:39,135
+and we have the different data
+
+246
+00:08:39,135 --> 00:08:41,055
+associated with it
+when the consent
+
+247
+00:08:41,055 --> 00:08:43,375
+was asked. So we
+have the status
+
+248
+00:08:43,375 --> 00:08:45,395
+of consent, which is, given.
+
+249
+00:08:45,630 --> 00:08:47,330
+We have the duration
+of campaign,
+
+250
+00:08:47,390 --> 00:08:49,230
+twelve days. We have
+the main purpose,
+
+251
+00:08:49,230 --> 00:08:50,610
+which is for fraud detection.
+
+252
+00:08:51,310 --> 00:08:54,605
+We have also who
+requested the campaign,
+
+253
+00:08:54,605 --> 00:08:56,465
+which is the Innsbruck
+government.
+
+254
+00:08:57,485 --> 00:09:00,145
+We have the type of
+data, GPS data,
+
+255
+00:09:00,285 --> 00:09:01,005
+and, of course,
+
+256
+00:09:01,005 --> 00:09:04,100
+the person who gave
+their consent.
+
+257
+00:09:06,080 --> 00:09:08,000
+And while this
+data is really,
+
+258
+00:09:08,240 --> 00:09:10,020
+easy to understand by machines
+
+259
+00:09:10,080 --> 00:09:13,905
+and experts both in
+human readable,
+
+260
+00:09:13,905 --> 00:09:15,205
+machine readable format.
+
+261
+00:09:15,905 --> 00:09:17,505
+How can individuals with no
+
+262
+00:09:17,505 --> 00:09:19,365
+knowledge of linked
+data understand
+
+263
+00:09:19,425 --> 00:09:20,485
+this, model?
+
+264
+00:09:21,730 --> 00:09:24,310
+So we decided to
+visualize the consent
+
+265
+00:09:24,370 --> 00:09:25,510
+first, and,
+
+266
+00:09:25,890 --> 00:09:28,370
+we began by analyzing existing
+
+267
+00:09:28,370 --> 00:09:29,990
+consent request
+user interfaces.
+
+268
+00:09:30,665 --> 00:09:31,865
+Some of the issues that,
+
+269
+00:09:32,265 --> 00:09:35,325
+we came across are
+information overload,
+
+270
+00:09:36,265 --> 00:09:37,800
+privacy and policy privacy
+
+271
+00:09:37,960 --> 00:09:39,240
+policies written in technical
+
+272
+00:09:39,240 --> 00:09:40,540
+and legal jargon.
+
+273
+00:09:40,840 --> 00:09:42,280
+As you can see
+here on the side,
+
+274
+00:09:42,280 --> 00:09:43,800
+we have long documents and
+
+275
+00:09:43,800 --> 00:09:47,265
+legalese that people rarely
+
+276
+00:09:47,265 --> 00:09:48,885
+understand and read.
+
+277
+00:09:49,185 --> 00:09:50,625
+We have consent requests which
+
+278
+00:09:50,625 --> 00:09:52,145
+are which are not
+really compliant
+
+279
+00:09:52,145 --> 00:09:55,030
+with GDPR because no
+information about,
+
+280
+00:09:55,490 --> 00:09:56,950
+the consent is presented.
+
+281
+00:09:57,170 --> 00:09:59,670
+For example, why is
+the data required?
+
+282
+00:09:59,730 --> 00:10:00,790
+Why is the data,
+
+283
+00:10:04,005 --> 00:10:05,365
+what is the purpose
+of the data,
+
+284
+00:10:05,365 --> 00:10:06,645
+how data will be processed,
+
+285
+00:10:06,645 --> 00:10:09,205
+where where the data
+will be stored,
+
+286
+00:10:09,445 --> 00:10:11,050
+and more. And, also,
+
+287
+00:10:11,050 --> 00:10:12,190
+these user interfaces,
+
+288
+00:10:13,050 --> 00:10:15,370
+do not clearly indicate that
+
+289
+00:10:15,370 --> 00:10:18,545
+the individuals
+have the right to,
+
+290
+00:10:19,245 --> 00:10:20,385
+revoke their consent,
+
+291
+00:10:20,445 --> 00:10:22,445
+which is also
+known as the right
+
+292
+00:10:22,445 --> 00:10:23,265
+to be forgotten.
+
+293
+00:10:24,445 --> 00:10:25,985
+So we, created,
+
+294
+00:10:26,605 --> 00:10:28,590
+a simple user interface for
+
+295
+00:10:28,590 --> 00:10:29,790
+the company or project,
+
+296
+00:10:30,030 --> 00:10:31,790
+which displays
+the different campaigns,
+
+297
+00:10:31,790 --> 00:10:33,250
+which you can see
+on the side.
+
+298
+00:10:33,790 --> 00:10:36,190
+Or it you can see
+campaigns from
+
+299
+00:10:36,190 --> 00:10:37,250
+different companies.
+
+300
+00:10:37,685 --> 00:10:39,365
+The UI was developed with,
+
+301
+00:10:39,605 --> 00:10:42,345
+Google's new UI toolkit
+called Flutter,
+
+302
+00:10:42,725 --> 00:10:44,005
+and it follows the,
+
+303
+00:10:44,405 --> 00:10:46,325
+consent knowledge
+graph which we,
+
+304
+00:10:47,210 --> 00:10:47,950
+shown before.
+
+305
+00:10:48,730 --> 00:10:50,570
+And the UI is designed to be
+
+306
+00:10:50,570 --> 00:10:52,750
+used in vehicles,
+for example,
+
+307
+00:10:52,810 --> 00:10:54,990
+on tablet or a phone
+by the individual.
+
+308
+00:10:56,055 --> 00:10:57,575
+Here, you can see more details
+
+309
+00:10:57,575 --> 00:11:00,075
+about the actual
+campaign the details
+
+310
+00:11:00,135 --> 00:11:02,475
+when the user
+selects the campaign
+
+311
+00:11:02,535 --> 00:11:04,075
+by by, Volkswagen.
+
+312
+00:11:04,850 --> 00:11:08,310
+You can see the,
+company name,
+
+313
+00:11:08,370 --> 00:11:10,150
+the campaign, roads
+of Innsbruck,
+
+314
+00:11:10,210 --> 00:11:11,670
+what data will be collected,
+
+315
+00:11:11,730 --> 00:11:12,850
+when is the start date,
+
+316
+00:11:12,850 --> 00:11:14,230
+the end date of the campaign.
+
+317
+00:11:14,735 --> 00:11:16,415
+And further, when
+the user selects
+
+318
+00:11:16,415 --> 00:11:18,495
+to agree to
+participate in that
+
+319
+00:11:18,495 --> 00:11:20,515
+campaign, we
+present them with,
+
+320
+00:11:21,935 --> 00:11:23,520
+preference, lists.
+
+321
+00:11:23,600 --> 00:11:25,200
+So the user can select really
+
+322
+00:11:25,200 --> 00:11:26,400
+if they want to share all of
+
+323
+00:11:26,400 --> 00:11:29,380
+their data that's asked
+for or only GPS,
+
+324
+00:11:29,520 --> 00:11:30,640
+tire pressure, speed,
+
+325
+00:11:30,640 --> 00:11:33,220
+and then finalize
+their consent.
+
+326
+00:11:35,025 --> 00:11:36,625
+But then, we were,
+
+327
+00:11:37,665 --> 00:11:40,085
+thinking of how
+to even further,
+
+328
+00:11:41,265 --> 00:11:43,990
+help raise the awareness
+of individuals.
+
+329
+00:11:44,210 --> 00:11:46,930
+So we decided to focus on
+
+330
+00:11:46,930 --> 00:11:47,890
+visualizing of,
+
+331
+00:11:49,250 --> 00:11:51,510
+what happens after
+the consent is given.
+
+332
+00:11:51,605 --> 00:11:53,045
+And for that, we use, again,
+
+333
+00:11:53,045 --> 00:11:54,085
+the knowledge graph which we
+
+334
+00:11:54,085 --> 00:11:55,525
+have with
+the different campaigns
+
+335
+00:11:55,525 --> 00:11:57,065
+as the main source
+of information
+
+336
+00:11:57,685 --> 00:12:00,585
+and the d three,
+visualization library.
+
+337
+00:12:01,180 --> 00:12:03,180
+And, we actually
+published a paper
+
+338
+00:12:03,180 --> 00:12:04,060
+in June this year.
+
+339
+00:12:04,060 --> 00:12:06,060
+You can, have a look if you're
+
+340
+00:12:06,060 --> 00:12:06,800
+more interested,
+
+341
+00:12:07,020 --> 00:12:09,200
+which focuses exactly
+on this topic.
+
+342
+00:12:09,355 --> 00:12:11,675
+So we presented
+individuals, with,
+
+343
+00:12:11,995 --> 00:12:13,615
+this, user interface.
+
+344
+00:12:15,115 --> 00:12:16,795
+In the middle,
+you can see this
+
+345
+00:12:16,795 --> 00:12:18,075
+is the vehicle from which,
+
+346
+00:12:18,395 --> 00:12:21,120
+the data is transmitted
+or the individual
+
+347
+00:12:21,260 --> 00:12:22,700
+itself inside of the vehicle,
+
+348
+00:12:22,700 --> 00:12:23,740
+and we have the different
+
+349
+00:12:23,740 --> 00:12:25,520
+campaigns that
+these individuals
+
+350
+00:12:25,740 --> 00:12:26,460
+participates in.
+
+351
+00:12:26,460 --> 00:12:28,720
+For example, green
+future, drive smart,
+
+352
+00:12:29,065 --> 00:12:31,065
+highway zero,
+and each campaign
+
+353
+00:12:31,065 --> 00:12:33,165
+is associated
+with, different,
+
+354
+00:12:33,785 --> 00:12:34,845
+types of data.
+
+355
+00:12:35,225 --> 00:12:36,985
+And we use color blocking to
+
+356
+00:12:36,985 --> 00:12:38,690
+identify that. For example,
+
+357
+00:12:38,690 --> 00:12:42,150
+speed is in yellow,
+GPS is in purple,
+
+358
+00:12:42,210 --> 00:12:44,210
+and we have also a team change
+
+359
+00:12:44,210 --> 00:12:45,510
+from light to dark.
+
+360
+00:12:45,695 --> 00:12:47,135
+You can actually test the user
+
+361
+00:12:47,135 --> 00:12:49,295
+interface, here and play with
+
+362
+00:12:49,295 --> 00:12:51,615
+it for yourself,
+see if you like it,
+
+363
+00:12:51,615 --> 00:12:52,895
+and maybe you can even,
+
+364
+00:12:53,295 --> 00:12:55,030
+provide some feedback about,
+
+365
+00:12:55,190 --> 00:12:56,710
+future improvements
+that can be
+
+366
+00:12:56,710 --> 00:12:59,050
+done to it. So when
+the individual
+
+367
+00:12:59,190 --> 00:13:00,970
+selects a campaign,
+for example,
+
+368
+00:13:01,430 --> 00:13:03,365
+green future,
+they're presented
+
+369
+00:13:03,425 --> 00:13:04,885
+with a bit more detailed,
+
+370
+00:13:05,265 --> 00:13:06,885
+information about
+this campaign.
+
+371
+00:13:07,585 --> 00:13:10,770
+Specifically, what
+type of data was,
+
+372
+00:13:11,950 --> 00:13:14,110
+retrieved at what time and by
+
+373
+00:13:14,110 --> 00:13:15,170
+which company.
+
+374
+00:13:17,365 --> 00:13:19,065
+We performed some
+user evaluation.
+
+375
+00:13:19,765 --> 00:13:21,305
+We had twenty five
+participants,
+
+376
+00:13:23,125 --> 00:13:27,310
+female and, male,
+age eighteen to,
+
+377
+00:13:27,790 --> 00:13:29,790
+fifty five, with different
+
+378
+00:13:29,790 --> 00:13:30,930
+university degrees,
+
+379
+00:13:31,070 --> 00:13:33,235
+and eighty percent of them had
+
+380
+00:13:33,235 --> 00:13:34,695
+a driving license.
+
+381
+00:13:34,755 --> 00:13:36,455
+Evaluation details
+you can find
+
+382
+00:13:36,755 --> 00:13:38,295
+in the paper.
+
+383
+00:13:39,235 --> 00:13:41,380
+So, we asked
+the same questions
+
+384
+00:13:42,260 --> 00:13:44,340
+about consent
+before presenting
+
+385
+00:13:44,340 --> 00:13:47,160
+the individuals with
+the UI and after.
+
+386
+00:13:47,700 --> 00:13:49,155
+So, before,
+
+387
+00:13:49,535 --> 00:13:51,215
+we asked them if
+they're willing
+
+388
+00:13:51,215 --> 00:13:53,135
+to share their
+GPS location and
+
+389
+00:13:53,135 --> 00:13:55,635
+other types of data
+with companies,
+
+390
+00:13:55,775 --> 00:13:57,840
+and most of them
+said that probably,
+
+391
+00:13:58,380 --> 00:14:01,600
+not and never they would share
+
+392
+00:14:01,740 --> 00:14:03,980
+such data. And
+after we presented
+
+393
+00:14:03,980 --> 00:14:05,420
+them with a visualization of
+
+394
+00:14:05,420 --> 00:14:06,745
+what happens to their,
+
+395
+00:14:06,985 --> 00:14:08,765
+data after consent is given,
+
+396
+00:14:09,305 --> 00:14:10,665
+most of them actually changed
+
+397
+00:14:10,665 --> 00:14:12,445
+their opinion and
+said that possibly,
+
+398
+00:14:13,210 --> 00:14:15,710
+they would if they
+had this, tool.
+
+399
+00:14:17,610 --> 00:14:19,210
+Next, we asked them to,
+
+400
+00:14:20,010 --> 00:14:22,305
+describe the interface
+with some
+
+401
+00:14:22,305 --> 00:14:24,005
+keywords. They said
+it's organized,
+
+402
+00:14:24,145 --> 00:14:25,445
+effective, innovative.
+
+403
+00:14:27,185 --> 00:14:29,445
+We also evaluated
+the comprehension
+
+404
+00:14:29,585 --> 00:14:30,245
+of individuals.
+
+405
+00:14:30,490 --> 00:14:32,010
+We asked them if
+they can easily
+
+406
+00:14:32,010 --> 00:14:33,370
+see what's happening to their
+
+407
+00:14:33,370 --> 00:14:34,750
+data at specific times,
+
+408
+00:14:34,970 --> 00:14:36,430
+and most of the individuals
+
+409
+00:14:36,890 --> 00:14:38,590
+strongly agreed and agreed.
+
+410
+00:14:39,745 --> 00:14:42,545
+And, when asked if the graph
+
+411
+00:14:42,545 --> 00:14:44,305
+helped them understand what
+
+412
+00:14:44,305 --> 00:14:46,805
+happens to their data,
+most individuals,
+
+413
+00:14:47,105 --> 00:14:50,150
+again, agreed and
+strongly agreed.
+
+414
+00:14:51,170 --> 00:14:52,690
+So the main takeaways from our
+
+415
+00:14:52,690 --> 00:14:54,630
+evaluation are
+that visualizations
+
+416
+00:14:55,170 --> 00:14:57,085
+help increase
+the comprehension
+
+417
+00:14:57,145 --> 00:14:59,885
+of what it means to
+give consent and,
+
+418
+00:15:00,905 --> 00:15:02,605
+trust of the users.
+
+419
+00:15:03,225 --> 00:15:04,285
+And that,
+
+420
+00:15:04,820 --> 00:15:06,680
+the application
+that we created
+
+421
+00:15:06,980 --> 00:15:08,200
+creates more transparency,
+
+422
+00:15:08,740 --> 00:15:10,200
+the data sharing process.
+
+423
+00:15:11,995 --> 00:15:13,995
+Here are just some
+examples of,
+
+424
+00:15:15,275 --> 00:15:18,255
+future things that,
+
+425
+00:15:19,730 --> 00:15:21,590
+I think are also important to
+
+426
+00:15:21,890 --> 00:15:22,790
+want to consider.
+
+427
+00:15:22,850 --> 00:15:24,770
+For example, consent standard
+
+428
+00:15:24,930 --> 00:15:27,765
+standardization. I think that
+
+429
+00:15:27,765 --> 00:15:30,005
+the W3C consent
+community group
+
+430
+00:15:30,005 --> 00:15:32,085
+is currently working
+towards different,
+
+431
+00:15:32,725 --> 00:15:35,045
+and better solutions
+for consent
+
+432
+00:15:35,045 --> 00:15:37,140
+so you can have a look there.
+
+433
+00:15:37,140 --> 00:15:38,200
+Also, what happens,
+
+434
+00:15:38,900 --> 00:15:41,620
+beyond GDPR because
+GDPR, yes,
+
+435
+00:15:41,620 --> 00:15:45,795
+it's a a really
+huge law, but,
+
+436
+00:15:46,275 --> 00:15:48,695
+in some places, it
+does not apply.
+
+437
+00:15:48,995 --> 00:15:50,355
+In California, for example,
+
+438
+00:15:50,355 --> 00:15:51,415
+we have the CCPA,
+
+439
+00:15:51,795 --> 00:15:53,090
+and other countries have their
+
+440
+00:15:53,090 --> 00:15:54,470
+own laws about consent.
+
+441
+00:15:55,170 --> 00:15:57,890
+And when in some cases,
+
+442
+00:15:57,890 --> 00:15:59,570
+consent might not be enough,
+
+443
+00:15:59,570 --> 00:16:01,485
+and what happens then?
+
+444
+00:16:01,725 --> 00:16:04,065
+Maybe contracts
+and licenses can
+
+445
+00:16:04,365 --> 00:16:05,425
+come into play.
+
+446
+00:16:05,485 --> 00:16:06,765
+So these are just some things
+
+447
+00:16:06,765 --> 00:16:08,685
+that we can all think about.
+
+448
+00:16:08,685 --> 00:16:10,840
+And if you have
+any suggestions
+
+449
+00:16:10,900 --> 00:16:12,020
+or you want to discuss,
+
+450
+00:16:12,020 --> 00:16:14,500
+feel free to reach
+out and send
+
+451
+00:16:14,500 --> 00:16:16,520
+me an email or even
+here in the chat.
+
+452
+00:16:16,820 --> 00:16:18,035
+So So thank you very much for
+
+453
+00:16:18,035 --> 00:16:18,755
+your attention,
+
+454
+00:16:18,755 --> 00:16:20,595
+and I'll take any
+questions now
+
+455
+00:16:20,595 --> 00:16:21,585
+if you have.
+

@@ -1,0 +1,4227 @@
+1
+00:00:05,440 --> 00:00:08,240
+Is one of the biggest and more
+
+2
+00:00:08,240 --> 00:00:10,525
+important knowledge
+graphs around
+
+3
+00:00:10,585 --> 00:00:13,305
+and has been for
+the last decade or so,
+
+4
+00:00:13,305 --> 00:00:15,165
+if my memory serves me right.
+
+5
+00:00:15,385 --> 00:00:17,005
+It has been
+a knowledge graph,
+
+6
+00:00:17,305 --> 00:00:19,520
+before actually
+knowledge graphs
+
+7
+00:00:19,520 --> 00:00:21,620
+were were to hike
+or before even
+
+8
+00:00:21,760 --> 00:00:22,740
+they were to think.
+
+9
+00:00:22,800 --> 00:00:24,420
+So they started,
+
+10
+00:00:24,960 --> 00:00:27,380
+scraping knowledge
+from, from Wikipedia.
+
+11
+00:00:27,920 --> 00:00:30,465
+And to do that they used some
+
+12
+00:00:30,465 --> 00:00:32,305
+structure in Wikipedia and by
+
+13
+00:00:32,305 --> 00:00:34,705
+doing that they
+extracted a big
+
+14
+00:00:34,705 --> 00:00:36,945
+amount of knowledge and they
+
+15
+00:00:36,945 --> 00:00:39,010
+have been building on that and
+
+16
+00:00:39,010 --> 00:00:41,650
+creating a whole
+ecosystem around it.
+
+17
+00:00:41,650 --> 00:00:43,010
+And this is actually what
+
+18
+00:00:43,010 --> 00:00:45,750
+Sebastian is here to
+talk about today,
+
+19
+00:00:46,335 --> 00:00:48,015
+the latest addition to this
+
+20
+00:00:48,015 --> 00:00:50,815
+ecosystem and how
+they're using it and,
+
+21
+00:00:50,815 --> 00:00:53,310
+I guess, how they you
+can also use it.
+
+22
+00:00:53,710 --> 00:00:56,830
+So that's that's it,
+from, from my part.
+
+23
+00:00:56,830 --> 00:00:59,150
+And for the rest, Sebastian,
+
+24
+00:00:59,150 --> 00:01:01,410
+the floor is yours,
+and take it away.
+
+25
+00:01:02,085 --> 00:01:03,785
+Thank you for
+the introduction,
+
+26
+00:01:03,845 --> 00:01:06,540
+George. So today,
+
+27
+00:01:06,540 --> 00:01:08,480
+I'm talking about
+the d DBPedia
+
+28
+00:01:08,620 --> 00:01:09,700
+data bus, in particular,
+
+29
+00:01:09,700 --> 00:01:11,260
+a platform to evolve knowledge
+
+30
+00:01:11,260 --> 00:01:13,120
+and AI from version
+web files.
+
+31
+00:01:13,245 --> 00:01:17,505
+This is
+a particular particular
+
+32
+00:01:17,645 --> 00:01:19,885
+aspect which goes
+into data and
+
+33
+00:01:19,885 --> 00:01:21,105
+knowledge engineering.
+
+34
+00:01:21,550 --> 00:01:23,730
+So it it is it is
+about the engineering
+
+35
+00:01:23,870 --> 00:01:26,350
+methodology. A part of it is
+
+36
+00:01:26,350 --> 00:01:27,890
+about
+the engineering methodology
+
+37
+00:01:28,190 --> 00:01:29,010
+behind it.
+
+38
+00:01:29,425 --> 00:01:31,505
+So you would get some some
+
+39
+00:01:31,505 --> 00:01:33,025
+knowledge engineering details
+
+40
+00:01:33,025 --> 00:01:34,385
+and processes here,
+
+41
+00:01:34,385 --> 00:01:35,905
+and then about the platform
+
+42
+00:01:35,905 --> 00:01:37,665
+which provides
+the tool support
+
+43
+00:01:37,665 --> 00:01:40,720
+for this methodology.
+
+44
+00:01:40,720 --> 00:01:42,960
+So for for all of
+you who do not
+
+45
+00:01:42,960 --> 00:01:44,320
+know DBPedia so well,
+
+46
+00:01:44,320 --> 00:01:46,580
+I've prepared a short
+introduction.
+
+47
+00:01:47,040 --> 00:01:49,085
+So starting from the left,
+
+48
+00:01:50,185 --> 00:01:51,465
+you can see that two thousand
+
+49
+00:01:51,465 --> 00:01:53,165
+and seven was this
+first Wikipedia
+
+50
+00:01:53,545 --> 00:01:55,165
+extraction thirteen years ago
+
+51
+00:01:56,060 --> 00:01:57,280
+with the four partners,
+
+52
+00:01:57,740 --> 00:01:59,200
+and there was a functioning
+
+53
+00:01:59,660 --> 00:02:00,560
+sparkle endpoint,
+
+54
+00:02:00,700 --> 00:02:03,280
+which is stably
+available publicly
+
+55
+00:02:03,660 --> 00:02:05,715
+till today, and
+also linked data
+
+56
+00:02:05,715 --> 00:02:08,995
+deployment. Then soon
+after, basically,
+
+57
+00:02:08,995 --> 00:02:10,055
+in the same year,
+
+58
+00:02:10,515 --> 00:02:11,715
+there was this formation of
+
+59
+00:02:11,715 --> 00:02:13,815
+the linked data cloud
+around DBPedia.
+
+60
+00:02:15,460 --> 00:02:19,540
+Trend continues, and,
+
+61
+00:02:19,940 --> 00:02:21,620
+so so then there was a major
+
+62
+00:02:21,620 --> 00:02:22,740
+boost in knowledge graph and
+
+63
+00:02:22,740 --> 00:02:23,720
+linking research.
+
+64
+00:02:23,815 --> 00:02:26,235
+We opened the editing
+of the DVPD
+
+65
+00:02:26,375 --> 00:02:27,735
+ontology in two thousand ten,
+
+66
+00:02:27,735 --> 00:02:29,915
+which was labeled
+a new type of psych.
+
+67
+00:02:30,855 --> 00:02:31,895
+Two thousand eleven,
+
+68
+00:02:31,895 --> 00:02:33,927
+there was major
+industry so IBM
+
+69
+00:02:33,927 --> 00:02:34,500
+Watson was built,
+for example,
+
+70
+00:02:34,500 --> 00:02:35,730
+using DVPD. Yahoo used
+the the software.
+
+71
+00:02:35,730 --> 00:02:36,720
+BBC included the identifier.
+
+72
+00:02:37,420 --> 00:02:38,800
+Park was given to Unicode.
+
+73
+00:02:45,855 --> 00:02:47,535
+Then, two thousand twelve and
+
+74
+00:02:47,535 --> 00:02:48,335
+two thousand sixteen,
+
+75
+00:02:48,335 --> 00:02:50,195
+we extended this extraction
+
+76
+00:02:50,255 --> 00:02:51,930
+framework to cover all hundred
+
+77
+00:02:51,930 --> 00:02:54,890
+to hundred forty
+Wikipedia's, comments,
+
+78
+00:02:54,890 --> 00:02:55,930
+and also wiki data.
+
+79
+00:02:55,930 --> 00:02:56,810
+And at this time,
+
+80
+00:02:56,810 --> 00:02:58,330
+fourteen point four billion
+
+81
+00:02:58,330 --> 00:02:59,470
+facts were extracted.
+
+82
+00:03:00,415 --> 00:03:01,455
+In two thousand fourteen,
+
+83
+00:03:01,455 --> 00:03:03,635
+we founded the DBPedia
+Association,
+
+84
+00:03:04,655 --> 00:03:06,515
+which I'm the CEO of.
+
+85
+00:03:07,460 --> 00:03:08,580
+Two thousand sixteen,
+
+86
+00:03:08,580 --> 00:03:11,860
+we had we were try starting to
+
+87
+00:03:11,860 --> 00:03:13,700
+tackle data quality
+on a larger scale.
+
+88
+00:03:13,700 --> 00:03:15,460
+That's why we
+developed the Shackle
+
+89
+00:03:15,460 --> 00:03:16,120
+web standard,
+
+90
+00:03:16,805 --> 00:03:19,365
+which allows test
+driven knowledge
+
+91
+00:03:19,365 --> 00:03:20,265
+graph development.
+
+92
+00:03:21,205 --> 00:03:22,405
+Two thousand eighteen, this,
+
+93
+00:03:22,645 --> 00:03:25,465
+the linked data cloud
+has grown a lot.
+
+94
+00:03:26,340 --> 00:03:28,100
+And, starting two
+thousand nineteen,
+
+95
+00:03:28,100 --> 00:03:30,180
+we really built DBPedia into
+
+96
+00:03:30,180 --> 00:03:31,640
+an innovation platform.
+
+97
+00:03:31,700 --> 00:03:33,300
+So it's not not really about
+
+98
+00:03:33,300 --> 00:03:34,260
+the dataset anymore,
+
+99
+00:03:34,260 --> 00:03:35,695
+but about
+the connect connecting
+
+100
+00:03:35,695 --> 00:03:37,535
+of the data, linked
+data technology,
+
+101
+00:03:37,535 --> 00:03:38,435
+and the ecosystem.
+
+102
+00:03:39,935 --> 00:03:40,995
+Now in the future,
+
+103
+00:03:41,455 --> 00:03:44,160
+we we kind of like
+raise the the
+
+104
+00:03:44,160 --> 00:03:46,320
+productivity. I'll
+talk about this.
+
+105
+00:03:46,320 --> 00:03:48,000
+So there are
+twenty two billion
+
+106
+00:03:48,000 --> 00:03:48,800
+facts per month.
+
+107
+00:03:48,800 --> 00:03:49,680
+This is one thing,
+
+108
+00:03:49,680 --> 00:03:50,980
+so it's monthly releases.
+
+109
+00:03:51,495 --> 00:03:53,895
+And we have this
+huge link data
+
+110
+00:03:53,895 --> 00:03:55,335
+derived open knowledge graph,
+
+111
+00:03:55,335 --> 00:03:56,955
+so we kind of, like,
+
+112
+00:03:57,015 --> 00:03:58,795
+increase the speed
+of integration
+
+113
+00:03:59,415 --> 00:04:01,470
+very much and are
+able to produce
+
+114
+00:04:01,470 --> 00:04:02,770
+this huge knowledge graph.
+
+115
+00:04:03,310 --> 00:04:04,050
+And also,
+
+116
+00:04:05,790 --> 00:04:08,590
+we started to do
+FAIR link data.
+
+117
+00:04:08,590 --> 00:04:11,405
+So FAIR, most of
+you might know it,
+
+118
+00:04:11,405 --> 00:04:13,505
+but it means findable,
+accessible,
+
+119
+00:04:13,725 --> 00:04:15,105
+interoperable, and reusable.
+
+120
+00:04:15,965 --> 00:04:18,300
+And I'll talk about these
+
+121
+00:04:18,300 --> 00:04:19,820
+developments in twenty twenty
+
+122
+00:04:19,820 --> 00:04:20,880
+on the next slides.
+
+123
+00:04:22,380 --> 00:04:24,460
+So what does FAIR
+linked data mean?
+
+124
+00:04:24,460 --> 00:04:27,535
+FAIR originally comes
+from a scientific
+
+125
+00:04:27,995 --> 00:04:30,175
+consortium. So
+there are guiding
+
+126
+00:04:30,235 --> 00:04:31,915
+principles for scientific data
+
+127
+00:04:31,915 --> 00:04:32,975
+management and stewardship.
+
+128
+00:04:34,155 --> 00:04:36,235
+Personally, I always wondered
+
+129
+00:04:36,235 --> 00:04:37,410
+these these guidelines,
+
+130
+00:04:37,550 --> 00:04:39,970
+they are very vague,
+high level,
+
+131
+00:04:40,030 --> 00:04:41,650
+idealistic, also altruistic,
+
+132
+00:04:42,670 --> 00:04:44,290
+and not at all industrial.
+
+133
+00:04:46,165 --> 00:04:47,765
+So what we're doing with FAIR
+
+134
+00:04:47,765 --> 00:04:49,685
+linked data now is
+that we provide
+
+135
+00:04:49,685 --> 00:04:51,785
+a practical
+practical implementation
+
+136
+00:04:52,245 --> 00:04:54,220
+of FAIR. So there's lowered
+
+137
+00:04:54,220 --> 00:04:55,580
+effort because you can reuse
+
+138
+00:04:55,580 --> 00:04:56,240
+the implementation.
+
+139
+00:04:56,860 --> 00:04:59,420
+We have measurable
+automated FAIR tests,
+
+140
+00:04:59,420 --> 00:05:01,180
+so you can be sure that your
+
+141
+00:05:01,180 --> 00:05:03,245
+data is FAIR, and the whole
+
+142
+00:05:03,245 --> 00:05:04,705
+thing is industry driven.
+
+143
+00:05:07,005 --> 00:05:09,165
+Now this, there
+are many things
+
+144
+00:05:09,165 --> 00:05:11,330
+in this FAIR
+guiding principles
+
+145
+00:05:11,390 --> 00:05:13,410
+that are industrially
+relevant.
+
+146
+00:05:13,790 --> 00:05:14,930
+For example, findable,
+
+147
+00:05:15,310 --> 00:05:17,170
+there is also
+a marketing aspect,
+
+148
+00:05:17,675 --> 00:05:20,495
+but also internal
+data management
+
+149
+00:05:20,715 --> 00:05:22,255
+aspect that you want to find
+
+150
+00:05:22,315 --> 00:05:24,235
+data in in your
+enterprise. Yeah.
+
+151
+00:05:24,235 --> 00:05:25,615
+Because it's very distributed
+
+152
+00:05:25,755 --> 00:05:26,895
+across your enterprise.
+
+153
+00:05:28,060 --> 00:05:30,140
+Interoperability
+is, of course,
+
+154
+00:05:30,140 --> 00:05:31,760
+a great issue and reusability
+
+155
+00:05:32,060 --> 00:05:34,080
+is is a great cost saver.
+
+156
+00:05:34,380 --> 00:05:37,185
+Accessibility, goes along with
+
+157
+00:05:37,245 --> 00:05:39,485
+privacy concerns
+and who's allowed
+
+158
+00:05:39,485 --> 00:05:41,725
+to see data. So this
+has a different
+
+159
+00:05:41,725 --> 00:05:44,205
+flavor than the the original
+
+160
+00:05:44,205 --> 00:05:45,345
+FAIR guiding principles.
+
+161
+00:05:47,230 --> 00:05:48,910
+I would like to introduce you
+
+162
+00:05:48,910 --> 00:05:50,830
+the DVPDIA Association members
+
+163
+00:05:50,830 --> 00:05:52,430
+up to now. So we are very fast
+
+164
+00:05:52,430 --> 00:05:53,970
+growing knowledge engineering
+
+165
+00:05:54,030 --> 00:05:55,410
+and linked data lobby.
+
+166
+00:05:56,975 --> 00:05:59,155
+Part of it is to to
+give the visibility
+
+167
+00:05:59,295 --> 00:06:01,855
+that the EPR has
+back to the people
+
+168
+00:06:01,855 --> 00:06:04,350
+who contributed
+and build it and
+
+169
+00:06:04,670 --> 00:06:06,110
+really drive this knowledge
+
+170
+00:06:06,110 --> 00:06:06,930
+graph adoption.
+
+171
+00:06:08,510 --> 00:06:10,110
+Let's I I would like to answer
+
+172
+00:06:10,110 --> 00:06:11,630
+the question
+whether DBPedia is
+
+173
+00:06:11,630 --> 00:06:14,585
+academic and is
+industrial is often,
+
+174
+00:06:14,905 --> 00:06:15,885
+quite a misconception.
+
+175
+00:06:16,105 --> 00:06:18,285
+So it's it's neither
+and it's both.
+
+176
+00:06:18,825 --> 00:06:20,265
+Because we focus on knowledge
+
+177
+00:06:20,265 --> 00:06:22,105
+engineering, and
+engineering is
+
+178
+00:06:22,105 --> 00:06:24,500
+always taking
+scientific methods
+
+179
+00:06:24,560 --> 00:06:26,260
+to produce industrial output.
+
+180
+00:06:27,120 --> 00:06:28,720
+So more on the left side,
+
+181
+00:06:28,720 --> 00:06:31,605
+we put the academic
+and nonprofit
+
+182
+00:06:31,605 --> 00:06:32,565
+and public members,
+
+183
+00:06:32,565 --> 00:06:33,685
+and then on the right side,
+
+184
+00:06:33,685 --> 00:06:35,125
+we put the industrial
+members.
+
+185
+00:06:35,125 --> 00:06:37,525
+Yeah. So you can,
+kind of, like,
+
+186
+00:06:37,525 --> 00:06:40,025
+see this this,
+knowledge engineering
+
+187
+00:06:41,190 --> 00:06:43,370
+methodology here
+or process here.
+
+188
+00:06:45,510 --> 00:06:46,890
+I'll talk about some,
+
+189
+00:06:47,750 --> 00:06:49,485
+economical concepts
+just to give
+
+190
+00:06:49,485 --> 00:06:52,285
+a background
+motivation why why
+
+191
+00:06:52,285 --> 00:06:53,345
+we are doing this.
+
+192
+00:06:55,245 --> 00:06:55,965
+Some years ago,
+
+193
+00:06:55,965 --> 00:06:57,725
+we had an aligned project that
+
+194
+00:06:57,725 --> 00:06:59,850
+was supposed to align software
+
+195
+00:06:59,850 --> 00:07:00,910
+and data engineering.
+
+196
+00:07:01,690 --> 00:07:03,210
+We also published a book,
+
+197
+00:07:03,210 --> 00:07:05,310
+Engineering Agile
+Big Data Systems.
+
+198
+00:07:06,625 --> 00:07:08,565
+And if you do
+a system analysis
+
+199
+00:07:08,785 --> 00:07:10,885
+of your data
+intensive workflow,
+
+200
+00:07:10,945 --> 00:07:12,385
+you have these
+three properties
+
+201
+00:07:12,385 --> 00:07:14,085
+which are agility,
+productivity,
+
+202
+00:07:14,385 --> 00:07:15,045
+and quality.
+
+203
+00:07:15,660 --> 00:07:17,740
+And here I've
+plotted basically
+
+204
+00:07:17,740 --> 00:07:19,980
+the release cycle of DVPDR in
+
+205
+00:07:19,980 --> 00:07:21,260
+two thousand sixteen and two
+
+206
+00:07:21,260 --> 00:07:22,000
+thousand twenty.
+
+207
+00:07:22,380 --> 00:07:23,680
+So two thousand sixteen,
+
+208
+00:07:24,135 --> 00:07:26,375
+we had kind of like
+this entire pattern.
+
+209
+00:07:26,375 --> 00:07:28,395
+It is called data
+quality creep.
+
+210
+00:07:28,695 --> 00:07:30,615
+So we were always focusing on
+
+211
+00:07:30,615 --> 00:07:33,340
+data quality and
+totally ignoring
+
+212
+00:07:33,560 --> 00:07:34,860
+agility and productivity,
+
+213
+00:07:35,640 --> 00:07:37,880
+which means if
+you if you follow
+
+214
+00:07:37,960 --> 00:07:40,520
+if you go into this
+entire pattern
+
+215
+00:07:40,520 --> 00:07:41,820
+of data quality creep,
+
+216
+00:07:42,125 --> 00:07:44,605
+your releases will
+be delayed a lot.
+
+217
+00:07:44,605 --> 00:07:46,865
+And this means you
+you use agility
+
+218
+00:07:46,925 --> 00:07:50,125
+and you use, net
+output. Yeah.
+
+219
+00:07:50,125 --> 00:07:50,785
+So productivity.
+
+220
+00:07:52,380 --> 00:07:54,220
+This is an automatic
+triangle here.
+
+221
+00:07:54,220 --> 00:07:56,380
+We lost a bit of
+quality because,
+
+222
+00:07:56,380 --> 00:07:58,160
+of course, we we reengineered
+
+223
+00:07:58,460 --> 00:07:59,440
+the whole pipeline.
+
+224
+00:07:59,985 --> 00:08:01,105
+And during this basically,
+
+225
+00:08:01,105 --> 00:08:02,805
+during this
+refactoring process,
+
+226
+00:08:04,225 --> 00:08:06,920
+I think there are
+minor new bugs.
+
+227
+00:08:07,000 --> 00:08:08,600
+Yeah. So we lost
+a bit of quality,
+
+228
+00:08:08,600 --> 00:08:10,120
+but we kind of like increased
+
+229
+00:08:10,120 --> 00:08:12,060
+agility and
+productivity a lot.
+
+230
+00:08:12,200 --> 00:08:13,880
+So the last release cycle was
+
+231
+00:08:13,880 --> 00:08:15,740
+seventeen months, and
+now it's monthly,
+
+232
+00:08:16,525 --> 00:08:20,125
+and you can really
+add fix the pipeline
+
+233
+00:08:20,125 --> 00:08:23,665
+better. Another
+economic concept
+
+234
+00:08:23,805 --> 00:08:25,505
+is the law of
+diminishing returns.
+
+235
+00:08:25,760 --> 00:08:27,040
+So if you have
+an economic background,
+
+236
+00:08:27,040 --> 00:08:28,580
+you already know
+what this means.
+
+237
+00:08:28,640 --> 00:08:31,300
+This measures
+the productivity per unit.
+
+238
+00:08:32,400 --> 00:08:37,185
+So if you add
+more workers to,
+
+239
+00:08:37,425 --> 00:08:39,125
+so it's the production factor
+
+240
+00:08:39,425 --> 00:08:41,525
+is labor here. If you
+add more workers,
+
+241
+00:08:42,610 --> 00:08:45,730
+then you, at some point,
+
+242
+00:08:45,730 --> 00:08:47,350
+you're you're getting
+more productive.
+
+243
+00:08:47,410 --> 00:08:49,670
+But then if you add
+more workers to it,
+
+244
+00:08:50,325 --> 00:08:51,045
+you kind of, like,
+
+245
+00:08:51,045 --> 00:08:52,325
+have diminishing returns.
+
+246
+00:08:52,325 --> 00:08:54,265
+That means each worker is not
+
+247
+00:08:55,125 --> 00:08:56,585
+so effective anymore.
+
+248
+00:08:57,710 --> 00:08:59,550
+And then if you will
+continue this,
+
+249
+00:08:59,550 --> 00:09:00,910
+let's say you want
+more and more
+
+250
+00:09:00,910 --> 00:09:02,590
+data quality and you add more
+
+251
+00:09:02,590 --> 00:09:03,710
+and more people checking this
+
+252
+00:09:03,710 --> 00:09:05,150
+data quality,
+you will even get
+
+253
+00:09:05,150 --> 00:09:06,370
+into negative returns.
+
+254
+00:09:08,385 --> 00:09:10,385
+That the main reason here is
+
+255
+00:09:10,385 --> 00:09:12,145
+that data quality is
+Pareto efficient.
+
+256
+00:09:12,145 --> 00:09:14,885
+So there's a twenty
+eighty rule applies.
+
+257
+00:09:15,060 --> 00:09:17,160
+And if you increase
+in quantity,
+
+258
+00:09:17,940 --> 00:09:20,200
+you lower quality as well.
+
+259
+00:09:20,660 --> 00:09:22,500
+And also the increase
+in quality
+
+260
+00:09:22,500 --> 00:09:24,920
+makes it harder to
+find errors here.
+
+261
+00:09:25,495 --> 00:09:28,395
+So as a take home message,
+
+262
+00:09:28,615 --> 00:09:30,055
+if you ever print the slides,
+
+263
+00:09:30,055 --> 00:09:32,155
+you can cut this out
+with the scissors.
+
+264
+00:09:33,000 --> 00:09:34,520
+If you want, you you should
+
+265
+00:09:34,520 --> 00:09:36,540
+always try to
+tackle data quality
+
+266
+00:09:36,600 --> 00:09:37,820
+issues with innovation,
+
+267
+00:09:38,680 --> 00:09:41,020
+not with more community
+or workforce.
+
+268
+00:09:42,515 --> 00:09:44,595
+Yeah. So because
+of if you double
+
+269
+00:09:44,595 --> 00:09:46,355
+the size of your data curation
+
+270
+00:09:46,355 --> 00:09:47,955
+community or you
+have more edits
+
+271
+00:09:47,955 --> 00:09:48,755
+or more activity,
+
+272
+00:09:48,755 --> 00:09:50,035
+it doesn't mean that you are
+
+273
+00:09:50,035 --> 00:09:51,735
+more productive in any sense.
+
+274
+00:09:53,220 --> 00:09:55,300
+So this is basically the take
+
+275
+00:09:55,300 --> 00:09:56,580
+home message and we have we
+
+276
+00:09:56,580 --> 00:09:57,880
+focus here on innovation.
+
+277
+00:10:00,455 --> 00:10:02,075
+Now I'll come to the core.
+
+278
+00:10:02,455 --> 00:10:04,455
+I'll introduce some data bus
+
+279
+00:10:04,455 --> 00:10:06,935
+concepts and, let me
+see what's that.
+
+280
+00:10:06,935 --> 00:10:10,070
+No. Data bus concepts
+and use cases.
+
+281
+00:10:11,250 --> 00:10:12,130
+It's in the mix,
+
+282
+00:10:12,130 --> 00:10:13,910
+so there will be high
+level concepts,
+
+283
+00:10:14,370 --> 00:10:17,105
+and also use cases
+and practical demos,
+
+284
+00:10:17,985 --> 00:10:19,125
+which show these.
+
+285
+00:10:20,305 --> 00:10:21,765
+So what's the data bus?
+
+286
+00:10:22,145 --> 00:10:24,725
+Data bus is a digital
+factory platform.
+
+287
+00:10:25,500 --> 00:10:27,420
+The basic process
+on the DataBus
+
+288
+00:10:27,420 --> 00:10:29,500
+is you find data,
+you consume data,
+
+289
+00:10:29,500 --> 00:10:31,840
+you process data, then
+you republish it.
+
+290
+00:10:32,380 --> 00:10:33,680
+This is a very minimal,
+
+291
+00:10:34,380 --> 00:10:36,345
+minimal building block.
+
+292
+00:10:37,125 --> 00:10:38,505
+There's this online platform,
+
+293
+00:10:38,725 --> 00:10:40,585
+data bus dot d b p dot org,
+
+294
+00:10:40,645 --> 00:10:42,825
+and it's literally built like
+
+295
+00:10:43,045 --> 00:10:45,630
+a like a data bus
+in in your laptop,
+
+296
+00:10:45,630 --> 00:10:47,170
+for example. So in computer
+
+297
+00:10:47,470 --> 00:10:49,090
+architecture, bus
+is a communication
+
+298
+00:10:49,150 --> 00:10:50,750
+system that transfers
+data between
+
+299
+00:10:50,750 --> 00:10:52,910
+components inside
+a computer or
+
+300
+00:10:52,910 --> 00:10:53,890
+between computers.
+
+301
+00:10:54,255 --> 00:10:54,895
+And here, of course,
+
+302
+00:10:54,895 --> 00:10:58,515
+we're talking in
+the in the server.
+
+303
+00:10:59,455 --> 00:11:01,475
+It was inspired by
+the Maven repository,
+
+304
+00:11:01,855 --> 00:11:04,330
+Steam, GitHub,
+and also the APT
+
+305
+00:11:04,330 --> 00:11:05,710
+package manager on Linux.
+
+306
+00:11:06,090 --> 00:11:07,290
+So these are all software
+
+307
+00:11:07,290 --> 00:11:08,190
+deployment systems,
+
+308
+00:11:08,730 --> 00:11:11,615
+and we focus you
+on on data data
+
+309
+00:11:12,315 --> 00:11:13,135
+consume and deployment.
+
+310
+00:11:15,755 --> 00:11:17,675
+What you do with this basic
+
+311
+00:11:17,675 --> 00:11:19,355
+building block is that you can
+
+312
+00:11:19,355 --> 00:11:20,175
+build networks,
+
+313
+00:11:20,360 --> 00:11:22,300
+and not a pipe not
+a static pipeline.
+
+314
+00:11:22,440 --> 00:11:24,360
+So as soon as you,
+
+315
+00:11:24,760 --> 00:11:27,020
+build pipelines
+and really hard
+
+316
+00:11:27,160 --> 00:11:31,965
+integrate, let me see.
+Another question.
+
+317
+00:11:35,065 --> 00:11:36,845
+As soon as you build
+hard pipelines,
+
+318
+00:11:37,140 --> 00:11:38,680
+you lose a lot of flexibility
+
+319
+00:11:38,820 --> 00:11:39,560
+and agility,
+
+320
+00:11:40,180 --> 00:11:42,280
+and you cannot test
+the individual
+
+321
+00:11:42,900 --> 00:11:45,315
+data output. So what you see
+
+322
+00:11:45,315 --> 00:11:46,935
+here is that the metadata,
+
+323
+00:11:47,555 --> 00:11:49,155
+on the top the top
+blue line is
+
+324
+00:11:49,155 --> 00:11:51,175
+the data bars. You
+query the metadata
+
+325
+00:11:51,235 --> 00:11:53,150
+for the files, and then you
+
+326
+00:11:53,150 --> 00:11:54,990
+download the data from from
+
+327
+00:11:54,990 --> 00:11:55,630
+somewhere else.
+
+328
+00:11:55,630 --> 00:11:56,830
+So it gives you kind of like
+
+329
+00:11:56,830 --> 00:11:59,650
+the location of
+the files on the web,
+
+330
+00:11:59,710 --> 00:12:02,315
+and then you can load it into
+
+331
+00:12:02,315 --> 00:12:03,755
+your data cleaning service,
+
+332
+00:12:03,755 --> 00:12:05,835
+into a service, into
+some sort of model.
+
+333
+00:12:05,835 --> 00:12:09,730
+And you produce output data,
+
+334
+00:12:09,730 --> 00:12:10,690
+and this output data,
+
+335
+00:12:10,690 --> 00:12:12,930
+you can upload the metadata on
+
+336
+00:12:12,930 --> 00:12:13,890
+the data bus again.
+
+337
+00:12:13,890 --> 00:12:15,270
+So it's
+basically orchestration
+
+338
+00:12:15,490 --> 00:12:18,265
+of input and output
+between software.
+
+339
+00:12:21,765 --> 00:12:23,925
+So how can you
+imagine a digital
+
+340
+00:12:23,925 --> 00:12:25,225
+black factory platform?
+
+341
+00:12:26,060 --> 00:12:27,600
+On the right, you
+see a warehouse
+
+342
+00:12:27,660 --> 00:12:28,800
+with a lot of boxes.
+
+343
+00:12:28,940 --> 00:12:29,580
+You kind of, like,
+
+344
+00:12:29,580 --> 00:12:31,020
+need to know what's
+in the boxes,
+
+345
+00:12:31,020 --> 00:12:31,980
+where they are going,
+
+346
+00:12:31,980 --> 00:12:33,120
+which box you need.
+
+347
+00:12:33,580 --> 00:12:35,360
+So the boxes here are files.
+
+348
+00:12:35,915 --> 00:12:37,675
+So it's the registry of files
+
+349
+00:12:37,675 --> 00:12:39,355
+on the web, which means that,
+
+350
+00:12:39,675 --> 00:12:41,695
+any files reachable via HTTP,
+
+351
+00:12:42,155 --> 00:12:44,255
+can be described
+with this metadata.
+
+352
+00:12:44,940 --> 00:12:46,640
+Doesn't matter
+with the whether
+
+353
+00:12:46,700 --> 00:12:48,880
+it's RDF, XML, JSON, PDF.
+
+354
+00:12:49,100 --> 00:12:50,300
+It's the central storage,
+
+355
+00:12:50,300 --> 00:12:52,060
+and the central metadata index
+
+356
+00:12:52,060 --> 00:12:54,625
+is available via
+Sparkler API.
+
+357
+00:12:54,625 --> 00:12:56,325
+So there's a knowledge
+graph as well.
+
+358
+00:12:57,665 --> 00:12:59,425
+Right now on
+the public platform,
+
+359
+00:12:59,425 --> 00:13:00,385
+there are a hundred thirty
+
+360
+00:13:00,385 --> 00:13:01,825
+thousand files
+and two point six
+
+361
+00:13:01,825 --> 00:13:04,050
+terabyte, and you can download
+
+362
+00:13:04,050 --> 00:13:05,910
+all of it. So there's
+no restriction.
+
+363
+00:13:05,970 --> 00:13:07,590
+It's all open.
+It's open data.
+
+364
+00:13:09,250 --> 00:13:10,450
+Maybe you don't
+want all of it,
+
+365
+00:13:10,450 --> 00:13:11,845
+then you need to select it and
+
+366
+00:13:11,845 --> 00:13:13,705
+drill down with
+the SPARQL API,
+
+367
+00:13:14,725 --> 00:13:16,665
+and it's also a FAIR
+implementation.
+
+368
+00:13:17,845 --> 00:13:20,090
+So if you publish files
+on the data bus,
+
+369
+00:13:20,250 --> 00:13:21,710
+we guarantee that you,
+
+370
+00:13:22,330 --> 00:13:23,870
+follow the FAIR principles.
+
+371
+00:13:27,435 --> 00:13:28,875
+So what is the core of it?
+
+372
+00:13:28,875 --> 00:13:30,255
+There's very strict metadata.
+
+373
+00:13:30,395 --> 00:13:34,075
+So this part is very
+well, well checked.
+
+374
+00:13:34,075 --> 00:13:36,580
+So provenance,
+we allow users,
+
+375
+00:13:36,580 --> 00:13:38,020
+organizations, and agents to
+
+376
+00:13:38,020 --> 00:13:38,920
+publish data.
+
+377
+00:13:39,620 --> 00:13:42,360
+And, of course, you
+have, datasets,
+
+378
+00:13:42,925 --> 00:13:43,805
+source datasets.
+
+379
+00:13:43,805 --> 00:13:45,245
+When your dataset is derived,
+
+380
+00:13:45,245 --> 00:13:46,925
+you can link to
+the source datasets.
+
+381
+00:13:46,925 --> 00:13:48,545
+Yeah. So this provenance,
+
+382
+00:13:49,085 --> 00:13:51,265
+machine readable
+licenses is required.
+
+383
+00:13:51,325 --> 00:13:53,630
+Everything is signed
+with a private
+
+384
+00:13:53,630 --> 00:13:55,570
+key and the x five zero nine
+
+385
+00:13:56,350 --> 00:13:57,470
+certificate. And we have,
+
+386
+00:13:57,790 --> 00:13:59,570
+dataset identity
+and versioning,
+
+387
+00:13:59,870 --> 00:14:01,775
+which is a bit
+different from DCAD.
+
+388
+00:14:01,775 --> 00:14:03,955
+So there's a gap in
+the DCAD standard.
+
+389
+00:14:04,975 --> 00:14:08,195
+Here, you the dataset
+is abstract.
+
+390
+00:14:08,480 --> 00:14:10,320
+And then each version you have
+
+391
+00:14:10,320 --> 00:14:12,080
+versions per dataset. Yeah.
+
+392
+00:14:12,080 --> 00:14:14,900
+So I'll show that in
+the next example.
+
+393
+00:14:16,055 --> 00:14:18,135
+Those structure,
+like the links,
+
+394
+00:14:18,135 --> 00:14:20,075
+are user group
+artifact version.
+
+395
+00:14:20,135 --> 00:14:21,975
+If you know Maven,
+you already,
+
+396
+00:14:22,295 --> 00:14:23,675
+you're familiar with this.
+
+397
+00:14:23,920 --> 00:14:25,360
+And I'll show you one popular
+
+398
+00:14:25,360 --> 00:14:26,580
+dataset of DBpedia.
+
+399
+00:14:28,000 --> 00:14:30,100
+So this is just
+a very tiny dataset.
+
+400
+00:14:31,035 --> 00:14:32,575
+So these are geo coordinators
+
+401
+00:14:32,875 --> 00:14:34,095
+extracted with mappings.
+
+402
+00:14:35,595 --> 00:14:37,295
+That means from
+the English Wikipedia,
+
+403
+00:14:38,850 --> 00:14:40,850
+you have a lot of
+from, you know,
+
+404
+00:14:40,850 --> 00:14:42,610
+from all Wiki from from all
+
+405
+00:14:42,610 --> 00:14:43,510
+major Wikipedias,
+
+406
+00:14:44,690 --> 00:14:46,210
+it extracts
+the geo coordinates
+
+407
+00:14:46,210 --> 00:14:47,570
+and put them into the file.
+
+408
+00:14:47,570 --> 00:14:49,295
+You can see if you
+go on the versions
+
+409
+00:14:49,295 --> 00:14:52,095
+that so this is
+the abstract data set.
+
+410
+00:14:52,095 --> 00:14:54,015
+Yeah. And then each month,
+
+411
+00:14:54,015 --> 00:14:55,775
+we produce a new version based
+
+412
+00:14:55,775 --> 00:14:58,260
+on the Wikipedia dump of this
+
+413
+00:14:58,260 --> 00:14:59,320
+particular dataset.
+
+414
+00:15:00,500 --> 00:15:03,380
+You have a a schema,
+basically,
+
+415
+00:15:03,380 --> 00:15:05,535
+for the files.
+This is important.
+
+416
+00:15:05,535 --> 00:15:07,715
+So you can drill down
+on the individual
+
+417
+00:15:07,775 --> 00:15:09,135
+datasets. So now you just want
+
+418
+00:15:09,135 --> 00:15:10,515
+to select the English files.
+
+419
+00:15:11,215 --> 00:15:13,540
+And, if you want to
+subscribe to it,
+
+420
+00:15:13,540 --> 00:15:15,000
+there is a query generation
+
+421
+00:15:15,060 --> 00:15:17,220
+functionality. So
+each month now,
+
+422
+00:15:17,220 --> 00:15:18,740
+if you execute this query,
+
+423
+00:15:18,740 --> 00:15:20,760
+you will get this
+this particular
+
+424
+00:15:21,575 --> 00:15:22,315
+new dataset,
+
+425
+00:15:23,655 --> 00:15:25,415
+just the English
+version of it.
+
+426
+00:15:25,415 --> 00:15:29,595
+Yeah. If you click
+on a version here,
+
+427
+00:15:32,000 --> 00:15:33,920
+there's more there's more much
+
+428
+00:15:33,920 --> 00:15:36,960
+more documentation
+available and
+
+429
+00:15:36,960 --> 00:15:38,720
+also links to the codes,
+
+430
+00:15:38,720 --> 00:15:41,485
+and you can report
+errors and discuss.
+
+431
+00:15:41,485 --> 00:15:43,265
+So there's interactivity
+features.
+
+432
+00:15:43,565 --> 00:15:45,005
+There's also
+the link to download
+
+433
+00:15:45,005 --> 00:15:45,585
+the metadata.
+
+434
+00:15:48,250 --> 00:15:49,690
+So this means you can automate
+
+435
+00:15:49,690 --> 00:15:52,510
+these downloads totally.
+
+436
+00:15:55,535 --> 00:15:56,815
+The next thing is so if this
+
+437
+00:15:56,815 --> 00:15:58,975
+gets more complicated
+because we are,
+
+438
+00:15:59,215 --> 00:16:01,455
+the the core collection,
+
+439
+00:16:01,455 --> 00:16:02,255
+which I will show,
+
+440
+00:16:02,255 --> 00:16:04,480
+it has several hundred
+files per month.
+
+441
+00:16:04,800 --> 00:16:06,800
+So here, users data bus users
+
+442
+00:16:06,800 --> 00:16:08,480
+can create their
+own data catalogs,
+
+443
+00:16:08,480 --> 00:16:09,540
+which we call collections.
+
+444
+00:16:10,000 --> 00:16:12,080
+So these collections
+are stable
+
+445
+00:16:12,240 --> 00:16:13,705
+they have stable identifiers,
+
+446
+00:16:13,765 --> 00:16:15,525
+so you can put them
+in a scientific
+
+447
+00:16:15,525 --> 00:16:16,585
+paper, for example,
+
+448
+00:16:16,885 --> 00:16:18,905
+and they are
+dynamically updated
+
+449
+00:16:19,285 --> 00:16:20,840
+or they can be static. Yeah.
+
+450
+00:16:20,840 --> 00:16:22,360
+So I'm going to
+show you the latest
+
+451
+00:16:22,360 --> 00:16:24,360
+core release here,
+
+452
+00:16:24,360 --> 00:16:25,720
+which is basically what we'll
+
+453
+00:16:25,720 --> 00:16:27,640
+then load into
+the main sparkle
+
+454
+00:16:27,640 --> 00:16:29,955
+endpoint, which you all know.
+
+455
+00:16:30,415 --> 00:16:32,595
+So here's a simple
+batch script
+
+456
+00:16:32,655 --> 00:16:33,795
+to fetch the data.
+
+457
+00:16:35,695 --> 00:16:37,395
+I hope loads loads now.
+
+458
+00:16:44,700 --> 00:16:45,905
+Yeah. But anyhow,
+
+459
+00:16:45,905 --> 00:16:48,225
+the the collection is
+backed by a query,
+
+460
+00:16:48,225 --> 00:16:50,465
+which is can get
+quite long. Yeah.
+
+461
+00:16:50,465 --> 00:16:52,465
+So the sparkle
+endpoint endpoint
+
+462
+00:16:52,465 --> 00:16:53,925
+is quite good to handle this.
+
+463
+00:16:55,120 --> 00:16:56,800
+And let's see. Yeah.
+
+464
+00:16:56,800 --> 00:16:58,400
+So here you can
+see all the the
+
+465
+00:16:58,400 --> 00:17:00,100
+datasets. Basically,
+
+466
+00:17:00,160 --> 00:17:02,020
+each month or each day,
+
+467
+00:17:02,160 --> 00:17:03,520
+you can check
+whether there are
+
+468
+00:17:03,520 --> 00:17:05,585
+updates to this collection and
+
+469
+00:17:05,585 --> 00:17:06,705
+then kind of, like,
+
+470
+00:17:06,705 --> 00:17:08,705
+replicate the DBPedia sparkle
+
+471
+00:17:08,705 --> 00:17:10,245
+endpoint on your
+local machine.
+
+472
+00:17:10,465 --> 00:17:12,065
+And you cannot create your own
+
+473
+00:17:12,065 --> 00:17:15,720
+collections via the the if you
+
+474
+00:17:15,720 --> 00:17:16,460
+are registered.
+
+475
+00:17:18,120 --> 00:17:20,220
+So what can you do
+with the collections?
+
+476
+00:17:21,375 --> 00:17:22,975
+There is this thing
+which we call,
+
+477
+00:17:23,615 --> 00:17:24,995
+it's like rapid application
+
+478
+00:17:25,055 --> 00:17:26,495
+deployment because we need to
+
+479
+00:17:26,495 --> 00:17:28,115
+maintain the DBPEDI
+infrastructure,
+
+480
+00:17:28,175 --> 00:17:29,075
+the core infrastructure.
+
+481
+00:17:29,740 --> 00:17:30,860
+So as I showed before,
+
+482
+00:17:30,860 --> 00:17:32,060
+these collections
+can be loaded
+
+483
+00:17:32,060 --> 00:17:33,820
+programmatically. And if you
+
+484
+00:17:33,820 --> 00:17:35,260
+pair this with with Docker,
+
+485
+00:17:35,260 --> 00:17:36,800
+you get a low code application
+
+486
+00:17:37,020 --> 00:17:38,745
+deployment. So we have this
+
+487
+00:17:38,745 --> 00:17:40,585
+Docker image,
+which is a virtual
+
+488
+00:17:40,585 --> 00:17:42,285
+sparkle endpoint quick start.
+
+489
+00:17:42,825 --> 00:17:45,225
+And, here, it is
+a three liner.
+
+490
+00:17:45,225 --> 00:17:52,090
+You just feed it
+the collection DPPR,
+
+491
+00:17:52,630 --> 00:17:54,150
+and then you need
+to restart it
+
+492
+00:17:54,150 --> 00:17:55,670
+and it checks the updates for
+
+493
+00:17:55,670 --> 00:17:56,250
+the collections.
+
+494
+00:17:58,545 --> 00:18:02,705
+Now let's talk
+about so this was
+
+495
+00:18:02,705 --> 00:18:03,905
+the download and action part.
+
+496
+00:18:03,905 --> 00:18:05,345
+Now I'm going to
+talk about this
+
+497
+00:18:05,345 --> 00:18:07,050
+data engineering in action.
+
+498
+00:18:09,430 --> 00:18:11,210
+So, this part,
+
+499
+00:18:12,070 --> 00:18:14,790
+I I do not have
+detailed slides here,
+
+500
+00:18:14,790 --> 00:18:17,045
+but kind of like,
+
+501
+00:18:17,045 --> 00:18:18,965
+if you ask what is
+an application and,
+
+502
+00:18:18,965 --> 00:18:20,025
+of course, I mean,
+
+503
+00:18:21,365 --> 00:18:24,590
+data intensive
+applications here.
+
+504
+00:18:24,590 --> 00:18:26,850
+So AI, search,
+
+505
+00:18:27,550 --> 00:18:29,190
+many things that
+are fed fed by
+
+506
+00:18:29,190 --> 00:18:30,130
+a lot of data,
+
+507
+00:18:30,670 --> 00:18:33,235
+chatbot maybe or question
+
+508
+00:18:33,235 --> 00:18:35,635
+answering systems,
+NLP as well.
+
+509
+00:18:35,635 --> 00:18:36,775
+So you have an application,
+
+510
+00:18:37,315 --> 00:18:38,615
+that you are developing,
+
+511
+00:18:38,755 --> 00:18:40,835
+and this application
+here always
+
+512
+00:18:40,835 --> 00:18:42,535
+needs software and data.
+
+513
+00:18:43,060 --> 00:18:44,520
+So these are
+the two components
+
+514
+00:18:44,580 --> 00:18:46,740
+that you that you
+actually need
+
+515
+00:18:46,740 --> 00:18:48,120
+to have a working
+application.
+
+516
+00:18:48,740 --> 00:18:50,340
+Now if you think
+about the software
+
+517
+00:18:50,340 --> 00:18:53,155
+engineering part, there,
+
+518
+00:18:53,615 --> 00:18:56,895
+you have very good
+frameworks for it.
+
+519
+00:18:56,895 --> 00:18:58,675
+You have Maven, you have NPM,
+
+520
+00:18:58,735 --> 00:19:00,595
+you have the DBN
+package manager,
+
+521
+00:19:01,740 --> 00:19:07,600
+you have, Scala build
+tools, the SPT,
+
+522
+00:19:07,740 --> 00:19:09,665
+for example. And there you can
+
+523
+00:19:09,665 --> 00:19:10,485
+really pinpoint,
+
+524
+00:19:11,425 --> 00:19:13,285
+the exact
+software dependencies
+
+525
+00:19:13,505 --> 00:19:15,125
+that you need.
+They're recursively
+
+526
+00:19:16,450 --> 00:19:18,370
+resolved and you know kind of
+
+527
+00:19:18,370 --> 00:19:20,290
+like for each
+software artifact
+
+528
+00:19:20,290 --> 00:19:21,750
+you include, you know exactly
+
+529
+00:19:21,890 --> 00:19:23,190
+which version it is,
+
+530
+00:19:23,765 --> 00:19:26,165
+whether there are
+compatibility issues,
+
+531
+00:19:26,165 --> 00:19:27,465
+whether things changed.
+
+532
+00:19:27,845 --> 00:19:30,485
+You have a build
+tool that runs
+
+533
+00:19:30,485 --> 00:19:32,025
+integration tests normally.
+
+534
+00:19:32,560 --> 00:19:34,660
+So there are many,
+many tools there.
+
+535
+00:19:35,200 --> 00:19:37,220
+But when you when you
+think about data,
+
+536
+00:19:37,680 --> 00:19:40,100
+so if you present
+your application
+
+537
+00:19:40,735 --> 00:19:42,815
+to somebody and I
+would ask you,
+
+538
+00:19:42,815 --> 00:19:44,835
+can you give me
+a list of datasets
+
+539
+00:19:44,895 --> 00:19:47,135
+included and where
+you got them and,
+
+540
+00:19:47,135 --> 00:19:48,780
+like, a record on what's what
+
+541
+00:19:48,780 --> 00:19:50,300
+are the dependencies
+and everything,
+
+542
+00:19:50,300 --> 00:19:52,220
+then normally, this is done
+
+543
+00:19:52,220 --> 00:19:54,940
+without any tools. Yeah.
+
+544
+00:19:54,940 --> 00:19:59,335
+So and here I see
+the great, great gap.
+
+545
+00:19:59,395 --> 00:20:02,835
+So I prepared
+some homework for
+
+546
+00:20:02,835 --> 00:20:03,815
+you also.
+
+547
+00:20:04,550 --> 00:20:06,150
+If you compare your software
+
+548
+00:20:06,150 --> 00:20:07,930
+engineering
+processes and tools
+
+549
+00:20:08,150 --> 00:20:09,530
+with your data engineering
+
+550
+00:20:09,590 --> 00:20:10,810
+processes and tools,
+
+551
+00:20:10,950 --> 00:20:12,870
+so how you track
+data and develop
+
+552
+00:20:12,870 --> 00:20:13,930
+data and everything,
+
+553
+00:20:14,375 --> 00:20:15,835
+do you notice a difference?
+
+554
+00:20:19,015 --> 00:20:20,375
+And you can think about it,
+
+555
+00:20:20,375 --> 00:20:21,575
+and you will see that there's
+
+556
+00:20:21,575 --> 00:20:24,710
+a or I assume that
+you will find
+
+557
+00:20:24,710 --> 00:20:26,570
+a great gap. Yeah.
+
+558
+00:20:27,990 --> 00:20:29,590
+Because from my experience,
+
+559
+00:20:29,590 --> 00:20:31,725
+I was not so happy
+the last ten
+
+560
+00:20:31,725 --> 00:20:33,085
+years working with data and
+
+561
+00:20:33,085 --> 00:20:35,105
+the tools provided
+to work with data.
+
+562
+00:20:37,085 --> 00:20:40,530
+Now the main thing also may
+
+563
+00:20:40,610 --> 00:20:42,690
+the main incentive
+to for us to
+
+564
+00:20:42,690 --> 00:20:44,870
+develop the data
+bus is that we
+
+565
+00:20:45,170 --> 00:20:47,110
+want to do knowledge
+graph engineering.
+
+566
+00:20:47,665 --> 00:20:49,665
+This means, in this case,
+
+567
+00:20:49,665 --> 00:20:50,965
+it's a simple example.
+
+568
+00:20:52,385 --> 00:20:53,985
+For us, it's
+a simple example.
+
+569
+00:20:53,985 --> 00:20:56,405
+So it it mainly
+shows the dVPDR
+
+570
+00:20:56,785 --> 00:20:57,870
+release process.
+
+571
+00:20:58,490 --> 00:21:00,350
+And we have this
+fully automated,
+
+572
+00:21:00,410 --> 00:21:02,090
+it's in the Marvin port,
+
+573
+00:21:02,090 --> 00:21:03,770
+so there's fifty five gigabyte
+
+574
+00:21:03,770 --> 00:21:04,510
+per release,
+
+575
+00:21:05,275 --> 00:21:06,955
+around twenty
+twenty one billion
+
+576
+00:21:06,955 --> 00:21:08,315
+triples per month and five
+
+577
+00:21:08,315 --> 00:21:09,775
+thousand triples per second.
+
+578
+00:21:10,155 --> 00:21:11,755
+There's also a dashboard that
+
+579
+00:21:11,755 --> 00:21:12,735
+tracks the process.
+
+580
+00:21:13,170 --> 00:21:14,070
+And on the bottom,
+
+581
+00:21:14,450 --> 00:21:19,570
+you can see the the the,
+debugging well,
+
+582
+00:21:19,570 --> 00:21:21,350
+release and
+debugging workflow.
+
+583
+00:21:21,730 --> 00:21:24,875
+So the the on the left top,
+
+584
+00:21:24,875 --> 00:21:25,995
+you see that we,
+
+585
+00:21:26,395 --> 00:21:28,095
+we take the time
+based Wikipedia
+
+586
+00:21:28,315 --> 00:21:29,275
+dump each month,
+
+587
+00:21:29,275 --> 00:21:31,055
+and then there's
+a time schedule
+
+588
+00:21:31,435 --> 00:21:33,520
+extraction. This
+is uploaded on
+
+589
+00:21:33,520 --> 00:21:35,680
+the data bus.
+And then there is
+
+590
+00:21:35,680 --> 00:21:37,280
+the state data
+cleansing step,
+
+591
+00:21:37,280 --> 00:21:38,580
+which is another component.
+
+592
+00:21:38,720 --> 00:21:39,440
+And in the end,
+
+593
+00:21:39,440 --> 00:21:41,895
+there are this
+downloads it and
+
+594
+00:21:41,895 --> 00:21:43,995
+republishes it as
+quality control
+
+595
+00:21:44,215 --> 00:21:45,675
+DBPR release groups.
+
+596
+00:21:46,535 --> 00:21:47,815
+What we do then is,
+
+597
+00:21:48,055 --> 00:21:49,870
+there is this large
+scale validation.
+
+598
+00:21:49,870 --> 00:21:52,190
+So we run yet other tests on
+
+599
+00:21:52,190 --> 00:21:54,430
+the final thing,
+
+600
+00:21:54,430 --> 00:21:55,970
+and this produces reports.
+
+601
+00:21:56,190 --> 00:21:57,870
+And here, this is the kind of
+
+602
+00:21:57,870 --> 00:22:00,485
+like the point
+of truth is this
+
+603
+00:22:00,485 --> 00:22:01,765
+community reviewing. Yeah.
+
+604
+00:22:01,765 --> 00:22:03,625
+Because we just
+produce the data,
+
+605
+00:22:03,925 --> 00:22:05,445
+but then it gets
+downloaded six
+
+606
+00:22:05,445 --> 00:22:07,305
+hundred thousand
+times per year,
+
+607
+00:22:07,450 --> 00:22:11,930
+and the errors are only shown
+
+608
+00:22:11,930 --> 00:22:14,250
+in the final
+applications. Yeah.
+
+609
+00:22:14,250 --> 00:22:15,850
+So if you load it
+in the sparkle
+
+610
+00:22:15,850 --> 00:22:18,825
+endpoint, if people
+parse it, whatever.
+
+611
+00:22:18,825 --> 00:22:21,305
+Yeah. So and then
+the the problem
+
+612
+00:22:21,305 --> 00:22:22,685
+here is always to backtrack,
+
+613
+00:22:23,545 --> 00:22:25,890
+the errors and the issues to
+
+614
+00:22:25,890 --> 00:22:27,350
+the specific component.
+
+615
+00:22:28,370 --> 00:22:29,490
+And this is something which is
+
+616
+00:22:29,490 --> 00:22:30,930
+possible in the data
+bus because
+
+617
+00:22:30,930 --> 00:22:33,170
+we reach this
+unity between data
+
+618
+00:22:33,170 --> 00:22:35,815
+package and also piece of code
+
+619
+00:22:35,815 --> 00:22:39,015
+and software to
+which will which
+
+620
+00:22:39,015 --> 00:22:41,435
+is responsible for
+this particular
+
+621
+00:22:42,135 --> 00:22:43,115
+data part.
+
+622
+00:22:44,460 --> 00:22:46,300
+And you can break
+down the the tests
+
+623
+00:22:46,460 --> 00:22:47,340
+these data tests.
+
+624
+00:22:47,340 --> 00:22:49,500
+You can put them
+into the software
+
+625
+00:22:49,500 --> 00:22:50,480
+integration tests.
+
+626
+00:22:50,865 --> 00:22:52,465
+So here, we have
+kind of, like,
+
+627
+00:22:52,465 --> 00:22:54,225
+achieved this
+alignment between
+
+628
+00:22:54,225 --> 00:22:55,585
+software and data engineering
+
+629
+00:22:55,585 --> 00:22:57,960
+and the backtracking of the of
+
+630
+00:22:57,960 --> 00:22:59,260
+the data issues,
+
+631
+00:22:59,640 --> 00:23:01,980
+in the opposite
+direction of the data.
+
+632
+00:23:03,720 --> 00:23:05,560
+Now here, I'm go just going to
+
+633
+00:23:05,560 --> 00:23:07,320
+show this real short.
+
+634
+00:23:07,320 --> 00:23:08,605
+So here's a more complex,
+
+635
+00:23:09,625 --> 00:23:11,805
+knowledge graph
+engineering workflow.
+
+636
+00:23:12,265 --> 00:23:14,025
+It is more complex
+because it's
+
+637
+00:23:14,025 --> 00:23:16,740
+iterative. Because here,
+
+638
+00:23:16,740 --> 00:23:18,040
+it's not so straightforward.
+
+639
+00:23:18,340 --> 00:23:20,260
+So it's not like
+it's not pipeline
+
+640
+00:23:20,420 --> 00:23:21,300
+like a pipeline.
+
+641
+00:23:21,300 --> 00:23:22,740
+So the release
+workflow is more
+
+642
+00:23:22,740 --> 00:23:23,940
+like a pipeline and then you
+
+643
+00:23:23,940 --> 00:23:25,645
+backtrack for the errors.
+
+644
+00:23:26,825 --> 00:23:29,165
+Here,
+the individual components
+
+645
+00:23:29,225 --> 00:23:31,965
+use datasets of
+other, components,
+
+646
+00:23:32,105 --> 00:23:34,830
+but then also
+improve them, and,
+
+647
+00:23:35,070 --> 00:23:36,910
+you have to reload
+the other components.
+
+648
+00:23:36,910 --> 00:23:39,170
+So it's like
+an iterative approach.
+
+649
+00:23:40,430 --> 00:23:42,190
+So the the borders between
+
+650
+00:23:42,190 --> 00:23:43,935
+consumption and publishing are
+
+651
+00:23:44,015 --> 00:23:48,355
+are kind of, like,
+not so not so linear.
+
+652
+00:23:48,415 --> 00:23:49,775
+Yeah. It's more network like,
+
+653
+00:23:49,775 --> 00:23:50,915
+and this is only internally.
+
+654
+00:23:53,010 --> 00:23:54,610
+What we are what we're doing
+
+655
+00:23:54,610 --> 00:23:56,710
+with this is, we're deriving
+
+656
+00:23:56,770 --> 00:23:58,770
+huge knowledge graph
+from linked data.
+
+657
+00:23:58,770 --> 00:24:03,025
+So here you can see an entity
+
+658
+00:24:03,025 --> 00:24:05,205
+size comparison
+of the knowledge
+
+659
+00:24:05,425 --> 00:24:06,485
+graphs we are building.
+
+660
+00:24:07,105 --> 00:24:09,745
+So, the DBPedia
+you you know and
+
+661
+00:24:09,745 --> 00:24:12,430
+you are used to is
+on the left side.
+
+662
+00:24:12,430 --> 00:24:15,090
+Yeah. This is the English
+tiny diamond.
+
+663
+00:24:15,470 --> 00:24:16,930
+Diamond because
+it's compressed
+
+664
+00:24:17,150 --> 00:24:18,690
+data from several sources.
+
+665
+00:24:20,035 --> 00:24:21,895
+We recently built
+a Dutch national
+
+666
+00:24:22,115 --> 00:24:25,395
+knowledge graph
+from Dutch linked
+
+667
+00:24:25,395 --> 00:24:26,375
+data sources.
+
+668
+00:24:27,530 --> 00:24:28,910
+Then you have,
+as a comparison,
+
+669
+00:24:28,970 --> 00:24:30,270
+you have items in Wikidata.
+
+670
+00:24:31,370 --> 00:24:33,130
+And right next to it,
+
+671
+00:24:33,130 --> 00:24:35,210
+there's this DBPedia
+small diamond,
+
+672
+00:24:35,210 --> 00:24:37,645
+which compresses all language
+
+673
+00:24:37,645 --> 00:24:39,565
+versions of Wikipedia plus
+
+674
+00:24:39,565 --> 00:24:42,605
+Wikidata in in one, yeah,
+
+675
+00:24:42,605 --> 00:24:44,225
+like a diamond
+knowledge graph.
+
+676
+00:24:45,070 --> 00:24:46,830
+We'll build more national
+
+677
+00:24:46,830 --> 00:24:48,270
+knowledge graphs in
+the coming years,
+
+678
+00:24:48,270 --> 00:24:50,670
+like the German one
+or maybe the US one.
+
+679
+00:24:50,670 --> 00:24:52,930
+If you're interested,
+please mail me.
+
+680
+00:24:54,115 --> 00:24:56,755
+And, on the then
+the there comes
+
+681
+00:24:56,755 --> 00:24:57,815
+the largest diamond,
+
+682
+00:24:58,195 --> 00:24:59,815
+which is kind of
+like all datasets
+
+683
+00:24:59,955 --> 00:25:01,975
+that we integrated up to now,
+
+684
+00:25:02,840 --> 00:25:04,360
+compressed into
+one huge knowledge
+
+685
+00:25:04,360 --> 00:25:05,660
+graph that you can download.
+
+686
+00:25:06,600 --> 00:25:08,600
+So here, we increased
+the speed a lot.
+
+687
+00:25:08,600 --> 00:25:10,895
+So we we need to right now,
+
+688
+00:25:10,895 --> 00:25:12,975
+we need around four hours per
+
+689
+00:25:12,975 --> 00:25:15,375
+linked data cloud per linked
+
+690
+00:25:15,375 --> 00:25:16,495
+data bubble, and we are going
+
+691
+00:25:16,495 --> 00:25:18,095
+to crowdsource
+this so everybody
+
+692
+00:25:18,095 --> 00:25:20,650
+can integrate their
+data into the PDF.
+
+693
+00:25:22,870 --> 00:25:25,830
+Then we have these
+two commercial
+
+694
+00:25:25,830 --> 00:25:26,870
+graphs, the Google Knowledge
+
+695
+00:25:26,870 --> 00:25:27,830
+Graph for comparison.
+
+696
+00:25:27,830 --> 00:25:30,205
+So this is log scale
+and the DeepPort
+
+697
+00:25:30,205 --> 00:25:30,925
+knowledge graph.
+
+698
+00:25:30,925 --> 00:25:31,965
+And then we have, of course,
+
+699
+00:25:31,965 --> 00:25:33,425
+the linked open data cloud,
+
+700
+00:25:33,805 --> 00:25:35,645
+which is the largest knowledge
+
+701
+00:25:35,645 --> 00:25:37,520
+graph on Earth, I think,
+
+702
+00:25:37,520 --> 00:25:38,880
+compared to anything else.
+
+703
+00:25:38,880 --> 00:25:40,640
+There's there's more data
+
+704
+00:25:40,640 --> 00:25:44,240
+available there,
+but not findable.
+
+705
+00:25:44,240 --> 00:25:45,435
+That is a problem. Yeah.
+
+706
+00:25:45,435 --> 00:25:48,015
+So we need to book up
+the infrastructure
+
+707
+00:25:48,235 --> 00:25:49,455
+that can really find,
+
+708
+00:25:49,915 --> 00:25:51,275
+the particular data that you
+
+709
+00:25:51,275 --> 00:25:53,935
+need from the LOB
+cloud in life
+
+710
+00:25:54,790 --> 00:25:56,970
+and also manage
+the changing of
+
+711
+00:25:57,030 --> 00:25:57,770
+the data.
+
+712
+00:26:01,270 --> 00:26:03,350
+So now I I want to
+show you a data
+
+713
+00:26:03,350 --> 00:26:04,090
+bus application.
+
+714
+00:26:04,230 --> 00:26:05,185
+So previously,
+
+715
+00:26:06,445 --> 00:26:07,885
+we focused on the consumer,
+
+716
+00:26:07,885 --> 00:26:09,825
+the download, and
+also developing
+
+717
+00:26:10,045 --> 00:26:12,065
+methodology with
+the data bus.
+
+718
+00:26:12,330 --> 00:26:14,110
+But you can also
+build applications
+
+719
+00:26:14,250 --> 00:26:15,610
+which are powered directly by
+
+720
+00:26:15,610 --> 00:26:17,370
+the data bus. And I would say
+
+721
+00:26:17,370 --> 00:26:18,810
+this is a unique selling point
+
+722
+00:26:18,810 --> 00:26:20,685
+because this is not possible
+
+723
+00:26:20,685 --> 00:26:22,065
+with other data repositories.
+
+724
+00:26:22,205 --> 00:26:23,425
+So other data repositories,
+
+725
+00:26:23,565 --> 00:26:25,165
+you can kind of, like,
+
+726
+00:26:25,165 --> 00:26:28,450
+keep the or organize
+the files a bit,
+
+727
+00:26:28,850 --> 00:26:31,090
+but it's very hard
+to build real
+
+728
+00:26:31,090 --> 00:26:33,510
+applications on the repository
+
+729
+00:26:33,890 --> 00:26:35,270
+itself as a platform.
+
+730
+00:26:37,455 --> 00:26:39,875
+So this is DBP we
+call it DBPedia
+
+731
+00:26:39,935 --> 00:26:42,435
+archival. So it's
+an ontology archive.
+
+732
+00:26:44,010 --> 00:26:45,870
+I will show it real quick.
+
+733
+00:26:49,850 --> 00:26:52,270
+So what we do is we
+crawl eight hundred.
+
+734
+00:26:52,285 --> 00:26:52,765
+So at the moment,
+
+735
+00:26:52,765 --> 00:26:54,525
+we discovered and
+crawled eight
+
+736
+00:26:54,525 --> 00:26:55,665
+hundred ninety ontologies,
+
+737
+00:26:56,365 --> 00:26:58,465
+and then we do a star rating.
+
+738
+00:26:58,525 --> 00:27:00,125
+So here you can have a list of
+
+739
+00:27:00,125 --> 00:27:01,985
+ontologies and filter them.
+
+740
+00:27:03,350 --> 00:27:05,750
+Maybe some audience
+want to see
+
+741
+00:27:05,750 --> 00:27:06,570
+their ontology.
+
+742
+00:27:06,950 --> 00:27:08,870
+Maybe it's we don't have time
+
+743
+00:27:08,870 --> 00:27:10,890
+to wait till somebody
+suggest one.
+
+744
+00:27:13,105 --> 00:27:14,305
+But, yeah, you can try it out
+
+745
+00:27:14,305 --> 00:27:17,105
+later how this, the star
+rating is done.
+
+746
+00:27:17,105 --> 00:27:19,285
+So so what it does
+is, basically,
+
+747
+00:27:20,480 --> 00:27:22,660
+this this archival
+tool discovers
+
+748
+00:27:22,800 --> 00:27:24,660
+and tracks all ontologies and
+
+749
+00:27:24,880 --> 00:27:25,840
+every eight hours,
+
+750
+00:27:25,840 --> 00:27:28,100
+it downloads a version
+of the ontology
+
+751
+00:27:28,160 --> 00:27:29,315
+onto the data bus, bus,
+
+752
+00:27:29,315 --> 00:27:30,855
+which is persistently saved.
+
+753
+00:27:31,315 --> 00:27:32,595
+So this means you can now use
+
+754
+00:27:32,595 --> 00:27:34,695
+the data bus to download and,
+
+755
+00:27:35,235 --> 00:27:36,995
+the ontologies and
+the individual
+
+756
+00:27:36,995 --> 00:27:41,160
+versions. So if you
+click on let's wait.
+
+757
+00:27:41,160 --> 00:27:42,920
+Let's go for the latest time
+
+758
+00:27:42,920 --> 00:27:44,460
+stamp to see which ontologies
+
+759
+00:27:44,600 --> 00:27:45,900
+have been edited recently.
+
+760
+00:27:49,945 --> 00:27:52,205
+So here, this one,
+
+761
+00:27:55,040 --> 00:27:56,960
+you can see that
+here every time
+
+762
+00:27:56,960 --> 00:27:58,180
+a change is detected,
+
+763
+00:27:59,040 --> 00:28:00,960
+the ontology is downloaded and
+
+764
+00:28:00,960 --> 00:28:04,065
+persisted, and
+then we check for
+
+765
+00:28:04,065 --> 00:28:05,425
+parsability here.
+
+766
+00:28:05,425 --> 00:28:07,185
+For example, if you
+only have one star,
+
+767
+00:28:07,185 --> 00:28:09,345
+then most likely
+the license is missing.
+
+768
+00:28:09,345 --> 00:28:11,740
+Yeah. And then
+a consistency check.
+
+769
+00:28:11,740 --> 00:28:13,920
+So these are
+the the four stars.
+
+770
+00:28:14,300 --> 00:28:16,060
+So these are these
+are basically
+
+771
+00:28:16,060 --> 00:28:17,360
+stars which are needed.
+
+772
+00:28:17,375 --> 00:28:19,215
+So, you know, your ontology is
+
+773
+00:28:19,215 --> 00:28:20,595
+is fair and available.
+
+774
+00:28:22,335 --> 00:28:23,855
+It doesn't say anything about
+
+775
+00:28:23,855 --> 00:28:25,715
+the quality, just that you can
+
+776
+00:28:26,090 --> 00:28:28,810
+find and access
+the ontology and
+
+777
+00:28:28,810 --> 00:28:30,590
+that it has
+a license attached.
+
+778
+00:28:32,010 --> 00:28:34,010
+So there are, in
+the back end,
+
+779
+00:28:34,010 --> 00:28:35,755
+you have also
+programmatic access
+
+780
+00:28:37,435 --> 00:28:38,415
+ontology versions.
+
+781
+00:28:39,275 --> 00:28:42,015
+And this is kind of
+like an application
+
+782
+00:28:42,075 --> 00:28:44,095
+build on the on
+the data bus itself.
+
+783
+00:28:46,520 --> 00:28:48,440
+Where two things where
+I have no time,
+
+784
+00:28:48,440 --> 00:28:50,120
+which I just want to
+mention shortly.
+
+785
+00:28:50,120 --> 00:28:51,900
+So there's also
+a data bus client,
+
+786
+00:28:52,120 --> 00:28:53,640
+which is quite
+practically because
+
+787
+00:28:53,640 --> 00:28:55,885
+it converts format
+and compression
+
+788
+00:28:56,025 --> 00:28:57,945
+on download. So it's a bit
+
+789
+00:28:57,945 --> 00:28:59,325
+different than
+content negotiation.
+
+790
+00:28:59,865 --> 00:29:02,125
+Content negotiation
+does the conversion
+
+791
+00:29:02,345 --> 00:29:04,180
+server side. And here,
+
+792
+00:29:04,420 --> 00:29:06,340
+you can the the client
+kind of,
+
+793
+00:29:06,340 --> 00:29:08,740
+like, simplifies g zed g zed g
+
+794
+00:29:08,740 --> 00:29:10,580
+zed to b zed to conversion or
+
+795
+00:29:10,580 --> 00:29:11,220
+things like that.
+
+796
+00:29:11,220 --> 00:29:12,875
+So it's quite practical to
+
+797
+00:29:12,875 --> 00:29:14,335
+homogenize the collections.
+
+798
+00:29:15,435 --> 00:29:17,115
+And there's also
+data bus mods,
+
+799
+00:29:17,115 --> 00:29:18,575
+which automate the enrichment
+
+800
+00:29:18,635 --> 00:29:19,375
+of the metadata.
+
+801
+00:29:19,515 --> 00:29:21,195
+So this is like so users don't
+
+802
+00:29:21,195 --> 00:29:22,960
+have to give
+something like a MIME
+
+803
+00:29:22,960 --> 00:29:23,920
+type because this can be
+
+804
+00:29:23,920 --> 00:29:26,420
+automatically detected
+or file size or,
+
+805
+00:29:27,040 --> 00:29:30,020
+what many other things,
+void generation,
+
+806
+00:29:31,075 --> 00:29:32,055
+is done automatically.
+
+807
+00:29:33,695 --> 00:29:35,235
+About the data bus,
+
+808
+00:29:35,775 --> 00:29:37,715
+the usage is free
+if you register,
+
+809
+00:29:38,175 --> 00:29:39,715
+and we are preparing on-site
+
+810
+00:29:40,015 --> 00:29:41,900
+deploy on-site deployments for
+
+811
+00:29:41,900 --> 00:29:43,380
+the next year beginning of two
+
+812
+00:29:43,380 --> 00:29:44,260
+thousand twenty one,
+
+813
+00:29:44,260 --> 00:29:46,200
+so you can have a more closed
+
+814
+00:29:46,260 --> 00:29:48,660
+architecture. Yeah.
+
+815
+00:29:48,660 --> 00:29:50,440
+Thank you for your attention.
+
+816
+00:29:54,705 --> 00:29:56,005
+Are there any questions?
+
+817
+00:30:00,560 --> 00:30:03,040
+Oliver is asking
+if there's a user
+
+818
+00:30:03,040 --> 00:30:03,860
+review process.
+
+819
+00:30:04,160 --> 00:30:05,200
+And, for example,
+
+820
+00:30:05,200 --> 00:30:07,280
+what happens if
+you detect a bug
+
+821
+00:30:07,280 --> 00:30:08,820
+in the Wikipedia data?
+
+822
+00:30:13,005 --> 00:30:14,925
+Okay. So this is about the,
+
+823
+00:30:15,485 --> 00:30:18,660
+the data quality.
+Yes? I think so.
+
+824
+00:30:19,120 --> 00:30:21,680
+Yep. So, how does it work?
+
+825
+00:30:21,680 --> 00:30:23,280
+So, normally, you would submit
+
+826
+00:30:23,280 --> 00:30:25,840
+an issue in the in the data in
+
+827
+00:30:25,840 --> 00:30:27,425
+the in the GitHub. Yeah?
+
+828
+00:30:27,825 --> 00:30:29,905
+So this issue is kind of like
+
+829
+00:30:29,905 --> 00:30:31,285
+not semantic yet,
+
+830
+00:30:31,505 --> 00:30:33,905
+or actually where
+the users kind
+
+831
+00:30:33,905 --> 00:30:35,425
+of like, they know already how
+
+832
+00:30:35,425 --> 00:30:36,900
+the data bus works and how to
+
+833
+00:30:37,140 --> 00:30:38,740
+pinpoint the error.
+
+834
+00:30:38,740 --> 00:30:40,820
+But, so let's say you you have
+
+835
+00:30:40,900 --> 00:30:42,260
+you are not familiar
+with anything.
+
+836
+00:30:42,260 --> 00:30:43,780
+You say, okay. I
+found this is wrong,
+
+837
+00:30:43,780 --> 00:30:45,720
+and then you post the issue.
+
+838
+00:30:46,165 --> 00:30:48,165
+And what you do
+what we do then
+
+839
+00:30:48,165 --> 00:30:50,105
+is we tag it with
+the particular
+
+840
+00:30:50,325 --> 00:30:51,605
+artifact on the data bus.
+
+841
+00:30:51,605 --> 00:30:53,545
+So we say, in this version,
+
+842
+00:30:54,030 --> 00:30:55,630
+we confirm it in this version
+
+843
+00:30:55,630 --> 00:30:56,930
+of this particular artifact.
+
+844
+00:30:57,470 --> 00:30:58,610
+The error occurs.
+
+845
+00:30:59,310 --> 00:31:02,905
+From there, we device tests.
+
+846
+00:31:03,045 --> 00:31:04,725
+So there's a mini
+dump where we
+
+847
+00:31:04,725 --> 00:31:07,065
+can implement software tests,
+
+848
+00:31:09,690 --> 00:31:11,050
+And these are in
+the dev branch.
+
+849
+00:31:11,050 --> 00:31:11,930
+So on the dev branch,
+
+850
+00:31:11,930 --> 00:31:13,230
+the tests always fail.
+
+851
+00:31:13,450 --> 00:31:15,370
+And then as soon as
+one of the tests
+
+852
+00:31:15,370 --> 00:31:18,015
+is fixed, it moves to
+the master branch,
+
+853
+00:31:18,015 --> 00:31:19,295
+and then it's available next
+
+854
+00:31:19,295 --> 00:31:20,515
+month so it gets better.
+
+855
+00:31:21,215 --> 00:31:22,835
+So this is
+the overall process.
+
+856
+00:31:24,690 --> 00:31:26,530
+Okay. There's one that I know
+
+857
+00:31:26,530 --> 00:31:27,570
+you're going to love because
+
+858
+00:31:27,570 --> 00:31:29,090
+it's one of your
+favorite topics.
+
+859
+00:31:29,090 --> 00:31:31,490
+So, someone's asking,
+like, okay.
+
+860
+00:31:31,490 --> 00:31:32,835
+You know, this is such a great
+
+861
+00:31:32,835 --> 00:31:33,795
+achievement, but,
+
+862
+00:31:34,275 --> 00:31:36,115
+how do you actually
+manage it?
+
+863
+00:31:36,275 --> 00:31:37,655
+Do you have less funding,
+
+864
+00:31:38,035 --> 00:31:39,955
+or is it because the core team
+
+865
+00:31:39,955 --> 00:31:40,855
+is so dedicated?
+
+866
+00:31:43,840 --> 00:31:44,900
+No. No.
+
+867
+00:31:46,000 --> 00:31:46,880
+It is really,
+
+868
+00:31:47,200 --> 00:31:50,775
+so we have a so
+we I have to say
+
+869
+00:31:50,775 --> 00:31:52,775
+we have a lot of
+we have we have
+
+870
+00:31:52,775 --> 00:31:54,935
+a very large community,
+I have to say.
+
+871
+00:31:54,935 --> 00:31:59,130
+So whenever so it
+it is it is still,
+
+872
+00:31:59,750 --> 00:32:02,090
+or it comes definitely
+from a community
+
+873
+00:32:02,150 --> 00:32:03,850
+based models models.
+
+874
+00:32:03,990 --> 00:32:09,635
+So, for example, he,
+manages the TB,
+
+875
+00:32:09,635 --> 00:32:10,515
+the library now,
+
+876
+00:32:10,515 --> 00:32:12,055
+and gave us three servers.
+
+877
+00:32:12,270 --> 00:32:13,730
+There's some hosting Manheim,
+
+878
+00:32:14,110 --> 00:32:16,050
+open link host
+domain endpoint.
+
+879
+00:32:16,510 --> 00:32:17,710
+So everybody is kind of like
+
+880
+00:32:17,710 --> 00:32:18,930
+contributing a bit.
+
+881
+00:32:20,405 --> 00:32:22,245
+And we are moving and and you
+
+882
+00:32:22,245 --> 00:32:23,605
+have to see that on the board
+
+883
+00:32:23,605 --> 00:32:24,265
+of DBpedia,
+
+884
+00:32:24,805 --> 00:32:27,205
+there are six of the top ten
+
+885
+00:32:27,205 --> 00:32:29,520
+knowledge engineers according
+
+886
+00:32:29,520 --> 00:32:31,700
+to AI Miner. So we
+all won a prize,
+
+887
+00:32:32,800 --> 00:32:34,480
+basically, that
+we are the most
+
+888
+00:32:34,480 --> 00:32:36,480
+influential scholars
+in knowledge
+
+889
+00:32:36,480 --> 00:32:38,545
+engineering, and also our our
+
+890
+00:32:38,545 --> 00:32:39,685
+members are,
+
+891
+00:32:40,145 --> 00:32:42,065
+very much experts
+in the field.
+
+892
+00:32:42,065 --> 00:32:43,925
+So you have to
+there's definitely
+
+893
+00:32:44,065 --> 00:32:45,025
+technology leadership,
+
+894
+00:32:45,025 --> 00:32:49,030
+and this innovation
+helps to to
+
+895
+00:32:49,030 --> 00:32:50,090
+keep this running.
+
+896
+00:32:51,110 --> 00:32:53,990
+And, we focus
+the last three or
+
+897
+00:32:53,990 --> 00:32:55,510
+four years to really make it
+
+898
+00:32:55,670 --> 00:32:57,355
+because before that,
+
+899
+00:32:57,355 --> 00:32:59,135
+two people were
+doing the release,
+
+900
+00:32:59,435 --> 00:33:00,975
+and they needed twelve months
+
+901
+00:33:01,195 --> 00:33:03,055
+or seventeen months
+in some cases.
+
+902
+00:33:03,610 --> 00:33:05,130
+And this was very expensive,
+
+903
+00:33:05,130 --> 00:33:06,490
+and now we automated it.
+
+904
+00:33:06,490 --> 00:33:08,810
+So it just basically
+can be done
+
+905
+00:33:08,810 --> 00:33:10,570
+by a very skilled bachelor or
+
+906
+00:33:10,570 --> 00:33:13,255
+master student. Yeah.
+
+907
+00:33:13,255 --> 00:33:15,895
+And this is kind
+of like a high
+
+908
+00:33:15,895 --> 00:33:17,815
+cost saver because per se,
+
+909
+00:33:17,815 --> 00:33:19,335
+the association is unfunded.
+
+910
+00:33:19,335 --> 00:33:21,255
+So each of the members
+has a very
+
+911
+00:33:21,255 --> 00:33:23,850
+huge budget. Yeah.
+
+912
+00:33:23,850 --> 00:33:25,870
+Like the libraries,
+the companies,
+
+913
+00:33:26,570 --> 00:33:31,210
+the researchers, and
+in this funding,
+
+914
+00:33:31,210 --> 00:33:32,475
+there's maybe always a work
+
+915
+00:33:32,555 --> 00:33:36,335
+package included,
+or for businesses.
+
+916
+00:33:36,715 --> 00:33:37,995
+They, of course,
+they want to,
+
+917
+00:33:38,315 --> 00:33:40,415
+show their tools
+with with the PDF.
+
+918
+00:33:40,475 --> 00:33:42,020
+So there's some interest with
+
+919
+00:33:42,020 --> 00:33:42,760
+the researchers.
+
+920
+00:33:42,820 --> 00:33:44,100
+There's always a work package
+
+921
+00:33:44,100 --> 00:33:46,280
+maybe that is
+particular to the PDF.
+
+922
+00:33:48,975 --> 00:33:51,215
+Okay. Thanks. There's actually
+
+923
+00:33:51,215 --> 00:33:52,015
+more questions,
+
+924
+00:33:52,015 --> 00:33:53,935
+but since we have
+to to wrap up,
+
+925
+00:33:53,935 --> 00:33:55,615
+I'll just do a quick one and
+
+926
+00:33:55,615 --> 00:33:56,835
+give you a quick reply.
+
+927
+00:33:57,500 --> 00:33:59,740
+Amir is asking how
+does the star rating,
+
+928
+00:33:59,980 --> 00:34:01,180
+ontologies work?
+
+929
+00:34:01,180 --> 00:34:02,960
+Is it based on,
+FAIR principles?
+
+930
+00:34:05,635 --> 00:34:07,395
+No. It cannot be based on FAIR
+
+931
+00:34:07,635 --> 00:34:09,175
+the original FAIR principles
+
+932
+00:34:09,475 --> 00:34:10,855
+because they are too vague.
+
+933
+00:34:11,715 --> 00:34:13,395
+So they are kind
+of like saying
+
+934
+00:34:13,395 --> 00:34:15,270
+that you should have this and
+
+935
+00:34:15,270 --> 00:34:15,830
+should have this,
+
+936
+00:34:15,830 --> 00:34:18,090
+but they're not
+specifying it too much.
+
+937
+00:34:18,550 --> 00:34:19,530
+But for ontologies,
+
+938
+00:34:20,150 --> 00:34:21,610
+we're talking about
+all ontologies,
+
+939
+00:34:21,885 --> 00:34:23,965
+which is a very small and
+
+940
+00:34:23,965 --> 00:34:25,085
+specialized area.
+
+941
+00:34:25,085 --> 00:34:27,005
+And there, you
+can have clearly
+
+942
+00:34:27,005 --> 00:34:28,705
+measurable star ratings.
+
+943
+00:34:30,280 --> 00:34:31,240
+For the details,
+
+944
+00:34:31,240 --> 00:34:32,460
+you have to go to archival.
+
+945
+00:34:32,760 --> 00:34:34,600
+Tvpr dot org. We spent almost
+
+946
+00:34:34,600 --> 00:34:36,360
+two weeks describing
+these stars,
+
+947
+00:34:36,360 --> 00:34:38,300
+so there's a lot of
+information there.
+
+948
+00:34:38,925 --> 00:34:41,005
+Okay. Okay. Great.
+
+949
+00:34:41,005 --> 00:34:43,005
+Thanks thanks once
+again for, the,
+
+950
+00:34:43,245 --> 00:34:44,305
+for the talk, Sebastian.
+
+951
+00:34:44,375 --> 00:34:46,635
+Thank you very
+much. Bye. Bye.
+

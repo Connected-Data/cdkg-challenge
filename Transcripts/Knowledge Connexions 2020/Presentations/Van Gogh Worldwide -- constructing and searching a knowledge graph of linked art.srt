@@ -1,0 +1,4266 @@
+1
+00:00:03,440 --> 00:00:05,700
+Well, hello again, everyone.
+
+2
+00:00:05,920 --> 00:00:08,875
+And, hopefully you managed to
+
+3
+00:00:09,095 --> 00:00:09,975
+find your way in.
+
+4
+00:00:09,975 --> 00:00:11,575
+Hope we didn't
+keep you waiting
+
+5
+00:00:11,575 --> 00:00:12,315
+too long.
+
+6
+00:00:13,495 --> 00:00:15,675
+It's a pleasure today to be
+
+7
+00:00:15,735 --> 00:00:16,800
+introducing in,
+
+8
+00:00:17,120 --> 00:00:18,800
+knowledge connection
+twenty twenty,
+
+9
+00:00:18,800 --> 00:00:21,440
+someone I know for,
+well, over a decade,
+
+10
+00:00:21,440 --> 00:00:22,880
+I guess. We have,
+
+11
+00:00:23,040 --> 00:00:24,640
+the pleasure of
+having, Mihir,
+
+12
+00:00:24,640 --> 00:00:27,305
+with us today from, Spinken.
+
+13
+00:00:27,525 --> 00:00:28,805
+And Michiel and I,
+
+14
+00:00:29,205 --> 00:00:31,605
+actually were
+colleagues for a brief
+
+15
+00:00:31,605 --> 00:00:34,805
+while, back in Amsterdam,
+like I said,
+
+16
+00:00:34,805 --> 00:00:36,390
+over over ten years ago.
+
+17
+00:00:37,170 --> 00:00:39,490
+We were both in related areas
+
+18
+00:00:39,490 --> 00:00:41,170
+in knowledge graph,
+
+19
+00:00:41,170 --> 00:00:42,610
+what today actually is called
+
+20
+00:00:42,610 --> 00:00:43,170
+knowledge graph.
+
+21
+00:00:43,170 --> 00:00:44,690
+Back then, it wasn't
+called that,
+
+22
+00:00:44,690 --> 00:00:47,915
+but you know, same
+same difference.
+
+23
+00:00:48,375 --> 00:00:49,995
+The topic was still the same.
+
+24
+00:00:50,455 --> 00:00:52,395
+His was more on
+the visualization
+
+25
+00:00:52,695 --> 00:00:55,150
+and UI UX side,
+
+26
+00:00:55,150 --> 00:00:57,250
+and I guess he's
+he's kept to that.
+
+27
+00:00:57,390 --> 00:00:59,390
+And this is what he's here to
+
+28
+00:00:59,390 --> 00:01:01,570
+talk about today as well.
+
+29
+00:01:02,030 --> 00:01:04,945
+So I'll get out of the way and
+
+30
+00:01:05,005 --> 00:01:06,065
+let me hear it.
+
+31
+00:01:06,125 --> 00:01:08,305
+The only thing to
+mention to you,
+
+32
+00:01:08,605 --> 00:01:09,885
+if you want to
+share anything,
+
+33
+00:01:09,885 --> 00:01:10,525
+like questions,
+
+34
+00:01:10,525 --> 00:01:12,330
+comments or anything else,
+
+35
+00:01:12,330 --> 00:01:13,850
+by now I guess you
+know the process,
+
+36
+00:01:13,850 --> 00:01:15,370
+this little chat box.
+
+37
+00:01:15,770 --> 00:01:17,050
+I'll keep an eye on it and in
+
+38
+00:01:17,050 --> 00:01:18,110
+the end of the presentation
+
+39
+00:01:18,250 --> 00:01:19,850
+address your questions and
+
+40
+00:01:19,850 --> 00:01:20,810
+comments to be here.
+
+41
+00:01:20,810 --> 00:01:25,015
+So the floor is
+yours. Thank you.
+
+42
+00:01:26,435 --> 00:01:27,415
+Welcome, everybody.
+
+43
+00:01:27,715 --> 00:01:30,010
+Nice to be here
+and nice to see
+
+44
+00:01:30,010 --> 00:01:32,910
+some familiar people
+in the participants
+
+45
+00:01:33,290 --> 00:01:35,850
+, list. Alright.
+
+46
+00:01:35,850 --> 00:01:37,870
+Can you put on my
+my screen share?
+
+47
+00:01:38,705 --> 00:01:41,505
+I should pause that and then
+
+48
+00:01:41,505 --> 00:01:44,245
+quickly switch to this one.
+
+49
+00:01:44,385 --> 00:01:46,625
+You should be able to
+see my slides now.
+
+50
+00:01:46,625 --> 00:01:49,710
+Right? So let's put
+it in full screen.
+
+51
+00:01:51,210 --> 00:01:52,430
+So for Fog Worldwide,
+
+52
+00:01:52,730 --> 00:01:54,250
+I'm going to talk
+about so this
+
+53
+00:01:54,250 --> 00:01:56,570
+is a project you
+have been working
+
+54
+00:01:56,570 --> 00:01:58,575
+on the last months.
+
+55
+00:02:00,415 --> 00:02:02,095
+I work for a company
+called Spink.
+
+56
+00:02:02,095 --> 00:02:04,515
+You see the logo
+here at the bottom
+
+57
+00:02:04,630 --> 00:02:06,630
+left. We are actually
+in the business
+
+58
+00:02:06,630 --> 00:02:08,870
+of creating search
+solutions for
+
+59
+00:02:08,870 --> 00:02:09,850
+for knowledge graphs.
+
+60
+00:02:10,550 --> 00:02:12,070
+And we're gonna have a look at
+
+61
+00:02:12,070 --> 00:02:14,325
+how we apply that
+here for this
+
+62
+00:02:14,325 --> 00:02:15,465
+project for worldwide.
+
+63
+00:02:16,645 --> 00:02:18,565
+So before I say
+anything else,
+
+64
+00:02:18,565 --> 00:02:20,620
+I should really give credit to
+
+65
+00:02:20,780 --> 00:02:22,140
+the organizations
+and the people
+
+66
+00:02:22,140 --> 00:02:23,680
+that were involved
+in this project.
+
+67
+00:02:24,060 --> 00:02:24,940
+So here at the top,
+
+68
+00:02:24,940 --> 00:02:26,700
+you see three
+cultural heritage
+
+69
+00:02:26,700 --> 00:02:28,800
+organizations in
+the Netherlands.
+
+70
+00:02:30,115 --> 00:02:30,995
+The one on the right,
+
+71
+00:02:30,995 --> 00:02:32,615
+you're probably
+familiar with.
+
+72
+00:02:33,315 --> 00:02:35,155
+And here at the bottom,
+
+73
+00:02:35,155 --> 00:02:38,240
+you see some other companies,
+
+74
+00:02:38,240 --> 00:02:39,460
+more technology companies,
+
+75
+00:02:39,520 --> 00:02:41,440
+design companies involved in
+
+76
+00:02:41,440 --> 00:02:43,780
+this project. And I myself,
+
+77
+00:02:43,840 --> 00:02:45,940
+as I said here, at SPYNC.
+
+78
+00:02:47,385 --> 00:02:48,905
+So there's three things that I
+
+79
+00:02:48,905 --> 00:02:50,345
+would like to do
+with you today
+
+80
+00:02:50,345 --> 00:02:51,945
+in this talk. Of course,
+
+81
+00:02:51,945 --> 00:02:53,305
+we're gonna have a look at for
+
+82
+00:02:53,305 --> 00:02:54,620
+a whole wide and,
+
+83
+00:02:54,940 --> 00:02:58,160
+why are we doing
+this and how.
+
+84
+00:02:59,180 --> 00:03:00,460
+Next, I want to make a,
+
+85
+00:03:00,940 --> 00:03:02,620
+a claim for cultural heritage
+
+86
+00:03:02,620 --> 00:03:05,065
+organizations to
+connect their data.
+
+87
+00:03:05,605 --> 00:03:07,205
+And finally, we're gonna have
+
+88
+00:03:07,205 --> 00:03:10,565
+a look at how we
+employ the concept
+
+89
+00:03:10,565 --> 00:03:13,280
+of search design to access
+
+90
+00:03:13,340 --> 00:03:14,320
+knowledge graphs.
+
+91
+00:03:14,940 --> 00:03:17,600
+So let's start with Vincent.
+
+92
+00:03:18,860 --> 00:03:20,940
+So physics for
+growth really is
+
+93
+00:03:20,940 --> 00:03:23,085
+a worldwide
+phenomenon by now.
+
+94
+00:03:23,085 --> 00:03:25,185
+So this is a visualization of
+
+95
+00:03:25,565 --> 00:03:26,925
+his artworks where they are
+
+96
+00:03:26,925 --> 00:03:27,905
+currently located.
+
+97
+00:03:28,490 --> 00:03:30,810
+And as you you
+might wonder what
+
+98
+00:03:30,810 --> 00:03:32,170
+what is here in
+the Pacific Ocean?
+
+99
+00:03:32,170 --> 00:03:33,470
+Well, this is
+actually Honolulu
+
+100
+00:03:33,530 --> 00:03:35,210
+in in Hawaii. Right?
+
+101
+00:03:35,210 --> 00:03:37,545
+So it's really
+spread out to all
+
+102
+00:03:37,545 --> 00:03:40,445
+continents all
+the way to Sydney,
+
+103
+00:03:40,825 --> 00:03:45,545
+Australia. And what we do in
+
+104
+00:03:45,545 --> 00:03:47,370
+projects like this is that we
+
+105
+00:03:47,370 --> 00:03:49,790
+usually start
+from the end user
+
+106
+00:03:50,490 --> 00:03:52,810
+perspective. So
+what are the search
+
+107
+00:03:52,810 --> 00:03:56,705
+tasks that people
+are having for
+
+108
+00:03:56,705 --> 00:03:57,765
+this type of data.
+
+109
+00:03:58,225 --> 00:04:00,165
+Now you see here a picture,
+
+110
+00:04:00,705 --> 00:04:01,765
+a little bit empty,
+
+111
+00:04:02,260 --> 00:04:03,720
+as you probably can expect.
+
+112
+00:04:04,100 --> 00:04:05,080
+During this presentation,
+
+113
+00:04:05,860 --> 00:04:07,560
+we'll start filling
+the rest of
+
+114
+00:04:07,780 --> 00:04:09,960
+this picture.
+But we start here
+
+115
+00:04:10,020 --> 00:04:10,955
+from the right side.
+
+116
+00:04:11,035 --> 00:04:13,215
+So what are the users here?
+
+117
+00:04:13,355 --> 00:04:14,395
+Well, in this case,
+
+118
+00:04:14,395 --> 00:04:16,235
+these are really
+professional users.
+
+119
+00:04:16,235 --> 00:04:17,375
+So these are researchers,
+
+120
+00:04:18,155 --> 00:04:21,420
+in the art humanities domain.
+
+121
+00:04:22,040 --> 00:04:23,740
+And you have
+a couple of examples
+
+122
+00:04:23,960 --> 00:04:25,880
+of research questions that,
+
+123
+00:04:26,680 --> 00:04:29,555
+that they have from
+actual people.
+
+124
+00:04:31,135 --> 00:04:31,875
+For example,
+
+125
+00:04:32,495 --> 00:04:34,995
+Verhoeff painted
+several artworks
+
+126
+00:04:35,055 --> 00:04:37,475
+from the family
+Houlain in France.
+
+127
+00:04:37,970 --> 00:04:39,570
+So which members of the family
+
+128
+00:04:39,570 --> 00:04:40,790
+did he actually paint?
+
+129
+00:04:42,530 --> 00:04:44,530
+A much more
+complicated question
+
+130
+00:04:44,530 --> 00:04:45,905
+is this one. So,
+
+131
+00:04:46,225 --> 00:04:48,145
+for several artworks
+of van Gogh,
+
+132
+00:04:48,145 --> 00:04:49,905
+it's not exactly
+known when they
+
+133
+00:04:49,905 --> 00:04:51,745
+were painted. And
+sometimes also
+
+134
+00:04:51,745 --> 00:04:53,185
+the order of in which they are
+
+135
+00:04:53,185 --> 00:04:54,465
+painted was this one before
+
+136
+00:04:54,465 --> 00:04:55,770
+the other one is not known.
+
+137
+00:04:55,990 --> 00:04:58,730
+And finding this out
+is a big topic.
+
+138
+00:04:58,950 --> 00:05:00,490
+And they use a lot
+of information
+
+139
+00:05:00,550 --> 00:05:01,910
+from that. From this range is
+
+140
+00:05:01,910 --> 00:05:03,625
+really from analyzing
+the paint,
+
+141
+00:05:03,625 --> 00:05:06,125
+the actual material
+to the canvas,
+
+142
+00:05:06,585 --> 00:05:08,025
+that it was was used for.
+
+143
+00:05:08,025 --> 00:05:09,305
+For example, it's
+two paintings
+
+144
+00:05:09,305 --> 00:05:11,465
+use canvas from
+the same role.
+
+145
+00:05:11,465 --> 00:05:12,300
+This is, of course,
+
+146
+00:05:12,300 --> 00:05:14,503
+an indication that they were
+
+147
+00:05:14,517 --> 00:05:16,720
+created close by in time.
+
+148
+00:05:17,340 --> 00:05:18,320
+Another picture,
+
+149
+00:05:19,435 --> 00:05:21,035
+another question is
+actually, I think,
+
+150
+00:05:21,035 --> 00:05:23,135
+for someone else
+attending now,
+
+151
+00:05:24,555 --> 00:05:26,690
+is more sort of
+a social aspect,
+
+152
+00:05:26,690 --> 00:05:28,050
+right? So how are
+the paintings
+
+153
+00:05:28,050 --> 00:05:29,650
+of a book perceived
+throughout time,
+
+154
+00:05:29,650 --> 00:05:31,510
+right? They are exhibited for
+
+155
+00:05:32,050 --> 00:05:33,030
+more than a century.
+
+156
+00:05:33,625 --> 00:05:35,625
+And how were they perceived?
+
+157
+00:05:35,625 --> 00:05:37,065
+How were they
+exposed together?
+
+158
+00:05:37,065 --> 00:05:38,905
+How was it how
+did people write
+
+159
+00:05:38,905 --> 00:05:39,945
+about those paintings?
+
+160
+00:05:39,945 --> 00:05:41,565
+And how did that
+change throughout
+
+161
+00:05:41,705 --> 00:05:44,260
+the decennial? All right.
+
+162
+00:05:44,260 --> 00:05:46,360
+So that should have given you
+
+163
+00:05:46,660 --> 00:05:49,000
+an idea what we're
+trying to do here.
+
+164
+00:05:49,540 --> 00:05:51,960
+So let's just go there.
+
+165
+00:05:52,505 --> 00:05:55,885
+So you should see
+now, the website,
+
+166
+00:05:56,185 --> 00:05:58,685
+and, let's try to start with
+
+167
+00:05:58,985 --> 00:06:01,065
+the the simple
+question that you
+
+168
+00:06:01,065 --> 00:06:02,990
+just saw. Let's search for,
+
+169
+00:06:04,750 --> 00:06:07,070
+Now what you see here is six
+
+170
+00:06:07,070 --> 00:06:08,370
+paintings made by.
+
+171
+00:06:09,365 --> 00:06:10,565
+The first thing that I have to
+
+172
+00:06:10,565 --> 00:06:11,925
+say is that these are actually
+
+173
+00:06:11,925 --> 00:06:14,265
+not all the paintings
+by this family.
+
+174
+00:06:14,565 --> 00:06:15,705
+Because at the moment,
+
+175
+00:06:16,005 --> 00:06:18,220
+we have collected
+all the paintings,
+
+176
+00:06:18,680 --> 00:06:20,200
+or all artworks,
+I should say,
+
+177
+00:06:20,200 --> 00:06:21,260
+in in the Netherlands,
+
+178
+00:06:21,320 --> 00:06:23,420
+from a dozen institutions.
+
+179
+00:06:24,520 --> 00:06:25,480
+The second phase is,
+
+180
+00:06:25,800 --> 00:06:27,020
+is currently starting.
+
+181
+00:06:27,125 --> 00:06:28,725
+And in this phase,
+
+182
+00:06:28,725 --> 00:06:30,425
+we're going to collect
+all the information
+
+183
+00:06:30,565 --> 00:06:32,025
+from the other institutions.
+
+184
+00:06:32,965 --> 00:06:35,225
+But already plenty
+to see here.
+
+185
+00:06:35,710 --> 00:06:37,150
+But of course, this is not so
+
+186
+00:06:37,150 --> 00:06:38,030
+spectacular yet.
+
+187
+00:06:38,030 --> 00:06:39,730
+I mean, this you can also see
+
+188
+00:06:39,790 --> 00:06:40,530
+see on Wikipedia.
+
+189
+00:06:40,670 --> 00:06:43,235
+So let's dive into it
+a little bit more.
+
+190
+00:06:43,315 --> 00:06:44,435
+So for example, this,
+
+191
+00:06:44,675 --> 00:06:48,035
+this cute little boy, again,
+
+192
+00:06:48,035 --> 00:06:49,555
+becomes more
+interesting because
+
+193
+00:06:49,555 --> 00:06:50,915
+already here on
+the right side,
+
+194
+00:06:50,915 --> 00:06:53,910
+you see images
+and becomes even
+
+195
+00:06:53,910 --> 00:06:56,390
+more interesting
+if I open this
+
+196
+00:06:56,390 --> 00:06:57,350
+because these are actually
+
+197
+00:06:57,350 --> 00:06:58,650
+available in high resolution.
+
+198
+00:06:58,950 --> 00:07:01,450
+So this means I
+can can zoom in
+
+199
+00:07:02,235 --> 00:07:04,015
+and and look at
+these boys' eyes.
+
+200
+00:07:04,315 --> 00:07:05,755
+And this becomes even more
+
+201
+00:07:05,755 --> 00:07:07,435
+interesting if I start looking
+
+202
+00:07:07,435 --> 00:07:11,930
+at more technical
+recordings of,
+
+203
+00:07:12,330 --> 00:07:13,050
+of this painting.
+
+204
+00:07:13,050 --> 00:07:14,570
+So this is what is
+called breaking
+
+205
+00:07:14,570 --> 00:07:16,570
+light, where
+the light is shared
+
+206
+00:07:16,570 --> 00:07:18,110
+on the painting
+from the side.
+
+207
+00:07:18,355 --> 00:07:20,035
+And this really gives a good
+
+208
+00:07:20,035 --> 00:07:22,915
+view on how Vergoc used his
+
+209
+00:07:22,915 --> 00:07:25,555
+paint to to get all
+kinds of effects,
+
+210
+00:07:25,555 --> 00:07:26,995
+right, the thickness of the of
+
+211
+00:07:26,995 --> 00:07:27,850
+the paint here.
+
+212
+00:07:28,810 --> 00:07:30,010
+Another thing that's very
+
+213
+00:07:30,010 --> 00:07:32,270
+interesting is
+this canvas is,
+
+214
+00:07:32,410 --> 00:07:34,270
+of course, stretched
+on a frame.
+
+215
+00:07:34,330 --> 00:07:36,490
+And this frame contains all
+
+216
+00:07:36,490 --> 00:07:38,235
+kinds of information. Right?
+
+217
+00:07:38,235 --> 00:07:40,475
+So there are are
+label stickers
+
+218
+00:07:40,475 --> 00:07:43,275
+on it that indicated who has
+
+219
+00:07:43,275 --> 00:07:46,050
+owned this painting
+and, where it was,
+
+220
+00:07:46,050 --> 00:07:47,190
+for example, exhibited.
+
+221
+00:07:47,250 --> 00:07:49,650
+So here is actually one from
+
+222
+00:07:49,650 --> 00:07:51,750
+nineteen twenty eight
+from an exhibition
+
+223
+00:07:52,450 --> 00:07:53,110
+in Germany.
+
+224
+00:07:55,015 --> 00:07:56,535
+Later in time, I guess they
+
+225
+00:07:56,535 --> 00:07:57,895
+wanted to protect
+this frame and
+
+226
+00:07:57,895 --> 00:08:00,235
+they added a cover
+on top of it,
+
+227
+00:08:00,455 --> 00:08:02,550
+which when you borrow
+the the painting,
+
+228
+00:08:02,550 --> 00:08:03,590
+you're not allowed
+to take off.
+
+229
+00:08:03,590 --> 00:08:05,930
+So the more recent exhibitions
+
+230
+00:08:06,070 --> 00:08:06,790
+actually have their,
+
+231
+00:08:07,110 --> 00:08:08,630
+their stickers here on the on
+
+232
+00:08:08,630 --> 00:08:09,435
+on this back panel.
+
+233
+00:08:11,915 --> 00:08:13,675
+Okay, so let's close this high
+
+234
+00:08:13,675 --> 00:08:16,235
+resolution few and
+scroll down a bit.
+
+235
+00:08:16,235 --> 00:08:17,675
+Of course, there is object
+
+236
+00:08:17,675 --> 00:08:20,110
+metadata about the artwork.
+
+237
+00:08:21,050 --> 00:08:22,650
+But there's also
+various other things.
+
+238
+00:08:22,650 --> 00:08:23,370
+For example,
+
+239
+00:08:23,370 --> 00:08:25,850
+van Gogh has written a lot of
+
+240
+00:08:25,850 --> 00:08:27,610
+letters to mainly
+to his brother,
+
+241
+00:08:27,610 --> 00:08:29,305
+but also some to
+some colleagues.
+
+242
+00:08:29,765 --> 00:08:30,485
+In his letters,
+
+243
+00:08:30,485 --> 00:08:32,165
+he he often mentions
+his artwork.
+
+244
+00:08:32,165 --> 00:08:34,645
+So the same for
+for this artwork.
+
+245
+00:08:34,645 --> 00:08:35,865
+So you can read about,
+
+246
+00:08:36,805 --> 00:08:38,010
+what he said about that.
+
+247
+00:08:38,810 --> 00:08:40,750
+Who has previously
+owned these artworks,
+
+248
+00:08:41,450 --> 00:08:43,050
+going from his brother to,
+
+249
+00:08:43,290 --> 00:08:44,830
+to where it's
+currently located.
+
+250
+00:08:45,265 --> 00:08:46,225
+And here we see those,
+
+251
+00:08:46,465 --> 00:08:47,345
+those exhibitions.
+
+252
+00:08:47,345 --> 00:08:48,705
+So what we saw there,
+
+253
+00:08:48,705 --> 00:08:50,165
+the sticker at
+the background,
+
+254
+00:08:50,705 --> 00:08:52,305
+on the on the frame
+in nineteen
+
+255
+00:08:52,305 --> 00:08:53,960
+twenty eight is actually this
+
+256
+00:08:54,200 --> 00:08:56,840
+exhibition. So we
+can click this
+
+257
+00:08:56,840 --> 00:08:58,680
+exhibition and now see which
+
+258
+00:08:58,680 --> 00:09:02,220
+other artworks were
+also exposed there.
+
+259
+00:09:03,275 --> 00:09:04,635
+And so that gives you,
+
+260
+00:09:04,875 --> 00:09:06,415
+a completely different
+perspective,
+
+261
+00:09:06,955 --> 00:09:07,775
+on the artworks.
+
+262
+00:09:08,315 --> 00:09:09,355
+Now there are various other
+
+263
+00:09:09,355 --> 00:09:10,315
+things that you can,
+
+264
+00:09:10,635 --> 00:09:11,935
+can explore yourself,
+
+265
+00:09:13,230 --> 00:09:14,290
+after this presentation.
+
+266
+00:09:15,470 --> 00:09:18,210
+So let's get back,
+to the presentation.
+
+267
+00:09:19,845 --> 00:09:21,285
+So what we've done now,
+
+268
+00:09:21,525 --> 00:09:23,445
+we've we've seen sort
+of the user side.
+
+269
+00:09:23,445 --> 00:09:25,125
+So what's happening
+in the background?
+
+270
+00:09:25,125 --> 00:09:26,405
+Of course, there's
+all kinds of
+
+271
+00:09:26,405 --> 00:09:29,090
+data coming from,
+from institutions,
+
+272
+00:09:29,950 --> 00:09:31,650
+and somehow we want to create
+
+273
+00:09:31,950 --> 00:09:33,890
+a knowledge graph
+out of this.
+
+274
+00:09:34,270 --> 00:09:36,725
+Now I want to
+approach this part
+
+275
+00:09:36,725 --> 00:09:40,005
+of the talk from a sort of
+
+276
+00:09:40,005 --> 00:09:41,845
+personal insight that I gained
+
+277
+00:09:41,845 --> 00:09:42,905
+during this project.
+
+278
+00:09:43,790 --> 00:09:45,410
+I've been working
+in in Credoheads
+
+279
+00:09:45,550 --> 00:09:47,630
+already for, for about fifteen
+
+280
+00:09:47,630 --> 00:09:51,095
+years coming from
+this technical
+
+281
+00:09:51,155 --> 00:09:53,555
+perspective. But
+what I realized
+
+282
+00:09:53,555 --> 00:09:55,635
+in this project is that there
+
+283
+00:09:55,635 --> 00:09:57,475
+really is a wealth
+of knowledge
+
+284
+00:09:57,475 --> 00:09:58,650
+in these this organization.
+
+285
+00:09:58,650 --> 00:10:00,350
+So you can truly call them
+
+286
+00:10:00,410 --> 00:10:01,470
+knowledge institutes.
+
+287
+00:10:02,490 --> 00:10:05,045
+But what surprised me is that
+
+288
+00:10:05,205 --> 00:10:06,725
+only a small part of this
+
+289
+00:10:06,725 --> 00:10:08,825
+knowledge is actually
+available online.
+
+290
+00:10:09,365 --> 00:10:11,525
+So, of course,
+these numbers are
+
+291
+00:10:11,525 --> 00:10:13,970
+speculative that I
+that I present here.
+
+292
+00:10:13,970 --> 00:10:15,650
+And this will not be
+the same for all.
+
+293
+00:10:15,650 --> 00:10:17,350
+For some, this will
+be a lot more.
+
+294
+00:10:17,410 --> 00:10:18,210
+But in general,
+
+295
+00:10:18,210 --> 00:10:19,490
+there's really a lot of stuff
+
+296
+00:10:19,490 --> 00:10:21,510
+that is not available
+online yet.
+
+297
+00:10:21,965 --> 00:10:24,205
+What we managed to do with is
+
+298
+00:10:24,205 --> 00:10:25,265
+to increase this.
+
+299
+00:10:25,565 --> 00:10:26,925
+And so, for example,
+
+300
+00:10:26,925 --> 00:10:28,285
+these exhibitions
+that I showed
+
+301
+00:10:28,285 --> 00:10:29,425
+you in the high address,
+
+302
+00:10:29,645 --> 00:10:31,970
+photos are now
+made available.
+
+303
+00:10:32,750 --> 00:10:33,890
+So in that sense,
+
+304
+00:10:35,230 --> 00:10:37,710
+FOCO worldwide has has helped
+
+305
+00:10:37,710 --> 00:10:39,630
+to reach the full
+potential for
+
+306
+00:10:39,630 --> 00:10:40,995
+for cultural organizations.
+
+307
+00:10:41,935 --> 00:10:44,515
+But what I truly
+believe is that,
+
+308
+00:10:44,895 --> 00:10:46,095
+for the cultural heritage
+
+309
+00:10:46,095 --> 00:10:47,215
+organizations themselves,
+
+310
+00:10:47,215 --> 00:10:49,060
+there is so much potential to
+
+311
+00:10:49,060 --> 00:10:51,080
+gain if they start to,
+
+312
+00:10:51,780 --> 00:10:53,720
+organize themselves around
+
+313
+00:10:53,780 --> 00:10:54,760
+connected data.
+
+314
+00:10:54,900 --> 00:10:56,820
+So not only just
+for sharing it
+
+315
+00:10:56,820 --> 00:10:57,800
+to other portals,
+
+316
+00:10:58,245 --> 00:10:59,845
+but also for
+themselves because
+
+317
+00:10:59,845 --> 00:11:01,445
+it will empower them to do so
+
+318
+00:11:01,445 --> 00:11:03,465
+many more things and truly be
+
+319
+00:11:04,005 --> 00:11:07,140
+a a knowledge
+institute on the web.
+
+320
+00:11:07,480 --> 00:11:09,280
+So, that's almost,
+
+321
+00:11:10,080 --> 00:11:11,780
+almost a call out to these
+
+322
+00:11:11,840 --> 00:11:14,160
+organizations. So how should
+
+323
+00:11:14,160 --> 00:11:15,220
+they do this then?
+
+324
+00:11:16,445 --> 00:11:18,065
+Well, this should start with
+
+325
+00:11:18,205 --> 00:11:19,265
+within their organization.
+
+326
+00:11:19,805 --> 00:11:21,485
+And so there's not just this
+
+327
+00:11:21,485 --> 00:11:22,765
+collection management system
+
+328
+00:11:22,765 --> 00:11:24,065
+from which you
+see a screenshot
+
+329
+00:11:24,125 --> 00:11:25,730
+here on the left
+with this typical
+
+330
+00:11:25,730 --> 00:11:26,550
+object metadata.
+
+331
+00:11:26,610 --> 00:11:27,810
+That was actually
+the stuff that
+
+332
+00:11:27,810 --> 00:11:29,190
+I have known for years.
+
+333
+00:11:29,330 --> 00:11:30,450
+But there is so much more.
+
+334
+00:11:30,450 --> 00:11:31,810
+And so you have already seen
+
+335
+00:11:31,810 --> 00:11:32,870
+some of those assets.
+
+336
+00:11:33,555 --> 00:11:35,075
+And some of the things
+you haven't
+
+337
+00:11:35,075 --> 00:11:37,575
+seen is also x
+rays or infrared
+
+338
+00:11:37,635 --> 00:11:40,275
+photography. There's
+really a wealth
+
+339
+00:11:40,275 --> 00:11:41,495
+of information there.
+
+340
+00:11:41,920 --> 00:11:43,860
+Then there was
+documents, literature,
+
+341
+00:11:44,320 --> 00:11:45,860
+research reports,
+publications,
+
+342
+00:11:47,120 --> 00:11:48,880
+all discussing and providing
+
+343
+00:11:48,880 --> 00:11:50,180
+interesting perspectives.
+
+344
+00:11:51,295 --> 00:11:53,315
+So the organization
+should really
+
+345
+00:11:53,535 --> 00:11:55,475
+organize this and
+start connecting
+
+346
+00:11:56,175 --> 00:11:56,915
+this data.
+
+347
+00:11:59,010 --> 00:12:00,930
+Secondly, they should connect
+
+348
+00:12:00,930 --> 00:12:02,230
+to external authorities.
+
+349
+00:12:02,610 --> 00:12:04,870
+And there is a lot of
+knowledge inside,
+
+350
+00:12:05,425 --> 00:12:07,665
+but outside, there
+is a lot that
+
+351
+00:12:07,665 --> 00:12:08,805
+can complement this.
+
+352
+00:12:08,865 --> 00:12:10,225
+And here you see a couple of
+
+353
+00:12:10,225 --> 00:12:12,385
+examples for people
+in the cultural
+
+354
+00:12:12,385 --> 00:12:13,285
+heritage domain,
+
+355
+00:12:13,420 --> 00:12:14,620
+probably familiar
+with something
+
+356
+00:12:14,620 --> 00:12:16,160
+known as the art
+and architecture
+
+357
+00:12:16,860 --> 00:12:18,620
+or in short, AT.
+
+358
+00:12:18,620 --> 00:12:20,800
+This provides very
+rich information,
+
+359
+00:12:20,860 --> 00:12:22,240
+for example, about materials,
+
+360
+00:12:22,775 --> 00:12:24,795
+type of paintings, etcetera.
+
+361
+00:12:25,655 --> 00:12:27,995
+Of course, literature,
+for example,
+
+362
+00:12:28,055 --> 00:12:29,515
+as as modeled in Fiaf.
+
+363
+00:12:29,950 --> 00:12:30,930
+And in the Netherlands,
+
+364
+00:12:31,550 --> 00:12:33,810
+is a very interesting source
+
+365
+00:12:34,190 --> 00:12:36,370
+collecting information
+about artists,
+
+366
+00:12:36,510 --> 00:12:39,065
+museums, owners,
+etcetera. Right?
+
+367
+00:12:39,065 --> 00:12:43,165
+So all this
+information provides
+
+368
+00:12:44,345 --> 00:12:46,170
+a way of integrating data and
+
+369
+00:12:46,250 --> 00:12:47,630
+at the same time providing
+
+370
+00:12:47,770 --> 00:12:49,630
+additional backgrounds
+information.
+
+371
+00:12:50,730 --> 00:12:53,050
+Okay, so given
+these two things,
+
+372
+00:12:53,050 --> 00:12:54,830
+connecting inside
+and connecting,
+
+373
+00:12:56,105 --> 00:12:57,865
+adding external information to
+
+374
+00:12:57,865 --> 00:13:00,445
+the inside. How to do that?
+
+375
+00:13:00,745 --> 00:13:03,385
+Well, very good
+news that since,
+
+376
+00:13:04,480 --> 00:13:05,360
+since a while now,
+
+377
+00:13:05,360 --> 00:13:08,480
+there is a community effort in
+
+378
+00:13:08,480 --> 00:13:11,140
+this domain, on
+a shared data model.
+
+379
+00:13:11,200 --> 00:13:12,795
+And they call
+this linked art.
+
+380
+00:13:13,035 --> 00:13:14,795
+And this is a very
+nice initiative
+
+381
+00:13:14,795 --> 00:13:15,995
+because what it does,
+
+382
+00:13:15,995 --> 00:13:18,975
+it really tries to
+find a sweet spot,
+
+383
+00:13:19,515 --> 00:13:21,435
+on top of a very
+expressive model,
+
+384
+00:13:21,435 --> 00:13:22,870
+which is called CDOS AM,
+
+385
+00:13:23,170 --> 00:13:25,110
+but which is maybe
+a bit complicated
+
+386
+00:13:25,170 --> 00:13:27,090
+to use. And what
+LinkedAR managed
+
+387
+00:13:27,090 --> 00:13:29,010
+to do is really
+reach the sweet
+
+388
+00:13:29,010 --> 00:13:30,690
+spot that made it possible for
+
+389
+00:13:30,690 --> 00:13:33,255
+organizations to
+start using to
+
+390
+00:13:33,255 --> 00:13:34,935
+start express all this which
+
+391
+00:13:34,935 --> 00:13:36,375
+which information
+that they have.
+
+392
+00:13:36,375 --> 00:13:38,535
+And, now here you see
+a snippet of that.
+
+393
+00:13:38,535 --> 00:13:39,735
+Of course, we're not go gonna
+
+394
+00:13:39,735 --> 00:13:40,715
+go into detail.
+
+395
+00:13:41,000 --> 00:13:42,520
+But I do wanna
+point out a couple
+
+396
+00:13:42,520 --> 00:13:43,160
+of things here.
+
+397
+00:13:43,160 --> 00:13:44,140
+So for example,
+
+398
+00:13:44,600 --> 00:13:46,840
+the reference to an AT concept
+
+399
+00:13:46,840 --> 00:13:49,900
+here and the reference
+to a place.
+
+400
+00:13:50,440 --> 00:13:51,865
+And And also interesting here
+
+401
+00:13:51,865 --> 00:13:53,805
+is the modeling of dates,
+
+402
+00:13:53,865 --> 00:13:55,305
+which actually allows you to
+
+403
+00:13:55,305 --> 00:13:57,485
+model vagueness in dates.
+
+404
+00:13:59,050 --> 00:14:01,850
+So that brings me to the last
+
+405
+00:14:01,850 --> 00:14:04,350
+one is that
+the quality of data
+
+406
+00:14:04,570 --> 00:14:05,805
+is really a big thing.
+
+407
+00:14:05,965 --> 00:14:07,885
+So a lot of time during this
+
+408
+00:14:07,885 --> 00:14:09,405
+project was actually spent by
+
+409
+00:14:09,405 --> 00:14:11,165
+the data owners in improving
+
+410
+00:14:11,165 --> 00:14:13,165
+their quality. And
+so in the collection
+
+411
+00:14:13,165 --> 00:14:14,785
+management systems,
+they often,
+
+412
+00:14:15,120 --> 00:14:19,760
+for example, use not
+complete dates.
+
+413
+00:14:19,760 --> 00:14:21,840
+And this this is
+the case because
+
+414
+00:14:21,840 --> 00:14:23,705
+they don't they
+don't know the exact
+
+415
+00:14:23,865 --> 00:14:25,485
+exact date. It's
+either in a period
+
+416
+00:14:25,945 --> 00:14:27,225
+that is made or
+they don't know
+
+417
+00:14:27,225 --> 00:14:29,085
+exactly when it
+started or ended.
+
+418
+00:14:29,625 --> 00:14:31,805
+And by allowing
+them to actually,
+
+419
+00:14:32,185 --> 00:14:33,245
+model this fakeness,
+
+420
+00:14:33,610 --> 00:14:35,370
+we can then start doing things
+
+421
+00:14:35,370 --> 00:14:36,570
+like sorting updates,
+
+422
+00:14:36,570 --> 00:14:38,010
+which is of course
+not possible
+
+423
+00:14:38,010 --> 00:14:39,870
+if you don't have
+a well formed date.
+
+424
+00:14:40,010 --> 00:14:41,050
+But there are various other
+
+425
+00:14:41,050 --> 00:14:43,435
+issues in data
+quality as well.
+
+426
+00:14:43,915 --> 00:14:46,715
+Now what we notice
+in this project is,
+
+427
+00:14:47,675 --> 00:14:50,235
+expressed here by
+this, by this quote.
+
+428
+00:14:50,235 --> 00:14:52,680
+So you can read it yourself.
+
+429
+00:14:55,620 --> 00:14:57,460
+So what really
+happened is that
+
+430
+00:14:57,460 --> 00:14:59,705
+once they saw information,
+
+431
+00:14:59,705 --> 00:15:01,785
+their information
+being used on
+
+432
+00:15:01,785 --> 00:15:04,265
+the web and seeing, hey.
+
+433
+00:15:04,265 --> 00:15:06,880
+This is actually complete or
+
+434
+00:15:06,880 --> 00:15:08,480
+this is wrong. That really was
+
+435
+00:15:08,480 --> 00:15:10,660
+a big incentive to
+start improving
+
+436
+00:15:10,720 --> 00:15:11,300
+the data.
+
+437
+00:15:14,655 --> 00:15:15,455
+One of the examples,
+
+438
+00:15:15,455 --> 00:15:16,815
+if you then have good data,
+
+439
+00:15:16,815 --> 00:15:18,515
+you have it connected
+to external
+
+440
+00:15:18,575 --> 00:15:19,775
+authorities. For example,
+
+441
+00:15:19,775 --> 00:15:20,895
+here in for wide,
+
+442
+00:15:20,895 --> 00:15:22,415
+you see these these filters on
+
+443
+00:15:22,415 --> 00:15:23,760
+on the left side that you're
+
+444
+00:15:24,160 --> 00:15:25,600
+obviously familiar
+with from all
+
+445
+00:15:25,600 --> 00:15:27,140
+kinds of search applications.
+
+446
+00:15:28,080 --> 00:15:30,160
+Now here, this
+gives a very nice
+
+447
+00:15:30,160 --> 00:15:32,720
+overview of
+the high level what
+
+448
+00:15:32,720 --> 00:15:34,735
+kind of different
+types of objects
+
+449
+00:15:34,735 --> 00:15:36,915
+there are. If you've seen any
+
+450
+00:15:36,975 --> 00:15:38,115
+website that aggregates,
+
+451
+00:15:39,135 --> 00:15:40,815
+especially culture data from
+
+452
+00:15:40,815 --> 00:15:41,535
+different sources,
+
+453
+00:15:41,535 --> 00:15:43,155
+usually these
+things are a mess,
+
+454
+00:15:43,490 --> 00:15:44,690
+Right? So what we do here,
+
+455
+00:15:44,690 --> 00:15:46,770
+we use controls
+for gamblers for
+
+456
+00:15:46,770 --> 00:15:48,130
+all of that. Meaning also that
+
+457
+00:15:48,130 --> 00:15:49,170
+if you don't use them,
+
+458
+00:15:49,170 --> 00:15:51,670
+you will not end up
+in these filters.
+
+459
+00:15:52,415 --> 00:15:53,775
+But we provide some sort of
+
+460
+00:15:53,775 --> 00:15:56,095
+flexibility because
+although we
+
+461
+00:15:56,095 --> 00:15:57,855
+show these high level
+categories here,
+
+462
+00:15:57,855 --> 00:15:59,295
+which was one of the wishes of
+
+463
+00:15:59,295 --> 00:15:59,955
+the users,
+
+464
+00:16:01,050 --> 00:16:03,450
+We allow also institutions to
+
+465
+00:16:03,450 --> 00:16:05,370
+provide many more
+specific things.
+
+466
+00:16:05,370 --> 00:16:07,450
+But by using the relations in
+
+467
+00:16:07,450 --> 00:16:08,190
+this thesaurus,
+
+468
+00:16:08,635 --> 00:16:10,395
+we can then provide the level
+
+469
+00:16:10,395 --> 00:16:12,255
+that we need here
+in the interface.
+
+470
+00:16:13,115 --> 00:16:14,635
+So we use
+the background knowledge
+
+471
+00:16:14,635 --> 00:16:17,935
+for that. All right.
+
+472
+00:16:18,460 --> 00:16:20,000
+Let's come back
+to this picture.
+
+473
+00:16:20,300 --> 00:16:21,760
+So we've seen now,
+
+474
+00:16:22,700 --> 00:16:24,560
+coming from the right side,
+
+475
+00:16:25,395 --> 00:16:26,995
+that we start to understand
+
+476
+00:16:26,995 --> 00:16:29,015
+the search tasks that
+are involved here.
+
+477
+00:16:29,235 --> 00:16:31,495
+We have seen how organizations
+
+478
+00:16:31,795 --> 00:16:33,095
+can capture their knowledge,
+
+479
+00:16:33,395 --> 00:16:34,435
+and they've
+actually been doing
+
+480
+00:16:34,435 --> 00:16:35,380
+that themselves. Right?
+
+481
+00:16:35,380 --> 00:16:36,900
+So this is not that we start
+
+482
+00:16:36,900 --> 00:16:38,660
+harvesting their
+data and do this.
+
+483
+00:16:38,660 --> 00:16:39,780
+They actually have been doing
+
+484
+00:16:39,780 --> 00:16:40,420
+this themselves,
+
+485
+00:16:40,420 --> 00:16:42,600
+which was really cool for us.
+
+486
+00:16:43,185 --> 00:16:44,785
+But clearly in this picture,
+
+487
+00:16:44,785 --> 00:16:46,465
+there's there's a gap
+in the middle.
+
+488
+00:16:46,465 --> 00:16:47,905
+Right? So how are we going to
+
+489
+00:16:47,905 --> 00:16:50,325
+solve the search task using
+
+490
+00:16:50,385 --> 00:16:51,765
+using this knowledge graph?
+
+491
+00:16:52,870 --> 00:16:54,410
+That brings me to this part.
+
+492
+00:16:55,030 --> 00:16:57,030
+And, we obviously,
+
+493
+00:16:57,030 --> 00:16:58,550
+we need some sort
+of API, right,
+
+494
+00:16:58,550 --> 00:16:59,690
+that goes to the website.
+
+495
+00:16:59,935 --> 00:17:02,495
+And but what
+happens before that
+
+496
+00:17:02,495 --> 00:17:04,755
+is what we call
+relevance models.
+
+497
+00:17:04,895 --> 00:17:06,495
+And I'll explain to you why we
+
+498
+00:17:06,495 --> 00:17:07,875
+call it relevance models.
+
+499
+00:17:08,870 --> 00:17:10,310
+Because what it has to do with
+
+500
+00:17:10,310 --> 00:17:12,470
+for us is actually three type
+
+501
+00:17:12,470 --> 00:17:14,470
+of queries. And if
+you're familiar
+
+502
+00:17:14,470 --> 00:17:16,230
+with with graph data,
+
+503
+00:17:16,230 --> 00:17:17,975
+you're familiar with
+the first Right?
+
+504
+00:17:17,975 --> 00:17:20,075
+So structured graph queries,
+
+505
+00:17:20,535 --> 00:17:22,315
+for example, give me
+all the artworks,
+
+506
+00:17:22,935 --> 00:17:24,855
+and and sort them by
+by the production
+
+507
+00:17:24,855 --> 00:17:28,000
+date. Now that's a very
+valid question.
+
+508
+00:17:28,540 --> 00:17:30,540
+But in applications
+like this,
+
+509
+00:17:30,540 --> 00:17:31,900
+there's usually a full text
+
+510
+00:17:31,900 --> 00:17:33,020
+component as well.
+
+511
+00:17:33,020 --> 00:17:35,545
+So what about
+the documents that
+
+512
+00:17:35,545 --> 00:17:36,845
+mentioned for folks health?
+
+513
+00:17:37,385 --> 00:17:39,245
+And in fact, in most cases,
+
+514
+00:17:39,625 --> 00:17:40,985
+they combine these
+things, right?
+
+515
+00:17:40,985 --> 00:17:42,745
+So there is structured and
+
+516
+00:17:42,745 --> 00:17:44,925
+unstructured
+information combined,
+
+517
+00:17:45,110 --> 00:17:46,410
+right? So in particular,
+
+518
+00:17:46,710 --> 00:17:48,090
+this unstructured part,
+
+519
+00:17:48,710 --> 00:17:50,330
+we're starting to
+deal with relevance,
+
+520
+00:17:50,550 --> 00:17:51,370
+right, aboutness.
+
+521
+00:17:51,430 --> 00:17:53,290
+It's not just true or false.
+
+522
+00:17:54,145 --> 00:17:56,145
+And what I like to show you is
+
+523
+00:17:56,145 --> 00:17:59,205
+how we solve these
+things in SpeedDesk.
+
+524
+00:17:59,585 --> 00:18:01,140
+So what we're trying to do is
+
+525
+00:18:01,140 --> 00:18:03,220
+to really allow
+people to create
+
+526
+00:18:03,220 --> 00:18:05,000
+these relevance
+models themselves.
+
+527
+00:18:06,340 --> 00:18:08,420
+So what you should
+see now is,
+
+528
+00:18:09,140 --> 00:18:10,845
+is being desk, which should be
+
+529
+00:18:10,845 --> 00:18:13,045
+run as a as a cloud service.
+
+530
+00:18:13,045 --> 00:18:13,965
+And, here,
+
+531
+00:18:13,965 --> 00:18:16,865
+the the full API of
+the of the application
+
+532
+00:18:18,680 --> 00:18:20,120
+is, shown here.
+
+533
+00:18:20,120 --> 00:18:21,900
+This is basically
+the whole API,
+
+534
+00:18:22,760 --> 00:18:23,580
+of the application.
+
+535
+00:18:24,360 --> 00:18:26,105
+And for each endpoint,
+
+536
+00:18:26,405 --> 00:18:28,405
+they are implemented
+as what we
+
+537
+00:18:28,405 --> 00:18:30,885
+call strategies or
+in other words,
+
+538
+00:18:30,885 --> 00:18:31,945
+relevance models.
+
+539
+00:18:32,570 --> 00:18:34,010
+And what I want to do with you
+
+540
+00:18:34,010 --> 00:18:35,550
+is to actually create one.
+
+541
+00:18:36,250 --> 00:18:37,770
+Not exactly what
+we use in these
+
+542
+00:18:37,770 --> 00:18:38,810
+applications, but just to
+
+543
+00:18:38,810 --> 00:18:40,350
+illustrate how we do that.
+
+544
+00:18:40,805 --> 00:18:42,665
+And we do that in a visual
+
+545
+00:18:43,765 --> 00:18:45,225
+programming interface.
+
+546
+00:18:45,605 --> 00:18:47,525
+So here on the left side,
+
+547
+00:18:47,525 --> 00:18:49,705
+we have a library of
+building blocks.
+
+548
+00:18:50,360 --> 00:18:52,040
+And what we can do is we can
+
+549
+00:18:52,040 --> 00:18:53,980
+drag those blocks
+onto the convos,
+
+550
+00:18:54,280 --> 00:18:56,140
+and there we can
+start creating
+
+551
+00:18:58,365 --> 00:18:59,265
+relevance models.
+
+552
+00:18:59,725 --> 00:19:01,005
+So to start with,
+
+553
+00:19:01,005 --> 00:19:02,605
+I'm just gonna
+take all the data
+
+554
+00:19:02,605 --> 00:19:03,725
+that we have. So basically you
+
+555
+00:19:03,725 --> 00:19:05,245
+can say this is
+this is the graph
+
+556
+00:19:05,245 --> 00:19:07,270
+that we have. And what I want
+
+557
+00:19:07,270 --> 00:19:09,030
+to do here is I want
+to make a search
+
+558
+00:19:09,030 --> 00:19:10,950
+engine for all
+the letters that
+
+559
+00:19:10,950 --> 00:19:13,270
+Verkhof wrote.
+So I'm not gonna
+
+560
+00:19:13,270 --> 00:19:14,070
+take all the data,
+
+561
+00:19:14,070 --> 00:19:16,225
+but actually dragged
+in another block.
+
+562
+00:19:16,605 --> 00:19:18,945
+And I'm going to
+filter my data
+
+563
+00:19:19,565 --> 00:19:21,725
+on messages. So as
+you notice here,
+
+564
+00:19:21,725 --> 00:19:23,585
+these are modeled
+with schema dot org.
+
+565
+00:19:23,980 --> 00:19:25,520
+So I select the messages.
+
+566
+00:19:26,460 --> 00:19:28,060
+Now I can inspect the output
+
+567
+00:19:28,060 --> 00:19:29,120
+here of this block.
+
+568
+00:19:29,820 --> 00:19:31,260
+And we see here on the right
+
+569
+00:19:31,260 --> 00:19:33,675
+side information.
+
+570
+00:19:33,675 --> 00:19:35,595
+Let me increase
+this a little bit.
+
+571
+00:19:35,595 --> 00:19:37,915
+So here are,
+the number of letters.
+
+572
+00:19:37,915 --> 00:19:38,955
+Now this is not a lot.
+
+573
+00:19:38,955 --> 00:19:40,655
+This is nine hundred three.
+
+574
+00:19:41,760 --> 00:19:43,280
+But let's let's
+create a search
+
+575
+00:19:43,280 --> 00:19:44,160
+engine for this.
+
+576
+00:19:44,160 --> 00:19:46,020
+For example, we're
+using the text
+
+577
+00:19:46,560 --> 00:19:47,700
+of those letters.
+
+578
+00:19:48,505 --> 00:19:50,745
+So what I can do
+is I can actually
+
+579
+00:19:50,745 --> 00:19:51,885
+extract this text.
+
+580
+00:19:56,270 --> 00:19:57,090
+There we go.
+
+581
+00:19:58,030 --> 00:20:00,110
+And I configured
+this to actually
+
+582
+00:20:00,110 --> 00:20:03,010
+take the text that
+we want to use.
+
+583
+00:20:05,295 --> 00:20:06,415
+And now we can say,
+
+584
+00:20:06,415 --> 00:20:08,175
+let's build a document search
+
+585
+00:20:08,175 --> 00:20:08,895
+engine for this.
+
+586
+00:20:08,895 --> 00:20:11,715
+So this is a particular
+relevance model.
+
+587
+00:20:12,970 --> 00:20:14,330
+And in fact, this is actually
+
+588
+00:20:14,330 --> 00:20:16,670
+the model that is
+used by by most,
+
+589
+00:20:17,610 --> 00:20:18,890
+off the shelf search engine
+
+590
+00:20:18,890 --> 00:20:21,125
+systems like Solr,
+Elasticsearch.
+
+591
+00:20:21,665 --> 00:20:23,265
+So, basically,
+what we're doing,
+
+592
+00:20:23,265 --> 00:20:25,025
+we're building that
+here on the spot.
+
+593
+00:20:25,025 --> 00:20:27,765
+So we just miss one
+component here,
+
+594
+00:20:27,825 --> 00:20:28,885
+namely the input,
+
+595
+00:20:30,060 --> 00:20:32,620
+And let's say for now that we
+
+596
+00:20:32,620 --> 00:20:35,760
+want to search for
+mental health.
+
+597
+00:20:38,655 --> 00:20:40,095
+Maybe we configure our search
+
+598
+00:20:40,095 --> 00:20:41,455
+engine a bit. I
+know that we're
+
+599
+00:20:41,455 --> 00:20:42,895
+talking about English here,
+
+600
+00:20:42,895 --> 00:20:44,595
+so let's apply some stemming.
+
+601
+00:20:45,400 --> 00:20:47,160
+And now the magic
+happens because
+
+602
+00:20:47,160 --> 00:20:49,160
+when I start inspecting
+the outputs,
+
+603
+00:20:49,160 --> 00:20:50,920
+what the system
+does for you is
+
+604
+00:20:50,920 --> 00:20:52,680
+actually create
+the indexes that
+
+605
+00:20:52,680 --> 00:20:54,185
+are required. Right?
+
+606
+00:20:54,185 --> 00:20:55,465
+So and in this way,
+
+607
+00:20:55,465 --> 00:20:56,985
+you as a user don't need to
+
+608
+00:20:56,985 --> 00:21:00,205
+think about what are
+the the technical
+
+609
+00:21:00,265 --> 00:21:01,705
+aspects that I
+need to realize,
+
+610
+00:21:01,705 --> 00:21:03,485
+what kind of index do I need.
+
+611
+00:21:03,520 --> 00:21:04,800
+But you can think at a much
+
+612
+00:21:04,800 --> 00:21:06,160
+higher abstraction level,
+
+613
+00:21:06,160 --> 00:21:07,680
+what should my relevance model
+
+614
+00:21:07,680 --> 00:21:08,580
+actually look like.
+
+615
+00:21:09,120 --> 00:21:10,320
+And what you see now that we
+
+616
+00:21:10,320 --> 00:21:12,020
+actually find all
+kinds of results,
+
+617
+00:21:12,205 --> 00:21:13,725
+and these are
+ranked as you can
+
+618
+00:21:13,725 --> 00:21:15,105
+see here in this probability
+
+619
+00:21:15,245 --> 00:21:17,565
+distribution. And
+at the beginning
+
+620
+00:21:17,565 --> 00:21:18,465
+we see here,
+
+621
+00:21:19,590 --> 00:21:20,710
+maybe we're not maybe we're
+
+622
+00:21:20,710 --> 00:21:22,550
+actually not gonna
+expect these results,
+
+623
+00:21:22,550 --> 00:21:24,870
+but what if we start
+analyzing them?
+
+624
+00:21:24,870 --> 00:21:27,290
+So we go sort of
+back to our graph.
+
+625
+00:21:27,905 --> 00:21:30,085
+And let's say now
+we're interested
+
+626
+00:21:30,865 --> 00:21:34,145
+in which periods these letters
+
+627
+00:21:34,145 --> 00:21:36,350
+were written. So I'm going to
+
+628
+00:21:36,350 --> 00:21:38,270
+extract actually the date that
+
+629
+00:21:38,270 --> 00:21:39,250
+they were sent.
+
+630
+00:21:43,005 --> 00:21:43,825
+There we go.
+
+631
+00:21:43,885 --> 00:21:50,640
+And here we are at eighteen
+
+632
+00:21:50,640 --> 00:21:52,400
+eighty nine and
+eighteen eighty
+
+633
+00:21:52,400 --> 00:21:56,000
+eight is the most
+relevant years.
+
+634
+00:21:56,000 --> 00:21:58,975
+Now it turns out that actually
+
+635
+00:21:58,975 --> 00:22:00,195
+cut off his ear,
+
+636
+00:22:00,975 --> 00:22:02,595
+in December eighty eight.
+
+637
+00:22:02,735 --> 00:22:04,735
+So it's not surprising that
+
+638
+00:22:04,735 --> 00:22:05,615
+around this time,
+
+639
+00:22:05,615 --> 00:22:08,640
+he was writing mostly about
+
+640
+00:22:08,640 --> 00:22:09,940
+about this mental health.
+
+641
+00:22:11,920 --> 00:22:14,160
+We can also do something
+else and say,
+
+642
+00:22:14,160 --> 00:22:16,025
+hey, let's now
+look to something
+
+643
+00:22:16,025 --> 00:22:17,065
+completely different.
+
+644
+00:22:17,065 --> 00:22:18,445
+So from those letters,
+
+645
+00:22:18,745 --> 00:22:20,125
+let's move to the artworks.
+
+646
+00:22:21,305 --> 00:22:22,825
+And the artworks that he has
+
+647
+00:22:22,825 --> 00:22:24,205
+mentioned in those letters.
+
+648
+00:22:24,380 --> 00:22:26,000
+So what are actually
+the artworks
+
+649
+00:22:26,140 --> 00:22:28,060
+most involved in this whole
+
+650
+00:22:28,060 --> 00:22:30,080
+topic of mental
+health health?
+
+651
+00:22:31,985 --> 00:22:33,185
+Now this is probably a bit
+
+652
+00:22:33,185 --> 00:22:34,645
+difficult to read for you.
+
+653
+00:22:35,345 --> 00:22:37,045
+On the website they're
+nicely formatted.
+
+654
+00:22:37,905 --> 00:22:39,445
+But here you see that painting
+
+655
+00:22:39,505 --> 00:22:40,885
+of Madame Goulain,
+
+656
+00:22:41,040 --> 00:22:42,480
+which was actually painted at
+
+657
+00:22:42,480 --> 00:22:43,860
+the end of eighty eight.
+
+658
+00:22:44,560 --> 00:22:46,420
+And here's another painting of
+
+659
+00:22:46,480 --> 00:22:48,080
+of the sunflowers all sort of
+
+660
+00:22:48,080 --> 00:22:49,565
+in that that period.
+
+661
+00:22:49,565 --> 00:22:51,005
+Now I hope this
+gave you an idea
+
+662
+00:22:51,005 --> 00:22:52,285
+how you can play
+with these things,
+
+663
+00:22:52,285 --> 00:22:53,805
+create relevance models over
+
+664
+00:22:53,805 --> 00:22:56,385
+over both the text
+and the structured
+
+665
+00:22:56,445 --> 00:22:57,665
+structured part.
+
+666
+00:23:00,100 --> 00:23:02,520
+If I am correct,
+I have, like,
+
+667
+00:23:02,580 --> 00:23:03,640
+one minute left.
+
+668
+00:23:04,100 --> 00:23:06,655
+So let's briefly then look at
+
+669
+00:23:06,735 --> 00:23:08,115
+how we are doing this.
+
+670
+00:23:08,975 --> 00:23:11,935
+So if you're sort of in the in
+
+671
+00:23:11,935 --> 00:23:13,135
+the knowledge graph domain,
+
+672
+00:23:13,135 --> 00:23:14,255
+you're you're
+familiar with this
+
+673
+00:23:14,255 --> 00:23:14,895
+picture. Right?
+
+674
+00:23:14,895 --> 00:23:17,210
+So what we have
+at the bottom,
+
+675
+00:23:18,550 --> 00:23:19,750
+oh, sorry. At the top,
+
+676
+00:23:19,750 --> 00:23:21,350
+the top of the iceberg is some
+
+677
+00:23:21,350 --> 00:23:22,950
+sort of API that is used by,
+
+678
+00:23:23,190 --> 00:23:24,010
+by an application.
+
+679
+00:23:24,855 --> 00:23:25,835
+Underneath that,
+
+680
+00:23:26,775 --> 00:23:28,455
+there is some sort of graph
+
+681
+00:23:28,455 --> 00:23:30,455
+database and and a graph
+query language.
+
+682
+00:23:30,455 --> 00:23:31,975
+And what's what we find very
+
+683
+00:23:31,975 --> 00:23:33,175
+interesting is to look at what
+
+684
+00:23:33,175 --> 00:23:35,080
+are now the rules
+that are needed
+
+685
+00:23:35,140 --> 00:23:36,980
+to solve these things. Right?
+
+686
+00:23:36,980 --> 00:23:38,740
+We need some
+developer to create
+
+687
+00:23:38,740 --> 00:23:40,360
+these things. And
+this is typically,
+
+688
+00:23:40,420 --> 00:23:41,940
+yeah, just below the surface,
+
+689
+00:23:41,940 --> 00:23:43,240
+just above the surface.
+
+690
+00:23:44,645 --> 00:23:47,305
+Now if you need
+full tech support,
+
+691
+00:23:47,685 --> 00:23:49,285
+then typically
+this is added on
+
+692
+00:23:49,285 --> 00:23:50,025
+the site.
+
+693
+00:23:50,325 --> 00:23:53,510
+And although there
+are solutions here,
+
+694
+00:23:53,510 --> 00:23:55,270
+it's not very easy to combine
+
+695
+00:23:55,270 --> 00:23:57,190
+these things.
+And what you need
+
+696
+00:23:57,190 --> 00:23:58,310
+of course is someone that now
+
+697
+00:23:58,310 --> 00:24:00,010
+has knowledge of
+both these things.
+
+698
+00:24:00,465 --> 00:24:01,985
+So what we're trying to do,
+
+699
+00:24:01,985 --> 00:24:03,845
+we actually push
+the technology
+
+700
+00:24:03,985 --> 00:24:04,705
+all the way down.
+
+701
+00:24:04,705 --> 00:24:06,065
+So at the lowest level,
+
+702
+00:24:06,065 --> 00:24:07,585
+we actually implemented these
+
+703
+00:24:07,585 --> 00:24:08,965
+things in one system,
+
+704
+00:24:09,240 --> 00:24:11,340
+which is a probabilistic
+graph database.
+
+705
+00:24:12,200 --> 00:24:12,920
+On top of that,
+
+706
+00:24:12,920 --> 00:24:15,000
+we have
+a probabilistic relation
+
+707
+00:24:15,000 --> 00:24:16,280
+to algebra that can deal with
+
+708
+00:24:16,280 --> 00:24:17,755
+these things. And if you're
+
+709
+00:24:17,755 --> 00:24:18,555
+interested in that,
+
+710
+00:24:18,555 --> 00:24:21,055
+you can read about
+that in the literature
+
+711
+00:24:21,275 --> 00:24:22,495
+. Oh, sorry about that.
+
+712
+00:24:22,715 --> 00:24:24,475
+But most importantly for us is
+
+713
+00:24:24,475 --> 00:24:26,075
+that all of this is now under
+
+714
+00:24:26,075 --> 00:24:28,490
+the surface. But
+above the surface,
+
+715
+00:24:28,490 --> 00:24:30,890
+we now have a way that we can
+
+716
+00:24:30,890 --> 00:24:32,430
+support
+information specialists
+
+717
+00:24:32,810 --> 00:24:34,805
+to deal with
+accessing knowledge
+
+718
+00:24:34,805 --> 00:24:36,805
+graphs and text
+in the same same
+
+719
+00:24:36,805 --> 00:24:38,885
+way to create relevance models
+
+720
+00:24:38,885 --> 00:24:40,825
+that are needed for,
+for an application.
+
+721
+00:24:41,500 --> 00:24:43,340
+And that is what I just just
+
+722
+00:24:43,340 --> 00:24:44,780
+showed to you.
+
+723
+00:24:44,780 --> 00:24:46,080
+So to wrap this up,
+
+724
+00:24:46,700 --> 00:24:48,220
+a lot of knowledge
+potential in
+
+725
+00:24:48,220 --> 00:24:49,440
+corporates organizations.
+
+726
+00:24:49,580 --> 00:24:51,225
+But for that, they really need
+
+727
+00:24:51,225 --> 00:24:52,265
+to understand the users.
+
+728
+00:24:52,265 --> 00:24:53,625
+They need to capture their
+
+729
+00:24:53,625 --> 00:24:55,725
+knowledge and finally model
+
+730
+00:24:55,945 --> 00:24:58,265
+the relevance that
+is needed for
+
+731
+00:24:58,265 --> 00:24:58,925
+the applications.
+
+732
+00:25:06,635 --> 00:25:08,420
+Great. Thanks.
+Thanks, Miguel.
+
+733
+00:25:09,200 --> 00:25:10,480
+Well, great, great slides.
+
+734
+00:25:11,955 --> 00:25:13,795
+We have some some
+questions from,
+
+735
+00:25:14,115 --> 00:25:15,975
+people, but, you know,
+
+736
+00:25:16,035 --> 00:25:17,655
+I'll seamlessly take advantage
+
+737
+00:25:17,715 --> 00:25:18,870
+of my position here,
+
+738
+00:25:18,870 --> 00:25:20,550
+and I'll I'll make
+the the first
+
+739
+00:25:20,550 --> 00:25:22,070
+question because, well,
+
+740
+00:25:22,070 --> 00:25:23,590
+you you triggered my interest
+
+741
+00:25:23,590 --> 00:25:24,630
+with something you said.
+
+742
+00:25:24,630 --> 00:25:26,550
+So you mentioned you're using
+
+743
+00:25:26,550 --> 00:25:28,635
+a probabilistic
+graph database.
+
+744
+00:25:29,495 --> 00:25:30,935
+I'm supposed to be the expert
+
+745
+00:25:30,935 --> 00:25:31,915
+on graph databases,
+
+746
+00:25:31,975 --> 00:25:34,375
+but I've never
+heard about it.
+
+747
+00:25:34,375 --> 00:25:35,335
+Would you like to say, like,
+
+748
+00:25:35,335 --> 00:25:37,050
+a couple of words
+of What it is?
+
+749
+00:25:37,050 --> 00:25:39,530
+Who built it? How
+it works? Yeah.
+
+750
+00:25:39,530 --> 00:25:41,870
+So so the work
+originated actually
+
+751
+00:25:42,010 --> 00:25:44,305
+in database or actually to be
+
+752
+00:25:44,305 --> 00:25:46,145
+more precise is the merger of
+
+753
+00:25:46,145 --> 00:25:47,745
+two fields,
+relational databases
+
+754
+00:25:47,745 --> 00:25:49,125
+and information retrieval.
+
+755
+00:25:50,385 --> 00:25:51,685
+At the end of the 1990s,
+
+756
+00:25:52,065 --> 00:25:53,285
+work was done there.
+
+757
+00:25:53,345 --> 00:25:54,610
+And And basically
+what it means
+
+758
+00:25:54,610 --> 00:25:57,010
+is adding a score column to,
+
+759
+00:25:57,250 --> 00:25:58,710
+to a triple or quadruple.
+
+760
+00:25:58,770 --> 00:26:00,950
+So we have lifted it
+from the database
+
+761
+00:26:01,010 --> 00:26:04,125
+world to, to
+the graph, world.
+
+762
+00:26:04,585 --> 00:26:06,285
+So, where we add scores.
+
+763
+00:26:06,345 --> 00:26:08,505
+And now what do you do with
+
+764
+00:26:08,505 --> 00:26:10,240
+these scores? The interesting
+
+765
+00:26:10,240 --> 00:26:11,600
+thing is that
+the research that
+
+766
+00:26:11,600 --> 00:26:12,960
+I showed you there,
+
+767
+00:26:13,040 --> 00:26:15,140
+there are various
+there is an algebra
+
+768
+00:26:15,200 --> 00:26:16,805
+to deal with these
+scores. Right?
+
+769
+00:26:16,805 --> 00:26:18,005
+How how to combine them,
+
+770
+00:26:18,005 --> 00:26:18,645
+how to add them,
+
+771
+00:26:18,645 --> 00:26:20,245
+how to multiply them for for
+
+772
+00:26:20,245 --> 00:26:21,145
+different operations.
+
+773
+00:26:21,525 --> 00:26:22,965
+So at the lowest level,
+
+774
+00:26:23,285 --> 00:26:24,905
+there is actually
+graph scores,
+
+775
+00:26:25,210 --> 00:26:26,890
+but more importantly
+is at the top
+
+776
+00:26:26,890 --> 00:26:28,810
+level is then how you how you
+
+777
+00:26:28,810 --> 00:26:30,830
+use those scores for
+certain operations.
+
+778
+00:26:31,850 --> 00:26:33,495
+Okay. Okay. Well, yeah,
+
+779
+00:26:33,495 --> 00:26:35,015
+you you provided
+the reference,
+
+780
+00:26:35,015 --> 00:26:35,835
+and I guess,
+
+781
+00:26:36,855 --> 00:26:38,375
+I or anyone else
+who's interested
+
+782
+00:26:38,375 --> 00:26:39,655
+will will have to look it up.
+
+783
+00:26:39,655 --> 00:26:41,335
+But, yeah, it's it's a very
+
+784
+00:26:41,335 --> 00:26:42,455
+interesting concept.
+
+785
+00:26:42,455 --> 00:26:46,040
+And, let's see
+what people have
+
+786
+00:26:46,040 --> 00:26:49,720
+been asking. K.
+
+787
+00:26:49,720 --> 00:26:51,835
+Another question is,
+
+788
+00:26:51,835 --> 00:26:53,195
+which is very
+specific I guess,
+
+789
+00:26:53,195 --> 00:26:55,115
+what is the rank
+by text block?
+
+790
+00:26:55,115 --> 00:26:56,555
+And I get it's tied to one
+
+791
+00:26:56,555 --> 00:26:59,200
+specific slide you
+had. Yeah, yeah.
+
+792
+00:26:59,200 --> 00:27:01,280
+So I use the rank by text or
+
+793
+00:27:01,280 --> 00:27:02,100
+more specifically,
+
+794
+00:27:02,160 --> 00:27:04,500
+I use the rank by
+BN twenty five,
+
+795
+00:27:05,445 --> 00:27:06,805
+which is a relevance model.
+
+796
+00:27:06,805 --> 00:27:08,005
+And so so this is used by
+
+797
+00:27:08,005 --> 00:27:09,545
+Elasticsearch as well.
+
+798
+00:27:10,005 --> 00:27:11,445
+And, what it does,
+
+799
+00:27:11,445 --> 00:27:14,090
+it implements this
+for for you.
+
+800
+00:27:14,090 --> 00:27:15,770
+Right? So the the actual query
+
+801
+00:27:15,770 --> 00:27:17,630
+that you need, is implemented
+
+802
+00:27:17,850 --> 00:27:19,450
+in that path. So basically,
+
+803
+00:27:19,450 --> 00:27:21,610
+you can grab whatever entities
+
+804
+00:27:21,610 --> 00:27:22,725
+you have in your
+Knowledge Graph
+
+805
+00:27:22,805 --> 00:27:25,225
+and say, I need this text and
+
+806
+00:27:25,445 --> 00:27:26,825
+sort of throw it
+in Elasticsearch
+
+807
+00:27:27,045 --> 00:27:29,205
+as you want. But
+the nice thing
+
+808
+00:27:29,205 --> 00:27:30,645
+is you don't need to because
+
+809
+00:27:30,645 --> 00:27:31,930
+the system does it for you.
+
+810
+00:27:31,930 --> 00:27:35,310
+So we actually
+create the indexes
+
+811
+00:27:35,690 --> 00:27:37,210
+that you need to create that
+
+812
+00:27:37,210 --> 00:27:38,810
+search engine. So it all runs
+
+813
+00:27:38,810 --> 00:27:41,645
+into the same system. Okay.
+
+814
+00:27:42,825 --> 00:27:44,745
+Well, like many
+people are saying
+
+815
+00:27:44,745 --> 00:27:46,345
+in in the comments,
+that sounds really,
+
+816
+00:27:46,345 --> 00:27:47,485
+really cool, actually.
+
+817
+00:27:48,990 --> 00:27:51,490
+Another question and
+again from from me,
+
+818
+00:27:51,710 --> 00:27:52,910
+you mentioned that certain
+
+819
+00:27:52,910 --> 00:27:55,630
+vocabulary at some
+point linked the art,
+
+820
+00:27:55,630 --> 00:27:56,370
+if I recall,
+
+821
+00:27:57,355 --> 00:27:59,455
+And you said it's
+kind of good,
+
+822
+00:28:00,315 --> 00:28:02,335
+sweet spot, middle
+ground, between,
+
+823
+00:28:02,955 --> 00:28:05,215
+different expressivity,
+methods.
+
+824
+00:28:06,140 --> 00:28:07,820
+And you also mentioned that it
+
+825
+00:28:07,820 --> 00:28:10,220
+allows you it's
+kind of it allows
+
+826
+00:28:10,220 --> 00:28:11,820
+to deal with vagueness and
+
+827
+00:28:11,820 --> 00:28:13,755
+specifically
+vagueness in dates.
+
+828
+00:28:14,315 --> 00:28:16,555
+So would you like
+to expand a little
+
+829
+00:28:16,555 --> 00:28:18,235
+bit on the expressivity
+part and
+
+830
+00:28:18,235 --> 00:28:19,755
+then maybe
+specifically on the on
+
+831
+00:28:19,755 --> 00:28:21,820
+the vagueness? Yeah. Yeah.
+
+832
+00:28:21,960 --> 00:28:23,640
+So what I specifically said is
+
+833
+00:28:23,640 --> 00:28:25,400
+that it finds the right sweet
+
+834
+00:28:25,400 --> 00:28:27,320
+spot between expressivity and
+
+835
+00:28:27,320 --> 00:28:29,115
+ease of use. And so you could
+
+836
+00:28:29,115 --> 00:28:30,655
+almost position it between,
+
+837
+00:28:31,275 --> 00:28:31,995
+schema dot org,
+
+838
+00:28:31,995 --> 00:28:33,515
+which is relatively
+easy to use.
+
+839
+00:28:33,515 --> 00:28:35,355
+But for something rich and
+
+840
+00:28:35,355 --> 00:28:36,715
+heterogeneous as we needed it
+
+841
+00:28:36,715 --> 00:28:37,410
+for cohort wide,
+
+842
+00:28:37,490 --> 00:28:39,270
+it was it was
+just not enough.
+
+843
+00:28:39,890 --> 00:28:40,770
+And at the other hand,
+
+844
+00:28:40,770 --> 00:28:42,770
+there is something
+known as CDOC CRM,
+
+845
+00:28:42,770 --> 00:28:44,210
+which is an event
+based model,
+
+846
+00:28:44,210 --> 00:28:45,810
+which allows you
+to model a lot
+
+847
+00:28:45,810 --> 00:28:46,825
+of stuff. But,
+
+848
+00:28:47,705 --> 00:28:49,385
+to figure out how to use it is
+
+849
+00:28:49,385 --> 00:28:50,185
+a bit complicated.
+
+850
+00:28:50,185 --> 00:28:52,345
+So what Linked Art has done is
+
+851
+00:28:52,345 --> 00:28:54,345
+what they call
+an application profile.
+
+852
+00:28:54,345 --> 00:28:55,225
+So under the hood,
+
+853
+00:28:55,225 --> 00:28:56,810
+they actually use
+Cedarc Serum,
+
+854
+00:28:56,890 --> 00:28:58,810
+the user classes,
+the user relations,
+
+855
+00:28:58,810 --> 00:28:59,790
+the actual stuff.
+
+856
+00:29:00,090 --> 00:29:01,970
+But they created
+what they call
+
+857
+00:29:01,970 --> 00:29:04,350
+an application
+profile in JSON LD.
+
+858
+00:29:04,885 --> 00:29:06,245
+So you can actually write it
+
+859
+00:29:06,245 --> 00:29:08,825
+down quite simple
+in simple terms.
+
+860
+00:29:10,005 --> 00:29:11,445
+And this is
+a community effort.
+
+861
+00:29:11,445 --> 00:29:12,825
+So it's full of
+documentations,
+
+862
+00:29:13,445 --> 00:29:15,240
+the patterns that
+you need come
+
+863
+00:29:15,240 --> 00:29:17,000
+from actual use
+cases from actual
+
+864
+00:29:17,000 --> 00:29:18,300
+institutions. And,
+
+865
+00:29:19,320 --> 00:29:21,160
+we had we had some
+discussion with them.
+
+866
+00:29:21,160 --> 00:29:22,440
+There were a couple of things
+
+867
+00:29:22,440 --> 00:29:23,945
+that that we needed and things
+
+868
+00:29:23,945 --> 00:29:25,805
+were changed. So this
+is still ongoing,
+
+869
+00:29:26,345 --> 00:29:28,025
+but this really
+suited our needs.
+
+870
+00:29:28,025 --> 00:29:29,785
+So if that would not have been
+
+871
+00:29:29,785 --> 00:29:31,640
+that this this would be quite
+
+872
+00:29:31,640 --> 00:29:33,640
+a quite a drama to to do.
+
+873
+00:29:33,640 --> 00:29:36,360
+So, so that that's
+that sweet spot.
+
+874
+00:29:36,360 --> 00:29:37,720
+And the other question, yeah,
+
+875
+00:29:37,720 --> 00:29:38,620
+about the dates.
+
+876
+00:29:39,160 --> 00:29:42,195
+And so in this
+domain, people say,
+
+877
+00:29:42,595 --> 00:29:44,215
+late late autumn,
+
+878
+00:29:44,835 --> 00:29:47,495
+eighteen eighty
+eight or October
+
+879
+00:29:48,035 --> 00:29:49,010
+nineteen hundred.
+
+880
+00:29:49,250 --> 00:29:51,090
+And what it allows
+you to do is
+
+881
+00:29:51,090 --> 00:29:53,030
+basically define
+the vagueness,
+
+882
+00:29:54,130 --> 00:29:56,290
+of a period. So
+there are things
+
+883
+00:29:56,290 --> 00:29:58,150
+like the begin of the begin,
+
+884
+00:29:58,615 --> 00:29:59,895
+the end of the begin,
+
+885
+00:29:59,895 --> 00:30:00,695
+the beginning of the end,
+
+886
+00:30:00,695 --> 00:30:01,735
+and the end of the end.
+
+887
+00:30:01,735 --> 00:30:03,815
+And so you describe vagueness
+
+888
+00:30:03,815 --> 00:30:05,735
+of periods where the where but
+
+889
+00:30:05,735 --> 00:30:07,915
+you use actual excess dates.
+
+890
+00:30:08,530 --> 00:30:11,090
+So for a system,
+
+891
+00:30:11,090 --> 00:30:13,090
+you now have proper dates that
+
+892
+00:30:13,090 --> 00:30:14,930
+you can use. They might not be
+
+893
+00:30:14,930 --> 00:30:16,290
+the exact date, but
+at least you can,
+
+894
+00:30:16,290 --> 00:30:17,910
+for example, sort
+on something.
+
+895
+00:30:18,485 --> 00:30:20,345
+And typically this
+is accompanied
+
+896
+00:30:20,405 --> 00:30:21,945
+then by textual description,
+
+897
+00:30:22,005 --> 00:30:25,305
+something like late
+autumn eighty eight,
+
+898
+00:30:25,550 --> 00:30:27,250
+which you can display
+in the interface.
+
+899
+00:30:27,310 --> 00:30:29,550
+So it sort of
+gives you the best
+
+900
+00:30:29,550 --> 00:30:31,970
+of both worlds. Okay. Yeah.
+
+901
+00:30:32,030 --> 00:30:32,990
+I don't know. I mean,
+
+902
+00:30:32,990 --> 00:30:35,215
+both of those things
+that you described,
+
+903
+00:30:35,215 --> 00:30:37,135
+well, the, the way that,
+
+904
+00:30:37,455 --> 00:30:38,975
+people have worked
+with elite,
+
+905
+00:30:39,375 --> 00:30:41,935
+art vocabulary to me
+sounds, you know,
+
+906
+00:30:41,935 --> 00:30:42,890
+exemplary, basically.
+
+907
+00:30:43,050 --> 00:30:44,750
+So making it easy for,
+
+908
+00:30:45,450 --> 00:30:46,570
+developers to use,
+
+909
+00:30:47,130 --> 00:30:49,210
+by by leveraging JSONRT and
+
+910
+00:30:49,210 --> 00:30:50,570
+doing these different profiles
+
+911
+00:30:50,570 --> 00:30:51,390
+that you mentioned.
+
+912
+00:30:51,935 --> 00:30:53,695
+And then on
+the dates, this is,
+
+913
+00:30:53,695 --> 00:30:54,735
+like, a, you know,
+
+914
+00:30:54,735 --> 00:30:56,735
+notoriously difficult issue,
+
+915
+00:30:56,735 --> 00:30:58,630
+how to manage
+overlapping dates
+
+916
+00:30:58,710 --> 00:30:59,670
+and even more back dates.
+
+917
+00:30:59,670 --> 00:31:01,770
+So if they manage to
+to address that,
+
+918
+00:31:01,830 --> 00:31:04,070
+that's that's
+super cool. Yeah.
+
+919
+00:31:04,070 --> 00:31:05,670
+Yeah. Of course,
+
+920
+00:31:05,670 --> 00:31:07,510
+they need to
+create this data.
+
+921
+00:31:07,510 --> 00:31:08,795
+Right? And,
+
+922
+00:31:09,575 --> 00:31:11,255
+what you saw in
+this project is
+
+923
+00:31:11,255 --> 00:31:12,795
+that
+the the larger institutions
+
+924
+00:31:13,095 --> 00:31:15,195
+like the Hoch Museum,
+the Rijksmuseum,
+
+925
+00:31:15,690 --> 00:31:17,130
+they were doing these
+things themselves.
+
+926
+00:31:17,130 --> 00:31:18,510
+So they have their
+own pipelines
+
+927
+00:31:18,810 --> 00:31:20,270
+for creative data mappings.
+
+928
+00:31:21,050 --> 00:31:22,510
+For smaller institutions,
+
+929
+00:31:23,055 --> 00:31:24,335
+we actually help
+them with it.
+
+930
+00:31:24,335 --> 00:31:26,335
+I mean, smaller in
+sense of for whole,
+
+931
+00:31:26,335 --> 00:31:28,115
+right? So people
+providing like
+
+932
+00:31:29,055 --> 00:31:31,510
+ten artworks. So what I didn't
+
+933
+00:31:31,510 --> 00:31:33,030
+show you that in Spring Desk,
+
+934
+00:31:33,030 --> 00:31:34,390
+there is a part where you can
+
+935
+00:31:34,390 --> 00:31:36,410
+actually create those
+mappings as well.
+
+936
+00:31:36,550 --> 00:31:38,970
+So we help them
+with that part.
+
+937
+00:31:40,535 --> 00:31:41,415
+Okay. Let's see.
+
+938
+00:31:41,415 --> 00:31:43,915
+I think we may have
+one last question.
+
+939
+00:31:44,695 --> 00:31:46,235
+I'm getting to actually show.
+
+940
+00:31:46,695 --> 00:31:47,810
+Says, technically,
+
+941
+00:31:47,810 --> 00:31:49,650
+using the SPYNC tool requires
+
+942
+00:31:49,650 --> 00:31:52,310
+to upload data
+into a proprietary
+
+943
+00:31:52,690 --> 00:31:53,190
+database.
+
+944
+00:31:56,555 --> 00:31:58,635
+Yes. I mean,
+we're coming a bit
+
+945
+00:31:58,635 --> 00:32:00,235
+from the search area.
+
+946
+00:32:00,235 --> 00:32:02,415
+So often we actually
+call it an index.
+
+947
+00:32:02,635 --> 00:32:05,070
+Yeah. Right. So it's
+sort of a layer
+
+948
+00:32:05,130 --> 00:32:06,170
+on top of your data.
+
+949
+00:32:06,170 --> 00:32:08,270
+So we're not the data
+management system.
+
+950
+00:32:09,690 --> 00:32:11,770
+We interface or
+we connect with
+
+951
+00:32:11,770 --> 00:32:12,830
+existing systems.
+
+952
+00:32:14,685 --> 00:32:16,365
+So, yeah, but that
+is required.
+
+953
+00:32:16,365 --> 00:32:17,965
+So we're not doing
+federated search.
+
+954
+00:32:17,965 --> 00:32:19,565
+That that that
+that is clearly,
+
+955
+00:32:20,125 --> 00:32:22,520
+something different.
+Okay. Yeah.
+
+956
+00:32:22,520 --> 00:32:24,860
+That's that's that's
+clear. Alright.
+
+957
+00:32:25,080 --> 00:32:27,080
+Well, thanks,
+thanks once again,
+
+958
+00:32:27,320 --> 00:32:28,200
+to you, Michiel,
+
+959
+00:32:28,200 --> 00:32:29,995
+and to everyone who attended.
+
+960
+00:32:30,135 --> 00:32:31,815
+We'll have to wrap up here so
+
+961
+00:32:31,815 --> 00:32:33,355
+we can move to
+the next session.
+
+962
+00:32:33,526 --> 00:32:34,806
+So, see you there,
+
+963
+00:32:34,806 --> 00:32:36,826
+and see you also in
+the next session.
+
+964
+00:32:37,286 --> 00:32:38,106
+Bye for now.
+

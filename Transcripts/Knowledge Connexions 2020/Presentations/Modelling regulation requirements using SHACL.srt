@@ -1,0 +1,3320 @@
+1
+00:00:03,680 --> 00:00:06,000
+So it's my great pleasure to,
+
+2
+00:00:06,400 --> 00:00:08,420
+introduce Veronica Heimsback,
+
+3
+00:00:08,560 --> 00:00:10,485
+if if I pronounce
+that correctly.
+
+4
+00:00:11,505 --> 00:00:13,605
+Heimsback. Yep. Okay.
+
+5
+00:00:15,105 --> 00:00:16,465
+Senior consultant in,
+
+6
+00:00:16,785 --> 00:00:18,325
+data science and AI,
+
+7
+00:00:18,840 --> 00:00:20,940
+insights and data
+at, Capgemini,
+
+8
+00:00:22,520 --> 00:00:24,920
+who will be talking
+about quite
+
+9
+00:00:24,920 --> 00:00:27,875
+a hot topic in our
+space, shackle.
+
+10
+00:00:28,815 --> 00:00:30,835
+So over over to
+you, Veronica.
+
+11
+00:00:31,935 --> 00:00:34,650
+Thank you, James. Okay.
+
+12
+00:00:35,750 --> 00:00:36,570
+Hello, everyone,
+
+13
+00:00:36,790 --> 00:00:38,870
+and welcome to
+this talk on how
+
+14
+00:00:38,870 --> 00:00:40,090
+we can model requirements
+
+15
+00:00:40,470 --> 00:00:42,310
+described in regulations with
+
+16
+00:00:42,310 --> 00:00:43,770
+the shape constraint
+language.
+
+17
+00:00:45,335 --> 00:00:47,675
+My name is Veronika Heinspak,
+
+18
+00:00:48,135 --> 00:00:50,135
+and I'm a senior consultant at
+
+19
+00:00:50,135 --> 00:00:51,515
+Capgemini in Norway.
+
+20
+00:00:52,170 --> 00:00:54,670
+I live, right outside of Oslo
+
+21
+00:00:54,730 --> 00:00:57,470
+with my fiancee and
+our two children,
+
+22
+00:00:57,610 --> 00:00:59,370
+three year old Edward and one
+
+23
+00:00:59,370 --> 00:01:00,350
+year old Oda.
+
+24
+00:01:02,245 --> 00:01:04,105
+I got my degree
+from the University
+
+25
+00:01:04,165 --> 00:01:05,785
+of Oslo with a specialization
+
+26
+00:01:06,325 --> 00:01:07,945
+in logic and semantics.
+
+27
+00:01:08,960 --> 00:01:10,980
+And, of work experience,
+
+28
+00:01:11,200 --> 00:01:13,040
+I've been touching
+into stuff like,
+
+29
+00:01:13,280 --> 00:01:16,045
+writing kernel models in c to
+
+30
+00:01:16,045 --> 00:01:17,745
+semantic
+technologies applications
+
+31
+00:01:17,805 --> 00:01:18,545
+in Java.
+
+32
+00:01:19,805 --> 00:01:21,665
+I started off as a developer,
+
+33
+00:01:21,805 --> 00:01:24,120
+but in two thousand
+and nineteen,
+
+34
+00:01:24,260 --> 00:01:25,320
+I joined Capgemini.
+
+35
+00:01:25,780 --> 00:01:28,120
+And here I am working
+as a semantics
+
+36
+00:01:28,340 --> 00:01:30,040
+nerd, information architect,
+
+37
+00:01:30,180 --> 00:01:31,160
+and advisor.
+
+38
+00:01:32,805 --> 00:01:35,705
+I have worked in
+several different
+
+39
+00:01:35,765 --> 00:01:37,945
+industries, including oil,
+
+40
+00:01:38,245 --> 00:01:41,460
+life sciences, public
+data, library,
+
+41
+00:01:41,600 --> 00:01:42,420
+and media.
+
+42
+00:01:43,440 --> 00:01:45,360
+I started working with Chacol
+
+43
+00:01:45,360 --> 00:01:47,635
+in two thousand
+and sixteen, and,
+
+44
+00:01:47,955 --> 00:01:50,215
+yes, that is before it became
+
+45
+00:01:50,675 --> 00:01:51,335
+a standard.
+
+46
+00:01:52,435 --> 00:01:54,515
+And, as all nerds,
+
+47
+00:01:54,515 --> 00:01:57,200
+I have way too many
+hobbies, like,
+
+48
+00:01:57,600 --> 00:02:00,080
+making stuff, hunting,
+board games,
+
+49
+00:02:00,080 --> 00:02:02,580
+and teaching kids to
+code to name a few.
+
+50
+00:02:04,895 --> 00:02:08,915
+So my current client
+is the Norwich
+
+51
+00:02:08,975 --> 00:02:10,975
+Maritime Authority, and,
+
+52
+00:02:11,375 --> 00:02:12,895
+all the examples you'll see
+
+53
+00:02:12,895 --> 00:02:15,480
+today are actual data from our
+
+54
+00:02:15,480 --> 00:02:16,300
+current project,
+
+55
+00:02:17,320 --> 00:02:19,240
+simplified for
+the sake of examples,
+
+56
+00:02:19,240 --> 00:02:19,900
+of course.
+
+57
+00:02:22,815 --> 00:02:25,295
+So let us have a look at our
+
+58
+00:02:25,295 --> 00:02:27,555
+simplified workflow
+of the semantics
+
+59
+00:02:27,615 --> 00:02:28,435
+in the project.
+
+60
+00:02:32,880 --> 00:02:34,660
+We have several different
+
+61
+00:02:34,800 --> 00:02:36,660
+regulations in both Norwegian
+
+62
+00:02:36,960 --> 00:02:40,100
+and English as PDFs
+or plain text.
+
+63
+00:02:41,145 --> 00:02:45,165
+And, some monkey
+read me identifying
+
+64
+00:02:45,385 --> 00:02:47,625
+concepts and
+relationships using
+
+65
+00:02:47,625 --> 00:02:51,310
+my highlighter pen in order to
+
+66
+00:02:51,310 --> 00:02:53,630
+transform the data into an owl
+
+67
+00:02:53,630 --> 00:02:56,110
+light ontology that
+works as a term
+
+68
+00:02:56,110 --> 00:02:58,755
+bank. So it could
+just be a discourse
+
+69
+00:02:58,755 --> 00:03:00,055
+taxonomy, for example,
+
+70
+00:03:01,235 --> 00:03:03,315
+and shackle constraints for
+
+71
+00:03:03,315 --> 00:03:05,015
+detailed instance modeling.
+
+72
+00:03:07,150 --> 00:03:09,410
+We have a sparkle
+query library
+
+73
+00:03:09,710 --> 00:03:11,150
+that the back end use for
+
+74
+00:03:11,150 --> 00:03:12,990
+information
+withdrawal that goes
+
+75
+00:03:12,990 --> 00:03:14,510
+through some processing before
+
+76
+00:03:14,510 --> 00:03:16,005
+it's pushed to the front end
+
+77
+00:03:16,005 --> 00:03:19,385
+application. And currently,
+
+78
+00:03:19,605 --> 00:03:21,685
+we have two
+projects running in
+
+79
+00:03:21,685 --> 00:03:23,305
+parallel at the NMA.
+
+80
+00:03:24,920 --> 00:03:27,020
+The first one is called APS.
+
+81
+00:03:28,120 --> 00:03:30,840
+And, a brief
+description of that
+
+82
+00:03:30,840 --> 00:03:33,425
+could be automatic
+detection of
+
+83
+00:03:33,425 --> 00:03:35,185
+requirements connected to
+
+84
+00:03:35,185 --> 00:03:36,485
+certificates for sailors.
+
+85
+00:03:38,225 --> 00:03:41,365
+And the second
+one is called ET
+
+86
+00:03:41,425 --> 00:03:42,085
+for short,
+
+87
+00:03:42,650 --> 00:03:45,210
+which describe metadata for
+
+88
+00:03:45,210 --> 00:03:46,970
+requirements and make use of
+
+89
+00:03:46,970 --> 00:03:49,150
+the graph as
+an information lake
+
+90
+00:03:49,665 --> 00:03:51,525
+to ask for specific questions
+
+91
+00:03:51,745 --> 00:03:53,285
+connected to
+the requirements.
+
+92
+00:03:54,865 --> 00:03:56,920
+An example of
+a question could be,
+
+93
+00:03:57,960 --> 00:04:00,860
+my fishing vessel is
+eight meters long,
+
+94
+00:04:01,320 --> 00:04:03,900
+and it's built
+on January third
+
+95
+00:04:03,960 --> 00:04:05,420
+in nineteen ninety eight.
+
+96
+00:04:05,915 --> 00:04:07,835
+Give me all requirements that
+
+97
+00:04:07,835 --> 00:04:09,995
+apply for me in or order to
+
+98
+00:04:09,995 --> 00:04:11,615
+operate in a regional waters.
+
+99
+00:04:18,050 --> 00:04:19,810
+In this talk, I'll show you
+
+100
+00:04:19,810 --> 00:04:21,830
+examples from
+the APS project.
+
+101
+00:04:22,965 --> 00:04:25,465
+So let us say we have a sailor
+
+102
+00:04:25,525 --> 00:04:27,045
+that wants to become a master
+
+103
+00:04:27,045 --> 00:04:30,325
+mountaineer.
+There are then two
+
+104
+00:04:30,325 --> 00:04:31,545
+things you can do.
+
+105
+00:04:32,450 --> 00:04:34,290
+First, you could
+use the sparkle
+
+106
+00:04:34,290 --> 00:04:36,150
+library to find
+all requirements
+
+107
+00:04:36,450 --> 00:04:38,210
+needed for the master's minor
+
+108
+00:04:38,210 --> 00:04:40,585
+certificate. This information
+
+109
+00:04:40,725 --> 00:04:42,245
+is found in the shapes in
+
+110
+00:04:42,245 --> 00:04:44,425
+combination with the owl
+light ontology.
+
+111
+00:04:46,165 --> 00:04:47,065
+And secondly,
+
+112
+00:04:48,140 --> 00:04:49,980
+we could take the sailor's CV
+
+113
+00:04:49,980 --> 00:04:52,140
+and requirement shape for this
+
+114
+00:04:52,140 --> 00:04:53,820
+certificate,
+the master Maynard
+
+115
+00:04:53,820 --> 00:04:55,360
+certificate, as input.
+
+116
+00:04:56,615 --> 00:04:59,515
+And output will be
+either conforms
+
+117
+00:04:59,575 --> 00:05:02,555
+true if and only
+if he fulfills
+
+118
+00:05:02,615 --> 00:05:04,295
+the requirements needed for
+
+119
+00:05:04,295 --> 00:05:06,580
+the certificate or confirms
+
+120
+00:05:06,880 --> 00:05:08,660
+false if it does not.
+
+121
+00:05:10,960 --> 00:05:12,715
+If the output confirms false,
+
+122
+00:05:12,715 --> 00:05:14,395
+you'll get a report
+from the shackle
+
+123
+00:05:14,395 --> 00:05:15,935
+engine telling you what,
+
+124
+00:05:16,315 --> 00:05:18,735
+the instance data,
+the sailor's CV,
+
+125
+00:05:19,195 --> 00:05:21,195
+is missing in order to achieve
+
+126
+00:05:21,195 --> 00:05:22,900
+this certificate described in
+
+127
+00:05:22,900 --> 00:05:23,640
+the shapes.
+
+128
+00:05:26,500 --> 00:05:30,280
+So the data can
+look like this.
+
+129
+00:05:31,735 --> 00:05:33,515
+And this is
+the regulation text.
+
+130
+00:05:33,655 --> 00:05:35,975
+It's a plain text file where
+
+131
+00:05:35,975 --> 00:05:38,235
+someone must
+identify classes,
+
+132
+00:05:38,455 --> 00:05:40,170
+relationships, and data values
+
+133
+00:05:40,230 --> 00:05:41,530
+by hand at the moment.
+
+134
+00:05:43,110 --> 00:05:44,810
+This is me and my highlight
+
+135
+00:05:45,030 --> 00:05:47,350
+highlighter pen
+reading the region
+
+136
+00:05:47,350 --> 00:05:49,575
+regulation text and
+using the English
+
+137
+00:05:49,575 --> 00:05:51,735
+version of the regulation to
+
+138
+00:05:51,735 --> 00:05:53,115
+translate on the fly.
+
+139
+00:05:54,855 --> 00:05:56,650
+We do actually have a proof of
+
+140
+00:05:56,650 --> 00:05:58,330
+concept running
+right now to see
+
+141
+00:05:58,330 --> 00:06:00,410
+if it's faster to
+identify these
+
+142
+00:06:00,410 --> 00:06:02,030
+entities with natural language
+
+143
+00:06:02,090 --> 00:06:03,070
+processing techniques.
+
+144
+00:06:03,745 --> 00:06:05,985
+And I'm quite sure that NLP is
+
+145
+00:06:05,985 --> 00:06:07,665
+much faster than me reading
+
+146
+00:06:07,665 --> 00:06:09,905
+stuff in an unknown domain as
+
+147
+00:06:09,905 --> 00:06:11,425
+I had no prior knowledge or
+
+148
+00:06:11,425 --> 00:06:12,945
+maritime data before I joined
+
+149
+00:06:12,945 --> 00:06:15,370
+this project. So
+there's a there
+
+150
+00:06:15,370 --> 00:06:16,730
+have been a lot of funny
+
+151
+00:06:16,730 --> 00:06:19,630
+misunderstandings of
+terms and concepts.
+
+152
+00:06:24,635 --> 00:06:26,555
+So we're going to model things
+
+153
+00:06:26,555 --> 00:06:28,735
+like this. So here we see
+
+154
+00:06:28,875 --> 00:06:32,700
+paragraph twenty
+eight part two,
+
+155
+00:06:32,700 --> 00:06:35,040
+and it content describes
+
+156
+00:06:35,500 --> 00:06:37,500
+requirements for
+gaining a master's
+
+157
+00:06:37,500 --> 00:06:38,320
+minor certificate.
+
+158
+00:06:39,155 --> 00:06:41,395
+And it says, in order to be
+
+159
+00:06:41,395 --> 00:06:43,015
+issued a competency
+certificate,
+
+160
+00:06:43,155 --> 00:06:44,675
+decafusser class one,
+
+161
+00:06:44,675 --> 00:06:45,975
+that's the master
+millionaire,
+
+162
+00:06:47,050 --> 00:06:48,670
+In addition to
+the requirements
+
+163
+00:06:49,050 --> 00:06:51,530
+in paragraph twenty
+three, twenty four,
+
+164
+00:06:51,530 --> 00:06:52,490
+twenty five, twenty six,
+
+165
+00:06:52,490 --> 00:06:53,550
+and twenty seven,
+
+166
+00:06:54,305 --> 00:06:56,625
+a minimum of thirty six months
+
+167
+00:06:56,625 --> 00:06:58,485
+seagoing service
+as a responsible
+
+168
+00:06:58,705 --> 00:07:00,385
+deck officer on seagoing ships
+
+169
+00:07:00,385 --> 00:07:01,905
+with a gross tonnage of more
+
+170
+00:07:01,905 --> 00:07:03,765
+than five hundred
+is required.
+
+171
+00:07:04,420 --> 00:07:06,420
+Seagoing service is reduced to
+
+172
+00:07:06,420 --> 00:07:08,260
+twenty four months if at least
+
+173
+00:07:08,260 --> 00:07:09,940
+twelve months are
+earned as a chief
+
+174
+00:07:09,940 --> 00:07:11,540
+officer on a vessel of gross
+
+175
+00:07:11,540 --> 00:07:13,515
+tonnage five hundred or more.
+
+176
+00:07:14,715 --> 00:07:15,615
+Long sentences.
+
+177
+00:07:16,635 --> 00:07:18,795
+Anyways, as we see,
+
+178
+00:07:18,795 --> 00:07:20,575
+there is a lot of information
+
+179
+00:07:20,875 --> 00:07:22,555
+we want to keep
+from this short
+
+180
+00:07:22,555 --> 00:07:23,470
+snippet of text,
+
+181
+00:07:24,510 --> 00:07:26,850
+and there is also alternatives
+
+182
+00:07:27,070 --> 00:07:27,970
+described here.
+
+183
+00:07:28,990 --> 00:07:31,010
+The first alternative
+is minimum
+
+184
+00:07:31,310 --> 00:07:33,845
+thirty six months
+as a deck officer,
+
+185
+00:07:33,845 --> 00:07:35,865
+where deck officer
+is a superclass
+
+186
+00:07:36,165 --> 00:07:38,585
+for all kinds of deck
+officer positions.
+
+187
+00:07:41,640 --> 00:07:44,540
+The second alternative
+is minimum
+
+188
+00:07:44,760 --> 00:07:47,260
+of twenty four months
+as a deck officer,
+
+189
+00:07:47,480 --> 00:07:49,260
+where at least twelve of those
+
+190
+00:07:49,480 --> 00:07:51,455
+is served as a chief officer.
+
+191
+00:07:52,075 --> 00:07:54,175
+And chief officer
+is a subclass
+
+192
+00:07:54,235 --> 00:07:55,215
+of deck officer.
+
+193
+00:07:57,195 --> 00:08:01,360
+So how can we
+handle alternatives
+
+194
+00:08:01,660 --> 00:08:03,680
+that includes
+a lot of different
+
+195
+00:08:03,740 --> 00:08:05,200
+combinations and
+relationships?
+
+196
+00:08:12,115 --> 00:08:13,715
+If we were to model this with
+
+197
+00:08:13,715 --> 00:08:15,095
+the web ontology language,
+
+198
+00:08:15,720 --> 00:08:17,480
+we sure would have
+to touch into
+
+199
+00:08:17,480 --> 00:08:20,040
+owl axioms and restrictions at
+
+200
+00:08:20,040 --> 00:08:20,780
+some point.
+
+201
+00:08:23,665 --> 00:08:26,565
+We also need to know
+if data is correct,
+
+202
+00:08:26,705 --> 00:08:28,465
+especially when
+we are to compare
+
+203
+00:08:28,465 --> 00:08:30,245
+instance data with regulation
+
+204
+00:08:30,385 --> 00:08:33,880
+requirements. And AL can only
+
+205
+00:08:33,880 --> 00:08:35,880
+infer new facts in data,
+
+206
+00:08:35,880 --> 00:08:38,060
+but it can't discover
+missing facts.
+
+207
+00:08:39,640 --> 00:08:41,880
+And being able to
+understand OWL
+
+208
+00:08:41,880 --> 00:08:45,005
+axioms and how our
+interpret data,
+
+209
+00:08:45,305 --> 00:08:46,845
+you will need
+some understanding
+
+210
+00:08:47,065 --> 00:08:49,165
+of discrete mathematics
+and logic.
+
+211
+00:08:50,240 --> 00:08:53,220
+Well, my client
+are seafarers.
+
+212
+00:08:56,080 --> 00:08:57,840
+Even though some players at
+
+213
+00:08:57,840 --> 00:08:59,620
+the anime are trained in RDF,
+
+214
+00:08:59,925 --> 00:09:01,445
+that does not mean we should
+
+215
+00:09:01,445 --> 00:09:03,685
+throw high complexity
+at the table
+
+216
+00:09:03,685 --> 00:09:04,985
+just because we can.
+
+217
+00:09:06,005 --> 00:09:08,430
+The data owners
+here are experts
+
+218
+00:09:08,570 --> 00:09:09,630
+in their domain,
+
+219
+00:09:09,850 --> 00:09:11,930
+which is different and not in
+
+220
+00:09:11,930 --> 00:09:12,990
+semantic technologies.
+
+221
+00:09:19,145 --> 00:09:21,145
+The main language
+we then chose
+
+222
+00:09:21,145 --> 00:09:23,065
+for a graph is
+the shape constraint
+
+223
+00:09:23,065 --> 00:09:25,210
+language, a language designed
+
+224
+00:09:25,210 --> 00:09:27,290
+for validating RDF
+under a closed
+
+225
+00:09:27,290 --> 00:09:28,110
+world assumption.
+
+226
+00:09:29,770 --> 00:09:32,110
+Unlike OWL, you
+can confirm data
+
+227
+00:09:32,170 --> 00:09:34,705
+to given data constraints
+with Jekyll,
+
+228
+00:09:34,925 --> 00:09:36,625
+which gives us the opportunity
+
+229
+00:09:36,925 --> 00:09:38,765
+of checking
+a sailor's CV against
+
+230
+00:09:38,765 --> 00:09:40,285
+the set of requirements to see
+
+231
+00:09:40,285 --> 00:09:41,900
+if it fulfills a specific
+
+232
+00:09:42,200 --> 00:09:43,500
+certificate or not.
+
+233
+00:09:46,680 --> 00:09:49,340
+And, the shape
+constraint language
+
+234
+00:09:49,800 --> 00:09:51,225
+are built up by shapes.
+
+235
+00:09:52,185 --> 00:09:54,925
+And a shackle shape
+is a collection
+
+236
+00:09:54,985 --> 00:09:57,725
+of constraints for
+a given RDF resource.
+
+237
+00:09:58,800 --> 00:10:01,060
+We have two kinds of
+shapes in Shackle.
+
+238
+00:10:02,000 --> 00:10:04,160
+The first is a node shape that
+
+239
+00:10:04,160 --> 00:10:07,060
+describe constraints
+about focus nodes,
+
+240
+00:10:07,445 --> 00:10:09,225
+usually the subject
+of a triple,
+
+241
+00:10:09,925 --> 00:10:11,625
+and property shapes describing
+
+242
+00:10:11,845 --> 00:10:14,165
+constraints about
+predicates and
+
+243
+00:10:14,165 --> 00:10:15,785
+object values of a triple.
+
+244
+00:10:21,760 --> 00:10:23,680
+The definition of a node shape
+
+245
+00:10:23,680 --> 00:10:25,680
+is that it is a shape that is
+
+246
+00:10:25,680 --> 00:10:27,755
+not the subject of a triple
+
+247
+00:10:27,755 --> 00:10:29,455
+where path is the predicate.
+
+248
+00:10:31,195 --> 00:10:32,175
+In this example,
+
+249
+00:10:32,315 --> 00:10:33,995
+we see a vessel shape that has
+
+250
+00:10:33,995 --> 00:10:36,560
+a constraint on
+target class vessel.
+
+251
+00:10:37,340 --> 00:10:39,660
+So all constraints
+following in
+
+252
+00:10:39,660 --> 00:10:41,420
+this shape will
+have to do with
+
+253
+00:10:41,420 --> 00:10:43,600
+instances of
+the class vessel.
+
+254
+00:10:48,525 --> 00:10:50,445
+The definition of a property
+
+255
+00:10:50,445 --> 00:10:52,605
+shape is that it is is a shape
+
+256
+00:10:52,605 --> 00:10:54,525
+that is the subject
+of a triple
+
+257
+00:10:54,525 --> 00:10:56,800
+that has path as
+its predicate.
+
+258
+00:10:57,740 --> 00:10:58,640
+In this example,
+
+259
+00:10:58,780 --> 00:11:00,540
+we see a length
+shape with some
+
+260
+00:11:00,540 --> 00:11:02,000
+path to vessel length.
+
+261
+00:11:02,635 --> 00:11:05,535
+So for every occurrence
+of the predicted
+
+262
+00:11:05,755 --> 00:11:07,535
+vessel length in any data,
+
+263
+00:11:07,675 --> 00:11:09,435
+the constraints described here
+
+264
+00:11:09,435 --> 00:11:10,895
+will apply to that triple.
+
+265
+00:11:17,150 --> 00:11:19,150
+We can add property
+shapes onto
+
+266
+00:11:19,150 --> 00:11:21,090
+a node shape using
+the resource
+
+267
+00:11:21,150 --> 00:11:24,195
+property. Here we
+combine our true,
+
+268
+00:11:24,515 --> 00:11:26,915
+previous examples stating that
+
+269
+00:11:26,915 --> 00:11:28,935
+any instance of
+the class vessel
+
+270
+00:11:29,420 --> 00:11:31,260
+may have some
+relationship called
+
+271
+00:11:31,260 --> 00:11:34,060
+vessel length pointing
+to, in this case,
+
+272
+00:11:34,060 --> 00:11:36,675
+some random object value as we
+
+273
+00:11:36,675 --> 00:11:38,515
+haven't any more detailed
+
+274
+00:11:38,515 --> 00:11:40,375
+constraints in
+the property shape.
+
+275
+00:11:43,315 --> 00:11:46,040
+So there is a lot
+of constraints
+
+276
+00:11:46,180 --> 00:11:47,940
+available in the Shackle core
+
+277
+00:11:47,940 --> 00:11:49,000
+constraint vocabulary,
+
+278
+00:11:49,860 --> 00:11:52,180
+and here is a brief
+overview of
+
+279
+00:11:52,180 --> 00:11:53,160
+the main categories.
+
+280
+00:11:54,535 --> 00:11:56,615
+And the nice thing
+about Shackle
+
+281
+00:11:56,615 --> 00:11:58,635
+is that if you don't
+find a suitable
+
+282
+00:11:58,775 --> 00:12:00,235
+constraint for your problem,
+
+283
+00:12:00,295 --> 00:12:02,150
+you can extend
+Chackle with your
+
+284
+00:12:02,150 --> 00:12:03,990
+own constraint definitions and
+
+285
+00:12:03,990 --> 00:12:05,990
+push them to
+the web for others
+
+286
+00:12:05,990 --> 00:12:07,450
+to reuse if you like.
+
+287
+00:12:08,315 --> 00:12:10,075
+This is not
+possible to do with
+
+288
+00:12:10,075 --> 00:12:12,235
+OWL as the OWL vocabulary is
+
+289
+00:12:12,235 --> 00:12:14,955
+limited to those resources set
+
+290
+00:12:14,955 --> 00:12:16,095
+by the OWL committee.
+
+291
+00:12:18,240 --> 00:12:20,740
+And, Schectel
+contains constraints
+
+292
+00:12:20,880 --> 00:12:23,840
+about, value types as class
+
+293
+00:12:23,840 --> 00:12:25,620
+affiliation and
+data type values,
+
+294
+00:12:26,605 --> 00:12:28,765
+cardinality as
+min and max count
+
+295
+00:12:28,765 --> 00:12:29,425
+of predicates,
+
+296
+00:12:30,845 --> 00:12:32,765
+value range as min and max
+
+297
+00:12:32,765 --> 00:12:34,385
+inclusive and exclusive,
+
+298
+00:12:36,850 --> 00:12:39,030
+string based as
+language checking,
+
+299
+00:12:39,170 --> 00:12:41,110
+regular expressions,
+and length,
+
+300
+00:12:43,145 --> 00:12:45,305
+property pair,
+comparing the object
+
+301
+00:12:45,305 --> 00:12:46,685
+value of two predicates,
+
+302
+00:12:48,025 --> 00:12:51,165
+logical constraints
+as not, and,
+
+303
+00:12:51,385 --> 00:12:52,205
+and or,
+
+304
+00:12:55,010 --> 00:12:56,950
+Shape based as the property
+
+305
+00:12:57,250 --> 00:12:59,330
+relationship, we
+have just seen
+
+306
+00:12:59,330 --> 00:13:00,470
+an example on.
+
+307
+00:13:01,265 --> 00:13:03,025
+And there is also a collection
+
+308
+00:13:03,025 --> 00:13:04,545
+of other constraints
+that doesn't
+
+309
+00:13:04,545 --> 00:13:06,565
+fit into any of these
+other categories.
+
+310
+00:13:09,470 --> 00:13:11,890
+And, there do exist
+more categories
+
+311
+00:13:12,110 --> 00:13:13,330
+apart from the core,
+
+312
+00:13:13,390 --> 00:13:15,230
+like sparkle constraints and
+
+313
+00:13:15,230 --> 00:13:16,530
+check the advanced features,
+
+314
+00:13:16,575 --> 00:13:18,435
+but I will not cover those in
+
+315
+00:13:18,815 --> 00:13:20,195
+my talk today.
+
+316
+00:13:20,655 --> 00:13:24,095
+I can post the link
+for the shackle
+
+317
+00:13:24,095 --> 00:13:26,340
+master class that was
+hosted yesterday.
+
+318
+00:13:26,560 --> 00:13:28,980
+There are some
+links to resources
+
+319
+00:13:29,280 --> 00:13:32,820
+and references
+on things beyond
+
+320
+00:13:32,880 --> 00:13:39,125
+sparkle core available there.
+
+321
+00:13:39,125 --> 00:13:42,910
+So the main reason or one of
+
+322
+00:13:42,910 --> 00:13:44,750
+the main reasons
+we chose Shackle
+
+323
+00:13:44,750 --> 00:13:46,290
+was because of the extensive
+
+324
+00:13:46,590 --> 00:13:48,210
+Shackle core
+constraint vocabulary
+
+325
+00:13:48,590 --> 00:13:50,430
+and being able to extend that
+
+326
+00:13:50,430 --> 00:13:51,490
+that if needed.
+
+327
+00:13:52,185 --> 00:13:53,885
+Being able to
+model requirements
+
+328
+00:13:54,105 --> 00:13:56,525
+containing
+alternatives as easily
+
+329
+00:13:56,585 --> 00:13:58,925
+recognizable and
+and or constraints
+
+330
+00:13:59,145 --> 00:14:01,485
+is a great benefit
+for us at the anime.
+
+331
+00:14:03,340 --> 00:14:05,280
+Another reason is the verbose
+
+332
+00:14:05,340 --> 00:14:07,020
+description of
+constraints that
+
+333
+00:14:07,020 --> 00:14:08,780
+makes it easier
+for non semantic
+
+334
+00:14:08,780 --> 00:14:10,720
+players to read
+the turtle files.
+
+335
+00:14:11,925 --> 00:14:13,845
+Unfortunately, there is no
+
+336
+00:14:14,165 --> 00:14:16,265
+currently no open
+source tool,
+
+337
+00:14:16,485 --> 00:14:17,625
+at least to my knowledge,
+
+338
+00:14:17,925 --> 00:14:19,765
+that let us visually create
+
+339
+00:14:19,765 --> 00:14:21,470
+shackle constraints as protege
+
+340
+00:14:21,470 --> 00:14:22,650
+a does for OWL.
+
+341
+00:14:23,670 --> 00:14:25,750
+I know it exists
+a shackle plugin
+
+342
+00:14:25,750 --> 00:14:28,650
+for protege, but
+as far as I know,
+
+343
+00:14:28,710 --> 00:14:31,925
+or at least last time
+I tried to use it,
+
+344
+00:14:31,925 --> 00:14:32,665
+it was,
+
+345
+00:14:33,765 --> 00:14:36,645
+only a circle code view inside
+
+346
+00:14:36,645 --> 00:14:38,745
+Prodigy and not the visual
+
+347
+00:14:39,680 --> 00:14:42,580
+modeling tool that
+you know Progyny as.
+
+348
+00:14:45,040 --> 00:14:46,640
+So we would have to stick with
+
+349
+00:14:46,640 --> 00:14:48,755
+our editor of
+choice if we want
+
+350
+00:14:48,755 --> 00:14:50,055
+to keep it open source.
+
+351
+00:14:52,435 --> 00:14:53,795
+And Chackle is a validation
+
+352
+00:14:53,795 --> 00:14:55,975
+language under closed
+world assumption,
+
+353
+00:14:56,195 --> 00:14:58,490
+meaning that facts
+that are not
+
+354
+00:14:58,490 --> 00:15:00,110
+known to be true are false.
+
+355
+00:15:00,730 --> 00:15:02,650
+And this is
+necessary for us in
+
+356
+00:15:02,650 --> 00:15:04,650
+order to say
+something about our
+
+357
+00:15:04,650 --> 00:15:06,475
+case for comparing CVs to
+
+358
+00:15:06,475 --> 00:15:07,215
+regulation requirements.
+
+359
+00:15:10,955 --> 00:15:13,135
+So let us take this example
+
+360
+00:15:13,195 --> 00:15:14,415
+snippet from the regulation.
+
+361
+00:15:15,840 --> 00:15:19,140
+How can we easily
+express the requirement
+
+362
+00:15:19,280 --> 00:15:21,040
+that a vessel
+shall have a gross
+
+363
+00:15:21,040 --> 00:15:24,500
+tonnage of at least
+five hundred wells?
+
+364
+00:15:24,665 --> 00:15:27,485
+Like, this.
+
+365
+00:15:29,305 --> 00:15:31,385
+And here we have a property
+
+366
+00:15:31,385 --> 00:15:33,520
+shape describing
+constraints for
+
+367
+00:15:33,520 --> 00:15:34,580
+a given predicate.
+
+368
+00:15:35,120 --> 00:15:36,800
+The predicate in question is
+
+369
+00:15:36,800 --> 00:15:38,020
+the value of half,
+
+370
+00:15:38,080 --> 00:15:39,300
+which is Gross Tonnage.
+
+371
+00:15:41,255 --> 00:15:44,295
+We have a constraint
+that in a triple
+
+372
+00:15:44,295 --> 00:15:46,075
+where gross tonnage
+is the predicate,
+
+373
+00:15:46,375 --> 00:15:48,390
+the object value
+shall be minimum
+
+374
+00:15:48,390 --> 00:15:50,250
+or equal to five hundred.
+
+375
+00:15:52,870 --> 00:15:54,790
+We also have
+a constraint telling
+
+376
+00:15:54,790 --> 00:15:57,045
+us the data type of
+this object value,
+
+377
+00:15:57,045 --> 00:15:59,065
+which is unit g t,
+
+378
+00:16:01,365 --> 00:16:03,865
+and a min and max
+count of one.
+
+379
+00:16:04,350 --> 00:16:05,950
+That means that the predicate
+
+380
+00:16:05,950 --> 00:16:08,430
+is unique and mandatory for
+
+381
+00:16:08,430 --> 00:16:09,970
+resources where it appears.
+
+382
+00:16:11,365 --> 00:16:13,145
+If vessel has a relationship
+
+383
+00:16:13,285 --> 00:16:14,745
+cross to some value,
+
+384
+00:16:15,045 --> 00:16:17,305
+this specific
+relationship shall
+
+385
+00:16:17,445 --> 00:16:20,025
+only appear, once,
+
+386
+00:16:21,180 --> 00:16:23,360
+at least once and
+not more than once.
+
+387
+00:16:30,895 --> 00:16:34,015
+And here we see
+our solution on
+
+388
+00:16:34,015 --> 00:16:35,635
+how to model the alternatives
+
+389
+00:16:35,935 --> 00:16:37,075
+described in the regulation.
+
+390
+00:16:37,530 --> 00:16:40,030
+As we remember from paragraph
+
+391
+00:16:40,410 --> 00:16:41,870
+twenty eight part two,
+
+392
+00:16:42,170 --> 00:16:44,110
+there were two different
+alternatives.
+
+393
+00:16:45,905 --> 00:16:46,805
+There are also,
+
+394
+00:16:48,225 --> 00:16:50,305
+some other options included in
+
+395
+00:16:50,305 --> 00:16:51,365
+this or constraint,
+
+396
+00:16:51,985 --> 00:16:54,005
+and I'm going to talk
+you through it.
+
+397
+00:16:55,620 --> 00:16:58,740
+So the or constraint is a list
+
+398
+00:16:58,740 --> 00:17:00,760
+taking constraint that appears
+
+399
+00:17:00,820 --> 00:17:02,920
+at the predicate
+position of a shape.
+
+400
+00:17:04,315 --> 00:17:06,235
+This or constraint
+takes in two
+
+401
+00:17:06,235 --> 00:17:09,295
+and constraints as
+its list elements.
+
+402
+00:17:11,900 --> 00:17:13,740
+The first and constraint are
+
+403
+00:17:13,740 --> 00:17:14,720
+the first alternative.
+
+404
+00:17:15,500 --> 00:17:18,080
+It takes in two
+items in its list.
+
+405
+00:17:18,780 --> 00:17:22,005
+First, a or list of courses.
+
+406
+00:17:22,465 --> 00:17:24,805
+So at least one of
+these courses,
+
+407
+00:17:25,425 --> 00:17:27,425
+courses must be present for
+
+408
+00:17:27,425 --> 00:17:29,045
+the whole expression
+to be valid.
+
+409
+00:17:29,520 --> 00:17:30,560
+No. Not courses. Sorry.
+
+410
+00:17:30,560 --> 00:17:31,300
+It's certifications.
+
+411
+00:17:32,400 --> 00:17:34,260
+So the list of
+certifications.
+
+412
+00:17:34,640 --> 00:17:36,480
+So at least one of these
+
+413
+00:17:36,480 --> 00:17:39,295
+certifications must be present
+
+414
+00:17:39,355 --> 00:17:41,375
+for the whole expression
+to be valid.
+
+415
+00:17:43,835 --> 00:17:45,995
+And secondly, a specific value
+
+416
+00:17:45,995 --> 00:17:47,295
+for a seagoing service,
+
+417
+00:17:47,480 --> 00:17:49,480
+And we'll have a look a closer
+
+418
+00:17:49,480 --> 00:17:51,180
+look at this
+seagoing service,
+
+419
+00:17:51,800 --> 00:17:52,620
+later on.
+
+420
+00:17:54,935 --> 00:17:58,055
+The second and constraints are
+
+421
+00:17:58,055 --> 00:17:59,355
+the second alternative.
+
+422
+00:18:00,135 --> 00:18:02,795
+It takes three
+items in its list.
+
+423
+00:18:04,720 --> 00:18:06,580
+First, a or list
+of certificates,
+
+424
+00:18:07,920 --> 00:18:10,960
+and then a specific value for
+
+425
+00:18:10,960 --> 00:18:12,180
+a seagoing service,
+
+426
+00:18:13,235 --> 00:18:15,155
+and another specific value for
+
+427
+00:18:15,155 --> 00:18:16,295
+a seagoing service.
+
+428
+00:18:17,315 --> 00:18:19,395
+We remember from
+paragraph twenty
+
+429
+00:18:19,395 --> 00:18:20,435
+eight that the,
+
+430
+00:18:20,980 --> 00:18:23,700
+second alternative was twenty
+
+431
+00:18:23,700 --> 00:18:28,280
+four months as, some
+in some position,
+
+432
+00:18:29,005 --> 00:18:30,685
+where at least twelve of those
+
+433
+00:18:30,685 --> 00:18:33,825
+months were in
+another specific
+
+434
+00:18:34,045 --> 00:18:36,385
+position. And
+that is described
+
+435
+00:18:36,525 --> 00:18:38,860
+in this second
+and constraint.
+
+436
+00:18:44,120 --> 00:18:45,880
+So let us look at the rest of
+
+437
+00:18:45,880 --> 00:18:47,615
+the requirements
+in the snippet.
+
+438
+00:18:49,275 --> 00:18:51,855
+We have information
+about duration,
+
+439
+00:18:52,635 --> 00:18:56,370
+position, and a seagoing
+relationship,
+
+440
+00:18:56,830 --> 00:18:59,010
+which can be some
+kind of trade area,
+
+441
+00:18:59,870 --> 00:19:00,805
+the gross tonnage,
+
+442
+00:19:01,525 --> 00:19:02,965
+and the gross tonnage that we
+
+443
+00:19:02,965 --> 00:19:04,585
+saw in the previous example.
+
+444
+00:19:13,780 --> 00:19:15,800
+And here are the requirements
+
+445
+00:19:16,260 --> 00:19:17,620
+on the previous slide that
+
+446
+00:19:17,620 --> 00:19:19,765
+described as shapes.
+
+447
+00:19:19,765 --> 00:19:21,685
+The first shape is similar to
+
+448
+00:19:21,685 --> 00:19:23,145
+the one for gross to Nash,
+
+449
+00:19:23,205 --> 00:19:25,285
+describing a minimum or equals
+
+450
+00:19:25,285 --> 00:19:28,280
+constraint. The second,
+
+451
+00:19:28,500 --> 00:19:30,100
+state that the predicate in
+
+452
+00:19:30,100 --> 00:19:32,280
+position shall be any instance
+
+453
+00:19:32,340 --> 00:19:33,800
+of a decoder position.
+
+454
+00:19:37,125 --> 00:19:38,645
+At last, we have a property
+
+455
+00:19:38,645 --> 00:19:40,185
+shape describing the predicate
+
+456
+00:19:40,325 --> 00:19:42,585
+trade area to have a specific
+
+457
+00:19:42,645 --> 00:19:44,265
+value of bank phishing.
+
+458
+00:19:45,750 --> 00:19:47,830
+The plus hierarchy with labels
+
+459
+00:19:47,830 --> 00:19:49,590
+and relationships is found in
+
+460
+00:19:49,590 --> 00:19:51,690
+the owl light ontology
+at the moment.
+
+461
+00:19:51,990 --> 00:19:54,345
+However, this
+information could
+
+462
+00:19:54,345 --> 00:19:56,045
+as well be in
+the shapes instead.
+
+463
+00:19:57,465 --> 00:19:58,365
+At the NMA,
+
+464
+00:19:58,425 --> 00:20:00,425
+they already had a few owl
+
+465
+00:20:00,425 --> 00:20:02,470
+ontologies for
+their domain when
+
+466
+00:20:02,470 --> 00:20:03,610
+I joined the project,
+
+467
+00:20:04,230 --> 00:20:05,830
+but they struggled a lot,
+
+468
+00:20:06,070 --> 00:20:07,850
+with how to model
+the alternatives
+
+469
+00:20:08,150 --> 00:20:10,095
+described in
+the regulation and
+
+470
+00:20:10,095 --> 00:20:11,855
+applying information like mean
+
+471
+00:20:11,855 --> 00:20:13,315
+inclusive and data values.
+
+472
+00:20:14,255 --> 00:20:16,175
+And that is another
+of the main
+
+473
+00:20:16,175 --> 00:20:19,270
+reasons why I proposed model
+
+474
+00:20:19,270 --> 00:20:21,990
+requirements in
+Chacel as it is
+
+475
+00:20:21,990 --> 00:20:23,530
+so verbose and concrete.
+
+476
+00:20:24,975 --> 00:20:26,095
+And for this case,
+
+477
+00:20:26,095 --> 00:20:28,515
+on comparing CVs
+and regulation
+
+478
+00:20:28,735 --> 00:20:30,735
+requirements, it's
+also the perfect
+
+479
+00:20:30,735 --> 00:20:32,115
+case for Shackle validation.
+
+480
+00:20:36,810 --> 00:20:39,930
+So let us put it all together
+
+481
+00:20:39,930 --> 00:20:41,905
+for our first alternative in
+
+482
+00:20:41,905 --> 00:20:44,085
+paragraph twenty
+eight part two.
+
+483
+00:20:45,665 --> 00:20:47,605
+We have a node
+shape describing
+
+484
+00:20:47,665 --> 00:20:49,580
+the class value of this first
+
+485
+00:20:49,580 --> 00:20:51,500
+alternative using the property
+
+486
+00:20:51,500 --> 00:20:53,360
+shape constraints
+that we just saw.
+
+487
+00:20:54,700 --> 00:20:57,235
+And some good
+good annotation,
+
+488
+00:20:58,015 --> 00:20:59,715
+shape description is a must.
+
+489
+00:21:00,095 --> 00:21:01,615
+And then we target the class
+
+490
+00:21:01,615 --> 00:21:03,215
+that represent the first kind
+
+491
+00:21:03,215 --> 00:21:04,895
+of seagoing service described
+
+492
+00:21:04,895 --> 00:21:05,680
+in the paragraph,
+
+493
+00:21:06,560 --> 00:21:09,300
+which is the the value
+for target class.
+
+494
+00:21:11,200 --> 00:21:13,140
+And at last, we
+connect the necessary
+
+495
+00:21:13,200 --> 00:21:14,935
+property shapes
+with constraints
+
+496
+00:21:15,075 --> 00:21:16,515
+that apply to this kind of
+
+497
+00:21:16,515 --> 00:21:17,495
+seagoing service.
+
+498
+00:21:18,195 --> 00:21:20,615
+The constraints for
+duration, position,
+
+499
+00:21:20,915 --> 00:21:22,855
+trade area, and
+gross to match.
+
+500
+00:21:30,380 --> 00:21:34,375
+So what Checkl really does for
+
+501
+00:21:34,375 --> 00:21:37,735
+our models is it allows us to
+
+502
+00:21:37,735 --> 00:21:40,220
+model data with a closed world
+
+503
+00:21:40,220 --> 00:21:42,620
+assumption. This means that we
+
+504
+00:21:42,620 --> 00:21:45,200
+strive for completeness
+of our data,
+
+505
+00:21:45,475 --> 00:21:47,875
+and we do not
+admit that we have
+
+506
+00:21:47,875 --> 00:21:49,795
+any incomplete
+knowledge in our
+
+507
+00:21:49,795 --> 00:21:52,835
+regulations. And
+that is the whole
+
+508
+00:21:52,835 --> 00:21:54,935
+point of a regulation,
+isn't it?
+
+509
+00:21:55,960 --> 00:21:57,720
+A regulation is a set of
+
+510
+00:21:57,720 --> 00:21:59,500
+requirements for one specific
+
+511
+00:21:59,560 --> 00:22:01,420
+subdomain of
+maritime authorities
+
+512
+00:22:01,640 --> 00:22:03,660
+in the region waters in this
+
+513
+00:22:03,800 --> 00:22:04,940
+particular project.
+
+514
+00:22:04,985 --> 00:22:09,945
+And it is important
+to remember
+
+515
+00:22:09,945 --> 00:22:11,565
+that with the web ontology
+
+516
+00:22:11,705 --> 00:22:13,885
+language and the open
+world assumption,
+
+517
+00:22:14,580 --> 00:22:16,980
+we can describe
+broader and more
+
+518
+00:22:16,980 --> 00:22:18,900
+unknown domains that makes it
+
+519
+00:22:18,900 --> 00:22:21,300
+easier to apply
+ontologies across
+
+520
+00:22:21,300 --> 00:22:23,240
+various applications
+and domains.
+
+521
+00:22:25,165 --> 00:22:27,505
+However, even though shackle
+
+522
+00:22:27,565 --> 00:22:29,105
+under a closed
+world assumption
+
+523
+00:22:29,485 --> 00:22:32,120
+is probably most
+powerful locally,
+
+524
+00:22:32,740 --> 00:22:34,820
+it is possible to reuse and
+
+525
+00:22:34,820 --> 00:22:37,160
+share constraints
+across several
+
+526
+00:22:37,220 --> 00:22:39,485
+application, especially in
+
+527
+00:22:39,485 --> 00:22:40,865
+combination with existing
+
+528
+00:22:40,925 --> 00:22:43,505
+ontologies using
+them as a reference
+
+529
+00:22:43,565 --> 00:22:44,545
+for your constraints.
+
+530
+00:22:48,320 --> 00:22:50,480
+If you're reusing
+shackle shapes
+
+531
+00:22:50,480 --> 00:22:51,700
+from another application,
+
+532
+00:22:52,160 --> 00:22:53,600
+you have the possibility of
+
+533
+00:22:53,600 --> 00:22:55,265
+deactivating shapes that it's
+
+534
+00:22:55,745 --> 00:22:57,205
+irrelevant for
+your application
+
+535
+00:22:57,585 --> 00:22:59,825
+and add new ones that apply in
+
+536
+00:22:59,825 --> 00:23:02,145
+order to extend
+the shapes graph
+
+537
+00:23:02,145 --> 00:23:02,965
+you're reusing.
+
+538
+00:23:05,900 --> 00:23:07,900
+With shackle, we
+can handle any
+
+539
+00:23:07,900 --> 00:23:10,140
+constraint. And
+if we don't find
+
+540
+00:23:10,140 --> 00:23:11,900
+what we need in
+the shackle core,
+
+541
+00:23:11,900 --> 00:23:13,600
+you can simply
+add it yourself.
+
+542
+00:23:14,605 --> 00:23:16,125
+You can even push your new
+
+543
+00:23:16,125 --> 00:23:17,885
+constraints to
+the web for others
+
+544
+00:23:17,885 --> 00:23:18,545
+to reuse.
+
+545
+00:23:20,525 --> 00:23:22,610
+And shackle is
+verbose and gives
+
+546
+00:23:22,610 --> 00:23:24,870
+us detailed explanation
+of requirements,
+
+547
+00:23:25,170 --> 00:23:27,010
+which is really
+handy for players
+
+548
+00:23:27,010 --> 00:23:29,270
+with limited
+experience with RDF.
+
+549
+00:23:30,395 --> 00:23:31,215
+And again,
+
+550
+00:23:31,675 --> 00:23:35,195
+OWL and RDFS are splendid on
+
+551
+00:23:35,195 --> 00:23:37,455
+inferencing missing facts.
+
+552
+00:23:37,890 --> 00:23:39,590
+However, it is not detecting
+
+553
+00:23:39,650 --> 00:23:42,230
+missing data, and that
+is what we need.
+
+554
+00:23:43,275 --> 00:23:44,555
+Would would you
+like to go over
+
+555
+00:23:44,555 --> 00:23:46,895
+to questions now? Sure.
+
+556
+00:23:47,215 --> 00:23:48,495
+You'll be pleased to know it's
+
+557
+00:23:48,495 --> 00:23:50,660
+been relentless, the,
+
+558
+00:23:52,240 --> 00:23:53,380
+the number of questions.
+
+559
+00:23:53,520 --> 00:23:56,260
+So I'll try and rewind back to
+
+560
+00:23:56,480 --> 00:23:58,020
+some of some of
+the earlier ones.
+
+561
+00:24:04,315 --> 00:24:06,015
+What are
+the hardware requirements
+
+562
+00:24:06,155 --> 00:24:09,080
+to use Shackle as
+a validation language?
+
+563
+00:24:09,220 --> 00:24:12,200
+Do you need a reasoner,
+data storage,
+
+564
+00:24:12,500 --> 00:24:13,000
+etcetera?
+
+565
+00:24:15,835 --> 00:24:19,215
+It depends on your application
+
+566
+00:24:19,595 --> 00:24:22,315
+and what you
+already have, but,
+
+567
+00:24:23,115 --> 00:24:26,380
+you can do Shackle validation
+
+568
+00:24:26,440 --> 00:24:27,980
+in memory if you
+like without,
+
+569
+00:24:28,680 --> 00:24:30,460
+having to use
+a graph database.
+
+570
+00:24:30,680 --> 00:24:34,065
+So, you have several different
+
+571
+00:24:34,065 --> 00:24:36,305
+shackle implementations ready
+
+572
+00:24:36,305 --> 00:24:38,325
+in frameworks for programming
+
+573
+00:24:38,465 --> 00:24:41,845
+languages as Java, c
+sharp, and Python.
+
+574
+00:24:43,080 --> 00:24:44,680
+I'm most familiar
+with the Java
+
+575
+00:24:44,680 --> 00:24:46,940
+frameworks, and I know that
+
+576
+00:24:47,400 --> 00:24:49,500
+the the two most
+popular frameworks,
+
+577
+00:24:49,560 --> 00:24:51,500
+which is RDFJ and Jena,
+
+578
+00:24:51,875 --> 00:24:53,395
+doesn't support
+the full shackle
+
+579
+00:24:53,395 --> 00:24:54,535
+implementation yet.
+
+580
+00:24:55,955 --> 00:24:57,955
+But it's possible
+to use it for
+
+581
+00:24:57,955 --> 00:25:00,270
+for the most
+popular constraints
+
+582
+00:25:00,270 --> 00:25:01,810
+in the shackle core.
+
+583
+00:25:02,670 --> 00:25:05,310
+And by using
+a programming framework,
+
+584
+00:25:05,310 --> 00:25:07,650
+you won't need a database.
+
+585
+00:25:08,525 --> 00:25:11,025
+There is also
+shackle implementations
+
+586
+00:25:11,405 --> 00:25:12,865
+in graph databases.
+
+587
+00:25:13,165 --> 00:25:14,305
+As StarDog,
+
+588
+00:25:14,525 --> 00:25:16,845
+they have a implementation of
+
+589
+00:25:16,845 --> 00:25:18,690
+the shackle core constraints.
+
+590
+00:25:19,390 --> 00:25:21,870
+And also, top
+quadrant actually
+
+591
+00:25:21,870 --> 00:25:23,810
+have a full shackle
+implementation,
+
+592
+00:25:24,190 --> 00:25:26,770
+including the shackle
+advanced features.
+
+593
+00:25:27,215 --> 00:25:28,975
+And that is probably
+because one
+
+594
+00:25:28,975 --> 00:25:31,695
+of the employees at
+Top Quadrant is,
+
+595
+00:25:32,095 --> 00:25:33,455
+one of the leading developers
+
+596
+00:25:33,455 --> 00:25:36,830
+on this standard. Yes.
+
+597
+00:25:38,090 --> 00:25:38,890
+Apart from that,
+
+598
+00:25:38,890 --> 00:25:41,550
+I don't know if
+I see there was
+
+599
+00:25:42,570 --> 00:25:45,790
+a question on Neo four
+j or AVS Neptune.
+
+600
+00:25:46,845 --> 00:25:48,285
+I'm not familiar with,
+
+601
+00:25:50,205 --> 00:25:52,945
+if Neo four j has
+an implementation
+
+602
+00:25:53,085 --> 00:25:53,645
+of Shackle.
+
+603
+00:25:53,645 --> 00:25:57,170
+I'm not sure because Neo four
+
+604
+00:25:57,170 --> 00:25:59,250
+j is operating on other data
+
+605
+00:25:59,250 --> 00:26:00,390
+than than RDF.
+
+606
+00:26:01,330 --> 00:26:03,090
+It's on labeled perfect graphs
+
+607
+00:26:03,090 --> 00:26:05,045
+and not semantic
+knowledge graphs.
+
+608
+00:26:05,265 --> 00:26:07,425
+But I know they
+try to map their
+
+609
+00:26:07,425 --> 00:26:09,365
+labeled property
+graphs onto RDF
+
+610
+00:26:09,505 --> 00:26:10,600
+and vice versa.
+
+611
+00:26:11,080 --> 00:26:13,420
+So if there exists
+some shackle
+
+612
+00:26:13,480 --> 00:26:15,080
+implementations
+in Neo four j,
+
+613
+00:26:15,080 --> 00:26:16,520
+I don't know, but it would be
+
+614
+00:26:16,520 --> 00:26:18,285
+funny to see. Yeah.
+
+615
+00:26:18,285 --> 00:26:19,805
+I shared, I shared a link.
+
+616
+00:26:19,805 --> 00:26:21,345
+So they have they have
+an implementation
+
+617
+00:26:21,565 --> 00:26:23,245
+of shackle, but
+I think it's it
+
+618
+00:26:23,245 --> 00:26:25,350
+relies on transforming RDF to
+
+619
+00:26:25,350 --> 00:26:27,110
+label property graph,
+and then it's,
+
+620
+00:26:27,430 --> 00:26:29,030
+it's part of an internal kind
+
+621
+00:26:29,030 --> 00:26:30,630
+of Java plug in, I think,
+
+622
+00:26:30,630 --> 00:26:32,410
+some of the validation
+functionality.
+
+623
+00:26:34,155 --> 00:26:35,595
+There was a question or some
+
+624
+00:26:35,595 --> 00:26:39,215
+points around shackle
+c versus shackle.
+
+625
+00:26:39,275 --> 00:26:41,055
+I'm not sure whether
+that's a thing
+
+626
+00:26:41,195 --> 00:26:43,990
+maybe might want
+to elaborate on.
+
+627
+00:26:44,450 --> 00:26:45,650
+I don't know
+whether that makes
+
+628
+00:26:45,650 --> 00:26:47,170
+any sense. I'm
+not familiar with
+
+629
+00:26:47,170 --> 00:26:50,630
+shackle c. No. No.
+No. Not me neither.
+
+630
+00:26:50,835 --> 00:26:55,175
+I'm sorry. It's a typo. Okay.
+
+631
+00:26:56,915 --> 00:26:58,275
+It was Yeah.
+
+632
+00:26:58,275 --> 00:27:00,930
+It it may look like shape
+
+633
+00:27:00,930 --> 00:27:02,290
+expressions that,
+
+634
+00:27:02,610 --> 00:27:04,610
+has been kind of
+a schema language
+
+635
+00:27:04,610 --> 00:27:07,030
+for RDF prior to Shackle,
+
+636
+00:27:07,205 --> 00:27:08,885
+but I'm not too
+familiar with that.
+
+637
+00:27:08,885 --> 00:27:11,325
+So, someone Yeah.
+
+638
+00:27:11,445 --> 00:27:13,385
+Someone commented
+Shackle compact
+
+639
+00:27:13,685 --> 00:27:17,370
+syntax is Okay. Okay.
+
+640
+00:27:17,430 --> 00:27:18,470
+That's that's his one.
+
+641
+00:27:18,470 --> 00:27:20,550
+That has to do with Jason Aldi
+
+642
+00:27:20,550 --> 00:27:22,970
+probably because that can be
+
+643
+00:27:23,110 --> 00:27:26,955
+compacted quite a bit. Okay.
+
+644
+00:27:27,735 --> 00:27:28,875
+There was another question,
+
+645
+00:27:29,495 --> 00:27:31,415
+about whether it's possible to
+
+646
+00:27:31,415 --> 00:27:32,615
+model you may have already
+
+647
+00:27:32,615 --> 00:27:33,620
+answered this, but,
+
+648
+00:27:34,020 --> 00:27:35,640
+whether it's possible to model
+
+649
+00:27:35,700 --> 00:27:37,880
+shackle constraints completely
+
+650
+00:27:37,940 --> 00:27:39,640
+via sparkle queries.
+
+651
+00:27:44,385 --> 00:27:47,185
+Yes. All shackle
+constraints can
+
+652
+00:27:47,185 --> 00:27:49,365
+be translated to
+sparkle at least.
+
+653
+00:27:53,390 --> 00:27:54,990
+And I'm not sure if you can do
+
+654
+00:27:54,990 --> 00:27:56,530
+it the other way
+by constructing
+
+655
+00:27:56,830 --> 00:27:57,970
+shackle from sparkle.
+
+656
+00:27:58,625 --> 00:28:00,005
+I haven't tried it.
+
+657
+00:28:01,825 --> 00:28:03,925
+But in the shackle
+documentation,
+
+658
+00:28:04,625 --> 00:28:06,565
+on the w three c domain,
+
+659
+00:28:06,785 --> 00:28:10,230
+every single shape
+constraint has a,
+
+660
+00:28:11,650 --> 00:28:16,450
+a sparkle definition as well.
+
+661
+00:28:16,450 --> 00:28:17,685
+So So you can go in there and
+
+662
+00:28:17,685 --> 00:28:19,225
+look on the sparkle definition
+
+663
+00:28:19,765 --> 00:28:21,045
+for every single constraint.
+
+664
+00:28:21,045 --> 00:28:23,045
+I'm sure it probably
+is possible
+
+665
+00:28:23,045 --> 00:28:24,405
+to turn it the other
+way around
+
+666
+00:28:24,405 --> 00:28:25,945
+as well if you
+want to construct
+
+667
+00:28:26,680 --> 00:28:32,300
+shapes using, sparkle.
+Okay. Great.
+
+668
+00:28:33,240 --> 00:28:35,080
+There was a question
+also from,
+
+669
+00:28:35,695 --> 00:28:38,995
+Vladimir Alexiev,
+asking, Veronica,
+
+670
+00:28:39,055 --> 00:28:40,755
+have you considered generating
+
+671
+00:28:40,975 --> 00:28:44,035
+shackle from a briefer
+logical notation?
+
+672
+00:28:44,820 --> 00:28:47,320
+Your rules are
+reminiscent of prologue.
+
+673
+00:28:54,055 --> 00:28:56,135
+No. I I haven't
+considered that,
+
+674
+00:28:56,135 --> 00:29:00,155
+but, I'll, bear it
+with me. Thank you.
+
+675
+00:29:01,870 --> 00:29:03,470
+Cool. Maybe maybe
+you guys can,
+
+676
+00:29:03,790 --> 00:29:05,890
+connect in the, in
+the Slack channel.
+
+677
+00:29:06,030 --> 00:29:06,270
+Yeah.
+
+678
+00:29:10,245 --> 00:29:13,305
+Great. Are there,
+any other questions?
+
+679
+00:29:13,365 --> 00:29:14,905
+I can see a few
+people typing.
+
+680
+00:29:15,205 --> 00:29:17,540
+So, I'll just
+check back through
+
+681
+00:29:17,540 --> 00:29:18,840
+the history of the questions
+
+682
+00:29:18,900 --> 00:29:21,960
+whilst that's those
+are coming through.
+
+683
+00:29:26,455 --> 00:29:27,255
+I guess whilst,
+
+684
+00:29:27,655 --> 00:29:29,095
+whilst those
+questions are coming
+
+685
+00:29:29,095 --> 00:29:31,255
+through, I, yeah,
+
+686
+00:29:31,255 --> 00:29:32,935
+I have a real
+affinity for the the
+
+687
+00:29:32,935 --> 00:29:34,670
+kind of language
+challenge in,
+
+688
+00:29:34,910 --> 00:29:37,470
+shipping. So we, we
+do a lot of work.
+
+689
+00:29:37,470 --> 00:29:38,830
+My company does a lot of work
+
+690
+00:29:38,830 --> 00:29:39,570
+in shipping.
+
+691
+00:29:40,750 --> 00:29:42,335
+And the the language
+the language
+
+692
+00:29:42,335 --> 00:29:44,575
+is particularly
+unique, isn't it?
+
+693
+00:29:45,455 --> 00:29:46,975
+And there's very
+little in the way
+
+694
+00:29:46,975 --> 00:29:48,675
+of kind of industry
+standards,
+
+695
+00:29:48,735 --> 00:29:50,275
+particularly kind
+of ontologies
+
+696
+00:29:50,630 --> 00:29:52,070
+or at least from
+from what we've
+
+697
+00:29:52,070 --> 00:29:52,970
+found anyway.
+
+698
+00:29:54,230 --> 00:29:55,670
+So I guess I was interested in
+
+699
+00:29:55,670 --> 00:29:57,990
+how you're applying
+Shackle for
+
+700
+00:29:57,990 --> 00:29:59,770
+kind of unstructured versus
+
+701
+00:30:00,145 --> 00:30:01,125
+structured data,
+
+702
+00:30:01,585 --> 00:30:03,585
+whether you're
+using Shackle for
+
+703
+00:30:03,905 --> 00:30:05,425
+you touched on kind of maybe
+
+704
+00:30:05,425 --> 00:30:07,765
+some opportunities
+around NLP and,
+
+705
+00:30:08,990 --> 00:30:11,010
+Yeah. Yes.
+
+706
+00:30:11,630 --> 00:30:13,790
+The NLP proof of concept was
+
+707
+00:30:13,790 --> 00:30:16,270
+started because
+I didn't bother
+
+708
+00:30:16,270 --> 00:30:18,935
+to spend too much
+time on reading
+
+709
+00:30:18,935 --> 00:30:20,055
+the regulation text.
+
+710
+00:30:20,055 --> 00:30:22,855
+It's about, I believe,
+
+711
+00:30:22,855 --> 00:30:24,855
+around seventy regulations in
+
+712
+00:30:24,855 --> 00:30:26,370
+the Norwich marathon sources.
+
+713
+00:30:26,510 --> 00:30:29,230
+And, translating manually one
+
+714
+00:30:29,230 --> 00:30:31,470
+text to anthology
+or two shuffle
+
+715
+00:30:31,470 --> 00:30:33,710
+shapes by hand took probably
+
+716
+00:30:33,710 --> 00:30:35,915
+around a week. So that's time
+
+717
+00:30:35,915 --> 00:30:38,655
+consuming and expensive
+for my client.
+
+718
+00:30:39,675 --> 00:30:41,755
+So we wanted to try out to see
+
+719
+00:30:41,755 --> 00:30:43,195
+if we could make use of some
+
+720
+00:30:43,195 --> 00:30:45,490
+simple NLP techniques to,
+
+721
+00:30:45,530 --> 00:30:48,990
+draw information
+from the text.
+
+722
+00:30:49,050 --> 00:30:50,670
+So we have
+actually successfully
+
+723
+00:30:51,370 --> 00:30:53,965
+generated all
+scope descriptions
+
+724
+00:30:54,185 --> 00:30:55,725
+and requirements descriptions
+
+725
+00:30:55,945 --> 00:30:57,145
+connected to those scopes.
+
+726
+00:30:57,145 --> 00:30:59,705
+And one scope
+could be like a a
+
+727
+00:30:59,705 --> 00:31:01,545
+value range for vessel length
+
+728
+00:31:01,545 --> 00:31:04,590
+or a date before and after one
+
+729
+00:31:04,590 --> 00:31:07,650
+certain date or
+machine power.
+
+730
+00:31:08,350 --> 00:31:09,950
+And a lot of different things
+
+731
+00:31:09,950 --> 00:31:11,925
+are scopes in in the text.
+
+732
+00:31:11,925 --> 00:31:14,185
+So we successfully
+do that now.
+
+733
+00:31:14,485 --> 00:31:18,425
+And, the most challenging task
+
+734
+00:31:18,725 --> 00:31:21,630
+around that is classifying
+
+735
+00:31:22,650 --> 00:31:24,970
+entities discovered in text to
+
+736
+00:31:24,970 --> 00:31:29,235
+be of kind material
+or construction
+
+737
+00:31:29,295 --> 00:31:31,315
+or equipment and
+stuff like that.
+
+738
+00:31:33,295 --> 00:31:35,330
+And so, yeah,
+
+739
+00:31:36,190 --> 00:31:37,550
+the the proof of concept is
+
+740
+00:31:37,550 --> 00:31:38,830
+still running.
+It's supposed to
+
+741
+00:31:38,830 --> 00:31:41,390
+be finalized during
+December, and,
+
+742
+00:31:41,390 --> 00:31:45,805
+hopefully, we will
+get the result
+
+743
+00:31:45,805 --> 00:31:48,285
+that we want, which
+is the the class
+
+744
+00:31:48,285 --> 00:31:49,345
+hierarchy or taxonomy,
+
+745
+00:31:50,045 --> 00:31:52,365
+including labels
+and the the the
+
+746
+00:31:52,365 --> 00:31:56,050
+shapes describing requirements
+
+747
+00:31:56,190 --> 00:31:57,970
+and and scopes for the data.
+

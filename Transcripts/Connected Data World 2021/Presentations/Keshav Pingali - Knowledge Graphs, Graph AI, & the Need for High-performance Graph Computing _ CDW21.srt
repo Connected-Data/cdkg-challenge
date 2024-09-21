@@ -1,0 +1,3943 @@
+1
+00:00:05,920 --> 00:00:07,920
+It's a great pleasure
+to give this talk.
+
+2
+00:00:07,920 --> 00:00:09,780
+Thank you so much
+for inviting me.
+
+3
+00:00:10,545 --> 00:00:11,925
+My name is Keshav Pingali.
+
+4
+00:00:12,065 --> 00:00:14,005
+I'm the CEO of Katana Graph.
+
+5
+00:00:14,145 --> 00:00:15,905
+I'm also a chair professor in
+
+6
+00:00:15,905 --> 00:00:17,265
+the computer
+science department
+
+7
+00:00:17,265 --> 00:00:19,365
+at the University of
+Texas at Austin.
+
+8
+00:00:20,360 --> 00:00:21,880
+And today, I want
+to talk about
+
+9
+00:00:21,880 --> 00:00:23,820
+knowledge graphs, graph AI,
+
+10
+00:00:23,880 --> 00:00:25,420
+and the need for
+high performance
+
+11
+00:00:25,480 --> 00:00:26,380
+graph computing.
+
+12
+00:00:30,495 --> 00:00:32,255
+Let me begin by
+telling you why
+
+13
+00:00:32,255 --> 00:00:34,255
+we at Katana Graph feel there
+
+14
+00:00:34,255 --> 00:00:36,115
+is a great need for
+high performance
+
+15
+00:00:36,600 --> 00:00:37,340
+graph computing.
+
+16
+00:00:38,600 --> 00:00:40,040
+Usually, when
+people talk about
+
+17
+00:00:40,040 --> 00:00:41,340
+high performance computing,
+
+18
+00:00:41,640 --> 00:00:43,100
+they think about computational
+
+19
+00:00:43,240 --> 00:00:44,220
+science applications,
+
+20
+00:00:44,625 --> 00:00:46,325
+such as the design of aircraft
+
+21
+00:00:46,385 --> 00:00:47,605
+or the design of buildings,
+
+22
+00:00:48,065 --> 00:00:49,825
+for which people
+use very large
+
+23
+00:00:49,825 --> 00:00:51,445
+clusters, like the stampede
+
+24
+00:00:51,505 --> 00:00:53,185
+cluster that we
+have at the Texas
+
+25
+00:00:53,185 --> 00:00:55,670
+Advanced Computing
+Center in Austin.
+
+26
+00:00:56,690 --> 00:00:58,470
+However, about ten years ago,
+
+27
+00:00:58,770 --> 00:01:00,470
+a group of, researchers,
+
+28
+00:01:00,530 --> 00:01:02,185
+including myself and and some
+
+29
+00:01:02,185 --> 00:01:03,785
+colleagues at MIT, CMU,
+
+30
+00:01:03,785 --> 00:01:04,685
+and other places,
+
+31
+00:01:05,465 --> 00:01:06,905
+realized that there was a big
+
+32
+00:01:06,905 --> 00:01:09,245
+opportunity to take
+all of the techniques
+
+33
+00:01:09,305 --> 00:01:11,600
+that we had developed
+in the context
+
+34
+00:01:11,600 --> 00:01:13,200
+of computational science app
+
+35
+00:01:13,440 --> 00:01:15,300
+applications in
+high performance
+
+36
+00:01:15,360 --> 00:01:17,360
+computing and to use them for
+
+37
+00:01:17,360 --> 00:01:19,780
+doing high performance
+graph computing.
+
+38
+00:01:20,675 --> 00:01:21,475
+And, basically,
+
+39
+00:01:21,475 --> 00:01:23,255
+there are two parts
+to the argument
+
+40
+00:01:23,475 --> 00:01:25,815
+for why this is
+a useful thing to do.
+
+41
+00:01:25,955 --> 00:01:27,475
+One having to do
+with the volume
+
+42
+00:01:27,475 --> 00:01:29,475
+of data and
+the other having to
+
+43
+00:01:29,475 --> 00:01:31,050
+do with time to insight.
+
+44
+00:01:32,790 --> 00:01:34,630
+So first, when it
+comes to the volume
+
+45
+00:01:34,630 --> 00:01:36,470
+of data, we're
+all familiar with
+
+46
+00:01:36,470 --> 00:01:38,330
+terms like the data tsunami,
+
+47
+00:01:38,985 --> 00:01:40,845
+the data flood, data deluge.
+
+48
+00:01:41,305 --> 00:01:43,305
+What all these
+apocalyptic terms
+
+49
+00:01:43,305 --> 00:01:44,905
+tell us is that the world has
+
+50
+00:01:44,905 --> 00:01:46,985
+generated an enormous
+amount of
+
+51
+00:01:46,985 --> 00:01:49,370
+data and is
+generating even more
+
+52
+00:01:49,370 --> 00:01:51,870
+data at an ever
+accelerating pace.
+
+53
+00:01:52,490 --> 00:01:54,410
+And so if you read documents
+
+54
+00:01:54,410 --> 00:01:56,350
+like IDC twenty, for example,
+
+55
+00:01:56,410 --> 00:01:58,845
+you find statistics like more
+
+56
+00:01:58,845 --> 00:02:00,205
+than half of the world's data
+
+57
+00:02:00,205 --> 00:02:01,965
+was created in
+the last two years,
+
+58
+00:02:01,965 --> 00:02:03,725
+but less than two percent has
+
+59
+00:02:03,725 --> 00:02:04,705
+been analyzed.
+
+60
+00:02:05,790 --> 00:02:07,790
+To be sure, some of this data
+
+61
+00:02:07,790 --> 00:02:09,390
+that's being generated is
+
+62
+00:02:09,390 --> 00:02:10,530
+relational data.
+
+63
+00:02:10,830 --> 00:02:12,430
+You can represent
+the data very
+
+64
+00:02:12,430 --> 00:02:14,290
+usefully as tables
+or relations,
+
+65
+00:02:14,515 --> 00:02:16,055
+store them in
+relational databases,
+
+66
+00:02:16,675 --> 00:02:18,695
+and then query them using SQL
+
+67
+00:02:18,835 --> 00:02:20,615
+and other time
+honored techniques.
+
+68
+00:02:21,235 --> 00:02:22,835
+But what we find is more and
+
+69
+00:02:22,835 --> 00:02:24,360
+more of the new data that's
+
+70
+00:02:24,440 --> 00:02:26,040
+being generated
+is what we call
+
+71
+00:02:26,040 --> 00:02:27,800
+unstructured data that doesn't
+
+72
+00:02:27,800 --> 00:02:29,400
+quite fit the relational model
+
+73
+00:02:29,400 --> 00:02:31,720
+that well. And a lot of this
+
+74
+00:02:31,720 --> 00:02:33,295
+unstructured data,
+it turns out,
+
+75
+00:02:33,295 --> 00:02:35,135
+can be usefully represented as
+
+76
+00:02:35,135 --> 00:02:37,635
+a graph and then
+processed using
+
+77
+00:02:37,695 --> 00:02:38,595
+graph techniques.
+
+78
+00:02:40,150 --> 00:02:42,230
+So that is the first side of
+
+79
+00:02:42,230 --> 00:02:43,590
+the argument,
+the first part of
+
+80
+00:02:43,590 --> 00:02:45,030
+the argument about why high
+
+81
+00:02:45,030 --> 00:02:46,630
+performance graph computing is
+
+82
+00:02:46,630 --> 00:02:48,870
+essential, the sheer volume of
+
+83
+00:02:48,870 --> 00:02:51,275
+graph data that needs
+to be analyzed.
+
+84
+00:02:52,055 --> 00:02:53,495
+The second part
+of the argument
+
+85
+00:02:53,495 --> 00:02:54,795
+is time to insight.
+
+86
+00:02:55,335 --> 00:02:56,935
+In most application areas,
+
+87
+00:02:56,935 --> 00:02:59,435
+there's usually a window
+of opportunity.
+
+88
+00:02:59,950 --> 00:03:01,470
+And if you can perform your
+
+89
+00:03:01,470 --> 00:03:03,470
+analytics on the data within
+
+90
+00:03:03,470 --> 00:03:05,150
+that window of opportunity and
+
+91
+00:03:05,150 --> 00:03:06,290
+obtain some insight,
+
+92
+00:03:06,590 --> 00:03:08,105
+then you can profit from it.
+
+93
+00:03:08,345 --> 00:03:09,705
+Whereas if your insights come
+
+94
+00:03:09,705 --> 00:03:11,165
+after the window
+of opportunity
+
+95
+00:03:11,385 --> 00:03:13,485
+has expired, well, then the,
+
+96
+00:03:13,945 --> 00:03:15,385
+processing that
+you have done,
+
+97
+00:03:15,385 --> 00:03:17,100
+the analytics that
+you have done
+
+98
+00:03:17,260 --> 00:03:18,480
+are not very useful.
+
+99
+00:03:19,020 --> 00:03:20,880
+And so these are
+the two reasons
+
+100
+00:03:21,020 --> 00:03:22,880
+why we believe
+high performance
+
+101
+00:03:23,020 --> 00:03:24,540
+scale out graph computing is
+
+102
+00:03:24,540 --> 00:03:26,705
+going to be
+increasingly important
+
+103
+00:03:26,705 --> 00:03:27,765
+as we go forward.
+
+104
+00:03:27,985 --> 00:03:29,505
+Just the sheer amount of graph
+
+105
+00:03:29,505 --> 00:03:31,285
+data that needs
+to be processed
+
+106
+00:03:31,505 --> 00:03:32,945
+and then the need to process
+
+107
+00:03:32,945 --> 00:03:34,245
+that very quickly.
+
+108
+00:03:37,470 --> 00:03:39,550
+One question that we're
+always asked is,
+
+109
+00:03:39,550 --> 00:03:41,310
+what are some of
+the areas where
+
+110
+00:03:41,310 --> 00:03:43,790
+we see the use of graphs and
+
+111
+00:03:43,790 --> 00:03:44,610
+graph technologies?
+
+112
+00:03:46,095 --> 00:03:48,175
+This wheel over here tells you
+
+113
+00:03:48,175 --> 00:03:50,575
+about some of the areas
+where we have,
+
+114
+00:03:50,895 --> 00:03:52,995
+seen our customers
+using graphs.
+
+115
+00:03:53,580 --> 00:03:54,940
+And I'm just going to go very
+
+116
+00:03:54,940 --> 00:03:56,640
+quickly over some
+of the highlights.
+
+117
+00:03:57,340 --> 00:03:59,740
+At the top right hand side of
+
+118
+00:03:59,740 --> 00:04:01,820
+the circle, you see
+intrusion detection,
+
+119
+00:04:01,820 --> 00:04:02,555
+fraud detection,
+
+120
+00:04:10,075 --> 00:04:11,615
+large multinational defense
+
+121
+00:04:11,675 --> 00:04:13,490
+contractor that was interested
+
+122
+00:04:13,630 --> 00:04:15,390
+in doing real time intrusion
+
+123
+00:04:15,390 --> 00:04:17,010
+detection in
+computer networks.
+
+124
+00:04:17,470 --> 00:04:18,670
+And the way they wanted to do
+
+125
+00:04:18,670 --> 00:04:20,030
+it was by building what are
+
+126
+00:04:20,030 --> 00:04:21,905
+called interaction graphs and
+
+127
+00:04:21,905 --> 00:04:23,445
+then mining these interaction
+
+128
+00:04:23,585 --> 00:04:25,665
+graphs to find
+forbidden patterns
+
+129
+00:04:25,665 --> 00:04:26,805
+within these graphs.
+
+130
+00:04:27,345 --> 00:04:29,345
+So finding needles
+within a big
+
+131
+00:04:29,345 --> 00:04:31,445
+haystack, as it's
+sometimes called.
+
+132
+00:04:32,290 --> 00:04:33,910
+So that is one application,
+
+133
+00:04:34,370 --> 00:04:36,470
+fraud detection, anti
+money laundering,
+
+134
+00:04:36,610 --> 00:04:38,310
+lots of applications there.
+
+135
+00:04:39,145 --> 00:04:41,145
+Another area where
+we see graphs
+
+136
+00:04:41,145 --> 00:04:43,065
+being used increasingly is in
+
+137
+00:04:43,065 --> 00:04:45,005
+the identity
+management space.
+
+138
+00:04:45,305 --> 00:04:47,090
+So one of our
+customers ultimately
+
+139
+00:04:47,090 --> 00:04:49,090
+wants to go to a graph
+with a trillion
+
+140
+00:04:49,090 --> 00:04:51,670
+edges, which is
+very large indeed.
+
+141
+00:04:52,690 --> 00:04:54,605
+Even in more
+conventional areas
+
+142
+00:04:54,845 --> 00:04:56,605
+that have been
+around for a while,
+
+143
+00:04:56,605 --> 00:04:58,465
+like electronic
+design automation,
+
+144
+00:04:58,925 --> 00:05:00,065
+so circuit design,
+
+145
+00:05:00,445 --> 00:05:02,525
+we see increasing
+use of graphs
+
+146
+00:05:02,525 --> 00:05:03,345
+and hypergraphs.
+
+147
+00:05:05,080 --> 00:05:07,320
+So circuits can
+be looked at as
+
+148
+00:05:07,320 --> 00:05:08,460
+graphs or hypergraphs.
+
+149
+00:05:08,680 --> 00:05:10,280
+The pins of
+the circuit correspond
+
+150
+00:05:10,280 --> 00:05:11,480
+to the nodes of the graph.
+
+151
+00:05:11,480 --> 00:05:13,340
+The wires correspond
+to the edges.
+
+152
+00:05:13,685 --> 00:05:15,285
+And it turns out that a lot of
+
+153
+00:05:15,285 --> 00:05:16,805
+the things they do
+in chip design,
+
+154
+00:05:16,805 --> 00:05:18,425
+like static timing analysis,
+
+155
+00:05:18,725 --> 00:05:21,385
+logic synthesis,
+placement routing,
+
+156
+00:05:21,830 --> 00:05:23,430
+All of them can be done very
+
+157
+00:05:23,430 --> 00:05:25,270
+effectively using parallel
+
+158
+00:05:25,270 --> 00:05:26,950
+algorithms of the kind that we
+
+159
+00:05:26,950 --> 00:05:28,090
+do at Katana.
+
+160
+00:05:29,485 --> 00:05:31,565
+The final area I mentioned is
+
+161
+00:05:31,565 --> 00:05:32,845
+medical knowledge graphs.
+
+162
+00:05:32,845 --> 00:05:34,865
+So precision medicine,
+
+163
+00:05:35,965 --> 00:05:38,065
+hypothesis generation
+for drugs.
+
+164
+00:05:38,270 --> 00:05:40,590
+So here, the problem
+is you have
+
+165
+00:05:40,590 --> 00:05:41,870
+a lot of medical data,
+
+166
+00:05:41,870 --> 00:05:43,390
+and you want to represent that
+
+167
+00:05:43,390 --> 00:05:45,995
+medical data in
+one big graph.
+
+168
+00:05:46,075 --> 00:05:47,595
+And so this is
+called a medical
+
+169
+00:05:47,595 --> 00:05:48,495
+knowledge graph.
+
+170
+00:05:48,795 --> 00:05:50,475
+And one of the customers that
+
+171
+00:05:50,475 --> 00:05:51,995
+we're currently dealing with
+
+172
+00:05:51,995 --> 00:05:53,835
+wants to be able to mine these
+
+173
+00:05:53,835 --> 00:05:55,550
+medical knowledge graphs in
+
+174
+00:05:55,550 --> 00:05:57,330
+order to generate promising
+
+175
+00:05:57,390 --> 00:05:59,310
+treatments for diseases and
+
+176
+00:05:59,310 --> 00:06:00,210
+equally importantly,
+
+177
+00:06:00,430 --> 00:06:02,350
+to rule out
+potential treatments
+
+178
+00:06:02,350 --> 00:06:04,190
+for diseases before having to
+
+179
+00:06:04,190 --> 00:06:05,695
+go to the lab, do a lot of
+
+180
+00:06:05,695 --> 00:06:06,655
+expensive tests,
+
+181
+00:06:06,655 --> 00:06:08,095
+and then find out that that
+
+182
+00:06:08,095 --> 00:06:09,875
+treatment actually
+doesn't work.
+
+183
+00:06:10,575 --> 00:06:12,735
+So these are just
+some of the areas
+
+184
+00:06:12,735 --> 00:06:13,775
+where we see graphs.
+
+185
+00:06:13,775 --> 00:06:15,640
+There are, in
+fact, many more.
+
+186
+00:06:17,700 --> 00:06:20,440
+So this brings us
+to a data graph.
+
+187
+00:06:20,500 --> 00:06:21,700
+So what do we do?
+
+188
+00:06:21,700 --> 00:06:23,480
+Well, at the heart
+of our system,
+
+189
+00:06:23,785 --> 00:06:25,385
+and I'll show you a cartoon
+
+190
+00:06:25,385 --> 00:06:27,485
+diagram of our system
+on the next slide,
+
+191
+00:06:27,625 --> 00:06:29,385
+we basically have a scale out
+
+192
+00:06:29,385 --> 00:06:31,645
+graph engine that is optimized
+
+193
+00:06:32,220 --> 00:06:33,600
+for doing analytics,
+
+194
+00:06:33,900 --> 00:06:36,160
+for doing AI machine learning
+
+195
+00:06:36,460 --> 00:06:37,920
+on very large graphs.
+
+196
+00:06:38,060 --> 00:06:39,580
+So what we are
+building is what
+
+197
+00:06:39,580 --> 00:06:41,520
+we call a graph
+intelligence platform,
+
+198
+00:06:42,025 --> 00:06:43,465
+and it's been architected from
+
+199
+00:06:43,465 --> 00:06:45,565
+the get go to handle
+massive graphs.
+
+200
+00:06:45,785 --> 00:06:46,985
+It's been tested with some of
+
+201
+00:06:46,985 --> 00:06:48,365
+the largest publicly available
+
+202
+00:06:48,425 --> 00:06:51,040
+web crawl graphs,
+like w d c twelve,
+
+203
+00:06:51,040 --> 00:06:52,240
+which has a hundred and twenty
+
+204
+00:06:52,240 --> 00:06:53,460
+eight billion edges.
+
+205
+00:06:55,120 --> 00:06:56,560
+Our system has been designed
+
+206
+00:06:56,560 --> 00:06:58,000
+from the get go for graph
+
+207
+00:06:58,000 --> 00:07:00,335
+computing and not
+so much for,
+
+208
+00:07:00,795 --> 00:07:03,035
+for being a graph
+database unlike
+
+209
+00:07:03,035 --> 00:07:05,135
+many of the other
+systems in this space.
+
+210
+00:07:05,275 --> 00:07:08,200
+And so we can do in
+memory analytics,
+
+211
+00:07:08,340 --> 00:07:10,280
+AI, and machine
+learning very fast.
+
+212
+00:07:10,500 --> 00:07:11,700
+And for some of the routines
+
+213
+00:07:11,700 --> 00:07:13,460
+that we have
+implemented for our
+
+214
+00:07:13,460 --> 00:07:14,340
+customers, we're, like,
+
+215
+00:07:14,340 --> 00:07:16,020
+ten to a hundred times faster
+
+216
+00:07:16,020 --> 00:07:17,445
+than competing solutions.
+
+217
+00:07:18,465 --> 00:07:19,445
+Massive scalability,
+
+218
+00:07:19,665 --> 00:07:21,265
+we've shown that
+our graph engine
+
+219
+00:07:21,265 --> 00:07:23,185
+scales to up to two fifty six
+
+220
+00:07:23,185 --> 00:07:24,725
+machines on the big stampede
+
+221
+00:07:24,865 --> 00:07:26,610
+supercomputing cluster that we
+
+222
+00:07:26,610 --> 00:07:29,010
+have at Texas. We also run on
+
+223
+00:07:29,010 --> 00:07:30,690
+all the three open clouds.
+
+224
+00:07:30,690 --> 00:07:32,950
+So AWS is your Google Cloud.
+
+225
+00:07:33,090 --> 00:07:35,190
+We are cloud first,
+as they say.
+
+226
+00:07:36,485 --> 00:07:38,005
+And then the final thing that
+
+227
+00:07:38,005 --> 00:07:40,565
+we have in our graph engine is
+
+228
+00:07:40,565 --> 00:07:43,305
+we have native AI and
+machine learning.
+
+229
+00:07:43,610 --> 00:07:45,310
+So we support a lot
+of unsupervised
+
+230
+00:07:45,770 --> 00:07:48,030
+and supervised
+training algorithms.
+
+231
+00:07:48,490 --> 00:07:50,570
+And then you can have your AI
+
+232
+00:07:50,570 --> 00:07:52,110
+and machine learning pipelines
+
+233
+00:07:52,170 --> 00:07:53,805
+that include querying,
+analytics,
+
+234
+00:07:54,105 --> 00:07:55,885
+as well as third
+party integrations
+
+235
+00:07:56,505 --> 00:07:58,665
+in your complete
+workflow while
+
+236
+00:07:58,745 --> 00:08:00,125
+without leaving our system.
+
+237
+00:08:00,220 --> 00:08:02,080
+And I'll show you
+some examples
+
+238
+00:08:02,380 --> 00:08:04,240
+of that as we go forward.
+
+239
+00:08:06,300 --> 00:08:08,925
+So here is the one click down
+
+240
+00:08:09,065 --> 00:08:11,645
+cartoon level picture
+of our system.
+
+241
+00:08:11,945 --> 00:08:14,425
+So at the heart of it
+is in the middle,
+
+242
+00:08:14,425 --> 00:08:17,010
+you can see
+the scalable distributed
+
+243
+00:08:17,150 --> 00:08:18,990
+graph engine. So
+it's got three
+
+244
+00:08:18,990 --> 00:08:20,110
+parts to it.
+
+245
+00:08:20,110 --> 00:08:21,550
+So the first part is CUSP,
+
+246
+00:08:21,550 --> 00:08:23,090
+which is a streaming
+partitioner.
+
+247
+00:08:23,855 --> 00:08:25,135
+If you have a big graph,
+
+248
+00:08:25,135 --> 00:08:27,075
+it's usually where
+it's at rest.
+
+249
+00:08:27,375 --> 00:08:29,855
+It's in AWS s three storage,
+
+250
+00:08:29,855 --> 00:08:31,795
+your Google Blob
+storage, or somewhere.
+
+251
+00:08:32,270 --> 00:08:34,110
+So what CUSP does is if you
+
+252
+00:08:34,110 --> 00:08:35,870
+point it to this particular
+
+253
+00:08:35,870 --> 00:08:37,710
+graph that's sitting
+in secondary
+
+254
+00:08:37,710 --> 00:08:39,710
+storage, and then you say,
+
+255
+00:08:39,710 --> 00:08:41,090
+here are the number
+of machines
+
+256
+00:08:41,295 --> 00:08:42,995
+on which we want
+you to partition
+
+257
+00:08:43,135 --> 00:08:44,675
+or shard the graph.
+
+258
+00:08:45,135 --> 00:08:47,315
+And then you could
+also specify the,
+
+259
+00:08:47,775 --> 00:08:49,555
+sharding policy or
+the distribution
+
+260
+00:08:49,615 --> 00:08:51,340
+policy. You can
+even write your
+
+261
+00:08:51,340 --> 00:08:53,180
+own partitioning policy quite
+
+262
+00:08:53,180 --> 00:08:54,480
+easily using CUSP.
+
+263
+00:08:54,700 --> 00:08:57,180
+What CUSP does
+is it then reads
+
+264
+00:08:57,180 --> 00:08:59,695
+in the graph from
+secondary storage,
+
+265
+00:08:59,835 --> 00:09:01,515
+and then it shards
+or partitions
+
+266
+00:09:01,515 --> 00:09:03,375
+the graph between
+as many machines
+
+267
+00:09:03,435 --> 00:09:05,055
+as you have told it to do.
+
+268
+00:09:05,190 --> 00:09:06,790
+And then it builds
+an in memory
+
+269
+00:09:06,790 --> 00:09:08,630
+representation of each portion
+
+270
+00:09:08,630 --> 00:09:10,810
+of the graph on each
+of the machines
+
+271
+00:09:10,950 --> 00:09:11,850
+in your cluster.
+
+272
+00:09:13,565 --> 00:09:15,085
+Then the Galois
+graph computing
+
+273
+00:09:15,085 --> 00:09:16,045
+engine kicks in.
+
+274
+00:09:16,045 --> 00:09:17,645
+So the Galois graph computing
+
+275
+00:09:17,645 --> 00:09:19,325
+engine is a shared
+memory graph
+
+276
+00:09:19,325 --> 00:09:20,225
+computing engine.
+
+277
+00:09:20,580 --> 00:09:22,580
+It's got a bunch
+of data structures
+
+278
+00:09:22,580 --> 00:09:24,580
+and a runtime system
+that, again,
+
+279
+00:09:24,580 --> 00:09:26,100
+has been optimized for many
+
+280
+00:09:26,100 --> 00:09:29,160
+years for the needs
+of graph computing.
+
+281
+00:09:30,295 --> 00:09:32,375
+Now anytime you
+shard or partition
+
+282
+00:09:32,375 --> 00:09:33,895
+a graph, you need
+to worry about
+
+283
+00:09:33,895 --> 00:09:35,355
+what happens at the boundaries
+
+284
+00:09:35,415 --> 00:09:36,235
+of the partitions.
+
+285
+00:09:36,375 --> 00:09:37,495
+You're going to need some
+
+286
+00:09:37,495 --> 00:09:38,955
+synchronization
+and communication
+
+287
+00:09:39,610 --> 00:09:41,370
+in order to keep the data on
+
+288
+00:09:41,370 --> 00:09:43,630
+the different machines
+in lockstep,
+
+289
+00:09:43,850 --> 00:09:46,090
+so to speak. So we support,
+
+290
+00:09:46,410 --> 00:09:47,770
+programming model
+that's called
+
+291
+00:09:47,770 --> 00:09:50,045
+the bulk synchronous
+programming model.
+
+292
+00:09:50,265 --> 00:09:51,865
+And the communication and
+
+293
+00:09:51,865 --> 00:09:53,465
+synchronization
+that's required
+
+294
+00:09:53,465 --> 00:09:55,225
+in order to keep all
+of the different
+
+295
+00:09:55,225 --> 00:09:57,200
+machines working together is
+
+296
+00:09:57,200 --> 00:09:59,300
+performed by
+the Gluon communication
+
+297
+00:09:59,440 --> 00:10:00,880
+engine. This, again,
+
+298
+00:10:00,880 --> 00:10:02,880
+is a communication
+runtime that
+
+299
+00:10:02,880 --> 00:10:04,560
+has been designed by us and
+
+300
+00:10:04,560 --> 00:10:06,785
+optimized for
+the needs of graph
+
+301
+00:10:06,945 --> 00:10:09,525
+computing. So this
+is essentially
+
+302
+00:10:09,585 --> 00:10:11,045
+the heart of our scalable
+
+303
+00:10:11,265 --> 00:10:12,625
+distributed graph engine.
+
+304
+00:10:12,625 --> 00:10:13,685
+This is our platform.
+
+305
+00:10:14,130 --> 00:10:15,250
+And as I told you,
+
+306
+00:10:15,250 --> 00:10:17,010
+we have shown
+that it scales up
+
+307
+00:10:17,010 --> 00:10:18,290
+to two fifty six machines,
+
+308
+00:10:18,290 --> 00:10:20,210
+and it would probably scale to
+
+309
+00:10:20,210 --> 00:10:21,830
+even larger numbers
+of machines
+
+310
+00:10:21,970 --> 00:10:22,710
+as needed.
+
+311
+00:10:24,675 --> 00:10:26,055
+We're exposing
+the functionality
+
+312
+00:10:26,435 --> 00:10:28,195
+of this graph engine through c
+
+313
+00:10:28,195 --> 00:10:28,995
+plus plus.
+
+314
+00:10:28,995 --> 00:10:31,975
+So if you like writing
+c plus plus code,
+
+315
+00:10:32,090 --> 00:10:33,530
+we give you a small number of
+
+316
+00:10:33,530 --> 00:10:35,770
+constructs, and
+then you can go
+
+317
+00:10:35,770 --> 00:10:37,450
+write c plus plus code and
+
+318
+00:10:37,450 --> 00:10:39,230
+orchestrate the graph
+engine directly.
+
+319
+00:10:39,575 --> 00:10:41,575
+And many of our
+routines in our
+
+320
+00:10:41,575 --> 00:10:43,355
+libraries are
+written that way.
+
+321
+00:10:43,575 --> 00:10:44,795
+But for data scientists,
+
+322
+00:10:44,935 --> 00:10:46,395
+we're also providing,
+
+323
+00:10:47,150 --> 00:10:48,830
+access to the graph
+engine through
+
+324
+00:10:48,830 --> 00:10:50,030
+Python. So, again,
+
+325
+00:10:50,030 --> 00:10:51,470
+we give you a small number of
+
+326
+00:10:51,470 --> 00:10:53,490
+constructs, some of
+our data structures,
+
+327
+00:10:53,765 --> 00:10:55,145
+and then you can orchestrate
+
+328
+00:10:55,365 --> 00:10:57,945
+the graph engine
+directly from Python.
+
+329
+00:10:58,885 --> 00:11:00,885
+What we are doing on
+this graph engine,
+
+330
+00:11:00,885 --> 00:11:02,505
+the libraries that
+we are building
+
+331
+00:11:02,930 --> 00:11:04,950
+are in the space
+of graph query.
+
+332
+00:11:05,090 --> 00:11:06,470
+So we support OpenCypher,
+
+333
+00:11:07,090 --> 00:11:09,170
+which is a query language that
+
+334
+00:11:09,170 --> 00:11:10,550
+Neo four j has popularized,
+
+335
+00:11:10,770 --> 00:11:12,390
+and we like it a great deal.
+
+336
+00:11:12,925 --> 00:11:15,005
+GQL is a new query language
+
+337
+00:11:15,005 --> 00:11:16,125
+that's coming out soon,
+
+338
+00:11:16,125 --> 00:11:18,145
+so we're going to
+support that as well.
+
+339
+00:11:18,765 --> 00:11:20,270
+We also have a lot of graph
+
+340
+00:11:20,590 --> 00:11:21,570
+analytics routines,
+
+341
+00:11:21,630 --> 00:11:23,870
+so all of
+the routines for path
+
+342
+00:11:23,870 --> 00:11:26,130
+finding and
+community detection
+
+343
+00:11:26,590 --> 00:11:28,815
+between the centrality
+and so on.
+
+344
+00:11:28,895 --> 00:11:29,935
+If you go to our website,
+
+345
+00:11:29,935 --> 00:11:31,695
+you can see a long
+list of these
+
+346
+00:11:31,695 --> 00:11:33,475
+analytics routines
+that we support.
+
+347
+00:11:34,175 --> 00:11:35,215
+We have some of the world's
+
+348
+00:11:35,215 --> 00:11:36,995
+experts on graph
+pattern mining
+
+349
+00:11:37,135 --> 00:11:38,630
+working in the company,
+
+350
+00:11:38,630 --> 00:11:40,710
+and so we also have a lot of
+
+351
+00:11:40,710 --> 00:11:42,550
+graph mining
+routines such as,
+
+352
+00:11:42,550 --> 00:11:44,470
+for example,
+click detection or
+
+353
+00:11:44,470 --> 00:11:46,410
+frequent subgraph
+mining routines.
+
+354
+00:11:47,025 --> 00:11:48,085
+And then, of course,
+
+355
+00:11:48,305 --> 00:11:49,925
+increasingly important areas,
+
+356
+00:11:49,985 --> 00:11:52,145
+so Graph AI. So we have both
+
+357
+00:11:52,145 --> 00:11:53,765
+supervised and unsupervised
+
+358
+00:11:54,145 --> 00:11:55,125
+learning algorithms.
+
+359
+00:11:55,265 --> 00:11:56,490
+And as I was saying,
+
+360
+00:11:56,650 --> 00:11:59,290
+you can build
+an entire AI machine
+
+361
+00:11:59,290 --> 00:12:02,250
+learning pipeline
+based on our system,
+
+362
+00:12:02,250 --> 00:12:03,550
+as I'll show you later.
+
+363
+00:12:04,075 --> 00:12:06,335
+We run on CPUs as
+well as GPUs,
+
+364
+00:12:06,715 --> 00:12:08,395
+and we could
+easily extend this
+
+365
+00:12:08,395 --> 00:12:10,075
+to FPGAs as well,
+
+366
+00:12:10,075 --> 00:12:11,355
+although we haven't found that
+
+367
+00:12:11,355 --> 00:12:13,710
+much of traction
+in the customer
+
+368
+00:12:13,770 --> 00:12:16,030
+space for FPGAs yet.
+
+369
+00:12:18,970 --> 00:12:20,810
+So now let me double
+click a little
+
+370
+00:12:20,810 --> 00:12:23,675
+bit and tell you
+about knowledge
+
+371
+00:12:23,675 --> 00:12:25,215
+graphs in a little more detail
+
+372
+00:12:25,355 --> 00:12:27,915
+in some of the verticals that
+
+373
+00:12:27,915 --> 00:12:28,930
+we are engaged in.
+
+374
+00:12:29,010 --> 00:12:31,350
+So we're engaged in
+three verticals,
+
+375
+00:12:31,810 --> 00:12:33,510
+pharma, financial services,
+
+376
+00:12:33,730 --> 00:12:35,270
+and information security.
+
+377
+00:12:35,730 --> 00:12:37,170
+And what I want to show you in
+
+378
+00:12:37,170 --> 00:12:39,125
+the next few slides
+is basically
+
+379
+00:12:39,185 --> 00:12:40,785
+what these knowledge
+graphs look
+
+380
+00:12:40,785 --> 00:12:42,785
+like or what these graphs look
+
+381
+00:12:42,785 --> 00:12:44,165
+like in these areas,
+
+382
+00:12:44,465 --> 00:12:46,625
+and then the kind
+of graph AI,
+
+383
+00:12:46,625 --> 00:12:48,830
+graph analytics
+that's required
+
+384
+00:12:49,050 --> 00:12:50,430
+in these domains.
+
+385
+00:12:53,130 --> 00:12:55,870
+So first up is health
+and life sciences.
+
+386
+00:12:56,225 --> 00:12:58,325
+So here, as I was
+telling you earlier,
+
+387
+00:12:58,865 --> 00:13:00,385
+people want to build these big
+
+388
+00:13:00,385 --> 00:13:01,765
+medical knowledge graphs.
+
+389
+00:13:02,145 --> 00:13:03,665
+And the nice thing
+about graphs
+
+390
+00:13:03,665 --> 00:13:05,045
+is that they can represent
+
+391
+00:13:05,185 --> 00:13:07,470
+entities of many
+different types.
+
+392
+00:13:07,470 --> 00:13:09,870
+So graphs have
+heterogeneous nodes,
+
+393
+00:13:09,870 --> 00:13:11,170
+heterogeneous edges.
+
+394
+00:13:11,470 --> 00:13:13,070
+And this sort of cartoon graph
+
+395
+00:13:13,070 --> 00:13:16,315
+over here shows you
+nodes for drugs,
+
+396
+00:13:16,535 --> 00:13:17,915
+a node for a molecule,
+
+397
+00:13:17,975 --> 00:13:19,595
+a node for a target protein,
+
+398
+00:13:19,655 --> 00:13:21,035
+a node for a side effect.
+
+399
+00:13:21,335 --> 00:13:22,875
+So all of these are entities
+
+400
+00:13:22,935 --> 00:13:24,160
+that have different types.
+
+401
+00:13:24,160 --> 00:13:25,440
+They can have different kinds
+
+402
+00:13:25,440 --> 00:13:27,440
+of properties,
+but they can all
+
+403
+00:13:27,440 --> 00:13:29,680
+live together in
+the same graph,
+
+404
+00:13:29,680 --> 00:13:31,360
+so to speak. And
+then, of course,
+
+405
+00:13:31,360 --> 00:13:33,060
+the edges also have type.
+
+406
+00:13:33,145 --> 00:13:35,625
+So you can say
+a drug has a certain
+
+407
+00:13:35,625 --> 00:13:37,165
+structure, which
+is this molecule.
+
+408
+00:13:37,545 --> 00:13:39,385
+A drug has a certain
+side effect.
+
+409
+00:13:39,385 --> 00:13:41,405
+It's associated with
+certain proteins,
+
+410
+00:13:41,545 --> 00:13:42,525
+and so on.
+
+411
+00:13:43,880 --> 00:13:45,480
+Another nice thing
+about graphs
+
+412
+00:13:45,480 --> 00:13:46,680
+is that they can represent
+
+413
+00:13:46,680 --> 00:13:47,960
+information at many different
+
+414
+00:13:47,960 --> 00:13:49,020
+levels of abstraction.
+
+415
+00:13:49,400 --> 00:13:50,360
+So for example,
+
+416
+00:13:50,360 --> 00:13:53,315
+a given chemical molecule has
+
+417
+00:13:53,315 --> 00:13:55,635
+a given chemical
+structure that
+
+418
+00:13:55,635 --> 00:13:56,675
+the chemists know,
+
+419
+00:13:56,675 --> 00:13:58,115
+and you can represent that
+
+420
+00:13:58,115 --> 00:14:00,440
+chemical structure
+itself as a graph.
+
+421
+00:14:00,680 --> 00:14:02,280
+And so that chemical structure
+
+422
+00:14:02,280 --> 00:14:04,440
+of this molecule can live in
+
+423
+00:14:04,440 --> 00:14:06,460
+the same data space,
+so to speak,
+
+424
+00:14:06,600 --> 00:14:08,460
+as but drug and proteins,
+
+425
+00:14:08,520 --> 00:14:10,275
+drug side effects, and so on.
+
+426
+00:14:10,275 --> 00:14:12,275
+So data at many
+different levels
+
+427
+00:14:12,275 --> 00:14:14,115
+of abstraction can all live
+
+428
+00:14:14,115 --> 00:14:15,955
+together in
+the same data space
+
+429
+00:14:15,955 --> 00:14:19,420
+if you use graphs.
+
+430
+00:14:19,420 --> 00:14:21,260
+So what are the use cases that
+
+431
+00:14:21,260 --> 00:14:22,480
+we are seeing? Well,
+
+432
+00:14:22,860 --> 00:14:24,720
+I was telling you
+about a medical,
+
+433
+00:14:26,015 --> 00:14:27,215
+a pharma company that we're
+
+434
+00:14:27,215 --> 00:14:29,375
+working with that's
+growing drug
+
+435
+00:14:29,375 --> 00:14:30,915
+hypothesis and discovery.
+
+436
+00:14:31,455 --> 00:14:33,055
+Another area that we're very
+
+437
+00:14:33,055 --> 00:14:34,860
+actively engaged in is in
+
+438
+00:14:34,940 --> 00:14:35,840
+precision medicine,
+
+439
+00:14:35,980 --> 00:14:37,340
+and I'll tell you
+a little more
+
+440
+00:14:37,340 --> 00:14:39,260
+detail about that in the next
+
+441
+00:14:39,260 --> 00:14:40,000
+few slides.
+
+442
+00:14:42,355 --> 00:14:44,035
+Another place where graphs are
+
+443
+00:14:44,035 --> 00:14:46,535
+used extensively
+is in financial
+
+444
+00:14:46,595 --> 00:14:48,135
+services or fintech.
+
+445
+00:14:48,515 --> 00:14:50,300
+So the idea here is to take
+
+446
+00:14:50,300 --> 00:14:52,140
+financial transaction data and
+
+447
+00:14:52,140 --> 00:14:53,980
+then represent that as a big
+
+448
+00:14:53,980 --> 00:14:55,200
+heterogeneous graph,
+
+449
+00:14:55,580 --> 00:14:57,600
+and then basically
+do analytics,
+
+450
+00:14:58,005 --> 00:15:00,405
+AI, mining, and so on on these
+
+451
+00:15:00,405 --> 00:15:02,325
+graphs in order to do things
+
+452
+00:15:02,325 --> 00:15:05,045
+like fraud detection,
+identity theft,
+
+453
+00:15:05,045 --> 00:15:07,465
+customer three
+sixty, and so on.
+
+454
+00:15:07,750 --> 00:15:09,430
+So if you look at this,
+
+455
+00:15:09,830 --> 00:15:11,610
+small graph over here,
+
+456
+00:15:11,910 --> 00:15:13,370
+it's showing you a client,
+
+457
+00:15:13,430 --> 00:15:15,450
+and then the client
+has an occupation.
+
+458
+00:15:15,510 --> 00:15:17,765
+The client has purchased
+some services,
+
+459
+00:15:18,305 --> 00:15:19,505
+client owns an account,
+
+460
+00:15:19,505 --> 00:15:21,365
+the account has
+been invested in.
+
+461
+00:15:21,905 --> 00:15:22,885
+And and, again,
+
+462
+00:15:23,025 --> 00:15:24,625
+the key thing to take away is
+
+463
+00:15:24,625 --> 00:15:25,845
+these are big heterogeneous
+
+464
+00:15:26,145 --> 00:15:27,620
+graphs where the nodes have
+
+465
+00:15:27,620 --> 00:15:28,500
+different types,
+
+466
+00:15:28,500 --> 00:15:30,520
+each type has
+different sets of
+
+467
+00:15:30,820 --> 00:15:32,040
+properties, and then the edges
+
+468
+00:15:32,260 --> 00:15:34,600
+themselves have different
+types as well.
+
+469
+00:15:34,865 --> 00:15:36,305
+And that is the kind of data
+
+470
+00:15:36,305 --> 00:15:38,145
+that can be represented very
+
+471
+00:15:38,145 --> 00:15:40,325
+conveniently using a graph.
+
+472
+00:15:41,265 --> 00:15:42,945
+And then what we need to do in
+
+473
+00:15:42,945 --> 00:15:46,010
+this particular
+area is to feed
+
+474
+00:15:46,010 --> 00:15:47,630
+these graphs into traditional
+
+475
+00:15:47,770 --> 00:15:49,690
+machine learning
+models in order
+
+476
+00:15:49,690 --> 00:15:51,470
+to do things like
+fraud detection
+
+477
+00:15:51,610 --> 00:15:52,510
+and so on.
+
+478
+00:15:54,525 --> 00:15:55,805
+The final kind of knowledge
+
+479
+00:15:55,805 --> 00:15:57,725
+graphs I'll show you are from
+
+480
+00:15:57,725 --> 00:16:00,045
+the information
+security area.
+
+481
+00:16:00,045 --> 00:16:01,720
+So I was telling
+you earlier that,
+
+482
+00:16:02,440 --> 00:16:04,460
+we worked with a multinational
+
+483
+00:16:04,760 --> 00:16:06,460
+company on real time intrusion
+
+484
+00:16:06,520 --> 00:16:07,660
+detection and networks.
+
+485
+00:16:08,120 --> 00:16:10,595
+So here is, interaction graph
+
+486
+00:16:10,675 --> 00:16:12,355
+that was actually built by our
+
+487
+00:16:12,355 --> 00:16:15,315
+system for this
+company over a period
+
+488
+00:16:15,315 --> 00:16:17,155
+of time. And what you notice
+
+489
+00:16:17,155 --> 00:16:18,915
+again is that there
+are different
+
+490
+00:16:18,915 --> 00:16:19,815
+kinds of nodes.
+
+491
+00:16:19,830 --> 00:16:21,690
+So, for example,
+there are websites.
+
+492
+00:16:21,750 --> 00:16:23,530
+There are nodes
+for processes,
+
+493
+00:16:23,830 --> 00:16:26,470
+nodes for files, for
+ports, for users,
+
+494
+00:16:26,470 --> 00:16:28,715
+and so on. And if,
+for example,
+
+495
+00:16:28,855 --> 00:16:30,535
+you read a certain file or you
+
+496
+00:16:30,535 --> 00:16:32,215
+write to a certain file or you
+
+497
+00:16:32,215 --> 00:16:33,915
+fork a process and so on,
+
+498
+00:16:34,215 --> 00:16:36,110
+all of that activity can be
+
+499
+00:16:36,110 --> 00:16:38,610
+represented very nicely using
+
+500
+00:16:38,670 --> 00:16:40,290
+a graph of this sort.
+
+501
+00:16:40,510 --> 00:16:42,530
+And then
+the intrusion detection
+
+502
+00:16:42,590 --> 00:16:44,030
+problem that we
+solved for them
+
+503
+00:16:44,030 --> 00:16:46,095
+was looking for
+certain forbidden
+
+504
+00:16:46,155 --> 00:16:47,775
+patterns within this graph.
+
+505
+00:16:48,075 --> 00:16:49,195
+I don't have the time to tell
+
+506
+00:16:49,195 --> 00:16:50,635
+you about
+the particular pattern
+
+507
+00:16:50,635 --> 00:16:51,435
+that we detected,
+
+508
+00:16:51,435 --> 00:16:53,035
+but the highlighted edges in
+
+509
+00:16:53,035 --> 00:16:55,300
+this graph were a forbidden
+
+510
+00:16:55,360 --> 00:16:57,220
+pattern and that
+was highlighted
+
+511
+00:16:57,360 --> 00:17:00,500
+and then reported
+to the operator.
+
+512
+00:17:03,145 --> 00:17:04,605
+So that is the data.
+
+513
+00:17:05,465 --> 00:17:07,405
+All of this data
+in these domains
+
+514
+00:17:07,625 --> 00:17:09,145
+are being represented using
+
+515
+00:17:09,145 --> 00:17:10,685
+graphs or knowledge graphs.
+
+516
+00:17:11,130 --> 00:17:13,050
+Now what we need
+to do in order
+
+517
+00:17:13,050 --> 00:17:15,210
+to do the analytics is you can
+
+518
+00:17:15,210 --> 00:17:16,670
+have supervised learning,
+
+519
+00:17:16,810 --> 00:17:18,030
+unsupervised learning.
+
+520
+00:17:18,335 --> 00:17:20,655
+So we support
+unsupervised methods
+
+521
+00:17:20,655 --> 00:17:22,735
+like Louvain clustering,
+page rank,
+
+522
+00:17:22,735 --> 00:17:23,795
+betweenness centrality,
+
+523
+00:17:24,015 --> 00:17:25,295
+which is very important in
+
+524
+00:17:25,295 --> 00:17:26,355
+security applications,
+
+525
+00:17:27,055 --> 00:17:28,930
+as well as supervised learning
+
+526
+00:17:28,990 --> 00:17:31,410
+algorithms like
+GNNs and GTNs.
+
+527
+00:17:33,230 --> 00:17:34,990
+And, again, you need high
+
+528
+00:17:34,990 --> 00:17:36,885
+performance scale
+out processing
+
+529
+00:17:37,025 --> 00:17:38,705
+because the datasets in these
+
+530
+00:17:38,705 --> 00:17:40,245
+worlds are very, very large.
+
+531
+00:17:40,385 --> 00:17:41,585
+So you could have hundreds of
+
+532
+00:17:41,585 --> 00:17:43,925
+billions of nodes
+in these graphs
+
+533
+00:17:44,200 --> 00:17:46,040
+with hundreds of
+billions of edges,
+
+534
+00:17:46,040 --> 00:17:47,560
+and then you need to do all of
+
+535
+00:17:47,560 --> 00:17:49,340
+this processing very fast.
+
+536
+00:17:49,560 --> 00:17:51,080
+And so I'm making the same
+
+537
+00:17:51,080 --> 00:17:53,195
+argument that I started with,
+
+538
+00:17:53,675 --> 00:17:54,875
+earlier in my talk,
+
+539
+00:17:54,875 --> 00:17:56,635
+except that now I
+made it a little
+
+540
+00:17:56,635 --> 00:17:58,315
+more concrete by
+giving you a bunch
+
+541
+00:17:58,315 --> 00:17:59,835
+of use cases and,
+
+542
+00:18:00,155 --> 00:18:02,655
+showing you what is
+done with that data.
+
+543
+00:18:05,180 --> 00:18:08,940
+So here is a slide
+that goes a little
+
+544
+00:18:08,940 --> 00:18:11,100
+more into this pharma use case
+
+545
+00:18:11,100 --> 00:18:12,880
+that I was, showing you.
+
+546
+00:18:13,245 --> 00:18:15,485
+And the takeaway from this
+
+547
+00:18:15,485 --> 00:18:17,985
+particular use
+case is the need
+
+548
+00:18:18,045 --> 00:18:21,730
+for an integrated
+system with querying,
+
+549
+00:18:22,190 --> 00:18:23,710
+analytics, AI,
+
+550
+00:18:23,710 --> 00:18:26,210
+all built into
+the same workflow.
+
+551
+00:18:26,830 --> 00:18:29,170
+So let's take a look
+at what this is.
+
+552
+00:18:30,015 --> 00:18:31,375
+In this particular company,
+
+553
+00:18:31,375 --> 00:18:33,295
+they had a big medical
+knowledge graph,
+
+554
+00:18:33,295 --> 00:18:34,815
+and then they
+gave us a query,
+
+555
+00:18:34,815 --> 00:18:36,995
+which I've shown in
+the bottom right.
+
+556
+00:18:37,420 --> 00:18:39,180
+The query says extract oral
+
+557
+00:18:39,180 --> 00:18:41,100
+drugs and associated
+targets for
+
+558
+00:18:41,100 --> 00:18:42,240
+heart failure treatment,
+
+559
+00:18:42,300 --> 00:18:43,840
+return the top ten chemical
+
+560
+00:18:43,900 --> 00:18:45,740
+compounds most
+similar to a given
+
+561
+00:18:45,740 --> 00:18:48,305
+compound, such as
+benzene in this case,
+
+562
+00:18:48,525 --> 00:18:49,825
+and return their targets.
+
+563
+00:18:50,605 --> 00:18:52,605
+So what is done
+is to take that
+
+564
+00:18:52,605 --> 00:18:53,905
+English language
+specification,
+
+565
+00:18:54,520 --> 00:18:56,300
+and then that gets translated
+
+566
+00:18:56,600 --> 00:18:58,680
+into a small graph that I've
+
+567
+00:18:58,680 --> 00:19:01,340
+shown at the left
+in my diagram.
+
+568
+00:19:01,685 --> 00:19:03,045
+So you have this big graph,
+
+569
+00:19:03,045 --> 00:19:04,565
+which is the medical
+knowledge graph.
+
+570
+00:19:04,565 --> 00:19:05,865
+That's called the host graph.
+
+571
+00:19:06,165 --> 00:19:07,785
+This is called
+the query graph.
+
+572
+00:19:08,005 --> 00:19:09,445
+And then one of the key things
+
+573
+00:19:09,445 --> 00:19:10,885
+that you need to do to process
+
+574
+00:19:10,885 --> 00:19:12,940
+this query is to find all
+
+575
+00:19:12,940 --> 00:19:15,180
+instances of this query graph
+
+576
+00:19:15,180 --> 00:19:17,500
+in this big medical
+knowledge graph.
+
+577
+00:19:17,500 --> 00:19:19,580
+So each instance
+corresponds to a hit.
+
+578
+00:19:19,580 --> 00:19:20,745
+Let's call it that.
+
+579
+00:19:20,825 --> 00:19:22,265
+And so you basically return
+
+580
+00:19:22,265 --> 00:19:23,705
+the list of all the hits that
+
+581
+00:19:23,705 --> 00:19:25,965
+you got for this
+particular query.
+
+582
+00:19:26,825 --> 00:19:28,185
+Then the next
+thing you need to
+
+583
+00:19:28,185 --> 00:19:30,100
+do is to take all
+of these hits
+
+584
+00:19:30,180 --> 00:19:31,800
+and then find
+their similarity.
+
+585
+00:19:32,100 --> 00:19:33,320
+You need to give a similarity
+
+586
+00:19:33,540 --> 00:19:35,720
+score to each one
+of these hits
+
+587
+00:19:35,940 --> 00:19:37,640
+using a particular similarity
+
+588
+00:19:37,700 --> 00:19:39,160
+metric that's called Tanimoto
+
+589
+00:19:39,460 --> 00:19:41,525
+similarity. Now
+this is something
+
+590
+00:19:41,525 --> 00:19:42,965
+that's implemented
+by what they
+
+591
+00:19:42,965 --> 00:19:44,265
+call a chemical cartridge.
+
+592
+00:19:44,405 --> 00:19:45,845
+So these are just routines,
+
+593
+00:19:45,845 --> 00:19:47,705
+libraries that they use.
+
+594
+00:19:48,170 --> 00:19:49,770
+We're not going to
+reimplement them,
+
+595
+00:19:49,770 --> 00:19:51,370
+but basically, this shows you
+
+596
+00:19:51,370 --> 00:19:53,770
+that when you
+build this kind,
+
+597
+00:19:53,770 --> 00:19:55,405
+what you need to be able to do
+
+598
+00:19:55,485 --> 00:19:57,645
+is to do already
+integration of
+
+599
+00:19:57,645 --> 00:19:59,165
+these kinds of third party
+
+600
+00:19:59,165 --> 00:20:01,745
+packages into your
+overall workflow.
+
+601
+00:20:02,730 --> 00:20:04,010
+Now since you have a bunch of
+
+602
+00:20:04,010 --> 00:20:05,290
+hits and you can compute their
+
+603
+00:20:05,290 --> 00:20:06,990
+similarity scores
+in parallel,
+
+604
+00:20:07,450 --> 00:20:08,650
+one of the nice things that we
+
+605
+00:20:08,650 --> 00:20:10,250
+can do in our
+system is that we
+
+606
+00:20:10,250 --> 00:20:12,285
+can compute
+the similarity scores
+
+607
+00:20:12,285 --> 00:20:14,705
+themselves in parallel
+using our engine.
+
+608
+00:20:15,165 --> 00:20:17,085
+And so this chart at the top
+
+609
+00:20:17,085 --> 00:20:19,325
+shows you scaling
+for computing
+
+610
+00:20:19,325 --> 00:20:21,770
+tiny motor similarity
+on a shared
+
+611
+00:20:21,770 --> 00:20:22,490
+memory machine.
+
+612
+00:20:22,490 --> 00:20:23,290
+And as you can see,
+
+613
+00:20:23,290 --> 00:20:24,890
+you get very good
+scaling as you
+
+614
+00:20:24,890 --> 00:20:26,750
+increase the number
+of threads.
+
+615
+00:20:28,305 --> 00:20:29,905
+Once you've got the scores,
+
+616
+00:20:29,905 --> 00:20:31,505
+the similarity scores for all
+
+617
+00:20:31,505 --> 00:20:33,185
+of the hits, you sort them,
+
+618
+00:20:33,185 --> 00:20:35,525
+and then you return
+the top ten.
+
+619
+00:20:35,810 --> 00:20:37,650
+And so what you see over here
+
+620
+00:20:37,650 --> 00:20:40,470
+is a relatively
+complicated workflow.
+
+621
+00:20:40,530 --> 00:20:42,070
+We work with far
+more complicated
+
+622
+00:20:42,210 --> 00:20:44,230
+workflows. But even
+in this example,
+
+623
+00:20:44,645 --> 00:20:46,905
+you can see the need
+for querying.
+
+624
+00:20:47,365 --> 00:20:49,145
+You see the need
+for integration
+
+625
+00:20:49,605 --> 00:20:51,145
+with third party packages,
+
+626
+00:20:51,365 --> 00:20:53,225
+such as these
+chemical cartridges
+
+627
+00:20:53,365 --> 00:20:54,265
+like RDKit.
+
+628
+00:20:54,790 --> 00:20:56,630
+And then you see the need for
+
+629
+00:20:56,630 --> 00:20:59,110
+doing ranking and other kinds
+
+630
+00:20:59,110 --> 00:20:59,930
+of algorithms.
+
+631
+00:21:04,045 --> 00:21:06,045
+So let me end by telling you
+
+632
+00:21:06,045 --> 00:21:08,465
+about a few use cases.
+
+633
+00:21:08,525 --> 00:21:11,930
+So this is GraphAI
+in the real world.
+
+634
+00:21:12,390 --> 00:21:13,510
+This is some work that we're
+
+635
+00:21:13,510 --> 00:21:14,890
+doing with one
+of the biggest,
+
+636
+00:21:15,350 --> 00:21:17,450
+fintech companies
+in the world.
+
+637
+00:21:17,805 --> 00:21:19,405
+So they want to handle massive
+
+638
+00:21:19,405 --> 00:21:21,325
+datasets with
+billions of nodes
+
+639
+00:21:21,325 --> 00:21:23,725
+and edges. And they
+gave us a bunch
+
+640
+00:21:23,725 --> 00:21:25,645
+of problems, and I'll show you
+
+641
+00:21:25,645 --> 00:21:27,425
+results for two of them.
+
+642
+00:21:28,010 --> 00:21:29,370
+One of the things they wanted
+
+643
+00:21:29,370 --> 00:21:30,990
+was a page rank computation,
+
+644
+00:21:31,290 --> 00:21:32,990
+and then the other
+is a unsupervised
+
+645
+00:21:33,290 --> 00:21:34,890
+learning algorithm
+called Louvain
+
+646
+00:21:34,890 --> 00:21:36,525
+clustering, which is basically
+
+647
+00:21:36,525 --> 00:21:38,225
+a community
+detection algorithm
+
+648
+00:21:38,365 --> 00:21:40,465
+that builds hierarchical
+communities,
+
+649
+00:21:41,085 --> 00:21:43,085
+and that's very popular now in
+
+650
+00:21:43,085 --> 00:21:44,450
+the machine learning world.
+
+651
+00:21:44,850 --> 00:21:47,350
+And so the chart
+below shows you
+
+652
+00:21:48,530 --> 00:21:51,410
+some numbers, for two
+different graphs,
+
+653
+00:21:51,410 --> 00:21:52,770
+a small graph with a hundred
+
+654
+00:21:52,770 --> 00:21:53,935
+million nodes and
+a bigger graph
+
+655
+00:21:53,935 --> 00:21:55,875
+with twenty billion nodes.
+
+656
+00:21:56,335 --> 00:21:58,015
+And, we're also showing you
+
+657
+00:21:58,015 --> 00:21:59,555
+the number of machines we used
+
+658
+00:21:59,695 --> 00:22:01,055
+and then the time to compute
+
+659
+00:22:01,055 --> 00:22:02,620
+page rank and Louvain.
+
+660
+00:22:02,760 --> 00:22:04,060
+And these are substantially
+
+661
+00:22:04,280 --> 00:22:06,840
+faster than what
+they were able
+
+662
+00:22:06,840 --> 00:22:08,520
+to do on the system that they
+
+663
+00:22:08,520 --> 00:22:10,775
+had been using
+previously before
+
+664
+00:22:10,775 --> 00:22:12,715
+they started working with us.
+
+665
+00:22:16,375 --> 00:22:17,995
+Here's another application.
+
+666
+00:22:18,295 --> 00:22:19,980
+Lots of interest
+in this area.
+
+667
+00:22:20,140 --> 00:22:22,000
+So molecular property
+predictions.
+
+668
+00:22:22,700 --> 00:22:23,980
+So here is the way to think
+
+669
+00:22:23,980 --> 00:22:24,880
+about the problem.
+
+670
+00:22:25,100 --> 00:22:26,720
+I have a bunch of molecules
+
+671
+00:22:27,100 --> 00:22:28,960
+whose properties I know,
+
+672
+00:22:29,455 --> 00:22:30,975
+And these properties could be
+
+673
+00:22:30,975 --> 00:22:33,075
+at many different
+levels of attraction,
+
+674
+00:22:33,135 --> 00:22:34,995
+so they could be
+quantum properties,
+
+675
+00:22:35,455 --> 00:22:37,660
+physical, chemistry
+properties,
+
+676
+00:22:37,800 --> 00:22:39,560
+or even physiology
+properties,
+
+677
+00:22:39,560 --> 00:22:40,780
+like whether this particular
+
+678
+00:22:40,840 --> 00:22:43,160
+compound is toxic
+to human beings
+
+679
+00:22:43,160 --> 00:22:45,535
+or not. So whatever these
+
+680
+00:22:45,535 --> 00:22:46,415
+properties are,
+
+681
+00:22:46,415 --> 00:22:48,095
+the way to think
+about the training
+
+682
+00:22:48,095 --> 00:22:50,175
+data in this case is that you
+
+683
+00:22:50,175 --> 00:22:51,555
+have a collection
+of molecules,
+
+684
+00:22:51,695 --> 00:22:53,555
+and each molecule is labeled
+
+685
+00:22:53,840 --> 00:22:54,900
+with a property.
+
+686
+00:22:55,440 --> 00:22:57,280
+And then the inference task is
+
+687
+00:22:57,280 --> 00:22:58,800
+given a new molecule whose
+
+688
+00:22:58,800 --> 00:23:00,500
+properties you
+don't quite know,
+
+689
+00:23:00,800 --> 00:23:03,185
+well, can you predict
+what the properties
+
+690
+00:23:03,185 --> 00:23:05,825
+of this molecule are given all
+
+691
+00:23:05,825 --> 00:23:07,825
+of the training data
+for the molecules
+
+692
+00:23:07,825 --> 00:23:09,045
+that you do know?
+
+693
+00:23:09,105 --> 00:23:11,445
+So this is a very
+important problem.
+
+694
+00:23:11,910 --> 00:23:14,090
+Lots of interest
+in this area.
+
+695
+00:23:15,750 --> 00:23:17,210
+There's
+a benchmark competition
+
+696
+00:23:17,350 --> 00:23:19,425
+that's called TDC benchmark
+
+697
+00:23:19,645 --> 00:23:21,005
+competition that
+lots of people
+
+698
+00:23:21,005 --> 00:23:22,305
+are entering now.
+
+699
+00:23:22,685 --> 00:23:24,845
+And, recently,
+some of our guys
+
+700
+00:23:24,845 --> 00:23:26,525
+came up with a innovative way
+
+701
+00:23:26,525 --> 00:23:28,990
+of using graphs in
+this particular area.
+
+702
+00:23:29,370 --> 00:23:30,910
+So given a bunch of molecules
+
+703
+00:23:31,130 --> 00:23:32,110
+and their labels,
+
+704
+00:23:32,330 --> 00:23:34,090
+what they actually do is to
+
+705
+00:23:34,090 --> 00:23:35,630
+build what they
+call a molecular
+
+706
+00:23:35,770 --> 00:23:36,945
+similarity graph.
+
+707
+00:23:37,345 --> 00:23:39,345
+So in the molecular
+similarity graph,
+
+708
+00:23:39,345 --> 00:23:40,945
+each node corresponds
+to one of
+
+709
+00:23:40,945 --> 00:23:42,625
+the molecules, and then there
+
+710
+00:23:42,625 --> 00:23:44,625
+is an edge between
+them if they
+
+711
+00:23:44,625 --> 00:23:46,590
+are similar in
+their properties
+
+712
+00:23:46,810 --> 00:23:49,310
+according to some
+RDKit measure.
+
+713
+00:23:49,690 --> 00:23:51,770
+So you can think about this as
+
+714
+00:23:51,770 --> 00:23:54,170
+representing similarity
+of the different
+
+715
+00:23:54,170 --> 00:23:55,995
+molecules that
+you have in your
+
+716
+00:23:55,995 --> 00:23:58,155
+training data. And the node
+
+717
+00:23:58,155 --> 00:23:59,935
+features come from the Katana
+
+718
+00:23:59,995 --> 00:24:01,455
+Life Science module.
+
+719
+00:24:01,995 --> 00:24:04,235
+So what we do
+with this labeled
+
+720
+00:24:04,235 --> 00:24:06,490
+graph is that we
+use a g n n in
+
+721
+00:24:06,490 --> 00:24:08,570
+order to create vector space
+
+722
+00:24:08,570 --> 00:24:10,590
+representations for
+each of the nodes.
+
+723
+00:24:10,730 --> 00:24:12,570
+So we embed each of the nodes
+
+724
+00:24:12,570 --> 00:24:14,350
+in some high
+dimensional space.
+
+725
+00:24:14,615 --> 00:24:16,135
+And then given
+a new molecule,
+
+726
+00:24:16,135 --> 00:24:18,135
+we basically use these learned
+
+727
+00:24:18,135 --> 00:24:20,715
+embeddings in order
+to do the prediction
+
+728
+00:24:21,415 --> 00:24:23,435
+. And we were able to improve
+
+729
+00:24:23,815 --> 00:24:26,780
+the leaderboard by
+about six percent,
+
+730
+00:24:27,720 --> 00:24:30,620
+in with just about
+two weeks of effort.
+
+731
+00:24:30,840 --> 00:24:32,905
+So what you can see is what we
+
+732
+00:24:32,905 --> 00:24:35,405
+are doing is inventing
+new algorithms,
+
+733
+00:24:35,785 --> 00:24:37,725
+new ways of thinking
+about problems,
+
+734
+00:24:38,345 --> 00:24:39,885
+AI machine learning problems
+
+735
+00:24:40,025 --> 00:24:42,060
+using graphs. But then we also
+
+736
+00:24:42,060 --> 00:24:43,520
+have this very nice platform
+
+737
+00:24:43,580 --> 00:24:45,180
+that we can quickly implement
+
+738
+00:24:45,180 --> 00:24:47,260
+these new algorithms
+on and then
+
+739
+00:24:47,260 --> 00:24:48,720
+see how well they do.
+
+740
+00:24:51,185 --> 00:24:53,905
+Here's another
+application from
+
+741
+00:24:53,905 --> 00:24:55,845
+the precision medicine area.
+
+742
+00:24:56,385 --> 00:24:58,485
+Lots of VC interest
+in this area.
+
+743
+00:24:58,700 --> 00:25:00,800
+Lots of companies
+working in this area.
+
+744
+00:25:01,180 --> 00:25:03,500
+So here is
+the precision medicine
+
+745
+00:25:03,500 --> 00:25:05,440
+problem at a very
+simple level.
+
+746
+00:25:05,875 --> 00:25:07,395
+Right now, if you
+have a disease,
+
+747
+00:25:07,395 --> 00:25:08,455
+you go to a doctor,
+
+748
+00:25:08,515 --> 00:25:09,955
+chances are you
+will get pretty
+
+749
+00:25:09,955 --> 00:25:11,715
+much the same
+treatment that he
+
+750
+00:25:11,715 --> 00:25:13,235
+would have given to some other
+
+751
+00:25:13,235 --> 00:25:15,175
+patient who has
+the same disease
+
+752
+00:25:15,280 --> 00:25:16,900
+that you have.
+
+753
+00:25:17,280 --> 00:25:18,900
+What we would like
+to do, obviously,
+
+754
+00:25:19,120 --> 00:25:21,040
+is to be more precise about
+
+755
+00:25:21,040 --> 00:25:22,480
+the treatment that we give you
+
+756
+00:25:22,480 --> 00:25:24,345
+by exploiting things like your
+
+757
+00:25:24,345 --> 00:25:26,985
+medical history, your
+genetic profile,
+
+758
+00:25:26,985 --> 00:25:28,265
+everything that's known about
+
+759
+00:25:28,265 --> 00:25:30,365
+your family, your financial
+
+760
+00:25:30,505 --> 00:25:32,045
+circumstances,
+your environment,
+
+761
+00:25:32,265 --> 00:25:34,640
+and so on. And so what we need
+
+762
+00:25:34,640 --> 00:25:36,640
+to do is essentially
+get a patient
+
+763
+00:25:36,640 --> 00:25:38,960
+three sixty information,
+so to speak,
+
+764
+00:25:38,960 --> 00:25:41,145
+about each patient
+and then use
+
+765
+00:25:41,145 --> 00:25:42,985
+that information in order to
+
+766
+00:25:42,985 --> 00:25:44,905
+direct the treatment
+that we're
+
+767
+00:25:44,905 --> 00:25:46,765
+giving you for
+a particular disease.
+
+768
+00:25:47,305 --> 00:25:48,665
+So we are working with one of
+
+769
+00:25:48,665 --> 00:25:50,150
+the big precision medicine
+
+770
+00:25:50,210 --> 00:25:51,590
+companies in this space,
+
+771
+00:25:51,810 --> 00:25:53,830
+and here is how they
+want to do it.
+
+772
+00:25:53,890 --> 00:25:55,670
+They want to take
+all of the data
+
+773
+00:25:55,890 --> 00:25:57,750
+about a patient and represent
+
+774
+00:25:57,810 --> 00:25:59,595
+that data as a graph.
+
+775
+00:26:00,535 --> 00:26:02,855
+So for in your training set,
+
+776
+00:26:02,855 --> 00:26:04,155
+you have a bunch of patients,
+
+777
+00:26:04,375 --> 00:26:06,135
+and so you've abstracted each
+
+778
+00:26:06,135 --> 00:26:07,850
+patient out into a graph.
+
+779
+00:26:08,170 --> 00:26:09,930
+And then for each patient in
+
+780
+00:26:09,930 --> 00:26:10,890
+your training set,
+
+781
+00:26:10,890 --> 00:26:12,090
+you know whether the treatment
+
+782
+00:26:12,090 --> 00:26:13,770
+has been successful or not.
+
+783
+00:26:13,770 --> 00:26:15,870
+And so you can
+label the graphs
+
+784
+00:26:16,010 --> 00:26:17,985
+in your training set with that
+
+785
+00:26:17,985 --> 00:26:19,125
+particular label.
+
+786
+00:26:20,225 --> 00:26:22,305
+And now the problem
+is the following.
+
+787
+00:26:22,305 --> 00:26:23,925
+If a new patient comes in,
+
+788
+00:26:24,600 --> 00:26:26,280
+what we do is we build a graph
+
+789
+00:26:26,280 --> 00:26:27,640
+corresponding to the data for
+
+790
+00:26:27,640 --> 00:26:30,040
+that person, and then we infer
+
+791
+00:26:30,040 --> 00:26:32,140
+the label for this new graph
+
+792
+00:26:32,200 --> 00:26:33,800
+based on everything
+that we know
+
+793
+00:26:33,800 --> 00:26:35,245
+from the training set.
+
+794
+00:26:35,785 --> 00:26:39,145
+So this is basically what's
+
+795
+00:26:39,145 --> 00:26:41,145
+called a graph
+classification problem.
+
+796
+00:26:41,145 --> 00:26:42,585
+And, again, we're using state
+
+797
+00:26:42,585 --> 00:26:44,620
+of the art techniques in graph
+
+798
+00:26:44,620 --> 00:26:46,060
+transformer networks and graph
+
+799
+00:26:46,060 --> 00:26:47,580
+neural networks in order to
+
+800
+00:26:47,580 --> 00:26:49,120
+solve this particular problem
+
+801
+00:26:49,500 --> 00:26:51,340
+using AI and machine learning
+
+802
+00:26:51,340 --> 00:26:54,525
+techniques. This is,
+
+803
+00:26:54,845 --> 00:26:56,285
+some recent work on graph
+
+804
+00:26:56,285 --> 00:26:57,345
+transformer networks.
+
+805
+00:26:57,405 --> 00:26:58,845
+So this is something that we
+
+806
+00:26:58,845 --> 00:27:00,540
+developed for the precision
+
+807
+00:27:00,540 --> 00:27:02,160
+medicine use case.
+
+808
+00:27:02,540 --> 00:27:04,460
+And, I'm not going
+to go through
+
+809
+00:27:04,460 --> 00:27:06,860
+the details of
+the running times
+
+810
+00:27:06,860 --> 00:27:07,760
+and accuracy,
+
+811
+00:27:08,585 --> 00:27:10,365
+but I want to make two points
+
+812
+00:27:10,425 --> 00:27:11,465
+using this slide.
+
+813
+00:27:11,465 --> 00:27:13,065
+The first is that we were able
+
+814
+00:27:13,065 --> 00:27:15,465
+to improve
+the running time over
+
+815
+00:27:15,465 --> 00:27:17,980
+previous algorithms for GTNs.
+
+816
+00:27:18,360 --> 00:27:20,520
+And the way we do it was by
+
+817
+00:27:20,520 --> 00:27:22,300
+inventing a very new algorithm
+
+818
+00:27:22,360 --> 00:27:24,540
+that uses sampling
+without losing
+
+819
+00:27:24,600 --> 00:27:26,725
+accuracy. So developing new
+
+820
+00:27:26,725 --> 00:27:28,805
+algorithms for
+these graph machine
+
+821
+00:27:28,805 --> 00:27:30,085
+learning problems is one of
+
+822
+00:27:30,085 --> 00:27:31,545
+the things that
+we do at Katana.
+
+823
+00:27:31,925 --> 00:27:32,565
+And then again,
+
+824
+00:27:32,565 --> 00:27:33,705
+as I've been emphasizing,
+
+825
+00:27:33,765 --> 00:27:34,980
+we have this this platform on
+
+826
+00:27:34,980 --> 00:27:36,600
+which we can quickly implement
+
+827
+00:27:36,740 --> 00:27:38,900
+these algorithms
+in parallel and
+
+828
+00:27:38,900 --> 00:27:40,440
+see how well they do.
+
+829
+00:27:42,645 --> 00:27:44,165
+This is my last slide.
+
+830
+00:27:44,165 --> 00:27:46,245
+I want to conclude by telling
+
+831
+00:27:46,245 --> 00:27:48,965
+you about something
+that you all know,
+
+832
+00:27:48,965 --> 00:27:50,965
+and that is that
+knowledge graphs
+
+833
+00:27:50,965 --> 00:27:53,370
+and AI, at least
+in our opinion,
+
+834
+00:27:53,830 --> 00:27:55,770
+are the next base big thing.
+
+835
+00:27:56,390 --> 00:27:58,730
+So this whole
+area of analytics
+
+836
+00:27:58,870 --> 00:28:00,855
+started out with what we can
+
+837
+00:28:00,855 --> 00:28:02,635
+call descriptive analytics.
+
+838
+00:28:03,415 --> 00:28:05,115
+So this was the old style
+
+839
+00:28:05,175 --> 00:28:08,075
+analytics where basically
+you just said,
+
+840
+00:28:08,240 --> 00:28:08,980
+what happened?
+
+841
+00:28:09,280 --> 00:28:12,640
+So you said, I had,
+pain in my chest,
+
+842
+00:28:12,640 --> 00:28:13,920
+and there was a shooting pain
+
+843
+00:28:13,920 --> 00:28:16,340
+down my left arm.
+That's what happened.
+
+844
+00:28:17,495 --> 00:28:19,575
+Diagnostic analytics
+is the next
+
+845
+00:28:19,575 --> 00:28:22,075
+more sophisticated
+kind of analytics.
+
+846
+00:28:22,295 --> 00:28:24,455
+So here, what we want to do is
+
+847
+00:28:24,455 --> 00:28:26,990
+to also say why
+something happened.
+
+848
+00:28:27,050 --> 00:28:28,810
+So it's not just an account of
+
+849
+00:28:28,810 --> 00:28:31,290
+what happened, but also you
+
+850
+00:28:31,290 --> 00:28:33,310
+probably had all
+of those problems
+
+851
+00:28:33,635 --> 00:28:35,315
+that you described because you
+
+852
+00:28:35,315 --> 00:28:36,835
+were having a heart attack.
+
+853
+00:28:36,835 --> 00:28:38,615
+So that is diagnostic
+analytics.
+
+854
+00:28:39,715 --> 00:28:40,935
+The next more sophisticated
+
+855
+00:28:41,690 --> 00:28:43,790
+analytics is
+prescriptive analytics.
+
+856
+00:28:44,650 --> 00:28:45,930
+Given that these things have
+
+857
+00:28:45,930 --> 00:28:47,850
+happened and given
+that this is
+
+858
+00:28:47,850 --> 00:28:49,665
+why they probably happen,
+
+859
+00:28:49,665 --> 00:28:51,025
+here are all
+the things you need
+
+860
+00:28:51,025 --> 00:28:52,945
+to do in the future
+in order to
+
+861
+00:28:52,945 --> 00:28:55,105
+mitigate the bad effects of
+
+862
+00:28:55,105 --> 00:28:56,085
+whatever happened.
+
+863
+00:28:56,305 --> 00:28:58,245
+So here you
+obviously need some
+
+864
+00:28:58,550 --> 00:29:00,230
+predictive models in order to
+
+865
+00:29:00,230 --> 00:29:01,990
+be able to say
+what needs to be
+
+866
+00:29:01,990 --> 00:29:03,610
+done in the future.
+
+867
+00:29:05,190 --> 00:29:06,730
+And then
+the most sophisticated
+
+868
+00:29:07,345 --> 00:29:09,445
+thing is what we
+call predictive
+
+869
+00:29:09,585 --> 00:29:11,605
+analytics. And in
+predictive analytics,
+
+870
+00:29:12,145 --> 00:29:13,845
+you're not really
+building models
+
+871
+00:29:14,065 --> 00:29:16,145
+based on rules or
+something that
+
+872
+00:29:16,145 --> 00:29:16,865
+people give you,
+
+873
+00:29:16,865 --> 00:29:18,150
+but you build the models
+
+874
+00:29:18,210 --> 00:29:20,530
+automatically using
+all of the big
+
+875
+00:29:20,530 --> 00:29:22,210
+data that you have and all of
+
+876
+00:29:22,210 --> 00:29:23,650
+these wonderful
+machine learning
+
+877
+00:29:23,650 --> 00:29:25,410
+and AI techniques that are
+
+878
+00:29:25,410 --> 00:29:26,605
+available to us.
+
+879
+00:29:27,005 --> 00:29:28,925
+So that is where
+there is going
+
+880
+00:29:28,925 --> 00:29:30,145
+to be a lot of action,
+
+881
+00:29:30,285 --> 00:29:31,345
+predictive analytics.
+
+882
+00:29:31,725 --> 00:29:33,185
+There are many
+kinds of predictive
+
+883
+00:29:33,245 --> 00:29:35,220
+analytics on different
+kinds of data,
+
+884
+00:29:35,220 --> 00:29:36,980
+but we believe
+graphs are going
+
+885
+00:29:36,980 --> 00:29:39,620
+to be a very big
+part of predictive
+
+886
+00:29:39,620 --> 00:29:41,775
+analytics. And
+that is the space
+
+887
+00:29:41,935 --> 00:29:44,435
+that katana graph plays in.
+
+888
+00:29:44,575 --> 00:29:45,875
+With that, I'll conclude.
+
+889
+00:29:46,175 --> 00:29:47,555
+Thank you for your attention.
+

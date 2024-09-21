@@ -1,0 +1,3781 @@
+1
+00:00:00,000 --> 00:00:01,220
+So hey, everyone.
+
+2
+00:00:02,400 --> 00:00:05,040
+I'm the CEO of Timber AI.
+
+3
+00:00:05,440 --> 00:00:06,960
+I've previously worked on big
+
+4
+00:00:06,960 --> 00:00:08,580
+data and semantic
+web technologies,
+
+5
+00:00:09,520 --> 00:00:10,960
+and I'm going to
+show you today
+
+6
+00:00:10,960 --> 00:00:12,715
+how with Timber you can run
+
+7
+00:00:12,715 --> 00:00:14,475
+graph algorithms on top of
+
+8
+00:00:14,475 --> 00:00:15,615
+relational databases,
+
+9
+00:00:15,995 --> 00:00:18,415
+mostly data warehouse
+and data lakes.
+
+10
+00:00:19,195 --> 00:00:20,975
+So let's start from the gap.
+
+11
+00:00:21,435 --> 00:00:23,375
+Why you cannot run
+graph algorithms
+
+12
+00:00:23,435 --> 00:00:25,675
+today on your
+data warehouse or
+
+13
+00:00:25,675 --> 00:00:27,770
+data lake? So the gap that we
+
+14
+00:00:27,770 --> 00:00:29,930
+see today is that most data is
+
+15
+00:00:29,930 --> 00:00:32,650
+stored in tables and is being
+
+16
+00:00:32,650 --> 00:00:34,270
+models and tables
+and columns.
+
+17
+00:00:35,290 --> 00:00:36,970
+Graph databases and knowledge
+
+18
+00:00:36,970 --> 00:00:39,550
+graphs store
+information in a graph
+
+19
+00:00:40,135 --> 00:00:42,455
+structure, but also
+give you a way
+
+20
+00:00:42,455 --> 00:00:44,795
+to define type
+of relationships
+
+21
+00:00:45,255 --> 00:00:47,755
+between your all
+of your business
+
+22
+00:00:47,815 --> 00:00:49,415
+entities. So,
+
+23
+00:00:49,735 --> 00:00:51,095
+if you're here on the left and
+
+24
+00:00:51,095 --> 00:00:52,315
+your data is a table,
+
+25
+00:00:52,370 --> 00:00:53,910
+for you to run graph algorithm
+
+26
+00:00:54,050 --> 00:00:55,910
+to understand
+what relationships
+
+27
+00:00:56,050 --> 00:00:57,090
+I have in the data,
+
+28
+00:00:57,090 --> 00:00:59,010
+you need to move and
+build a knowledge
+
+29
+00:00:59,010 --> 00:01:02,550
+graph. Well, with timber,
+
+30
+00:01:02,690 --> 00:01:04,930
+we we took
+an approach that was
+
+31
+00:01:04,930 --> 00:01:06,685
+different from
+the current standards.
+
+32
+00:01:06,685 --> 00:01:08,845
+We said instead
+of creating a new
+
+33
+00:01:08,845 --> 00:01:10,445
+database, let's see how we can
+
+34
+00:01:10,445 --> 00:01:12,205
+connect to the existing table
+
+35
+00:01:12,205 --> 00:01:14,605
+and columns, incorporate all
+
+36
+00:01:14,605 --> 00:01:15,825
+the knowledge graph
+capabilities.
+
+37
+00:01:16,925 --> 00:01:20,690
+So timber
+essentially transform
+
+38
+00:01:20,690 --> 00:01:22,530
+your existing databases
+into a knowledge
+
+39
+00:01:22,530 --> 00:01:22,770
+graph.
+
+40
+00:01:22,770 --> 00:01:25,010
+We connect almost any database
+
+41
+00:01:25,010 --> 00:01:27,010
+in the market. We
+build a virtual
+
+42
+00:01:27,010 --> 00:01:27,730
+knowledge graph.
+
+43
+00:01:27,730 --> 00:01:29,330
+Now in this virtual
+knowledge graph,
+
+44
+00:01:29,330 --> 00:01:31,190
+you can declare all
+of the relationships
+
+45
+00:01:31,730 --> 00:01:33,730
+even though there are
+different schemas,
+
+46
+00:01:33,730 --> 00:01:35,590
+different tables,
+different databases.
+
+47
+00:01:37,385 --> 00:01:38,905
+The process of
+building the knowledge
+
+48
+00:01:38,905 --> 00:01:39,885
+graph is virtual,
+
+49
+00:01:40,025 --> 00:01:41,805
+so you don't need
+to copy data.
+
+50
+00:01:41,865 --> 00:01:43,805
+You can do it with SQL.
+
+51
+00:01:43,945 --> 00:01:45,305
+So if you're already familiar
+
+52
+00:01:45,305 --> 00:01:46,685
+on how to create a table,
+
+53
+00:01:46,825 --> 00:01:48,185
+you already know how to create
+
+54
+00:01:48,185 --> 00:01:49,340
+a knowledge graph
+with timber.
+
+55
+00:01:49,580 --> 00:01:51,900
+But if you prefer not
+to do it in SQL,
+
+56
+00:01:51,900 --> 00:01:53,920
+we also can do it
+user user interface.
+
+57
+00:01:54,300 --> 00:01:56,320
+So we offer for domain experts
+
+58
+00:01:56,380 --> 00:01:57,900
+or people who are
+familiar with
+
+59
+00:01:57,900 --> 00:01:59,420
+the specific
+business logic and
+
+60
+00:01:59,420 --> 00:02:01,580
+want to embed that
+this in the knowledge
+
+61
+00:02:01,580 --> 00:02:03,360
+graph, they can also do it.
+
+62
+00:02:04,045 --> 00:02:05,085
+And with teamwork request,
+
+63
+00:02:05,085 --> 00:02:07,645
+we work with SQL,
+any analyst,
+
+64
+00:02:07,645 --> 00:02:08,465
+business analyst,
+
+65
+00:02:08,765 --> 00:02:12,225
+any graduate that
+finish a university
+
+66
+00:02:12,365 --> 00:02:15,165
+can easily already know how to
+
+67
+00:02:15,165 --> 00:02:16,065
+work with timber.
+
+68
+00:02:17,390 --> 00:02:19,330
+So let me show you
+the the benefits
+
+69
+00:02:19,470 --> 00:02:21,230
+the benefits of moving from
+
+70
+00:02:21,230 --> 00:02:22,750
+the relational model
+to a knowledge
+
+71
+00:02:22,750 --> 00:02:23,250
+graph.
+
+72
+00:02:23,390 --> 00:02:25,630
+So writing a complex
+queries in
+
+73
+00:02:25,630 --> 00:02:27,710
+SQL has has been
+a tough job up
+
+74
+00:02:27,710 --> 00:02:30,015
+until now. Let's
+take, for example,
+
+75
+00:02:30,235 --> 00:02:31,135
+fraud detection.
+
+76
+00:02:31,195 --> 00:02:33,275
+Writing fraud
+detection queries
+
+77
+00:02:33,275 --> 00:02:35,195
+in SQL is very
+complex and hard
+
+78
+00:02:35,195 --> 00:02:36,815
+to write, but also
+to maintain.
+
+79
+00:02:37,275 --> 00:02:38,315
+So here on the left,
+
+80
+00:02:38,315 --> 00:02:39,915
+you can see
+an example of a query
+
+81
+00:02:39,915 --> 00:02:40,895
+without timber,
+
+82
+00:02:41,115 --> 00:02:43,200
+which is complex
+and hard because
+
+83
+00:02:43,200 --> 00:02:44,320
+of all the relationship that
+
+84
+00:02:44,320 --> 00:02:45,760
+exists in the data
+that you need
+
+85
+00:02:45,760 --> 00:02:47,140
+to explicitly declare.
+
+86
+00:02:47,680 --> 00:02:49,060
+But when you work
+with timber,
+
+87
+00:02:49,280 --> 00:02:50,880
+you you you still
+write the query
+
+88
+00:02:50,880 --> 00:02:53,120
+in SQL, but you do
+it on the knowledge
+
+89
+00:02:53,120 --> 00:02:54,640
+graph. So you don't work with
+
+90
+00:02:54,640 --> 00:02:55,600
+table and columns.
+
+91
+00:02:55,600 --> 00:02:57,140
+You work with
+business entities.
+
+92
+00:02:57,875 --> 00:02:59,955
+Each business
+entity has its own
+
+93
+00:02:59,955 --> 00:03:01,635
+properties, its own unique
+
+94
+00:03:01,635 --> 00:03:02,915
+relationship that you can take
+
+95
+00:03:02,915 --> 00:03:04,675
+advantage, and you can write
+
+96
+00:03:04,675 --> 00:03:06,455
+those queries
+a lot more simpler
+
+97
+00:03:06,675 --> 00:03:07,415
+and intuitive.
+
+98
+00:03:09,155 --> 00:03:10,610
+The other benefit you get,
+
+99
+00:03:10,690 --> 00:03:12,450
+it's not only in
+the query side
+
+100
+00:03:12,450 --> 00:03:14,210
+but also in
+the exploration side.
+
+101
+00:03:14,210 --> 00:03:15,830
+Imagine that you
+have hundreds,
+
+102
+00:03:15,970 --> 00:03:16,930
+thousands of table,
+
+103
+00:03:16,930 --> 00:03:18,130
+and you want to
+understand what
+
+104
+00:03:18,130 --> 00:03:19,570
+relationships I
+have in my data
+
+105
+00:03:19,570 --> 00:03:21,330
+warehouse or in my data lake.
+
+106
+00:03:21,330 --> 00:03:23,365
+So Timber introduces graph
+
+107
+00:03:23,585 --> 00:03:25,665
+exploration over
+relational database.
+
+108
+00:03:25,665 --> 00:03:29,045
+Even if your table
+format is a table,
+
+109
+00:03:29,105 --> 00:03:30,465
+you can still look at all of
+
+110
+00:03:30,465 --> 00:03:33,365
+your data as one
+virtual graph.
+
+111
+00:03:33,505 --> 00:03:35,105
+So you can start
+with one entity,
+
+112
+00:03:35,105 --> 00:03:36,245
+for example, Samsung.
+
+113
+00:03:36,465 --> 00:03:37,525
+You can see the relationships
+
+114
+00:03:37,970 --> 00:03:38,950
+to Samsung Electronics,
+
+115
+00:03:39,650 --> 00:03:41,030
+and you can see the subsidiary
+
+116
+00:03:41,570 --> 00:03:42,950
+and the CEO, for example.
+
+117
+00:03:43,170 --> 00:03:45,750
+And each note is
+based on the ontology
+
+118
+00:03:46,210 --> 00:03:48,150
+that defines your
+business domain.
+
+119
+00:03:48,690 --> 00:03:51,670
+Now I said before that
+for each concept,
+
+120
+00:03:51,875 --> 00:03:53,395
+you have
+the business properties
+
+121
+00:03:53,395 --> 00:03:54,215
+and relationships.
+
+122
+00:03:54,675 --> 00:03:56,355
+So here, right on the menu,
+
+123
+00:03:56,355 --> 00:03:57,735
+you can see all the properties
+
+124
+00:03:57,795 --> 00:03:59,335
+that were declared
+in the model,
+
+125
+00:03:59,475 --> 00:04:00,935
+but also all
+the relationships.
+
+126
+00:04:02,275 --> 00:04:04,355
+Now each time you
+explore your data,
+
+127
+00:04:04,355 --> 00:04:06,380
+an SQL query is run
+behind the scene.
+
+128
+00:04:06,620 --> 00:04:08,620
+So your your data
+is still stored
+
+129
+00:04:08,620 --> 00:04:09,680
+where it is today.
+
+130
+00:04:11,180 --> 00:04:12,640
+But what about
+graph algorithms?
+
+131
+00:04:12,940 --> 00:04:14,780
+We thought we've been able to
+
+132
+00:04:14,780 --> 00:04:16,320
+do graph traversals in SQL.
+
+133
+00:04:16,380 --> 00:04:19,020
+We've introduced
+even a a graph
+
+134
+00:04:19,020 --> 00:04:21,285
+visualization on
+topic relation
+
+135
+00:04:21,285 --> 00:04:22,885
+database, but we thought that
+
+136
+00:04:22,885 --> 00:04:24,165
+a graph analytics and graph
+
+137
+00:04:24,165 --> 00:04:26,005
+algorithms was
+missing for some
+
+138
+00:04:26,005 --> 00:04:28,105
+type of queries
+that are impossible
+
+139
+00:04:28,245 --> 00:04:29,225
+to write in SQL.
+
+140
+00:04:29,685 --> 00:04:31,545
+For example, if I want to find
+
+141
+00:04:31,605 --> 00:04:33,910
+similar products,
+similar customers,
+
+142
+00:04:34,370 --> 00:04:38,230
+build community of sessions of
+
+143
+00:04:38,290 --> 00:04:41,730
+a specific communities of of
+
+144
+00:04:41,730 --> 00:04:43,570
+product types, I can do all of
+
+145
+00:04:43,570 --> 00:04:45,090
+that with graph algorithms in
+
+146
+00:04:45,090 --> 00:04:45,830
+graph databases,
+
+147
+00:04:45,970 --> 00:04:47,750
+but not on my
+relational model.
+
+148
+00:04:48,645 --> 00:04:50,165
+One of the most common things
+
+149
+00:04:50,165 --> 00:04:52,105
+that I want to do is
+do link prediction.
+
+150
+00:04:52,645 --> 00:04:54,245
+Try to predict
+what is the link
+
+151
+00:04:54,245 --> 00:04:55,465
+between two entities.
+
+152
+00:04:56,245 --> 00:04:58,405
+There is no operator in SQL or
+
+153
+00:04:58,405 --> 00:05:00,005
+there is no way to do that in
+
+154
+00:05:00,005 --> 00:05:01,145
+the SQL language.
+
+155
+00:05:01,880 --> 00:05:03,660
+This is why with Timber,
+
+156
+00:05:03,960 --> 00:05:05,720
+we thought to
+incorporate inside
+
+157
+00:05:05,720 --> 00:05:06,780
+the language itself.
+
+158
+00:05:07,240 --> 00:05:08,440
+So what are the benefits of
+
+159
+00:05:08,440 --> 00:05:09,180
+graph algorithms?
+
+160
+00:05:09,640 --> 00:05:11,000
+First of all,
+you can reach all
+
+161
+00:05:11,000 --> 00:05:13,480
+of your data with,
+for example,
+
+162
+00:05:13,480 --> 00:05:14,380
+the link prediction.
+
+163
+00:05:14,440 --> 00:05:15,720
+You can predict
+links that does
+
+164
+00:05:15,720 --> 00:05:17,375
+not exist today in the data.
+
+165
+00:05:17,615 --> 00:05:19,215
+We also introduced new query
+
+166
+00:05:19,215 --> 00:05:21,135
+capabilities. Now we can do in
+
+167
+00:05:21,135 --> 00:05:24,355
+SQL find similarity or ranking
+
+168
+00:05:24,495 --> 00:05:26,655
+of a specific
+entity in your in
+
+169
+00:05:26,655 --> 00:05:27,715
+your knowledge graph.
+
+170
+00:05:28,255 --> 00:05:29,775
+This also allows
+you to discover
+
+171
+00:05:29,775 --> 00:05:31,715
+and analyze patterns,
+communities.
+
+172
+00:05:32,330 --> 00:05:33,790
+But what is the real benefit?
+
+173
+00:05:33,930 --> 00:05:35,770
+The real benefit of of our
+
+174
+00:05:35,770 --> 00:05:37,630
+approach is that no expertise
+
+175
+00:05:37,690 --> 00:05:39,070
+needed in graph theory.
+
+176
+00:05:39,130 --> 00:05:40,570
+If you already know SQL,
+
+177
+00:05:40,570 --> 00:05:41,950
+you know how to query tables,
+
+178
+00:05:42,010 --> 00:05:43,710
+you already know how to do
+
+179
+00:05:43,770 --> 00:05:45,230
+community pattern detection,
+
+180
+00:05:45,370 --> 00:05:47,710
+find similarity and
+ranking in SQL.
+
+181
+00:05:48,805 --> 00:05:50,005
+Now let me show
+you the process
+
+182
+00:05:50,005 --> 00:05:53,285
+of how we've done it.
+So how we did it?
+
+183
+00:05:53,285 --> 00:05:55,225
+So Timber actually integrated
+
+184
+00:05:55,365 --> 00:05:58,005
+with the lead platforms that
+
+185
+00:05:58,005 --> 00:05:59,705
+allow you to run
+graph algorithms.
+
+186
+00:05:59,845 --> 00:06:01,385
+The most popular is NetworkX,
+
+187
+00:06:01,800 --> 00:06:03,880
+which is a CPU Python library
+
+188
+00:06:03,880 --> 00:06:04,780
+of graph algorithms.
+
+189
+00:06:05,400 --> 00:06:07,400
+So if you want to
+run your graph
+
+190
+00:06:07,400 --> 00:06:09,560
+algorithms using the the most
+
+191
+00:06:09,560 --> 00:06:10,700
+popular library,
+
+192
+00:06:11,000 --> 00:06:12,780
+Timber works with NetworkEAKS
+
+193
+00:06:12,920 --> 00:06:13,820
+to do the execution.
+
+194
+00:06:14,275 --> 00:06:16,035
+If you want accelerated graph
+
+195
+00:06:16,035 --> 00:06:17,955
+algorithms and leverage GPU to
+
+196
+00:06:17,955 --> 00:06:19,335
+get very fast results,
+
+197
+00:06:19,555 --> 00:06:22,055
+we also integrate
+with rapid CU Graph.
+
+198
+00:06:22,355 --> 00:06:25,715
+Rapid CU Graph
+benchmarks are very,
+
+199
+00:06:25,715 --> 00:06:27,315
+very fast and allow you to do
+
+200
+00:06:27,315 --> 00:06:29,075
+different type of
+workloads that
+
+201
+00:06:29,075 --> 00:06:31,450
+doesn't require
+you to wait for
+
+202
+00:06:31,670 --> 00:06:33,450
+the results of
+the graph algorithm.
+
+203
+00:06:34,310 --> 00:06:35,830
+We also integrate with Apache
+
+204
+00:06:35,830 --> 00:06:37,510
+Spark to allow you
+to do parallel
+
+205
+00:06:37,510 --> 00:06:39,690
+computation. If you
+have big data,
+
+206
+00:06:39,910 --> 00:06:41,610
+if you have hundreds
+of gigabytes,
+
+207
+00:06:41,750 --> 00:06:42,870
+terabytes of data,
+
+208
+00:06:42,870 --> 00:06:44,870
+and you need to
+run global graph
+
+209
+00:06:44,870 --> 00:06:46,445
+algorithms, This will this is
+
+210
+00:06:46,445 --> 00:06:47,645
+where we can integrate with
+
+211
+00:06:47,645 --> 00:06:49,725
+graph frames, graphics to run
+
+212
+00:06:49,725 --> 00:06:51,405
+all of your graph
+algorithms in
+
+213
+00:06:51,405 --> 00:06:53,005
+a scalable way.
+
+214
+00:06:53,005 --> 00:06:54,945
+Even if your data
+grows in the future,
+
+215
+00:06:55,165 --> 00:06:56,865
+Spark will be able
+to handle it.
+
+216
+00:06:57,965 --> 00:06:59,645
+So let me talk
+talk a little bit
+
+217
+00:06:59,645 --> 00:07:00,465
+about the architecture.
+
+218
+00:07:01,250 --> 00:07:02,470
+So up until now,
+
+219
+00:07:02,530 --> 00:07:03,810
+Timber was connected to all of
+
+220
+00:07:03,810 --> 00:07:06,130
+the databases. And for a user
+
+221
+00:07:06,130 --> 00:07:07,110
+to run a query,
+
+222
+00:07:07,170 --> 00:07:08,530
+instead of connecting directly
+
+223
+00:07:08,530 --> 00:07:09,170
+to the database,
+
+224
+00:07:09,170 --> 00:07:11,170
+he connected to Timber
+knowledge graph,
+
+225
+00:07:11,170 --> 00:07:12,530
+and we were and
+we will know how
+
+226
+00:07:12,530 --> 00:07:14,790
+to query the tables
+in each database.
+
+227
+00:07:15,715 --> 00:07:17,255
+But with graph algorithms,
+
+228
+00:07:18,195 --> 00:07:22,035
+you can actually
+now the process
+
+229
+00:07:22,035 --> 00:07:24,295
+is different. Timber
+runs the query
+
+230
+00:07:24,835 --> 00:07:26,835
+that is intended for the graph
+
+231
+00:07:26,835 --> 00:07:28,755
+algorithm, runs
+the graph algorithm,
+
+232
+00:07:28,755 --> 00:07:30,375
+and shows back to the user.
+
+233
+00:07:31,040 --> 00:07:32,820
+So now the user can
+get the results
+
+234
+00:07:33,440 --> 00:07:35,220
+of a graph algorithm directly
+
+235
+00:07:35,360 --> 00:07:36,640
+when he works with the timber
+
+236
+00:07:36,640 --> 00:07:37,700
+platform in SQL.
+
+237
+00:07:38,240 --> 00:07:39,920
+The way we've introduced it is
+
+238
+00:07:39,920 --> 00:07:41,140
+using table functions.
+
+239
+00:07:41,520 --> 00:07:42,960
+So imagine that each graph
+
+240
+00:07:42,960 --> 00:07:44,420
+algorithm is a function,
+
+241
+00:07:44,480 --> 00:07:46,340
+but not a standard
+function in SQL.
+
+242
+00:07:46,745 --> 00:07:48,345
+It's it's a virtual table that
+
+243
+00:07:48,345 --> 00:07:50,265
+you can call as
+a function because
+
+244
+00:07:50,265 --> 00:07:50,745
+you have,
+
+245
+00:07:51,145 --> 00:07:53,325
+results based on
+a specific query.
+
+246
+00:07:54,265 --> 00:07:56,045
+And you can choose whatever
+
+247
+00:07:56,425 --> 00:07:57,785
+platform is suited for you.
+
+248
+00:07:57,785 --> 00:07:58,925
+You can choose Spark.
+
+249
+00:07:59,050 --> 00:08:00,810
+You can choose
+RAPIDS, CU Graph,
+
+250
+00:08:00,810 --> 00:08:03,150
+or NetworkX when you
+configure Timber.
+
+251
+00:08:04,250 --> 00:08:05,950
+But what is
+the biggest benefit
+
+252
+00:08:06,010 --> 00:08:08,410
+in our approach is
+that now any BI tool,
+
+253
+00:08:08,410 --> 00:08:10,670
+you can expose
+the data enrichment
+
+254
+00:08:10,890 --> 00:08:12,250
+and all the insights you got
+
+255
+00:08:12,250 --> 00:08:14,025
+from the graph
+algorithm directly
+
+256
+00:08:14,025 --> 00:08:15,365
+to the business side.
+
+257
+00:08:15,425 --> 00:08:17,525
+So you don't even
+have to know SQL.
+
+258
+00:08:17,585 --> 00:08:18,965
+If I run a graph algorithm,
+
+259
+00:08:19,505 --> 00:08:21,285
+this the output,
+the enrichment,
+
+260
+00:08:21,585 --> 00:08:23,345
+the insights that
+was generated
+
+261
+00:08:23,345 --> 00:08:25,585
+from can be exposed
+to the whole
+
+262
+00:08:25,585 --> 00:08:27,505
+enterprise using the standard
+
+263
+00:08:27,505 --> 00:08:29,740
+BI tool that you
+already have.
+
+264
+00:08:31,480 --> 00:08:33,580
+So I talked to you
+about the process
+
+265
+00:08:33,720 --> 00:08:36,120
+how we did it and
+what libraries
+
+266
+00:08:36,120 --> 00:08:37,340
+we can connect to.
+
+267
+00:08:37,560 --> 00:08:39,160
+Let me show you a demo of how
+
+268
+00:08:39,160 --> 00:08:40,140
+it really works.
+
+269
+00:08:44,155 --> 00:08:46,875
+So we took a sample of a data
+
+270
+00:08:46,875 --> 00:08:50,255
+warehouse that exists
+on Azure synapse,
+
+271
+00:08:50,715 --> 00:08:53,375
+the Azure hosted
+data warehouse,
+
+272
+00:08:53,755 --> 00:08:55,615
+and we have information
+about customers.
+
+273
+00:08:55,755 --> 00:08:56,815
+Let me, for example,
+
+274
+00:08:57,300 --> 00:08:59,880
+query the data and
+show you a sample
+
+275
+00:09:00,820 --> 00:09:01,560
+of customers.
+
+276
+00:09:02,660 --> 00:09:05,400
+So we have the customer
+name, last name,
+
+277
+00:09:05,860 --> 00:09:07,480
+gender, email address,
+
+278
+00:09:07,940 --> 00:09:09,220
+all the information that is
+
+279
+00:09:09,220 --> 00:09:14,035
+typical in a retail
+company that
+
+280
+00:09:14,035 --> 00:09:15,655
+stores information
+about customers.
+
+281
+00:09:15,955 --> 00:09:18,135
+We also have information
+about products.
+
+282
+00:09:19,635 --> 00:09:21,155
+So now we can
+query the product
+
+283
+00:09:21,155 --> 00:09:22,935
+table and get a list of all
+
+284
+00:09:22,995 --> 00:09:25,235
+the products. So I get from
+
+285
+00:09:25,235 --> 00:09:28,390
+the product ID, product name,
+
+286
+00:09:28,450 --> 00:09:31,990
+description. You can
+get the manufacturer
+
+287
+00:09:32,450 --> 00:09:35,030
+, the brand name, color,
+
+288
+00:09:35,330 --> 00:09:36,930
+all the attributes you have of
+
+289
+00:09:36,930 --> 00:09:37,590
+a product.
+
+290
+00:09:38,770 --> 00:09:41,410
+But this what makes
+this interesting
+
+291
+00:09:41,410 --> 00:09:44,085
+is if we want to
+analyze the sales
+
+292
+00:09:44,305 --> 00:09:47,205
+of all of my products
+and customers.
+
+293
+00:09:48,625 --> 00:09:50,625
+So now I can go to this online
+
+294
+00:09:50,625 --> 00:09:52,705
+sales table, and I can see for
+
+295
+00:09:52,705 --> 00:09:54,945
+each customer which product he
+
+296
+00:09:54,945 --> 00:09:57,390
+bought at which price,
+
+297
+00:09:57,690 --> 00:10:01,530
+if there was a discount,
+what what date,
+
+298
+00:10:01,530 --> 00:10:03,050
+and all of the typical values
+
+299
+00:10:03,050 --> 00:10:04,670
+you have for a sale.
+
+300
+00:10:05,130 --> 00:10:07,050
+Now timber connected
+to the data
+
+301
+00:10:07,050 --> 00:10:09,070
+warehouse, and we
+model an ontology
+
+302
+00:10:09,130 --> 00:10:10,030
+on top of it.
+
+303
+00:10:14,655 --> 00:10:16,275
+So this is the timber platform
+
+304
+00:10:17,375 --> 00:10:20,015
+and we only model the concepts
+
+305
+00:10:20,015 --> 00:10:21,775
+that are relevant for our for
+
+306
+00:10:21,775 --> 00:10:22,675
+our algorithms.
+
+307
+00:10:23,380 --> 00:10:24,200
+In this example,
+
+308
+00:10:24,500 --> 00:10:26,180
+we took the sales table,
+
+309
+00:10:26,180 --> 00:10:27,640
+mapped it to
+the sales concept.
+
+310
+00:10:28,180 --> 00:10:30,580
+We mapped the table
+of products
+
+311
+00:10:30,580 --> 00:10:33,960
+to product concept
+and of customer.
+
+312
+00:10:34,820 --> 00:10:38,215
+So we actually
+created a a concept
+
+313
+00:10:38,215 --> 00:10:39,755
+that also represents
+a customer.
+
+314
+00:10:39,895 --> 00:10:41,255
+Now for each one of them,
+
+315
+00:10:41,255 --> 00:10:42,455
+I can see all the list of
+
+316
+00:10:42,455 --> 00:10:44,955
+properties and all of
+the relationships.
+
+317
+00:10:45,575 --> 00:10:46,935
+When we looked at the the data
+
+318
+00:10:46,935 --> 00:10:47,755
+warehouse previously,
+
+319
+00:10:47,975 --> 00:10:49,255
+we didn't saw the relationship
+
+320
+00:10:49,255 --> 00:10:50,720
+that exists between
+those statements,
+
+321
+00:10:50,960 --> 00:10:52,400
+But this can be declared in
+
+322
+00:10:52,400 --> 00:10:54,900
+Timber as part of
+the knowledge graph.
+
+323
+00:10:55,120 --> 00:10:57,060
+So I can see that Timber has
+
+324
+00:10:57,600 --> 00:10:58,500
+made the purchase.
+
+325
+00:10:58,640 --> 00:11:00,900
+So now I can go and
+and see sales,
+
+326
+00:11:01,840 --> 00:11:05,265
+and I can see that
+sales has a ratio
+
+327
+00:11:05,265 --> 00:11:06,645
+to a product and a customer.
+
+328
+00:11:07,025 --> 00:11:08,225
+And if I go to product,
+
+329
+00:11:08,225 --> 00:11:10,225
+I can see
+the relationship onto
+
+330
+00:11:10,225 --> 00:11:12,865
+the sale. This is one
+way to explore it.
+
+331
+00:11:12,865 --> 00:11:14,785
+Another one is I
+can just click
+
+332
+00:11:14,785 --> 00:11:17,365
+on sales and say
+find relationships.
+
+333
+00:11:18,290 --> 00:11:21,110
+And now I can see all
+of the relationships
+
+334
+00:11:21,810 --> 00:11:23,910
+directly in my
+knowledge graph.
+
+335
+00:11:24,850 --> 00:11:26,770
+Now once we have that and we
+
+336
+00:11:26,770 --> 00:11:27,910
+declared the relationships,
+
+337
+00:11:28,130 --> 00:11:30,130
+we mapped all of our data that
+
+338
+00:11:30,130 --> 00:11:31,590
+is relevant for
+the algorithm,
+
+339
+00:11:31,890 --> 00:11:33,815
+then we can move
+to the SQL lab.
+
+340
+00:11:34,135 --> 00:11:36,455
+The SQL lab allows you to look
+
+341
+00:11:36,455 --> 00:11:38,475
+at all of the concepts
+in the ontology.
+
+342
+00:11:39,335 --> 00:11:40,455
+So let's, for example,
+
+343
+00:11:40,455 --> 00:11:43,335
+look at a sales concept.
+
+344
+00:11:43,335 --> 00:11:45,515
+So we go to
+the timber schema,
+
+345
+00:11:47,230 --> 00:11:49,570
+and we can see
+look for the sales
+
+346
+00:11:49,870 --> 00:11:52,990
+concept. Here we can find all
+
+347
+00:11:52,990 --> 00:11:54,610
+the properties of a sale,
+
+348
+00:11:54,990 --> 00:11:56,430
+but if I want to
+look at all of
+
+349
+00:11:56,430 --> 00:12:00,130
+the relationships, I
+can go to detimber.
+
+350
+00:12:01,125 --> 00:12:02,485
+Detimbers allow
+allow me to look
+
+351
+00:12:02,485 --> 00:12:04,885
+at a denormalized
+view of the same
+
+352
+00:12:04,885 --> 00:12:07,465
+entity. So now I
+can go to sales,
+
+353
+00:12:08,405 --> 00:12:09,845
+and now I can explore all of
+
+354
+00:12:09,845 --> 00:12:11,465
+the relationships of a sale.
+
+355
+00:12:11,845 --> 00:12:14,665
+So I can see that a a brought
+
+356
+00:12:15,040 --> 00:12:16,400
+bought the same I can go to
+
+357
+00:12:16,400 --> 00:12:17,760
+the same product
+that was bought
+
+358
+00:12:17,760 --> 00:12:19,700
+in in in a specific sale.
+
+359
+00:12:19,840 --> 00:12:22,400
+I can go to a a sale was made
+
+360
+00:12:22,400 --> 00:12:23,220
+by a customer,
+
+361
+00:12:23,840 --> 00:12:25,440
+or I can go to the product of
+
+362
+00:12:25,440 --> 00:12:27,185
+the of us of that
+specific sale.
+
+363
+00:12:27,505 --> 00:12:28,865
+So all of those relationships
+
+364
+00:12:28,865 --> 00:12:29,825
+and any relationship with
+
+365
+00:12:29,825 --> 00:12:31,105
+declaring the ontology is
+
+366
+00:12:31,105 --> 00:12:32,865
+available for any
+user who works
+
+367
+00:12:32,865 --> 00:12:34,945
+with SQL. And
+this is the first
+
+368
+00:12:34,945 --> 00:12:37,685
+step before we run our
+graph algorithms.
+
+369
+00:12:37,905 --> 00:12:39,345
+You can see all the properties
+
+370
+00:12:39,345 --> 00:12:41,230
+of an entity, all of
+the relationships,
+
+371
+00:12:41,770 --> 00:12:43,210
+and now we can start building
+
+372
+00:12:43,210 --> 00:12:44,670
+our our graph algorithms.
+
+373
+00:12:45,370 --> 00:12:46,810
+So how did we expose it?
+
+374
+00:12:46,810 --> 00:12:48,410
+So timber introduced
+a new schema
+
+375
+00:12:48,410 --> 00:12:49,390
+called g timber.
+
+376
+00:12:50,570 --> 00:12:51,630
+Now in g timber,
+
+377
+00:12:51,850 --> 00:12:54,595
+you can select your graph
+
+378
+00:12:54,595 --> 00:12:55,895
+algorithm that
+you're interested.
+
+379
+00:12:56,035 --> 00:12:57,875
+For example, if I want to run
+
+380
+00:12:57,875 --> 00:12:59,655
+Louvain for the algorithm,
+
+381
+00:13:00,035 --> 00:13:01,655
+then I can see what
+are the results
+
+382
+00:13:01,715 --> 00:13:03,475
+that is expected
+from that table
+
+383
+00:13:03,475 --> 00:13:05,235
+function. So when I look at g
+
+384
+00:13:05,235 --> 00:13:05,715
+timber Louvain,
+
+385
+00:13:05,715 --> 00:13:07,655
+I can see that
+the results is the ID,
+
+386
+00:13:07,900 --> 00:13:09,840
+could be a customer
+ID, a product ID,
+
+387
+00:13:10,060 --> 00:13:12,060
+and in which community this ID
+
+388
+00:13:12,060 --> 00:13:12,880
+belongs to.
+
+389
+00:13:13,340 --> 00:13:14,700
+If I look at, for example,
+
+390
+00:13:14,700 --> 00:13:16,540
+a Jacquard similarity to find
+
+391
+00:13:16,540 --> 00:13:18,400
+similar people,
+similar products,
+
+392
+00:13:18,780 --> 00:13:20,400
+I can see I have
+the similarity,
+
+393
+00:13:21,055 --> 00:13:22,975
+which basically says,
+
+394
+00:13:22,975 --> 00:13:24,595
+is it similar or not?
+
+395
+00:13:24,815 --> 00:13:26,035
+And I have the ID,
+
+396
+00:13:26,095 --> 00:13:27,375
+which could be the product and
+
+397
+00:13:27,375 --> 00:13:28,355
+the similar one.
+
+398
+00:13:28,495 --> 00:13:30,735
+So we have two
+entities and and
+
+399
+00:13:30,735 --> 00:13:34,495
+one similarity that gives you
+
+400
+00:13:34,495 --> 00:13:35,955
+the similarity between them.
+
+401
+00:13:37,250 --> 00:13:39,430
+You can also run page
+rank, for example.
+
+402
+00:13:39,730 --> 00:13:41,330
+Timber supports any graph
+
+403
+00:13:41,330 --> 00:13:42,690
+algorithm that is supported by
+
+404
+00:13:42,690 --> 00:13:43,510
+those libraries.
+
+405
+00:13:44,130 --> 00:13:46,230
+So if yours if you
+want a specific
+
+406
+00:13:46,530 --> 00:13:49,430
+library that if
+it's CU Graph,
+
+407
+00:13:49,490 --> 00:13:50,790
+NetworkX, or Spark,
+
+408
+00:13:51,045 --> 00:13:52,825
+this can be exposed virtually
+
+409
+00:13:53,365 --> 00:13:54,585
+as part of Timber.
+
+410
+00:13:56,085 --> 00:13:57,925
+Now if I want to,
+for example,
+
+411
+00:13:57,925 --> 00:13:58,725
+run a Jacquard,
+
+412
+00:13:58,725 --> 00:14:02,025
+let's find a similar customers
+
+413
+00:14:02,085 --> 00:14:03,525
+based on products
+that they bought.
+
+414
+00:14:03,525 --> 00:14:05,660
+So I previously
+saved some queries
+
+415
+00:14:05,660 --> 00:14:07,200
+just to show you
+how it works.
+
+416
+00:14:07,260 --> 00:14:09,200
+So I can find
+similar customers
+
+417
+00:14:09,500 --> 00:14:10,400
+based on Jacquard.
+
+418
+00:14:11,980 --> 00:14:13,920
+And now let me show
+you how it works.
+
+419
+00:14:14,860 --> 00:14:17,340
+So we we have
+the GTimber schema.
+
+420
+00:14:17,340 --> 00:14:18,960
+We have the Jacquard
+table function.
+
+421
+00:14:19,355 --> 00:14:21,535
+Now the the the each algorithm
+
+422
+00:14:21,595 --> 00:14:23,135
+receives three parameters.
+
+423
+00:14:23,515 --> 00:14:25,915
+First is the ID,
+the first ID.
+
+424
+00:14:25,915 --> 00:14:27,995
+Second, is the second ID to
+
+425
+00:14:27,995 --> 00:14:28,715
+build the graph.
+
+426
+00:14:28,715 --> 00:14:29,755
+So, basically, you have two
+
+427
+00:14:29,755 --> 00:14:31,135
+entities and a relationship
+
+428
+00:14:31,195 --> 00:14:33,510
+between them, and
+you can declare
+
+429
+00:14:33,730 --> 00:14:35,510
+a weight a weight of
+that relationship.
+
+430
+00:14:35,650 --> 00:14:36,790
+For in this example,
+
+431
+00:14:37,090 --> 00:14:38,530
+we're saying give
+me a customer
+
+432
+00:14:38,530 --> 00:14:40,930
+ID and give me customer ID who
+
+433
+00:14:40,930 --> 00:14:42,070
+bought the same product.
+
+434
+00:14:42,370 --> 00:14:43,970
+So we're looking
+about customers
+
+435
+00:14:43,970 --> 00:14:45,425
+who bought the same
+product here,
+
+436
+00:14:45,825 --> 00:14:47,685
+and I want to find how much
+
+437
+00:14:47,745 --> 00:14:50,485
+products they've bought
+that is similar.
+
+438
+00:14:51,425 --> 00:14:54,545
+So I I group by
+and get the number
+
+439
+00:14:54,545 --> 00:14:56,305
+of products that is shared by
+
+440
+00:14:56,305 --> 00:14:57,365
+those two customers.
+
+441
+00:14:58,870 --> 00:15:00,710
+Now, of course, I
+can run this query,
+
+442
+00:15:00,710 --> 00:15:03,450
+and I will just get results of
+
+443
+00:15:04,310 --> 00:15:07,590
+a a customer ID,
+another customer ID,
+
+444
+00:15:07,590 --> 00:15:08,950
+and the number
+of products that
+
+445
+00:15:08,950 --> 00:15:11,190
+they share. And I can also run
+
+446
+00:15:11,190 --> 00:15:12,950
+the graph algorithm
+to see whether
+
+447
+00:15:12,950 --> 00:15:14,285
+they're similar or not.
+
+448
+00:15:14,845 --> 00:15:16,285
+So just to give you an example
+
+449
+00:15:16,285 --> 00:15:16,925
+of the results,
+
+450
+00:15:16,925 --> 00:15:17,885
+then you can see that this
+
+451
+00:15:17,885 --> 00:15:19,245
+customer bought
+the same customer
+
+452
+00:15:19,245 --> 00:15:20,145
+as all of those.
+
+453
+00:15:20,765 --> 00:15:22,445
+And it changes, like,
+
+454
+00:15:22,445 --> 00:15:25,565
+this this this customer bought
+
+455
+00:15:25,725 --> 00:15:26,845
+those three customers bought
+
+456
+00:15:26,845 --> 00:15:28,945
+the same product and so on.
+
+457
+00:15:29,740 --> 00:15:31,100
+So let's run the Jacquard
+
+458
+00:15:31,100 --> 00:15:32,860
+algorithm and see
+the results here.
+
+459
+00:15:32,860 --> 00:15:34,780
+See what how I can find now
+
+460
+00:15:34,780 --> 00:15:37,500
+similar customers based on on
+
+461
+00:15:37,500 --> 00:15:39,920
+a purchase on purchase
+of products.
+
+462
+00:15:40,300 --> 00:15:41,420
+So here is the results.
+
+463
+00:15:41,420 --> 00:15:43,115
+We have a customer ID. ID.
+
+464
+00:15:43,115 --> 00:15:44,735
+First, I I have
+a customer ID.
+
+465
+00:15:44,875 --> 00:15:46,255
+I have the similar one,
+
+466
+00:15:46,475 --> 00:15:48,155
+and I have the similarity
+between them.
+
+467
+00:15:48,155 --> 00:15:49,515
+Similarity mean means that it
+
+468
+00:15:49,515 --> 00:15:50,735
+bought the same product.
+
+469
+00:15:51,995 --> 00:15:53,195
+And for each customer,
+
+470
+00:15:53,195 --> 00:15:57,195
+you get which
+customer is similar
+
+471
+00:15:57,195 --> 00:15:59,290
+to him. Now there
+is no way for
+
+472
+00:15:59,290 --> 00:16:00,990
+me to do this in SQL without
+
+473
+00:16:01,050 --> 00:16:02,750
+applying a Jacquard similarity
+
+474
+00:16:03,370 --> 00:16:03,870
+algorithm.
+
+475
+00:16:04,570 --> 00:16:06,110
+Now we can take
+these results.
+
+476
+00:16:06,250 --> 00:16:08,270
+This is saved as a temp table
+
+477
+00:16:08,410 --> 00:16:11,130
+or as a a full
+table in the data
+
+478
+00:16:11,130 --> 00:16:12,775
+warehouse, and now we can
+
+479
+00:16:12,915 --> 00:16:14,615
+incorporate as part
+of the ontology.
+
+480
+00:16:15,475 --> 00:16:17,395
+So we actually went and and
+
+481
+00:16:17,395 --> 00:16:19,315
+mapped one of those tables to
+
+482
+00:16:19,315 --> 00:16:22,275
+the customer concept and added
+
+483
+00:16:22,275 --> 00:16:23,175
+this as a relationship.
+
+484
+00:16:24,050 --> 00:16:26,130
+So now I have a a relationship
+
+485
+00:16:26,130 --> 00:16:28,370
+for a customer to
+a customer and,
+
+486
+00:16:28,370 --> 00:16:30,870
+basically, with a similar
+customer name.
+
+487
+00:16:31,650 --> 00:16:33,590
+So how is this
+exposed to users?
+
+488
+00:16:33,650 --> 00:16:34,710
+Let me show you.
+
+489
+00:16:35,010 --> 00:16:36,790
+I'll go back to
+the saved queries,
+
+490
+00:16:38,515 --> 00:16:40,855
+and now I can run
+give me similar
+
+491
+00:16:40,915 --> 00:16:42,215
+customers of Adam.
+
+492
+00:16:42,275 --> 00:16:43,595
+For example, I'm interested in
+
+493
+00:16:43,595 --> 00:16:45,095
+a specific customer ID.
+
+494
+00:16:45,395 --> 00:16:46,835
+And now because I introduced
+
+495
+00:16:46,835 --> 00:16:48,855
+this as a relationship
+in the ontology,
+
+496
+00:16:49,315 --> 00:16:51,155
+when I look at the metadata of
+
+497
+00:16:51,155 --> 00:16:51,735
+a customer,
+
+498
+00:16:54,240 --> 00:16:55,840
+I can see all
+the properties but
+
+499
+00:16:55,840 --> 00:16:56,740
+also the relationship.
+
+500
+00:16:56,960 --> 00:16:59,220
+So now I have a relationship
+
+501
+00:16:59,360 --> 00:17:01,760
+called similar customer that
+
+502
+00:17:01,760 --> 00:17:03,700
+this is the output
+of the jacquard
+
+503
+00:17:03,760 --> 00:17:04,980
+similarity algorithm.
+
+504
+00:17:05,120 --> 00:17:06,560
+So let's run this
+query just to
+
+505
+00:17:06,560 --> 00:17:07,535
+show you the results.
+
+506
+00:17:08,015 --> 00:17:11,135
+So here, now for Adam,
+I can see look.
+
+507
+00:17:11,135 --> 00:17:13,555
+Those customers are
+similar to him.
+
+508
+00:17:13,695 --> 00:17:15,375
+So if they bought
+a product that
+
+509
+00:17:15,375 --> 00:17:16,515
+Adam did in Bath,
+
+510
+00:17:16,575 --> 00:17:18,355
+then you should
+recommend the product
+
+511
+00:17:18,415 --> 00:17:19,955
+that they bought to Adam.
+
+512
+00:17:20,030 --> 00:17:21,650
+You can actually build
+a recommendation
+
+513
+00:17:21,870 --> 00:17:24,610
+system now based
+on those results.
+
+514
+00:17:26,510 --> 00:17:27,710
+Now let me show
+you a different
+
+515
+00:17:27,710 --> 00:17:29,950
+algorithm. If you,
+for for example,
+
+516
+00:17:29,950 --> 00:17:31,970
+want to find community
+of customers,
+
+517
+00:17:32,485 --> 00:17:33,125
+for example,
+
+518
+00:17:33,125 --> 00:17:35,945
+based on a a a of customer
+
+519
+00:17:36,005 --> 00:17:37,945
+behavior or purchase
+frequency,
+
+520
+00:17:38,085 --> 00:17:39,445
+we can now use the Duveen
+
+521
+00:17:39,445 --> 00:17:41,545
+algorithm to
+detect communities
+
+522
+00:17:41,845 --> 00:17:42,585
+of customers.
+
+523
+00:17:43,685 --> 00:17:45,205
+Now this is very similar to
+
+524
+00:17:45,205 --> 00:17:46,310
+the Jacquard one.
+
+525
+00:17:46,550 --> 00:17:48,030
+The only difference
+is the name
+
+526
+00:17:48,030 --> 00:17:49,850
+of the algorithm
+we want to run.
+
+527
+00:17:50,150 --> 00:17:52,070
+So here we are
+running the Louvain
+
+528
+00:17:52,070 --> 00:17:55,850
+and we can find for all of my
+
+529
+00:17:56,390 --> 00:17:58,470
+customers which
+community they are.
+
+530
+00:17:58,470 --> 00:17:59,770
+So let's run this query.
+
+531
+00:18:06,955 --> 00:18:08,075
+So in this example,
+
+532
+00:18:08,075 --> 00:18:09,295
+we're using a NetworkX,
+
+533
+00:18:09,595 --> 00:18:11,375
+but you can configure either
+
+534
+00:18:11,755 --> 00:18:14,495
+other one of
+the other platform.
+
+535
+00:18:15,020 --> 00:18:16,400
+So here for each customer,
+
+536
+00:18:16,460 --> 00:18:18,160
+the ID now represents
+a customer.
+
+537
+00:18:18,380 --> 00:18:20,480
+I see in which community
+he belongs to.
+
+538
+00:18:21,580 --> 00:18:23,340
+Now this is also
+something that
+
+539
+00:18:23,340 --> 00:18:25,980
+now I can now
+integrate as part
+
+540
+00:18:25,980 --> 00:18:26,720
+of the ontology.
+
+541
+00:18:27,595 --> 00:18:29,375
+So when I go back
+to the ontology,
+
+542
+00:18:29,435 --> 00:18:30,795
+you can see we already created
+
+543
+00:18:30,795 --> 00:18:32,495
+a customer community concept,
+
+544
+00:18:32,955 --> 00:18:35,295
+mapped the communities to it,
+
+545
+00:18:35,595 --> 00:18:37,195
+and created
+a relationship between
+
+546
+00:18:37,195 --> 00:18:38,575
+customer and
+customer community.
+
+547
+00:18:39,195 --> 00:18:40,635
+So for each customer here,
+
+548
+00:18:40,635 --> 00:18:43,640
+now I can find
+similar customers
+
+549
+00:18:43,640 --> 00:18:45,720
+or find community of con of
+
+550
+00:18:45,720 --> 00:18:48,300
+customers and start
+analyzing them.
+
+551
+00:18:49,320 --> 00:18:50,520
+Let's see, for example,
+
+552
+00:18:50,520 --> 00:18:52,380
+a query that leveraged this.
+
+553
+00:18:52,920 --> 00:18:54,780
+So I'll go back to
+the saved query,
+
+554
+00:18:55,495 --> 00:18:57,495
+and I'll query
+all the customer
+
+555
+00:18:57,495 --> 00:18:59,115
+communities based
+on the relationship
+
+556
+00:18:59,335 --> 00:19:00,795
+we introduced in
+the ontology.
+
+557
+00:19:01,335 --> 00:19:03,415
+So here, what are
+we interested in?
+
+558
+00:19:03,415 --> 00:19:05,515
+So we start by
+the customer ID.
+
+559
+00:19:05,815 --> 00:19:06,935
+We get the label,
+
+560
+00:19:06,935 --> 00:19:08,455
+which represent the name of
+
+561
+00:19:08,455 --> 00:19:09,115
+the customer,
+
+562
+00:19:10,030 --> 00:19:12,670
+and we have the we also want
+
+563
+00:19:12,670 --> 00:19:14,370
+the gender and in
+which community
+
+564
+00:19:14,590 --> 00:19:16,290
+this specific customer is.
+
+565
+00:19:16,910 --> 00:19:19,550
+And we also query
+the the the timber
+
+566
+00:19:19,550 --> 00:19:20,690
+customer concept,
+
+567
+00:19:21,230 --> 00:19:22,910
+and we want only
+customers that
+
+568
+00:19:22,910 --> 00:19:24,770
+were identified in
+a specific community.
+
+569
+00:19:25,695 --> 00:19:26,995
+So here I got the results.
+
+570
+00:19:27,055 --> 00:19:29,315
+I got the customer
+ID, customer name,
+
+571
+00:19:29,375 --> 00:19:31,475
+the gender, and
+the community ID.
+
+572
+00:19:32,495 --> 00:19:36,115
+Now all of this, what
+it actually does,
+
+573
+00:19:36,335 --> 00:19:39,180
+it leverages
+the table that was
+
+574
+00:19:39,180 --> 00:19:40,380
+created from the output.
+
+575
+00:19:40,380 --> 00:19:41,740
+I can see what Timber actually
+
+576
+00:19:41,740 --> 00:19:44,380
+sends to the data warehouse in
+
+577
+00:19:44,380 --> 00:19:46,880
+order to identify
+which customer
+
+578
+00:19:46,940 --> 00:19:48,800
+in which community he is.
+
+579
+00:19:49,100 --> 00:19:50,320
+So as you can see,
+
+580
+00:19:50,460 --> 00:19:52,380
+here we are doing
+join in order
+
+581
+00:19:52,380 --> 00:19:55,495
+to understand for
+each customer
+
+582
+00:19:55,495 --> 00:19:57,675
+in which community he is.
+
+583
+00:19:58,215 --> 00:20:01,255
+So if you look at the tables,
+
+584
+00:20:01,255 --> 00:20:03,655
+if you this is
+stored in a graph
+
+585
+00:20:03,655 --> 00:20:05,435
+algorithms output schema.
+
+586
+00:20:06,695 --> 00:20:08,635
+This is where timber
+stores the results.
+
+587
+00:20:10,170 --> 00:20:11,290
+Now let's visualize it.
+
+588
+00:20:11,290 --> 00:20:12,490
+Let's see how we can take this
+
+589
+00:20:12,490 --> 00:20:13,790
+one step further.
+
+590
+00:20:14,170 --> 00:20:15,450
+So here I got the results.
+
+591
+00:20:15,450 --> 00:20:17,050
+I want to visualize them so I
+
+592
+00:20:17,050 --> 00:20:18,590
+can go to the explore button.
+
+593
+00:20:23,945 --> 00:20:26,425
+And now we can visualize
+all of my data.
+
+594
+00:20:26,425 --> 00:20:28,745
+I see the customer
+ID, name, gender,
+
+595
+00:20:28,745 --> 00:20:30,185
+and community. Let's change
+
+596
+00:20:30,185 --> 00:20:30,765
+the visualization.
+
+597
+00:20:31,385 --> 00:20:34,445
+Let's do, for example,
+a a bar chart.
+
+598
+00:20:35,625 --> 00:20:37,805
+Let's count all the customers
+
+599
+00:20:39,200 --> 00:20:43,060
+in each community.
+Let's run the query.
+
+600
+00:20:47,120 --> 00:20:49,600
+So, I did by customer ID by
+
+601
+00:20:49,600 --> 00:20:51,405
+community ID. Sorry. Yes.
+
+602
+00:20:51,785 --> 00:20:55,845
+So here I get count
+by community ID.
+
+603
+00:20:56,585 --> 00:20:57,085
+Yeah.
+
+604
+00:20:59,705 --> 00:21:01,725
+So here I added I
+have the community
+
+605
+00:21:01,865 --> 00:21:04,990
+number. So I have I have ten
+
+606
+00:21:04,990 --> 00:21:07,070
+communities, and I can see for
+
+607
+00:21:07,070 --> 00:21:09,810
+each one of them
+how many people
+
+608
+00:21:10,270 --> 00:21:12,350
+are in it. We can even break
+
+609
+00:21:12,350 --> 00:21:14,270
+this further by saying,
+
+610
+00:21:14,270 --> 00:21:17,435
+look at the gender
+of each people
+
+611
+00:21:17,435 --> 00:21:18,495
+in each community.
+
+612
+00:21:19,435 --> 00:21:21,355
+So now we can see this is this
+
+613
+00:21:21,355 --> 00:21:23,535
+is actually quite close,
+
+614
+00:21:23,755 --> 00:21:25,595
+but in this community there is
+
+615
+00:21:25,595 --> 00:21:28,575
+almost double male
+than female.
+
+616
+00:21:28,750 --> 00:21:30,510
+We can also visualize
+it differently.
+
+617
+00:21:30,510 --> 00:21:31,890
+If I want to stack them,
+
+618
+00:21:32,910 --> 00:21:36,190
+then I can stack the bars so I
+
+619
+00:21:36,190 --> 00:21:38,430
+can easily understand how many
+
+620
+00:21:38,430 --> 00:21:40,750
+of them are female
+and how many
+
+621
+00:21:40,750 --> 00:21:41,730
+of them are males.
+
+622
+00:21:43,165 --> 00:21:44,445
+So this is quite interesting.
+
+623
+00:21:44,445 --> 00:21:45,645
+In the seven community,
+
+624
+00:21:45,645 --> 00:21:47,185
+there are more
+males than female,
+
+625
+00:21:47,645 --> 00:21:48,625
+almost double,
+
+626
+00:21:49,005 --> 00:21:50,865
+but in the twelfth community,
+
+627
+00:21:51,325 --> 00:21:53,185
+you can see it's
+it's the opposite.
+
+628
+00:21:54,285 --> 00:21:55,565
+This allows you to understand
+
+629
+00:21:55,565 --> 00:21:58,330
+better what are
+the relationship,
+
+630
+00:21:58,710 --> 00:21:59,930
+how to classify,
+
+631
+00:22:00,470 --> 00:22:03,270
+how to understand
+the relationship
+
+632
+00:22:03,270 --> 00:22:04,870
+that exists in your data by
+
+633
+00:22:04,870 --> 00:22:06,250
+introducing graph algorithms.
+
+634
+00:22:06,390 --> 00:22:07,990
+This is available not only to
+
+635
+00:22:07,990 --> 00:22:09,430
+the technical people,
+
+636
+00:22:09,430 --> 00:22:10,410
+to data scientists,
+
+637
+00:22:10,915 --> 00:22:12,695
+but to the whole enterprise.
+
+638
+00:22:24,700 --> 00:22:26,700
+So, I'm interested in,
+
+639
+00:22:27,180 --> 00:22:29,340
+the aspects related
+to the schema
+
+640
+00:22:29,340 --> 00:22:30,345
+management where,
+
+641
+00:22:31,305 --> 00:22:32,845
+when you build
+the knowledge graph,
+
+642
+00:22:33,705 --> 00:22:35,945
+integrating
+different, tables,
+
+643
+00:22:36,105 --> 00:22:38,365
+as you you you do
+in in your system,
+
+644
+00:22:38,585 --> 00:22:40,205
+how do you manage
+the ontology,
+
+645
+00:22:40,345 --> 00:22:41,945
+like, the common schema over
+
+646
+00:22:41,945 --> 00:22:43,320
+your knowledge
+graph where when
+
+647
+00:22:43,320 --> 00:22:44,600
+these all these
+tables might have,
+
+648
+00:22:44,600 --> 00:22:45,900
+you know, different
+overlapping,
+
+649
+00:22:46,600 --> 00:22:48,200
+schemas, that, you know,
+
+650
+00:22:48,200 --> 00:22:49,720
+might be heterogeneous by
+
+651
+00:22:49,720 --> 00:22:51,000
+different names for
+the same source,
+
+652
+00:22:51,000 --> 00:22:52,620
+different ways of
+structuring data.
+
+653
+00:22:53,400 --> 00:22:55,260
+how do you handle that?
+
+654
+00:22:55,720 --> 00:22:57,640
+So in timber,
+once you introduce
+
+655
+00:22:57,640 --> 00:22:59,685
+the ontology, you can map
+
+656
+00:22:59,685 --> 00:23:00,805
+different sources to it.
+
+657
+00:23:00,805 --> 00:23:02,345
+And in the mapping process,
+
+658
+00:23:02,565 --> 00:23:04,725
+you can leverage SQL to do to
+
+659
+00:23:04,725 --> 00:23:06,665
+clean the data, to
+transform the data.
+
+660
+00:23:06,725 --> 00:23:08,645
+So if I have two
+tables, for example,
+
+661
+00:23:08,645 --> 00:23:09,945
+that represents a customer,
+
+662
+00:23:10,485 --> 00:23:12,245
+and with one, I have
+a customer name,
+
+663
+00:23:12,245 --> 00:23:13,045
+and in the other one,
+
+664
+00:23:13,045 --> 00:23:14,505
+I have a column called name,
+
+665
+00:23:14,810 --> 00:23:15,770
+In the mapping step,
+
+666
+00:23:15,770 --> 00:23:17,450
+you can transform the name of
+
+667
+00:23:17,450 --> 00:23:18,890
+the column and give
+it a different
+
+668
+00:23:18,890 --> 00:23:21,310
+alias to match it
+into a standardized
+
+669
+00:23:22,170 --> 00:23:23,710
+meaning to the whole
+enterprise.
+
+670
+00:23:24,810 --> 00:23:27,470
+And this is also true
+for relationships.
+
+671
+00:23:28,195 --> 00:23:29,795
+Timber supports one to many,
+
+672
+00:23:29,795 --> 00:23:30,935
+many to many relationships,
+
+673
+00:23:31,395 --> 00:23:32,915
+and you can declare
+the semantic
+
+674
+00:23:32,915 --> 00:23:35,575
+name of each of
+those relationship
+
+675
+00:23:35,875 --> 00:23:38,515
+in the knowledge graph. Okay.
+
+676
+00:23:38,515 --> 00:23:41,255
+So you're using SQL
+as the transformation
+
+677
+00:23:41,715 --> 00:23:42,855
+and mapping language.
+
+678
+00:23:44,040 --> 00:23:45,420
+That's that sounds great.
+
+679
+00:23:46,040 --> 00:23:48,040
+and then another
+related question
+
+680
+00:23:48,040 --> 00:23:50,220
+is now how do you
+manage identity?
+
+681
+00:23:50,360 --> 00:23:52,200
+How do my how how
+do you manage
+
+682
+00:23:52,200 --> 00:23:54,280
+record linkage,
+when you have,
+
+683
+00:23:54,600 --> 00:23:56,280
+different entities
+that represent
+
+684
+00:23:56,280 --> 00:23:57,880
+the same person, for example,
+
+685
+00:23:57,880 --> 00:23:58,860
+in different tables?
+
+686
+00:23:59,495 --> 00:24:00,695
+How how do you do you manage
+
+687
+00:24:00,695 --> 00:24:02,535
+the the construction
+there of of that,
+
+688
+00:24:02,695 --> 00:24:04,395
+aggregated entity?
+
+689
+00:24:05,415 --> 00:24:08,615
+So, one of the benefits
+of working
+
+690
+00:24:08,615 --> 00:24:11,655
+with SQL and Data
+Warehouse and
+
+691
+00:24:11,655 --> 00:24:13,255
+Data Lakes, they're
+they're well
+
+692
+00:24:13,255 --> 00:24:14,235
+suited for aggregations.
+
+693
+00:24:15,790 --> 00:24:17,330
+So if you want to
+do aggregations
+
+694
+00:24:17,470 --> 00:24:18,990
+on top of
+the ontology and want
+
+695
+00:24:18,990 --> 00:24:20,530
+want to aggregate
+different sources,
+
+696
+00:24:21,070 --> 00:24:22,430
+they are actually optimized to
+
+697
+00:24:22,430 --> 00:24:25,550
+do to do it. Okay.
+
+698
+00:24:25,550 --> 00:24:26,930
+So that that is happening,
+
+699
+00:24:27,630 --> 00:24:29,950
+on on the the data
+warehouse or
+
+700
+00:24:29,950 --> 00:24:31,625
+the data lake. Yeah.
+
+701
+00:24:32,005 --> 00:24:34,745
+Upstream from,
+the import in in timber.
+
+702
+00:24:35,205 --> 00:24:36,725
+Exactly. So in timber,
+
+703
+00:24:36,725 --> 00:24:38,885
+it's just a virtual
+knowledge graph.
+
+704
+00:24:38,885 --> 00:24:40,405
+You have all
+the definitions in
+
+705
+00:24:40,405 --> 00:24:42,265
+the ontology, all
+the definitions
+
+706
+00:24:42,325 --> 00:24:43,065
+of the mappings.
+
+707
+00:24:43,670 --> 00:24:44,550
+And what we do,
+
+708
+00:24:44,550 --> 00:24:46,250
+we just introduce an a virtual
+
+709
+00:24:46,310 --> 00:24:47,910
+SQL schema that you can query
+
+710
+00:24:47,910 --> 00:24:49,430
+like it's just another scheme
+
+711
+00:24:49,430 --> 00:24:50,490
+in your data warehouse.
+
+712
+00:24:51,110 --> 00:24:52,710
+So you don't need to see all
+
+713
+00:24:52,710 --> 00:24:53,750
+the table and columns.
+
+714
+00:24:53,750 --> 00:24:55,510
+You can see the ontology and
+
+715
+00:24:55,510 --> 00:24:57,210
+work with that and
+as an obstruction
+
+716
+00:24:57,270 --> 00:25:01,025
+layer. And I I might
+I've missed it.
+
+717
+00:25:01,505 --> 00:25:03,745
+the ontology, how
+how is it defined?
+
+718
+00:25:03,745 --> 00:25:05,345
+How how this how do you expect
+
+719
+00:25:05,345 --> 00:25:06,885
+the user to define it?
+
+720
+00:25:07,585 --> 00:25:09,345
+So I think it's it's best if
+
+721
+00:25:09,345 --> 00:25:10,725
+I'll show you an example.
+
+722
+00:25:11,090 --> 00:25:13,810
+Maybe that that
+will also time.
+
+723
+00:25:14,210 --> 00:25:15,750
+Be better for for everyone.
+
+724
+00:25:15,810 --> 00:25:17,670
+So let me share my screen.
+
+725
+00:25:22,030 --> 00:25:23,710
+So in Timber, you
+can define for
+
+726
+00:25:23,790 --> 00:25:24,910
+let's take, for example,
+
+727
+00:25:24,910 --> 00:25:26,210
+the the customer concept.
+
+728
+00:25:26,910 --> 00:25:28,770
+So in Timber, you can visually
+
+729
+00:25:29,230 --> 00:25:30,210
+add more properties.
+
+730
+00:25:31,310 --> 00:25:32,510
+You can see all the properties
+
+731
+00:25:32,510 --> 00:25:33,250
+in the ontology,
+
+732
+00:25:33,805 --> 00:25:35,425
+or you can create new ones.
+
+733
+00:25:36,365 --> 00:25:37,745
+You can create
+the relationships
+
+734
+00:25:38,045 --> 00:25:39,345
+directly in the user
+interface.
+
+735
+00:25:39,805 --> 00:25:41,245
+So it can introduce a new
+
+736
+00:25:41,245 --> 00:25:42,765
+relationship in the ontology.
+
+737
+00:25:42,765 --> 00:25:44,285
+You can give it the name,
+
+738
+00:25:44,285 --> 00:25:46,785
+the inverse name,
+the target concept,
+
+739
+00:25:47,005 --> 00:25:49,000
+the properties on which this
+
+740
+00:25:49,000 --> 00:25:51,180
+relationship is built
+on, and so on.
+
+741
+00:25:51,400 --> 00:25:52,760
+This is one way you can model
+
+742
+00:25:52,760 --> 00:25:54,300
+the whole ontology
+and timber.
+
+743
+00:25:54,600 --> 00:25:55,400
+And you, of course,
+
+744
+00:25:55,400 --> 00:25:57,080
+you have the inheritance that
+
+745
+00:25:57,080 --> 00:25:59,740
+allows you to do
+the subclassing
+
+746
+00:25:59,960 --> 00:26:00,940
+of concepts.
+
+747
+00:26:02,045 --> 00:26:04,045
+Another option to do it is in
+
+748
+00:26:04,045 --> 00:26:05,745
+using SQL statements.
+
+749
+00:26:06,365 --> 00:26:07,585
+So here we can see,
+
+750
+00:26:08,445 --> 00:26:10,385
+the create statement
+of a concept
+
+751
+00:26:10,685 --> 00:26:11,425
+in the ontology.
+
+752
+00:26:11,565 --> 00:26:13,005
+So if you're familiar
+with the create
+
+753
+00:26:13,005 --> 00:26:15,025
+table, this is
+just an extension
+
+754
+00:26:15,485 --> 00:26:17,210
+of the create
+table that instead
+
+755
+00:26:17,210 --> 00:26:19,450
+of table you use
+concept and we
+
+756
+00:26:19,450 --> 00:26:21,530
+introduce the inherits as part
+
+757
+00:26:21,530 --> 00:26:22,650
+of the SQL language.
+
+758
+00:26:22,650 --> 00:26:24,270
+So you can define hierarchies
+
+759
+00:26:25,050 --> 00:26:27,070
+and do the subclass
+in timber.
+
+760
+00:26:28,915 --> 00:26:29,715
+Okay. Thank you.
+
+761
+00:26:29,715 --> 00:26:32,355
+So, ontologies are
+also represented
+
+762
+00:26:32,355 --> 00:26:33,015
+in SQL.
+
+763
+00:26:33,235 --> 00:26:34,755
+And do you allow allow the,
+
+764
+00:26:35,395 --> 00:26:36,835
+the possibility to import
+
+765
+00:26:36,835 --> 00:26:39,255
+ontologies from
+OWW, for example,
+
+766
+00:26:39,715 --> 00:26:41,735
+like standard schemas,
+taxonomies,
+
+767
+00:26:42,275 --> 00:26:44,775
+from, from the web? Yes.
+
+768
+00:26:45,690 --> 00:26:48,670
+So Timber is is
+fully compatible
+
+769
+00:26:48,730 --> 00:26:50,910
+with OWL. We
+implemented Timber
+
+770
+00:26:51,050 --> 00:26:53,130
+based on all
+the inference rules
+
+771
+00:26:53,130 --> 00:26:54,970
+that exist in OWL
+so we can take
+
+772
+00:26:54,970 --> 00:26:56,750
+existing ontologies
+like DBpedia,
+
+773
+00:26:56,970 --> 00:26:58,010
+like fiber ontology,
+
+774
+00:26:58,010 --> 00:26:59,150
+the financial ontology,
+
+775
+00:26:59,290 --> 00:27:02,305
+and load them into Timber and
+
+776
+00:27:02,305 --> 00:27:03,745
+make these make them available
+
+777
+00:27:03,745 --> 00:27:07,205
+to SQL readers
+as well. Great.
+
+778
+00:27:07,235 --> 00:27:08,535
+Olivier is asking,
+
+779
+00:27:09,475 --> 00:27:11,415
+how do you call
+external functions,
+
+780
+00:27:12,035 --> 00:27:13,175
+in Timber AI?
+
+781
+00:27:14,195 --> 00:27:16,195
+So those are not
+external function.
+
+782
+00:27:16,195 --> 00:27:17,575
+Those are table function.
+
+783
+00:27:17,720 --> 00:27:19,720
+So the function is
+exposed as a table,
+
+784
+00:27:19,720 --> 00:27:20,780
+as a virtual table,
+
+785
+00:27:20,920 --> 00:27:22,280
+that you call it
+as a function.
+
+786
+00:27:22,280 --> 00:27:23,480
+This is something that is part
+
+787
+00:27:23,480 --> 00:27:24,700
+of the SQL standard.
+
+788
+00:27:25,000 --> 00:27:27,000
+Some SQL databases also have
+
+789
+00:27:27,000 --> 00:27:27,820
+table functions.
+
+790
+00:27:28,280 --> 00:27:29,740
+But what we've done here,
+
+791
+00:27:29,845 --> 00:27:31,845
+we took the algorithms
+and made
+
+792
+00:27:31,845 --> 00:27:33,865
+them available as
+table functions.
+
+793
+00:27:34,085 --> 00:27:36,005
+So the integration
+part between
+
+794
+00:27:36,005 --> 00:27:38,085
+the relational and the graph
+
+795
+00:27:38,085 --> 00:27:39,845
+algorithm library is based on
+
+796
+00:27:39,845 --> 00:27:42,585
+those virtual
+table functions.
+
+797
+00:27:46,040 --> 00:27:48,040
+Okay. No. It it
+doesn't have to
+
+798
+00:27:48,040 --> 00:27:49,160
+be in the underlying DB.
+
+799
+00:27:49,160 --> 00:27:51,240
+So I saw the Oliver
+also asked,
+
+800
+00:27:51,240 --> 00:27:52,760
+do you need the feature
+in the underlying
+
+801
+00:27:52,760 --> 00:27:53,960
+database? So, no,
+
+802
+00:27:53,960 --> 00:27:55,720
+you you have you can
+have the feature
+
+803
+00:27:55,720 --> 00:27:59,105
+exists in network
+x, in CU Graph,
+
+804
+00:27:59,105 --> 00:28:00,225
+or in Apache Spark.
+
+805
+00:28:00,225 --> 00:28:02,385
+This is where
+the actual algorithm
+
+806
+00:28:02,385 --> 00:28:04,545
+is being run-in memory in a in
+
+807
+00:28:04,545 --> 00:28:05,905
+those in one of those specific
+
+808
+00:28:05,905 --> 00:28:06,405
+platforms.
+
+809
+00:28:08,625 --> 00:28:08,945
+Great.
+
+810
+00:28:10,630 --> 00:28:13,350
+Oh, we actually
+just got a question
+
+811
+00:28:13,350 --> 00:28:16,650
+from, Jakub, who's asking,
+
+812
+00:28:17,590 --> 00:28:20,410
+if you consider a virtual KG
+
+813
+00:28:20,630 --> 00:28:21,530
+being a stopgap,
+
+814
+00:28:22,310 --> 00:28:24,410
+before moving to a Graph DB,
+
+815
+00:28:24,855 --> 00:28:26,795
+or is there something inherent
+
+816
+00:28:26,855 --> 00:28:29,355
+in SQL first virtual KGs,
+
+817
+00:28:29,975 --> 00:28:31,815
+that will be
+necessary for some
+
+818
+00:28:31,815 --> 00:28:33,915
+time to come? So,
+
+819
+00:28:34,375 --> 00:28:35,735
+when you talk about moving to
+
+820
+00:28:35,735 --> 00:28:37,015
+a Graph DB, you're actually
+
+821
+00:28:37,015 --> 00:28:38,315
+talking about
+full materialization
+
+822
+00:28:38,615 --> 00:28:40,075
+of your data to
+a new database.
+
+823
+00:28:40,470 --> 00:28:41,990
+So you take data from the data
+
+824
+00:28:41,990 --> 00:28:43,670
+or some data lake,
+and you do it here,
+
+825
+00:28:43,670 --> 00:28:45,610
+and you materialize
+in a new graph DB.
+
+826
+00:28:45,990 --> 00:28:47,510
+Well, Timber also supports
+
+827
+00:28:47,510 --> 00:28:50,010
+materialization. So
+Timber is virtual.
+
+828
+00:28:50,150 --> 00:28:51,590
+You start with
+a virtual knowledge
+
+829
+00:28:51,590 --> 00:28:53,610
+graph, but for
+specific workloads,
+
+830
+00:28:54,195 --> 00:28:55,735
+specific complex queries,
+
+831
+00:28:55,955 --> 00:28:58,535
+you can materialize
+it in the in
+
+832
+00:28:58,595 --> 00:29:00,275
+in memory or inside the data
+
+833
+00:29:00,275 --> 00:29:01,895
+warehouse or data lake,
+
+834
+00:29:02,275 --> 00:29:03,895
+so we get better performance.
+
+835
+00:29:04,115 --> 00:29:05,875
+So we don't see it
+as the first step.
+
+836
+00:29:05,875 --> 00:29:07,395
+We see it as
+a complete different
+
+837
+00:29:07,395 --> 00:29:09,155
+approach that doesn't require
+
+838
+00:29:09,155 --> 00:29:11,050
+you to go full
+materialized from
+
+839
+00:29:11,050 --> 00:29:12,730
+day one. You can
+still materialize
+
+840
+00:29:12,730 --> 00:29:13,630
+for better performance,
+
+841
+00:29:13,930 --> 00:29:15,610
+and you can still do
+graph traversals,
+
+842
+00:29:15,610 --> 00:29:16,430
+graph algorithms,
+
+843
+00:29:16,730 --> 00:29:18,890
+and there is no
+need to to move
+
+844
+00:29:18,890 --> 00:29:20,410
+all of your data from day one
+
+845
+00:29:20,410 --> 00:29:22,430
+to a graphDB.
+There are scenarios
+
+846
+00:29:22,570 --> 00:29:25,715
+like a transactional use cases
+
+847
+00:29:25,775 --> 00:29:27,775
+that you need that
+Graph DBs are
+
+848
+00:29:27,775 --> 00:29:28,995
+well suited to handle.
+
+849
+00:29:30,095 --> 00:29:32,595
+And timber is mostly
+used for analytics,
+
+850
+00:29:33,055 --> 00:29:37,315
+for the analytics
+part. Great.
+

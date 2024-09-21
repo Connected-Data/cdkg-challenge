@@ -1,0 +1,1316 @@
+1
+00:00:07,120 --> 00:00:08,900
+Welcome to Knowledge Graphs,
+
+2
+00:00:09,120 --> 00:00:11,620
+moving beyond archeo- RDF.
+
+3
+00:00:12,975 --> 00:00:14,275
+My name is Kurt Cagle,
+
+4
+00:00:14,335 --> 00:00:16,175
+and I wanna thank
+you for joining
+
+5
+00:00:16,175 --> 00:00:17,315
+us this afternoon.
+
+6
+00:00:19,375 --> 00:00:20,515
+A bit of a timeline,
+
+7
+00:00:20,990 --> 00:00:22,270
+and note that these dates are
+
+8
+00:00:22,270 --> 00:00:23,090
+only approximate.
+
+9
+00:00:24,190 --> 00:00:26,690
+RDF, the resource
+description framework,
+
+10
+00:00:27,150 --> 00:00:28,910
+was created in two thousand by
+
+11
+00:00:28,910 --> 00:00:30,575
+sir Tim Berners
+Lee and others,
+
+12
+00:00:31,055 --> 00:00:32,495
+others, pursuing an idea that
+
+13
+00:00:32,495 --> 00:00:34,755
+emerged as he was
+developing HTML.
+
+14
+00:00:35,375 --> 00:00:36,255
+With that language,
+
+15
+00:00:36,255 --> 00:00:37,555
+he'd observed
+that hyperlinks,
+
+16
+00:00:37,695 --> 00:00:39,055
+which connected a phrase or
+
+17
+00:00:39,055 --> 00:00:41,450
+image in one document
+with a document
+
+18
+00:00:41,510 --> 00:00:42,650
+elsewhere on the web,
+
+19
+00:00:42,870 --> 00:00:44,470
+could be generalized
+to the idea
+
+20
+00:00:44,470 --> 00:00:46,950
+of one concept or
+resource having
+
+21
+00:00:46,950 --> 00:00:48,310
+a relationship with another
+
+22
+00:00:48,310 --> 00:00:50,555
+concept in
+a conceptual space.
+
+23
+00:00:51,415 --> 00:00:52,635
+This web of ideas,
+
+24
+00:00:52,695 --> 00:00:54,295
+which you would
+christen the Semantic
+
+25
+00:00:54,295 --> 00:00:55,435
+Web shortly thereafter,
+
+26
+00:00:56,270 --> 00:00:58,030
+would end up driving the graph
+
+27
+00:00:58,030 --> 00:00:59,890
+revolution of
+the twenty ten CVR.
+
+28
+00:01:01,070 --> 00:01:03,310
+Originally, he used
+XML as the default
+
+29
+00:01:03,310 --> 00:01:05,505
+language for this
+web, But over time,
+
+30
+00:01:05,505 --> 00:01:07,185
+he realized that XML wasn't
+
+31
+00:01:07,185 --> 00:01:08,225
+ideal for the task,
+
+32
+00:01:08,225 --> 00:01:10,465
+even as he and
+others worked at
+
+33
+00:01:10,465 --> 00:01:12,065
+the logical formalism language
+
+34
+00:01:12,065 --> 00:01:13,780
+called the Web
+Ontology Language
+
+35
+00:01:13,780 --> 00:01:14,760
+Language or OWL.
+
+36
+00:01:15,780 --> 00:01:17,940
+By two thousand
+seven, SPARQL,
+
+37
+00:01:17,940 --> 00:01:19,480
+an RDF query language,
+
+38
+00:01:20,100 --> 00:01:22,660
+was produced to
+to querying sets
+
+39
+00:01:22,660 --> 00:01:25,035
+of assertions using
+a new language
+
+40
+00:01:25,035 --> 00:01:26,975
+called the Chirce
+RDF language,
+
+41
+00:01:27,035 --> 00:01:29,055
+which hurdle,
+formally released
+
+42
+00:01:29,515 --> 00:01:30,735
+in two thousand fourteen.
+
+43
+00:01:31,850 --> 00:01:33,530
+Sparkle one point
+one was released
+
+44
+00:01:33,530 --> 00:01:34,410
+about the same time,
+
+45
+00:01:34,410 --> 00:01:35,550
+and it's worth understanding
+
+46
+00:01:35,690 --> 00:01:37,370
+that Turtle and Sparkle have
+
+47
+00:01:37,370 --> 00:01:38,830
+only just gotten started.
+
+48
+00:01:39,475 --> 00:01:40,995
+This is very important as it
+
+49
+00:01:40,995 --> 00:01:42,595
+effectively marked the end of
+
+50
+00:01:42,595 --> 00:01:44,535
+the RKO RDF era.
+
+51
+00:01:47,560 --> 00:01:49,160
+Turtle tends to get a lot of
+
+52
+00:01:49,160 --> 00:01:51,420
+short shrift first
+from ontologists
+
+53
+00:01:52,040 --> 00:01:54,300
+who grew up with
+OWL, RDF XML,
+
+54
+00:01:54,795 --> 00:01:56,575
+and three notation
+and protege.
+
+55
+00:01:57,035 --> 00:01:58,475
+And from those newer graph
+
+56
+00:01:58,475 --> 00:02:01,595
+technologies who felt RDF XML
+
+57
+00:02:01,595 --> 00:02:04,000
+and OWL were too
+complex or too
+
+58
+00:02:04,000 --> 00:02:05,120
+dissimilar from the way that
+
+59
+00:02:05,120 --> 00:02:06,480
+they were normally
+working with
+
+60
+00:02:06,480 --> 00:02:08,900
+languages like
+JavaScript and Python.
+
+61
+00:02:09,680 --> 00:02:11,775
+However, turtle
+as a language,
+
+62
+00:02:11,775 --> 00:02:13,795
+has a great deal
+to recommend it.
+
+63
+00:02:14,335 --> 00:02:16,175
+It is a much tercer language
+
+64
+00:02:16,175 --> 00:02:18,415
+than RDF XML. Certainly,
+
+65
+00:02:18,415 --> 00:02:23,190
+it's that's tercer
+than, m three.
+
+66
+00:02:23,490 --> 00:02:24,310
+And arguably,
+
+67
+00:02:24,610 --> 00:02:26,930
+it's JSON when namespaces are
+
+68
+00:02:26,930 --> 00:02:29,670
+taken into account.
+Please see JSON LD.
+
+69
+00:02:30,495 --> 00:02:32,275
+While OWL was built on XML,
+
+70
+00:02:32,415 --> 00:02:34,975
+RDF XML can be
+very verbose and
+
+71
+00:02:34,975 --> 00:02:36,035
+far from intuitive.
+
+72
+00:02:37,055 --> 00:02:38,595
+Turtle is actually
+a surprisingly
+
+73
+00:02:38,735 --> 00:02:40,510
+good language for
+expressing triples.
+
+74
+00:02:40,890 --> 00:02:42,090
+It makes a good language
+
+75
+00:02:42,090 --> 00:02:43,610
+additionally for
+prototyping or
+
+76
+00:02:43,610 --> 00:02:44,670
+modeling objects.
+
+77
+00:02:45,370 --> 00:02:47,690
+What's more, Turtle and SPARQL
+
+78
+00:02:47,690 --> 00:02:49,755
+are largely
+complimentary because
+
+79
+00:02:49,755 --> 00:02:51,695
+they essentially
+emerged in tandem.
+
+80
+00:02:52,235 --> 00:02:54,075
+As Sparkle continues
+to evolve,
+
+81
+00:02:54,075 --> 00:02:55,455
+so too does the expressiveness
+
+82
+00:02:55,675 --> 00:02:57,460
+of Turtle. Indeed,
+
+83
+00:02:57,460 --> 00:02:58,980
+I contend that
+part of the reason
+
+84
+00:02:58,980 --> 00:03:00,760
+the turtle isn't
+used more widely
+
+85
+00:03:01,380 --> 00:03:03,560
+is because it is a very
+young language,
+
+86
+00:03:03,700 --> 00:03:04,840
+younger than JSON,
+
+87
+00:03:05,235 --> 00:03:07,075
+and developed to
+express a very
+
+88
+00:03:07,075 --> 00:03:08,055
+different need.
+
+89
+00:03:10,035 --> 00:03:12,055
+Indeed,
+the primary limitations
+
+90
+00:03:12,195 --> 00:03:14,135
+of Turtle as a language
+are simple.
+
+91
+00:03:14,780 --> 00:03:16,320
+Turtle isn't JSON.
+
+92
+00:03:17,100 --> 00:03:18,400
+We'll come back to this.
+
+93
+00:03:19,980 --> 00:03:21,980
+It's worth dividing
+up the evolution
+
+94
+00:03:21,980 --> 00:03:24,675
+of RDF into three
+distinct areas
+
+95
+00:03:24,815 --> 00:03:27,055
+or eras. The first,
+
+96
+00:03:27,055 --> 00:03:29,375
+the Archaeo RDF
+era was largely
+
+97
+00:03:29,375 --> 00:03:30,675
+dominated by OWL,
+
+98
+00:03:31,130 --> 00:03:32,750
+utilized n three
+for ingestion,
+
+99
+00:03:32,810 --> 00:03:34,350
+a not very common format,
+
+100
+00:03:34,650 --> 00:03:36,670
+and was built primarily
+for inferencing,
+
+101
+00:03:37,290 --> 00:03:39,245
+a glorified word
+that means that
+
+102
+00:03:39,245 --> 00:03:41,005
+it is possible to express new
+
+103
+00:03:41,005 --> 00:03:43,665
+assertions by using logical
+
+104
+00:03:43,805 --> 00:03:45,725
+operations on
+the existing graph
+
+105
+00:03:45,725 --> 00:03:47,740
+or triples, then adding these
+
+106
+00:03:47,740 --> 00:03:49,440
+back in as virtual triples.
+
+107
+00:03:50,300 --> 00:03:51,920
+Serialization was primarily
+
+108
+00:03:51,980 --> 00:03:54,160
+accomplished via
+fairly ugly XML
+
+109
+00:03:54,220 --> 00:03:56,375
+representation. It appealed to
+
+110
+00:03:56,375 --> 00:03:57,815
+academics, but was not very
+
+111
+00:03:57,815 --> 00:03:58,935
+attractive to the woke up
+
+112
+00:03:58,935 --> 00:04:00,235
+programmers out there.
+
+113
+00:04:03,810 --> 00:04:06,550
+The Meso RDF era,
+on the other hand,
+
+114
+00:04:06,930 --> 00:04:08,690
+began with SPARQL
+one point o,
+
+115
+00:04:08,690 --> 00:04:10,390
+released in two
+thousand and seven,
+
+116
+00:04:10,675 --> 00:04:12,515
+but took both the emergence of
+
+117
+00:04:12,515 --> 00:04:14,835
+Turtle around
+twenty twelve and
+
+118
+00:04:14,835 --> 00:04:16,595
+the beefing up of SPARQL in
+
+119
+00:04:16,595 --> 00:04:20,420
+twenty thirteen to
+really take off.
+
+120
+00:04:20,980 --> 00:04:23,080
+This was RDF's
+nuclear winter,
+
+121
+00:04:23,540 --> 00:04:24,980
+where interest in the semantic
+
+122
+00:04:24,980 --> 00:04:26,900
+web as an idea
+almost died even
+
+123
+00:04:26,900 --> 00:04:28,360
+as significant new
+developments,
+
+124
+00:04:29,025 --> 00:04:30,965
+the emergence of
+turtles, not mammals,
+
+125
+00:04:31,025 --> 00:04:31,925
+were taking place.
+
+126
+00:04:32,785 --> 00:04:34,225
+SPARQL one point one brought
+
+127
+00:04:34,225 --> 00:04:35,825
+with it some
+significantly needed
+
+128
+00:04:35,825 --> 00:04:37,890
+improvements that
+was still not
+
+129
+00:04:37,890 --> 00:04:38,710
+quite sufficient.
+
+130
+00:04:39,410 --> 00:04:41,330
+The SPARQL update facility was
+
+131
+00:04:41,330 --> 00:04:42,150
+also introduced,
+
+132
+00:04:42,210 --> 00:04:43,810
+replacing virtualized triples
+
+133
+00:04:43,810 --> 00:04:45,510
+with formerly
+persistent ones,
+
+134
+00:04:45,715 --> 00:04:47,235
+and the notion that you could
+
+135
+00:04:47,235 --> 00:04:49,235
+query in a federated
+manner was
+
+136
+00:04:49,235 --> 00:04:50,995
+introduced, although, again,
+
+137
+00:04:50,995 --> 00:04:52,995
+not fully fleshed
+out at around
+
+138
+00:04:52,995 --> 00:04:55,280
+the same time. Finally,
+
+139
+00:04:55,280 --> 00:04:56,960
+we began to see
+the first upticks
+
+140
+00:04:56,960 --> 00:04:58,900
+in the use of JSON
+as representations
+
+141
+00:04:59,280 --> 00:05:01,760
+of troubles, especially in
+
+142
+00:05:01,760 --> 00:05:03,975
+corporate environments
+with JSON
+
+143
+00:05:04,035 --> 00:05:05,495
+LD linked data.
+
+144
+00:05:05,955 --> 00:05:08,615
+It could be argued
+that JSON LD
+
+145
+00:05:08,675 --> 00:05:11,015
+is possibly,
+probably, in fact,
+
+146
+00:05:11,310 --> 00:05:12,990
+an evolutionary dead end,
+
+147
+00:05:12,990 --> 00:05:15,150
+but it is signal signaled that
+
+148
+00:05:15,150 --> 00:05:16,590
+the two communities
+were talking
+
+149
+00:05:16,590 --> 00:05:17,490
+with one another.
+
+150
+00:05:19,425 --> 00:05:21,265
+I believe we are
+in the beginning
+
+151
+00:05:21,265 --> 00:05:23,045
+of the NeoRDF era.
+
+152
+00:05:23,505 --> 00:05:24,945
+There are a whole host of new
+
+153
+00:05:24,945 --> 00:05:26,465
+developments that
+last few years
+
+154
+00:05:26,465 --> 00:05:27,685
+are beginning to coalesce,
+
+155
+00:05:28,110 --> 00:05:29,730
+and that will likely
+be formalized
+
+156
+00:05:29,870 --> 00:05:31,570
+within the next
+couple of years.
+
+157
+00:05:32,110 --> 00:05:33,790
+This is not necessarily all
+
+158
+00:05:33,790 --> 00:05:35,230
+where RDF is going,
+
+159
+00:05:35,230 --> 00:05:36,830
+but it is what is most visible
+
+160
+00:05:36,830 --> 00:05:39,155
+right now. I wish
+to cover each
+
+161
+00:05:39,155 --> 00:05:40,135
+of these individually.
+
+162
+00:05:44,515 --> 00:05:47,810
+The RDF role tends
+to spit out big,
+
+163
+00:05:47,950 --> 00:05:50,430
+scary words. One of these is
+
+164
+00:05:50,430 --> 00:05:53,310
+reification. A reification is
+
+165
+00:05:53,310 --> 00:05:54,990
+a statement that
+describes another
+
+166
+00:05:54,990 --> 00:05:56,685
+statement. For instance,
+
+167
+00:05:56,685 --> 00:05:58,285
+let's say that you
+have a statement
+
+168
+00:05:58,285 --> 00:05:59,745
+that specifies
+a relationship,
+
+169
+00:06:00,125 --> 00:06:01,505
+a has route to relationship,
+
+170
+00:06:02,285 --> 00:06:04,180
+between two
+airports in Seattle
+
+171
+00:06:04,180 --> 00:06:05,720
+and San Francisco
+respectively.
+
+172
+00:06:06,900 --> 00:06:09,080
+This description
+describes a route,
+
+173
+00:06:09,700 --> 00:06:11,460
+and that route
+can have multiple
+
+174
+00:06:11,460 --> 00:06:13,545
+properties such as distance in
+
+175
+00:06:13,545 --> 00:06:15,385
+which airlines fly
+that particular
+
+176
+00:06:15,385 --> 00:06:17,785
+route. Labeled
+property graphs,
+
+177
+00:06:17,785 --> 00:06:19,485
+otherwise known as our LPGs,
+
+178
+00:06:20,400 --> 00:06:22,160
+can can describe the first
+
+179
+00:06:22,160 --> 00:06:24,900
+relationship but
+sputters on the second.
+
+180
+00:06:25,440 --> 00:06:27,600
+With RDF star, first proposed
+
+181
+00:06:27,600 --> 00:06:29,860
+in twenty seventeen,
+and Sparkle Star,
+
+182
+00:06:30,105 --> 00:06:31,865
+a more compact notation for
+
+183
+00:06:31,865 --> 00:06:33,305
+reification was proposed for
+
+184
+00:06:33,305 --> 00:06:34,925
+both Turtle and Sparkle.
+
+185
+00:06:36,185 --> 00:06:37,865
+This new notation
+makes a great
+
+186
+00:06:37,865 --> 00:06:42,670
+number of operations much
+
+187
+00:06:42,670 --> 00:06:44,750
+easier and goes a long way in
+
+188
+00:06:44,750 --> 00:06:46,530
+making RDF graphs compatible
+
+189
+00:06:46,670 --> 00:06:48,370
+with local property graphs.
+
+190
+00:06:51,155 --> 00:06:52,915
+A second area where
+some exciting
+
+191
+00:06:52,915 --> 00:06:54,995
+development is happening is in
+
+192
+00:06:54,995 --> 00:06:56,215
+the increasing sophistication
+
+193
+00:06:56,515 --> 00:06:57,975
+of property path languages,
+
+194
+00:06:58,600 --> 00:07:00,360
+something familiar to users of
+
+195
+00:07:00,360 --> 00:07:02,380
+both OpenCypher and Gremlin.
+
+196
+00:07:03,000 --> 00:07:04,460
+With new ways of describing
+
+197
+00:07:04,520 --> 00:07:06,600
+property graphs as first class
+
+198
+00:07:06,600 --> 00:07:08,775
+objects and providing ways of
+
+199
+00:07:08,775 --> 00:07:10,855
+specifying wildcards
+and variable
+
+200
+00:07:10,855 --> 00:07:13,095
+bounds. Such a language could
+
+201
+00:07:13,095 --> 00:07:15,470
+radically empower SPARQL to
+
+202
+00:07:15,470 --> 00:07:17,950
+combine both inferencing and
+
+203
+00:07:17,950 --> 00:07:19,630
+graph analytics
+operations into
+
+204
+00:07:19,630 --> 00:07:21,170
+a single unified language.
+
+205
+00:07:21,630 --> 00:07:23,070
+While there are
+several potential
+
+206
+00:07:23,070 --> 00:07:24,530
+candidates for
+such a language,
+
+207
+00:07:25,035 --> 00:07:27,115
+Shackle property paths look to
+
+208
+00:07:27,115 --> 00:07:29,215
+be the most promising
+areas yet.
+
+209
+00:07:29,595 --> 00:07:30,955
+This will be covered more when
+
+210
+00:07:30,955 --> 00:07:32,175
+I talk about Shackle.
+
+211
+00:07:34,410 --> 00:07:36,750
+Shackle, the shape
+constraint language,
+
+212
+00:07:38,490 --> 00:07:40,110
+like most RDF technologies,
+
+213
+00:07:40,415 --> 00:07:42,095
+was formulated in reaction to
+
+214
+00:07:42,095 --> 00:07:43,935
+the emergence of
+turtle as the new
+
+215
+00:07:43,935 --> 00:07:44,915
+face of RDF.
+
+216
+00:07:45,695 --> 00:07:47,155
+Going through
+several iterations,
+
+217
+00:07:47,850 --> 00:07:49,690
+it was finally
+approved in twenty
+
+218
+00:07:49,690 --> 00:07:52,590
+seventeen. Shackle,
+ironically,
+
+219
+00:07:52,730 --> 00:07:54,170
+is changing the dialogue about
+
+220
+00:07:54,170 --> 00:07:56,350
+data modeling with RD web RDF
+
+221
+00:07:56,515 --> 00:07:58,355
+away from the OWL
+specific sets
+
+222
+00:07:58,355 --> 00:08:00,595
+of rules and
+formalisms towards
+
+223
+00:08:00,595 --> 00:08:02,275
+a format that is more familiar
+
+224
+00:08:02,275 --> 00:08:03,255
+to data modelers,
+
+225
+00:08:03,880 --> 00:08:04,940
+application developers,
+
+226
+00:08:05,000 --> 00:08:06,060
+and data scientists.
+
+227
+00:08:06,840 --> 00:08:07,900
+In many respects,
+
+228
+00:08:08,040 --> 00:08:10,780
+it is providing key
+in the integration
+
+229
+00:08:10,840 --> 00:08:13,885
+of r d RDF with
+GraphQL as well.
+
+230
+00:08:16,425 --> 00:08:18,265
+There is an active
+community now
+
+231
+00:08:18,265 --> 00:08:19,865
+looking towards a SPARQL two
+
+232
+00:08:19,865 --> 00:08:21,165
+point o implementation,
+
+233
+00:08:22,250 --> 00:08:23,710
+building off of the previous
+
+234
+00:08:23,770 --> 00:08:24,990
+implementation's weaknesses.
+
+235
+00:08:25,850 --> 00:08:27,150
+Already, there are limitations
+
+236
+00:08:27,370 --> 00:08:28,490
+pushing these boundaries by
+
+237
+00:08:28,490 --> 00:08:29,790
+incorporating
+more sophisticated
+
+238
+00:08:30,010 --> 00:08:32,665
+property paths,
+establishing functions,
+
+239
+00:08:32,885 --> 00:08:34,345
+arrays, sets, and dictionaries
+
+240
+00:08:34,565 --> 00:08:35,945
+as first class objects,
+
+241
+00:08:36,565 --> 00:08:38,990
+fixing significant
+problems with
+
+242
+00:08:38,990 --> 00:08:40,270
+lists and how they are managed
+
+243
+00:08:40,270 --> 00:08:42,750
+in SPARQL, utilization of
+
+244
+00:08:42,750 --> 00:08:44,050
+JavaScript like capabilities
+
+245
+00:08:44,510 --> 00:08:46,770
+such as math map reduce
+type operators,
+
+246
+00:08:47,325 --> 00:08:49,025
+lambdas or arrow functions,
+
+247
+00:08:49,325 --> 00:08:50,465
+and template literals,
+
+248
+00:08:51,005 --> 00:08:52,765
+and utilizing shackle to make
+
+249
+00:08:52,765 --> 00:08:54,625
+JSON construction
+much easier.
+
+250
+00:08:57,570 --> 00:08:59,670
+GraphQL is a good idea.
+
+251
+00:09:00,370 --> 00:09:01,810
+While it is not part of the W
+
+252
+00:09:01,810 --> 00:09:03,490
+three C stack that
+was originally
+
+253
+00:09:03,490 --> 00:09:04,870
+developed by Facebook,
+
+254
+00:09:05,595 --> 00:09:07,275
+It should be because it works
+
+255
+00:09:07,275 --> 00:09:08,875
+very well with what RDF was
+
+256
+00:09:08,875 --> 00:09:11,695
+intended to be. GraphQL
+has limitations.
+
+257
+00:09:12,075 --> 00:09:13,855
+Reification is
+almost impossible
+
+258
+00:09:13,915 --> 00:09:15,920
+to manage. The JSON data model
+
+259
+00:09:15,920 --> 00:09:17,600
+is just not as
+robust at handling
+
+260
+00:09:17,600 --> 00:09:18,880
+things RDF does well,
+
+261
+00:09:18,880 --> 00:09:19,860
+including inheritance.
+
+262
+00:09:20,320 --> 00:09:22,020
+And its hierarchical structure
+
+263
+00:09:22,080 --> 00:09:23,575
+is at odds with the potential
+
+264
+00:09:23,575 --> 00:09:24,875
+secret nature of graphs.
+
+265
+00:09:25,815 --> 00:09:27,975
+But it is useful language for
+
+266
+00:09:27,975 --> 00:09:30,535
+making RDF stores
+look like JSON
+
+267
+00:09:30,535 --> 00:09:32,475
+stores from
+the outside world.
+
+268
+00:09:33,140 --> 00:09:34,820
+Shackle is playing
+a big part of that,
+
+269
+00:09:34,820 --> 00:09:36,980
+and almost every
+GraphQL bridge
+
+270
+00:09:36,980 --> 00:09:38,820
+currently in production uses
+
+271
+00:09:38,820 --> 00:09:40,200
+Shackle on the back end.
+
+272
+00:09:40,455 --> 00:09:42,135
+With some changes
+to sparkle to
+
+273
+00:09:42,135 --> 00:09:42,875
+make JSON,
+
+274
+00:09:44,135 --> 00:09:45,995
+constructible directly
+from graphs,
+
+275
+00:09:46,135 --> 00:09:47,980
+this could mark
+the merger point
+
+276
+00:09:47,980 --> 00:09:49,680
+of these two query language
+
+277
+00:09:49,740 --> 00:09:52,320
+technologies. Region.
+
+278
+00:09:53,180 --> 00:09:55,120
+The twenty
+thirteen specification
+
+279
+00:09:55,740 --> 00:09:56,880
+is a good start,
+
+280
+00:09:57,125 --> 00:09:59,205
+but as implementations
+have been built,
+
+281
+00:09:59,205 --> 00:10:00,585
+holes have become obvious.
+
+282
+00:10:01,045 --> 00:10:02,565
+This will happen soon,
+
+283
+00:10:02,565 --> 00:10:04,425
+probably within
+the next two years.
+
+284
+00:10:05,890 --> 00:10:07,590
+Finally, it's
+worth recognizing
+
+285
+00:10:07,730 --> 00:10:09,250
+that machine
+learning and graph
+
+286
+00:10:09,250 --> 00:10:11,350
+technologies are in
+a collision course,
+
+287
+00:10:11,570 --> 00:10:13,170
+and it is likely the next
+
+288
+00:10:13,170 --> 00:10:14,875
+innovations will
+be the integration
+
+289
+00:10:14,935 --> 00:10:16,795
+of these two, for everything
+
+290
+00:10:16,855 --> 00:10:18,935
+from discoverability to better
+
+291
+00:10:18,935 --> 00:10:20,715
+classifiers and more robust
+
+292
+00:10:20,775 --> 00:10:22,075
+machine learning models.
+
+293
+00:10:25,310 --> 00:10:26,450
+Thank you for listening.
+
+294
+00:10:26,750 --> 00:10:28,750
+Please feel free to
+drop me an email
+
+295
+00:10:28,750 --> 00:10:30,590
+or contact me on
+LinkedIn if you
+
+296
+00:10:30,590 --> 00:10:32,527
+have any questions.
+Thank you.
+

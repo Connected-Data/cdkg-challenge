@@ -1,0 +1,4921 @@
+1
+00:00:00,000 --> 00:00:01,440
+My, my name is Mark,
+
+2
+00:00:01,440 --> 00:00:03,775
+and I am a cocreator
+of a project
+
+3
+00:00:03,775 --> 00:00:05,055
+called Amazon,
+which is an open
+
+4
+00:00:05,055 --> 00:00:07,315
+source data catalog
+and metadata engine.
+
+5
+00:00:07,775 --> 00:00:09,295
+we'll talk a little
+more about that.
+
+6
+00:00:09,295 --> 00:00:12,895
+I also started
+a company recently
+
+7
+00:00:12,895 --> 00:00:14,655
+called Stemma.
+And before that,
+
+8
+00:00:14,655 --> 00:00:16,255
+I was a product
+manager at Lyft,
+
+9
+00:00:16,255 --> 00:00:17,715
+which is where I
+created Amazon,
+
+10
+00:00:18,540 --> 00:00:19,900
+with a team, there.
+
+11
+00:00:19,900 --> 00:00:21,740
+And then, and before that,
+
+12
+00:00:21,740 --> 00:00:23,820
+I was a developer at Spark on
+
+13
+00:00:23,820 --> 00:00:25,980
+Spark at Cloudera
+working on a few
+
+14
+00:00:25,980 --> 00:00:27,100
+different open source projects
+
+15
+00:00:27,100 --> 00:00:28,400
+in the Apache ecosystem.
+
+16
+00:00:31,175 --> 00:00:31,415
+Cool.
+
+17
+00:00:31,415 --> 00:00:32,775
+So I think before
+we even start
+
+18
+00:00:32,775 --> 00:00:35,195
+talking about what I work on,
+
+19
+00:00:35,255 --> 00:00:36,695
+maybe it's important for us to
+
+20
+00:00:36,695 --> 00:00:38,615
+be on the same page
+around the problem
+
+21
+00:00:38,615 --> 00:00:39,675
+that exists today.
+
+22
+00:00:39,815 --> 00:00:42,055
+So when I joined the this was
+
+23
+00:00:42,055 --> 00:00:44,280
+a common trend I saw there.
+
+24
+00:00:45,860 --> 00:00:48,440
+it becomes clear
+to me that this
+
+25
+00:00:48,500 --> 00:00:49,780
+is not gonna be a big problem
+
+26
+00:00:49,780 --> 00:00:50,760
+in other organizations.
+
+27
+00:00:51,300 --> 00:00:52,740
+So take example of a data
+
+28
+00:00:52,740 --> 00:00:54,040
+scientist or an analyst,
+
+29
+00:00:54,100 --> 00:00:55,940
+and you can map out, say,
+
+30
+00:00:55,940 --> 00:00:58,005
+an analyst workflow
+in four steps.
+
+31
+00:00:58,005 --> 00:01:00,005
+The first step is
+discovery of data.
+
+32
+00:01:00,005 --> 00:01:03,125
+So I can, I can
+use that data.
+
+33
+00:01:03,125 --> 00:01:04,965
+Next one, I explore
+it to validate
+
+34
+00:01:04,965 --> 00:01:06,245
+it's the right thing
+for me to do.
+
+35
+00:01:06,245 --> 00:01:07,625
+It's still being populated.
+
+36
+00:01:08,645 --> 00:01:10,325
+what does this
+column contain?
+
+37
+00:01:10,325 --> 00:01:11,400
+So on and so forth.
+
+38
+00:01:11,880 --> 00:01:13,320
+The next step is the model
+
+39
+00:01:13,320 --> 00:01:14,380
+development and
+productionization.
+
+40
+00:01:14,600 --> 00:01:15,400
+For an analyst,
+
+41
+00:01:15,400 --> 00:01:16,440
+this could be writing a SQL
+
+42
+00:01:16,440 --> 00:01:18,060
+query or generating
+an insight.
+
+43
+00:01:18,200 --> 00:01:19,480
+For a data scientist,
+
+44
+00:01:19,480 --> 00:01:20,760
+this could be building a model
+
+45
+00:01:20,760 --> 00:01:22,060
+using the features that's,
+
+46
+00:01:22,520 --> 00:01:24,220
+that they've discovered
+and explored.
+
+47
+00:01:24,440 --> 00:01:26,200
+And lastly, there's
+the last step,
+
+48
+00:01:26,200 --> 00:01:27,495
+which is productionalization
+
+49
+00:01:27,875 --> 00:01:29,735
+slash visualization
+slash communication.
+
+50
+00:01:30,915 --> 00:01:32,195
+And so what,
+
+51
+00:01:32,515 --> 00:01:34,835
+I found at Lyft
+was that a third
+
+52
+00:01:34,995 --> 00:01:36,195
+over a third of their time was
+
+53
+00:01:36,195 --> 00:01:37,875
+being spent in
+the first two steps,
+
+54
+00:01:37,875 --> 00:01:39,015
+discovery and exploration,
+
+55
+00:01:39,890 --> 00:01:41,730
+and the rest was
+being spent in
+
+56
+00:01:41,730 --> 00:01:42,850
+the last two steps.
+
+57
+00:01:42,850 --> 00:01:44,530
+Now the thing to note here is
+
+58
+00:01:44,530 --> 00:01:46,050
+that the last two steps are
+
+59
+00:01:46,050 --> 00:01:47,110
+the ones that,
+
+60
+00:01:48,290 --> 00:01:50,450
+that we we paid
+people money to do.
+
+61
+00:01:50,450 --> 00:01:52,790
+Right? This the this
+is the hard part,
+
+62
+00:01:53,875 --> 00:01:55,395
+and the real world goes here.
+
+63
+00:01:55,395 --> 00:01:57,255
+But the first two steps around
+
+64
+00:01:57,795 --> 00:01:59,315
+discovery and exploration is
+
+65
+00:01:59,315 --> 00:02:00,675
+actually a huge time set.
+
+66
+00:02:00,675 --> 00:02:02,675
+So let me give you
+an example of,
+
+67
+00:02:03,795 --> 00:02:05,315
+a data scientist at Lyft that
+
+68
+00:02:05,315 --> 00:02:06,455
+I vividly remember.
+
+69
+00:02:06,650 --> 00:02:08,090
+This data scientist was trying
+
+70
+00:02:08,090 --> 00:02:11,470
+to optimize for ETAs
+of Lyft rides,
+
+71
+00:02:12,810 --> 00:02:13,690
+that were happening.
+
+72
+00:02:13,690 --> 00:02:15,450
+Now if you have
+to create a new
+
+73
+00:02:15,450 --> 00:02:17,150
+model for ETAs,
+
+74
+00:02:17,210 --> 00:02:19,050
+you have to compare
+it to the current
+
+75
+00:02:19,050 --> 00:02:21,230
+model that's in
+production in ETAs.
+
+76
+00:02:21,370 --> 00:02:24,085
+Right? And you
+know that an ETA
+
+77
+00:02:24,085 --> 00:02:25,445
+for a Lyft ride is actually
+
+78
+00:02:25,445 --> 00:02:27,285
+measured multiple
+times throughout
+
+79
+00:02:27,285 --> 00:02:28,325
+the request journey.
+
+80
+00:02:28,325 --> 00:02:29,685
+So you open up your app.
+
+81
+00:02:29,685 --> 00:02:30,965
+You may see that your ride is
+
+82
+00:02:30,965 --> 00:02:31,945
+two minutes away.
+
+83
+00:02:32,005 --> 00:02:33,445
+You're going through
+this request
+
+84
+00:02:33,445 --> 00:02:35,490
+funnel, and you find that this
+
+85
+00:02:35,490 --> 00:02:37,170
+ETA is often changing and
+
+86
+00:02:37,170 --> 00:02:38,150
+increasing sometimes.
+
+87
+00:02:38,850 --> 00:02:40,530
+and lastly, there
+is the actual
+
+88
+00:02:40,530 --> 00:02:42,210
+ETA that when, like,
+
+89
+00:02:42,210 --> 00:02:44,150
+the driver gets
+to you. Right?
+
+90
+00:02:44,770 --> 00:02:46,690
+And a company like
+Lyft may have
+
+91
+00:02:46,690 --> 00:02:48,390
+experimented with
+other models.
+
+92
+00:02:48,435 --> 00:02:49,635
+Some of those models may have
+
+93
+00:02:49,635 --> 00:02:51,155
+gone to production
+for the ETA.
+
+94
+00:02:51,155 --> 00:02:52,695
+Some of them may have
+been discarded.
+
+95
+00:02:53,235 --> 00:02:54,935
+Long story short, to find,
+
+96
+00:02:56,035 --> 00:02:58,055
+the the feature or the column
+
+97
+00:02:58,115 --> 00:03:03,180
+that has the current
+ETA is, is really,
+
+98
+00:03:03,180 --> 00:03:04,860
+really hard. And
+I hope you can
+
+99
+00:03:04,860 --> 00:03:06,700
+take this example
+to your domain
+
+100
+00:03:06,700 --> 00:03:08,720
+and understand how,
+
+101
+00:03:10,540 --> 00:03:12,220
+how hard it is
+to find a source
+
+102
+00:03:12,220 --> 00:03:14,140
+of truth for any single,
+
+103
+00:03:14,380 --> 00:03:15,280
+piece of information.
+
+104
+00:03:15,820 --> 00:03:18,475
+And one common concern that I
+
+105
+00:03:18,475 --> 00:03:19,995
+often got here was that, oh,
+
+106
+00:03:19,995 --> 00:03:21,855
+we just need to
+document it better.
+
+107
+00:03:22,075 --> 00:03:24,235
+Right? But the fact that once
+
+108
+00:03:24,235 --> 00:03:25,695
+you have
+a deeper understanding
+
+109
+00:03:25,755 --> 00:03:26,635
+of this problem, like,
+
+110
+00:03:26,635 --> 00:03:28,235
+you realize that
+it's not simply
+
+111
+00:03:28,235 --> 00:03:29,675
+a matter of documentation, a,
+
+112
+00:03:29,675 --> 00:03:30,955
+because the documentation gets
+
+113
+00:03:30,955 --> 00:03:32,070
+out of date, but, b,
+
+114
+00:03:32,070 --> 00:03:33,750
+because these concepts are so
+
+115
+00:03:33,750 --> 00:03:35,610
+nuanced that you need,
+
+116
+00:03:37,350 --> 00:03:39,850
+more context
+than documentation
+
+117
+00:03:40,230 --> 00:03:42,310
+can provide. So
+this was a problem
+
+118
+00:03:42,310 --> 00:03:43,605
+that I saw at Lyft.
+
+119
+00:03:43,685 --> 00:03:45,205
+And what I wanted
+to do was take
+
+120
+00:03:45,205 --> 00:03:46,805
+that thirty five percent time
+
+121
+00:03:46,805 --> 00:03:48,885
+spent in the first
+two steps and
+
+122
+00:03:48,885 --> 00:03:50,325
+reduce that to as short as
+
+123
+00:03:50,325 --> 00:03:51,605
+possible so people could go to
+
+124
+00:03:51,605 --> 00:03:53,205
+the next two steps as quickly
+
+125
+00:03:53,205 --> 00:03:55,145
+as possible. Hope
+that makes sense.
+
+126
+00:03:56,590 --> 00:03:58,350
+This problem actually led to
+
+127
+00:03:58,350 --> 00:03:59,630
+some secondary effect.
+
+128
+00:03:59,630 --> 00:04:00,990
+So there were these three
+
+129
+00:04:00,990 --> 00:04:01,870
+secondary effects.
+
+130
+00:04:01,870 --> 00:04:03,790
+The first one was
+it led to a lot
+
+131
+00:04:03,790 --> 00:04:06,190
+of unknowns. So it
+led to creation
+
+132
+00:04:06,190 --> 00:04:07,710
+of work that has been done.
+
+133
+00:04:07,710 --> 00:04:10,145
+So if you don't
+know what the the
+
+134
+00:04:10,145 --> 00:04:11,905
+historical ETA trends are and
+
+135
+00:04:11,905 --> 00:04:13,665
+you wanna compare
+them to the current
+
+136
+00:04:13,665 --> 00:04:14,565
+ETA trends,
+
+137
+00:04:15,665 --> 00:04:17,825
+you don't you can't
+you don't know,
+
+138
+00:04:17,825 --> 00:04:19,505
+like, has someone
+else done that
+
+139
+00:04:19,505 --> 00:04:21,285
+analysis before
+around historical
+
+140
+00:04:21,345 --> 00:04:21,825
+trends?
+
+141
+00:04:21,825 --> 00:04:24,080
+Can I reuse it or update it
+
+142
+00:04:24,080 --> 00:04:25,860
+instead of start
+it from scratch?
+
+143
+00:04:26,320 --> 00:04:28,080
+and then it leads to the a lot
+
+144
+00:04:28,080 --> 00:04:29,440
+of increased database load,
+
+145
+00:04:29,440 --> 00:04:30,820
+especially through
+that exploration
+
+146
+00:04:30,880 --> 00:04:32,560
+step. So in
+the exploration step,
+
+147
+00:04:32,560 --> 00:04:33,680
+you're doing a lot of select
+
+148
+00:04:33,680 --> 00:04:35,040
+star queries. You're trying to
+
+149
+00:04:35,040 --> 00:04:36,800
+do standard deviations
+and stats.
+
+150
+00:04:36,800 --> 00:04:39,125
+You're trying to
+see what the values
+
+151
+00:04:39,125 --> 00:04:40,965
+varies null and
+distribution of
+
+152
+00:04:40,965 --> 00:04:41,845
+the column is.
+
+153
+00:04:41,845 --> 00:04:43,365
+All that stuff
+can lead to a lot
+
+154
+00:04:43,365 --> 00:04:46,085
+of unnecessary redundant load
+
+155
+00:04:46,085 --> 00:04:46,905
+on the database.
+
+156
+00:04:47,205 --> 00:04:48,805
+And lastly, this
+one is the most
+
+157
+00:04:48,805 --> 00:04:50,405
+subjective of all is it leads
+
+158
+00:04:50,405 --> 00:04:53,590
+to a heavy interrupt
+culture. Right?
+
+159
+00:04:53,650 --> 00:04:56,130
+It's like me going to
+share and be like,
+
+160
+00:04:56,130 --> 00:04:59,170
+hey. what is
+the source of truth
+
+161
+00:04:59,170 --> 00:04:59,910
+for ETAs?
+
+162
+00:04:59,970 --> 00:05:01,650
+Which columns do
+you usually use?
+
+163
+00:05:01,650 --> 00:05:03,730
+And it's just, like,
+interrupt heavy,
+
+164
+00:05:03,730 --> 00:05:06,290
+like, not not grounded in fact
+
+165
+00:05:06,290 --> 00:05:08,715
+for truth. and that, to me,
+
+166
+00:05:08,715 --> 00:05:10,155
+was one of these
+burning problems
+
+167
+00:05:10,155 --> 00:05:12,495
+at Lyft that, I
+wanted to solve.
+
+168
+00:05:13,675 --> 00:05:14,475
+So there,
+
+169
+00:05:14,475 --> 00:05:17,055
+I started evaluating
+solutions.
+
+170
+00:05:17,195 --> 00:05:18,975
+And, first was,
+
+171
+00:05:19,240 --> 00:05:20,760
+are there other companies who
+
+172
+00:05:20,760 --> 00:05:21,980
+have this problem?
+
+173
+00:05:22,360 --> 00:05:23,660
+And if so, what,
+
+174
+00:05:24,200 --> 00:05:25,560
+tools or products that have
+
+175
+00:05:25,560 --> 00:05:27,260
+these companies used to,
+
+176
+00:05:28,040 --> 00:05:29,500
+try to solve
+the same problem?
+
+177
+00:05:30,200 --> 00:05:31,980
+So when I was looking
+for solution,
+
+178
+00:05:32,200 --> 00:05:35,125
+it's important that, like,
+
+179
+00:05:35,125 --> 00:05:37,045
+the that the goals
+for the solution
+
+180
+00:05:37,045 --> 00:05:38,565
+were clear. So first one was
+
+181
+00:05:38,565 --> 00:05:40,565
+that my belief
+in the fact that
+
+182
+00:05:40,565 --> 00:05:42,725
+simple documentation
+of getting
+
+183
+00:05:42,725 --> 00:05:44,565
+somebody to say,
+like, hey, Thomas.
+
+184
+00:05:44,565 --> 00:05:45,925
+Every month, you
+will go in and
+
+185
+00:05:45,925 --> 00:05:47,365
+make sure this
+documentation is
+
+186
+00:05:47,365 --> 00:05:49,170
+up to date won't cut. Right?
+
+187
+00:05:49,170 --> 00:05:50,530
+So the three things
+I was looking
+
+188
+00:05:50,530 --> 00:05:51,730
+for in solution was something
+
+189
+00:05:51,730 --> 00:05:53,430
+that will
+automatically capture
+
+190
+00:05:53,490 --> 00:05:55,270
+everything related
+to data endeavors.
+
+191
+00:05:55,490 --> 00:05:57,590
+Like, I know what
+all data exist.
+
+192
+00:05:57,810 --> 00:05:59,330
+I know what
+dashboards are built
+
+193
+00:05:59,330 --> 00:06:01,270
+on top of it. I
+know what jobs,
+
+194
+00:06:01,330 --> 00:06:03,510
+ETL, and otherwise
+are populating
+
+195
+00:06:03,570 --> 00:06:05,905
+this data. I know HR systems,
+
+196
+00:06:05,905 --> 00:06:07,345
+so I know all the employees,
+
+197
+00:06:07,345 --> 00:06:09,605
+what they access, and how.
+
+198
+00:06:09,905 --> 00:06:11,825
+Right? And I can build a graph
+
+199
+00:06:11,825 --> 00:06:13,185
+through all this
+information and
+
+200
+00:06:13,185 --> 00:06:14,785
+then expose it in the right
+
+201
+00:06:14,785 --> 00:06:16,730
+places to the right people so
+
+202
+00:06:16,730 --> 00:06:18,730
+they don't have
+to spend a third
+
+203
+00:06:18,730 --> 00:06:19,850
+of their time, like,
+
+204
+00:06:19,850 --> 00:06:21,290
+discovering and
+exploring data.
+
+205
+00:06:21,290 --> 00:06:22,970
+Right? And so the first point
+
+206
+00:06:22,970 --> 00:06:24,010
+is building that graph.
+
+207
+00:06:24,010 --> 00:06:25,370
+The second point is it is ex
+
+208
+00:06:25,770 --> 00:06:27,930
+exposing that data in in user
+
+209
+00:06:27,930 --> 00:06:29,390
+friendly and meaningful ways.
+
+210
+00:06:29,685 --> 00:06:31,925
+And one could be
+searching for ETS.
+
+211
+00:06:31,925 --> 00:06:33,925
+The other one could
+be around lineage.
+
+212
+00:06:33,925 --> 00:06:35,525
+So often people wanna traverse
+
+213
+00:06:35,525 --> 00:06:36,485
+this graph. Right?
+
+214
+00:06:36,485 --> 00:06:38,005
+And people understand lineage
+
+215
+00:06:38,005 --> 00:06:39,525
+simply in terms of dataset to
+
+216
+00:06:39,525 --> 00:06:40,325
+dataset lineage,
+
+217
+00:06:40,325 --> 00:06:42,005
+but there's lineage
+across these
+
+218
+00:06:42,005 --> 00:06:43,140
+different kinds. Right?
+
+219
+00:06:43,220 --> 00:06:45,160
+So I can go to my team leads
+
+220
+00:06:45,300 --> 00:06:47,380
+graph node and then be able to
+
+221
+00:06:47,380 --> 00:06:49,380
+traverse what
+datasets they use,
+
+222
+00:06:49,380 --> 00:06:50,840
+and then from those datasets,
+
+223
+00:06:50,900 --> 00:06:52,340
+see what reports are built on
+
+224
+00:06:52,340 --> 00:06:54,500
+top of them and so
+on and so forth.
+
+225
+00:06:54,500 --> 00:06:55,620
+And lastly, API.
+
+226
+00:06:55,620 --> 00:06:57,855
+This is important because you
+
+227
+00:06:57,855 --> 00:06:59,855
+can't anticipate
+all the products
+
+228
+00:06:59,855 --> 00:07:01,555
+you wanna build early on,
+
+229
+00:07:01,615 --> 00:07:03,215
+and so you have to build open
+
+230
+00:07:03,215 --> 00:07:04,895
+APIs where people can access
+
+231
+00:07:04,895 --> 00:07:06,255
+this metadata and build other
+
+232
+00:07:06,255 --> 00:07:07,295
+products on it.
+
+233
+00:07:07,295 --> 00:07:08,115
+And lastly,
+
+234
+00:07:09,215 --> 00:07:10,815
+organizations and
+data space is
+
+235
+00:07:10,815 --> 00:07:11,715
+always evolving.
+
+236
+00:07:11,775 --> 00:07:13,210
+Right? Like, five years ago,
+
+237
+00:07:13,210 --> 00:07:14,730
+the the orchestration tool of
+
+238
+00:07:14,730 --> 00:07:18,030
+choice was oozy, and
+now it's Airflow.
+
+239
+00:07:18,090 --> 00:07:20,010
+Right? And five
+years ago, like,
+
+240
+00:07:20,010 --> 00:07:22,910
+people used Hive,
+and now it's Spark,
+
+241
+00:07:23,050 --> 00:07:24,330
+and the story goes on.
+
+242
+00:07:24,330 --> 00:07:25,770
+So it's very
+important for this
+
+243
+00:07:25,770 --> 00:07:27,550
+metadata graph
+to be integrated
+
+244
+00:07:27,610 --> 00:07:29,905
+well so that it
+could extend to
+
+245
+00:07:29,905 --> 00:07:32,005
+new sources and new
+classes of sources.
+
+246
+00:07:32,145 --> 00:07:34,005
+So new sources, I mean,
+
+247
+00:07:34,385 --> 00:07:35,525
+adding a new database.
+
+248
+00:07:35,745 --> 00:07:37,925
+But new classes of
+sources, I mean,
+
+249
+00:07:38,145 --> 00:07:40,145
+adding a dashboarding
+system or
+
+250
+00:07:40,145 --> 00:07:43,010
+adding Kafka topics
+or adding an HR,
+
+251
+00:07:43,470 --> 00:07:44,530
+interface. Right?
+
+252
+00:07:44,750 --> 00:07:46,510
+And so I wanted this thing to
+
+253
+00:07:46,510 --> 00:07:48,350
+become the source of
+truth for where,
+
+254
+00:07:48,350 --> 00:07:50,210
+what, how that data is stored
+
+255
+00:07:50,270 --> 00:07:51,810
+and used within
+the organization.
+
+256
+00:07:54,755 --> 00:07:56,355
+when I started learning
+more about it,
+
+257
+00:07:56,355 --> 00:07:58,035
+I found this paper
+called Ground,
+
+258
+00:07:58,035 --> 00:07:59,635
+which you which you
+may have heard of,
+
+259
+00:07:59,875 --> 00:08:01,815
+from from UC Berkeley.
+
+260
+00:08:01,875 --> 00:08:03,955
+And, they described it really
+
+261
+00:08:03,955 --> 00:08:05,395
+well in the sense that we were
+
+262
+00:08:05,395 --> 00:08:06,295
+capturing metadata.
+
+263
+00:08:06,515 --> 00:08:08,310
+And so when we talk
+about metadata,
+
+264
+00:08:08,310 --> 00:08:10,150
+there were three
+kinds of metadata
+
+265
+00:08:10,150 --> 00:08:10,810
+we're capturing.
+
+266
+00:08:10,870 --> 00:08:12,470
+First one is
+application context,
+
+267
+00:08:12,470 --> 00:08:14,070
+which is where is the data,
+
+268
+00:08:14,070 --> 00:08:15,770
+what are the semantics
+of the data.
+
+269
+00:08:15,830 --> 00:08:17,750
+Next one is behavior,
+who's using it,
+
+270
+00:08:17,750 --> 00:08:18,470
+who created it.
+
+271
+00:08:18,470 --> 00:08:19,605
+And the third one is change.
+
+272
+00:08:19,605 --> 00:08:21,525
+How is the data
+evolving over time?
+
+273
+00:08:21,525 --> 00:08:22,805
+The evolution of code that
+
+274
+00:08:22,805 --> 00:08:23,945
+generates this data.
+
+275
+00:08:24,245 --> 00:08:25,845
+What I found was
+that the industry
+
+276
+00:08:25,845 --> 00:08:27,225
+was very good at capturing,
+
+277
+00:08:28,005 --> 00:08:29,045
+application context.
+
+278
+00:08:29,045 --> 00:08:31,045
+So you can catalog
+all your datasets,
+
+279
+00:08:31,045 --> 00:08:32,245
+and there are plenty of tools
+
+280
+00:08:32,245 --> 00:08:33,820
+to do that. And
+you can see what
+
+281
+00:08:33,820 --> 00:08:35,180
+the names and
+columns and types
+
+282
+00:08:35,180 --> 00:08:36,380
+of those datasets are.
+
+283
+00:08:36,620 --> 00:08:38,880
+but when it started
+to get to b and c,
+
+284
+00:08:39,100 --> 00:08:40,700
+behavior, who's
+using that data,
+
+285
+00:08:40,700 --> 00:08:42,540
+who created that
+data, this was,
+
+286
+00:08:42,540 --> 00:08:43,440
+like, really,
+
+287
+00:08:44,860 --> 00:08:46,720
+not there in most
+of the commercial
+
+288
+00:08:46,780 --> 00:08:47,715
+tools out there.
+
+289
+00:08:47,795 --> 00:08:49,415
+And lastly, chain, like,
+
+290
+00:08:49,475 --> 00:08:52,355
+we we we didn't even we didn't
+
+291
+00:08:52,355 --> 00:08:54,435
+even grab our wrap our head
+
+292
+00:08:54,435 --> 00:08:55,475
+around this problem. Right?
+
+293
+00:08:55,475 --> 00:08:56,755
+And I I think that actually
+
+294
+00:08:56,755 --> 00:08:58,135
+continues to be the case.
+
+295
+00:08:58,755 --> 00:08:59,495
+and so,
+
+296
+00:09:00,450 --> 00:09:01,730
+then the other thing was what
+
+297
+00:09:01,730 --> 00:09:03,330
+datasets would you what things
+
+298
+00:09:03,330 --> 00:09:05,430
+would you gather
+this metadata on?
+
+299
+00:09:05,570 --> 00:09:07,810
+And you could do
+this on tables,
+
+300
+00:09:07,810 --> 00:09:09,010
+but you could add people to
+
+301
+00:09:09,010 --> 00:09:10,290
+the graph and dashboards and
+
+302
+00:09:10,290 --> 00:09:11,090
+ports to the graph.
+
+303
+00:09:11,090 --> 00:09:12,695
+And and the industry at that
+
+304
+00:09:12,695 --> 00:09:14,135
+point was somewhere
+in the people
+
+305
+00:09:14,135 --> 00:09:15,335
+to dashboard marker.
+
+306
+00:09:15,335 --> 00:09:16,855
+You know, data
+data stores were
+
+307
+00:09:16,855 --> 00:09:17,495
+pretty well done.
+
+308
+00:09:17,495 --> 00:09:19,015
+But when you start
+going through
+
+309
+00:09:19,015 --> 00:09:20,375
+notebooks, so indexing your
+
+310
+00:09:20,375 --> 00:09:21,495
+notebooks and being able to
+
+311
+00:09:21,495 --> 00:09:23,275
+connect them to
+the datasets or
+
+312
+00:09:23,575 --> 00:09:25,415
+schemas or streams, like,
+
+313
+00:09:25,415 --> 00:09:26,730
+that was pretty far out.
+
+314
+00:09:27,930 --> 00:09:29,050
+And so I looked at,
+
+315
+00:09:29,450 --> 00:09:30,410
+vendors in the space.
+
+316
+00:09:30,410 --> 00:09:31,850
+I looked at open
+source solutions
+
+317
+00:09:31,850 --> 00:09:32,590
+in the space,
+
+318
+00:09:34,410 --> 00:09:36,410
+and I I found nothing
+fit the bill.
+
+319
+00:09:36,410 --> 00:09:39,555
+And this is a complete
+maybe a little
+
+320
+00:09:39,555 --> 00:09:41,155
+dated representation of what I
+
+321
+00:09:41,155 --> 00:09:42,755
+mean when I say
+nothing fit the bill.
+
+322
+00:09:42,755 --> 00:09:44,935
+So there were ways to
+grab the metadata,
+
+323
+00:09:44,995 --> 00:09:46,675
+there were ways to
+expose the metadata,
+
+324
+00:09:46,675 --> 00:09:47,895
+and there were some concrete,
+
+325
+00:09:48,275 --> 00:09:49,715
+systems to integrate it with,
+
+326
+00:09:49,715 --> 00:09:51,255
+which were important to lift.
+
+327
+00:09:51,830 --> 00:09:53,030
+And then there
+was a preference
+
+328
+00:09:53,030 --> 00:09:53,830
+to open source,
+
+329
+00:09:53,830 --> 00:09:55,590
+and and these are
+the five tools
+
+330
+00:09:55,590 --> 00:09:57,590
+that were the biggest
+in the running.
+
+331
+00:09:57,590 --> 00:09:59,430
+And, and you can see, like,
+
+332
+00:09:59,430 --> 00:10:01,270
+they they they fell short.
+
+333
+00:10:01,270 --> 00:10:03,050
+Right? And that led
+to the reluctant
+
+334
+00:10:03,110 --> 00:10:05,025
+decision to start
+a new project
+
+335
+00:10:05,025 --> 00:10:06,705
+in this space called Amundsen
+
+336
+00:10:06,705 --> 00:10:07,445
+or Amundsen.
+
+337
+00:10:08,385 --> 00:10:10,465
+hard to spell, hard
+to write, but,
+
+338
+00:10:10,945 --> 00:10:11,985
+it is the name
+of the project.
+
+339
+00:10:11,985 --> 00:10:13,205
+We thought it was appropriate
+
+340
+00:10:13,345 --> 00:10:15,265
+to to name the project after
+
+341
+00:10:15,265 --> 00:10:16,945
+the the first person to reach
+
+342
+00:10:16,945 --> 00:10:20,040
+both polls, and that
+was Raul de Munson.
+
+343
+00:10:20,900 --> 00:10:23,540
+So, hope that makes sense for
+
+344
+00:10:23,540 --> 00:10:24,900
+the problem that existed,
+
+345
+00:10:24,900 --> 00:10:26,180
+and now we're gonna
+start talking
+
+346
+00:10:26,180 --> 00:10:27,540
+about the solution and what
+
+347
+00:10:27,540 --> 00:10:28,600
+impact it's had.
+
+348
+00:10:29,700 --> 00:10:30,900
+so we'll start with, like,
+
+349
+00:10:30,900 --> 00:10:32,345
+the what the solution
+looks and
+
+350
+00:10:32,345 --> 00:10:33,705
+feels and go into,
+
+351
+00:10:34,025 --> 00:10:35,725
+the architecture
+of the solution.
+
+352
+00:10:37,065 --> 00:10:39,145
+so the the field for Amazon is
+
+353
+00:10:39,145 --> 00:10:40,825
+like a search engine for data
+
+354
+00:10:40,825 --> 00:10:42,425
+within your organization that
+
+355
+00:10:42,425 --> 00:10:44,025
+connects a bunch of things and
+
+356
+00:10:44,025 --> 00:10:45,245
+gives you the context.
+
+357
+00:10:45,410 --> 00:10:47,170
+So one thesis here is that in
+
+358
+00:10:47,170 --> 00:10:49,570
+order to solve this problem of
+
+359
+00:10:49,570 --> 00:10:51,970
+discovery and
+trusting data that,
+
+360
+00:10:53,970 --> 00:10:55,730
+that you don't need
+perfect data.
+
+361
+00:10:55,730 --> 00:10:57,410
+Right? I don't need
+all the things
+
+362
+00:10:57,410 --> 00:10:59,145
+in one table so I can use.
+
+363
+00:10:59,385 --> 00:11:01,225
+What I do need is context on
+
+364
+00:11:01,225 --> 00:11:01,965
+the imperfections.
+
+365
+00:11:02,665 --> 00:11:04,025
+So if you could
+tell me what are
+
+366
+00:11:04,025 --> 00:11:05,805
+the imperfections
+around this data,
+
+367
+00:11:06,345 --> 00:11:08,905
+that I I'm smart
+enough to figure out,
+
+368
+00:11:08,905 --> 00:11:10,265
+like, how I work
+around them and
+
+369
+00:11:10,265 --> 00:11:10,825
+make it happen.
+
+370
+00:11:10,825 --> 00:11:12,265
+So that was one
+of the key pieces
+
+371
+00:11:12,265 --> 00:11:12,750
+around the product.
+
+372
+00:11:12,910 --> 00:11:13,950
+Anyway, you come here,
+
+373
+00:11:13,950 --> 00:11:15,970
+you see a search box,
+you type ETAs,
+
+374
+00:11:16,430 --> 00:11:17,890
+and you can get some results.
+
+375
+00:11:17,950 --> 00:11:19,310
+But often people
+don't know what
+
+376
+00:11:19,310 --> 00:11:19,790
+to type.
+
+377
+00:11:19,790 --> 00:11:21,630
+So either they wanna
+browse this data,
+
+378
+00:11:21,630 --> 00:11:23,390
+I only wanna see all
+the marketing data,
+
+379
+00:11:23,390 --> 00:11:25,410
+or I wanna see all
+the financial data,
+
+380
+00:11:26,075 --> 00:11:28,015
+Or they have certain
+favorite tables,
+
+381
+00:11:28,395 --> 00:11:29,355
+that they have bookmarked.
+
+382
+00:11:29,355 --> 00:11:30,555
+They wanna browse that.
+
+383
+00:11:30,555 --> 00:11:31,835
+Or they don't even
+know and they
+
+384
+00:11:31,835 --> 00:11:34,315
+just wanna browse
+what's popular in,
+
+385
+00:11:35,275 --> 00:11:37,215
+in the organization
+or the team.
+
+386
+00:11:37,355 --> 00:11:39,540
+So, so the front page,
+
+387
+00:11:39,540 --> 00:11:41,460
+the home page has
+information like that.
+
+388
+00:11:41,460 --> 00:11:42,980
+I wanna speak one thing about
+
+389
+00:11:42,980 --> 00:11:45,460
+the popular tables,
+and that is that,
+
+390
+00:11:45,780 --> 00:11:47,300
+popularity here is determined
+
+391
+00:11:47,300 --> 00:11:50,020
+by what's popular in
+the query engines.
+
+392
+00:11:50,020 --> 00:11:52,180
+So Munson uses access logs and
+
+393
+00:11:52,180 --> 00:11:53,560
+query logs to determine,
+
+394
+00:11:54,315 --> 00:11:56,315
+popularity and is able to show
+
+395
+00:11:56,315 --> 00:11:57,915
+that based on what's queried
+
+396
+00:11:57,915 --> 00:11:59,295
+most heavily in the database.
+
+397
+00:11:59,435 --> 00:12:01,035
+Anyway, ninety
+percent of the time,
+
+398
+00:12:01,035 --> 00:12:02,155
+people simply search here.
+
+399
+00:12:02,155 --> 00:12:03,515
+So you go inside that and you
+
+400
+00:12:03,515 --> 00:12:04,075
+type something.
+
+401
+00:12:04,075 --> 00:12:06,510
+You get a page rank
+style search.
+
+402
+00:12:06,590 --> 00:12:08,670
+So, this is based on what you
+
+403
+00:12:08,670 --> 00:12:11,090
+typed on the table
+as well as,
+
+404
+00:12:11,950 --> 00:12:14,750
+ranking based on how highly
+
+405
+00:12:14,750 --> 00:12:16,190
+queried those tables are in
+
+406
+00:12:16,190 --> 00:12:16,770
+the databases.
+
+407
+00:12:17,390 --> 00:12:18,910
+You click on
+the dataset and you
+
+408
+00:12:18,910 --> 00:12:20,350
+get this page around
+the dataset.
+
+409
+00:12:20,350 --> 00:12:21,470
+And this is where we start to
+
+410
+00:12:21,470 --> 00:12:23,715
+see some of the context
+on the imperfections
+
+411
+00:12:24,975 --> 00:12:26,655
+, territory. So
+you get the name
+
+412
+00:12:26,655 --> 00:12:27,455
+of the data set.
+
+413
+00:12:27,455 --> 00:12:28,975
+You see that this
+is a data set
+
+414
+00:12:28,975 --> 00:12:30,495
+or a table, and then you see
+
+415
+00:12:30,495 --> 00:12:32,095
+that this is from Hive in case
+
+416
+00:12:32,095 --> 00:12:33,535
+there are multiple
+databases in
+
+417
+00:12:33,535 --> 00:12:34,195
+the organization.
+
+418
+00:12:35,730 --> 00:12:37,330
+You see what
+the description of
+
+419
+00:12:37,330 --> 00:12:37,970
+this table is.
+
+420
+00:12:37,970 --> 00:12:39,410
+This is actually obtained from
+
+421
+00:12:39,410 --> 00:12:42,870
+the underlying,
+database, but you can,
+
+422
+00:12:43,330 --> 00:12:45,570
+edit it and you can send that
+
+423
+00:12:45,570 --> 00:12:47,385
+back to the database
+if you like.
+
+424
+00:12:47,545 --> 00:12:48,905
+the next one is issues.
+
+425
+00:12:48,905 --> 00:12:50,265
+Often, what we find is people
+
+426
+00:12:50,265 --> 00:12:52,025
+aren't comfortable
+users especially
+
+427
+00:12:52,025 --> 00:12:53,225
+aren't comfortable enough to
+
+428
+00:12:53,225 --> 00:12:54,425
+update the description
+to say,
+
+429
+00:12:54,425 --> 00:12:55,785
+hey. This table
+has this gotcha,
+
+430
+00:12:55,785 --> 00:12:57,305
+or I think this
+may have a problem
+
+431
+00:12:57,305 --> 00:12:58,765
+from this date to that date.
+
+432
+00:12:58,905 --> 00:13:00,345
+So what we did was we created
+
+433
+00:13:00,345 --> 00:13:01,785
+an integration
+with Jira so you
+
+434
+00:13:01,785 --> 00:13:02,940
+can report an issue.
+
+435
+00:13:03,020 --> 00:13:05,600
+It it takes you,
+to a pop up box.
+
+436
+00:13:05,820 --> 00:13:07,100
+You file content to that.
+
+437
+00:13:07,100 --> 00:13:08,460
+It ends up creating a Jira.
+
+438
+00:13:08,460 --> 00:13:10,540
+It notifies the owners
+of the table.
+
+439
+00:13:10,540 --> 00:13:12,220
+We'll talk about
+how do we know
+
+440
+00:13:12,220 --> 00:13:13,200
+who are these owners.
+
+441
+00:13:13,580 --> 00:13:15,705
+And then it lists out
+that issue here.
+
+442
+00:13:15,865 --> 00:13:17,705
+Right? And so other users can
+
+443
+00:13:17,705 --> 00:13:19,385
+start seeing if
+there are other
+
+444
+00:13:19,385 --> 00:13:20,825
+unresolved issues and can make
+
+445
+00:13:20,825 --> 00:13:22,105
+their own
+determination if that
+
+446
+00:13:22,105 --> 00:13:23,485
+makes sense to them or not.
+
+447
+00:13:24,265 --> 00:13:25,385
+Then you see date range.
+
+448
+00:13:25,385 --> 00:13:26,425
+So this is the first date for
+
+449
+00:13:26,425 --> 00:13:27,225
+which you have data,
+
+450
+00:13:27,225 --> 00:13:28,680
+the last date for
+which you have data.
+
+451
+00:13:28,760 --> 00:13:30,060
+This is generated
+automatically.
+
+452
+00:13:30,120 --> 00:13:31,320
+I wanna point out that most of
+
+453
+00:13:31,320 --> 00:13:32,520
+the information on this table
+
+454
+00:13:32,520 --> 00:13:33,980
+is automatically generated.
+
+455
+00:13:34,120 --> 00:13:35,560
+So how do we generate
+date range?
+
+456
+00:13:35,560 --> 00:13:37,080
+This is a heuristic
+based based
+
+457
+00:13:37,080 --> 00:13:38,840
+on the partition
+scheme of the data.
+
+458
+00:13:38,840 --> 00:13:40,600
+So a lot of tables
+in Hive have
+
+459
+00:13:40,600 --> 00:13:41,240
+date partition,
+
+460
+00:13:41,240 --> 00:13:42,360
+so we can look at the first
+
+461
+00:13:42,360 --> 00:13:43,720
+partition and
+the last partition,
+
+462
+00:13:43,720 --> 00:13:45,935
+be able to, you know,
+
+463
+00:13:45,935 --> 00:13:47,375
+hypothesize what the first and
+
+464
+00:13:47,375 --> 00:13:48,435
+last date would be.
+
+465
+00:13:48,495 --> 00:13:50,255
+The next one is last updated.
+
+466
+00:13:50,255 --> 00:13:52,595
+This is when the last ETL job
+
+467
+00:13:52,655 --> 00:13:54,255
+populating this table actually
+
+468
+00:13:54,255 --> 00:13:56,115
+succeeded. oftentimes,
+
+469
+00:13:56,495 --> 00:13:58,095
+the date range and the last
+
+470
+00:13:58,095 --> 00:13:59,295
+updated are correlated,
+
+471
+00:13:59,295 --> 00:14:00,330
+but sometimes they're not.
+
+472
+00:14:00,330 --> 00:14:01,610
+You may have a weekly table or
+
+473
+00:14:01,610 --> 00:14:02,970
+a monthly table where the last
+
+474
+00:14:02,970 --> 00:14:04,350
+five jobs may have failed.
+
+475
+00:14:04,490 --> 00:14:07,630
+So those two, can
+be can be off.
+
+476
+00:14:10,330 --> 00:14:12,090
+Then after that is
+frequent users.
+
+477
+00:14:12,090 --> 00:14:13,370
+These are names of people and
+
+478
+00:14:13,370 --> 00:14:14,625
+email addresses and links,
+
+479
+00:14:14,705 --> 00:14:16,545
+profile links to
+people who use
+
+480
+00:14:16,545 --> 00:14:17,825
+this table most frequently.
+
+481
+00:14:17,825 --> 00:14:18,865
+Again, this is obtained from
+
+482
+00:14:18,865 --> 00:14:20,245
+the database query logs.
+
+483
+00:14:20,465 --> 00:14:21,605
+Then you have tags.
+
+484
+00:14:22,065 --> 00:14:24,545
+these are, these
+are API populated,
+
+485
+00:14:24,545 --> 00:14:26,145
+so you can hit
+a hit a month and
+
+486
+00:14:26,145 --> 00:14:27,505
+with tags for a table.
+
+487
+00:14:27,505 --> 00:14:29,185
+And this often happens
+in the context
+
+488
+00:14:29,185 --> 00:14:30,450
+of an ETL job. Like,
+
+489
+00:14:30,690 --> 00:14:32,450
+all financial ETL
+jobs at the end
+
+490
+00:14:32,450 --> 00:14:34,290
+of the job will tag a month in
+
+491
+00:14:34,370 --> 00:14:36,390
+with a financial tag
+for their data,
+
+492
+00:14:36,770 --> 00:14:38,690
+but you can also
+update them in,
+
+493
+00:14:39,010 --> 00:14:40,950
+in the tool using
+the UI tooltip.
+
+494
+00:14:41,650 --> 00:14:43,570
+and then, lastly, owners.
+
+495
+00:14:43,570 --> 00:14:46,185
+This is also updatable
+via an API.
+
+496
+00:14:46,185 --> 00:14:47,625
+Many organizations sometimes
+
+497
+00:14:47,625 --> 00:14:49,385
+have an internal JSON file or
+
+498
+00:14:49,385 --> 00:14:52,265
+something on a per
+schema or per
+
+499
+00:14:52,265 --> 00:14:54,265
+database basis
+of owners or per
+
+500
+00:14:54,265 --> 00:14:56,105
+table basis, and
+we script that
+
+501
+00:14:56,105 --> 00:14:57,180
+in into the tool.
+
+502
+00:14:57,180 --> 00:14:58,720
+But you can obviously also,
+
+503
+00:14:59,180 --> 00:15:00,860
+update this and keep this keep
+
+504
+00:15:00,860 --> 00:15:02,640
+this list up to date
+within the tool.
+
+505
+00:15:02,940 --> 00:15:04,460
+Alright. So going
+on to the right
+
+506
+00:15:04,460 --> 00:15:05,900
+hand side, you'll see
+a list of columns,
+
+507
+00:15:05,900 --> 00:15:08,380
+their descriptions,
+and their and their,
+
+508
+00:15:08,700 --> 00:15:12,415
+types. But you also
+see dashboards,
+
+509
+00:15:12,415 --> 00:15:13,615
+and this is where we get to
+
+510
+00:15:13,615 --> 00:15:15,795
+dataset to dashboard
+territory lineage.
+
+511
+00:15:16,495 --> 00:15:18,015
+so you can see what dashboards
+
+512
+00:15:18,015 --> 00:15:19,695
+have been built on
+top of this data.
+
+513
+00:15:19,695 --> 00:15:21,155
+And if, say, you
+were modifying
+
+514
+00:15:21,215 --> 00:15:22,355
+something in this dataset,
+
+515
+00:15:22,575 --> 00:15:24,435
+you can then go
+start notifying
+
+516
+00:15:24,575 --> 00:15:26,175
+or reviewing how this data is
+
+517
+00:15:26,175 --> 00:15:28,000
+used and notifying
+the downstream
+
+518
+00:15:28,000 --> 00:15:28,720
+dashboard owners.
+
+519
+00:15:30,400 --> 00:15:32,400
+on the top right side,
+you see lineage,
+
+520
+00:15:32,400 --> 00:15:35,200
+and that is, an internal
+tool that lift,
+
+521
+00:15:36,000 --> 00:15:38,180
+that is not a part
+of, Amundsen,
+
+522
+00:15:38,400 --> 00:15:40,320
+and that has dataset
+to dataset lineage.
+
+523
+00:15:40,320 --> 00:15:41,865
+So the same way Amundsen has
+
+524
+00:15:42,025 --> 00:15:43,565
+first class support for,
+
+525
+00:15:44,345 --> 00:15:45,785
+dataset to dashboard lineage,
+
+526
+00:15:45,785 --> 00:15:47,945
+it doesn't have
+dataset to dataset
+
+527
+00:15:47,945 --> 00:15:48,985
+lineage support today,
+
+528
+00:15:48,985 --> 00:15:50,665
+and it's actually
+a thing we are
+
+529
+00:15:50,665 --> 00:15:52,205
+actively working
+on right now.
+
+530
+00:15:52,265 --> 00:15:53,865
+After that, you would
+see a GitHub link,
+
+531
+00:15:53,865 --> 00:15:56,365
+which is the code that
+builds this data.
+
+532
+00:15:56,750 --> 00:15:58,670
+it also has a link to the DAG
+
+533
+00:15:58,670 --> 00:16:00,370
+in cases where
+it's applicable,
+
+534
+00:16:01,150 --> 00:16:02,510
+to the airflow job,
+
+535
+00:16:02,830 --> 00:16:04,050
+that builds this dataset.
+
+536
+00:16:04,350 --> 00:16:05,710
+Lastly, you can
+preview the data
+
+537
+00:16:05,710 --> 00:16:06,430
+if you have access.
+
+538
+00:16:06,430 --> 00:16:07,310
+So if you have access,
+
+539
+00:16:07,310 --> 00:16:08,590
+you will see
+a quick preview of
+
+540
+00:16:08,590 --> 00:16:10,210
+the data from
+a recent partition.
+
+541
+00:16:10,415 --> 00:16:11,695
+And if this dataset is the one
+
+542
+00:16:11,695 --> 00:16:12,895
+you wanna use, we take you to
+
+543
+00:16:12,895 --> 00:16:14,755
+this explore button, which,
+
+544
+00:16:15,615 --> 00:16:17,795
+essentially populates
+a skeleton query.
+
+545
+00:16:18,095 --> 00:16:19,375
+so it's like select star from
+
+546
+00:16:19,375 --> 00:16:21,075
+this table where, you know,
+
+547
+00:16:21,455 --> 00:16:22,575
+it selects the appropriate
+
+548
+00:16:22,575 --> 00:16:23,855
+database connection and so on
+
+549
+00:16:23,855 --> 00:16:25,440
+in a BI tool of your choice.
+
+550
+00:16:25,520 --> 00:16:27,140
+So at Lyft, this
+was integrated
+
+551
+00:16:27,200 --> 00:16:28,640
+with Apache Superset,
+
+552
+00:16:28,640 --> 00:16:30,160
+which was the our BI tool.
+
+553
+00:16:30,160 --> 00:16:30,640
+And then,
+
+554
+00:16:32,080 --> 00:16:33,440
+and and but you can integrate
+
+555
+00:16:33,440 --> 00:16:34,480
+with any other tool.
+
+556
+00:16:34,480 --> 00:16:36,080
+Anyway, you can
+click on a column.
+
+557
+00:16:36,080 --> 00:16:38,240
+You see stats. you
+this is a preview
+
+558
+00:16:38,240 --> 00:16:39,105
+we talked about.
+
+559
+00:16:39,105 --> 00:16:40,865
+You can click on
+the dashboards tab,
+
+560
+00:16:40,865 --> 00:16:42,225
+and you see that it shows that
+
+561
+00:16:42,225 --> 00:16:43,585
+there's one dashboard built on
+
+562
+00:16:43,585 --> 00:16:44,165
+this table.
+
+563
+00:16:44,385 --> 00:16:46,305
+You can click on
+the dashboard here,
+
+564
+00:16:46,305 --> 00:16:47,905
+and you see the detail page of
+
+565
+00:16:47,905 --> 00:16:48,865
+the dashboard. So here,
+
+566
+00:16:48,865 --> 00:16:51,120
+you see that this
+dashboard is for mode.
+
+567
+00:16:51,200 --> 00:16:52,960
+It was created
+and last updated
+
+568
+00:16:52,960 --> 00:16:55,520
+on this date. Recent
+view count is this.
+
+569
+00:16:55,520 --> 00:16:56,960
+When was the last run and last
+
+570
+00:16:56,960 --> 00:16:57,860
+successful run?
+
+571
+00:16:57,920 --> 00:16:58,720
+If you have access,
+
+572
+00:16:58,720 --> 00:17:00,500
+you can see the preview
+of the dashboard
+
+573
+00:17:00,640 --> 00:17:01,620
+. And more interestingly,
+
+574
+00:17:01,760 --> 00:17:03,200
+you see what tables does this
+
+575
+00:17:03,200 --> 00:17:05,200
+dashboard use and what queries
+
+576
+00:17:05,200 --> 00:17:08,675
+does this dashboard,
+use to query them.
+
+577
+00:17:08,975 --> 00:17:09,535
+And, obviously,
+
+578
+00:17:09,535 --> 00:17:11,055
+if you wanted to see
+the real dashboard,
+
+579
+00:17:11,055 --> 00:17:12,575
+you could go to
+the dashboard page,
+
+580
+00:17:12,575 --> 00:17:14,275
+which will take you to mode.
+
+581
+00:17:15,935 --> 00:17:17,775
+and here, you can also search
+
+582
+00:17:17,775 --> 00:17:18,675
+for your coworkers.
+
+583
+00:17:18,735 --> 00:17:20,540
+So you can type
+a person's name and say,
+
+584
+00:17:20,540 --> 00:17:21,340
+in this example,
+
+585
+00:17:21,340 --> 00:17:22,540
+you type my name and you are
+
+586
+00:17:22,540 --> 00:17:24,620
+able to see what
+datasets I own,
+
+587
+00:17:24,620 --> 00:17:25,900
+what datasets I bookmark,
+
+588
+00:17:25,900 --> 00:17:27,500
+and what datasets
+I frequently use.
+
+589
+00:17:27,500 --> 00:17:28,620
+And this was pretty common,
+
+590
+00:17:28,620 --> 00:17:30,140
+especially for
+new employees as
+
+591
+00:17:30,140 --> 00:17:31,740
+they or people
+who change teams
+
+592
+00:17:31,740 --> 00:17:32,940
+for them to learn from other
+
+593
+00:17:32,940 --> 00:17:34,060
+people on the team before they
+
+594
+00:17:34,060 --> 00:17:35,695
+start going. Cool. Alright.
+
+595
+00:17:35,695 --> 00:17:37,475
+So we're gonna
+now move on to,
+
+596
+00:17:38,415 --> 00:17:40,015
+the architecture
+and then later
+
+597
+00:17:40,015 --> 00:17:41,695
+on talk about the impact this
+
+598
+00:17:41,695 --> 00:17:42,755
+product has had.
+
+599
+00:17:43,775 --> 00:17:45,075
+so in terms of architecture,
+
+600
+00:17:45,215 --> 00:17:47,055
+Munson has four, big pieces.
+
+601
+00:17:47,055 --> 00:17:48,510
+We'll start from
+the top right.
+
+602
+00:17:48,670 --> 00:17:49,870
+Munson is a front
+end service.
+
+603
+00:17:49,870 --> 00:17:52,030
+This is what you saw
+in the UI thus far,
+
+604
+00:17:52,030 --> 00:17:53,790
+but interesting
+stuff is obviously
+
+605
+00:17:53,790 --> 00:17:55,310
+in the back. So the two things
+
+606
+00:17:55,310 --> 00:17:56,610
+backing the front end service
+
+607
+00:17:56,670 --> 00:17:58,030
+are the metadata service on
+
+608
+00:17:58,030 --> 00:17:59,950
+the left center
+side and the search
+
+609
+00:17:59,950 --> 00:18:01,245
+service on the right center.
+
+610
+00:18:01,485 --> 00:18:03,325
+so the metadata
+service is this
+
+611
+00:18:03,325 --> 00:18:05,165
+graph that actually houses all
+
+612
+00:18:05,165 --> 00:18:06,705
+the metadata around,
+
+613
+00:18:08,045 --> 00:18:09,085
+what powers the tool.
+
+614
+00:18:09,085 --> 00:18:10,285
+So this is, you know,
+
+615
+00:18:10,285 --> 00:18:12,125
+a person is a node,
+a table is a node,
+
+616
+00:18:12,125 --> 00:18:13,260
+a dashboard is a node,
+
+617
+00:18:13,820 --> 00:18:15,680
+and there are connections
+between them.
+
+618
+00:18:16,460 --> 00:18:17,900
+we currently support Neo four
+
+619
+00:18:17,900 --> 00:18:19,360
+j as the default.
+
+620
+00:18:19,580 --> 00:18:21,280
+we also have support for,
+
+621
+00:18:22,140 --> 00:18:24,540
+Neptune from AWS as well as
+
+622
+00:18:24,540 --> 00:18:27,225
+Apache Atlas too.
+
+623
+00:18:27,225 --> 00:18:28,745
+And then the search interface
+
+624
+00:18:28,745 --> 00:18:29,805
+is powered by Elasticsearch,
+
+625
+00:18:30,105 --> 00:18:31,385
+and that's
+a separate service.
+
+626
+00:18:31,385 --> 00:18:32,125
+All the,
+
+627
+00:18:33,225 --> 00:18:35,725
+secret sauce is
+not secret around
+
+628
+00:18:35,865 --> 00:18:37,545
+how do we change the search
+
+629
+00:18:37,545 --> 00:18:39,225
+ordering based
+on relevance and
+
+630
+00:18:39,225 --> 00:18:40,665
+popularity, and
+that's all stored
+
+631
+00:18:40,665 --> 00:18:41,840
+in that search repo.
+
+632
+00:18:42,460 --> 00:18:43,580
+and then the fourth piece is
+
+633
+00:18:43,580 --> 00:18:45,040
+this database crawler.
+
+634
+00:18:45,100 --> 00:18:46,060
+We call it crawler.
+
+635
+00:18:46,060 --> 00:18:47,520
+It doesn't have
+to be a crawler.
+
+636
+00:18:47,740 --> 00:18:49,760
+But, what this data builder
+
+637
+00:18:49,900 --> 00:18:51,660
+thing is is that
+it actually is
+
+638
+00:18:51,660 --> 00:18:53,680
+an ETL system that
+grabs metadata
+
+639
+00:18:53,740 --> 00:18:55,735
+from various sources,
+databases,
+
+640
+00:18:55,955 --> 00:18:57,815
+dashboards, GitHub, airflow,
+
+641
+00:18:58,195 --> 00:19:00,195
+and puts it into
+Neo four j and
+
+642
+00:19:00,195 --> 00:19:01,635
+Elasticsearch. And lastly,
+
+643
+00:19:01,635 --> 00:19:03,315
+I'll go to the top
+left corner,
+
+644
+00:19:03,555 --> 00:19:04,775
+and that is
+the microservices.
+
+645
+00:19:05,555 --> 00:19:07,315
+so not only can
+you access this
+
+646
+00:19:07,315 --> 00:19:08,435
+metadata through a front end,
+
+647
+00:19:08,435 --> 00:19:09,900
+you can also access
+this metadata
+
+648
+00:19:09,900 --> 00:19:10,880
+through other services.
+
+649
+00:19:11,100 --> 00:19:12,720
+And we find that, you know,
+
+650
+00:19:13,020 --> 00:19:14,540
+security and
+compliance service
+
+651
+00:19:14,540 --> 00:19:17,020
+can use this to to make sure
+
+652
+00:19:17,020 --> 00:19:19,660
+that PII tags are
+being adhered to,
+
+653
+00:19:19,900 --> 00:19:20,800
+against usage,
+
+654
+00:19:21,155 --> 00:19:23,475
+or ML feature service can use
+
+655
+00:19:23,475 --> 00:19:25,815
+it to replicate data between
+
+656
+00:19:25,955 --> 00:19:27,395
+online and offline stores,
+
+657
+00:19:27,395 --> 00:19:28,455
+so on and so forth.
+
+658
+00:19:29,475 --> 00:19:30,915
+One thing I wanna
+talk about is
+
+659
+00:19:30,915 --> 00:19:32,435
+this data builder pull versus
+
+660
+00:19:32,435 --> 00:19:34,440
+push model. So a pull model is
+
+661
+00:19:34,440 --> 00:19:35,640
+where something crawls,
+
+662
+00:19:35,640 --> 00:19:37,480
+and this was
+the the first model
+
+663
+00:19:37,480 --> 00:19:39,500
+that was true for
+data builder.
+
+664
+00:19:39,560 --> 00:19:40,920
+In this case, the data builder
+
+665
+00:19:40,920 --> 00:19:42,440
+is very much like
+how most people
+
+666
+00:19:42,440 --> 00:19:43,880
+think of Google
+crawlers. Right?
+
+667
+00:19:43,880 --> 00:19:46,140
+You wake up every
+so often, say,
+
+668
+00:19:46,715 --> 00:19:48,315
+four hours or twelve hours,
+
+669
+00:19:48,315 --> 00:19:49,595
+and you go to all
+the databases
+
+670
+00:19:49,595 --> 00:19:51,035
+and you grab all
+the updates and
+
+671
+00:19:51,035 --> 00:19:53,535
+you punch them into,
+into the graph.
+
+672
+00:19:54,075 --> 00:19:56,335
+this is preferred if you have
+
+673
+00:19:56,715 --> 00:19:58,555
+a scrappy team
+who wants to move
+
+674
+00:19:58,555 --> 00:20:00,255
+fast and not have dependencies
+
+675
+00:20:00,555 --> 00:20:02,370
+on each of the other
+database teams,
+
+676
+00:20:02,930 --> 00:20:04,930
+that exists. But
+the con of this
+
+677
+00:20:04,930 --> 00:20:06,230
+pull model is that,
+
+678
+00:20:06,610 --> 00:20:07,650
+it runs on a schedule,
+
+679
+00:20:07,650 --> 00:20:09,170
+which means your
+metadata won't
+
+680
+00:20:09,170 --> 00:20:11,490
+be available until
+that schedule is run.
+
+681
+00:20:11,490 --> 00:20:13,510
+So if you run every
+twelve hours,
+
+682
+00:20:13,970 --> 00:20:15,830
+there may be
+a twelve hour delay
+
+683
+00:20:15,935 --> 00:20:17,775
+when you, create a new table
+
+684
+00:20:17,775 --> 00:20:19,075
+because you're waiting for,
+
+685
+00:20:20,335 --> 00:20:21,395
+for the next run.
+
+686
+00:20:21,695 --> 00:20:23,375
+And then the push model is is
+
+687
+00:20:23,375 --> 00:20:25,215
+a is a place where
+a database,
+
+688
+00:20:25,215 --> 00:20:27,455
+when a new, table gets created
+
+689
+00:20:27,455 --> 00:20:28,335
+or something like that,
+
+690
+00:20:28,335 --> 00:20:30,110
+pushes an event down,
+
+691
+00:20:30,110 --> 00:20:31,570
+an event pipe like Kafka,
+
+692
+00:20:31,710 --> 00:20:33,490
+and pushes that
+into the graph.
+
+693
+00:20:33,550 --> 00:20:34,990
+Now this works really well if
+
+694
+00:20:34,990 --> 00:20:36,350
+you want near real
+time indexing.
+
+695
+00:20:36,350 --> 00:20:39,630
+You don't want any,
+any delay there.
+
+696
+00:20:39,630 --> 00:20:40,990
+It also provides us clean
+
+697
+00:20:40,990 --> 00:20:42,530
+interface that's between,
+
+698
+00:20:43,145 --> 00:20:45,645
+the database and
+the graph so that,
+
+699
+00:20:45,945 --> 00:20:48,045
+if either one gets updated,
+
+700
+00:20:48,505 --> 00:20:49,705
+they just try to
+make sure that
+
+701
+00:20:49,705 --> 00:20:51,485
+the interface is adhered to.
+
+702
+00:20:54,505 --> 00:20:55,545
+and the con, though,
+
+703
+00:20:55,545 --> 00:20:57,000
+is that usually
+this this means
+
+704
+00:20:57,000 --> 00:20:58,500
+that you have to
+have dependencies
+
+705
+00:20:58,560 --> 00:20:59,520
+on a bunch of different teams
+
+706
+00:20:59,520 --> 00:21:00,480
+and make sure they send you
+
+707
+00:21:00,480 --> 00:21:01,920
+events and so on
+and so forth.
+
+708
+00:21:01,920 --> 00:21:03,760
+So Munson supports both.
+
+709
+00:21:05,120 --> 00:21:07,680
+it started with pull model and
+
+710
+00:21:07,680 --> 00:21:09,200
+now also supports push,
+
+711
+00:21:09,200 --> 00:21:10,340
+which is in beta.
+
+712
+00:21:10,665 --> 00:21:12,025
+However, most people currently
+
+713
+00:21:12,025 --> 00:21:13,565
+use pull because
+of the historical
+
+714
+00:21:13,625 --> 00:21:14,585
+nature of the tool.
+
+715
+00:21:14,585 --> 00:21:16,445
+So supports both,
+
+716
+00:21:16,505 --> 00:21:17,705
+but wanted to share a little
+
+717
+00:21:17,705 --> 00:21:18,825
+more thought there.
+
+718
+00:21:18,825 --> 00:21:21,145
+And lastly, around
+relevance and and,
+
+719
+00:21:21,625 --> 00:21:23,225
+popularity, wanted
+to share that
+
+720
+00:21:23,225 --> 00:21:24,745
+if you search for
+apple on Google,
+
+721
+00:21:24,745 --> 00:21:26,380
+right, like, if you get orange
+
+722
+00:21:26,380 --> 00:21:28,160
+as a result versus
+the fruit apple,
+
+723
+00:21:28,460 --> 00:21:30,300
+like, that is low
+relevance. Right?
+
+724
+00:21:30,300 --> 00:21:32,080
+If you got orange,
+that's low relevance.
+
+725
+00:21:32,460 --> 00:21:33,900
+However, when you type apple,
+
+726
+00:21:33,900 --> 00:21:36,160
+you may actually
+be searching for,
+
+727
+00:21:36,700 --> 00:21:38,845
+the computer company,
+not the fruit.
+
+728
+00:21:38,845 --> 00:21:41,085
+Right? And this is
+where the balance
+
+729
+00:21:41,085 --> 00:21:42,525
+comes in between
+popularity and
+
+730
+00:21:42,525 --> 00:21:42,925
+relevance.
+
+731
+00:21:42,925 --> 00:21:44,285
+So not only do we wanna be
+
+732
+00:21:44,285 --> 00:21:45,985
+relevant and show
+you the fruit,
+
+733
+00:21:46,205 --> 00:21:48,145
+we want to actually show you,
+
+734
+00:21:48,845 --> 00:21:51,505
+the the software
+company, the product,
+
+735
+00:21:52,250 --> 00:21:54,250
+than the fruit because that's
+
+736
+00:21:54,250 --> 00:21:56,570
+more popular, for
+people like you.
+
+737
+00:21:56,570 --> 00:21:58,570
+And this is
+the same way we try
+
+738
+00:21:58,570 --> 00:21:59,950
+to do search in Amazon.
+
+739
+00:22:00,090 --> 00:22:01,530
+And so the way it
+manifests is,
+
+740
+00:22:01,530 --> 00:22:03,050
+like, we measure
+relevance against
+
+741
+00:22:03,050 --> 00:22:04,490
+the descriptions,
+the table name,
+
+742
+00:22:04,490 --> 00:22:05,210
+the column names,
+
+743
+00:22:05,210 --> 00:22:06,590
+and the tags on the table.
+
+744
+00:22:06,705 --> 00:22:08,085
+And then we measure popularity
+
+745
+00:22:08,545 --> 00:22:09,745
+against scoring activity,
+
+746
+00:22:09,745 --> 00:22:10,705
+and we have different,
+
+747
+00:22:10,945 --> 00:22:12,705
+weights for automated activity
+
+748
+00:22:12,705 --> 00:22:14,085
+versus ad hoc querying.
+
+749
+00:22:14,465 --> 00:22:15,365
+and for dashboards,
+
+750
+00:22:15,425 --> 00:22:17,025
+we match against
+description and
+
+751
+00:22:17,025 --> 00:22:17,505
+chart names,
+
+752
+00:22:18,980 --> 00:22:20,820
+and we measure
+popularity based
+
+753
+00:22:20,820 --> 00:22:22,180
+on the number of
+edits that are
+
+754
+00:22:22,180 --> 00:22:23,700
+happening on our dashboard or
+
+755
+00:22:23,700 --> 00:22:25,240
+the number of views
+on our dashboard.
+
+756
+00:22:26,100 --> 00:22:27,780
+Cool. Lastly, the impact this
+
+757
+00:22:27,780 --> 00:22:28,660
+product has had,
+
+758
+00:22:28,980 --> 00:22:30,420
+so this is a graph from Lyft,
+
+759
+00:22:30,420 --> 00:22:31,320
+and it shows,
+
+760
+00:22:32,375 --> 00:22:33,655
+a month in having about seven
+
+761
+00:22:33,655 --> 00:22:35,015
+hundred and fifty
+weekly active
+
+762
+00:22:35,015 --> 00:22:36,135
+users and a lot of,
+
+763
+00:22:36,375 --> 00:22:37,755
+table and employee pages.
+
+764
+00:22:38,375 --> 00:22:40,215
+you will find that
+there is a drop,
+
+765
+00:22:40,215 --> 00:22:41,735
+for example, in
+December twenty
+
+766
+00:22:41,735 --> 00:22:43,095
+nineteen, and that's that's
+
+767
+00:22:43,095 --> 00:22:44,155
+because of the holidays.
+
+768
+00:22:44,215 --> 00:22:46,075
+This graph is
+a few months old.
+
+769
+00:22:46,695 --> 00:22:48,720
+but it's been going up up into
+
+770
+00:22:48,720 --> 00:22:50,320
+the right, and
+a lot of analysts
+
+771
+00:22:50,320 --> 00:22:51,860
+and data scientists use it.
+
+772
+00:22:52,240 --> 00:22:53,680
+and and if you're
+curious as to
+
+773
+00:22:53,680 --> 00:22:55,040
+who are the people
+who are using it,
+
+774
+00:22:55,040 --> 00:22:56,980
+this is a a graph
+of the penetration
+
+775
+00:22:57,200 --> 00:22:59,360
+rate at Lyft. So
+you find that the,
+
+776
+00:22:59,680 --> 00:23:01,280
+the blue bar here represents
+
+777
+00:23:01,280 --> 00:23:02,985
+the number of such
+people at Lyft,
+
+778
+00:23:03,145 --> 00:23:04,905
+and the red bar represents how
+
+779
+00:23:04,905 --> 00:23:06,665
+many of those used a Munson in
+
+780
+00:23:06,665 --> 00:23:08,585
+the last week.
+And so you notice
+
+781
+00:23:08,585 --> 00:23:10,025
+that the blue bar
+for a squeeze
+
+782
+00:23:10,025 --> 00:23:11,885
+or software engineer
+is really high,
+
+783
+00:23:12,265 --> 00:23:13,625
+and then
+the penetration rate,
+
+784
+00:23:13,625 --> 00:23:14,825
+the red bar, is only about
+
+785
+00:23:14,825 --> 00:23:15,725
+seventeen percent.
+
+786
+00:23:15,920 --> 00:23:17,280
+And that is because
+most software
+
+787
+00:23:17,280 --> 00:23:19,040
+engineers don't use
+Amazon day to day.
+
+788
+00:23:19,040 --> 00:23:20,660
+They are working on writing
+
+789
+00:23:20,800 --> 00:23:23,540
+mobile apps or,
+building services.
+
+790
+00:23:23,920 --> 00:23:25,920
+However, there
+are about twenty
+
+791
+00:23:25,920 --> 00:23:27,680
+percent or so who
+are data engineers,
+
+792
+00:23:27,680 --> 00:23:28,960
+work with data all day long,
+
+793
+00:23:28,960 --> 00:23:30,795
+and these people
+use it every day,
+
+794
+00:23:30,795 --> 00:23:33,275
+every week. Where you see high
+
+795
+00:23:33,275 --> 00:23:35,355
+penetration rate is
+the next two items,
+
+796
+00:23:35,355 --> 00:23:36,635
+which is data scientists and
+
+797
+00:23:36,635 --> 00:23:37,535
+research scientists.
+
+798
+00:23:37,755 --> 00:23:39,355
+At Lyft, the data
+scientist has
+
+799
+00:23:39,355 --> 00:23:41,055
+historically done
+a little more,
+
+800
+00:23:41,755 --> 00:23:44,075
+decision, engineering
+and decision
+
+801
+00:23:44,075 --> 00:23:45,810
+science work, while a research
+
+802
+00:23:45,810 --> 00:23:47,410
+scientist has done more ML
+
+803
+00:23:47,410 --> 00:23:49,010
+modeling work.
+So both of those
+
+804
+00:23:49,010 --> 00:23:50,610
+users use anywhere
+from seventy
+
+805
+00:23:50,610 --> 00:23:51,830
+to eighty percent penetration
+
+806
+00:23:51,890 --> 00:23:53,250
+rate in those, products.
+
+807
+00:23:53,250 --> 00:23:54,690
+And then you have
+a long tail of,
+
+808
+00:23:54,690 --> 00:23:56,050
+like, lesser technical users,
+
+809
+00:23:56,050 --> 00:23:57,570
+so anywhere from
+product managers
+
+810
+00:23:57,570 --> 00:23:59,010
+to community
+associates who are
+
+811
+00:23:59,010 --> 00:24:00,310
+customer
+service representatives
+
+812
+00:24:00,835 --> 00:24:03,655
+to economists, customer,
+quality people,
+
+813
+00:24:04,835 --> 00:24:06,515
+and operations and marketing
+
+814
+00:24:06,515 --> 00:24:07,475
+people who use it.
+
+815
+00:24:07,475 --> 00:24:10,595
+But the usage there
+is is very small,
+
+816
+00:24:10,595 --> 00:24:11,955
+and these are savvy people for
+
+817
+00:24:11,955 --> 00:24:13,715
+whom barrier to entry has been
+
+818
+00:24:13,715 --> 00:24:16,020
+lowered because
+a a product like
+
+819
+00:24:16,020 --> 00:24:17,400
+this access that lift.
+
+820
+00:24:18,100 --> 00:24:20,180
+So Amundsen was
+made open source
+
+821
+00:24:20,180 --> 00:24:22,580
+about a year ago and has over
+
+822
+00:24:22,580 --> 00:24:24,680
+a thousand community
+members on Slack,
+
+823
+00:24:25,060 --> 00:24:26,820
+where it come coming from over
+
+824
+00:24:26,820 --> 00:24:28,200
+a hundred and
+fifty companies.
+
+825
+00:24:28,995 --> 00:24:30,435
+twenty nine of those companies
+
+826
+00:24:30,435 --> 00:24:31,635
+are using it in production.
+
+827
+00:24:31,635 --> 00:24:37,155
+And so it's been
+a great, great,
+
+828
+00:24:37,155 --> 00:24:38,995
+great, thing for
+the product to
+
+829
+00:24:38,995 --> 00:24:40,295
+be able to help out,
+
+830
+00:24:41,250 --> 00:24:42,150
+other organizations.
+
+831
+00:24:42,370 --> 00:24:43,970
+We obviously have
+a long way to
+
+832
+00:24:43,970 --> 00:24:45,810
+go and a long road
+map of things
+
+833
+00:24:45,810 --> 00:24:46,870
+that we wanna do,
+
+834
+00:24:47,170 --> 00:24:48,610
+but we've been grateful for to
+
+835
+00:24:48,610 --> 00:24:49,970
+have an amazing community and
+
+836
+00:24:49,970 --> 00:24:52,070
+continue to work with
+them in order to,
+
+837
+00:24:52,530 --> 00:24:54,230
+deliver value for
+these organizations.
+
+838
+00:24:55,405 --> 00:24:57,265
+To give you a sense
+of who uses Amazon,
+
+839
+00:24:57,885 --> 00:25:01,505
+you've got, Reddit,
+I n g, Square,
+
+840
+00:25:02,365 --> 00:25:03,505
+Workday, Asana,
+
+841
+00:25:04,045 --> 00:25:05,405
+and many others
+who are in this
+
+842
+00:25:05,405 --> 00:25:06,925
+category. And then
+there's an active
+
+843
+00:25:06,925 --> 00:25:09,500
+community of much
+larger organizing
+
+844
+00:25:10,280 --> 00:25:11,640
+that's much larger than those
+
+845
+00:25:11,640 --> 00:25:13,560
+organizations, in
+terms of number
+
+846
+00:25:13,560 --> 00:25:16,060
+of companies,
+who also use it.
+
+847
+00:25:17,320 --> 00:25:19,400
+And, I can give
+you a little bit
+
+848
+00:25:19,400 --> 00:25:21,875
+of sense of what
+the future looks like.
+
+849
+00:25:21,875 --> 00:25:23,635
+So what I was trying to do was
+
+850
+00:25:23,635 --> 00:25:24,935
+to develop this application
+
+851
+00:25:25,075 --> 00:25:26,755
+around data discovery
+and trust,
+
+852
+00:25:26,755 --> 00:25:28,595
+like reducing
+the time it takes
+
+853
+00:25:28,595 --> 00:25:30,595
+people to discover and trust
+
+854
+00:25:30,595 --> 00:25:31,795
+the dataset they wanna use.
+
+855
+00:25:31,795 --> 00:25:33,395
+That's the leftmost
+part of this
+
+856
+00:25:33,395 --> 00:25:33,895
+diagram.
+
+857
+00:25:34,200 --> 00:25:35,800
+And what I found was
+as I was building,
+
+858
+00:25:36,920 --> 00:25:39,420
+this, this tool this product
+
+859
+00:25:39,560 --> 00:25:41,480
+that I that we
+ended up gathering
+
+860
+00:25:41,480 --> 00:25:43,320
+a gold mine of
+metadata. Right?
+
+861
+00:25:43,320 --> 00:25:44,380
+This is a graph,
+
+862
+00:25:45,000 --> 00:25:46,700
+in the API and the opinionated
+
+863
+00:25:46,840 --> 00:25:48,615
+products that you can build on
+
+864
+00:25:48,615 --> 00:25:49,335
+top of this graph.
+
+865
+00:25:49,335 --> 00:25:51,815
+So, once we started
+doing that,
+
+866
+00:25:51,815 --> 00:25:53,015
+we saw that there were other
+
+867
+00:25:53,015 --> 00:25:54,695
+people who started
+using the same
+
+868
+00:25:54,695 --> 00:25:56,935
+graph for other adjacent
+
+869
+00:25:56,935 --> 00:25:58,455
+applications that we
+hadn't thought of.
+
+870
+00:25:58,455 --> 00:26:00,360
+So I'll I'll share
+one example of that,
+
+871
+00:26:00,440 --> 00:26:01,640
+which is in the security and
+
+872
+00:26:01,640 --> 00:26:02,600
+privacy space.
+
+873
+00:26:02,840 --> 00:26:04,220
+Square, who uses Amazon,
+
+874
+00:26:04,600 --> 00:26:06,440
+doesn't use it for
+data discovery
+
+875
+00:26:06,440 --> 00:26:08,120
+and trust. They
+actually use it
+
+876
+00:26:08,120 --> 00:26:10,060
+for privacy engineering.
+
+877
+00:26:10,120 --> 00:26:13,340
+They tag all their
+data in Amazon
+
+878
+00:26:13,880 --> 00:26:18,765
+with PII or NPI tags and then
+
+879
+00:26:18,765 --> 00:26:21,265
+use these tags
+to create person
+
+880
+00:26:21,325 --> 00:26:23,105
+specific views in Snowflake.
+
+881
+00:26:23,485 --> 00:26:25,105
+So when I go to Snowflake,
+
+882
+00:26:25,165 --> 00:26:27,025
+I can only see
+the right columns
+
+883
+00:26:27,325 --> 00:26:28,845
+based on what I'm
+allowed to see
+
+884
+00:26:28,845 --> 00:26:31,110
+in my role, and
+I know what data
+
+885
+00:26:31,110 --> 00:26:33,430
+is PII versus not
+based on what's
+
+886
+00:26:33,430 --> 00:26:34,330
+stored in Amazon.
+
+887
+00:26:34,790 --> 00:26:36,390
+and the way they tag this data
+
+888
+00:26:36,390 --> 00:26:37,690
+in Amazon is through,
+
+889
+00:26:38,150 --> 00:26:40,310
+Google DLP API
+and a combination
+
+890
+00:26:40,310 --> 00:26:42,390
+of internal tools that place
+
+891
+00:26:42,390 --> 00:26:44,805
+the guest on confidence level
+
+892
+00:26:44,805 --> 00:26:47,465
+of this column is
+likely a PII.
+
+893
+00:26:47,685 --> 00:26:49,785
+For columns that have
+low confidence,
+
+894
+00:26:50,165 --> 00:26:51,685
+they have extended the amounts
+
+895
+00:26:51,685 --> 00:26:53,285
+in user interface to cater to
+
+896
+00:26:53,285 --> 00:26:55,285
+a security analyst persona who
+
+897
+00:26:55,285 --> 00:26:56,805
+gets a notification
+and is then
+
+898
+00:26:56,805 --> 00:26:59,160
+able to approve or reject that
+
+899
+00:26:59,320 --> 00:27:00,060
+that proposal,
+
+900
+00:27:01,080 --> 00:27:03,740
+for a column being
+PII or not.
+
+901
+00:27:04,440 --> 00:27:06,280
+and so what I see
+in the future
+
+902
+00:27:06,280 --> 00:27:08,040
+is that this
+metadata will lead
+
+903
+00:27:08,040 --> 00:27:09,880
+to a lot of interesting other
+
+904
+00:27:09,880 --> 00:27:11,400
+applications like
+we are already
+
+905
+00:27:11,400 --> 00:27:13,020
+starting to see in Amazon.
+
+906
+00:27:14,355 --> 00:27:15,315
+But, it is,
+
+907
+00:27:16,115 --> 00:27:17,955
+there's obviously a lot to do
+
+908
+00:27:17,955 --> 00:27:19,555
+in every single of these every
+
+909
+00:27:19,555 --> 00:27:20,835
+single one of
+these applications
+
+910
+00:27:20,835 --> 00:27:22,675
+as well. So what
+we call Amazon
+
+911
+00:27:22,675 --> 00:27:24,835
+today is both
+the data discovery
+
+912
+00:27:24,835 --> 00:27:26,595
+and trust application as well
+
+913
+00:27:26,595 --> 00:27:27,335
+as the metadata,
+
+914
+00:27:28,130 --> 00:27:29,730
+the horizontal metadata bar at
+
+915
+00:27:29,730 --> 00:27:30,310
+the bottom.
+
+916
+00:27:31,410 --> 00:27:33,510
+And so when it
+comes to specific,
+
+917
+00:27:33,970 --> 00:27:39,670
+to the specific
+to the the data
+
+918
+00:27:41,170 --> 00:27:43,110
+catalog or data
+discovery application,
+
+919
+00:27:43,675 --> 00:27:46,715
+we find that having dataset to
+
+920
+00:27:46,715 --> 00:27:49,195
+dataset lineage is
+important and having,
+
+921
+00:27:49,595 --> 00:27:53,115
+ACL integration is
+also very important.
+
+922
+00:27:53,115 --> 00:27:54,875
+So only certain users can edit
+
+923
+00:27:54,875 --> 00:27:56,495
+descriptions, so
+on and so forth.
+
+924
+00:27:56,875 --> 00:27:58,175
+So lastly, to summarize,
+
+925
+00:27:59,760 --> 00:28:01,200
+data discovery
+is a huge pain.
+
+926
+00:28:01,200 --> 00:28:02,640
+That's the plane we tried to
+
+927
+00:28:02,640 --> 00:28:04,260
+solve by creating a Amazon.
+
+928
+00:28:05,040 --> 00:28:06,640
+but we are seeing
+that this pain
+
+929
+00:28:06,640 --> 00:28:08,320
+actually can the solution here
+
+930
+00:28:08,320 --> 00:28:10,080
+can be used to solve other
+
+931
+00:28:10,080 --> 00:28:13,455
+adjacent pains around access
+
+932
+00:28:13,455 --> 00:28:15,395
+control and security
+and privacy.
+
+933
+00:28:15,535 --> 00:28:17,375
+And so I wanted to
+leave you all with,
+
+934
+00:28:17,695 --> 00:28:18,835
+these four links.
+
+935
+00:28:19,855 --> 00:28:21,775
+The first one is a website to
+
+936
+00:28:21,775 --> 00:28:23,055
+amazon amazon dot I o,
+
+937
+00:28:23,055 --> 00:28:24,895
+and you can you can use the QR
+
+938
+00:28:24,895 --> 00:28:26,015
+code there. The next one is
+
+939
+00:28:26,015 --> 00:28:27,395
+the code to the project.
+
+940
+00:28:27,930 --> 00:28:29,150
+The third one is,
+
+941
+00:28:30,250 --> 00:28:31,610
+a a recent blog post that I
+
+942
+00:28:31,610 --> 00:28:33,290
+wrote that describes this gap
+
+943
+00:28:33,290 --> 00:28:34,650
+that exists between production
+
+944
+00:28:34,650 --> 00:28:35,610
+and consumption. Right?
+
+945
+00:28:35,610 --> 00:28:37,690
+Like, data engineers
+are producing data,
+
+946
+00:28:37,690 --> 00:28:39,290
+and it's going to
+this data lake,
+
+947
+00:28:39,290 --> 00:28:40,490
+turning it into data swamp.
+
+948
+00:28:40,490 --> 00:28:41,370
+And on the other side,
+
+949
+00:28:41,370 --> 00:28:43,070
+data analysts and
+data scientists
+
+950
+00:28:43,575 --> 00:28:45,175
+want to use
+trustworthy data for
+
+951
+00:28:45,175 --> 00:28:47,115
+their work and don't
+have the right
+
+952
+00:28:47,575 --> 00:28:49,495
+the right dataset
+to do that work.
+
+953
+00:28:49,495 --> 00:28:51,175
+And so, there's this gap,
+
+954
+00:28:51,175 --> 00:28:53,255
+and it talks about how how why
+
+955
+00:28:53,255 --> 00:28:55,415
+this gap exist and how we can
+
+956
+00:28:55,415 --> 00:28:56,460
+solve for that gap.
+
+957
+00:28:56,540 --> 00:28:57,900
+And lastly,
+the fourth blog post
+
+958
+00:28:57,900 --> 00:29:00,060
+is a blog post from Square on
+
+959
+00:29:00,060 --> 00:29:01,500
+user privacy and how they are
+
+960
+00:29:01,500 --> 00:29:03,840
+using Amazon to
+drive that forward.
+
+961
+00:29:04,700 --> 00:29:05,740
+that's all for me.
+
+962
+00:29:05,740 --> 00:29:07,020
+I would love to hear what you
+
+963
+00:29:07,020 --> 00:29:08,620
+think and if you
+have any feedback,
+
+964
+00:29:09,180 --> 00:29:10,880
+for me or the project.
+
+965
+00:29:12,645 --> 00:29:13,605
+So, Mark, first of all,
+
+966
+00:29:13,605 --> 00:29:14,805
+congratulations for setting up
+
+967
+00:29:14,805 --> 00:29:16,025
+this open source community.
+
+968
+00:29:16,485 --> 00:29:18,800
+Have there been any
+surprises like,
+
+969
+00:29:18,800 --> 00:29:20,240
+contributions,
+and where are you
+
+970
+00:29:20,240 --> 00:29:22,340
+seeing
+interesting contributions
+
+971
+00:29:22,400 --> 00:29:25,520
+to the the the code? Yeah.
+
+972
+00:29:26,080 --> 00:29:27,040
+that's a good question.
+
+973
+00:29:27,040 --> 00:29:28,880
+I think there are two things
+
+974
+00:29:28,880 --> 00:29:32,735
+that are interesting
+observations.
+
+975
+00:29:32,795 --> 00:29:36,155
+The first one is,
+a surprise around,
+
+976
+00:29:36,155 --> 00:29:38,395
+like, how others have started
+
+977
+00:29:38,395 --> 00:29:39,935
+to use this prop product.
+
+978
+00:29:41,115 --> 00:29:43,035
+and we we were
+all very focused
+
+979
+00:29:43,035 --> 00:29:45,215
+on data discovery
+and trust and
+
+980
+00:29:45,560 --> 00:29:47,000
+the Square contribution and
+
+981
+00:29:47,000 --> 00:29:48,360
+taking the direction
+of helping
+
+982
+00:29:48,360 --> 00:29:49,180
+it out with,
+
+983
+00:29:50,280 --> 00:29:52,520
+security and privacy
+engineering was a,
+
+984
+00:29:53,560 --> 00:29:54,220
+a really,
+
+985
+00:29:55,080 --> 00:29:56,920
+really good use case that we
+
+986
+00:29:56,920 --> 00:29:59,020
+haven't thought of,
+initially at Lyft.
+
+987
+00:29:59,320 --> 00:30:01,315
+And the second one is that I
+
+988
+00:30:01,315 --> 00:30:02,675
+find that most of the core
+
+989
+00:30:02,675 --> 00:30:03,955
+contributions to the project
+
+990
+00:30:03,955 --> 00:30:05,475
+still happen from a very small
+
+991
+00:30:05,475 --> 00:30:07,635
+group who, have
+been working on
+
+992
+00:30:07,635 --> 00:30:09,715
+this project and
+who are deeply
+
+993
+00:30:09,715 --> 00:30:11,395
+invested in the project
+by the number
+
+994
+00:30:11,395 --> 00:30:12,695
+of engineers who work.
+
+995
+00:30:12,755 --> 00:30:14,135
+But most of the contributions
+
+996
+00:30:14,355 --> 00:30:17,500
+actually are perhaps,
+by design happen,
+
+997
+00:30:18,360 --> 00:30:20,380
+on the outskirts,
+which is integration.
+
+998
+00:30:20,440 --> 00:30:21,800
+So Lyft will, for example,
+
+999
+00:30:21,800 --> 00:30:25,640
+add more integration,
+but, you know,
+
+1000
+00:30:25,640 --> 00:30:26,760
+someone else would want to
+
+1001
+00:30:26,760 --> 00:30:29,000
+integrate with Tableau
+or or Looker,
+
+1002
+00:30:29,000 --> 00:30:31,675
+and they will come
+and add that.
+
+1003
+00:30:32,295 --> 00:30:33,355
+same thing with databases.
+
+1004
+00:30:33,655 --> 00:30:35,415
+So we find that we're getting
+
+1005
+00:30:35,415 --> 00:30:39,015
+a lot of value,
+through through,
+
+1006
+00:30:40,455 --> 00:30:42,135
+being being able to integrate
+
+1007
+00:30:42,135 --> 00:30:43,275
+with all these systems,
+
+1008
+00:30:44,330 --> 00:30:46,250
+by having a really
+amazing community.
+
+1009
+00:30:46,250 --> 00:30:47,130
+And that's a really,
+
+1010
+00:30:47,930 --> 00:30:49,210
+that's the thing
+that the project
+
+1011
+00:30:49,210 --> 00:30:52,910
+is very grateful for. Great.
+
+1012
+00:30:54,410 --> 00:30:55,770
+and I if you've timed later,
+
+1013
+00:30:55,770 --> 00:30:57,050
+I'd encourage you to come on
+
+1014
+00:30:57,050 --> 00:30:58,505
+the Slack and just
+share it with
+
+1015
+00:30:58,745 --> 00:31:01,785
+you on the KG
+conference community.
+
+1016
+00:31:01,785 --> 00:31:03,165
+We have over eleven hundred
+
+1017
+00:31:03,545 --> 00:31:04,825
+members across the globe.
+
+1018
+00:31:04,825 --> 00:31:06,745
+So I think this would be we've
+
+1019
+00:31:06,745 --> 00:31:07,625
+been promoting this,
+
+1020
+00:31:07,625 --> 00:31:09,065
+but I think it'd
+be great if you
+
+1021
+00:31:09,065 --> 00:31:10,845
+could share it there
+as well and just,
+
+1022
+00:31:11,305 --> 00:31:13,065
+how people can
+access it and and
+
+1023
+00:31:13,065 --> 00:31:13,805
+get involved.
+
+1024
+00:31:15,380 --> 00:31:18,440
+Any any other
+questions for Mark?
+
+1025
+00:31:24,580 --> 00:31:25,860
+Just while we're
+waiting, Mark,
+
+1026
+00:31:25,860 --> 00:31:27,380
+did you say you
+founded the company
+
+1027
+00:31:27,380 --> 00:31:28,920
+interested in what
+you're you're
+
+1028
+00:31:28,980 --> 00:31:31,695
+up to next? Yeah.
+
+1029
+00:31:32,415 --> 00:31:34,515
+I found that,
+many organizations
+
+1030
+00:31:34,655 --> 00:31:36,335
+can use open source to solve
+
+1031
+00:31:36,335 --> 00:31:37,935
+this problem,
+but there's there
+
+1032
+00:31:37,935 --> 00:31:39,235
+are quite a few who,
+
+1033
+00:31:39,775 --> 00:31:41,055
+don't wanna don't wanna deal
+
+1034
+00:31:41,055 --> 00:31:42,255
+with the open source and,
+
+1035
+00:31:42,735 --> 00:31:45,180
+don't have
+the the right engineers
+
+1036
+00:31:45,240 --> 00:31:47,720
+and priorities to to
+make that happen.
+
+1037
+00:31:47,720 --> 00:31:50,760
+So, the name of
+the company is Stemma,
+
+1038
+00:31:50,760 --> 00:31:53,800
+and I I cofounded that to help
+
+1039
+00:31:53,800 --> 00:31:55,400
+every single
+organization solve
+
+1040
+00:31:55,400 --> 00:31:56,040
+these problems.
+
+1041
+00:31:56,040 --> 00:31:57,400
+And Amazon would be right at
+
+1042
+00:31:57,400 --> 00:31:58,600
+the front and center of this
+
+1043
+00:31:58,600 --> 00:32:00,715
+company and, contributing to
+
+1044
+00:32:00,715 --> 00:32:02,075
+Amundsen and
+making that better
+
+1045
+00:32:02,075 --> 00:32:03,915
+and providing value
+for open source,
+
+1046
+00:32:04,075 --> 00:32:05,535
+community members
+is important.
+
+1047
+00:32:05,835 --> 00:32:07,515
+And this company
+will help help,
+
+1048
+00:32:08,475 --> 00:32:10,415
+move that forward
+even faster.
+
+1049
+00:32:10,555 --> 00:32:12,235
+But it will also help larger
+
+1050
+00:32:12,235 --> 00:32:14,790
+organizations,
+the ones that we
+
+1051
+00:32:14,790 --> 00:32:16,630
+couldn't have
+an impact to open
+
+1052
+00:32:16,630 --> 00:32:19,050
+source to help solve
+the same problems.
+
+1053
+00:32:20,390 --> 00:32:20,890
+Okay.
+
+1054
+00:32:21,110 --> 00:32:22,230
+And in your list there,
+
+1055
+00:32:22,230 --> 00:32:24,810
+I saw some larger
+organizations,
+
+1056
+00:32:24,870 --> 00:32:26,570
+some financial
+services institutions
+
+1057
+00:32:26,710 --> 00:32:27,350
+who tend to be,
+
+1058
+00:32:29,175 --> 00:32:31,675
+more risk averse
+around open source.
+
+1059
+00:32:33,175 --> 00:32:35,175
+are you seeing some
+traction there,
+
+1060
+00:32:35,175 --> 00:32:36,615
+and and, you know,
+
+1061
+00:32:36,615 --> 00:32:38,695
+how is that engagement from
+
+1062
+00:32:38,695 --> 00:32:40,950
+larger institutions
+going? Yeah.
+
+1063
+00:32:40,950 --> 00:32:42,550
+We've seen some
+engagement there.
+
+1064
+00:32:42,550 --> 00:32:44,470
+So ING is the large financial
+
+1065
+00:32:44,470 --> 00:32:46,250
+institution who's
+a user of Amazon.
+
+1066
+00:32:47,350 --> 00:32:50,570
+and, for them,
+it's, you know,
+
+1067
+00:32:50,710 --> 00:32:52,410
+forward thinking
+large financial
+
+1068
+00:32:52,470 --> 00:32:54,310
+organizations will
+will set this
+
+1069
+00:32:54,310 --> 00:32:57,035
+thing up and and
+then play with it,
+
+1070
+00:32:57,035 --> 00:32:59,035
+iterate, and move move this
+
+1071
+00:32:59,035 --> 00:33:00,795
+forward and
+evaluate it against
+
+1072
+00:33:00,795 --> 00:33:01,615
+what they have.
+
+1073
+00:33:02,075 --> 00:33:03,995
+what I do think
+happens in those
+
+1074
+00:33:03,995 --> 00:33:05,215
+organizations is,
+
+1075
+00:33:06,315 --> 00:33:08,235
+they have a lot of
+specific needs.
+
+1076
+00:33:08,475 --> 00:33:09,695
+some of them are regulatory.
+
+1077
+00:33:10,490 --> 00:33:14,410
+Some of them are
+legacy related
+
+1078
+00:33:14,410 --> 00:33:15,770
+because of
+the systems they have
+
+1079
+00:33:15,770 --> 00:33:17,630
+and the processes
+they've already built.
+
+1080
+00:33:18,010 --> 00:33:20,330
+And, I think we have a lot of
+
+1081
+00:33:20,330 --> 00:33:24,025
+work to do in in
+the open source and,
+
+1082
+00:33:24,985 --> 00:33:26,765
+and as a community to,
+
+1083
+00:33:27,785 --> 00:33:29,465
+have a larger integration net
+
+1084
+00:33:29,465 --> 00:33:31,465
+and be able to support those
+
+1085
+00:33:31,465 --> 00:33:33,405
+specific requirements.
+
+1086
+00:33:37,385 --> 00:33:40,760
+Great. and it's like,
+
+1087
+00:33:40,760 --> 00:33:43,180
+how best can our
+community help?
+
+1088
+00:33:44,760 --> 00:33:47,880
+Yeah. I I think
+the best the the
+
+1089
+00:33:47,880 --> 00:33:49,160
+few things that the community
+
+1090
+00:33:49,160 --> 00:33:50,300
+can help is, like,
+
+1091
+00:33:52,185 --> 00:33:53,785
+if you see this
+as a problem in
+
+1092
+00:33:53,785 --> 00:33:55,385
+the organizations and the data
+
+1093
+00:33:55,385 --> 00:33:57,885
+you work with,
+I'd encourage you
+
+1094
+00:33:58,025 --> 00:33:58,905
+check out Amundsen,
+
+1095
+00:33:58,905 --> 00:34:00,985
+and I can I can share
+links to that,
+
+1096
+00:34:01,625 --> 00:34:02,905
+in the Slack
+channel as well as
+
+1097
+00:34:02,905 --> 00:34:03,860
+you mentioned, Thomas?
+
+1098
+00:34:04,100 --> 00:34:06,600
+And then, as you
+get to evaluating
+
+1099
+00:34:06,740 --> 00:34:08,040
+and trying out Amundsen,
+
+1100
+00:34:08,740 --> 00:34:10,260
+join the community
+Slack channel,
+
+1101
+00:34:10,260 --> 00:34:11,860
+which is Amundsen
+Slack channel,
+
+1102
+00:34:11,860 --> 00:34:14,020
+and be able to ask questions,
+
+1103
+00:34:14,020 --> 00:34:15,540
+share feedback, and share,
+
+1104
+00:34:15,780 --> 00:34:17,220
+your thoughts for the project
+
+1105
+00:34:17,220 --> 00:34:18,920
+so we can keep improving it.
+

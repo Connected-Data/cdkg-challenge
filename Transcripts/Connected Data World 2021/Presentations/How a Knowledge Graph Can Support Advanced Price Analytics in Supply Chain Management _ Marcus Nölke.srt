@@ -1,0 +1,2696 @@
+1
+00:00:03,600 --> 00:00:04,100
+Hello.
+
+2
+00:00:07,440 --> 00:00:08,980
+Thanks for the introduction,
+
+3
+00:00:09,040 --> 00:00:12,535
+and welcome to the talk
+on the application
+
+4
+00:00:12,595 --> 00:00:15,335
+of a knowledge
+graph to enhance
+
+5
+00:00:15,395 --> 00:00:17,415
+price analytics in
+the procurement
+
+6
+00:00:17,795 --> 00:00:21,490
+domain. Before we
+look at the agenda,
+
+7
+00:00:21,550 --> 00:00:23,170
+let me introduce myself.
+
+8
+00:00:24,990 --> 00:00:26,690
+My name is Markus Noelke.
+
+9
+00:00:26,905 --> 00:00:28,685
+I work for Siemens Energy,
+
+10
+00:00:29,545 --> 00:00:31,405
+now for more than ten years.
+
+11
+00:00:32,425 --> 00:00:34,665
+My office is located
+at the factory
+
+12
+00:00:34,665 --> 00:00:36,950
+in Mulheim close
+to Dusseldorf.
+
+13
+00:00:38,130 --> 00:00:39,750
+As a cost value engineer,
+
+14
+00:00:39,810 --> 00:00:41,990
+I act as a bridge
+between engineering,
+
+15
+00:00:42,130 --> 00:00:43,350
+procurement, suppliers,
+
+16
+00:00:44,205 --> 00:00:46,845
+with focus on improving our
+
+17
+00:00:46,845 --> 00:00:48,065
+product cost position.
+
+18
+00:00:49,165 --> 00:00:51,325
+For cost transparency and
+
+19
+00:00:51,325 --> 00:00:53,720
+identification of
+cost out potential,
+
+20
+00:00:54,020 --> 00:00:56,840
+I utilize extensively
+data analytics.
+
+21
+00:00:58,180 --> 00:00:59,080
+In the presentation,
+
+22
+00:00:59,140 --> 00:01:01,220
+I will explain the use case or
+
+23
+00:01:01,220 --> 00:01:01,780
+motivation for the application
+
+24
+00:01:01,780 --> 00:01:07,545
+of an application,
+
+25
+00:01:08,165 --> 00:01:10,345
+with details on
+used ontologies,
+
+26
+00:01:10,725 --> 00:01:12,390
+patterns, and tools.
+
+27
+00:01:19,945 --> 00:01:22,505
+Presentation is
+structured as follows.
+
+28
+00:01:22,905 --> 00:01:24,505
+I will give a short overview
+
+29
+00:01:24,505 --> 00:01:26,930
+about Siemens Energy and then
+
+30
+00:01:26,930 --> 00:01:29,110
+explain what I
+mean by advanced
+
+31
+00:01:29,250 --> 00:01:31,890
+price analytics and
+will show you,
+
+32
+00:01:32,130 --> 00:01:33,970
+the related knowledge graph
+
+33
+00:01:33,970 --> 00:01:36,885
+implementation.
+And I will close
+
+34
+00:01:36,885 --> 00:01:39,125
+out with a short
+summary and and
+
+35
+00:01:39,125 --> 00:01:40,105
+next steps.
+
+36
+00:01:40,965 --> 00:01:42,165
+But let us first,
+
+37
+00:01:42,485 --> 00:01:43,910
+start with the introduction of
+
+38
+00:01:44,150 --> 00:01:48,230
+Siemens Energy.
+
+39
+00:01:48,230 --> 00:01:50,150
+Siemens Energy is active in
+
+40
+00:01:50,150 --> 00:01:51,290
+the energy market,
+
+41
+00:01:51,935 --> 00:01:53,715
+mainly as an equipment
+supplier,
+
+42
+00:01:54,495 --> 00:01:55,795
+with a global footprint.
+
+43
+00:01:56,335 --> 00:01:58,755
+More than fifty percent
+on the worldwide
+
+44
+00:01:58,975 --> 00:02:01,050
+installed generation capacity
+
+45
+00:02:01,050 --> 00:02:02,990
+is based on our technology.
+
+46
+00:02:04,490 --> 00:02:06,670
+Although we have
+a fossil background,
+
+47
+00:02:07,050 --> 00:02:08,910
+we are transforming
+to renewables,
+
+48
+00:02:08,970 --> 00:02:11,285
+and our our
+portfolio is already
+
+49
+00:02:11,285 --> 00:02:14,025
+more than fifty
+percent carbon free.
+
+50
+00:02:16,325 --> 00:02:18,185
+Along our core products,
+
+51
+00:02:18,480 --> 00:02:20,480
+we offer solutions and and
+
+52
+00:02:20,480 --> 00:02:23,620
+services mainly
+maintenance and repair.
+
+53
+00:02:24,480 --> 00:02:27,055
+We have products
+in generation,
+
+54
+00:02:27,515 --> 00:02:29,695
+transmission, and
+storage of energy.
+
+55
+00:02:30,475 --> 00:02:32,155
+The portfolio ranges from
+
+56
+00:02:32,155 --> 00:02:35,570
+conventional
+equipment like gas
+
+57
+00:02:35,570 --> 00:02:37,510
+turbines, to renewables,
+
+58
+00:02:37,810 --> 00:02:38,870
+like wind turbines,
+
+59
+00:02:39,490 --> 00:02:42,470
+through our daughter,
+we, Garmesa,
+
+60
+00:02:42,610 --> 00:02:43,510
+Siemens Garmesa,
+
+61
+00:02:44,915 --> 00:02:47,335
+and to hydrogen generators.
+
+62
+00:02:49,075 --> 00:02:51,815
+The use case currently focuses
+
+63
+00:02:52,280 --> 00:02:54,060
+on conventional gas turbines.
+
+64
+00:02:54,600 --> 00:02:57,000
+So let us have a look
+at the product
+
+65
+00:02:57,000 --> 00:02:59,260
+structure and, the, related,
+
+66
+00:03:00,200 --> 00:03:01,020
+supply chain.
+
+67
+00:03:12,180 --> 00:03:14,840
+Our product portfolio
+is, quite large,
+
+68
+00:03:15,300 --> 00:03:16,280
+including systems,
+
+69
+00:03:16,775 --> 00:03:18,715
+with subsystems or
+sub subsystems.
+
+70
+00:03:19,335 --> 00:03:21,515
+So here on the left,
+you can see,
+
+71
+00:03:21,975 --> 00:03:23,735
+there's a complete gas fired
+
+72
+00:03:23,735 --> 00:03:27,020
+power plant, which we sell.
+
+73
+00:03:27,020 --> 00:03:28,780
+And then what we also sell is
+
+74
+00:03:28,780 --> 00:03:30,960
+the just the gas
+turbine package,
+
+75
+00:03:31,180 --> 00:03:33,280
+which is within
+this power plant.
+
+76
+00:03:34,065 --> 00:03:35,825
+And the gas turbine
+package can
+
+77
+00:03:35,825 --> 00:03:37,425
+be further broken down into
+
+78
+00:03:37,425 --> 00:03:39,505
+the core engine,
+the gas turbine,
+
+79
+00:03:39,505 --> 00:03:41,105
+the actual gas
+turbine which we
+
+80
+00:03:41,105 --> 00:03:42,485
+manufacture in house,
+
+81
+00:03:43,320 --> 00:03:45,800
+and also auxiliary
+elements like
+
+82
+00:03:45,800 --> 00:03:47,980
+the air intake which provides
+
+83
+00:03:48,360 --> 00:03:50,840
+filter air to
+the filter air to
+
+84
+00:03:50,840 --> 00:03:52,060
+the to the gas turbine.
+
+85
+00:03:52,175 --> 00:03:53,955
+So this, we buy,
+
+86
+00:03:54,495 --> 00:03:56,115
+complete as a as a system,
+
+87
+00:03:56,655 --> 00:03:58,755
+but as mentioned,
+the gas turbine,
+
+88
+00:03:59,215 --> 00:04:02,140
+that is manufactured
+in house.
+
+89
+00:04:02,140 --> 00:04:05,200
+So here, we need to
+further break down,
+
+90
+00:04:05,660 --> 00:04:06,640
+into components,
+
+91
+00:04:07,180 --> 00:04:09,275
+which are quite numerous.
+
+92
+00:04:09,975 --> 00:04:12,795
+So from machine parts
+to raw material,
+
+93
+00:04:13,495 --> 00:04:15,415
+standard parts like bolts and
+
+94
+00:04:15,415 --> 00:04:17,240
+nuts and and and and so on.
+
+95
+00:04:17,800 --> 00:04:19,880
+And and so we we buy all sorts
+
+96
+00:04:19,880 --> 00:04:22,120
+of things from
+systems all the way
+
+97
+00:04:22,120 --> 00:04:26,525
+down to to raw material
+and also seems,
+
+98
+00:04:27,065 --> 00:04:29,385
+energy buys a lot at about ten
+
+99
+00:04:29,385 --> 00:04:31,725
+billion euros annually.
+
+100
+00:04:32,745 --> 00:04:34,125
+It's the purchase volume.
+
+101
+00:04:35,020 --> 00:04:36,720
+Almost all components,
+
+102
+00:04:37,420 --> 00:04:40,400
+are engineered with,
+lot size one.
+
+103
+00:04:41,180 --> 00:04:43,600
+They vary from
+project to project
+
+104
+00:04:43,955 --> 00:04:45,415
+most often.
+
+105
+00:04:45,915 --> 00:04:47,555
+And, yeah,
+
+106
+00:04:47,555 --> 00:04:49,155
+the specification are always
+
+107
+00:04:49,475 --> 00:04:51,015
+need need to always
+to be adapted.
+
+108
+00:04:52,020 --> 00:04:55,700
+We have a global
+purchasing footprint,
+
+109
+00:04:56,180 --> 00:04:58,660
+with regional
+hubs, and, like,
+
+110
+00:04:58,660 --> 00:05:00,760
+with global supply
+base, of course,
+
+111
+00:05:01,525 --> 00:05:03,525
+following our projects and and
+
+112
+00:05:03,525 --> 00:05:07,945
+customers. And we
+have, lastly,
+
+113
+00:05:08,450 --> 00:05:09,970
+facing strong competition and
+
+114
+00:05:09,970 --> 00:05:12,230
+our our cost base is
+heavily influenced,
+
+115
+00:05:12,290 --> 00:05:14,230
+of course, by
+the external supply,
+
+116
+00:05:15,090 --> 00:05:17,510
+and we have to to
+buy at best price.
+
+117
+00:05:18,455 --> 00:05:21,915
+And there we have
+finally our use case.
+
+118
+00:05:22,375 --> 00:05:25,095
+We use data
+analytics to detail
+
+119
+00:05:25,175 --> 00:05:28,350
+to to determine if we actually
+
+120
+00:05:28,410 --> 00:05:30,650
+buy always throughout
+the entire
+
+121
+00:05:30,650 --> 00:05:33,630
+organization at best
+price possible.
+
+122
+00:05:34,265 --> 00:05:36,285
+And one example or one method
+
+123
+00:05:36,345 --> 00:05:38,585
+here is the, perform what we
+
+124
+00:05:38,585 --> 00:05:40,125
+call the performance pricing.
+
+125
+00:05:41,465 --> 00:05:42,605
+That means relating,
+
+126
+00:05:43,740 --> 00:05:46,480
+the price of
+a purchased item,
+
+127
+00:05:47,660 --> 00:05:49,920
+to its aspects
+and properties.
+
+128
+00:05:51,095 --> 00:05:53,255
+So here is one example
+of a dashboard
+
+129
+00:05:53,255 --> 00:05:55,195
+with an air intake portfolio,
+
+130
+00:05:55,735 --> 00:05:58,055
+where prices for
+air intakes are
+
+131
+00:05:58,055 --> 00:06:01,000
+shown globally
+for our entire,
+
+132
+00:06:01,440 --> 00:06:03,780
+gas turbine,
+portfolio from from
+
+133
+00:06:03,840 --> 00:06:04,980
+small gas turbines,
+
+134
+00:06:05,520 --> 00:06:08,555
+with low mass
+flow to large gas
+
+135
+00:06:08,555 --> 00:06:10,415
+turbines with
+a large mass flow,
+
+136
+00:06:10,715 --> 00:06:12,495
+and we have all
+the cost information,
+
+137
+00:06:13,995 --> 00:06:15,740
+mapped here in this chart over
+
+138
+00:06:15,740 --> 00:06:18,220
+the mass flow.
+And and we have,
+
+139
+00:06:18,620 --> 00:06:21,340
+one one type of
+of data is from
+
+140
+00:06:21,340 --> 00:06:23,515
+from our estimated from our
+
+141
+00:06:23,515 --> 00:06:25,055
+product tracking databases,
+
+142
+00:06:25,115 --> 00:06:26,875
+for instance, from proposal
+
+143
+00:06:26,875 --> 00:06:28,335
+calculation and so on.
+
+144
+00:06:28,715 --> 00:06:31,180
+And the other
+prices are actually
+
+145
+00:06:31,180 --> 00:06:32,880
+projection prices from from
+
+146
+00:06:33,020 --> 00:06:34,960
+purchase orders
+which are fixed,
+
+147
+00:06:35,980 --> 00:06:38,000
+and this can also
+be shown here.
+
+148
+00:06:38,405 --> 00:06:39,945
+And, with this method,
+
+149
+00:06:40,005 --> 00:06:42,725
+you can compare
+price over a wide
+
+150
+00:06:42,725 --> 00:06:45,225
+range of application
+with varying
+
+151
+00:06:45,285 --> 00:06:48,440
+parameters. The results might
+
+152
+00:06:48,440 --> 00:06:50,620
+be a benchmark
+prices so you can
+
+153
+00:06:50,840 --> 00:06:53,240
+determine an average
+price line
+
+154
+00:06:53,240 --> 00:06:57,255
+here for instance
+over the the entire
+
+155
+00:06:58,035 --> 00:07:00,835
+portfolio, or you can even
+
+156
+00:07:00,835 --> 00:07:02,695
+determine a lowest
+price line,
+
+157
+00:07:03,680 --> 00:07:05,460
+or you can investigate further
+
+158
+00:07:05,680 --> 00:07:08,160
+outliers here, and and and do
+
+159
+00:07:08,160 --> 00:07:09,300
+further drill down.
+
+160
+00:07:09,520 --> 00:07:10,935
+So, also,
+
+161
+00:07:10,935 --> 00:07:12,935
+you can derive
+target cost here
+
+162
+00:07:12,935 --> 00:07:14,295
+if you want. So if you design
+
+163
+00:07:14,295 --> 00:07:15,815
+a new gas turbine and you just
+
+164
+00:07:15,815 --> 00:07:17,195
+know the functional
+parameter,
+
+165
+00:07:17,575 --> 00:07:19,400
+mass flow, you can go in here
+
+166
+00:07:19,400 --> 00:07:21,900
+and determine a price for this
+
+167
+00:07:22,600 --> 00:07:24,280
+component which
+is not actually
+
+168
+00:07:24,280 --> 00:07:25,740
+designed at this
+point in time.
+
+169
+00:07:26,815 --> 00:07:29,295
+So that is, as you can see,
+
+170
+00:07:29,295 --> 00:07:31,155
+that is a very simple method
+
+171
+00:07:31,855 --> 00:07:33,615
+with just one parameter but in
+
+172
+00:07:33,615 --> 00:07:35,450
+reality we have
+of course several
+
+173
+00:07:35,450 --> 00:07:37,470
+parameters, which are crucial
+
+174
+00:07:37,850 --> 00:07:40,730
+for for for for
+influencing the price,
+
+175
+00:07:40,730 --> 00:07:42,910
+which we call
+the cost driver,
+
+176
+00:07:43,685 --> 00:07:45,465
+and and they need
+to be evaluated
+
+177
+00:07:46,005 --> 00:07:47,705
+in a multivariate regression.
+
+178
+00:07:48,805 --> 00:07:50,565
+But also, you can
+see that this
+
+179
+00:07:50,565 --> 00:07:55,270
+easy statistical method also
+
+180
+00:07:55,270 --> 00:07:57,030
+relies on the collection and
+
+181
+00:07:57,030 --> 00:07:59,610
+integration of lots of data
+
+182
+00:07:59,910 --> 00:08:02,795
+throughout the whole supply
+
+183
+00:08:02,795 --> 00:08:04,015
+chain organization,
+
+184
+00:08:04,235 --> 00:08:06,155
+but also integrating a lot of
+
+185
+00:08:06,155 --> 00:08:07,215
+technical information.
+
+186
+00:08:08,155 --> 00:08:10,555
+And that is the problem we try
+
+187
+00:08:10,555 --> 00:08:12,680
+to solve with
+the knowledge graph.
+
+188
+00:08:15,220 --> 00:08:17,960
+But there are some
+challenges as,
+
+189
+00:08:18,100 --> 00:08:20,680
+yep, as probably in
+many organizations.
+
+190
+00:08:21,765 --> 00:08:22,405
+We have,
+
+191
+00:08:22,885 --> 00:08:25,365
+unstructured data like pricing
+
+192
+00:08:25,365 --> 00:08:27,705
+information comes
+to PDF technical
+
+193
+00:08:28,245 --> 00:08:30,860
+documentation. We
+have Excel sheets.
+
+194
+00:08:30,860 --> 00:08:31,760
+We have drawings.
+
+195
+00:08:32,940 --> 00:08:36,000
+Some information
+comes, per email.
+
+196
+00:08:36,835 --> 00:08:39,095
+Also, as shown, we
+have high complexity,
+
+197
+00:08:39,955 --> 00:08:40,695
+of products.
+
+198
+00:08:40,755 --> 00:08:43,575
+So the it's
+quite heterogeneous
+
+199
+00:08:43,795 --> 00:08:44,615
+what we buy.
+
+200
+00:08:44,995 --> 00:08:49,030
+We have also procurement and
+
+201
+00:08:49,030 --> 00:08:51,130
+also engineering
+and manufacturing
+
+202
+00:08:51,350 --> 00:08:55,290
+is distributed globally.
+
+203
+00:08:55,695 --> 00:08:58,175
+We have that really
+results also
+
+204
+00:08:58,175 --> 00:08:59,235
+in different philosophies,
+
+205
+00:08:59,615 --> 00:09:00,675
+legacy systems,
+
+206
+00:09:00,735 --> 00:09:02,355
+and and related vocabulary.
+
+207
+00:09:03,120 --> 00:09:03,840
+And, of course,
+
+208
+00:09:03,840 --> 00:09:06,800
+we have data more organized in
+
+209
+00:09:06,800 --> 00:09:09,680
+applications, and if data is
+
+210
+00:09:09,680 --> 00:09:11,885
+pulled out of its relational
+
+211
+00:09:12,025 --> 00:09:15,165
+databases mostly
+the context is gone.
+
+212
+00:09:15,945 --> 00:09:18,825
+So, the general
+idea here is to
+
+213
+00:09:18,825 --> 00:09:20,550
+use a good knowledge graph,
+
+214
+00:09:20,870 --> 00:09:23,690
+to integrate, the data and,
+
+215
+00:09:25,030 --> 00:09:27,130
+defining a shared vocabulary
+
+216
+00:09:27,510 --> 00:09:30,155
+across all the domains,
+procurement,
+
+217
+00:09:31,495 --> 00:09:33,435
+engineering,
+technical vocabulary,
+
+218
+00:09:34,535 --> 00:09:36,955
+but also service,
+for instance,
+
+219
+00:09:37,095 --> 00:09:37,835
+and manufacturing.
+
+220
+00:09:39,640 --> 00:09:42,060
+And there, the idea is to,
+
+221
+00:09:44,920 --> 00:09:48,035
+to have a data integration cut
+
+222
+00:09:48,035 --> 00:09:52,115
+from within based
+on on the knowledge
+
+223
+00:09:52,115 --> 00:09:54,615
+graph, and then
+we bring together
+
+224
+00:09:54,755 --> 00:09:56,855
+all the transactional data,
+
+225
+00:09:57,350 --> 00:09:59,110
+planning data,
+design data from
+
+226
+00:09:59,110 --> 00:10:03,610
+various data silos,
+and, we map them,
+
+227
+00:10:04,150 --> 00:10:06,545
+to the individual
+concepts classes,
+
+228
+00:10:06,545 --> 00:10:08,245
+and and and shared
+the vocabulary,
+
+229
+00:10:08,385 --> 00:10:10,085
+and and we can evaluate it.
+
+230
+00:10:10,465 --> 00:10:11,685
+And in that process,
+
+231
+00:10:11,905 --> 00:10:13,525
+information becomes knowledge
+
+232
+00:10:13,745 --> 00:10:15,700
+that can be formally processed
+
+233
+00:10:15,700 --> 00:10:18,100
+by a machine. So here,
+
+234
+00:10:18,100 --> 00:10:19,080
+this is one example.
+
+235
+00:10:19,540 --> 00:10:21,220
+Firefront is assigned a unit,
+
+236
+00:10:21,540 --> 00:10:22,900
+which is defined in the core
+
+237
+00:10:22,900 --> 00:10:24,845
+ontology of the QEDT.
+
+238
+00:10:26,505 --> 00:10:27,485
+Then we have,
+
+239
+00:10:27,945 --> 00:10:31,145
+okay we say it's
+an inlet mass flow,
+
+240
+00:10:31,145 --> 00:10:32,620
+it's a value for an inlet mass
+
+241
+00:10:32,620 --> 00:10:34,620
+flow which is defined
+in the domain
+
+242
+00:10:34,620 --> 00:10:36,860
+ontology that can
+also be defined
+
+243
+00:10:36,860 --> 00:10:38,560
+by international standards.
+
+244
+00:10:39,500 --> 00:10:40,140
+And then,
+
+245
+00:10:40,540 --> 00:10:42,605
+this inlet mass flow is mapped
+
+246
+00:10:42,685 --> 00:10:45,185
+to to technical asset,
+the air intake,
+
+247
+00:10:46,045 --> 00:10:47,505
+which has also a corresponding
+
+248
+00:10:47,645 --> 00:10:49,265
+semantic definition.
+
+249
+00:10:50,205 --> 00:10:51,745
+It's it's a technical asset,
+
+250
+00:10:52,290 --> 00:10:55,010
+which again is defined in in
+
+251
+00:10:55,010 --> 00:10:55,990
+the core ontology.
+
+252
+00:10:56,850 --> 00:10:57,970
+And then, yeah,
+
+253
+00:10:57,970 --> 00:11:00,695
+this this data with
+a shared vocabulary,
+
+254
+00:11:00,835 --> 00:11:03,575
+this map data can
+then be shared
+
+255
+00:11:03,795 --> 00:11:07,095
+to applications
+through an API,
+
+256
+00:11:08,050 --> 00:11:10,050
+and the apps can query content
+
+257
+00:11:10,050 --> 00:11:12,770
+from the notice
+graph via sparkle
+
+258
+00:11:12,770 --> 00:11:15,745
+queries. And and here we have
+
+259
+00:11:15,745 --> 00:11:17,765
+also on the top our
+performance pricing,
+
+260
+00:11:18,305 --> 00:11:20,625
+dashboards, but also, yeah,
+
+261
+00:11:20,625 --> 00:11:25,540
+just simple query
+visualizations,
+
+262
+00:11:26,880 --> 00:11:28,560
+traversing the graph,
+doing graph,
+
+263
+00:11:28,960 --> 00:11:30,580
+explorations is
+also possible.
+
+264
+00:11:31,040 --> 00:11:34,575
+But let's look further
+at the ontology
+
+265
+00:11:34,795 --> 00:11:37,135
+framework, we are using here.
+
+266
+00:11:43,590 --> 00:11:45,690
+So modeling scope,
+respectively,
+
+267
+00:11:45,910 --> 00:11:47,430
+technical assets is is done
+
+268
+00:11:47,430 --> 00:11:50,655
+along with the ISO
+and the asset
+
+269
+00:11:50,655 --> 00:11:52,495
+specification model
+from the REDI
+
+270
+00:11:52,495 --> 00:11:55,795
+project. So here,
+the gas turbine,
+
+271
+00:11:56,175 --> 00:11:56,975
+in this example,
+
+272
+00:11:56,975 --> 00:11:58,620
+the gas turbine
+auxiliary system
+
+273
+00:11:58,620 --> 00:12:00,780
+is modeled, with a system
+
+274
+00:12:00,780 --> 00:12:02,720
+engineering
+approach starting,
+
+275
+00:12:03,340 --> 00:12:05,660
+with the main system and,
+
+276
+00:12:06,140 --> 00:12:08,615
+breaking it further
+down into,
+
+277
+00:12:09,075 --> 00:12:11,875
+subcomponents, all the way to
+
+278
+00:12:11,875 --> 00:12:12,855
+the bottom here.
+
+279
+00:12:13,795 --> 00:12:15,235
+So that is that generally is
+
+280
+00:12:15,235 --> 00:12:16,695
+done related to aspects,
+
+281
+00:12:16,915 --> 00:12:19,320
+to the aspects
+function, product,
+
+282
+00:12:19,320 --> 00:12:21,260
+and location as per the ISO,
+
+283
+00:12:22,360 --> 00:12:23,820
+eight one three four six.
+
+284
+00:12:24,440 --> 00:12:26,345
+The product aspect
+is here omitted
+
+285
+00:12:26,345 --> 00:12:27,965
+for the sake of, simplicity.
+
+286
+00:12:28,985 --> 00:12:30,825
+So function and
+location are here,
+
+287
+00:12:32,105 --> 00:12:33,805
+part of quite
+quite a different
+
+288
+00:12:34,630 --> 00:12:35,690
+breakdown of hierarchies.
+
+289
+00:12:35,830 --> 00:12:38,490
+And and, by mixing
+the two aspects,
+
+290
+00:12:38,630 --> 00:12:40,810
+variable context contextual,
+
+291
+00:12:41,350 --> 00:12:43,210
+information is is is lost.
+
+292
+00:12:44,445 --> 00:12:45,965
+And and here also location can
+
+293
+00:12:45,965 --> 00:12:48,465
+be referred to,
+boundary conditions,
+
+294
+00:12:49,725 --> 00:12:52,225
+where you apply your
+technical assets.
+
+295
+00:12:52,740 --> 00:12:53,960
+Along with the aspects,
+
+296
+00:12:54,260 --> 00:12:55,160
+functional properties,
+
+297
+00:12:58,020 --> 00:12:59,780
+we we which are modeled here,
+
+298
+00:12:59,780 --> 00:13:01,895
+which is the the power,
+for instance,
+
+299
+00:13:02,035 --> 00:13:03,555
+requirement for the guest,
+
+300
+00:13:03,875 --> 00:13:04,935
+auxiliary system,
+
+301
+00:13:05,635 --> 00:13:07,095
+and also the mass flow.
+
+302
+00:13:07,850 --> 00:13:08,830
+We can also,
+
+303
+00:13:09,450 --> 00:13:11,870
+model location
+related properties,
+
+304
+00:13:12,570 --> 00:13:14,670
+which wind which
+is wind speed,
+
+305
+00:13:15,370 --> 00:13:17,605
+temperature,
+which is different
+
+306
+00:13:17,665 --> 00:13:19,605
+indoor than,
+compared to outdoor.
+
+307
+00:13:20,945 --> 00:13:26,520
+And, so and and
+then, the the,
+
+308
+00:13:26,880 --> 00:13:29,140
+and an integrated
+object is created,
+
+309
+00:13:30,000 --> 00:13:30,740
+through connecting,
+
+310
+00:13:31,520 --> 00:13:33,520
+the respective objects in in
+
+311
+00:13:33,520 --> 00:13:34,180
+the hierarchies,
+
+312
+00:13:35,675 --> 00:13:37,455
+and that is basically
+the specification
+
+313
+00:13:37,595 --> 00:13:39,295
+for for this, intake.
+
+314
+00:13:40,395 --> 00:13:42,800
+And, it's it's
+a functional object,
+
+315
+00:13:43,120 --> 00:13:45,120
+and it integrates
+all the aspects
+
+316
+00:13:45,120 --> 00:13:45,840
+and and,
+
+317
+00:13:46,560 --> 00:13:48,800
+and all the requirements are
+
+318
+00:13:48,800 --> 00:13:50,100
+then flowing down,
+
+319
+00:13:50,640 --> 00:13:53,235
+to this functional object.
+
+320
+00:13:55,055 --> 00:13:58,815
+And, then this objects can be
+
+321
+00:13:58,815 --> 00:14:01,460
+also related to
+to offers being
+
+322
+00:14:01,460 --> 00:14:04,760
+made for such an asset,
+or purchased,
+
+323
+00:14:05,620 --> 00:14:06,660
+orders being placed.
+
+324
+00:14:06,900 --> 00:14:08,495
+And this gives the connection
+
+325
+00:14:08,795 --> 00:14:10,095
+between the cost data,
+
+326
+00:14:10,635 --> 00:14:12,175
+and the technical parameters,
+
+327
+00:14:12,875 --> 00:14:14,495
+which can then be utilized,
+
+328
+00:14:15,035 --> 00:14:17,520
+in the performance,
+pricing effort.
+
+329
+00:14:18,560 --> 00:14:20,160
+But be before we get to that,
+
+330
+00:14:20,640 --> 00:14:23,600
+I show you how to,
+to model the,
+
+331
+00:14:24,480 --> 00:14:25,220
+the properties.
+
+332
+00:14:25,280 --> 00:14:26,740
+So what what are the typical
+
+333
+00:14:26,800 --> 00:14:29,205
+property patterns here?
+
+334
+00:14:30,465 --> 00:14:31,105
+Here we have,
+
+335
+00:14:31,425 --> 00:14:33,905
+the the ISO one five nine two
+
+336
+00:14:33,905 --> 00:14:37,540
+six fourteen pattern
+with a verification
+
+337
+00:14:38,320 --> 00:14:40,340
+, which has a higher,
+expressivity,
+
+338
+00:14:41,200 --> 00:14:43,620
+than modeling
+properties directly,
+
+339
+00:14:44,000 --> 00:14:44,820
+to the assets.
+
+340
+00:14:46,125 --> 00:14:47,725
+So, yeah, here we have,
+
+341
+00:14:48,205 --> 00:14:49,425
+the the the type,
+
+342
+00:14:50,045 --> 00:14:52,205
+of of of the property as a as
+
+343
+00:14:52,205 --> 00:14:54,470
+a as an instance
+of of a class,
+
+344
+00:14:54,790 --> 00:14:55,830
+where the class is,
+
+345
+00:14:56,070 --> 00:14:58,630
+this is the nominal
+operating mass flow,
+
+346
+00:14:58,630 --> 00:15:01,775
+which is defined by
+a g force standard.
+
+347
+00:15:03,835 --> 00:15:06,095
+And it can also, classify,
+
+348
+00:15:06,795 --> 00:15:09,650
+the functional object
+further into,
+
+349
+00:15:09,890 --> 00:15:11,910
+an oil and gas type
+of equipment.
+
+350
+00:15:13,250 --> 00:15:16,390
+And then to this,
+mass flow instance,
+
+351
+00:15:16,850 --> 00:15:19,485
+we have the actual value,
+
+352
+00:15:20,025 --> 00:15:24,185
+connected and also,
+the, the unit,
+
+353
+00:15:24,185 --> 00:15:26,025
+which is coming
+from QEDT or is
+
+354
+00:15:26,025 --> 00:15:27,645
+mapped to the QEDT framework.
+
+355
+00:15:29,020 --> 00:15:30,620
+For the purchase order,
+
+356
+00:15:30,620 --> 00:15:35,100
+the quotation here,
+we have to map,
+
+357
+00:15:35,100 --> 00:15:37,455
+for instance,
+a monetary value,
+
+358
+00:15:38,075 --> 00:15:38,715
+which is,
+
+359
+00:15:39,275 --> 00:15:42,735
+a class from defined
+in in the Fibo
+
+360
+00:15:43,690 --> 00:15:46,810
+ontology. And and
+there, we have,
+
+361
+00:15:47,290 --> 00:15:49,050
+also, yeah, the value,
+
+362
+00:15:49,050 --> 00:15:49,950
+then the verification,
+
+363
+00:15:50,795 --> 00:15:52,395
+with the value connected and
+
+364
+00:15:52,395 --> 00:15:54,335
+also the currency connected.
+
+365
+00:15:54,395 --> 00:15:55,375
+And and the currency,
+
+366
+00:15:56,475 --> 00:15:58,735
+is defined also
+through the Fibro
+
+367
+00:16:00,910 --> 00:16:02,270
+ontology where you have all
+
+368
+00:16:02,270 --> 00:16:04,270
+the currencies and
+all the country
+
+369
+00:16:04,270 --> 00:16:06,770
+codes, mapped,
+
+370
+00:16:07,150 --> 00:16:08,850
+and and defined
+in the ontology.
+
+371
+00:16:11,325 --> 00:16:13,485
+So yeah. And and
+that brings us
+
+372
+00:16:13,485 --> 00:16:15,645
+then to the, yeah,
+
+373
+00:16:15,645 --> 00:16:18,520
+to the integration
+and into our
+
+374
+00:16:18,520 --> 00:16:19,240
+use case.
+
+375
+00:16:19,880 --> 00:16:21,420
+And, here's the example,
+
+376
+00:16:22,040 --> 00:16:23,500
+we we looked at already.
+
+377
+00:16:24,440 --> 00:16:26,145
+And here you can see how how
+
+378
+00:16:26,385 --> 00:16:27,605
+everything comes together.
+
+379
+00:16:28,705 --> 00:16:30,305
+So we have here now,
+
+380
+00:16:30,705 --> 00:16:33,045
+the our functional
+object, basically,
+
+381
+00:16:33,345 --> 00:16:38,300
+with the connected
+estimated as pricing,
+
+382
+00:16:38,760 --> 00:16:40,300
+for instance,
+from a quotation.
+
+383
+00:16:41,000 --> 00:16:42,700
+And we have the properties
+
+384
+00:16:42,920 --> 00:16:44,585
+basically here
+from from this,
+
+385
+00:16:44,985 --> 00:16:46,525
+asset specification model.
+
+386
+00:16:46,825 --> 00:16:48,845
+So in this case,
+the mass flow,
+
+387
+00:16:48,905 --> 00:16:50,045
+which are then maps,
+
+388
+00:16:50,345 --> 00:16:52,980
+so we we have this
+connection here,
+
+389
+00:16:53,040 --> 00:16:54,560
+and we have also
+the connection
+
+390
+00:16:54,560 --> 00:16:57,360
+here of to the purchase
+part, which is,
+
+391
+00:16:57,680 --> 00:16:59,460
+coming from a purchase order
+
+392
+00:17:00,395 --> 00:17:01,835
+transaction for a different,
+
+393
+00:17:02,235 --> 00:17:03,215
+functional object,
+
+394
+00:17:04,155 --> 00:17:06,575
+and and that gives
+us the possibility,
+
+395
+00:17:07,595 --> 00:17:12,000
+to, derive that, dashboard,
+
+396
+00:17:12,540 --> 00:17:13,980
+in an automatic way,
+
+397
+00:17:14,300 --> 00:17:17,340
+for all sorts of
+technical assets
+
+398
+00:17:17,340 --> 00:17:18,860
+which are defined
+in the knowledge
+
+399
+00:17:18,860 --> 00:17:23,745
+graph and all,
+defines, technical,
+
+400
+00:17:24,525 --> 00:17:26,365
+or properties or qualities we
+
+401
+00:17:26,365 --> 00:17:27,565
+have in the knowledge graph or
+
+402
+00:17:27,565 --> 00:17:28,600
+which can be fine,
+
+403
+00:17:28,760 --> 00:17:30,200
+and and then we can do our
+
+404
+00:17:30,200 --> 00:17:32,060
+analytics based on that.
+
+405
+00:17:39,775 --> 00:17:41,775
+But, to make that all work,
+
+406
+00:17:42,095 --> 00:17:43,315
+we need reasoning.
+
+407
+00:17:44,760 --> 00:17:47,020
+Here, it's based on on all,
+
+408
+00:17:48,040 --> 00:17:50,380
+or additional data log rules,
+
+409
+00:17:51,000 --> 00:17:53,020
+based on
+the RDFox implementation
+
+410
+00:17:54,505 --> 00:17:56,365
+we have here in in
+various areas.
+
+411
+00:17:57,305 --> 00:17:59,885
+So one one example
+here is the,
+
+412
+00:18:01,080 --> 00:18:02,520
+the property allocation from
+
+413
+00:18:02,520 --> 00:18:03,260
+the partonomies.
+
+414
+00:18:03,360 --> 00:18:05,580
+So if you're on top,
+we have defined,
+
+415
+00:18:06,200 --> 00:18:07,020
+power requirement.
+
+416
+00:18:08,440 --> 00:18:09,160
+It is,
+
+417
+00:18:09,400 --> 00:18:15,355
+then serving down to
+the subcomponents,
+
+418
+00:18:16,295 --> 00:18:18,235
+basically. Also,
+
+419
+00:18:19,255 --> 00:18:21,730
+the part of is is also
+it's a transitive
+
+420
+00:18:21,950 --> 00:18:23,870
+property, so you
+have also that
+
+421
+00:18:23,870 --> 00:18:24,610
+that connection.
+
+422
+00:18:25,390 --> 00:18:26,510
+But for instance,
+
+423
+00:18:26,510 --> 00:18:28,110
+if the filtration is also part
+
+424
+00:18:28,110 --> 00:18:30,835
+of the GG auxiliary
+system that
+
+425
+00:18:30,835 --> 00:18:32,855
+is then a separate property,
+
+426
+00:18:33,235 --> 00:18:36,515
+so do not not mix direct part
+
+427
+00:18:36,515 --> 00:18:38,775
+relationship to to to indirect
+
+428
+00:18:39,790 --> 00:18:40,610
+part relationships.
+
+429
+00:18:41,630 --> 00:18:44,050
+Then we have
+the aggregation of cost.
+
+430
+00:18:44,350 --> 00:18:45,230
+So if you have,
+
+431
+00:18:45,710 --> 00:18:47,665
+a percolation scheme where we
+
+432
+00:18:47,665 --> 00:18:50,405
+have to add, yeah,
+certain components,
+
+433
+00:18:51,105 --> 00:18:54,065
+and and and aggregate it into
+
+434
+00:18:54,065 --> 00:18:57,200
+into a higher scope,
+for instance,
+
+435
+00:18:57,200 --> 00:19:00,240
+for mechanical
+equipment for a certain
+
+436
+00:19:00,240 --> 00:19:03,760
+project. That is
+also done through
+
+437
+00:19:03,760 --> 00:19:07,425
+reasoning, and we
+have the integration
+
+438
+00:19:07,425 --> 00:19:09,765
+of the data with
+identifier matching.
+
+439
+00:19:10,945 --> 00:19:11,685
+So here,
+
+440
+00:19:12,225 --> 00:19:15,710
+ISO eight one
+three four six IDs
+
+441
+00:19:15,770 --> 00:19:18,270
+can be used, or also,
+
+442
+00:19:18,970 --> 00:19:22,945
+legacy identifiers
+from the various
+
+443
+00:19:22,945 --> 00:19:25,685
+databases to bring,
+the data together.
+
+444
+00:19:25,825 --> 00:19:27,105
+And then finally, we have,
+
+445
+00:19:27,585 --> 00:19:30,590
+constraint checking here with
+
+446
+00:19:30,590 --> 00:19:33,310
+subclass requirements
+to check if,
+
+447
+00:19:33,790 --> 00:19:35,650
+certain technical assets,
+
+448
+00:19:36,030 --> 00:19:37,905
+where we have the, yeah,
+
+449
+00:19:39,005 --> 00:19:40,685
+requirements for for certain
+
+450
+00:19:40,685 --> 00:19:42,785
+technical values if they are
+
+451
+00:19:43,005 --> 00:19:44,845
+present and also
+if they are in
+
+452
+00:19:44,845 --> 00:19:46,810
+a certain range.
+
+453
+00:19:46,810 --> 00:19:48,350
+And and and here, yeah,
+
+454
+00:19:48,490 --> 00:19:50,890
+we need to rely also on closed
+
+455
+00:19:50,890 --> 00:19:51,630
+word reasoning,
+
+456
+00:19:52,410 --> 00:19:54,270
+which is also coming
+from the RDFox
+
+457
+00:19:55,425 --> 00:19:56,645
+database technology.
+
+458
+00:19:58,065 --> 00:20:02,085
+And that leads me
+to the architecture
+
+459
+00:20:02,465 --> 00:20:04,005
+which is implemented.
+
+460
+00:20:05,890 --> 00:20:07,750
+So this is the software
+architecture,
+
+461
+00:20:08,850 --> 00:20:10,790
+starting from the from
+the data sources.
+
+462
+00:20:11,570 --> 00:20:14,105
+So here we have
+a center query,
+
+463
+00:20:14,585 --> 00:20:17,165
+point, via Denodo.
+
+464
+00:20:18,025 --> 00:20:19,805
+Through an ODBC connection,
+
+465
+00:20:20,505 --> 00:20:23,480
+we can access, for
+instance, SAP data,
+
+466
+00:20:24,340 --> 00:20:25,400
+or other databases.
+
+467
+00:20:25,620 --> 00:20:27,560
+We have connected
+Oracle database,
+
+468
+00:20:28,100 --> 00:20:29,800
+Redshift data warehouse,
+
+469
+00:20:30,825 --> 00:20:32,605
+and or a simple Excel sheets.
+
+470
+00:20:33,865 --> 00:20:37,805
+And then, yeah,
+we can, via SQL,
+
+471
+00:20:37,945 --> 00:20:40,760
+we can get the tabular data.
+
+472
+00:20:40,760 --> 00:20:43,260
+And in in in the SQL lens,
+
+473
+00:20:44,040 --> 00:20:46,360
+this data is then using the r
+
+474
+00:20:46,360 --> 00:20:48,280
+two r m l mapping
+files or mapping
+
+475
+00:20:48,280 --> 00:20:52,205
+language, is then transferred
+
+476
+00:20:52,505 --> 00:20:54,365
+into r d f RDF,
+
+477
+00:20:55,065 --> 00:20:57,305
+so called n quotes
+which contain
+
+478
+00:20:57,305 --> 00:21:00,490
+also as a fourth
+dimension the provenance
+
+479
+00:21:00,710 --> 00:21:03,770
+data, that is put into
+the TRIPISSTORM,
+
+480
+00:21:06,235 --> 00:21:07,835
+yeah, which contains
+all the provenance
+
+481
+00:21:07,835 --> 00:21:09,535
+data and all historical data.
+
+482
+00:21:10,315 --> 00:21:11,695
+And then, yeah,
+
+483
+00:21:11,915 --> 00:21:13,775
+through either
+direct replication
+
+484
+00:21:14,155 --> 00:21:15,740
+or special queries we have
+
+485
+00:21:15,740 --> 00:21:18,320
+connected our RDFox
+reasoning engine,
+
+486
+00:21:19,740 --> 00:21:22,800
+which is, yeah
+executing in memory,
+
+487
+00:21:23,580 --> 00:21:25,885
+inferencing and
+reasoning based
+
+488
+00:21:25,885 --> 00:21:28,705
+on data log rules
+or old ontologies.
+
+489
+00:21:30,685 --> 00:21:31,565
+And, yeah.
+
+490
+00:21:31,565 --> 00:21:33,585
+And that is the the databases
+
+491
+00:21:33,965 --> 00:21:35,490
+are queried through,
+
+492
+00:21:36,510 --> 00:21:40,030
+the Metafactory front
+end, which is,
+
+493
+00:21:40,510 --> 00:21:42,430
+a low code, yeah,
+
+494
+00:21:42,430 --> 00:21:46,535
+tool to enable traversing,
+
+495
+00:21:47,475 --> 00:21:49,735
+through the graph
+and visualizing
+
+496
+00:21:49,875 --> 00:21:53,300
+graph data, within
+HTML pages,
+
+497
+00:21:54,160 --> 00:21:56,320
+and so that the spaCy queries
+
+498
+00:21:56,320 --> 00:21:58,240
+can be directly
+incorporated in
+
+499
+00:21:58,240 --> 00:21:59,300
+HTML pages.
+
+500
+00:21:59,775 --> 00:22:02,835
+And also there are
+web connectors
+
+501
+00:22:03,295 --> 00:22:06,095
+defined for a dashboard tool
+
+502
+00:22:06,095 --> 00:22:06,835
+like Tableau,
+
+503
+00:22:07,680 --> 00:22:08,720
+where you can directly then,
+
+504
+00:22:10,160 --> 00:22:10,900
+from Tableau,
+
+505
+00:22:11,440 --> 00:22:13,620
+query into through Metafactory
+
+506
+00:22:13,920 --> 00:22:16,575
+query into the data
+in the graph
+
+507
+00:22:16,575 --> 00:22:18,815
+database, which
+is not directly
+
+508
+00:22:18,815 --> 00:22:19,955
+possible from Tableau.
+
+509
+00:22:21,055 --> 00:22:22,335
+And also, yeah, you can,
+
+510
+00:22:22,415 --> 00:22:23,310
+through Metafactory, factory,
+
+511
+00:22:23,310 --> 00:22:26,470
+you can realize certain class
+
+512
+00:22:26,470 --> 00:22:28,550
+based visualizations or just
+
+513
+00:22:28,550 --> 00:22:30,970
+simple graph
+exploration schemes.
+
+514
+00:22:31,695 --> 00:22:32,415
+And, of course,
+
+515
+00:22:32,415 --> 00:22:34,175
+that is then
+connected to a user
+
+516
+00:22:34,175 --> 00:22:38,435
+management system.
+Alright. That's all.
+
+517
+00:22:39,400 --> 00:22:41,740
+So I would like to conclude
+
+518
+00:22:42,600 --> 00:22:45,720
+the talk with
+conclusion and and
+
+519
+00:22:45,720 --> 00:22:47,740
+also some next steps.
+
+520
+00:22:48,605 --> 00:22:50,845
+So I think the, the,
+
+521
+00:22:51,245 --> 00:22:52,785
+knowledge graph is
+a good solution
+
+522
+00:22:53,005 --> 00:22:55,105
+for for applying performance
+
+523
+00:22:55,165 --> 00:22:56,285
+pricing at scale.
+
+524
+00:22:56,445 --> 00:22:58,500
+It really reduces,
+
+525
+00:22:59,760 --> 00:23:01,440
+the manual work we have to do
+
+526
+00:23:01,440 --> 00:23:03,120
+right now to collect
+all the data
+
+527
+00:23:03,120 --> 00:23:03,700
+to clean,
+
+528
+00:23:04,480 --> 00:23:08,285
+and and and to to put it into
+
+529
+00:23:08,285 --> 00:23:10,385
+a spreadsheet so we
+can analyze it.
+
+530
+00:23:10,445 --> 00:23:12,705
+So with this approach,
+
+531
+00:23:13,800 --> 00:23:15,340
+an automatic or semiautomatic
+
+532
+00:23:16,920 --> 00:23:18,780
+performance pricing throughout
+
+533
+00:23:19,000 --> 00:23:22,105
+all components
+we are buying is
+
+534
+00:23:22,105 --> 00:23:27,165
+possible. But, also,
+what is what is,
+
+535
+00:23:27,225 --> 00:23:29,410
+yeah, I think, clear is that
+
+536
+00:23:29,490 --> 00:23:31,090
+the supply chain
+is in a difficult
+
+537
+00:23:31,090 --> 00:23:32,930
+domain to model because we we
+
+538
+00:23:32,930 --> 00:23:35,750
+are more inter
+interface, discipline.
+
+539
+00:23:36,210 --> 00:23:38,470
+So we rely on on
+on good data,
+
+540
+00:23:38,905 --> 00:23:41,705
+and the right data
+models from from,
+
+541
+00:23:42,185 --> 00:23:44,205
+engineering, from the product
+
+542
+00:23:44,585 --> 00:23:45,645
+life cycle management.
+
+543
+00:23:47,280 --> 00:23:51,280
+And, yeah, then so
+so we, we and and,
+
+544
+00:23:51,280 --> 00:23:53,140
+also, they they said
+the the models,
+
+545
+00:23:53,600 --> 00:23:54,740
+are quite heterogeneous,
+
+546
+00:23:56,305 --> 00:23:59,685
+and that makes life difficult
+
+547
+00:24:00,625 --> 00:24:01,845
+in in the knowledge graph.
+
+548
+00:24:03,470 --> 00:24:04,510
+And, also, I think,
+
+549
+00:24:04,750 --> 00:24:06,690
+closed word reasoning
+is is essential,
+
+550
+00:24:07,630 --> 00:24:10,910
+to get, yeah,
+the reasoning we we need,
+
+551
+00:24:11,230 --> 00:24:13,515
+to to make connections and and
+
+552
+00:24:13,515 --> 00:24:15,695
+to to do the constraint
+checking here.
+
+553
+00:24:17,675 --> 00:24:19,835
+And, yeah, possible
+next steps,
+
+554
+00:24:19,835 --> 00:24:22,180
+I would say, from
+my perspective,
+
+555
+00:24:22,240 --> 00:24:24,100
+is really adding, equations.
+
+556
+00:24:25,360 --> 00:24:27,860
+So once we have
+the statistical
+
+557
+00:24:29,445 --> 00:24:31,045
+analytics in place and we have
+
+558
+00:24:31,045 --> 00:24:32,105
+to derive, for instance,
+
+559
+00:24:32,645 --> 00:24:36,105
+a parametric formula
+for an intake,
+
+560
+00:24:36,165 --> 00:24:37,765
+I would like to put that into
+
+561
+00:24:37,765 --> 00:24:40,070
+the graph and
+also do reasoning
+
+562
+00:24:40,070 --> 00:24:40,630
+against that.
+
+563
+00:24:40,630 --> 00:24:42,630
+So if if, let's say,
+
+564
+00:24:42,630 --> 00:24:44,550
+identifying outliers based on
+
+565
+00:24:44,550 --> 00:24:47,210
+that and and
+utilizing the numeric
+
+566
+00:24:48,055 --> 00:24:49,755
+calculation also for further,
+
+567
+00:24:51,575 --> 00:24:54,615
+analytics. And,
+also, of course,
+
+568
+00:24:54,615 --> 00:24:56,375
+it would be very nice to link
+
+569
+00:24:56,375 --> 00:24:59,890
+external data, like
+a material index.
+
+570
+00:25:00,510 --> 00:25:01,950
+So for instance, if you have,
+
+571
+00:25:03,470 --> 00:25:04,830
+so you can map, for instance,
+
+572
+00:25:04,830 --> 00:25:07,255
+for all technical assets which
+
+573
+00:25:07,255 --> 00:25:08,935
+use in certain carbon steel.
+
+574
+00:25:08,935 --> 00:25:10,155
+You can map easily,
+
+575
+00:25:10,535 --> 00:25:12,055
+the price index and have,
+
+576
+00:25:12,615 --> 00:25:15,095
+direct information
+flowing into,
+
+577
+00:25:15,640 --> 00:25:16,940
+what are the price,
+
+578
+00:25:18,440 --> 00:25:19,880
+what is the price increase for
+
+579
+00:25:19,880 --> 00:25:21,820
+this particular raw material.
+
+580
+00:25:22,895 --> 00:25:24,495
+Also very important for for
+
+581
+00:25:24,495 --> 00:25:26,655
+certain for tracking, price,
+
+582
+00:25:28,255 --> 00:25:29,235
+for for tracking,
+
+583
+00:25:29,615 --> 00:25:32,195
+price movements in
+the in the market.
+
+584
+00:25:33,600 --> 00:25:34,500
+Yeah. And lastly,
+
+585
+00:25:34,800 --> 00:25:36,880
+I think also it's it's a good
+
+586
+00:25:36,880 --> 00:25:38,560
+possibility to to do,
+
+587
+00:25:38,960 --> 00:25:40,480
+data exchange with
+your business
+
+588
+00:25:40,480 --> 00:25:42,100
+partners, with
+your suppliers,
+
+589
+00:25:42,435 --> 00:25:43,875
+but also with your customers.
+
+590
+00:25:43,875 --> 00:25:44,855
+So with suppliers,
+
+591
+00:25:44,995 --> 00:25:47,235
+I could imagine that
+at the end that,
+
+592
+00:25:48,035 --> 00:25:50,940
+proposals, are
+really exchanged
+
+593
+00:25:51,240 --> 00:25:52,440
+through the knowledge graph,
+
+594
+00:25:52,680 --> 00:25:55,420
+and we don't get PDFs,
+which we have to,
+
+595
+00:25:56,200 --> 00:25:57,740
+then evaluate further.
+
+596
+00:25:58,025 --> 00:26:00,685
+So and extract
+the valuable information,
+
+597
+00:26:00,745 --> 00:26:03,805
+but, yeah, so we can
+get, already the,
+
+598
+00:26:04,425 --> 00:26:06,450
+the semantic
+enriched information
+
+599
+00:26:06,450 --> 00:26:07,250
+from a supplier.
+
+600
+00:26:07,250 --> 00:26:08,950
+And, also, we have already
+
+601
+00:26:09,090 --> 00:26:10,690
+projects with customers where
+
+602
+00:26:10,690 --> 00:26:13,270
+they are asking for a certain
+
+603
+00:26:13,570 --> 00:26:16,065
+data model, for
+instance, in Geforce,
+
+604
+00:26:16,125 --> 00:26:17,565
+which needs to be modeled in,
+
+605
+00:26:17,805 --> 00:26:20,525
+in an old graph. Yeah.
+
+606
+00:26:20,525 --> 00:26:23,160
+So that's concluding
+my talk, and,
+
+607
+00:26:23,400 --> 00:26:25,260
+yeah, I'm happy to answer
+
+608
+00:26:25,400 --> 00:26:27,660
+additional questions.
+Thanks a lot.
+

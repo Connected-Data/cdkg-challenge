@@ -1,0 +1,6165 @@
+1
+00:01:00,675 --> 00:01:03,415
+So so I'm gonna
+talk today about
+
+2
+00:01:03,555 --> 00:01:05,395
+the kind of artificial general
+
+3
+00:01:05,395 --> 00:01:07,010
+intelligence that
+I wish we had
+
+4
+00:01:07,250 --> 00:01:08,850
+and contrast it
+with the artificial
+
+5
+00:01:08,850 --> 00:01:10,390
+intelligence that
+we have right now.
+
+6
+00:01:10,770 --> 00:01:13,110
+So people sometimes
+use the phrase
+
+7
+00:01:13,410 --> 00:01:15,730
+AGI to mean
+general intelligence
+
+8
+00:01:15,730 --> 00:01:17,525
+that could solve any problem,
+
+9
+00:01:17,585 --> 00:01:19,125
+sort of like the Star
+Trek computer.
+
+10
+00:01:19,905 --> 00:01:21,905
+And you could
+imagine an AI that
+
+11
+00:01:21,905 --> 00:01:23,345
+would be pretty much smarter
+
+12
+00:01:23,345 --> 00:01:25,310
+than human beings
+would be able
+
+13
+00:01:25,310 --> 00:01:27,390
+to read and
+synthesize the fast
+
+14
+00:01:27,390 --> 00:01:28,610
+growing medical literature,
+
+15
+00:01:29,070 --> 00:01:30,450
+be able to reason causally,
+
+16
+00:01:30,750 --> 00:01:32,350
+help us make
+difficult decisions
+
+17
+00:01:32,350 --> 00:01:33,330
+in the real world,
+
+18
+00:01:33,935 --> 00:01:35,055
+in novel environments where we
+
+19
+00:01:35,055 --> 00:01:35,775
+haven't been before,
+
+20
+00:01:35,775 --> 00:01:37,695
+in situations where
+we had partial
+
+21
+00:01:37,695 --> 00:01:38,755
+and incomplete information.
+
+22
+00:01:39,135 --> 00:01:40,975
+We could also imagine
+an intelligence
+
+23
+00:01:40,975 --> 00:01:41,550
+that was,
+
+24
+00:01:42,590 --> 00:01:44,190
+bright enough to allow us to
+
+25
+00:01:44,190 --> 00:01:46,270
+guide robots to
+keep humans out
+
+26
+00:01:46,270 --> 00:01:47,490
+of dangerous situations,
+
+27
+00:01:47,790 --> 00:01:49,550
+to care for
+the elderly and work
+
+28
+00:01:49,550 --> 00:01:51,475
+in hospitals, deliver packages
+
+29
+00:01:51,475 --> 00:01:52,755
+to your door, and so forth.
+
+30
+00:01:52,755 --> 00:01:54,115
+We could imagine all that.
+
+31
+00:01:54,115 --> 00:01:55,395
+I'm gonna argue
+we're not really
+
+32
+00:01:55,395 --> 00:01:57,635
+there yet and
+talk a little bit
+
+33
+00:01:57,635 --> 00:01:59,475
+about how we might get there.
+
+34
+00:01:59,475 --> 00:02:02,820
+So, the AI that
+we actually have
+
+35
+00:02:02,820 --> 00:02:03,960
+mostly plays games,
+
+36
+00:02:04,340 --> 00:02:05,460
+although I'll talk about alpha
+
+37
+00:02:05,460 --> 00:02:06,600
+fold a little bit later,
+
+38
+00:02:07,300 --> 00:02:09,240
+transcribes syllables
+and vacuums
+
+39
+00:02:09,300 --> 00:02:11,615
+floors. And most of it doesn't
+
+40
+00:02:11,615 --> 00:02:13,555
+do a whole lot
+more than that.
+
+41
+00:02:14,095 --> 00:02:15,955
+Current AI is filled
+with promise.
+
+42
+00:02:16,415 --> 00:02:18,700
+So people often say, hey.
+
+43
+00:02:18,700 --> 00:02:20,220
+We're just about to completely
+
+44
+00:02:20,220 --> 00:02:21,360
+replace this profession.
+
+45
+00:02:21,740 --> 00:02:22,700
+So Jeff Hinton,
+
+46
+00:02:22,700 --> 00:02:24,140
+who is one of the founders of
+
+47
+00:02:24,140 --> 00:02:25,845
+deep learning, said in two
+
+48
+00:02:25,845 --> 00:02:26,825
+thousand sixteen,
+
+49
+00:02:27,365 --> 00:02:28,565
+it's just completely obvious
+
+50
+00:02:28,565 --> 00:02:29,685
+that within five years,
+
+51
+00:02:29,685 --> 00:02:30,805
+deep learning is
+gonna be better
+
+52
+00:02:30,805 --> 00:02:31,545
+than radiologists.
+
+53
+00:02:32,260 --> 00:02:33,780
+And then Elon Musk has been
+
+54
+00:02:33,780 --> 00:02:35,460
+telling us for years that he's
+
+55
+00:02:35,460 --> 00:02:37,160
+gonna have self driving cars.
+
+56
+00:02:37,940 --> 00:02:39,300
+And, you know,
+there are certainly
+
+57
+00:02:39,300 --> 00:02:41,155
+demos of that available,
+
+58
+00:02:41,155 --> 00:02:42,355
+but not things that you could
+
+59
+00:02:42,355 --> 00:02:43,495
+actually trust yet.
+
+60
+00:02:44,515 --> 00:02:46,615
+Delivery often falls short.
+
+61
+00:02:47,555 --> 00:02:49,095
+We're losing slides here.
+
+62
+00:02:52,430 --> 00:02:53,150
+Okay. Good.
+
+63
+00:02:53,710 --> 00:02:55,870
+So the reality is there are
+
+64
+00:02:55,870 --> 00:02:57,970
+hundreds of deep
+learning startups
+
+65
+00:02:58,030 --> 00:02:59,250
+trying to work on radiology,
+
+66
+00:02:59,645 --> 00:03:01,565
+but no actual
+radiologists have
+
+67
+00:03:01,565 --> 00:03:02,765
+been replaced. In fact,
+
+68
+00:03:02,765 --> 00:03:04,145
+we don't have enough
+radiologists,
+
+69
+00:03:04,525 --> 00:03:05,725
+and I have
+a headline here from
+
+70
+00:03:05,725 --> 00:03:06,605
+April two thousand nineteen.
+
+71
+00:03:06,605 --> 00:03:07,660
+It's been even worse,
+
+72
+00:03:08,140 --> 00:03:09,440
+during the COVID era.
+
+73
+00:03:09,820 --> 00:03:13,420
+And, Tesla has
+its smart summon
+
+74
+00:03:13,420 --> 00:03:14,940
+feature that it
+introduced a year ago,
+
+75
+00:03:14,940 --> 00:03:16,140
+but sometimes it
+can barely make
+
+76
+00:03:16,140 --> 00:03:17,165
+it across the street.
+
+77
+00:03:17,325 --> 00:03:19,345
+Teslas have been
+known to drive
+
+78
+00:03:19,565 --> 00:03:20,865
+into stopped cars.
+
+79
+00:03:21,005 --> 00:03:23,025
+Two Teslas have
+driven underneath
+
+80
+00:03:23,085 --> 00:03:24,785
+semi trails, killing
+their drivers.
+
+81
+00:03:25,880 --> 00:03:27,580
+So there's actually
+a lot of problems.
+
+82
+00:03:29,000 --> 00:03:30,520
+It's important to realize that
+
+83
+00:03:30,520 --> 00:03:32,380
+when people talk
+about deep learning,
+
+84
+00:03:34,025 --> 00:03:35,885
+deep just means
+number of layers
+
+85
+00:03:36,105 --> 00:03:36,985
+in a neural network.
+
+86
+00:03:36,985 --> 00:03:38,445
+It doesn't mean deep
+understanding.
+
+87
+00:03:39,145 --> 00:03:41,840
+So if I train a deep learning
+
+88
+00:03:41,840 --> 00:03:43,440
+system on a bunch of pictures
+
+89
+00:03:43,440 --> 00:03:44,800
+of elephants, it
+might recognize
+
+90
+00:03:44,800 --> 00:03:45,680
+another elephant.
+
+91
+00:03:45,680 --> 00:03:47,360
+So if I give it
+all the pictures
+
+92
+00:03:47,360 --> 00:03:47,920
+on the top row,
+
+93
+00:03:47,920 --> 00:03:49,280
+it might recognize
+some on the bottom
+
+94
+00:03:49,280 --> 00:03:51,045
+row. But they're
+also very easy
+
+95
+00:03:51,045 --> 00:03:52,265
+to fool these systems.
+
+96
+00:03:52,645 --> 00:03:54,165
+So an example here,
+
+97
+00:03:54,165 --> 00:03:55,625
+there's a little delay here,
+
+98
+00:03:57,690 --> 00:04:00,250
+is if I show a deep learning
+
+99
+00:04:00,250 --> 00:04:01,790
+system a picture
+of an elephant
+
+100
+00:04:02,170 --> 00:04:03,150
+that is silhouetted,
+
+101
+00:04:03,690 --> 00:04:04,970
+deep learning
+system may actually
+
+102
+00:04:04,970 --> 00:04:06,430
+call that elephant a person.
+
+103
+00:04:06,575 --> 00:04:08,015
+So there's no
+deep understanding
+
+104
+00:04:08,015 --> 00:04:09,615
+of the fact that
+an elephant is
+
+105
+00:04:09,615 --> 00:04:11,775
+a creature with a trunk nor of
+
+106
+00:04:11,775 --> 00:04:13,555
+what a silhouette
+does to lighting.
+
+107
+00:04:13,990 --> 00:04:15,350
+There's just
+really recognition
+
+108
+00:04:15,350 --> 00:04:16,470
+of things like texture.
+
+109
+00:04:16,470 --> 00:04:18,330
+So it's actually
+very superficial
+
+110
+00:04:18,470 --> 00:04:21,690
+despite its, very,
+seductive name.
+
+111
+00:04:22,465 --> 00:04:23,665
+And there are lots of other
+
+112
+00:04:23,665 --> 00:04:24,465
+examples of that.
+
+113
+00:04:24,465 --> 00:04:25,745
+So on the left,
+
+114
+00:04:25,745 --> 00:04:27,265
+a deep learning
+system is looking
+
+115
+00:04:27,265 --> 00:04:29,185
+at a school bus
+that's overturned,
+
+116
+00:04:29,185 --> 00:04:30,545
+and it's saying
+with ninety two
+
+117
+00:04:30,545 --> 00:04:33,200
+percent confidence
+that that is
+
+118
+00:04:33,200 --> 00:04:34,880
+actually a snowplow,
+
+119
+00:04:34,880 --> 00:04:36,020
+and it's not a snowplow.
+
+120
+00:04:36,160 --> 00:04:37,200
+The deep learning system has
+
+121
+00:04:37,200 --> 00:04:38,640
+confused some of
+the texture of
+
+122
+00:04:38,640 --> 00:04:39,920
+the image, the,
+
+123
+00:04:40,845 --> 00:04:43,165
+the model gray and and dark
+
+124
+00:04:43,165 --> 00:04:45,265
+roads and and
+the the white snow,
+
+125
+00:04:45,325 --> 00:04:46,925
+and it's following the texture
+
+126
+00:04:46,925 --> 00:04:48,285
+rather than understanding what
+
+127
+00:04:48,285 --> 00:04:49,185
+the vehicle is.
+
+128
+00:04:49,590 --> 00:04:51,610
+The other example at the top
+
+129
+00:04:52,230 --> 00:04:55,430
+shows you an ex a baseball and
+
+130
+00:04:55,430 --> 00:04:56,970
+deep learning system
+is recognizing
+
+131
+00:04:57,110 --> 00:04:59,035
+it incorrectly as an espresso
+
+132
+00:04:59,035 --> 00:05:01,055
+because it's misled
+by the foam on top.
+
+133
+00:05:02,875 --> 00:05:04,395
+The one on the bottom
+is showing
+
+134
+00:05:04,395 --> 00:05:06,570
+a banana next to
+a kinda psychedelic
+
+135
+00:05:06,630 --> 00:05:07,750
+picture of a toaster,
+
+136
+00:05:07,750 --> 00:05:08,870
+and the deep learning system's
+
+137
+00:05:08,870 --> 00:05:10,630
+overwhelmed by the sticker and
+
+138
+00:05:10,630 --> 00:05:12,470
+thinks that it's
+seeing a toaster
+
+139
+00:05:12,470 --> 00:05:13,830
+rather than an actual banana.
+
+140
+00:05:13,830 --> 00:05:15,370
+So this stuff is very popular
+
+141
+00:05:15,445 --> 00:05:17,145
+and yet often very flawed.
+
+142
+00:05:17,525 --> 00:05:18,725
+It actually works pretty well
+
+143
+00:05:18,725 --> 00:05:19,705
+for face recognition.
+
+144
+00:05:19,765 --> 00:05:21,125
+So the system is gonna be able
+
+145
+00:05:21,125 --> 00:05:22,245
+to tell you
+the difference between
+
+146
+00:05:22,245 --> 00:05:23,750
+Tiger Woods and a golf ball,
+
+147
+00:05:23,830 --> 00:05:25,590
+and it does that
+by having a series
+
+148
+00:05:25,590 --> 00:05:26,950
+of so called neural
+network layers,
+
+149
+00:05:26,950 --> 00:05:28,630
+which I imagine most people in
+
+150
+00:05:28,630 --> 00:05:29,930
+the crowd have seen by now.
+
+151
+00:05:30,470 --> 00:05:31,190
+And, basically,
+
+152
+00:05:31,190 --> 00:05:32,470
+what you're doing
+is a big data
+
+153
+00:05:32,470 --> 00:05:34,775
+analysis that's
+leading to complex
+
+154
+00:05:35,075 --> 00:05:36,215
+statistical correlations.
+
+155
+00:05:37,155 --> 00:05:38,675
+Kinda works for
+space recognition,
+
+156
+00:05:38,675 --> 00:05:39,555
+although we know
+there are some
+
+157
+00:05:39,555 --> 00:05:40,375
+problems there.
+
+158
+00:05:40,435 --> 00:05:42,195
+It really doesn't
+work for things
+
+159
+00:05:42,195 --> 00:05:43,335
+like reasoning and language
+
+160
+00:05:44,500 --> 00:05:46,340
+understanding.
+So we get things
+
+161
+00:05:46,580 --> 00:05:48,260
+we get promised things sorry.
+
+162
+00:05:48,260 --> 00:05:49,560
+There's a delay here again.
+
+163
+00:05:51,545 --> 00:05:53,305
+We get promised things like
+
+164
+00:05:53,305 --> 00:05:54,905
+Facebook's m, which people may
+
+165
+00:05:54,905 --> 00:05:56,685
+not even remember
+five years ago.
+
+166
+00:05:56,905 --> 00:05:58,745
+It was supposed to be a very
+
+167
+00:05:58,745 --> 00:05:59,865
+intelligent chatbot.
+
+168
+00:05:59,865 --> 00:06:01,490
+And then three years later or
+
+169
+00:06:01,490 --> 00:06:02,610
+two years later, forget,
+
+170
+00:06:02,610 --> 00:06:04,230
+three years later,
+it just disappeared.
+
+171
+00:06:04,290 --> 00:06:05,270
+Never came out.
+
+172
+00:06:05,490 --> 00:06:06,850
+The idea was they
+would take a lot
+
+173
+00:06:06,850 --> 00:06:09,250
+of big data from people using
+
+174
+00:06:09,250 --> 00:06:11,135
+an intelligent assistant and
+
+175
+00:06:11,135 --> 00:06:12,575
+then pour it into
+a deep learning
+
+176
+00:06:12,575 --> 00:06:15,055
+system and out would
+become a assistant
+
+177
+00:06:15,055 --> 00:06:16,575
+that was much more
+powerful than Siri.
+
+178
+00:06:16,575 --> 00:06:17,555
+It never happened.
+
+179
+00:06:18,370 --> 00:06:19,570
+The thing that most people are
+
+180
+00:06:19,570 --> 00:06:21,110
+talking about nowadays is GPT
+
+181
+00:06:21,170 --> 00:06:22,550
+two and GPT three.
+
+182
+00:06:24,050 --> 00:06:26,050
+I have on the left
+one of the first
+
+183
+00:06:26,050 --> 00:06:27,645
+bits of hype I saw about it
+
+184
+00:06:27,885 --> 00:06:29,585
+where The Economist allegedly
+
+185
+00:06:30,125 --> 00:06:33,265
+ran an interview
+with GPT two,
+
+186
+00:06:33,805 --> 00:06:36,685
+and, the system looked
+very impressive.
+
+187
+00:06:36,685 --> 00:06:38,830
+So the economist would ask
+
+188
+00:06:38,830 --> 00:06:39,550
+questions like,
+
+189
+00:06:39,550 --> 00:06:40,750
+which technologies are worth
+
+190
+00:06:40,750 --> 00:06:41,970
+watching in twenty twenty?
+
+191
+00:06:42,190 --> 00:06:43,070
+And the system says,
+
+192
+00:06:43,070 --> 00:06:44,190
+I would say it's
+hard to narrow
+
+193
+00:06:44,190 --> 00:06:45,765
+down the list. It seems very
+
+194
+00:06:45,765 --> 00:06:47,045
+grammatical, but
+what they didn't
+
+195
+00:06:47,045 --> 00:06:48,565
+tell you is they
+actually cherry
+
+196
+00:06:48,565 --> 00:06:49,865
+picked the best answers.
+
+197
+00:06:50,805 --> 00:06:52,085
+Humans cherry picked the best
+
+198
+00:06:52,085 --> 00:06:53,650
+answers that produced
+by a machine.
+
+199
+00:06:53,650 --> 00:06:55,030
+A lot of them were
+actually incoherent.
+
+200
+00:06:55,490 --> 00:06:57,810
+When I tested the system more
+
+201
+00:06:57,810 --> 00:06:59,750
+systematically, I
+found things like,
+
+202
+00:06:59,810 --> 00:07:01,250
+you tell it so it works by
+
+203
+00:07:01,250 --> 00:07:02,070
+sentence completion.
+
+204
+00:07:02,325 --> 00:07:03,605
+The stuff in bold here,
+
+205
+00:07:03,605 --> 00:07:04,805
+I would tell the computer and
+
+206
+00:07:04,805 --> 00:07:06,325
+then it would proceed.
+
+207
+00:07:06,325 --> 00:07:07,685
+I'd say water
+bottle breaks and
+
+208
+00:07:07,685 --> 00:07:09,465
+all the water comes
+out leaving roughly,
+
+209
+00:07:09,700 --> 00:07:11,460
+and the system
+continues six to
+
+210
+00:07:11,460 --> 00:07:12,900
+eight drops of beer.
+
+211
+00:07:12,900 --> 00:07:13,260
+Well, obviously,
+
+212
+00:07:13,260 --> 00:07:14,660
+it doesn't understand
+what a water
+
+213
+00:07:14,660 --> 00:07:16,420
+bottle is. I came
+up with another
+
+214
+00:07:16,420 --> 00:07:18,995
+example. If you
+drink hydrochloric
+
+215
+00:07:19,135 --> 00:07:20,175
+acid by the bottle full,
+
+216
+00:07:20,175 --> 00:07:21,075
+you will probably,
+
+217
+00:07:21,215 --> 00:07:22,255
+and the system continues,
+
+218
+00:07:22,255 --> 00:07:23,775
+get sick of it
+fast if you just
+
+219
+00:07:23,775 --> 00:07:24,735
+try to drink the bottle full.
+
+220
+00:07:24,735 --> 00:07:25,775
+You must either take a long
+
+221
+00:07:25,775 --> 00:07:26,815
+break or drink a lot of water
+
+222
+00:07:26,815 --> 00:07:28,640
+immediately. The system has no
+
+223
+00:07:28,640 --> 00:07:30,340
+idea what's
+actually going on.
+
+224
+00:07:30,400 --> 00:07:31,760
+It talks fluidly because it's
+
+225
+00:07:31,760 --> 00:07:33,140
+basically cutting and pasting
+
+226
+00:07:33,440 --> 00:07:35,085
+at some level. I'm simplifying
+
+227
+00:07:35,085 --> 00:07:36,285
+a little bit, but cutting and
+
+228
+00:07:36,285 --> 00:07:38,045
+pasting text from
+what a lot of
+
+229
+00:07:38,045 --> 00:07:39,005
+humans have used.
+
+230
+00:07:39,005 --> 00:07:40,465
+So I criticize the system,
+
+231
+00:07:40,685 --> 00:07:42,205
+and this was about,
+I don't know,
+
+232
+00:07:42,205 --> 00:07:42,685
+eight months ago.
+
+233
+00:07:42,685 --> 00:07:44,780
+And then they produced
+other versions.
+
+234
+00:07:45,400 --> 00:07:46,940
+Sorry. One more slide.
+
+235
+00:07:47,080 --> 00:07:49,000
+This reminded me of Eliza in
+
+236
+00:07:49,000 --> 00:07:51,180
+nineteen sixty five
+or sixty six,
+
+237
+00:07:51,765 --> 00:07:52,885
+which I hope all of you have
+
+238
+00:07:52,885 --> 00:07:54,485
+seen before, which
+was the first
+
+239
+00:07:54,485 --> 00:07:56,645
+chatbot. And you would
+talk to and say,
+
+240
+00:07:56,645 --> 00:07:57,685
+is something troubling you?
+
+241
+00:07:57,685 --> 00:07:59,840
+And you might say,
+men are all alike,
+
+242
+00:07:59,840 --> 00:08:01,440
+and then the system,
+Eliza, would say,
+
+243
+00:08:01,440 --> 00:08:03,060
+what's the connection
+you suppose?
+
+244
+00:08:03,200 --> 00:08:04,400
+And it gave the illusion to
+
+245
+00:08:04,400 --> 00:08:06,405
+human beings, almost
+like a magic trick,
+
+246
+00:08:06,485 --> 00:08:07,925
+that it understood
+what was going on.
+
+247
+00:08:07,925 --> 00:08:09,365
+But if if you would follow it
+
+248
+00:08:09,365 --> 00:08:10,085
+for a few sentences,
+
+249
+00:08:10,085 --> 00:08:11,625
+you'd discover that it's not.
+
+250
+00:08:12,165 --> 00:08:13,605
+GPT is really the same.
+
+251
+00:08:13,605 --> 00:08:15,305
+So now we have GPT three,
+
+252
+00:08:16,990 --> 00:08:18,990
+and it has four hundred fifty
+
+253
+00:08:18,990 --> 00:08:20,350
+terabytes of input data,
+
+254
+00:08:20,350 --> 00:08:21,870
+which is an astonishing
+amount,
+
+255
+00:08:21,870 --> 00:08:23,230
+but you still have
+the same problem.
+
+256
+00:08:23,230 --> 00:08:24,290
+So here's an example.
+
+257
+00:08:24,615 --> 00:08:26,135
+The blue is the response from
+
+258
+00:08:26,135 --> 00:08:28,135
+g p t three to something that
+
+259
+00:08:28,135 --> 00:08:29,335
+Ernie Davis and I,
+
+260
+00:08:29,575 --> 00:08:31,115
+put to it in in August.
+
+261
+00:08:31,895 --> 00:08:33,640
+You pour yourself a glass of
+
+262
+00:08:33,640 --> 00:08:34,200
+cranberry juice,
+
+263
+00:08:34,200 --> 00:08:35,500
+but then you absolutely mindly
+
+264
+00:08:35,560 --> 00:08:37,000
+poured a teaspoon
+of grape juice
+
+265
+00:08:37,000 --> 00:08:38,040
+into it. It looks okay.
+
+266
+00:08:38,040 --> 00:08:39,260
+You try sniffing it,
+
+267
+00:08:39,320 --> 00:08:40,440
+but you have a bad cold.
+
+268
+00:08:40,440 --> 00:08:41,400
+You can't smell anything.
+
+269
+00:08:41,400 --> 00:08:42,300
+You're very thirsty.
+
+270
+00:08:42,495 --> 00:08:44,255
+And what does GPT
+continue with?
+
+271
+00:08:44,255 --> 00:08:45,535
+It says, so you drink it and
+
+272
+00:08:45,535 --> 00:08:46,495
+you're now dead.
+
+273
+00:08:46,495 --> 00:08:47,855
+Now there's a lot of data on
+
+274
+00:08:47,855 --> 00:08:49,135
+the web to tell
+you that you can
+
+275
+00:08:49,135 --> 00:08:51,235
+actually combine
+cranberry juice
+
+276
+00:08:51,455 --> 00:08:52,355
+and grape juice.
+
+277
+00:08:52,400 --> 00:08:54,400
+In fact, there's a commercial
+
+278
+00:08:54,400 --> 00:08:55,760
+product called cran grape,
+
+279
+00:08:56,000 --> 00:08:57,140
+from Ocean Spray.
+
+280
+00:08:57,200 --> 00:08:58,640
+This is actually
+perfectly fine
+
+281
+00:08:58,640 --> 00:09:00,275
+to drink. There's
+data there to
+
+282
+00:09:00,275 --> 00:09:01,155
+tell you is there,
+
+283
+00:09:01,155 --> 00:09:02,515
+but the system
+doesn't actually
+
+284
+00:09:02,515 --> 00:09:04,755
+have a concept of
+toxicity, of a drink,
+
+285
+00:09:04,755 --> 00:09:05,975
+of pouring, of anything.
+
+286
+00:09:06,275 --> 00:09:07,955
+It's all basically just a big
+
+287
+00:09:07,955 --> 00:09:09,690
+parlor trick. And yet,
+
+288
+00:09:09,690 --> 00:09:11,390
+you still see things
+like the times
+
+289
+00:09:11,530 --> 00:09:13,370
+earlier this week
+extolling how
+
+290
+00:09:13,370 --> 00:09:15,150
+great it is. It's
+really not that great.
+
+291
+00:09:15,610 --> 00:09:16,890
+The times ran some stories,
+
+292
+00:09:16,890 --> 00:09:18,815
+and if you they were
+generated by it.
+
+293
+00:09:18,815 --> 00:09:20,095
+And some of them
+are really weird.
+
+294
+00:09:20,095 --> 00:09:21,215
+Like, one of them ends.
+
+295
+00:09:21,215 --> 00:09:22,495
+We went out for
+dinner and drinks
+
+296
+00:09:22,495 --> 00:09:23,695
+and dinner and
+drinks and dinner
+
+297
+00:09:23,695 --> 00:09:25,215
+and drinks. I won't use up all
+
+298
+00:09:25,215 --> 00:09:26,890
+my time to read
+the entire thing,
+
+299
+00:09:26,890 --> 00:09:28,810
+but there's clearly
+not something
+
+300
+00:09:28,810 --> 00:09:29,950
+not working very well.
+
+301
+00:09:31,130 --> 00:09:32,570
+There are always
+gonna be examples
+
+302
+00:09:32,570 --> 00:09:34,705
+like on the left where AI is
+
+303
+00:09:34,865 --> 00:09:36,565
+created by the system,
+by OpenAI,
+
+304
+00:09:36,945 --> 00:09:37,905
+seem to work very well.
+
+305
+00:09:37,905 --> 00:09:39,345
+So there's
+an appointment system
+
+306
+00:09:39,345 --> 00:09:40,785
+on the left. And
+then there are
+
+307
+00:09:40,785 --> 00:09:42,865
+uses of it that are
+actually deadly.
+
+308
+00:09:42,865 --> 00:09:44,065
+So somebody tried to turn it
+
+309
+00:09:44,065 --> 00:09:46,270
+into a suicide
+prevention system,
+
+310
+00:09:46,270 --> 00:09:48,190
+and we got, hey.
+I feel very bad.
+
+311
+00:09:48,190 --> 00:09:49,330
+I wanna kill myself.
+
+312
+00:09:49,630 --> 00:09:51,310
+And GPT three responds,
+
+313
+00:09:51,310 --> 00:09:52,190
+I'm sorry to hear that.
+
+314
+00:09:52,190 --> 00:09:53,725
+Can I, I can help
+you with that?
+
+315
+00:09:53,725 --> 00:09:54,605
+And then the person says,
+
+316
+00:09:54,605 --> 00:09:55,645
+should I kill myself?
+
+317
+00:09:55,645 --> 00:09:56,925
+And g p t three says,
+
+318
+00:09:56,925 --> 00:09:57,965
+I think you should.
+
+319
+00:09:57,965 --> 00:09:58,605
+Well, obviously,
+
+320
+00:09:58,605 --> 00:09:59,965
+we don't wanna
+trust the system
+
+321
+00:09:59,965 --> 00:10:01,645
+like this in a real world kind
+
+322
+00:10:01,645 --> 00:10:02,225
+of situation.
+
+323
+00:10:04,010 --> 00:10:06,030
+So I'm reminded
+of a cover of a,
+
+324
+00:10:06,410 --> 00:10:09,470
+cartoonist that I,
+used to really enjoy.
+
+325
+00:10:10,235 --> 00:10:12,075
+Doonesbury, had a book called
+
+326
+00:10:12,075 --> 00:10:13,435
+Still a Few Bugs
+in the System.
+
+327
+00:10:13,435 --> 00:10:14,475
+And I think that's a fair way
+
+328
+00:10:14,475 --> 00:10:18,120
+to describe what's
+going on. Oops.
+
+329
+00:10:18,120 --> 00:10:21,020
+Yeah. We have a slight
+problem now.
+
+330
+00:10:21,640 --> 00:10:22,840
+Waiting for the okay.
+
+331
+00:10:23,240 --> 00:10:24,920
+The reality is
+that deep learning
+
+332
+00:10:24,920 --> 00:10:26,895
+works best in a regime of big
+
+333
+00:10:26,895 --> 00:10:29,055
+data and worse with
+unusual cases.
+
+334
+00:10:29,055 --> 00:10:31,155
+So if you have
+a lot of pictures
+
+335
+00:10:31,695 --> 00:10:33,295
+of children playing
+Frisbee and
+
+336
+00:10:33,295 --> 00:10:34,880
+then you have
+the system label it,
+
+337
+00:10:34,960 --> 00:10:36,080
+it might tell you
+that there are
+
+338
+00:10:36,080 --> 00:10:37,040
+children playing Frisbee.
+
+339
+00:10:37,040 --> 00:10:38,340
+But if you do
+something unusual,
+
+340
+00:10:38,720 --> 00:10:39,680
+it's still important,
+
+341
+00:10:39,680 --> 00:10:40,800
+you don't have a lot of data,
+
+342
+00:10:40,800 --> 00:10:41,920
+then deep learning really just
+
+343
+00:10:41,920 --> 00:10:43,120
+doesn't work very
+well with that
+
+344
+00:10:43,120 --> 00:10:43,940
+kind of system.
+
+345
+00:10:45,045 --> 00:10:47,445
+Here's an example
+that I can fix
+
+346
+00:10:47,445 --> 00:10:49,125
+up from that.
+Venture capitalist
+
+347
+00:10:49,125 --> 00:10:51,365
+Benedict Evan posted the tweet
+
+348
+00:10:51,365 --> 00:10:52,580
+on the left. He said,
+
+349
+00:10:52,580 --> 00:10:54,020
+this is why we
+train autonomous
+
+350
+00:10:54,020 --> 00:10:55,620
+cars in San Francisco because
+
+351
+00:10:55,620 --> 00:10:57,460
+it lets you look
+at the long tail.
+
+352
+00:10:57,460 --> 00:10:59,000
+So there aren't a lot of cars
+
+353
+00:10:59,140 --> 00:11:00,395
+with stickers on it.
+
+354
+00:11:00,715 --> 00:11:01,375
+But then,
+
+355
+00:11:02,075 --> 00:11:04,335
+my friend David fed this into
+
+356
+00:11:04,635 --> 00:11:06,015
+an ImageNet classifier,
+
+357
+00:11:06,075 --> 00:11:07,375
+one of these deep
+learning systems,
+
+358
+00:11:07,490 --> 00:11:09,570
+and out came
+Flamingo, Griffin,
+
+359
+00:11:09,570 --> 00:11:11,010
+photocopier, shopping cart,
+
+360
+00:11:11,010 --> 00:11:12,070
+and coral fungus.
+
+361
+00:11:12,450 --> 00:11:15,090
+So these systems really just
+
+362
+00:11:15,090 --> 00:11:16,495
+cannot be counted on.
+
+363
+00:11:16,655 --> 00:11:18,575
+And the particular problem is
+
+364
+00:11:18,575 --> 00:11:20,175
+is really when you have small
+
+365
+00:11:20,175 --> 00:11:21,155
+amounts of data.
+
+366
+00:11:22,815 --> 00:11:24,680
+The way I would put it is that
+
+367
+00:11:24,680 --> 00:11:26,300
+deep learning is
+a better ladder,
+
+368
+00:11:26,680 --> 00:11:27,880
+but a better ladder doesn't
+
+369
+00:11:27,880 --> 00:11:29,480
+necessarily get
+you to the moon.
+
+370
+00:11:29,480 --> 00:11:30,600
+This is what I've been arguing
+
+371
+00:11:30,600 --> 00:11:31,800
+since two thousand
+and twelve,
+
+372
+00:11:31,800 --> 00:11:32,860
+and I stand by.
+
+373
+00:11:34,445 --> 00:11:36,045
+So what what are
+we going to do
+
+374
+00:11:36,045 --> 00:11:36,785
+about that?
+
+375
+00:11:38,205 --> 00:11:39,405
+I've recently written a book
+
+376
+00:11:39,405 --> 00:11:40,845
+called Rebooting AI with Ernie
+
+377
+00:11:40,845 --> 00:11:43,050
+Davis and an article that you
+
+378
+00:11:43,050 --> 00:11:44,090
+can look at for
+free called The
+
+379
+00:11:44,090 --> 00:11:45,310
+Next Decade in AI,
+
+380
+00:11:45,530 --> 00:11:46,730
+four steps towards robust
+
+381
+00:11:46,730 --> 00:11:47,710
+artificial intelligence.
+
+382
+00:11:48,250 --> 00:11:49,370
+The article's
+a little bit more
+
+383
+00:11:49,370 --> 00:11:50,510
+technical than the book.
+
+384
+00:11:50,775 --> 00:11:52,295
+The argument is that to get to
+
+385
+00:11:52,295 --> 00:11:52,935
+the next level,
+
+386
+00:11:52,935 --> 00:11:54,455
+we're gonna have to move past
+
+387
+00:11:54,455 --> 00:11:56,055
+tabula rasa, which is to say
+
+388
+00:11:56,055 --> 00:11:57,415
+blank slate deep learning,
+
+389
+00:11:57,415 --> 00:11:58,695
+which is the thing
+that is popular,
+
+390
+00:11:58,695 --> 00:11:59,655
+but it's not really getting
+
+391
+00:11:59,655 --> 00:12:00,510
+the job done.
+
+392
+00:12:01,470 --> 00:12:02,830
+So this doesn't mean that we
+
+393
+00:12:02,830 --> 00:12:04,510
+have to completely toss deep
+
+394
+00:12:04,510 --> 00:12:06,750
+learning and just
+not use it at all.
+
+395
+00:12:06,750 --> 00:12:08,775
+I'm not arguing that
+it's not useful,
+
+396
+00:12:08,775 --> 00:12:10,055
+but I think it means that we
+
+397
+00:12:10,055 --> 00:12:11,575
+need to find ways
+to supplement it.
+
+398
+00:12:11,575 --> 00:12:12,695
+So I tried to be clear about
+
+399
+00:12:12,695 --> 00:12:14,055
+this over and over again.
+
+400
+00:12:14,055 --> 00:12:14,715
+I'm usually,
+
+401
+00:12:16,100 --> 00:12:18,740
+straw man by by those
+who I criticize.
+
+402
+00:12:18,740 --> 00:12:19,300
+They say, well,
+
+403
+00:12:19,300 --> 00:12:20,420
+Marcus is saying we should get
+
+404
+00:12:20,420 --> 00:12:21,380
+rid of deep learning.
+
+405
+00:12:21,380 --> 00:12:22,420
+That's not what I'm saying.
+
+406
+00:12:22,420 --> 00:12:24,045
+In fact, the paper
+where I first
+
+407
+00:12:24,045 --> 00:12:25,325
+really laid out my critique of
+
+408
+00:12:25,325 --> 00:12:26,845
+deep learning
+in-depth, I said,
+
+409
+00:12:26,845 --> 00:12:28,205
+despite all of
+the problems I've
+
+410
+00:12:28,205 --> 00:12:29,165
+sketched, I don't
+think we need
+
+411
+00:12:29,165 --> 00:12:30,385
+to abandon deep learning.
+
+412
+00:12:30,560 --> 00:12:32,400
+Rather, we need to
+reconceptualize it.
+
+413
+00:12:32,400 --> 00:12:34,000
+Not as a universal solvent,
+
+414
+00:12:34,000 --> 00:12:35,940
+but as simply one
+tool among many.
+
+415
+00:12:36,000 --> 00:12:37,600
+It works very well
+for perception.
+
+416
+00:12:37,600 --> 00:12:38,660
+We have to be realistic,
+
+417
+00:12:38,845 --> 00:12:40,045
+that it doesn't
+work as well for
+
+418
+00:12:40,045 --> 00:12:42,305
+common sense, for
+planning, analogy,
+
+419
+00:12:42,765 --> 00:12:43,725
+language, reasoning,
+
+420
+00:12:43,725 --> 00:12:44,705
+and things like that.
+
+421
+00:12:46,120 --> 00:12:48,200
+In fact, a good
+thing to realize
+
+422
+00:12:48,200 --> 00:12:50,280
+and to remind ourselves of is
+
+423
+00:12:50,280 --> 00:12:51,400
+artificial intelligence is
+
+424
+00:12:51,400 --> 00:12:53,420
+actually not one
+technique but many.
+
+425
+00:12:53,585 --> 00:12:55,105
+Deep learning is an example of
+
+426
+00:12:55,105 --> 00:12:56,705
+something called
+machine learning,
+
+427
+00:12:56,705 --> 00:12:57,905
+where we get
+machines to try to
+
+428
+00:12:57,905 --> 00:12:59,105
+learn things. And
+there are other,
+
+429
+00:12:59,425 --> 00:13:00,065
+approaches to it,
+
+430
+00:13:00,065 --> 00:13:01,345
+like probabilistic
+learning and
+
+431
+00:13:01,345 --> 00:13:02,325
+genetic algorithms.
+
+432
+00:13:02,620 --> 00:13:04,060
+And then there's a much larger
+
+433
+00:13:04,060 --> 00:13:05,420
+field of
+artificial intelligence
+
+434
+00:13:05,420 --> 00:13:07,340
+that focus on excuse me.
+
+435
+00:13:07,340 --> 00:13:08,700
+Focusing on things
+like planning,
+
+436
+00:13:08,700 --> 00:13:09,680
+reasoning, search,
+
+437
+00:13:09,875 --> 00:13:10,935
+and knowledge representation.
+
+438
+00:13:11,075 --> 00:13:12,115
+And, of course, at
+this conference,
+
+439
+00:13:12,115 --> 00:13:13,875
+people know, a fair bit about
+
+440
+00:13:13,875 --> 00:13:14,695
+knowledge representation.
+
+441
+00:13:16,915 --> 00:13:18,275
+We have to take deep learning
+
+442
+00:13:18,275 --> 00:13:18,935
+in context.
+
+443
+00:13:20,180 --> 00:13:21,300
+So one of the things I've been
+
+444
+00:13:21,300 --> 00:13:22,980
+arguing for for many,
+
+445
+00:13:22,980 --> 00:13:24,900
+many years is
+a hybrid approach.
+
+446
+00:13:24,900 --> 00:13:26,260
+So I don't think we can get to
+
+447
+00:13:26,260 --> 00:13:27,560
+AI that we can trust,
+
+448
+00:13:28,405 --> 00:13:29,925
+and trust in terms
+of is it safe
+
+449
+00:13:29,925 --> 00:13:32,245
+enough to drive our
+cars, to avoid bias,
+
+450
+00:13:32,245 --> 00:13:33,605
+and so forth by using deep
+
+451
+00:13:33,605 --> 00:13:34,425
+learning alone.
+
+452
+00:13:34,565 --> 00:13:36,005
+It's good for some
+kinds of learning,
+
+453
+00:13:36,005 --> 00:13:37,305
+but it's poor for
+abstraction.
+
+454
+00:13:37,910 --> 00:13:39,510
+And I don't think
+classical good
+
+455
+00:13:39,510 --> 00:13:40,310
+old fashioned AI,
+
+456
+00:13:40,310 --> 00:13:41,590
+as people sometimes call it,
+
+457
+00:13:41,590 --> 00:13:43,610
+is gonna get us to
+robust AI either.
+
+458
+00:13:43,670 --> 00:13:44,710
+It's good for abstraction,
+
+459
+00:13:44,710 --> 00:13:45,510
+but poor for learning.
+
+460
+00:13:45,510 --> 00:13:46,885
+So what we're
+really gonna need
+
+461
+00:13:46,965 --> 00:13:48,165
+are hybrid models that bring
+
+462
+00:13:48,165 --> 00:13:49,545
+together the two traditions.
+
+463
+00:13:53,365 --> 00:13:54,725
+Some of you may know Daniel
+
+464
+00:13:54,725 --> 00:13:56,745
+Kahneman's Thinking
+Fast and Slow.
+
+465
+00:13:58,710 --> 00:14:00,650
+Oops. Again, a slide
+delay issue.
+
+466
+00:14:01,350 --> 00:14:02,950
+Daniel Kahneman's
+Thinking Fast
+
+467
+00:14:02,950 --> 00:14:04,635
+and Slow is a really
+good example
+
+468
+00:14:04,635 --> 00:14:05,995
+of one hybrid model,
+
+469
+00:14:05,995 --> 00:14:07,195
+which is the human mind.
+
+470
+00:14:07,195 --> 00:14:09,375
+The human mind has reflexive
+
+471
+00:14:09,435 --> 00:14:10,955
+systems that work
+by reflex very
+
+472
+00:14:10,955 --> 00:14:12,330
+quickly, and then deliberative
+
+473
+00:14:12,330 --> 00:14:13,610
+systems that work
+more slowly,
+
+474
+00:14:13,610 --> 00:14:14,590
+and they work together.
+
+475
+00:14:14,970 --> 00:14:16,090
+Marvin Minsky's book,
+
+476
+00:14:16,090 --> 00:14:17,130
+The Society of Minds,
+
+477
+00:14:17,130 --> 00:14:18,650
+is about how we might actually
+
+478
+00:14:18,650 --> 00:14:20,615
+have hundreds of
+agents in our head,
+
+479
+00:14:21,095 --> 00:14:22,295
+that are essentially a large
+
+480
+00:14:22,295 --> 00:14:23,995
+hybrid working together.
+
+481
+00:14:24,455 --> 00:14:25,495
+And Steve Pinker's book,
+
+482
+00:14:25,495 --> 00:14:26,135
+Words and Rules,
+
+483
+00:14:26,135 --> 00:14:27,655
+which is in part
+about my graduate
+
+484
+00:14:27,655 --> 00:14:29,900
+thesis work, is about how one
+
+485
+00:14:29,900 --> 00:14:31,760
+microcosm of human cognition,
+
+486
+00:14:31,820 --> 00:14:33,340
+namely how we form the past
+
+487
+00:14:33,340 --> 00:14:34,240
+tense of verbs,
+
+488
+00:14:34,460 --> 00:14:36,000
+itself looks like a hybrid.
+
+489
+00:14:37,555 --> 00:14:39,155
+The Achilles' heel
+of a traditional
+
+490
+00:14:39,155 --> 00:14:40,035
+neural networks,
+
+491
+00:14:40,035 --> 00:14:41,395
+and some people
+will follow this
+
+492
+00:14:41,395 --> 00:14:42,195
+and some won't.
+
+493
+00:14:42,195 --> 00:14:42,935
+It's okay,
+
+494
+00:14:43,795 --> 00:14:45,590
+is that they can generalize to
+
+495
+00:14:45,590 --> 00:14:46,790
+examples that are similar to
+
+496
+00:14:46,790 --> 00:14:48,010
+ones they've seen before,
+
+497
+00:14:48,070 --> 00:14:49,610
+but they're very
+poor at extrapolate
+
+498
+00:14:49,990 --> 00:14:51,690
+extrapolating beyond
+those examples.
+
+499
+00:14:51,965 --> 00:14:53,485
+I laid this argument out in
+
+500
+00:14:53,485 --> 00:14:54,925
+the book out
+the algebraic mind
+
+501
+00:14:54,925 --> 00:14:56,125
+in two thousand and one.
+
+502
+00:14:56,125 --> 00:14:57,565
+And recently, Joshua Bengio,
+
+503
+00:14:57,565 --> 00:14:59,005
+one of the leaders
+of deep learning,
+
+504
+00:14:59,005 --> 00:15:00,625
+has been making
+a similar argument.
+
+505
+00:15:01,930 --> 00:15:03,930
+So in in
+the illustration here,
+
+506
+00:15:03,930 --> 00:15:05,450
+I'm showing how
+you could learn
+
+507
+00:15:05,450 --> 00:15:06,650
+a simple function like make
+
+508
+00:15:06,650 --> 00:15:08,270
+the input the same
+as the output.
+
+509
+00:15:08,410 --> 00:15:09,930
+And a deep learning
+system will
+
+510
+00:15:09,930 --> 00:15:12,685
+do well on cases that are near
+
+511
+00:15:12,685 --> 00:15:13,885
+the green cases.
+
+512
+00:15:13,885 --> 00:15:15,645
+But if you go to other cases
+
+513
+00:15:15,645 --> 00:15:18,065
+that are different,
+it will fall apart.
+
+514
+00:15:20,640 --> 00:15:23,040
+So a bit of classical AI can
+
+515
+00:15:23,040 --> 00:15:24,320
+actually be very
+helpful here,
+
+516
+00:15:24,320 --> 00:15:26,080
+which is the machinery
+of symbol
+
+517
+00:15:26,080 --> 00:15:27,280
+manipulation, where you have
+
+518
+00:15:27,280 --> 00:15:29,275
+things like variables,
+instances,
+
+519
+00:15:29,275 --> 00:15:31,275
+and bindings, and operations
+
+520
+00:15:31,275 --> 00:15:32,475
+over those variables
+that you'd
+
+521
+00:15:32,475 --> 00:15:34,155
+recognize from grade
+school algebra.
+
+522
+00:15:34,155 --> 00:15:35,615
+So x is a variable.
+
+523
+00:15:35,830 --> 00:15:37,150
+Three might be
+the instance that
+
+524
+00:15:37,150 --> 00:15:37,830
+it has right now.
+
+525
+00:15:37,830 --> 00:15:39,430
+And you're saying
+x equals three,
+
+526
+00:15:39,430 --> 00:15:40,470
+and then you can do something
+
+527
+00:15:40,470 --> 00:15:41,990
+like addition over that.
+
+528
+00:15:41,990 --> 00:15:43,510
+You see these in computer
+
+529
+00:15:43,510 --> 00:15:45,165
+languages going back
+to, for example,
+
+530
+00:15:45,165 --> 00:15:46,045
+Lisp, but in fact,
+
+531
+00:15:46,045 --> 00:15:47,905
+all computer
+programming languages.
+
+532
+00:15:48,125 --> 00:15:49,565
+And the virtue of variables is
+
+533
+00:15:49,565 --> 00:15:50,705
+get open ended
+generalization.
+
+534
+00:15:50,845 --> 00:15:52,865
+So if I say y equals
+x plus three,
+
+535
+00:15:52,980 --> 00:15:54,660
+you can try filling
+in x as two
+
+536
+00:15:54,660 --> 00:15:55,940
+or three, but you can also put
+
+537
+00:15:55,940 --> 00:15:57,700
+in x as a million or a billion
+
+538
+00:15:57,700 --> 00:15:59,220
+or whatever. Doesn't matter if
+
+539
+00:15:59,220 --> 00:16:00,500
+it's something that
+you've seen before.
+
+540
+00:16:00,500 --> 00:16:01,955
+You free to generalize it.
+
+541
+00:16:02,355 --> 00:16:04,135
+And this in turn
+makes possible
+
+542
+00:16:04,195 --> 00:16:06,115
+complex structures
+such as trees
+
+543
+00:16:06,115 --> 00:16:07,235
+and graphs that I know are
+
+544
+00:16:07,235 --> 00:16:08,595
+important at this
+conference and
+
+545
+00:16:08,595 --> 00:16:10,115
+need to be more important than
+
+546
+00:16:10,115 --> 00:16:11,655
+contemporary artificial
+intelligence.
+
+547
+00:16:12,980 --> 00:16:14,340
+And part of that
+is because a lot
+
+548
+00:16:14,340 --> 00:16:15,540
+of what we know
+about the world
+
+549
+00:16:15,540 --> 00:16:16,180
+is very general.
+
+550
+00:16:16,180 --> 00:16:17,220
+So you know that if you break
+
+551
+00:16:17,220 --> 00:16:19,060
+a bottle that
+contains a liquid,
+
+552
+00:16:19,060 --> 00:16:20,260
+some of that liquid will other
+
+553
+00:16:20,260 --> 00:16:20,980
+things be equal,
+
+554
+00:16:20,980 --> 00:16:22,285
+probably escape the bottle.
+
+555
+00:16:22,585 --> 00:16:24,345
+And you can tell that even if
+
+556
+00:16:24,345 --> 00:16:26,025
+you see some new bottle that's
+
+557
+00:16:26,025 --> 00:16:27,385
+shaped like a teddy bear or
+
+558
+00:16:27,385 --> 00:16:28,665
+whether it's holding a liquid
+
+559
+00:16:28,665 --> 00:16:29,805
+you haven't seen before.
+
+560
+00:16:29,970 --> 00:16:31,330
+And pure deep learning systems
+
+561
+00:16:31,330 --> 00:16:33,670
+like GPT are pretty unreliable
+
+562
+00:16:33,890 --> 00:16:34,930
+with knowledge like this.
+
+563
+00:16:34,930 --> 00:16:36,690
+So I typed into GPT two.
+
+564
+00:16:36,690 --> 00:16:38,470
+If you break a glass
+bottle of water,
+
+565
+00:16:38,615 --> 00:16:39,175
+what does it say?
+
+566
+00:16:39,175 --> 00:16:40,375
+The water will probably roll.
+
+567
+00:16:40,375 --> 00:16:41,755
+That's not quite
+really right.
+
+568
+00:16:42,135 --> 00:16:43,735
+If you break
+a glass bottle that
+
+569
+00:16:43,735 --> 00:16:44,695
+holds toy soldiers, well,
+
+570
+00:16:44,695 --> 00:16:45,815
+you know that the toy soldiers
+
+571
+00:16:45,815 --> 00:16:46,600
+are gonna fall out.
+
+572
+00:16:46,680 --> 00:16:48,280
+But GPT says the toy soldiers
+
+573
+00:16:48,280 --> 00:16:49,800
+will probably follow it follow
+
+574
+00:16:49,800 --> 00:16:51,080
+you in there, which makes no
+
+575
+00:16:51,080 --> 00:16:52,600
+sense at all.
+There's no actual
+
+576
+00:16:52,600 --> 00:16:54,440
+concept of a bottle or soldier
+
+577
+00:16:54,440 --> 00:16:55,225
+or anything like that.
+
+578
+00:16:55,225 --> 00:16:56,605
+Again, it's just an illusion
+
+579
+00:16:56,745 --> 00:16:58,265
+that a lot of people have been
+
+580
+00:16:58,265 --> 00:16:59,805
+fooled by, but it's not real.
+
+581
+00:17:00,825 --> 00:17:02,425
+Without common
+sense knowledge,
+
+582
+00:17:02,425 --> 00:17:03,945
+things like robots
+are a disaster.
+
+583
+00:17:03,945 --> 00:17:05,870
+So you think Roomba, you,
+
+584
+00:17:06,650 --> 00:17:08,170
+send it near dog waste that
+
+585
+00:17:08,170 --> 00:17:09,290
+doesn't have any
+knowledge about
+
+586
+00:17:09,290 --> 00:17:10,970
+what that is. It
+ends up spreading
+
+587
+00:17:10,970 --> 00:17:12,250
+it all around like the Jackson
+
+588
+00:17:12,250 --> 00:17:12,890
+Pollock painting.
+
+589
+00:17:12,890 --> 00:17:14,245
+In fact, there's now a word in
+
+590
+00:17:14,245 --> 00:17:15,205
+the English language called
+
+591
+00:17:15,205 --> 00:17:15,785
+the poopocalypse,
+
+592
+00:17:16,485 --> 00:17:17,845
+which is from rumors without
+
+593
+00:17:17,845 --> 00:17:19,285
+common sense to
+understand what's
+
+594
+00:17:19,285 --> 00:17:20,185
+going on there.
+
+595
+00:17:21,310 --> 00:17:22,910
+So the argument
+I would make is
+
+596
+00:17:22,910 --> 00:17:24,670
+that some small but critical
+
+597
+00:17:24,670 --> 00:17:26,190
+part of the knowledge
+that is,
+
+598
+00:17:27,310 --> 00:17:29,630
+in sorry. Some
+small but critical
+
+599
+00:17:29,630 --> 00:17:30,690
+part of our knowledge,
+
+600
+00:17:30,875 --> 00:17:32,235
+of our common sense knowledge
+
+601
+00:17:32,235 --> 00:17:33,535
+is likely to be innate.
+
+602
+00:17:33,755 --> 00:17:35,275
+And it's not just
+innate in humans,
+
+603
+00:17:35,275 --> 00:17:36,955
+but probably in
+AI as as well.
+
+604
+00:17:36,955 --> 00:17:39,035
+So this is a quote
+from Elizabeth
+
+605
+00:17:39,035 --> 00:17:40,560
+Spellky, the, kind
+of development
+
+606
+00:17:40,560 --> 00:17:42,480
+researcher at Harvard,
+who has said,
+
+607
+00:17:42,480 --> 00:17:44,260
+if children are
+innately endowed
+
+608
+00:17:44,400 --> 00:17:46,160
+with the abilities to
+perceive objects,
+
+609
+00:17:46,160 --> 00:17:47,280
+persons, sets, and places,
+
+610
+00:17:47,280 --> 00:17:48,740
+then they can use
+that experience
+
+611
+00:17:48,965 --> 00:17:50,105
+to learn about the properties
+
+612
+00:17:50,165 --> 00:17:51,705
+and behaviors of
+such entities.
+
+613
+00:17:51,845 --> 00:17:52,885
+And she points out to you,
+
+614
+00:17:52,885 --> 00:17:54,325
+if you don't start
+with at least that,
+
+615
+00:17:54,325 --> 00:17:55,205
+you're in real trouble.
+
+616
+00:17:55,205 --> 00:17:56,565
+It's not clear how to even get
+
+617
+00:17:56,565 --> 00:17:58,170
+the process of
+learning started.
+
+618
+00:17:58,330 --> 00:17:59,790
+And I concur with her.
+
+619
+00:17:59,850 --> 00:18:01,470
+We need to have in our systems
+
+620
+00:18:02,730 --> 00:18:04,910
+ways to represent
+knowledge about space,
+
+621
+00:18:05,290 --> 00:18:06,270
+time, and causality.
+
+622
+00:18:06,490 --> 00:18:08,185
+So the picture I
+have in the middle
+
+623
+00:18:08,185 --> 00:18:08,985
+is a cheese grater.
+
+624
+00:18:08,985 --> 00:18:10,825
+We need to have
+a way of teaching
+
+625
+00:18:10,825 --> 00:18:12,845
+robots what a cheese
+grater is,
+
+626
+00:18:12,905 --> 00:18:14,185
+in which way you would move
+
+627
+00:18:14,185 --> 00:18:15,830
+the cheese with reference
+to the grater,
+
+628
+00:18:15,830 --> 00:18:17,110
+and why that would
+give you cheese,
+
+629
+00:18:18,390 --> 00:18:20,010
+gratings as opposed to if you
+
+630
+00:18:20,230 --> 00:18:21,510
+move the cheese
+in the opposite
+
+631
+00:18:21,510 --> 00:18:22,710
+direction. We
+really don't have
+
+632
+00:18:22,710 --> 00:18:23,655
+a way to do that.
+
+633
+00:18:24,055 --> 00:18:25,015
+My colleague, Ernie Davis,
+
+634
+00:18:25,015 --> 00:18:26,295
+and I have been working
+on it a little.
+
+635
+00:18:26,295 --> 00:18:27,195
+This is a picture,
+
+636
+00:18:27,495 --> 00:18:28,695
+from an article that we have
+
+637
+00:18:28,695 --> 00:18:30,155
+about understanding containers
+
+638
+00:18:30,455 --> 00:18:31,575
+and the innate knowledge that
+
+639
+00:18:31,575 --> 00:18:32,950
+you might need in order to,
+
+640
+00:18:33,510 --> 00:18:35,770
+represent containers
+in an AI system.
+
+641
+00:18:37,030 --> 00:18:38,950
+I point out also
+that hybrid models,
+
+642
+00:18:38,950 --> 00:18:40,150
+although they're
+not very popular,
+
+643
+00:18:40,150 --> 00:18:41,270
+they're I think
+they're becoming
+
+644
+00:18:41,270 --> 00:18:43,015
+more popular. And ones that
+
+645
+00:18:43,015 --> 00:18:44,775
+embed knowledge
+into deep learning
+
+646
+00:18:44,775 --> 00:18:46,855
+do much better than
+blank slate models.
+
+647
+00:18:46,855 --> 00:18:48,635
+So I'm sure everybody
+saw yesterday,
+
+648
+00:18:48,695 --> 00:18:50,970
+AlphaFold. Well,
+alpha fold, you know,
+
+649
+00:18:50,970 --> 00:18:52,490
+so I think it's
+probably a great
+
+650
+00:18:52,490 --> 00:18:53,610
+contribution,
+although there are
+
+651
+00:18:53,610 --> 00:18:54,410
+some questions we could talk
+
+652
+00:18:54,410 --> 00:18:55,710
+about in this
+discussion period.
+
+653
+00:18:56,250 --> 00:18:58,525
+It actually builds
+in the notion
+
+654
+00:18:58,525 --> 00:19:00,365
+that a folded
+protein should be
+
+655
+00:19:00,365 --> 00:19:01,885
+represented as
+a particular kind
+
+656
+00:19:01,885 --> 00:19:03,005
+of graph that they call,
+
+657
+00:19:03,245 --> 00:19:04,865
+a spatial graph with residues
+
+658
+00:19:04,925 --> 00:19:06,125
+that are nodes and edges that
+
+659
+00:19:06,125 --> 00:19:07,550
+connect and blah blah blah.
+
+660
+00:19:07,910 --> 00:19:11,190
+So deep learning
+people have mostly,
+
+661
+00:19:11,190 --> 00:19:13,290
+for the last twenty years,
+
+662
+00:19:13,510 --> 00:19:15,345
+emphasized blank
+slate systems.
+
+663
+00:19:15,345 --> 00:19:16,705
+They've kinda ridiculed me for
+
+664
+00:19:16,705 --> 00:19:18,065
+saying we need
+innate knowledge.
+
+665
+00:19:18,065 --> 00:19:19,345
+But when push
+comes to shove and
+
+666
+00:19:19,345 --> 00:19:21,605
+they wanna, do well
+on a benchmark
+
+667
+00:19:21,665 --> 00:19:22,865
+like the protein
+folding thing,
+
+668
+00:19:22,865 --> 00:19:24,400
+they often actually build in,
+
+669
+00:19:24,800 --> 00:19:25,520
+knowledge. In fact,
+
+670
+00:19:25,520 --> 00:19:27,120
+that contrast with the deep
+
+671
+00:19:27,120 --> 00:19:28,900
+learning paper from,
+
+672
+00:19:29,360 --> 00:19:30,880
+DeepMind who did
+this work just
+
+673
+00:19:30,880 --> 00:19:32,000
+a couple years ago that where
+
+674
+00:19:32,000 --> 00:19:33,280
+they were saying mastering go
+
+675
+00:19:33,280 --> 00:19:34,355
+without human knowledge.
+
+676
+00:19:34,355 --> 00:19:35,395
+Well, they were not able to
+
+677
+00:19:35,395 --> 00:19:37,395
+master proteins without
+human knowledge.
+
+678
+00:19:37,395 --> 00:19:38,855
+Human knowledge was
+actually critical.
+
+679
+00:19:40,515 --> 00:19:42,615
+The third thing that
+I think we need,
+
+680
+00:19:42,970 --> 00:19:44,330
+and maybe we can go
+into it a little
+
+681
+00:19:44,330 --> 00:19:45,850
+bit more later in
+in discussion,
+
+682
+00:19:45,850 --> 00:19:47,210
+I'll just touch on
+it briefly now,
+
+683
+00:19:47,210 --> 00:19:48,970
+is we need to have
+reasoning systems.
+
+684
+00:19:48,970 --> 00:19:50,570
+So deep learning is very good
+
+685
+00:19:50,570 --> 00:19:51,610
+at memorizing things.
+
+686
+00:19:51,610 --> 00:19:53,535
+It's not particularly
+good at reasoning.
+
+687
+00:19:54,315 --> 00:19:56,155
+The example I have
+here is drawn
+
+688
+00:19:56,155 --> 00:19:58,555
+from a paper in Forbes by Doug
+
+689
+00:19:58,555 --> 00:19:59,755
+Leonard from his system,
+
+690
+00:19:59,755 --> 00:20:00,555
+the site project.
+
+691
+00:20:00,555 --> 00:20:02,440
+You can go look at
+it in detail later.
+
+692
+00:20:02,440 --> 00:20:04,040
+But he did the kind of amazing
+
+693
+00:20:04,040 --> 00:20:06,120
+thing of representing
+in an AI system,
+
+694
+00:20:06,120 --> 00:20:07,320
+not a deep learning system,
+
+695
+00:20:07,320 --> 00:20:09,900
+but a classic GoFi, system.
+
+696
+00:20:11,005 --> 00:20:12,065
+Romeo and Juliet.
+
+697
+00:20:12,285 --> 00:20:14,285
+Now there's not everything is
+
+698
+00:20:14,285 --> 00:20:15,505
+satisfying about it.
+
+699
+00:20:16,205 --> 00:20:17,645
+And I'll tell you in a second
+
+700
+00:20:17,645 --> 00:20:19,330
+what's not. But
+it's a proof and
+
+701
+00:20:19,330 --> 00:20:21,250
+concept that you can get an AI
+
+702
+00:20:21,250 --> 00:20:22,850
+system that
+represents knowledge
+
+703
+00:20:22,850 --> 00:20:25,010
+richly to reason about pretty
+
+704
+00:20:25,010 --> 00:20:26,375
+complicated things, like,
+
+705
+00:20:27,015 --> 00:20:28,455
+why Romeo I'm sorry.
+
+706
+00:20:28,455 --> 00:20:30,635
+Why Juliet takes
+the famed death,
+
+707
+00:20:31,175 --> 00:20:32,855
+potion and what she believes
+
+708
+00:20:32,855 --> 00:20:34,555
+Romeo is gonna do
+as a consequence.
+
+709
+00:20:35,600 --> 00:20:37,360
+It's pretty
+sophisticated stuff,
+
+710
+00:20:37,360 --> 00:20:39,360
+way beyond what deep
+learning can do.
+
+711
+00:20:39,360 --> 00:20:40,800
+The unsatisfactory thing is in
+
+712
+00:20:40,800 --> 00:20:41,520
+order to get this,
+
+713
+00:20:41,520 --> 00:20:42,640
+there's a lot of
+hand tinkering,
+
+714
+00:20:42,640 --> 00:20:44,185
+and we'd really
+like to be able
+
+715
+00:20:44,185 --> 00:20:45,865
+to build these
+cognitive models
+
+716
+00:20:45,865 --> 00:20:47,085
+of what's going on.
+
+717
+00:20:47,465 --> 00:20:48,745
+So what are
+the different things
+
+718
+00:20:48,745 --> 00:20:49,945
+that have happened in a story
+
+719
+00:20:49,945 --> 00:20:51,225
+and so forth? We would like to
+
+720
+00:20:51,225 --> 00:20:53,325
+be able to learn
+those from text,
+
+721
+00:20:53,910 --> 00:20:55,350
+with some kind of prior common
+
+722
+00:20:55,350 --> 00:20:55,830
+sense knowledge,
+
+723
+00:20:55,830 --> 00:20:57,190
+and we can't really do that.
+
+724
+00:20:57,190 --> 00:20:58,470
+But it's a proven concept that
+
+725
+00:20:58,470 --> 00:21:00,410
+we have a rich model
+of the world,
+
+726
+00:21:01,165 --> 00:21:02,765
+as the Sykes system does for
+
+727
+00:21:02,765 --> 00:21:04,125
+the Romeo and Juliet system.
+
+728
+00:21:04,125 --> 00:21:05,405
+You can really reason in much
+
+729
+00:21:05,405 --> 00:21:06,525
+more sophisticated ways than
+
+730
+00:21:06,525 --> 00:21:08,385
+other current AI
+systems can do.
+
+731
+00:21:10,000 --> 00:21:11,280
+So I'll summarize
+and then I'll
+
+732
+00:21:11,280 --> 00:21:12,020
+take questions.
+
+733
+00:21:13,120 --> 00:21:14,880
+I think COVID
+nineteen is a wake
+
+734
+00:21:14,880 --> 00:21:16,100
+up call for AI.
+
+735
+00:21:17,295 --> 00:21:18,835
+I think it's a wake up call,
+
+736
+00:21:19,695 --> 00:21:21,615
+because for
+the most part, AI,
+
+737
+00:21:21,615 --> 00:21:22,575
+even though we've been hyping
+
+738
+00:21:22,575 --> 00:21:24,280
+it for the last six
+or seven years,
+
+739
+00:21:24,360 --> 00:21:26,120
+has not had a huge impact on
+
+740
+00:21:26,120 --> 00:21:27,400
+what we actually have done in
+
+741
+00:21:27,400 --> 00:21:28,300
+the COVID situation.
+
+742
+00:21:28,360 --> 00:21:30,360
+So there's a little
+bit in contact
+
+743
+00:21:30,360 --> 00:21:32,040
+tracing. Maybe there's some
+
+744
+00:21:32,040 --> 00:21:33,420
+suggestions for vaccines,
+
+745
+00:21:33,480 --> 00:21:36,235
+but the ones that
+have actually
+
+746
+00:21:36,235 --> 00:21:36,485
+worked have been developed by
+
+747
+00:21:36,485 --> 00:21:37,245
+human scientists
+who understand
+
+748
+00:21:37,385 --> 00:21:38,765
+the causal nature of biology,
+
+749
+00:21:38,905 --> 00:21:40,925
+not by AI systems
+at the moment.
+
+750
+00:21:41,545 --> 00:21:42,905
+And so I think it's motivation
+
+751
+00:21:42,905 --> 00:21:45,050
+for us to stop building AI for
+
+752
+00:21:45,050 --> 00:21:46,250
+ad tech and news fakes,
+
+753
+00:21:46,250 --> 00:21:47,850
+which is really
+what most of AI
+
+754
+00:21:47,850 --> 00:21:48,910
+has been used for,
+
+755
+00:21:49,210 --> 00:21:50,570
+and start building AI that can
+
+756
+00:21:50,570 --> 00:21:51,450
+really make a difference.
+
+757
+00:21:51,450 --> 00:21:53,615
+I do like the alpha
+fold as one
+
+758
+00:21:53,615 --> 00:21:54,835
+step in that direction.
+
+759
+00:21:55,615 --> 00:21:56,335
+With better AI,
+
+760
+00:21:56,335 --> 00:21:58,095
+I think computers might
+be able to read,
+
+761
+00:21:58,095 --> 00:21:59,935
+digest, and synthesize a vast
+
+762
+00:21:59,935 --> 00:22:01,215
+and rapidly growing literature
+
+763
+00:22:01,215 --> 00:22:02,415
+that's too big for individual
+
+764
+00:22:02,415 --> 00:22:03,580
+humans to process,
+
+765
+00:22:03,880 --> 00:22:05,820
+and suggest ways to optimize,
+
+766
+00:22:07,000 --> 00:22:08,140
+treatments and vaccines.
+
+767
+00:22:08,760 --> 00:22:10,280
+Computers, if we built them in
+
+768
+00:22:10,280 --> 00:22:11,160
+more sophisticated ways,
+
+769
+00:22:11,160 --> 00:22:12,585
+could also monitor world
+
+770
+00:22:12,665 --> 00:22:14,265
+preparedness in a wide variety
+
+771
+00:22:14,265 --> 00:22:16,365
+of domains where
+clearly we fell short.
+
+772
+00:22:16,585 --> 00:22:17,865
+And we might have robots that
+
+773
+00:22:17,865 --> 00:22:18,825
+are able to take on some of
+
+774
+00:22:18,825 --> 00:22:19,865
+the risks that human health
+
+775
+00:22:19,865 --> 00:22:21,250
+care's workers are facing.
+
+776
+00:22:21,250 --> 00:22:22,130
+That's part of what I'm trying
+
+777
+00:22:22,130 --> 00:22:23,910
+to do with my own
+company, Robust AI.
+
+778
+00:22:24,290 --> 00:22:26,150
+To get to this
+next level of AI
+
+779
+00:22:26,450 --> 00:22:27,990
+that can operate
+in trustworthy
+
+780
+00:22:28,050 --> 00:22:29,650
+ways even in novel
+environments,
+
+781
+00:22:29,650 --> 00:22:30,755
+we need to work
+towards building
+
+782
+00:22:30,755 --> 00:22:32,455
+systems with
+deep understanding
+
+783
+00:22:32,515 --> 00:22:33,815
+and not just deep learning.
+
+784
+00:22:34,115 --> 00:22:35,475
+The best way to get started on
+
+785
+00:22:35,475 --> 00:22:36,675
+that journey is to focus on
+
+786
+00:22:36,675 --> 00:22:38,490
+developing hybrid knowledge
+
+787
+00:22:38,490 --> 00:22:40,090
+driven reasoning based systems
+
+788
+00:22:40,090 --> 00:22:41,470
+with rich cognitive models.
+
+789
+00:22:41,770 --> 00:22:43,150
+And I thank you very much.
+
+790
+00:22:44,385 --> 00:22:45,845
+And I'll be happy
+to take questions.
+
+791
+00:22:51,705 --> 00:22:53,545
+Question from, Xenia who asked
+
+792
+00:22:53,545 --> 00:22:54,825
+if you're familiar with,
+
+793
+00:22:56,190 --> 00:22:58,690
+Adele Goldberg's work,
+in linguistic,
+
+794
+00:22:59,950 --> 00:23:02,030
+and, and if there's
+a place for
+
+795
+00:23:02,030 --> 00:23:03,650
+that in natural
+language processing.
+
+796
+00:23:04,945 --> 00:23:06,865
+Sure. I am familiar with it.
+
+797
+00:23:07,265 --> 00:23:08,305
+I'm not an expert on it,
+
+798
+00:23:08,305 --> 00:23:09,425
+but I'm familiar with it.
+
+799
+00:23:10,785 --> 00:23:12,305
+I think there's
+a lot of technical
+
+800
+00:23:12,305 --> 00:23:13,745
+arguments and
+linguistics about
+
+801
+00:23:13,745 --> 00:23:15,110
+exactly the right framework.
+
+802
+00:23:15,890 --> 00:23:18,050
+And I'm not a hundred percent
+
+803
+00:23:18,050 --> 00:23:18,930
+sold on our framework,
+
+804
+00:23:18,930 --> 00:23:20,710
+but I think the spirit
+of it is good.
+
+805
+00:23:22,275 --> 00:23:23,955
+What one really wants to do in
+
+806
+00:23:23,955 --> 00:23:26,275
+linguistics is to map between
+
+807
+00:23:26,275 --> 00:23:27,495
+meaning and form.
+
+808
+00:23:27,875 --> 00:23:29,795
+One wants to take
+for example,
+
+809
+00:23:29,795 --> 00:23:32,330
+if one's trying to
+produce a language
+
+810
+00:23:32,330 --> 00:23:33,390
+generation system,
+
+811
+00:23:34,490 --> 00:23:36,350
+an idea that you
+want to express
+
+812
+00:23:36,410 --> 00:23:38,730
+and force into a linear
+stream of words.
+
+813
+00:23:38,730 --> 00:23:40,085
+That's what it is to write
+
+814
+00:23:40,085 --> 00:23:41,545
+something or to
+say something.
+
+815
+00:23:41,685 --> 00:23:42,725
+Or conversely, you wanna go
+
+816
+00:23:42,725 --> 00:23:43,525
+the other way around.
+
+817
+00:23:43,525 --> 00:23:45,765
+You wanna go from a sentence
+
+818
+00:23:45,765 --> 00:23:46,885
+that you hear to the meaning,
+
+819
+00:23:46,885 --> 00:23:48,165
+and that's gonna include both
+
+820
+00:23:48,165 --> 00:23:49,625
+the literal meaning
+and probably
+
+821
+00:23:49,910 --> 00:23:51,030
+some context around it,
+
+822
+00:23:51,030 --> 00:23:52,230
+including your background
+
+823
+00:23:52,230 --> 00:23:53,930
+knowledge and how
+you interpret it.
+
+824
+00:23:54,230 --> 00:23:55,990
+And what Adele is
+trying to do,
+
+825
+00:23:55,990 --> 00:23:57,370
+she's a professor
+at Princeton,
+
+826
+00:23:58,230 --> 00:24:01,145
+is to have some
+kind of mapping
+
+827
+00:24:01,145 --> 00:24:03,245
+between the meanings
+of particular
+
+828
+00:24:03,625 --> 00:24:04,745
+constructions in language.
+
+829
+00:24:04,745 --> 00:24:06,905
+So that might be
+a phrase like,
+
+830
+00:24:06,905 --> 00:24:09,910
+I want to talk about
+x and the meaning
+
+831
+00:24:09,910 --> 00:24:11,370
+of what that phrase is.
+
+832
+00:24:11,670 --> 00:24:13,350
+And there are arguments within
+
+833
+00:24:13,350 --> 00:24:14,950
+linguistics about how general
+
+834
+00:24:14,950 --> 00:24:16,935
+you want your
+knowledge of these
+
+835
+00:24:16,935 --> 00:24:18,955
+kind of linguistic
+mappings to be.
+
+836
+00:24:19,255 --> 00:24:20,695
+And I might take a slightly
+
+837
+00:24:20,695 --> 00:24:21,575
+different view from her,
+
+838
+00:24:21,575 --> 00:24:23,230
+but I think that generally,
+
+839
+00:24:23,230 --> 00:24:24,830
+trying to understand language
+
+840
+00:24:24,830 --> 00:24:26,430
+in terms of these
+mappings between
+
+841
+00:24:26,430 --> 00:24:27,890
+meaning and form is
+really critical.
+
+842
+00:24:28,350 --> 00:24:29,550
+And you might wonder why I'm
+
+843
+00:24:29,550 --> 00:24:30,930
+even saying that,
+
+844
+00:24:31,035 --> 00:24:32,235
+but the reality is it's very
+
+845
+00:24:32,235 --> 00:24:33,355
+different from how most people
+
+846
+00:24:33,355 --> 00:24:34,955
+are approaching
+language processing
+
+847
+00:24:34,955 --> 00:24:37,115
+right now. So GPT
+three does not
+
+848
+00:24:37,115 --> 00:24:39,700
+have any representation
+of meaning.
+
+849
+00:24:39,760 --> 00:24:41,860
+It just has
+a representation of form.
+
+850
+00:24:42,080 --> 00:24:43,200
+And the way that it works is
+
+851
+00:24:43,200 --> 00:24:44,240
+from form to form.
+
+852
+00:24:44,240 --> 00:24:46,260
+So, by form, I mean, like,
+
+853
+00:24:46,400 --> 00:24:47,760
+a string of words in a sense.
+
+854
+00:24:47,760 --> 00:24:49,745
+So what it does is basically
+
+855
+00:24:49,745 --> 00:24:51,345
+auto complete. GPT three is
+
+856
+00:24:51,345 --> 00:24:52,785
+the best version
+of auto complete
+
+857
+00:24:52,785 --> 00:24:54,785
+ever made. So you start
+a sentence like,
+
+858
+00:24:54,785 --> 00:24:56,325
+I want to talk today about,
+
+859
+00:24:56,580 --> 00:24:57,780
+and then it finds some things
+
+860
+00:24:57,780 --> 00:24:59,160
+in a database, essentially.
+
+861
+00:24:59,700 --> 00:25:01,240
+That's not how it
+works technically.
+
+862
+00:25:01,380 --> 00:25:02,820
+But it finds things
+that are close,
+
+863
+00:25:02,820 --> 00:25:04,260
+and it produces
+things that are
+
+864
+00:25:04,260 --> 00:25:05,640
+close to what you've
+seen before.
+
+865
+00:25:05,925 --> 00:25:06,965
+In something like the way that
+
+866
+00:25:06,965 --> 00:25:07,685
+auto complete works,
+
+867
+00:25:07,685 --> 00:25:08,725
+but it's sort of auto complete
+
+868
+00:25:08,725 --> 00:25:10,085
+on steroids. Let's say we can
+
+869
+00:25:10,085 --> 00:25:11,625
+go into details
+that are here.
+
+870
+00:25:12,405 --> 00:25:14,905
+It's not mapping
+a meaning about
+
+871
+00:25:15,190 --> 00:25:17,190
+a person wanting
+to say something,
+
+872
+00:25:17,190 --> 00:25:18,630
+what is the content
+of the wanting
+
+873
+00:25:18,630 --> 00:25:20,710
+to say. So it's
+very weird from
+
+874
+00:25:20,710 --> 00:25:22,890
+a language production
+perspective.
+
+875
+00:25:22,950 --> 00:25:23,990
+You know, classic language
+
+876
+00:25:23,990 --> 00:25:26,055
+production in computation is I
+
+877
+00:25:26,055 --> 00:25:27,095
+have this system that wants to
+
+878
+00:25:27,095 --> 00:25:27,995
+tell you something.
+
+879
+00:25:28,135 --> 00:25:30,135
+But GPT three doesn't
+take an input
+
+880
+00:25:30,135 --> 00:25:31,655
+about what you
+want to express.
+
+881
+00:25:31,655 --> 00:25:33,255
+It just takes part
+of a sentence
+
+882
+00:25:33,255 --> 00:25:34,100
+and fills it in.
+
+883
+00:25:34,180 --> 00:25:35,220
+So Adele is, I think,
+
+884
+00:25:35,220 --> 00:25:38,420
+much closer to
+what I think you
+
+885
+00:25:38,420 --> 00:25:39,940
+need to do, which
+is to understand
+
+886
+00:25:39,940 --> 00:25:41,460
+the relation
+between ideas that
+
+887
+00:25:41,460 --> 00:25:42,740
+people have and how they want
+
+888
+00:25:42,740 --> 00:25:44,415
+to say them. There
+are technical,
+
+889
+00:25:45,035 --> 00:25:46,415
+you know, quibbles I have,
+
+890
+00:25:47,035 --> 00:25:48,635
+with a little bit of
+what what she does,
+
+891
+00:25:48,635 --> 00:25:50,235
+but I think the spirit is is
+
+892
+00:25:50,235 --> 00:25:51,400
+the right spirit there.
+
+893
+00:25:51,480 --> 00:25:53,560
+And she's also,
+often worked with,
+
+894
+00:25:53,960 --> 00:25:55,720
+Ray Jackendoff, who
+I'm a big fan of,
+
+895
+00:25:56,120 --> 00:25:57,160
+the language from Brandeis,
+
+896
+00:25:57,160 --> 00:26:00,165
+so I guess we retired
+them. Great.
+
+897
+00:26:00,225 --> 00:26:02,065
+So, thank you, Gary.
+
+898
+00:26:02,065 --> 00:26:03,425
+I'm I'm skimming
+through the questions
+
+899
+00:26:03,425 --> 00:26:06,005
+and trying to, make
+some kind of common,
+
+900
+00:26:06,580 --> 00:26:08,260
+question through
+through this.
+
+901
+00:26:08,260 --> 00:26:09,380
+I think one of,
+
+902
+00:26:09,700 --> 00:26:11,060
+one of the topics people are
+
+903
+00:26:11,140 --> 00:26:12,600
+we're interested in is,
+
+904
+00:26:13,220 --> 00:26:14,760
+more into into the technical,
+
+905
+00:26:15,705 --> 00:26:17,085
+technical aspects maybe.
+
+906
+00:26:17,225 --> 00:26:18,365
+How is that integration,
+
+907
+00:26:18,745 --> 00:26:20,025
+between deep learning and
+
+908
+00:26:20,025 --> 00:26:21,485
+knowledge graphs happening?
+
+909
+00:26:22,505 --> 00:26:24,125
+Maybe how far are we?
+
+910
+00:26:24,710 --> 00:26:27,110
+And, technically, how
+does it look like?
+
+911
+00:26:27,110 --> 00:26:29,110
+Is it that we can
+use a knowledge
+
+912
+00:26:29,110 --> 00:26:31,270
+graph and then plug
+that to a neural
+
+913
+00:26:31,270 --> 00:26:32,630
+network in order to help that
+
+914
+00:26:32,630 --> 00:26:34,170
+neural network to process?
+
+915
+00:26:34,295 --> 00:26:35,895
+Because if we take
+the alpha for
+
+916
+00:26:35,895 --> 00:26:36,695
+example, right,
+
+917
+00:26:36,695 --> 00:26:38,135
+there are there is some human
+
+918
+00:26:38,135 --> 00:26:39,575
+domain knowledge
+that is put there,
+
+919
+00:26:39,575 --> 00:26:41,335
+but it doesn't look
+like a knowledge
+
+920
+00:26:41,335 --> 00:26:43,015
+graph in the way we
+we talk about it,
+
+921
+00:26:43,335 --> 00:26:44,660
+today. Right?
+We're we're still
+
+922
+00:26:44,660 --> 00:26:46,180
+far from There is
+a graph there.
+
+923
+00:26:46,180 --> 00:26:48,180
+There all I can
+work with so far
+
+924
+00:26:48,180 --> 00:26:48,900
+is the blog. Right?
+
+925
+00:26:48,900 --> 00:26:50,440
+There is not
+a written publication
+
+926
+00:26:51,305 --> 00:26:52,105
+about the paper yet,
+
+927
+00:26:52,105 --> 00:26:53,565
+so it's a little
+hard to know.
+
+928
+00:26:55,865 --> 00:26:58,105
+AlphaGo is also working
+through a graph.
+
+929
+00:26:58,105 --> 00:26:58,800
+Right? So,
+
+930
+00:26:59,360 --> 00:27:01,840
+that whole suite
+of alpha systems
+
+931
+00:27:01,840 --> 00:27:03,620
+from DeepMind has
+some representation
+
+932
+00:27:03,760 --> 00:27:05,300
+of a graph that
+they are traversing
+
+933
+00:27:05,360 --> 00:27:07,135
+in some way. I
+don't think there's
+
+934
+00:27:07,135 --> 00:27:08,495
+a general solution yet.
+
+935
+00:27:08,495 --> 00:27:11,535
+So, alpha fold is representing
+
+936
+00:27:11,535 --> 00:27:13,370
+a very specific kind of graph
+
+937
+00:27:13,450 --> 00:27:14,510
+that has been tuned.
+
+938
+00:27:14,730 --> 00:27:15,930
+There's some
+secondhand accounts
+
+939
+00:27:15,930 --> 00:27:17,770
+of this, including
+one by Jeremy
+
+940
+00:27:17,770 --> 00:27:18,670
+Khan in Fortune,
+
+941
+00:27:19,290 --> 00:27:21,530
+and a little bit of
+hint from the the,
+
+942
+00:27:22,275 --> 00:27:23,735
+blog that DeepMind posted.
+
+943
+00:27:24,435 --> 00:27:26,675
+It's a very specific
+kind of graph.
+
+944
+00:27:26,675 --> 00:27:28,035
+It's representing particular
+
+945
+00:27:28,035 --> 00:27:29,335
+structure about the protein,
+
+946
+00:27:29,800 --> 00:27:32,200
+and they're using the deep
+
+947
+00:27:32,200 --> 00:27:33,400
+reinforcement learning system
+
+948
+00:27:33,400 --> 00:27:35,720
+to traverse that
+graph in a very
+
+949
+00:27:35,720 --> 00:27:36,840
+particular kind of way.
+
+950
+00:27:36,840 --> 00:27:39,125
+So it's a domain
+specific answer
+
+951
+00:27:39,125 --> 00:27:40,745
+to the question that
+you're just asking.
+
+952
+00:27:41,045 --> 00:27:42,805
+We don't yet have
+a really good
+
+953
+00:27:42,805 --> 00:27:44,165
+domain general way to do it.
+
+954
+00:27:44,165 --> 00:27:46,085
+So people are talking a lot
+
+955
+00:27:46,085 --> 00:27:47,525
+about graph neural
+networks and
+
+956
+00:27:47,525 --> 00:27:49,950
+so forth. And they they can do
+
+957
+00:27:49,950 --> 00:27:51,470
+something. They're
+not very good
+
+958
+00:27:51,470 --> 00:27:52,510
+at abstract knowledge.
+
+959
+00:27:52,510 --> 00:27:53,890
+So they're pretty good at
+
+960
+00:27:53,950 --> 00:27:54,990
+integrating kind
+of things that
+
+961
+00:27:54,990 --> 00:27:56,690
+are immediately
+adjacent in the graph.
+
+962
+00:27:56,695 --> 00:27:58,215
+They're not
+necessarily good at
+
+963
+00:27:58,215 --> 00:28:00,075
+doing the reasoning
+at the level
+
+964
+00:28:00,455 --> 00:28:01,895
+that Sykes system
+is doing where
+
+965
+00:28:01,895 --> 00:28:03,995
+you can have
+abstract quantified
+
+966
+00:28:04,055 --> 00:28:05,815
+statements to use
+the terms from
+
+967
+00:28:05,815 --> 00:28:07,210
+linguistics or philosophy.
+
+968
+00:28:07,270 --> 00:28:08,470
+You know, for all x such that
+
+969
+00:28:08,470 --> 00:28:09,990
+x has this property,
+
+970
+00:28:09,990 --> 00:28:11,130
+the following thing follows.
+
+971
+00:28:11,270 --> 00:28:12,710
+They they're not
+able to do that
+
+972
+00:28:12,710 --> 00:28:14,730
+very well, whereas
+that's really
+
+973
+00:28:14,790 --> 00:28:16,425
+inherent in how
+Sykes is working.
+
+974
+00:28:16,505 --> 00:28:19,305
+So, Syfe can
+reason over things
+
+975
+00:28:19,305 --> 00:28:23,065
+like people are alive between
+
+976
+00:28:23,065 --> 00:28:24,105
+the year that they
+were born and
+
+977
+00:28:24,105 --> 00:28:25,325
+the year that they died,
+
+978
+00:28:25,330 --> 00:28:26,610
+but not before and after.
+
+979
+00:28:26,610 --> 00:28:28,450
+And then reason
+about that with
+
+980
+00:28:28,450 --> 00:28:30,130
+respect to inferring
+a sequence
+
+981
+00:28:30,130 --> 00:28:31,970
+of events. And so if you wanna
+
+982
+00:28:31,970 --> 00:28:34,130
+know what Romeo is gonna make
+
+983
+00:28:34,130 --> 00:28:36,205
+of the idea that
+Juliet is dead
+
+984
+00:28:36,205 --> 00:28:37,725
+when she isn't really
+dead and how,
+
+985
+00:28:37,725 --> 00:28:39,905
+you know, Juliet's
+gonna feel if Romeo,
+
+986
+00:28:40,045 --> 00:28:41,905
+you know, misses the memo,
+
+987
+00:28:43,020 --> 00:28:44,140
+You need to be able to reason
+
+988
+00:28:44,140 --> 00:28:45,820
+in a fairly abstract way over
+
+989
+00:28:45,820 --> 00:28:47,600
+the information
+that's in the graph.
+
+990
+00:28:47,980 --> 00:28:50,080
+If all you need
+to do is decide,
+
+991
+00:28:50,415 --> 00:28:52,915
+is Paris more likely
+to be a celebrity
+
+992
+00:28:53,295 --> 00:28:54,735
+or a location,
+you might be able
+
+993
+00:28:54,735 --> 00:28:56,275
+to do that with
+a less sophisticated
+
+994
+00:28:56,655 --> 00:28:57,455
+level of knowledge,
+
+995
+00:28:57,455 --> 00:28:58,415
+especially if if the,
+
+996
+00:28:59,600 --> 00:29:01,360
+the level of reliability that
+
+997
+00:29:01,360 --> 00:29:02,480
+you require is not that high.
+
+998
+00:29:02,480 --> 00:29:03,680
+So if you're doing
+it for keyword
+
+999
+00:29:03,680 --> 00:29:05,840
+search and you get eighty five
+
+1000
+00:29:05,840 --> 00:29:07,585
+percent of the time
+which version
+
+1001
+00:29:07,585 --> 00:29:09,605
+of Paris people mean
+that might be okay.
+
+1002
+00:29:09,825 --> 00:29:10,945
+If you're trying to understand
+
+1003
+00:29:10,945 --> 00:29:12,065
+the plot of a movie,
+
+1004
+00:29:12,065 --> 00:29:13,185
+you really need to understand
+
+1005
+00:29:13,185 --> 00:29:14,245
+what's going on.
+
+1006
+00:29:14,530 --> 00:29:15,650
+If you're building a robot,
+
+1007
+00:29:15,650 --> 00:29:17,090
+you really need to
+understand the world.
+
+1008
+00:29:17,090 --> 00:29:18,370
+It's not good enough
+to be seventy
+
+1009
+00:29:18,370 --> 00:29:19,090
+percent correct.
+
+1010
+00:29:19,090 --> 00:29:20,370
+Same with a driverless car.
+
+1011
+00:29:20,370 --> 00:29:21,830
+So, you know, you
+can statistically
+
+1012
+00:29:22,050 --> 00:29:23,330
+approximate a lot of things,
+
+1013
+00:29:23,330 --> 00:29:25,825
+but you could imagine
+that the right
+
+1014
+00:29:25,825 --> 00:29:27,105
+solution to driverless cars
+
+1015
+00:29:27,105 --> 00:29:29,105
+might actually have
+some knowledge
+
+1016
+00:29:29,105 --> 00:29:30,225
+on a graph that you need to
+
+1017
+00:29:30,225 --> 00:29:31,905
+traverse in an order
+to understand,
+
+1018
+00:29:31,905 --> 00:29:33,430
+like, okay. What does it mean
+
+1019
+00:29:33,430 --> 00:29:34,950
+when somebody has orange cones
+
+1020
+00:29:34,950 --> 00:29:36,390
+in front of a hole? Right?
+
+1021
+00:29:36,390 --> 00:29:38,090
+You might not
+have that in your
+
+1022
+00:29:38,470 --> 00:29:40,605
+database explicitly
+with respect
+
+1023
+00:29:40,605 --> 00:29:41,645
+to driving that you want to
+
+1024
+00:29:41,645 --> 00:29:44,465
+infer by a general notion of
+
+1025
+00:29:44,685 --> 00:29:46,365
+people use orange cones to
+
+1026
+00:29:46,365 --> 00:29:48,225
+indicate things, they
+indicate safety.
+
+1027
+00:29:48,490 --> 00:29:49,770
+You might wanna
+make inferences
+
+1028
+00:29:49,770 --> 00:29:50,830
+about that scenario.
+
+1029
+00:29:51,530 --> 00:29:54,090
+And nobody has
+a general way of
+
+1030
+00:29:54,090 --> 00:29:55,210
+doing that in the context of
+
+1031
+00:29:55,210 --> 00:29:56,250
+deep learning right now.
+
+1032
+00:29:56,250 --> 00:30:00,055
+So, we may need
+a new invention
+
+1033
+00:30:00,055 --> 00:30:01,975
+that simply has not
+been made yet.
+
+1034
+00:30:01,975 --> 00:30:03,335
+We have these specific things
+
+1035
+00:30:03,335 --> 00:30:04,375
+like alpha fold.
+
+1036
+00:30:04,375 --> 00:30:05,975
+They're like, I have this kind
+
+1037
+00:30:05,975 --> 00:30:07,720
+of graph that is this
+kind of knowledge,
+
+1038
+00:30:08,200 --> 00:30:09,640
+and I wanna do some relaxation
+
+1039
+00:30:09,640 --> 00:30:11,580
+of constraints with
+respect to that.
+
+1040
+00:30:12,120 --> 00:30:13,960
+We don't really have
+a general form.
+
+1041
+00:30:13,960 --> 00:30:15,240
+And, you know,
+part of what I've
+
+1042
+00:30:15,240 --> 00:30:16,815
+been arguing for
+is that that's
+
+1043
+00:30:16,815 --> 00:30:18,115
+actually the most important
+
+1044
+00:30:18,175 --> 00:30:19,315
+problem right now,
+
+1045
+00:30:19,375 --> 00:30:20,975
+is to think about how to put
+
+1046
+00:30:20,975 --> 00:30:23,155
+together things
+like graphs and,
+
+1047
+00:30:23,295 --> 00:30:25,235
+you know, which
+what are the right
+
+1048
+00:30:25,620 --> 00:30:26,440
+knowledge representation?
+
+1049
+00:30:26,580 --> 00:30:28,020
+We don't really
+know graphs or or,
+
+1050
+00:30:28,020 --> 00:30:29,160
+you know, the candidate,
+
+1051
+00:30:29,380 --> 00:30:30,840
+but we don't know
+that for sure.
+
+1052
+00:30:32,180 --> 00:30:33,460
+We need something on that kind
+
+1053
+00:30:33,460 --> 00:30:35,845
+of spectrum to integrate
+with learning.
+
+1054
+00:30:35,845 --> 00:30:37,305
+It may be that the learning
+
+1055
+00:30:37,605 --> 00:30:39,205
+the deep learning
+does is itself
+
+1056
+00:30:39,205 --> 00:30:40,105
+just too superficial.
+
+1057
+00:30:40,485 --> 00:30:41,685
+So there are approaches like
+
+1058
+00:30:41,685 --> 00:30:43,125
+inductive logic
+program that try
+
+1059
+00:30:43,125 --> 00:30:46,130
+to work over more richer
+
+1060
+00:30:46,130 --> 00:30:47,490
+abstractions of the variables
+
+1061
+00:30:47,490 --> 00:30:48,630
+in them and so forth.
+
+1062
+00:30:48,770 --> 00:30:50,210
+And I don't know if
+that's the right
+
+1063
+00:30:50,210 --> 00:30:50,850
+solution either,
+
+1064
+00:30:50,850 --> 00:30:52,335
+but but it's
+a different direction.
+
+1065
+00:30:52,335 --> 00:30:54,355
+And so, you know, in
+the final analysis,
+
+1066
+00:30:54,495 --> 00:30:56,015
+deep learning might
+not survive.
+
+1067
+00:30:56,015 --> 00:30:57,615
+Something that does its work
+
+1068
+00:30:57,615 --> 00:30:59,230
+will survive.
+Something that can
+
+1069
+00:30:59,230 --> 00:31:01,550
+learn from large
+quantities of data in,
+
+1070
+00:31:01,550 --> 00:31:02,910
+you know, efficient
+and possibly
+
+1071
+00:31:02,910 --> 00:31:04,050
+more efficient fashion.
+
+1072
+00:31:04,350 --> 00:31:05,470
+Maybe it'll be deep learning.
+
+1073
+00:31:05,470 --> 00:31:06,830
+Maybe it'll be a sort of more
+
+1074
+00:31:06,830 --> 00:31:07,730
+Bayesian thing,
+
+1075
+00:31:08,575 --> 00:31:10,175
+if people can find
+ways of scaling
+
+1076
+00:31:10,175 --> 00:31:11,535
+those system. Something like
+
+1077
+00:31:11,535 --> 00:31:13,395
+that will survive.
+It has that spirit.
+
+1078
+00:31:13,535 --> 00:31:15,455
+But we needed to
+learn over more
+
+1079
+00:31:15,455 --> 00:31:16,410
+abstract kinds of thing,
+
+1080
+00:31:16,490 --> 00:31:17,610
+and something like knowledge
+
+1081
+00:31:17,610 --> 00:31:18,590
+graphs will survive.
+
+1082
+00:31:18,890 --> 00:31:21,050
+We need to be
+able to represent
+
+1083
+00:31:21,050 --> 00:31:21,850
+knowledge like that.
+
+1084
+00:31:21,850 --> 00:31:23,610
+But I don't think
+we have the right
+
+1085
+00:31:23,610 --> 00:31:26,185
+synthesis yet. Great.
+
+1086
+00:31:26,185 --> 00:31:27,545
+And, part of your answer,
+
+1087
+00:31:27,865 --> 00:31:29,805
+answered the questions
+from Matt,
+
+1088
+00:31:30,745 --> 00:31:32,685
+or or also partly was,
+
+1089
+00:31:33,720 --> 00:31:34,760
+who says he's happy with your
+
+1090
+00:31:34,760 --> 00:31:35,960
+your talk and says he's been
+
+1091
+00:31:35,960 --> 00:31:37,960
+making that point
+for years and that,
+
+1092
+00:31:38,680 --> 00:31:40,200
+but he's also asking
+why, you know,
+
+1093
+00:31:40,200 --> 00:31:41,740
+when we have Bayesian
+statistics,
+
+1094
+00:31:42,025 --> 00:31:43,325
+they are a hundred years old.
+
+1095
+00:31:43,465 --> 00:31:45,465
+How come it took so
+long in order to,
+
+1096
+00:31:45,465 --> 00:31:47,385
+you know, come to
+the realization that,
+
+1097
+00:31:47,385 --> 00:31:48,845
+you know, we need knowledge?
+
+1098
+00:31:49,790 --> 00:31:51,390
+There's a lot of politics in
+
+1099
+00:31:51,390 --> 00:31:52,350
+machine learning, like,
+
+1100
+00:31:52,350 --> 00:31:53,730
+a surprising amount.
+
+1101
+00:31:54,750 --> 00:31:56,510
+You know, I've been
+attacked, like,
+
+1102
+00:31:56,510 --> 00:31:58,670
+personally ad
+hominem for years
+
+1103
+00:31:58,670 --> 00:32:00,365
+for arguing that deep learning
+
+1104
+00:32:00,365 --> 00:32:01,005
+isn't enough.
+
+1105
+00:32:01,005 --> 00:32:03,645
+And and, I think, you know,
+
+1106
+00:32:03,645 --> 00:32:05,505
+people have investments in in
+
+1107
+00:32:05,885 --> 00:32:06,765
+economic investments.
+
+1108
+00:32:06,765 --> 00:32:08,045
+They want their
+graduate students
+
+1109
+00:32:08,045 --> 00:32:09,810
+to prosper. They
+want money for
+
+1110
+00:32:09,810 --> 00:32:11,570
+their research and and
+things like that.
+
+1111
+00:32:11,810 --> 00:32:13,010
+It's been very political on
+
+1112
+00:32:13,010 --> 00:32:14,450
+the one hand. And
+the other hand,
+
+1113
+00:32:14,450 --> 00:32:16,470
+I think that there's a strong
+
+1114
+00:32:16,530 --> 00:32:18,775
+anti nativist bias in
+machine learning.
+
+1115
+00:32:18,855 --> 00:32:21,275
+So you have a set
+of people that,
+
+1116
+00:32:22,455 --> 00:32:23,895
+fundamentally care
+about learning
+
+1117
+00:32:23,895 --> 00:32:25,255
+that makes them, I think,
+
+1118
+00:32:25,255 --> 00:32:27,630
+ignore often DNA
+contribution.
+
+1119
+00:32:27,690 --> 00:32:28,730
+Although I think that's really
+
+1120
+00:32:28,730 --> 00:32:29,610
+starting to change.
+
+1121
+00:32:29,610 --> 00:32:31,150
+So, you know, I
+gave the example
+
+1122
+00:32:31,610 --> 00:32:33,450
+of DeepMind moving
+from writing
+
+1123
+00:32:33,450 --> 00:32:34,730
+papers about
+mastering Go without
+
+1124
+00:32:34,730 --> 00:32:36,195
+human knowledge to
+incorporating it.
+
+1125
+00:32:36,195 --> 00:32:37,475
+But I think the initial work
+
+1126
+00:32:37,475 --> 00:32:38,615
+reflected that bias.
+
+1127
+00:32:38,835 --> 00:32:39,955
+And, you know, I had a debate
+
+1128
+00:32:39,955 --> 00:32:41,735
+with Joshua Bengio last year,
+
+1129
+00:32:42,115 --> 00:32:43,335
+that you can find online,
+
+1130
+00:32:43,475 --> 00:32:45,490
+and I was pushing
+innate knowledge
+
+1131
+00:32:45,490 --> 00:32:46,450
+and saying, I don't
+think there's
+
+1132
+00:32:46,450 --> 00:32:47,730
+that that much there.
+
+1133
+00:32:47,730 --> 00:32:48,930
+And he actually has an archive
+
+1134
+00:32:48,930 --> 00:32:51,170
+paper today laying
+out a lot of
+
+1135
+00:32:51,170 --> 00:32:52,710
+ways of thinking about putting
+
+1136
+00:32:53,065 --> 00:32:54,425
+innate I mean, you may not use
+
+1137
+00:32:54,425 --> 00:32:55,625
+that word, but
+innate knowledge
+
+1138
+00:32:55,625 --> 00:32:56,425
+into deep learning.
+
+1139
+00:32:56,425 --> 00:32:58,125
+So I think there's
+been a bias.
+
+1140
+00:32:58,505 --> 00:33:00,025
+I think the bias
+is shifting in
+
+1141
+00:33:00,025 --> 00:33:01,405
+the direction that
+I'm advocating.
+
+1142
+00:33:02,000 --> 00:33:04,020
+But it does reflect
+a deep seated
+
+1143
+00:33:04,400 --> 00:33:05,760
+attachment to learning from
+
+1144
+00:33:05,760 --> 00:33:06,960
+people who study learning and
+
+1145
+00:33:06,960 --> 00:33:08,640
+maybe aren't always looking at
+
+1146
+00:33:08,640 --> 00:33:09,840
+deep picture. And
+there's, like,
+
+1147
+00:33:09,840 --> 00:33:12,605
+a a human nature thing that we
+
+1148
+00:33:12,605 --> 00:33:14,125
+think that we
+learn by imitating
+
+1149
+00:33:14,125 --> 00:33:15,405
+our parents and
+stuff like that,
+
+1150
+00:33:15,405 --> 00:33:16,765
+and when it's
+actually much more
+
+1151
+00:33:16,765 --> 00:33:17,565
+complicated than that.
+
+1152
+00:33:17,565 --> 00:33:19,490
+But there is my my colleague,
+
+1153
+00:33:19,490 --> 00:33:21,350
+Eris Behrend, at Northeastern
+
+1154
+00:33:21,490 --> 00:33:23,250
+University, and collaborate,
+
+1155
+00:33:23,250 --> 00:33:24,850
+I should say, has been working
+
+1156
+00:33:24,850 --> 00:33:26,625
+on this in the last
+year or two,
+
+1157
+00:33:26,845 --> 00:33:28,125
+documenting that
+people actually
+
+1158
+00:33:28,125 --> 00:33:29,565
+have a bias against nateness.
+
+1159
+00:33:29,565 --> 00:33:31,185
+Like, they don't
+want to believe it.
+
+1160
+00:33:31,565 --> 00:33:33,245
+People believe in
+nateness about
+
+1161
+00:33:33,245 --> 00:33:34,205
+temperament in children.
+
+1162
+00:33:34,205 --> 00:33:35,245
+They understand that if they
+
+1163
+00:33:35,245 --> 00:33:36,350
+have two kids,
+they have different
+
+1164
+00:33:36,350 --> 00:33:37,390
+temperaments. But they really
+
+1165
+00:33:37,390 --> 00:33:39,070
+don't wanna believe
+that there's
+
+1166
+00:33:39,070 --> 00:33:40,770
+innate knowledge
+even though, like,
+
+1167
+00:33:41,070 --> 00:33:42,515
+you look at animals
+that like,
+
+1168
+00:33:42,595 --> 00:33:43,795
+precocial animals
+that can just
+
+1169
+00:33:43,795 --> 00:33:45,155
+get up and walk
+around and climb
+
+1170
+00:33:45,155 --> 00:33:46,675
+mountains. It's
+obvious that it
+
+1171
+00:33:46,675 --> 00:33:48,195
+is biologically
+possible to have
+
+1172
+00:33:48,195 --> 00:33:48,915
+innate knowledge,
+
+1173
+00:33:48,915 --> 00:33:50,355
+but there are many people who
+
+1174
+00:33:50,355 --> 00:33:52,210
+just kind of wish
+that that wasn't so.
+
+1175
+00:33:52,210 --> 00:33:54,130
+And I can't fully
+explain it, but it's,
+
+1176
+00:33:54,130 --> 00:33:55,570
+you know, it's
+a documented part
+
+1177
+00:33:55,570 --> 00:33:58,130
+of the innate human biases to
+
+1178
+00:33:58,130 --> 00:34:00,255
+be biased against innateness.
+
+1179
+00:34:01,755 --> 00:34:03,195
+Those are great insights.
+
+1180
+00:34:04,055 --> 00:34:05,575
+So there's there's
+a question from,
+
+1181
+00:34:05,815 --> 00:34:08,050
+Greg Sharp. And
+Greg is asking,
+
+1182
+00:34:08,830 --> 00:34:10,370
+about, evaluation.
+
+1183
+00:34:10,670 --> 00:34:13,250
+How, how do we
+have to to change
+
+1184
+00:34:13,310 --> 00:34:15,735
+evaluations, of
+deep learning?
+
+1185
+00:34:15,735 --> 00:34:17,015
+And I I I'm, you know,
+
+1186
+00:34:17,015 --> 00:34:18,615
+augmenting his
+his questions to
+
+1187
+00:34:18,615 --> 00:34:20,795
+make it more, question
+more general.
+
+1188
+00:34:20,855 --> 00:34:23,610
+How do we have to
+consider evaluation,
+
+1189
+00:34:24,230 --> 00:34:27,750
+of of deep learning,
+in in that context?
+
+1190
+00:34:27,750 --> 00:34:29,610
+Right? How how can
+we have better,
+
+1191
+00:34:29,750 --> 00:34:31,370
+you know, dataset
+and benchmarks
+
+1192
+00:34:32,095 --> 00:34:34,575
+that we take into
+account, these,
+
+1193
+00:34:34,975 --> 00:34:36,735
+these specificities of having
+
+1194
+00:34:36,735 --> 00:34:38,895
+knowledge and
+There's a kind of
+
+1195
+00:34:38,895 --> 00:34:40,950
+interesting chicken
+and egg thing there,
+
+1196
+00:34:40,950 --> 00:34:43,990
+which is it's
+pretty obvious to
+
+1197
+00:34:43,990 --> 00:34:46,630
+me what the next
+task should be,
+
+1198
+00:34:46,630 --> 00:34:47,910
+but nobody wants
+to do it because
+
+1199
+00:34:47,910 --> 00:34:48,950
+it's too hard. So I've been
+
+1200
+00:34:48,950 --> 00:34:50,615
+arguing for at
+least five years
+
+1201
+00:34:50,615 --> 00:34:52,855
+that the real assessment would
+
+1202
+00:34:52,855 --> 00:34:55,095
+be a comprehension test where
+
+1203
+00:34:55,095 --> 00:34:56,395
+you could take in arbitrary
+
+1204
+00:34:56,535 --> 00:34:58,960
+input and answer
+questions about it.
+
+1205
+00:34:58,960 --> 00:35:00,320
+So they could be videos,
+
+1206
+00:35:00,320 --> 00:35:01,540
+they could be podcasts,
+
+1207
+00:35:01,600 --> 00:35:02,980
+they could be
+written articles,
+
+1208
+00:35:03,360 --> 00:35:05,060
+and then you
+answer questions.
+
+1209
+00:35:05,315 --> 00:35:06,515
+There are some
+technical problems
+
+1210
+00:35:06,515 --> 00:35:07,715
+in how to automate that.
+
+1211
+00:35:08,035 --> 00:35:09,095
+You need a lot
+of crowdsourcing
+
+1212
+00:35:09,315 --> 00:35:10,115
+to make the task,
+
+1213
+00:35:10,115 --> 00:35:12,035
+but it would be
+a major advance
+
+1214
+00:35:12,035 --> 00:35:13,975
+if we had systems
+that really do,
+
+1215
+00:35:14,720 --> 00:35:16,080
+comprehension and
+not just, like,
+
+1216
+00:35:16,080 --> 00:35:18,020
+fill in the blanks
+and stuff like that.
+
+1217
+00:35:18,560 --> 00:35:19,840
+But the problem is nobody has
+
+1218
+00:35:19,840 --> 00:35:20,960
+to do how to do it,
+
+1219
+00:35:20,960 --> 00:35:22,240
+so people don't work on it.
+
+1220
+00:35:22,240 --> 00:35:23,895
+Instead, what
+happens is people
+
+1221
+00:35:23,895 --> 00:35:25,775
+work on the benchmarks
+that they
+
+1222
+00:35:25,775 --> 00:35:27,695
+have some immediate grasp on.
+
+1223
+00:35:27,695 --> 00:35:28,435
+And so,
+
+1224
+00:35:29,455 --> 00:35:30,655
+I often have this discussion
+
+1225
+00:35:30,655 --> 00:35:31,455
+with Gaejin Choi,
+
+1226
+00:35:31,455 --> 00:35:32,830
+who I think has done some of
+
+1227
+00:35:32,830 --> 00:35:34,590
+the best work on benchmarks in
+
+1228
+00:35:34,590 --> 00:35:35,630
+in the last few years.
+
+1229
+00:35:35,630 --> 00:35:36,990
+And she's always
+trying to find
+
+1230
+00:35:36,990 --> 00:35:37,790
+something that's, like,
+
+1231
+00:35:37,790 --> 00:35:39,230
+two steps outside of the reach
+
+1232
+00:35:39,230 --> 00:35:40,830
+of the field in order to push
+
+1233
+00:35:40,830 --> 00:35:41,870
+the field along.
+
+1234
+00:35:41,870 --> 00:35:44,325
+But often people
+wind up chasing
+
+1235
+00:35:44,325 --> 00:35:45,765
+benchmarks. You don't really
+
+1236
+00:35:45,765 --> 00:35:46,725
+learn that much from this.
+
+1237
+00:35:46,725 --> 00:35:47,685
+It goes all the way back to
+
+1238
+00:35:47,685 --> 00:35:48,325
+the Turing test.
+
+1239
+00:35:48,325 --> 00:35:50,745
+It's the first benchmark
+in the field,
+
+1240
+00:35:51,380 --> 00:35:54,020
+and it's actually
+a lousy test.
+
+1241
+00:35:54,020 --> 00:35:55,460
+Why is the Turing test a lousy
+
+1242
+00:35:55,460 --> 00:35:56,820
+test despite its fame?
+
+1243
+00:35:56,820 --> 00:35:57,860
+Well, it's a lousy
+test because
+
+1244
+00:35:57,860 --> 00:35:59,160
+you can beat it by cheating.
+
+1245
+00:35:59,315 --> 00:36:01,075
+You can beat it
+by maybe cheating
+
+1246
+00:36:01,075 --> 00:36:02,915
+is a strong word, but
+by evading things.
+
+1247
+00:36:02,915 --> 00:36:04,275
+So the Turing test is like,
+
+1248
+00:36:04,275 --> 00:36:06,035
+do I understand
+a human conversation?
+
+1249
+00:36:06,035 --> 00:36:07,875
+But the the best
+competitors on
+
+1250
+00:36:07,875 --> 00:36:09,790
+the Turing test pretend
+to be paranoid,
+
+1251
+00:36:10,250 --> 00:36:11,770
+non native speakers
+of English,
+
+1252
+00:36:11,770 --> 00:36:13,050
+and children. So, like,
+
+1253
+00:36:13,050 --> 00:36:15,070
+Eugene Guzman
+a few years ago,
+
+1254
+00:36:15,130 --> 00:36:16,730
+you quote one
+a version of Turing
+
+1255
+00:36:16,730 --> 00:36:18,145
+test by doing all that.
+
+1256
+00:36:18,145 --> 00:36:19,425
+Pretend to be a fourteen year
+
+1257
+00:36:19,425 --> 00:36:21,025
+old boy from a a thirteen year
+
+1258
+00:36:21,025 --> 00:36:22,085
+old boy from Odessa.
+
+1259
+00:36:22,225 --> 00:36:23,505
+You'd ask him
+questions and we'd
+
+1260
+00:36:23,505 --> 00:36:24,485
+avoid the questions.
+
+1261
+00:36:24,890 --> 00:36:26,330
+That managed to
+persuade people
+
+1262
+00:36:26,330 --> 00:36:28,170
+that they were talking
+to a human being,
+
+1263
+00:36:28,170 --> 00:36:29,450
+but the system didn't actually
+
+1264
+00:36:29,450 --> 00:36:30,890
+know anything
+about the world.
+
+1265
+00:36:30,890 --> 00:36:32,090
+It's actually easy to fool it
+
+1266
+00:36:32,090 --> 00:36:32,730
+if you know how.
+
+1267
+00:36:32,730 --> 00:36:34,135
+You ask questions like,
+
+1268
+00:36:34,215 --> 00:36:35,815
+is a watch bigger
+than a bread box?
+
+1269
+00:36:35,815 --> 00:36:37,095
+And it can't
+answer any of that
+
+1270
+00:36:37,095 --> 00:36:39,175
+kind of stuff.
+But it would fool
+
+1271
+00:36:39,175 --> 00:36:40,635
+judges in a short
+conversation.
+
+1272
+00:36:41,015 --> 00:36:42,455
+Well, we learned nothing by
+
+1273
+00:36:42,455 --> 00:36:44,720
+fooling judges in
+a short conversation.
+
+1274
+00:36:44,720 --> 00:36:46,080
+And we're not learning a lot
+
+1275
+00:36:46,080 --> 00:36:48,240
+from systems like
+the GPT about
+
+1276
+00:36:48,240 --> 00:36:49,920
+how to build
+actual AI system.
+
+1277
+00:36:49,920 --> 00:36:51,380
+They can beat a bunch
+of benchmarks,
+
+1278
+00:36:52,015 --> 00:36:54,335
+but, you know,
+the benchmark of
+
+1279
+00:36:54,335 --> 00:36:56,835
+you do really
+understand a story
+
+1280
+00:36:57,935 --> 00:36:59,775
+is a hard one.
+It would actually
+
+1281
+00:36:59,775 --> 00:37:00,495
+lead us somewhere.
+
+1282
+00:37:00,495 --> 00:37:02,720
+But if people
+can't eke out half
+
+1283
+00:37:02,720 --> 00:37:04,720
+a percent each year
+and, you know,
+
+1284
+00:37:04,720 --> 00:37:05,860
+get a journal publication,
+
+1285
+00:37:06,080 --> 00:37:07,280
+they don't wanna work on it.
+
+1286
+00:37:07,280 --> 00:37:09,700
+And so we kinda stuck there.
+
+1287
+00:37:14,155 --> 00:37:15,355
+There's a question
+from I don't
+
+1288
+00:37:15,355 --> 00:37:16,655
+know how to pronounce
+this name.
+
+1289
+00:37:19,820 --> 00:37:20,940
+Saying, we've heard someone
+
+1290
+00:37:20,940 --> 00:37:21,980
+describe deep learning as
+
+1291
+00:37:21,980 --> 00:37:23,820
+algorithms that end scale
+
+1292
+00:37:23,820 --> 00:37:25,360
+proportionately with the data
+
+1293
+00:37:25,500 --> 00:37:27,895
+given them. And Shane Lag of
+
+1294
+00:37:27,895 --> 00:37:30,695
+DeepMind seems to
+agree that AGI
+
+1295
+00:37:30,695 --> 00:37:31,275
+is inevitable.
+
+1296
+00:37:33,575 --> 00:37:34,695
+Basically, the question is,
+
+1297
+00:37:34,695 --> 00:37:37,330
+is scaling alone gonna
+get this there?
+
+1298
+00:37:37,330 --> 00:37:38,770
+So the people who have really
+
+1299
+00:37:38,770 --> 00:37:40,790
+taken up that charge
+lately are OpenAI.
+
+1300
+00:37:40,930 --> 00:37:43,190
+They're making bigger
+and bigger models,
+
+1301
+00:37:43,195 --> 00:37:44,395
+and the models
+are more and more
+
+1302
+00:37:44,395 --> 00:37:45,835
+impressive. But
+the question is,
+
+1303
+00:37:45,835 --> 00:37:47,195
+is that actually getting us to
+
+1304
+00:37:47,195 --> 00:37:48,475
+artificial general
+intelligence?
+
+1305
+00:37:48,475 --> 00:37:49,775
+And I would argue no.
+
+1306
+00:37:49,995 --> 00:37:51,915
+So, you know, GPT
+three is scaled
+
+1307
+00:37:51,915 --> 00:37:52,875
+up by a factor of,
+
+1308
+00:37:52,875 --> 00:37:54,310
+I think it's
+a hundred compared
+
+1309
+00:37:54,310 --> 00:37:56,230
+to GPT two. I might
+be forgetting
+
+1310
+00:37:56,230 --> 00:37:57,210
+my numbers there.
+
+1311
+00:37:57,670 --> 00:37:59,830
+And it's much
+better at the auto
+
+1312
+00:37:59,830 --> 00:38:00,950
+complete kind of stuff that it
+
+1313
+00:38:00,950 --> 00:38:02,795
+did before and at producing
+
+1314
+00:38:02,935 --> 00:38:05,255
+surrealist stories
+given segments of it.
+
+1315
+00:38:05,255 --> 00:38:06,775
+But it's not really better at
+
+1316
+00:38:06,775 --> 00:38:07,975
+reasoning about the world.
+
+1317
+00:38:07,975 --> 00:38:09,710
+It's not really better at
+
+1318
+00:38:09,710 --> 00:38:11,150
+understanding what grape juice
+
+1319
+00:38:11,150 --> 00:38:12,670
+and cranberry juice are,
+
+1320
+00:38:12,670 --> 00:38:14,110
+what people are,
+and so forth.
+
+1321
+00:38:14,110 --> 00:38:15,390
+And so there are some things
+
+1322
+00:38:15,390 --> 00:38:16,990
+where the scaling
+has made great
+
+1323
+00:38:16,990 --> 00:38:18,975
+progress and other things like
+
+1324
+00:38:18,975 --> 00:38:20,495
+really understanding
+a conversation
+
+1325
+00:38:20,495 --> 00:38:21,855
+or really understanding
+the world
+
+1326
+00:38:21,855 --> 00:38:23,555
+where it's made no
+progress at all.
+
+1327
+00:38:23,615 --> 00:38:25,455
+And my view is that scaling is
+
+1328
+00:38:25,455 --> 00:38:26,735
+gonna make auto
+complete better
+
+1329
+00:38:26,735 --> 00:38:28,110
+and better, but
+it's not getting
+
+1330
+00:38:28,110 --> 00:38:29,490
+at these deep questions of,
+
+1331
+00:38:29,550 --> 00:38:30,990
+fundamentally,
+how do you reason
+
+1332
+00:38:30,990 --> 00:38:32,350
+about the physical world and
+
+1333
+00:38:32,350 --> 00:38:33,870
+the psychological
+world so that
+
+1334
+00:38:33,870 --> 00:38:35,150
+you can do intelligent things
+
+1335
+00:38:35,150 --> 00:38:36,370
+and understand conversations
+
+1336
+00:38:36,430 --> 00:38:38,745
+with people? Scaling
+is not out there.
+
+1337
+00:38:40,405 --> 00:38:42,905
+Great. Another question,
+
+1338
+00:38:43,285 --> 00:38:45,545
+may maybe the last
+one, which is,
+
+1339
+00:38:46,370 --> 00:38:47,350
+in your opinion,
+
+1340
+00:38:47,810 --> 00:38:49,430
+adding it's from Marikita.
+
+1341
+00:38:50,450 --> 00:38:52,870
+Adding knowledge
+to deep learning,
+
+1342
+00:38:52,930 --> 00:38:54,585
+is this the right approach to
+
+1343
+00:38:54,585 --> 00:38:55,965
+replicating the linguistic
+
+1344
+00:38:56,025 --> 00:38:59,165
+capacity of the human
+brain in AI?
+
+1345
+00:39:00,905 --> 00:39:02,845
+Well, I'll put it this way.
+
+1346
+00:39:02,940 --> 00:39:04,880
+Deep learning as
+it is right now
+
+1347
+00:39:05,020 --> 00:39:06,700
+doesn't add linguistic
+knowledge.
+
+1348
+00:39:06,700 --> 00:39:08,460
+It ignores it. Part of why I
+
+1349
+00:39:08,460 --> 00:39:09,900
+don't like the OpenAI approach
+
+1350
+00:39:09,900 --> 00:39:11,525
+is it basically ignores
+
+1351
+00:39:11,585 --> 00:39:12,705
+contributions of people like
+
+1352
+00:39:12,705 --> 00:39:13,525
+Adele Goldberg.
+
+1353
+00:39:13,665 --> 00:39:15,345
+There's a there's some kind of
+
+1354
+00:39:15,345 --> 00:39:17,425
+pattern that they're
+both data driven,
+
+1355
+00:39:17,425 --> 00:39:19,025
+but it's not
+really representing
+
+1356
+00:39:19,025 --> 00:39:20,085
+these kinds of distractions.
+
+1357
+00:39:20,930 --> 00:39:22,210
+And it's also
+ignoring the work
+
+1358
+00:39:22,210 --> 00:39:23,750
+of Chomsky and
+the many different,
+
+1359
+00:39:24,930 --> 00:39:26,130
+flavors that his students have
+
+1360
+00:39:26,130 --> 00:39:27,830
+taken that over
+over the years.
+
+1361
+00:39:28,450 --> 00:39:30,525
+And it's it's kind
+of information
+
+1362
+00:39:30,605 --> 00:39:33,185
+it's it's intellectually
+isolated.
+
+1363
+00:39:33,325 --> 00:39:35,425
+It it it's the opposite of
+the interdisciplinarity
+
+1364
+00:39:35,965 --> 00:39:37,850
+. It's like we don't
+need linguistics.
+
+1365
+00:39:37,910 --> 00:39:39,110
+And the reality is we do need
+
+1366
+00:39:39,110 --> 00:39:40,310
+linguistics, and
+linguists have
+
+1367
+00:39:40,310 --> 00:39:41,830
+figured out a lot of subtle
+
+1368
+00:39:41,830 --> 00:39:43,270
+things about how meaning and
+
+1369
+00:39:43,270 --> 00:39:45,485
+form relate. And
+we want to have
+
+1370
+00:39:45,485 --> 00:39:46,925
+a framework that
+includes those.
+
+1371
+00:39:46,925 --> 00:39:48,605
+And right now,
+deep learning is
+
+1372
+00:39:48,605 --> 00:39:49,585
+not that framework.
+
+1373
+00:39:49,805 --> 00:39:51,265
+It could become it maybe,
+
+1374
+00:39:51,725 --> 00:39:53,245
+depending on how
+you define deep
+
+1375
+00:39:53,245 --> 00:39:55,250
+learning. But the the sort of
+
+1376
+00:39:55,250 --> 00:39:56,610
+multiple layers of a neural
+
+1377
+00:39:56,610 --> 00:39:58,690
+network without
+explicit symbolic
+
+1378
+00:39:58,690 --> 00:40:00,450
+knowledge doesn't
+give you a way
+
+1379
+00:40:00,450 --> 00:40:01,730
+to integrate that knowledge.
+
+1380
+00:40:01,730 --> 00:40:03,875
+And so there may be a role for
+
+1381
+00:40:03,875 --> 00:40:05,075
+deep learning,
+but maybe we need
+
+1382
+00:40:05,075 --> 00:40:07,575
+something new entirely that is
+
+1383
+00:40:07,715 --> 00:40:09,335
+less intellectually isolated,
+
+1384
+00:40:09,875 --> 00:40:11,635
+more able to synthesize these
+
+1385
+00:40:11,635 --> 00:40:12,420
+different traditions.
+
+1386
+00:40:12,500 --> 00:40:14,100
+Maybe that's that's what will
+
+1387
+00:40:14,100 --> 00:40:16,440
+really be the big
+step big leap in AI.
+

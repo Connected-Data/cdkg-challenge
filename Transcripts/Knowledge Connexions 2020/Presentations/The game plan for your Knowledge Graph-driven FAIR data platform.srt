@@ -1,0 +1,3658 @@
+1
+00:00:00,320 --> 00:00:00,960
+This is,
+
+2
+00:00:01,520 --> 00:00:03,780
+the final day for the Knowles
+
+3
+00:00:03,920 --> 00:00:06,375
+Connections conference
+brought to you,
+
+4
+00:00:06,675 --> 00:00:08,195
+by Connected Data London and
+
+5
+00:00:08,195 --> 00:00:10,055
+the knowledge graph,
+conference.
+
+6
+00:00:10,675 --> 00:00:12,935
+This is our second
+track, innovators,
+
+7
+00:00:13,520 --> 00:00:16,100
+and, have the great
+pleasure of
+
+8
+00:00:16,240 --> 00:00:17,860
+welcoming, here today,
+
+9
+00:00:18,320 --> 00:00:19,280
+Sebastian Schmidt,
+
+10
+00:00:19,280 --> 00:00:21,620
+who's the co CEO
+of MetaFacts.
+
+11
+00:00:22,495 --> 00:00:25,475
+Co CEO is actually
+not very familiar,
+
+12
+00:00:26,175 --> 00:00:28,435
+title, not one
+many people have.
+
+13
+00:00:28,495 --> 00:00:29,650
+Sebastian does.
+
+14
+00:00:30,210 --> 00:00:32,790
+And he's here today
+to talk to us about,
+
+15
+00:00:33,730 --> 00:00:37,955
+how knowledge graphs,
+can power FAIR,
+
+16
+00:00:38,495 --> 00:00:40,815
+platform. And by FAIR, well,
+
+17
+00:00:40,815 --> 00:00:42,575
+it's an acronym you may be or
+
+18
+00:00:42,575 --> 00:00:43,695
+not be familiar with.
+
+19
+00:00:43,695 --> 00:00:45,235
+Sebastian will explain it.
+
+20
+00:00:45,520 --> 00:00:47,060
+I'll give the floor to him.
+
+21
+00:00:48,120 --> 00:00:49,260
+Thanks a lot, George.
+
+22
+00:00:52,420 --> 00:00:54,580
+So also welcome
+from from me on
+
+23
+00:00:54,580 --> 00:00:57,125
+the presentation on your game
+
+24
+00:00:57,125 --> 00:00:59,125
+plan for building a knowledge
+
+25
+00:00:59,125 --> 00:01:00,665
+graph to a fair
+data platform.
+
+26
+00:01:02,165 --> 00:01:04,825
+So, a few words on myself.
+
+27
+00:01:05,320 --> 00:01:07,240
+My name is Sebastian Schmidt.
+
+28
+00:01:07,240 --> 00:01:08,280
+As as George mentioned,
+
+29
+00:01:08,280 --> 00:01:09,740
+I'm co CEO at MatterFacts.
+
+30
+00:01:11,240 --> 00:01:13,720
+So I'm, running the company
+
+31
+00:01:13,720 --> 00:01:15,645
+together with Peter Hasso,
+
+32
+00:01:15,645 --> 00:01:17,425
+who founded it in two
+thousand fourteen.
+
+33
+00:01:20,365 --> 00:01:23,750
+I actually come from
+a cloud and and,
+
+34
+00:01:23,970 --> 00:01:25,110
+infrastructure background,
+
+35
+00:01:25,970 --> 00:01:27,650
+but I've always been a big fan
+
+36
+00:01:27,650 --> 00:01:28,850
+of knowledge graphs.
+
+37
+00:01:28,850 --> 00:01:33,015
+And, I'm happy for being about
+
+38
+00:01:33,015 --> 00:01:35,335
+one and a half years
+part of a truly
+
+39
+00:01:35,335 --> 00:01:37,550
+digital business and working
+
+40
+00:01:37,550 --> 00:01:39,730
+with a lot of knowledge
+graph experts.
+
+41
+00:01:40,670 --> 00:01:43,550
+Keep people behind,
+for example,
+
+42
+00:01:43,550 --> 00:01:45,815
+the the owl draft
+or also pushing
+
+43
+00:01:45,815 --> 00:01:47,335
+on on new topics like,
+
+44
+00:01:47,655 --> 00:01:49,435
+RDF style and sparkle style.
+
+45
+00:01:50,855 --> 00:01:52,715
+So, who is MetaFacts?
+
+46
+00:01:53,280 --> 00:01:55,200
+As I said, we
+started out in two
+
+47
+00:01:55,200 --> 00:01:56,020
+thousand fourteen.
+
+48
+00:01:56,560 --> 00:01:59,140
+We are based out of
+Waldorf, Germany,
+
+49
+00:02:00,080 --> 00:02:02,020
+and, we have an international
+
+50
+00:02:02,160 --> 00:02:04,545
+team really across multiple
+
+51
+00:02:04,545 --> 00:02:07,285
+locations from
+Australia, Germany,
+
+52
+00:02:08,465 --> 00:02:12,880
+Russia, Ireland,
+all over the globe.
+
+53
+00:02:13,820 --> 00:02:15,980
+We have one product which is
+
+54
+00:02:15,980 --> 00:02:17,420
+Meta Factory, our knowledge
+
+55
+00:02:17,420 --> 00:02:20,535
+graph platform And we
+use that product,
+
+56
+00:02:20,995 --> 00:02:22,535
+to drive
+digital transformation
+
+57
+00:02:22,595 --> 00:02:23,495
+with our customers.
+
+58
+00:02:24,115 --> 00:02:25,555
+And that's
+specifically around,
+
+59
+00:02:26,035 --> 00:02:27,715
+unlocking the value
+of the data
+
+60
+00:02:27,715 --> 00:02:29,620
+assets using knowledge graphs
+
+61
+00:02:29,620 --> 00:02:31,400
+as the underlying
+technology stack.
+
+62
+00:02:32,580 --> 00:02:34,200
+And what I want
+to present today
+
+63
+00:02:34,820 --> 00:02:35,955
+is an approach,
+
+64
+00:02:36,355 --> 00:02:38,355
+we have implemented
+with a number
+
+65
+00:02:38,355 --> 00:02:40,295
+of customers in in
+different verticals.
+
+66
+00:02:41,075 --> 00:02:43,370
+So we are working
+with customers
+
+67
+00:02:43,370 --> 00:02:44,730
+in in cultural heritage and
+
+68
+00:02:44,730 --> 00:02:46,510
+digital humanities
+and engineering,
+
+69
+00:02:46,650 --> 00:02:48,510
+manufacturing,
+finance, insurance,
+
+70
+00:02:48,810 --> 00:02:50,590
+pharma, and and life science.
+
+71
+00:02:51,565 --> 00:02:54,685
+And we have built knowledge
+
+72
+00:02:54,685 --> 00:02:56,685
+graph based
+applications and and
+
+73
+00:02:56,685 --> 00:02:58,545
+tools from,
+
+74
+00:02:59,325 --> 00:03:01,710
+a bit of material
+management to
+
+75
+00:03:01,710 --> 00:03:02,930
+a digital museum,
+
+76
+00:03:05,070 --> 00:03:06,910
+solutions like for for drug
+
+77
+00:03:06,910 --> 00:03:08,690
+discovery and and
+drug repurposing.
+
+78
+00:03:09,655 --> 00:03:11,895
+So, really a lot of different
+
+79
+00:03:11,895 --> 00:03:13,495
+domains where we
+bring in the the
+
+80
+00:03:13,495 --> 00:03:14,935
+expertise of how do you build
+
+81
+00:03:14,935 --> 00:03:16,855
+a knowledge graph and,
+
+82
+00:03:17,415 --> 00:03:19,275
+how can you do
+that really fast.
+
+83
+00:03:20,360 --> 00:03:22,360
+And our customers
+bring in their
+
+84
+00:03:22,360 --> 00:03:24,060
+specific domain expertise.
+
+85
+00:03:28,175 --> 00:03:30,895
+So, what is it about digital
+
+86
+00:03:30,895 --> 00:03:32,675
+transformation?
+Where do we see
+
+87
+00:03:32,895 --> 00:03:34,975
+this demand coming from for
+
+88
+00:03:34,975 --> 00:03:36,400
+building such
+knowledge graphs?
+
+89
+00:03:36,960 --> 00:03:41,140
+We see that
+a number of drivers
+
+90
+00:03:41,360 --> 00:03:43,445
+are behind why companies wanna
+
+91
+00:03:43,845 --> 00:03:45,545
+establish
+a digital transformation
+
+92
+00:03:45,685 --> 00:03:47,465
+strategy from,
+
+93
+00:03:48,005 --> 00:03:49,625
+really just enabling
+innovation,
+
+94
+00:03:49,765 --> 00:03:51,625
+bringing new products
+to the market,
+
+95
+00:03:52,150 --> 00:03:53,610
+driving additional business,
+
+96
+00:03:54,230 --> 00:03:57,290
+to increasing
+engagement with,
+
+97
+00:03:58,230 --> 00:04:00,170
+the employees,
+internal customers,
+
+98
+00:04:00,470 --> 00:04:04,675
+partners, to improving
+operations.
+
+99
+00:04:05,455 --> 00:04:07,135
+So, very often,
+
+100
+00:04:07,135 --> 00:04:08,835
+it's also just
+an an internally
+
+101
+00:04:08,975 --> 00:04:11,510
+focused effort to
+make sure that
+
+102
+00:04:11,510 --> 00:04:13,370
+internal processes once mover
+
+103
+00:04:13,430 --> 00:04:15,450
+access to relevant information
+
+104
+00:04:15,590 --> 00:04:17,270
+is available at the time it's
+
+105
+00:04:17,270 --> 00:04:20,305
+needed and, is complete
+and is reliable.
+
+106
+00:04:23,565 --> 00:04:24,925
+When talking about how to get
+
+107
+00:04:24,925 --> 00:04:25,985
+to digital transformation,
+
+108
+00:04:26,770 --> 00:04:28,130
+this is something
+you might have
+
+109
+00:04:28,130 --> 00:04:30,530
+seen before. So there's this
+
+110
+00:04:30,530 --> 00:04:33,990
+approach of, first
+talk to people,
+
+111
+00:04:34,675 --> 00:04:35,735
+talk to your customers,
+
+112
+00:04:35,795 --> 00:04:36,755
+talk to your partners,
+
+113
+00:04:36,755 --> 00:04:37,715
+talk to your employees,
+
+114
+00:04:37,715 --> 00:04:39,655
+and understand the gaps
+and the needs.
+
+115
+00:04:40,915 --> 00:04:42,990
+Then it is finding
+the right data,
+
+116
+00:04:42,990 --> 00:04:44,850
+using the data
+in the right way
+
+117
+00:04:45,390 --> 00:04:48,130
+to drive digital processes and
+
+118
+00:04:48,350 --> 00:04:50,130
+with those, digital processes
+
+119
+00:04:50,350 --> 00:04:52,965
+to support them with
+digital tools.
+
+120
+00:04:53,905 --> 00:04:55,185
+The approach we are taking on
+
+121
+00:04:55,185 --> 00:04:57,025
+that is is a truly
+agile approach,
+
+122
+00:04:57,025 --> 00:04:58,705
+and I'm gonna, highlight that
+
+123
+00:04:58,705 --> 00:05:00,485
+a few times throughout
+the presentation.
+
+124
+00:05:01,170 --> 00:05:03,350
+So it's all about
+planning, building,
+
+125
+00:05:03,410 --> 00:05:05,750
+testing those
+individual steps and,
+
+126
+00:05:06,690 --> 00:05:08,370
+iterations on each of those
+
+127
+00:05:08,370 --> 00:05:09,510
+steps as needed.
+
+128
+00:05:10,545 --> 00:05:12,405
+So wherever we are
+in that process,
+
+129
+00:05:13,025 --> 00:05:14,545
+the idea is you
+can at any time
+
+130
+00:05:14,545 --> 00:05:15,825
+go back to
+the previous steps,
+
+131
+00:05:17,370 --> 00:05:19,690
+fill gaps that you
+identified later on,
+
+132
+00:05:19,690 --> 00:05:22,030
+retest new hypothesis,
+
+133
+00:05:22,090 --> 00:05:24,250
+and and make sure that you are
+
+134
+00:05:24,250 --> 00:05:26,765
+actually achieving
+the the goal
+
+135
+00:05:26,765 --> 00:05:27,985
+that you have set out.
+
+136
+00:05:28,365 --> 00:05:29,745
+And it might even be adjusting
+
+137
+00:05:29,805 --> 00:05:32,385
+that goal, as you
+are going along.
+
+138
+00:05:35,230 --> 00:05:37,150
+This is a lot of
+ground to cover.
+
+139
+00:05:37,150 --> 00:05:38,910
+So today I'm gonna
+focus really,
+
+140
+00:05:39,310 --> 00:05:42,210
+purely on the the data
+aspect of this.
+
+141
+00:05:42,745 --> 00:05:45,965
+So how do we build FAIR data?
+
+142
+00:05:46,345 --> 00:05:48,365
+FAIR data that stands
+for findable,
+
+143
+00:05:48,585 --> 00:05:49,805
+accessible, interoperable,
+
+144
+00:05:50,025 --> 00:05:51,325
+and reusable data.
+
+145
+00:05:52,330 --> 00:05:54,810
+And I will highlight three of
+
+146
+00:05:54,810 --> 00:05:57,770
+the key steps we see which is
+
+147
+00:05:57,770 --> 00:05:58,990
+describing your data,
+
+148
+00:05:59,050 --> 00:06:00,250
+modeling your data,
+
+149
+00:06:00,250 --> 00:06:02,375
+and then using your data.
+
+150
+00:06:03,315 --> 00:06:04,055
+As mentioned,
+
+151
+00:06:04,275 --> 00:06:07,075
+we are using the semantic web
+
+152
+00:06:07,075 --> 00:06:09,075
+knowledge graph standard for
+
+153
+00:06:09,075 --> 00:06:11,550
+that to derive knowledge from
+
+154
+00:06:11,550 --> 00:06:14,050
+this data and to also further
+
+155
+00:06:14,430 --> 00:06:16,530
+drive prediction
+with artificial
+
+156
+00:06:16,670 --> 00:06:18,610
+intelligence and
+machine learning.
+
+157
+00:06:23,395 --> 00:06:24,995
+So when we talk about data and
+
+158
+00:06:24,995 --> 00:06:25,895
+digital transformation,
+
+159
+00:06:26,920 --> 00:06:28,680
+most of our projects actually
+
+160
+00:06:28,680 --> 00:06:30,600
+start from the point
+of looking
+
+161
+00:06:30,600 --> 00:06:32,300
+at what kind of
+data is available.
+
+162
+00:06:33,080 --> 00:06:35,625
+And I think there's
+no enterprise
+
+163
+00:06:35,625 --> 00:06:37,385
+that has a lack of available
+
+164
+00:06:37,385 --> 00:06:40,205
+data but the challenge
+is usually about,
+
+165
+00:06:40,825 --> 00:06:42,765
+what can I actually
+do with this data?
+
+166
+00:06:43,190 --> 00:06:45,430
+Is this relevant data for what
+
+167
+00:06:45,430 --> 00:06:48,230
+I wanna achieve here?
+Who created it?
+
+168
+00:06:48,230 --> 00:06:49,750
+So who can I reach
+out to to get
+
+169
+00:06:49,750 --> 00:06:51,050
+more detail about it?
+
+170
+00:06:51,335 --> 00:06:52,775
+Which processing
+steps have been
+
+171
+00:06:52,775 --> 00:06:53,655
+applied to this data?
+
+172
+00:06:53,655 --> 00:06:56,215
+Is this, in some
+way modified?
+
+173
+00:06:56,215 --> 00:06:57,895
+How do I interpret
+that correctly?
+
+174
+00:06:57,895 --> 00:06:59,675
+Is that, reliable data?
+
+175
+00:07:00,330 --> 00:07:02,330
+So do I have
+contradicting data
+
+176
+00:07:02,330 --> 00:07:04,570
+available or other
+data that is,
+
+177
+00:07:04,890 --> 00:07:06,330
+supporting the information I
+
+178
+00:07:06,330 --> 00:07:07,950
+would derive from it?
+
+179
+00:07:09,245 --> 00:07:10,925
+Where and when
+was it created?
+
+180
+00:07:10,925 --> 00:07:12,145
+So is it still relevant?
+
+181
+00:07:12,845 --> 00:07:14,605
+And what was
+the intended use?
+
+182
+00:07:14,605 --> 00:07:16,365
+So with what, idea was it
+
+183
+00:07:16,365 --> 00:07:18,400
+initially created
+and and that's
+
+184
+00:07:18,400 --> 00:07:20,080
+that properly applied to,
+
+185
+00:07:20,640 --> 00:07:22,340
+what I'm planning
+to do with it.
+
+186
+00:07:23,840 --> 00:07:25,805
+And there are a number of
+
+187
+00:07:25,805 --> 00:07:27,005
+approaches we see that our
+
+188
+00:07:27,005 --> 00:07:28,925
+customers have taken to answer
+
+189
+00:07:28,925 --> 00:07:30,845
+those questions
+and get a better
+
+190
+00:07:30,845 --> 00:07:32,225
+understanding of their data.
+
+191
+00:07:33,930 --> 00:07:35,930
+The most successful
+approach at
+
+192
+00:07:35,930 --> 00:07:38,730
+describing your
+data is is really
+
+193
+00:07:38,730 --> 00:07:40,945
+taking all of your data,
+
+194
+00:07:40,945 --> 00:07:42,385
+all of those digital assets in
+
+195
+00:07:42,385 --> 00:07:43,685
+the same way. Meaning,
+
+196
+00:07:43,985 --> 00:07:45,745
+that could be any
+kind of private
+
+197
+00:07:45,745 --> 00:07:47,985
+data or public
+data that is not
+
+198
+00:07:47,985 --> 00:07:49,820
+yet cataloged, that is just
+
+199
+00:07:49,820 --> 00:07:51,840
+existing in in
+some way in your
+
+200
+00:07:51,900 --> 00:07:54,540
+enterprise, or
+existing catalog
+
+201
+00:07:54,540 --> 00:07:56,160
+solutions you
+might have already
+
+202
+00:07:56,220 --> 00:07:58,785
+established, which
+we very often
+
+203
+00:07:58,785 --> 00:08:00,485
+see are building
+on proprietary
+
+204
+00:08:00,785 --> 00:08:03,445
+standards, are
+building mostly,
+
+205
+00:08:03,985 --> 00:08:05,605
+as a siloed solution.
+
+206
+00:08:06,830 --> 00:08:08,750
+So, most customers I'm working
+
+207
+00:08:08,750 --> 00:08:10,590
+with have actually
+two or three
+
+208
+00:08:10,590 --> 00:08:12,370
+catalog solutions in place.
+
+209
+00:08:13,230 --> 00:08:16,155
+None of them covering,
+let's say,
+
+210
+00:08:16,855 --> 00:08:18,695
+a very significant
+part of the data.
+
+211
+00:08:18,695 --> 00:08:20,055
+It's it's usually in the range
+
+212
+00:08:20,055 --> 00:08:21,835
+of twenty, maybe
+thirty percent.
+
+213
+00:08:22,920 --> 00:08:25,660
+And the idea is bringing in
+
+214
+00:08:25,960 --> 00:08:28,300
+documentation provenance
+and lineage.
+
+215
+00:08:29,995 --> 00:08:31,435
+And what we are proposing for
+
+216
+00:08:31,435 --> 00:08:33,675
+that is is building on those w
+
+217
+00:08:33,675 --> 00:08:34,555
+three c standards.
+
+218
+00:08:34,555 --> 00:08:37,275
+So building on the RDF data
+
+219
+00:08:37,275 --> 00:08:39,035
+formats to build
+a semantic data
+
+220
+00:08:39,035 --> 00:08:41,120
+catalog and using,
+
+221
+00:08:41,660 --> 00:08:43,580
+vocabularies from
+from DCAD and
+
+222
+00:08:43,580 --> 00:08:45,180
+BRAVO to,
+
+223
+00:08:45,500 --> 00:08:47,340
+on the one side
+with DCAD model
+
+224
+00:08:47,340 --> 00:08:49,905
+really What kind
+of data that is,
+
+225
+00:08:49,905 --> 00:08:51,125
+where it comes from,
+
+226
+00:08:52,145 --> 00:08:53,985
+and and how you can reach out
+
+227
+00:08:53,985 --> 00:08:55,345
+to get more
+information about it,
+
+228
+00:08:55,345 --> 00:08:56,730
+how you can get to the actual
+
+229
+00:08:56,890 --> 00:08:59,470
+source of that
+data and combining
+
+230
+00:08:59,530 --> 00:09:01,230
+that with Provo to understand
+
+231
+00:09:01,850 --> 00:09:02,910
+the kind of transformations
+
+232
+00:09:03,210 --> 00:09:04,570
+modifications that
+have happened
+
+233
+00:09:04,570 --> 00:09:06,495
+to the data and,
+
+234
+00:09:07,595 --> 00:09:09,915
+what happened before this data
+
+235
+00:09:09,915 --> 00:09:10,715
+actually reached,
+
+236
+00:09:11,675 --> 00:09:13,035
+the the system where you are
+
+237
+00:09:13,035 --> 00:09:14,495
+interacting with it now.
+
+238
+00:09:16,890 --> 00:09:19,950
+So to make it a little
+bit more visual,
+
+239
+00:09:20,250 --> 00:09:21,230
+I have a demo.
+
+240
+00:09:22,490 --> 00:09:24,330
+I have a fallback
+version as a video,
+
+241
+00:09:24,330 --> 00:09:26,645
+but let's try if we can maybe
+
+242
+00:09:27,745 --> 00:09:29,445
+have the actual demo system.
+
+243
+00:09:30,785 --> 00:09:34,370
+So this is our, meta
+factory tool and,
+
+244
+00:09:35,250 --> 00:09:37,170
+we have a number of asset
+
+245
+00:09:37,170 --> 00:09:39,350
+management interfaces
+built in here.
+
+246
+00:09:39,410 --> 00:09:41,170
+And I wanna start
+out from the data
+
+247
+00:09:41,170 --> 00:09:43,030
+cataloging interface here.
+
+248
+00:09:43,435 --> 00:09:46,875
+So what we can see is all of
+
+249
+00:09:46,875 --> 00:09:49,615
+those different
+properties defined
+
+250
+00:09:49,755 --> 00:09:55,340
+in in DCAD to filter
+the available
+
+251
+00:09:56,120 --> 00:09:57,900
+datasets we have
+in the system.
+
+252
+00:09:58,575 --> 00:09:59,375
+We, for example,
+
+253
+00:09:59,375 --> 00:10:01,375
+can look at the link
+Nobel Prize
+
+254
+00:10:01,375 --> 00:10:05,955
+dataset here. We
+can, look at that.
+
+255
+00:10:06,360 --> 00:10:09,820
+And what we are doing
+is we we populate,
+
+256
+00:10:11,400 --> 00:10:13,720
+a page in, some
+kind of a linked
+
+257
+00:10:13,720 --> 00:10:15,795
+data browser kind of concept.
+
+258
+00:10:15,795 --> 00:10:18,835
+So we are now on the on that
+
+259
+00:10:18,835 --> 00:10:19,875
+individual dataset.
+
+260
+00:10:19,875 --> 00:10:21,815
+We get information
+about this dataset.
+
+261
+00:10:23,420 --> 00:10:26,140
+We can see the URI
+and the type
+
+262
+00:10:26,140 --> 00:10:28,800
+of this dataset we have here.
+
+263
+00:10:29,500 --> 00:10:32,160
+It is possible to
+modify the dataset.
+
+264
+00:10:33,365 --> 00:10:35,305
+And all of
+those configurations
+
+265
+00:10:35,605 --> 00:10:38,745
+are directly loaded
+from the DCAD model.
+
+266
+00:10:38,885 --> 00:10:40,885
+The model that's defined with
+
+267
+00:10:40,885 --> 00:10:42,210
+that DCAD standard,
+
+268
+00:10:42,210 --> 00:10:43,730
+that open standard is directly
+
+269
+00:10:43,730 --> 00:10:46,530
+driving the user
+interface and,
+
+270
+00:10:47,010 --> 00:10:48,870
+how information is presented.
+
+271
+00:10:49,965 --> 00:10:51,805
+From here, I can also explore
+
+272
+00:10:51,805 --> 00:10:53,345
+the graph that's behind it.
+
+273
+00:10:54,285 --> 00:10:55,405
+So I can, for example,
+
+274
+00:10:55,405 --> 00:10:56,925
+see all of the incoming and
+
+275
+00:10:56,925 --> 00:10:59,220
+outgoing links for
+this data set.
+
+276
+00:10:59,220 --> 00:11:00,840
+I can see the the publisher.
+
+277
+00:11:03,860 --> 00:11:07,065
+I can also look
+into the the model
+
+278
+00:11:07,065 --> 00:11:11,805
+information of type data set.
+
+279
+00:11:12,560 --> 00:11:14,320
+I can see there are number of
+
+280
+00:11:14,320 --> 00:11:18,880
+other resources
+that are of that
+
+281
+00:11:18,880 --> 00:11:21,725
+same type.
+
+282
+00:11:24,105 --> 00:11:29,630
+So we can take one of those in
+
+283
+00:11:29,630 --> 00:11:32,030
+as well and and see
+the the different
+
+284
+00:11:32,030 --> 00:11:33,470
+kind of datasets
+we have in our
+
+285
+00:11:33,470 --> 00:11:34,510
+knowledge graph and really
+
+286
+00:11:34,510 --> 00:11:36,110
+navigate from one resource to
+
+287
+00:11:36,110 --> 00:11:38,115
+the other and and get a better
+
+288
+00:11:38,115 --> 00:11:40,855
+understanding. We have,
+
+289
+00:11:41,795 --> 00:11:43,795
+auto populating
+knowledge panels
+
+290
+00:11:43,795 --> 00:11:45,950
+that show you
+context information
+
+291
+00:11:46,010 --> 00:11:47,210
+about everything
+in that knowledge
+
+292
+00:11:47,210 --> 00:11:48,570
+graph. And through that,
+
+293
+00:11:48,570 --> 00:11:49,850
+you can really browse your
+
+294
+00:11:49,850 --> 00:11:52,270
+datasets and build a central
+
+295
+00:11:52,330 --> 00:11:54,795
+system driven by
+an open standard
+
+296
+00:11:54,795 --> 00:11:57,275
+by an open data
+model where you
+
+297
+00:11:57,275 --> 00:11:59,135
+can learn about
+all the different
+
+298
+00:11:59,195 --> 00:12:01,750
+datasets that are available to
+
+299
+00:12:01,750 --> 00:12:02,870
+you and that you are working
+
+300
+00:12:02,870 --> 00:12:03,930
+within your company.
+
+301
+00:12:17,300 --> 00:12:21,320
+Now the next step is
+modeling your data.
+
+302
+00:12:22,340 --> 00:12:24,180
+So now that we actually have
+
+303
+00:12:24,180 --> 00:12:25,220
+information about where this
+
+304
+00:12:25,220 --> 00:12:25,945
+data comes from,
+
+305
+00:12:25,945 --> 00:12:27,885
+what kind of data
+that is, and,
+
+306
+00:12:28,665 --> 00:12:30,585
+where we get to to
+more information
+
+307
+00:12:30,585 --> 00:12:32,265
+about it, it is very important
+
+308
+00:12:32,265 --> 00:12:33,305
+to put a model on.
+
+309
+00:12:33,305 --> 00:12:36,340
+And I'm not talking
+about a classical
+
+310
+00:12:36,480 --> 00:12:37,840
+relational database model or
+
+311
+00:12:37,840 --> 00:12:38,640
+something like that.
+
+312
+00:12:38,640 --> 00:12:43,755
+So this is not to
+describe the structure
+
+313
+00:12:43,815 --> 00:12:45,255
+, the data types of my data,
+
+314
+00:12:45,255 --> 00:12:47,495
+but this is about
+describing my
+
+315
+00:12:47,495 --> 00:12:49,735
+domain model.
+Because it's very
+
+316
+00:12:49,735 --> 00:12:50,855
+important if you wanna be
+
+317
+00:12:50,855 --> 00:12:52,600
+effective in using the data at
+
+318
+00:12:52,600 --> 00:12:54,140
+hand that you describe,
+
+319
+00:12:55,080 --> 00:12:56,760
+what kind of data it actually
+
+320
+00:12:56,760 --> 00:12:58,780
+is and how
+the different concepts
+
+321
+00:12:58,945 --> 00:13:00,405
+and relations are interacting
+
+322
+00:13:00,465 --> 00:13:01,765
+in your specific dataset.
+
+323
+00:13:02,945 --> 00:13:04,465
+So what we are seeing here is
+
+324
+00:13:04,465 --> 00:13:07,960
+a case from from pharma domain
+
+325
+00:13:08,420 --> 00:13:10,660
+where we have a number of data
+
+326
+00:13:10,660 --> 00:13:12,820
+sources in our
+data catalog and
+
+327
+00:13:12,820 --> 00:13:14,760
+we are showing here how those
+
+328
+00:13:15,845 --> 00:13:17,625
+public available data sources
+
+329
+00:13:18,165 --> 00:13:20,885
+actually interlink
+on a on a higher
+
+330
+00:13:20,885 --> 00:13:22,105
+level, model.
+
+331
+00:13:22,325 --> 00:13:25,110
+So we see that we
+have genes and
+
+332
+00:13:25,110 --> 00:13:27,610
+and proteins and
+and transcripts
+
+333
+00:13:27,670 --> 00:13:28,470
+which are all,
+
+334
+00:13:29,430 --> 00:13:32,010
+subclasses of
+biomolecular entities.
+
+335
+00:13:32,615 --> 00:13:34,695
+And we see how
+a protein connects
+
+336
+00:13:34,695 --> 00:13:35,675
+to a pathway.
+
+337
+00:13:36,215 --> 00:13:38,055
+So without actually being in
+
+338
+00:13:38,055 --> 00:13:39,015
+the pharma domain,
+
+339
+00:13:39,015 --> 00:13:40,715
+I can get
+a basic understanding
+
+340
+00:13:40,855 --> 00:13:42,940
+of of what kind of things are
+
+341
+00:13:42,940 --> 00:13:44,160
+modeled in this data.
+
+342
+00:13:45,020 --> 00:13:46,540
+What kind of information I can
+
+343
+00:13:46,540 --> 00:13:47,760
+extract from that.
+
+344
+00:13:48,140 --> 00:13:50,320
+And that's the idea
+of this approach.
+
+345
+00:13:50,875 --> 00:13:53,115
+We are using, the OWL and and
+
+346
+00:13:53,115 --> 00:13:54,735
+Shackle standards for that.
+
+347
+00:13:55,435 --> 00:13:57,035
+So so most of what
+you're seeing
+
+348
+00:13:57,035 --> 00:14:00,255
+here is actually
+modeled through OWL,
+
+349
+00:14:00,860 --> 00:14:02,060
+But we see that,
+
+350
+00:14:03,420 --> 00:14:04,940
+you also wanna
+model things like
+
+351
+00:14:04,940 --> 00:14:07,600
+constraints. So you
+might wanna define,
+
+352
+00:14:08,355 --> 00:14:10,195
+this relationship between gene
+
+353
+00:14:10,195 --> 00:14:12,435
+and protein. So this encodes
+
+354
+00:14:12,435 --> 00:14:13,895
+relationship we have here.
+
+355
+00:14:15,075 --> 00:14:15,815
+How many,
+
+356
+00:14:16,355 --> 00:14:19,640
+proteins can be
+encoded by a gene.
+
+357
+00:14:20,420 --> 00:14:21,880
+And to define that,
+
+358
+00:14:22,340 --> 00:14:24,500
+OLL doesn't give you
+any way to do that.
+
+359
+00:14:24,500 --> 00:14:25,700
+So that's why we are combining
+
+360
+00:14:25,700 --> 00:14:27,925
+it with Shackle
+to allow you to
+
+361
+00:14:27,925 --> 00:14:29,625
+model those
+constraints as well.
+
+362
+00:14:34,005 --> 00:14:36,825
+So, again, how
+does that work?
+
+363
+00:14:40,150 --> 00:14:41,670
+So from the the perspective of
+
+364
+00:14:41,670 --> 00:14:44,170
+metafactory, that's
+just another asset.
+
+365
+00:14:44,495 --> 00:14:45,535
+So, in this case,
+
+366
+00:14:45,535 --> 00:14:47,555
+we're looking at
+an ontology asset.
+
+367
+00:14:48,495 --> 00:14:50,415
+You can also see
+that we have,
+
+368
+00:14:50,575 --> 00:14:52,750
+an integration with
+with git here.
+
+369
+00:14:52,750 --> 00:14:54,030
+So those are all not versioned
+
+370
+00:14:54,030 --> 00:14:55,730
+in git right now but we have
+
+371
+00:14:55,870 --> 00:14:58,370
+again the Nobel
+Prize dataset here.
+
+372
+00:14:58,990 --> 00:15:01,230
+We see this is
+versioned in git
+
+373
+00:15:01,230 --> 00:15:03,795
+with no active
+changes on this.
+
+374
+00:15:04,895 --> 00:15:07,455
+And we can go
+into that now and
+
+375
+00:15:07,455 --> 00:15:11,635
+we can really modify
+our model here.
+
+376
+00:15:12,160 --> 00:15:13,600
+So what we see are, again,
+
+377
+00:15:13,600 --> 00:15:16,180
+the the core concepts
+of this dataset.
+
+378
+00:15:17,120 --> 00:15:19,220
+We are seeing,
+those constraints
+
+379
+00:15:19,360 --> 00:15:21,635
+like there's an exact
+one relation
+
+380
+00:15:21,935 --> 00:15:24,355
+between a word file
+and a file type.
+
+381
+00:15:25,055 --> 00:15:29,620
+And one common step you would
+
+382
+00:15:29,620 --> 00:15:30,680
+wanna do is,
+
+383
+00:15:32,740 --> 00:15:34,200
+after you have actually built
+
+384
+00:15:34,260 --> 00:15:36,100
+the ontology, which
+you can do in here,
+
+385
+00:15:36,100 --> 00:15:39,525
+so you can can modify parts of
+
+386
+00:15:39,525 --> 00:15:41,225
+the ontology. You
+can add relations.
+
+387
+00:15:41,445 --> 00:15:44,825
+You can add
+additional classes.
+
+388
+00:15:45,100 --> 00:15:47,200
+But you can also tie it into,
+
+389
+00:15:47,900 --> 00:15:48,800
+other ontologies.
+
+390
+00:15:49,100 --> 00:15:51,200
+So we see a lot of customers
+
+391
+00:15:51,340 --> 00:15:55,005
+building kind of a more higher
+
+392
+00:15:55,005 --> 00:15:58,205
+level ontology where all of
+
+393
+00:15:58,205 --> 00:15:59,985
+the specific domain ontologies
+
+394
+00:16:00,205 --> 00:16:01,185
+can tie into.
+
+395
+00:16:02,760 --> 00:16:04,200
+And that's also
+why you're seeing
+
+396
+00:16:04,200 --> 00:16:06,700
+such a lot of
+classes in here.
+
+397
+00:16:06,760 --> 00:16:08,120
+So if you, for example,
+
+398
+00:16:08,120 --> 00:16:09,960
+would only look at the local
+
+399
+00:16:09,960 --> 00:16:11,245
+ontology you can see it's it's
+
+400
+00:16:11,245 --> 00:16:12,925
+a lot less here.
+
+401
+00:16:12,925 --> 00:16:14,765
+So let me quickly jump back to
+
+402
+00:16:14,765 --> 00:16:17,345
+to all ontologies and,
+
+403
+00:16:18,125 --> 00:16:20,290
+pick out something
+that does not
+
+404
+00:16:20,290 --> 00:16:22,150
+come from this ontology itself
+
+405
+00:16:23,650 --> 00:16:25,750
+but comes from
+another ontology.
+
+406
+00:16:25,890 --> 00:16:26,790
+So for example,
+
+407
+00:16:27,330 --> 00:16:31,435
+we pick out
+the the agent and,
+
+408
+00:16:31,755 --> 00:16:32,495
+the document.
+
+409
+00:16:33,195 --> 00:16:34,475
+We can see that for them,
+
+410
+00:16:34,475 --> 00:16:36,415
+there are already
+relations defined.
+
+411
+00:16:36,840 --> 00:16:38,520
+And now we can go here and say
+
+412
+00:16:38,520 --> 00:16:41,080
+that an award file and take
+
+413
+00:16:41,080 --> 00:16:43,400
+the subclass
+relation is actually
+
+414
+00:16:43,400 --> 00:16:44,780
+a subclass of a document.
+
+415
+00:16:46,555 --> 00:16:48,895
+Lawyer is actually a subclass
+
+416
+00:16:49,115 --> 00:16:49,935
+of an agent.
+
+417
+00:16:51,755 --> 00:16:54,255
+And now we can
+save this change.
+
+418
+00:16:55,700 --> 00:16:59,320
+And we can also now
+do validation.
+
+419
+00:16:59,540 --> 00:17:02,100
+So we can actually
+see how much
+
+420
+00:17:02,100 --> 00:17:04,725
+of our data is conformed
+to this model.
+
+421
+00:17:05,525 --> 00:17:08,425
+So if I'm going back
+to my, ontologies,
+
+422
+00:17:11,525 --> 00:17:14,185
+I can do a validation
+step here
+
+423
+00:17:16,000 --> 00:17:19,040
+and we should now get a new
+
+424
+00:17:19,040 --> 00:17:22,900
+entry here for new
+data quality report.
+
+425
+00:17:23,485 --> 00:17:24,845
+And we can see that,
+
+426
+00:17:25,405 --> 00:17:27,005
+with our latest report,
+
+427
+00:17:27,005 --> 00:17:28,525
+we have a few
+elements which are
+
+428
+00:17:28,525 --> 00:17:31,825
+not conformant,
+with our model.
+
+429
+00:17:32,120 --> 00:17:34,220
+So we can right
+away go in here
+
+430
+00:17:35,160 --> 00:17:38,620
+and we can learn
+that the minimum
+
+431
+00:17:38,680 --> 00:17:41,180
+cardinality for for file type
+
+432
+00:17:41,565 --> 00:17:43,885
+and for year is not,
+
+433
+00:17:44,445 --> 00:17:46,045
+correctly set for
+some of those
+
+434
+00:17:46,045 --> 00:17:47,805
+elements. And we can now learn
+
+435
+00:17:47,805 --> 00:17:49,565
+also which specific note does
+
+436
+00:17:49,565 --> 00:17:50,360
+not provide it.
+
+437
+00:17:50,360 --> 00:17:51,160
+So for example,
+
+438
+00:17:51,160 --> 00:17:52,840
+here we see the device file.
+
+439
+00:17:52,840 --> 00:17:54,860
+And that leads
+back again to our
+
+440
+00:17:57,375 --> 00:17:58,355
+linked data browser.
+
+441
+00:17:58,575 --> 00:18:00,415
+So the idea is really that
+
+442
+00:18:00,415 --> 00:18:02,015
+everything is in
+the knowledge graph.
+
+443
+00:18:02,015 --> 00:18:03,615
+The catalog is in
+the knowledge graph.
+
+444
+00:18:03,615 --> 00:18:05,315
+The model is in
+the knowledge graph.
+
+445
+00:18:05,580 --> 00:18:07,200
+And also the data validation
+
+446
+00:18:07,340 --> 00:18:08,780
+information is part of that
+
+447
+00:18:08,780 --> 00:18:09,680
+knowledge graph.
+
+448
+00:18:09,740 --> 00:18:11,100
+And everything is interlinked
+
+449
+00:18:11,100 --> 00:18:12,940
+and can be accessed
+from every point,
+
+450
+00:18:13,420 --> 00:18:15,675
+of where you are
+in your dataset.
+
+451
+00:18:29,060 --> 00:18:30,820
+The deontology
+or your schema,
+
+452
+00:18:30,820 --> 00:18:32,260
+your model, that's one piece.
+
+453
+00:18:32,260 --> 00:18:33,485
+The other one is,
+
+454
+00:18:33,645 --> 00:18:36,525
+bringing that together
+with a controlled
+
+455
+00:18:36,525 --> 00:18:39,265
+vocabulary. We are
+using SCOS for that.
+
+456
+00:18:39,645 --> 00:18:41,670
+So you see an example where we
+
+457
+00:18:41,670 --> 00:18:42,250
+are modeling,
+
+458
+00:18:43,350 --> 00:18:44,730
+the the controlled vocabulary
+
+459
+00:18:44,870 --> 00:18:46,490
+for diseases in this case.
+
+460
+00:18:47,270 --> 00:18:47,910
+And then,
+
+461
+00:18:48,710 --> 00:18:51,345
+we have built that system so
+
+462
+00:18:51,885 --> 00:18:53,485
+that you have interfaces for
+
+463
+00:18:53,485 --> 00:18:54,765
+specific user types.
+
+464
+00:18:54,765 --> 00:18:57,165
+So we are seeing more and more
+
+465
+00:18:57,165 --> 00:18:59,290
+customers adopting
+the the ideas
+
+466
+00:18:59,290 --> 00:19:01,210
+of a semantic modeler being
+
+467
+00:19:01,210 --> 00:19:02,890
+responsible for that overall
+
+468
+00:19:02,890 --> 00:19:04,030
+modeling process,
+
+469
+00:19:04,890 --> 00:19:07,310
+kind of the the gatekeeper
+to the model.
+
+470
+00:19:07,995 --> 00:19:09,855
+Domain experts actively
+
+471
+00:19:09,915 --> 00:19:11,835
+participating in
+modeling as well as,
+
+472
+00:19:12,075 --> 00:19:13,375
+building out the vocabularies
+
+473
+00:19:13,995 --> 00:19:16,800
+and data stewards
+that have some,
+
+474
+00:19:17,280 --> 00:19:18,800
+interaction with those those
+
+475
+00:19:18,800 --> 00:19:19,940
+models or ontologies,
+
+476
+00:19:20,160 --> 00:19:22,240
+but are mostly active around
+
+477
+00:19:22,240 --> 00:19:23,620
+building the data catalog,
+
+478
+00:19:24,035 --> 00:19:25,875
+bringing the data
+into the system,
+
+479
+00:19:25,875 --> 00:19:27,735
+mapping it into models
+and vocabularies,
+
+480
+00:19:27,875 --> 00:19:28,935
+and making it available.
+
+481
+00:19:30,355 --> 00:19:32,000
+To support that process,
+
+482
+00:19:32,000 --> 00:19:33,360
+and and I don't
+really have time
+
+483
+00:19:33,360 --> 00:19:34,660
+to talk about that a lot,
+
+484
+00:19:35,360 --> 00:19:36,740
+but we have also implemented
+
+485
+00:19:37,280 --> 00:19:39,280
+the W3C reconciliation service
+
+486
+00:19:39,280 --> 00:19:40,900
+API draft.
+
+487
+00:19:41,595 --> 00:19:44,015
+So you can use that to
+have a standardized
+
+488
+00:19:44,315 --> 00:19:46,075
+interface to look up what is
+
+489
+00:19:46,075 --> 00:19:48,875
+the idea the the IP
+for one of my,
+
+490
+00:19:49,275 --> 00:19:50,655
+resources or entities.
+
+491
+00:19:51,560 --> 00:19:53,400
+So every new dataset and all
+
+492
+00:19:53,400 --> 00:19:54,440
+the new data you are bringing
+
+493
+00:19:54,440 --> 00:19:55,800
+into your knowledge graph will
+
+494
+00:19:55,800 --> 00:19:57,080
+correctly map into what's
+
+495
+00:19:57,080 --> 00:19:57,980
+available already.
+
+496
+00:20:01,765 --> 00:20:03,205
+So the third and final step is
+
+497
+00:20:03,205 --> 00:20:04,085
+using your data.
+
+498
+00:20:04,085 --> 00:20:05,685
+And that's interestingly one
+
+499
+00:20:05,685 --> 00:20:08,165
+that's often overlooked when
+
+500
+00:20:08,165 --> 00:20:09,285
+knowledge graphs are built in
+
+501
+00:20:09,285 --> 00:20:11,640
+the beginning. And
+that has been,
+
+502
+00:20:11,960 --> 00:20:14,140
+one of our focus
+points all along.
+
+503
+00:20:14,760 --> 00:20:17,660
+So we, together with
+our customers,
+
+504
+00:20:17,880 --> 00:20:19,180
+built, wireframes.
+
+505
+00:20:19,785 --> 00:20:22,845
+So really discussing
+the the requirements
+
+506
+00:20:23,145 --> 00:20:24,505
+from from data, people,
+
+507
+00:20:24,505 --> 00:20:26,365
+processes for
+the user experience.
+
+508
+00:20:26,910 --> 00:20:28,750
+And then take that
+into Meta Factory,
+
+509
+00:20:28,750 --> 00:20:29,570
+which is also,
+
+510
+00:20:30,350 --> 00:20:32,290
+a model driven
+local platform.
+
+511
+00:20:33,070 --> 00:20:34,990
+So that that linked
+data browser
+
+512
+00:20:34,990 --> 00:20:36,635
+you saw as well as
+all the interfaces,
+
+513
+00:20:37,095 --> 00:20:38,395
+they are highly customizable
+
+514
+00:20:38,535 --> 00:20:40,715
+which means they are
+just HTML pages,
+
+515
+00:20:42,215 --> 00:20:45,170
+that are connected to a number
+
+516
+00:20:45,170 --> 00:20:48,370
+of of templates
+where we use our,
+
+517
+00:20:48,690 --> 00:20:50,370
+predefined and graph enabled
+
+518
+00:20:50,370 --> 00:20:51,925
+components to put those
+
+519
+00:20:51,925 --> 00:20:54,345
+visualizations and
+interfaces together.
+
+520
+00:20:54,965 --> 00:20:56,085
+And everything that you would
+
+521
+00:20:56,085 --> 00:20:57,365
+like to have in
+a different way
+
+522
+00:20:57,365 --> 00:20:58,265
+you can modify.
+
+523
+00:20:59,820 --> 00:21:02,220
+This all sits on
+top of a graph
+
+524
+00:21:02,220 --> 00:21:04,320
+database where
+the data is stored.
+
+525
+00:21:04,860 --> 00:21:06,160
+And all of the configuration
+
+526
+00:21:06,380 --> 00:21:07,840
+like you saw it
+for the model,
+
+527
+00:21:07,855 --> 00:21:09,135
+but also for those template
+
+528
+00:21:09,135 --> 00:21:11,235
+pages is stored in
+a versioning system.
+
+529
+00:21:11,855 --> 00:21:14,595
+Which makes ultimately
+the the platform
+
+530
+00:21:14,655 --> 00:21:16,515
+itself a stateless component
+
+531
+00:21:16,575 --> 00:21:17,920
+that's just putting the things
+
+532
+00:21:17,920 --> 00:21:19,520
+together and creating
+the interface
+
+533
+00:21:19,520 --> 00:21:20,820
+to interact with it.
+
+534
+00:21:21,520 --> 00:21:23,040
+Or in the same way providing
+
+535
+00:21:23,040 --> 00:21:25,775
+that through APIs to a larger
+
+536
+00:21:25,835 --> 00:21:27,695
+ecosystem of analytics
+prediction,
+
+537
+00:21:27,995 --> 00:21:29,295
+AI, ML solutions.
+
+538
+00:21:31,675 --> 00:21:33,760
+We do have a public
+demo system
+
+539
+00:21:33,920 --> 00:21:35,460
+based on Wikidata.
+
+540
+00:21:38,400 --> 00:21:41,760
+And, if you if you open that
+
+541
+00:21:41,760 --> 00:21:42,740
+system on wikidata.
+
+542
+00:21:42,960 --> 00:21:44,545
+Matter of fact dot com,
+
+543
+00:21:44,545 --> 00:21:47,265
+there's an example gallery of
+
+544
+00:21:47,265 --> 00:21:49,045
+some of the components
+we provide.
+
+545
+00:21:49,585 --> 00:21:51,265
+And I just wanna show you,
+
+546
+00:21:51,585 --> 00:21:53,045
+two examples quickly.
+
+547
+00:21:55,360 --> 00:21:58,960
+So there is one option here to
+
+548
+00:21:58,960 --> 00:22:03,375
+combine a keyword search with
+
+549
+00:22:03,375 --> 00:22:04,595
+a a tree visualization.
+
+550
+00:22:06,095 --> 00:22:08,995
+So we are seeing
+the, the tree of,
+
+551
+00:22:12,690 --> 00:22:15,090
+diseases here and and how that
+
+552
+00:22:15,090 --> 00:22:16,870
+that connects in this taxonomy
+
+553
+00:22:17,170 --> 00:22:18,070
+called MeSH.
+
+554
+00:22:19,185 --> 00:22:20,385
+And here we can look behind
+
+555
+00:22:20,385 --> 00:22:22,145
+the cover of how this
+is actually built.
+
+556
+00:22:22,145 --> 00:22:23,925
+So what you see is it is our
+
+557
+00:22:24,145 --> 00:22:25,045
+tree component.
+
+558
+00:22:25,265 --> 00:22:26,965
+It has a query to find,
+
+559
+00:22:27,585 --> 00:22:29,730
+parents and it has a query to
+
+560
+00:22:29,730 --> 00:22:31,430
+do the the keyword lookup.
+
+561
+00:22:32,210 --> 00:22:33,010
+And interestingly,
+
+562
+00:22:33,010 --> 00:22:34,130
+you can also see that we are
+
+563
+00:22:34,130 --> 00:22:36,290
+also federating
+here over a number
+
+564
+00:22:36,290 --> 00:22:38,495
+of repositories combining mesh
+
+565
+00:22:38,735 --> 00:22:41,055
+with Wikidata. So these few
+
+566
+00:22:41,055 --> 00:22:42,915
+lines give you that
+user interface,
+
+567
+00:22:43,615 --> 00:22:45,215
+that you're seeing here where
+
+568
+00:22:45,215 --> 00:22:47,475
+you can freely interact
+with this data.
+
+569
+00:22:47,820 --> 00:22:49,180
+Which means if you are,
+
+570
+00:22:49,500 --> 00:22:50,940
+able to write
+a sparkle query,
+
+571
+00:22:50,940 --> 00:22:52,620
+you are actually able to write
+
+572
+00:22:52,620 --> 00:22:55,120
+a front end interface
+in meta factory.
+
+573
+00:22:55,735 --> 00:22:57,335
+And if you are
+not able to write
+
+574
+00:22:57,335 --> 00:22:58,395
+a sparkle query,
+
+575
+00:22:59,015 --> 00:23:01,835
+we have an interactive
+query builder.
+
+576
+00:23:02,055 --> 00:23:03,175
+So you can actually say I'm
+
+577
+00:23:03,175 --> 00:23:05,370
+looking for a person connected
+
+578
+00:23:05,510 --> 00:23:06,490
+to an organization,
+
+579
+00:23:07,350 --> 00:23:09,290
+where that organization
+is the employer,
+
+580
+00:23:09,910 --> 00:23:12,075
+and where that organization is
+
+581
+00:23:12,235 --> 00:23:13,355
+related to a place,
+
+582
+00:23:13,355 --> 00:23:14,975
+which is the headquarter
+location.
+
+583
+00:23:16,955 --> 00:23:18,815
+And that might be London.
+
+584
+00:23:20,330 --> 00:23:22,090
+And now we select
+the London we
+
+585
+00:23:22,090 --> 00:23:23,690
+are interested in.
+
+586
+00:23:23,690 --> 00:23:25,210
+And now we get
+a result and and
+
+587
+00:23:25,210 --> 00:23:26,890
+we can extract
+the sparkle query
+
+588
+00:23:26,890 --> 00:23:28,215
+from it. We can
+also combine it
+
+589
+00:23:28,215 --> 00:23:29,735
+with and and or
+clauses and make
+
+590
+00:23:29,735 --> 00:23:31,755
+it obviously a lot
+more complex query.
+
+591
+00:23:32,215 --> 00:23:32,935
+But through that,
+
+592
+00:23:32,935 --> 00:23:35,015
+I can derive my results that I
+
+593
+00:23:35,015 --> 00:23:35,755
+can derive,
+
+594
+00:23:37,070 --> 00:23:38,430
+an actual spark agreement that
+
+595
+00:23:38,430 --> 00:23:39,870
+I can use then in those
+
+596
+00:23:39,870 --> 00:23:41,390
+visualizations or I can even
+
+597
+00:23:41,390 --> 00:23:42,910
+provide that as
+a query builder
+
+598
+00:23:42,910 --> 00:23:44,430
+to my end users
+to interact with
+
+599
+00:23:44,430 --> 00:23:45,090
+the dataset.
+
+600
+00:23:51,985 --> 00:23:53,585
+So we have built a number of
+
+601
+00:23:53,585 --> 00:23:54,805
+systems as I said.
+
+602
+00:23:55,760 --> 00:23:57,200
+It's probably
+around one hundred
+
+603
+00:23:57,200 --> 00:23:58,720
+applications we
+have built before
+
+604
+00:23:58,720 --> 00:24:00,500
+our customers in
+the last years.
+
+605
+00:24:01,360 --> 00:24:03,220
+Just some few examples here.
+
+606
+00:24:03,705 --> 00:24:06,105
+And, as I mentioned
+it before,
+
+607
+00:24:06,105 --> 00:24:07,305
+all of this is following this
+
+608
+00:24:07,305 --> 00:24:08,205
+agile approach.
+
+609
+00:24:08,665 --> 00:24:10,985
+So, that's also
+true for all of
+
+610
+00:24:10,985 --> 00:24:13,070
+those assets,
+datasets, mappings,
+
+611
+00:24:13,070 --> 00:24:15,070
+ontologies,
+vocabularies as well
+
+612
+00:24:15,070 --> 00:24:16,530
+as the the UI templates.
+
+613
+00:24:17,070 --> 00:24:17,790
+For all of them,
+
+614
+00:24:17,790 --> 00:24:19,730
+we are following
+an agile approach
+
+615
+00:24:20,270 --> 00:24:22,985
+with versioning in in Git and
+
+616
+00:24:22,985 --> 00:24:25,325
+relevant governance
+processes around it.
+
+617
+00:24:26,345 --> 00:24:28,505
+And the idea is that
+with that approach,
+
+618
+00:24:28,505 --> 00:24:29,865
+you can really go from a proof
+
+619
+00:24:29,865 --> 00:24:30,525
+of concept,
+
+620
+00:24:31,580 --> 00:24:34,240
+in just one to two
+weeks to an an MVP,
+
+621
+00:24:35,580 --> 00:24:38,060
+and a production
+system in a month
+
+622
+00:24:38,060 --> 00:24:39,785
+or even less. So we have
+
+623
+00:24:39,785 --> 00:24:41,305
+successfully implemented that
+
+624
+00:24:41,305 --> 00:24:43,385
+for for some use cases in in
+
+625
+00:24:43,385 --> 00:24:44,265
+just two weeks,
+
+626
+00:24:44,265 --> 00:24:46,045
+getting something
+to the end user,
+
+627
+00:24:46,790 --> 00:24:49,690
+being able to iterate
+in weekly sprints,
+
+628
+00:24:49,990 --> 00:24:51,270
+getting feedback in getting
+
+629
+00:24:51,270 --> 00:24:52,630
+additional data sources in
+
+630
+00:24:52,630 --> 00:24:53,590
+expanding the model,
+
+631
+00:24:53,590 --> 00:24:55,875
+expanding the vocabulary
+and so on.
+
+632
+00:24:58,115 --> 00:25:00,615
+So, yeah. With that,
+
+633
+00:25:00,915 --> 00:25:02,515
+I think I'm at
+the end of the the
+
+634
+00:25:02,515 --> 00:25:03,495
+twenty five minutes.
+
+635
+00:25:19,900 --> 00:25:21,260
+That that was the end
+of the twenty
+
+636
+00:25:21,260 --> 00:25:23,440
+five minutes,
+and that was also
+
+637
+00:25:24,540 --> 00:25:26,700
+me muting. What I wanted to do
+
+638
+00:25:26,700 --> 00:25:28,225
+was actually
+enable my screen,
+
+639
+00:25:28,385 --> 00:25:30,385
+Sebastian, for for setting up
+
+640
+00:25:30,385 --> 00:25:31,365
+your your screen.
+
+641
+00:25:31,905 --> 00:25:33,185
+At least it it happened after
+
+642
+00:25:33,185 --> 00:25:34,625
+you had finished
+your your talk.
+
+643
+00:25:34,625 --> 00:25:36,785
+So, it's a good time to open
+
+644
+00:25:36,785 --> 00:25:38,005
+the floor to questions,
+
+645
+00:25:38,200 --> 00:25:40,280
+and we already have
+one, actually.
+
+646
+00:25:40,440 --> 00:25:42,920
+We've had that
+almost since the,
+
+647
+00:25:43,240 --> 00:25:44,360
+the beginning of your talk.
+
+648
+00:25:44,360 --> 00:25:46,220
+It's, one from Dean Aleman.
+
+649
+00:25:46,280 --> 00:25:47,640
+It's a very specific one.
+
+650
+00:25:47,640 --> 00:25:50,505
+So if, Dean will
+allow me, I will,
+
+651
+00:25:50,825 --> 00:25:52,745
+broaden in the the scope
+a little bit.
+
+652
+00:25:52,745 --> 00:25:54,365
+So, Dean's question is,
+
+653
+00:25:54,505 --> 00:25:56,025
+if someone's already using
+
+654
+00:25:56,025 --> 00:25:58,320
+Collibra for their
+data catalog,
+
+655
+00:25:58,320 --> 00:26:00,080
+is there an easy
+way to migrate
+
+656
+00:26:00,080 --> 00:26:01,920
+that into a knowledge
+graph like
+
+657
+00:26:01,920 --> 00:26:04,340
+the one, you showed
+in your slides?
+
+658
+00:26:04,355 --> 00:26:05,875
+I would expand
+the scope a little
+
+659
+00:26:05,875 --> 00:26:08,835
+bit because,
+the question, excuse me,
+
+660
+00:26:08,835 --> 00:26:10,135
+the question is specifically
+
+661
+00:26:10,275 --> 00:26:14,135
+about one data
+catalog, solution.
+
+662
+00:26:14,420 --> 00:26:15,860
+There are there are
+many in the market.
+
+663
+00:26:15,860 --> 00:26:18,340
+So while it's
+generalized, like,
+
+664
+00:26:18,340 --> 00:26:20,020
+is there a way
+for someone who's
+
+665
+00:26:20,020 --> 00:26:22,020
+using some whatever other data
+
+666
+00:26:22,020 --> 00:26:25,255
+catalog solution to
+to to transition,
+
+667
+00:26:25,255 --> 00:26:26,635
+let's say, to what
+you're using.
+
+668
+00:26:28,695 --> 00:26:30,795
+So we we are seeing
+that specifically,
+
+669
+00:26:31,415 --> 00:26:33,195
+specific one quite
+a lot, actually.
+
+670
+00:26:33,500 --> 00:26:35,420
+So I would say it's,
+it's part of,
+
+671
+00:26:35,420 --> 00:26:37,020
+like, eighty percent
+of the solutions
+
+672
+00:26:37,020 --> 00:26:39,360
+we have built around,
+data cataloging.
+
+673
+00:26:41,180 --> 00:26:44,775
+And we are not yet where we
+
+674
+00:26:44,775 --> 00:26:45,815
+wanna be with that.
+
+675
+00:26:45,815 --> 00:26:47,675
+So, as we, for example,
+
+676
+00:26:47,895 --> 00:26:51,550
+have also
+enhanced capabilities
+
+677
+00:26:51,850 --> 00:26:53,630
+around the the visual ontology
+
+678
+00:26:53,690 --> 00:26:55,210
+building just with the last
+
+679
+00:26:55,210 --> 00:26:56,730
+release to the the point that
+
+680
+00:26:56,730 --> 00:26:58,110
+you saw just now.
+
+681
+00:26:58,435 --> 00:26:59,955
+We are also looking
+into how we
+
+682
+00:26:59,955 --> 00:27:01,955
+can make that, onboarding of
+
+683
+00:27:01,955 --> 00:27:03,955
+existing catalogs smoother and
+
+684
+00:27:03,955 --> 00:27:06,180
+and easier. Right now there's
+
+685
+00:27:06,180 --> 00:27:07,380
+there's some manual process
+
+686
+00:27:07,380 --> 00:27:08,680
+still involved with that,
+
+687
+00:27:09,860 --> 00:27:11,460
+but we we see that,
+
+688
+00:27:11,780 --> 00:27:13,620
+over the I would
+say next year,
+
+689
+00:27:13,620 --> 00:27:15,540
+this becomes
+a highly automated
+
+690
+00:27:15,540 --> 00:27:17,865
+process to to speed
+up those projects,
+
+691
+00:27:18,325 --> 00:27:21,145
+even further. Okay.
+Okay. Thank you.
+
+692
+00:27:21,525 --> 00:27:22,745
+We also have, again,
+
+693
+00:27:22,965 --> 00:27:24,485
+a rather specific
+question from
+
+694
+00:27:24,485 --> 00:27:26,440
+from Daniel. I don't know if
+
+695
+00:27:26,440 --> 00:27:27,640
+it's one you can answer,
+
+696
+00:27:27,640 --> 00:27:29,420
+but I'm gonna pass
+it on anyway.
+
+697
+00:27:29,640 --> 00:27:31,560
+He asked about
+pricing and whether
+
+698
+00:27:31,560 --> 00:27:33,820
+we provide licenses
+for research
+
+699
+00:27:33,960 --> 00:27:35,905
+purposes. Yes.
+
+700
+00:27:35,905 --> 00:27:36,725
+So we,
+
+701
+00:27:37,505 --> 00:27:39,745
+we are ourselves
+very active in
+
+702
+00:27:39,745 --> 00:27:41,685
+research. So we also
+wanna support,
+
+703
+00:27:42,225 --> 00:27:44,550
+research. And and therefore,
+
+704
+00:27:44,930 --> 00:27:47,350
+if you are interested
+in an academic
+
+705
+00:27:47,410 --> 00:27:48,950
+license or something
+like that,
+
+706
+00:27:50,210 --> 00:27:51,810
+reach out. We have,
+
+707
+00:27:51,970 --> 00:27:53,345
+under matter of fact dot com
+
+708
+00:27:53,345 --> 00:27:54,405
+slash get started.
+
+709
+00:27:54,705 --> 00:27:56,385
+We have a a public
+trial that's
+
+710
+00:27:56,385 --> 00:27:57,845
+accessible to to everyone.
+
+711
+00:27:59,425 --> 00:28:01,025
+You can run this in the cloud
+
+712
+00:28:01,025 --> 00:28:01,925
+or on premises.
+
+713
+00:28:02,780 --> 00:28:04,880
+And, if you have a research
+
+714
+00:28:05,020 --> 00:28:08,220
+academic need, just
+put that into the,
+
+715
+00:28:08,780 --> 00:28:10,380
+the comment field or reach out
+
+716
+00:28:10,380 --> 00:28:12,575
+via email and we'll give you,
+
+717
+00:28:12,975 --> 00:28:17,155
+directly access,
+to that. Okay.
+
+718
+00:28:18,415 --> 00:28:19,935
+Actually, I also
+have a question
+
+719
+00:28:19,935 --> 00:28:21,880
+for you, because
+at some point,
+
+720
+00:28:21,880 --> 00:28:24,920
+you mentioned the agile
+approach and,
+
+721
+00:28:25,560 --> 00:28:27,180
+iteration and versioning,
+
+722
+00:28:27,320 --> 00:28:28,460
+but it's for data.
+
+723
+00:28:28,705 --> 00:28:30,785
+And this is
+something that I see
+
+724
+00:28:30,785 --> 00:28:34,005
+coming up actually
+a lot, increasingly,
+
+725
+00:28:34,225 --> 00:28:36,645
+I would say, beyond
+the the confines
+
+726
+00:28:36,705 --> 00:28:38,530
+of data cataloging
+or knowledge
+
+727
+00:28:38,610 --> 00:28:39,890
+perhaps or what have you,
+
+728
+00:28:39,890 --> 00:28:42,370
+it's something that's that's
+
+729
+00:28:42,370 --> 00:28:44,150
+that's there is a need for,
+
+730
+00:28:45,410 --> 00:28:46,595
+and it's getting
+more widespread.
+
+731
+00:28:46,915 --> 00:28:48,595
+So even for people
+doing machine
+
+732
+00:28:48,595 --> 00:28:51,315
+learning or any dealing with
+
+733
+00:28:51,315 --> 00:28:52,835
+with data and data science in
+
+734
+00:28:52,835 --> 00:28:54,695
+any other capacity,
+let's say.
+
+735
+00:28:54,910 --> 00:28:56,210
+Because people are realizing
+
+736
+00:28:56,830 --> 00:28:57,950
+it's a bit like code.
+
+737
+00:28:57,950 --> 00:28:59,410
+So you do have iteration.
+
+738
+00:28:59,550 --> 00:29:01,310
+So your data set will change.
+
+739
+00:29:01,310 --> 00:29:03,390
+Your data set will
+evolve over time.
+
+740
+00:29:03,390 --> 00:29:04,895
+So you need a way
+to keep track
+
+741
+00:29:04,895 --> 00:29:06,735
+of that and different versions
+
+742
+00:29:06,735 --> 00:29:08,415
+and which version everyone has
+
+743
+00:29:08,415 --> 00:29:08,895
+and all of that.
+
+744
+00:29:08,895 --> 00:29:12,115
+So how do you
+approach and resolve
+
+745
+00:29:12,175 --> 00:29:13,795
+this issue in your platform?
+
+746
+00:29:14,940 --> 00:29:17,760
+So for for UI templates,
+for ontologies,
+
+747
+00:29:18,060 --> 00:29:18,800
+for vocabularies,
+
+748
+00:29:18,860 --> 00:29:19,920
+it's fairly straightforward
+
+749
+00:29:20,060 --> 00:29:21,660
+because the the amount of data
+
+750
+00:29:21,660 --> 00:29:23,245
+is usually quite controllable
+
+751
+00:29:23,305 --> 00:29:26,105
+and and the approach
+with using
+
+752
+00:29:26,105 --> 00:29:27,545
+a versioning system
+like git for
+
+753
+00:29:27,545 --> 00:29:31,210
+that is what's
+implemented most
+
+754
+00:29:31,210 --> 00:29:33,210
+of the time. For data,
+
+755
+00:29:33,210 --> 00:29:34,490
+it becomes a little bit more
+
+756
+00:29:34,490 --> 00:29:35,930
+tricky because
+sometimes that's
+
+757
+00:29:35,930 --> 00:29:37,290
+just not the approach that's
+
+758
+00:29:37,290 --> 00:29:39,230
+that's relevant or
+interesting there.
+
+759
+00:29:39,475 --> 00:29:41,155
+So we have a number
+of ways how
+
+760
+00:29:41,155 --> 00:29:43,095
+we can do
+the the versioning there.
+
+761
+00:29:43,635 --> 00:29:45,655
+We are, for example,
+working with,
+
+762
+00:29:46,195 --> 00:29:47,715
+different, named graphs.
+
+763
+00:29:47,715 --> 00:29:49,290
+So depending on the technology
+
+764
+00:29:49,290 --> 00:29:50,590
+that's underneath
+in the database
+
+765
+00:29:50,650 --> 00:29:53,390
+available to provide
+kind of a staging
+
+766
+00:29:53,610 --> 00:29:55,070
+area for datasets,
+
+767
+00:29:56,250 --> 00:29:58,510
+or other approaches around
+
+768
+00:30:00,475 --> 00:30:02,255
+maintaining specific
+user changes.
+
+769
+00:30:02,315 --> 00:30:04,175
+So we also have
+the the capabilities
+
+770
+00:30:04,315 --> 00:30:06,175
+of providing those forms and
+
+771
+00:30:06,590 --> 00:30:08,030
+every change is then tracked
+
+772
+00:30:08,030 --> 00:30:09,550
+with provenance
+information from
+
+773
+00:30:09,550 --> 00:30:11,490
+the user and versioning
+information.
+
+774
+00:30:11,870 --> 00:30:13,470
+So you can actually play back
+
+775
+00:30:13,470 --> 00:30:14,990
+all the changes
+that that users
+
+776
+00:30:14,990 --> 00:30:17,015
+have entered entered
+into the system.
+
+777
+00:30:17,235 --> 00:30:18,035
+And in the same way,
+
+778
+00:30:18,035 --> 00:30:19,635
+you can also do that for for
+
+779
+00:30:19,635 --> 00:30:21,075
+other ways how data might get
+
+780
+00:30:21,075 --> 00:30:22,055
+into that system.
+
+781
+00:30:22,675 --> 00:30:23,555
+So for for data,
+
+782
+00:30:23,555 --> 00:30:26,710
+it's still a little
+custom based
+
+783
+00:30:26,710 --> 00:30:27,990
+on the specific need.
+
+784
+00:30:28,230 --> 00:30:29,590
+I think there's there's no one
+
+785
+00:30:29,590 --> 00:30:32,390
+way to do it right,
+but we have,
+
+786
+00:30:32,710 --> 00:30:34,535
+implemented that
+from just small
+
+787
+00:30:34,535 --> 00:30:36,555
+scale to to large
+scale changes.
+
+788
+00:30:37,255 --> 00:30:38,935
+And we we have
+approaches to to
+
+789
+00:30:38,935 --> 00:30:41,095
+help with that. Okay. Yeah.
+
+790
+00:30:41,095 --> 00:30:42,875
+I think the, the named graph
+
+791
+00:30:43,770 --> 00:30:44,990
+solution that you mentioned
+
+792
+00:30:45,210 --> 00:30:46,350
+makes makes sense.
+
+793
+00:30:46,570 --> 00:30:47,930
+But as you also pointed out,
+
+794
+00:30:47,930 --> 00:30:49,050
+there is can currently,
+
+795
+00:30:49,050 --> 00:30:50,170
+to the best of my knowledge,
+
+796
+00:30:50,170 --> 00:30:52,250
+at least not
+the standardized way to,
+
+797
+00:30:53,395 --> 00:30:55,155
+to move between
+different name graphs.
+
+798
+00:30:55,155 --> 00:30:57,015
+So I guess you have to somehow
+
+799
+00:30:57,155 --> 00:30:59,335
+add some proprietary
+elements to that.
+
+800
+00:30:59,875 --> 00:31:01,315
+It's it's actually we're not
+
+801
+00:31:01,315 --> 00:31:03,440
+really applying
+a proprietary element,
+
+802
+00:31:04,140 --> 00:31:05,100
+other than, you know,
+
+803
+00:31:05,100 --> 00:31:07,420
+maybe a kind of a an extension
+
+804
+00:31:07,420 --> 00:31:08,620
+to the vocabulary that we
+
+805
+00:31:08,620 --> 00:31:09,660
+specifically use for that.
+
+806
+00:31:09,660 --> 00:31:10,995
+It still stays RDF.
+
+807
+00:31:10,995 --> 00:31:14,455
+It still stays, open
+and standardized.
+
+808
+00:31:15,155 --> 00:31:16,515
+And what we can, for example,
+
+809
+00:31:16,515 --> 00:31:18,275
+also employ for that is is LDP
+
+810
+00:31:18,275 --> 00:31:20,670
+containers. So that's that's
+
+811
+00:31:20,670 --> 00:31:23,390
+another technical
+approach, to help us,
+
+812
+00:31:23,630 --> 00:31:26,110
+enable that. Okay.
+Okay. Yeah.
+
+813
+00:31:26,110 --> 00:31:27,550
+I was just
+specifically interested
+
+814
+00:31:27,550 --> 00:31:29,135
+in that because,
+yeah, as I said,
+
+815
+00:31:29,295 --> 00:31:31,775
+and you also
+mentioned it's it's
+
+816
+00:31:31,775 --> 00:31:34,095
+an issue, that many and many
+
+817
+00:31:34,095 --> 00:31:35,535
+more organizations
+are facing.
+
+818
+00:31:35,535 --> 00:31:37,135
+So I was just curious how you
+
+819
+00:31:37,135 --> 00:31:40,900
+deal with it. Okay.
+So what yeah.
+
+820
+00:31:40,900 --> 00:31:42,420
+We'll we'll have
+to be wrapping
+
+821
+00:31:42,420 --> 00:31:44,420
+up so that, people
+can move on to,
+
+822
+00:31:44,660 --> 00:31:45,560
+the next session.
+
+823
+00:31:45,965 --> 00:31:48,145
+Thanks, everyone. Bye. Bye.
+

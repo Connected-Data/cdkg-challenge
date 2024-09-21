@@ -1,0 +1,2514 @@
+1
+00:00:05,520 --> 00:00:07,920
+Hi, everyone. My
+name is Dan Boerner,
+
+2
+00:00:07,920 --> 00:00:09,780
+and I champion
+the graph at Apollo.
+
+3
+00:00:10,295 --> 00:00:11,435
+And in this talk,
+
+4
+00:00:11,495 --> 00:00:12,955
+I wanted to share my thoughts
+
+5
+00:00:13,335 --> 00:00:14,955
+about the human
+side of GraphQL
+
+6
+00:00:15,735 --> 00:00:17,655
+by focusing on
+the people involved
+
+7
+00:00:17,655 --> 00:00:19,180
+with adopting the technology,
+
+8
+00:00:19,560 --> 00:00:21,420
+their motivations,
+objectives,
+
+9
+00:00:21,640 --> 00:00:23,240
+and how they're
+managing the change
+
+10
+00:00:23,240 --> 00:00:24,440
+from a traditional point to
+
+11
+00:00:24,440 --> 00:00:27,745
+point API to a query
+based unified
+
+12
+00:00:27,745 --> 00:00:30,225
+graph. Now everything I share
+
+13
+00:00:30,225 --> 00:00:31,745
+today comes from what we've
+
+14
+00:00:31,745 --> 00:00:33,745
+learned from others that are
+
+15
+00:00:33,745 --> 00:00:35,285
+evangelizing and championing
+
+16
+00:00:35,730 --> 00:00:37,170
+the use of GraphQL in their
+
+17
+00:00:37,170 --> 00:00:38,450
+organizations, and you can see
+
+18
+00:00:38,450 --> 00:00:40,150
+their logos on
+the screen here.
+
+19
+00:00:41,250 --> 00:00:42,610
+And I'd like to give special
+
+20
+00:00:42,610 --> 00:00:45,095
+thanks to the panelists shown
+
+21
+00:00:45,095 --> 00:00:47,915
+here who joined from
+Netflix, Zillow,
+
+22
+00:00:48,295 --> 00:00:49,995
+and Dava and Expedia recently
+
+23
+00:00:50,055 --> 00:00:52,250
+to discuss this very topic at
+
+24
+00:00:52,250 --> 00:00:54,590
+a recent GraphQL
+summit roundtable.
+
+25
+00:00:55,290 --> 00:00:56,490
+And if you're interested in
+
+26
+00:00:56,490 --> 00:00:58,030
+hearing a great interactive
+
+27
+00:00:58,090 --> 00:00:59,310
+discussion on this topic,
+
+28
+00:00:59,610 --> 00:01:00,970
+you can find a recording at
+
+29
+00:01:00,970 --> 00:01:02,915
+the link below or by visiting
+
+30
+00:01:03,055 --> 00:01:05,315
+summit dot graph q l dot com.
+
+31
+00:01:06,495 --> 00:01:08,515
+Now anytime I see
+an exponential
+
+32
+00:01:08,575 --> 00:01:09,260
+adoption curve,
+
+33
+00:01:09,260 --> 00:01:10,560
+I think about the underlying
+
+34
+00:01:10,700 --> 00:01:12,800
+motivations that are
+driving the change.
+
+35
+00:01:13,660 --> 00:01:15,420
+In this case, the curve shows
+
+36
+00:01:15,420 --> 00:01:17,175
+the number of downloads of
+
+37
+00:01:17,175 --> 00:01:19,115
+Apollo's open source GraphQL
+
+38
+00:01:19,335 --> 00:01:20,795
+client over time.
+
+39
+00:01:21,895 --> 00:01:23,975
+And this is
+a helpful proxy for
+
+40
+00:01:23,975 --> 00:01:25,515
+overall GraphQL adoption.
+
+41
+00:01:26,520 --> 00:01:27,880
+I think the curve
+makes a strong
+
+42
+00:01:27,880 --> 00:01:29,720
+argument that
+GraphQL is one of
+
+43
+00:01:29,720 --> 00:01:31,160
+the biggest innovations in API
+
+44
+00:01:31,160 --> 00:01:32,460
+technology in our generation.
+
+45
+00:01:32,760 --> 00:01:35,025
+So it's worth first
+to understand
+
+46
+00:01:35,025 --> 00:01:36,165
+what's going on.
+
+47
+00:01:36,785 --> 00:01:38,645
+What's driving this adoption?
+
+48
+00:01:41,320 --> 00:01:43,340
+And while I think like other
+
+49
+00:01:43,800 --> 00:01:45,500
+innovations, cloud
+native computing,
+
+50
+00:01:45,720 --> 00:01:48,140
+containerization,
+reactive programming,
+
+51
+00:01:48,935 --> 00:01:51,335
+it's natural to try to explain
+
+52
+00:01:51,335 --> 00:01:52,935
+the rapid adoption
+from a technical
+
+53
+00:01:52,935 --> 00:01:54,935
+point of view by
+focusing on how
+
+54
+00:01:54,935 --> 00:01:57,460
+this new innovation is better
+
+55
+00:01:57,460 --> 00:01:59,400
+than the old in
+various technical
+
+56
+00:01:59,460 --> 00:02:02,420
+aspects. Now we'll
+get into a few
+
+57
+00:02:02,420 --> 00:02:03,540
+of the technical benefits of
+
+58
+00:02:03,540 --> 00:02:04,660
+GraphQL in a moment,
+
+59
+00:02:04,660 --> 00:02:06,725
+but I think that focusing on
+
+60
+00:02:06,725 --> 00:02:08,245
+the technical benefits alone
+
+61
+00:02:08,245 --> 00:02:10,565
+leaves out a big
+part of why any
+
+62
+00:02:10,565 --> 00:02:12,405
+of these innovations take root
+
+63
+00:02:12,405 --> 00:02:13,465
+and spread quickly.
+
+64
+00:02:14,480 --> 00:02:16,020
+And I I think that's because
+
+65
+00:02:16,080 --> 00:02:17,760
+successful innovations provide
+
+66
+00:02:17,760 --> 00:02:19,760
+better solutions to problems
+
+67
+00:02:19,760 --> 00:02:21,685
+that people face,
+to teams face,
+
+68
+00:02:22,485 --> 00:02:23,705
+to human problems.
+
+69
+00:02:24,885 --> 00:02:26,245
+And those solutions help them
+
+70
+00:02:26,245 --> 00:02:27,365
+build their products and bring
+
+71
+00:02:27,365 --> 00:02:28,005
+them to market,
+
+72
+00:02:28,005 --> 00:02:29,785
+and that's what really drives
+
+73
+00:02:30,005 --> 00:02:30,745
+the change.
+
+74
+00:02:32,770 --> 00:02:33,650
+Now in my career,
+
+75
+00:02:33,650 --> 00:02:34,930
+I've been involved
+with a number
+
+76
+00:02:34,930 --> 00:02:36,290
+of large scale tech adoption
+
+77
+00:02:36,290 --> 00:02:37,730
+efforts and some of which have
+
+78
+00:02:37,730 --> 00:02:38,930
+been more successful
+than others.
+
+79
+00:02:38,930 --> 00:02:40,375
+And I have two observations.
+
+80
+00:02:41,555 --> 00:02:44,915
+One, widespread
+adoption of any
+
+81
+00:02:44,915 --> 00:02:46,835
+new technology is
+very difficult
+
+82
+00:02:46,835 --> 00:02:47,710
+and time consuming.
+
+83
+00:02:48,750 --> 00:02:51,170
+And most adoption
+efforts, frankly,
+
+84
+00:02:51,230 --> 00:02:53,150
+don't succeed.
+They don't reach
+
+85
+00:02:53,150 --> 00:02:53,810
+their goals.
+
+86
+00:02:54,805 --> 00:02:56,965
+And my hypothesis is that it's
+
+87
+00:02:56,965 --> 00:02:58,645
+only innovation
+that solve both
+
+88
+00:02:58,645 --> 00:03:00,505
+technical and human problems
+
+89
+00:03:00,885 --> 00:03:02,885
+that justify the large amount
+
+90
+00:03:02,885 --> 00:03:06,030
+of time and effort required to
+
+91
+00:03:06,030 --> 00:03:07,470
+successfully see them spread
+
+92
+00:03:07,470 --> 00:03:08,450
+across the enterprise.
+
+93
+00:03:09,470 --> 00:03:11,315
+Without that
+return on effort,
+
+94
+00:03:11,315 --> 00:03:12,515
+the initiatives fade,
+
+95
+00:03:12,515 --> 00:03:13,955
+and they fall short of their
+
+96
+00:03:13,955 --> 00:03:15,015
+original goals.
+
+97
+00:03:16,115 --> 00:03:17,235
+And let's see if we can tease
+
+98
+00:03:17,235 --> 00:03:19,315
+out why that might be so by
+
+99
+00:03:19,315 --> 00:03:20,535
+answering a few questions.
+
+100
+00:03:21,740 --> 00:03:24,620
+What is motivating,
+in this case,
+
+101
+00:03:24,620 --> 00:03:26,880
+a fundamental change
+to our API stack?
+
+102
+00:03:27,775 --> 00:03:30,975
+What resistance do we face and
+
+103
+00:03:30,975 --> 00:03:32,975
+do we encounter when we try to
+
+104
+00:03:32,975 --> 00:03:34,595
+make this change and why?
+
+105
+00:03:35,215 --> 00:03:36,575
+And in face of
+that resistance,
+
+106
+00:03:36,575 --> 00:03:38,270
+how can we create space and
+
+107
+00:03:38,270 --> 00:03:40,190
+safety so that that change can
+
+108
+00:03:40,190 --> 00:03:42,210
+happen and can be absorbed?
+
+109
+00:03:43,950 --> 00:03:45,318
+Let's begin first
+with motivations
+
+110
+00:03:45,318 --> 00:03:48,065
+and and the problems
+that GraphQL
+
+111
+00:03:48,205 --> 00:03:50,945
+solves. Now from a simplistic
+
+112
+00:03:51,085 --> 00:03:52,465
+tactical point of view,
+
+113
+00:03:52,660 --> 00:03:54,340
+GraphQL is essentially defined
+
+114
+00:03:54,340 --> 00:03:55,240
+by three things.
+
+115
+00:03:55,540 --> 00:03:57,560
+It's an API query language.
+
+116
+00:03:57,780 --> 00:03:59,640
+Much like SQL
+queries databases,
+
+117
+00:04:00,020 --> 00:04:01,880
+you can use GraphQL to query
+
+118
+00:04:02,275 --> 00:04:03,855
+across APIs.
+
+119
+00:04:04,435 --> 00:04:07,015
+Now, secondly, it's a stable,
+
+120
+00:04:07,635 --> 00:04:08,615
+strongly typed,
+
+121
+00:04:08,915 --> 00:04:10,855
+declarative API contract,
+
+122
+00:04:11,075 --> 00:04:12,490
+which is captured in a schema
+
+123
+00:04:12,490 --> 00:04:14,590
+definition language
+or SDL file.
+
+124
+00:04:15,530 --> 00:04:17,850
+And third, it's
+a runtime system.
+
+125
+00:04:17,850 --> 00:04:19,310
+Right? There's
+a client library,
+
+126
+00:04:19,370 --> 00:04:22,215
+gateway, and
+server to make and
+
+127
+00:04:22,215 --> 00:04:23,675
+process requests,
+
+128
+00:04:24,215 --> 00:04:25,735
+to route them to
+their underlying
+
+129
+00:04:25,735 --> 00:04:27,095
+services or data layers,
+
+130
+00:04:27,095 --> 00:04:28,455
+and then to return composed
+
+131
+00:04:28,455 --> 00:04:30,720
+responses back to the client.
+
+132
+00:04:31,260 --> 00:04:33,440
+And GraphQL solves
+a large number
+
+133
+00:04:33,660 --> 00:04:34,880
+of technical problems,
+
+134
+00:04:35,260 --> 00:04:36,400
+and they're well understood,
+
+135
+00:04:36,460 --> 00:04:37,740
+and they're well explained in
+
+136
+00:04:37,740 --> 00:04:39,965
+many talks and and
+resources online.
+
+137
+00:04:40,585 --> 00:04:42,925
+So I won't dwell on them today
+
+138
+00:04:43,705 --> 00:04:45,545
+other than to say that I think
+
+139
+00:04:45,545 --> 00:04:46,525
+they're very compelling,
+
+140
+00:04:47,145 --> 00:04:48,840
+and a lot of
+companies find them
+
+141
+00:04:48,840 --> 00:04:50,920
+compelling. But if we want to
+
+142
+00:04:50,920 --> 00:04:52,540
+have a widespread
+and successful
+
+143
+00:04:52,600 --> 00:04:56,255
+adoption of GraphQL
+across the whole
+
+144
+00:04:56,255 --> 00:04:57,535
+enterprise, let's
+check-in with
+
+145
+00:04:57,535 --> 00:04:58,275
+our hypothesis.
+
+146
+00:04:59,695 --> 00:05:01,215
+And it tells us
+that we need to
+
+147
+00:05:01,215 --> 00:05:03,875
+solve both technical
+and human problems.
+
+148
+00:05:04,650 --> 00:05:06,170
+So let's look at what kind of
+
+149
+00:05:06,170 --> 00:05:08,330
+human problems exist in our
+
+150
+00:05:08,330 --> 00:05:10,430
+typical service
+oriented architecture.
+
+151
+00:05:11,905 --> 00:05:12,945
+Now I'll start
+with the viewpoint
+
+152
+00:05:12,945 --> 00:05:15,045
+of an application or
+a front end team.
+
+153
+00:05:16,225 --> 00:05:17,825
+And this wealth
+of service APIs
+
+154
+00:05:17,825 --> 00:05:20,005
+and data reminds
+me of the phrase,
+
+155
+00:05:20,520 --> 00:05:21,740
+water, water everywhere,
+
+156
+00:05:22,120 --> 00:05:23,740
+but not a drop to drink.
+
+157
+00:05:25,000 --> 00:05:27,100
+Because in order
+to build products
+
+158
+00:05:27,800 --> 00:05:28,940
+from all those experiences,
+
+159
+00:05:29,035 --> 00:05:31,515
+to build experiences
+from services,
+
+160
+00:05:31,515 --> 00:05:33,695
+I should say,
+those application
+
+161
+00:05:33,755 --> 00:05:35,115
+teams have to integrate with
+
+162
+00:05:35,115 --> 00:05:36,155
+many different APIs.
+
+163
+00:05:36,155 --> 00:05:37,515
+They have to deal
+with many API
+
+164
+00:05:37,515 --> 00:05:38,960
+versions. They
+have to configure
+
+165
+00:05:39,020 --> 00:05:41,340
+API endpoints, learn about
+
+166
+00:05:41,340 --> 00:05:43,280
+different API idioms
+and syntaxes,
+
+167
+00:05:43,340 --> 00:05:45,760
+and orchestrate multiple
+calls together.
+
+168
+00:05:46,715 --> 00:05:47,535
+And as a result,
+
+169
+00:05:48,075 --> 00:05:49,675
+a lot of logic gets built into
+
+170
+00:05:49,675 --> 00:05:51,375
+the clients, into
+the front ends.
+
+171
+00:05:51,675 --> 00:05:52,795
+And if that was done once,
+
+172
+00:05:52,795 --> 00:05:54,895
+that might be okay,
+but it's not.
+
+173
+00:05:55,150 --> 00:05:57,070
+That logic is duplicated into
+
+174
+00:05:57,070 --> 00:05:59,170
+each application or
+each front end,
+
+175
+00:05:59,790 --> 00:06:01,550
+and that duplication
+causes two
+
+176
+00:06:01,550 --> 00:06:03,330
+serious problems for people.
+
+177
+00:06:04,145 --> 00:06:06,145
+One, for internal
+product teams,
+
+178
+00:06:06,145 --> 00:06:07,985
+all that duplicated
+logic means
+
+179
+00:06:07,985 --> 00:06:10,145
+each new experience or product
+
+180
+00:06:10,145 --> 00:06:12,145
+feature has to be
+built multiple times,
+
+181
+00:06:12,145 --> 00:06:12,880
+slowing innovation.
+
+182
+00:06:14,080 --> 00:06:16,340
+For customers, it
+leads to a fragmented
+
+183
+00:06:16,480 --> 00:06:18,640
+customer experience when they
+
+184
+00:06:18,640 --> 00:06:20,340
+use different
+clients or devices.
+
+185
+00:06:21,855 --> 00:06:23,455
+And this fragmentation
+is leading
+
+186
+00:06:23,455 --> 00:06:25,615
+to frustration and a dizzying
+
+187
+00:06:25,615 --> 00:06:27,375
+amount of difference for
+
+188
+00:06:27,375 --> 00:06:28,470
+differences' sake.
+
+189
+00:06:29,350 --> 00:06:31,450
+We see this across experiences
+
+190
+00:06:32,070 --> 00:06:34,090
+all over across the web and
+
+191
+00:06:34,310 --> 00:06:36,490
+applications across
+all industries.
+
+192
+00:06:37,715 --> 00:06:39,715
+Expedia, for example,
+had this problem,
+
+193
+00:06:39,715 --> 00:06:41,715
+and they turned
+to the graph to
+
+194
+00:06:41,715 --> 00:06:43,255
+unify their customer
+experience.
+
+195
+00:06:43,795 --> 00:06:45,890
+And they coupled
+a unified graph,
+
+196
+00:06:46,450 --> 00:06:47,570
+a design system,
+
+197
+00:06:47,570 --> 00:06:49,650
+and a component
+architecture to
+
+198
+00:06:49,650 --> 00:06:51,490
+create a unified customer
+
+199
+00:06:51,490 --> 00:06:52,850
+experience across all their
+
+200
+00:06:52,850 --> 00:06:55,345
+touch points. And you can see
+
+201
+00:06:55,345 --> 00:06:57,425
+the benefits that their team
+
+202
+00:06:57,425 --> 00:06:59,045
+called out with
+this approach.
+
+203
+00:07:01,180 --> 00:07:02,480
+But it's not just travel.
+
+204
+00:07:03,100 --> 00:07:05,420
+In retail, Walmart turned to
+
+205
+00:07:05,420 --> 00:07:06,780
+the graph to create a seamless
+
+206
+00:07:06,780 --> 00:07:08,395
+shopping experience
+across their
+
+207
+00:07:08,395 --> 00:07:10,255
+online and in store
+applications,
+
+208
+00:07:11,115 --> 00:07:12,395
+which had previously been
+
+209
+00:07:12,395 --> 00:07:14,555
+completely separate
+and accessed
+
+210
+00:07:14,555 --> 00:07:16,315
+through separate
+tabs in the user
+
+211
+00:07:16,315 --> 00:07:19,810
+interface. With
+a unified graph,
+
+212
+00:07:19,810 --> 00:07:22,130
+they were able to unify and
+
+213
+00:07:22,130 --> 00:07:23,410
+create a seamless customer
+
+214
+00:07:23,410 --> 00:07:25,250
+experience across web, iOS,
+
+215
+00:07:25,250 --> 00:07:26,755
+and Android in record time,
+
+216
+00:07:27,395 --> 00:07:29,475
+just in time for
+Black Friday.
+
+217
+00:07:29,475 --> 00:07:31,095
+So you can enjoy
+this experience
+
+218
+00:07:31,155 --> 00:07:32,615
+by visiting Walmart today.
+
+219
+00:07:33,315 --> 00:07:34,675
+And those are
+just two examples
+
+220
+00:07:34,675 --> 00:07:36,455
+of problems faced by customers
+
+221
+00:07:36,980 --> 00:07:38,200
+and application teams.
+
+222
+00:07:38,660 --> 00:07:40,200
+But what about service teams?
+
+223
+00:07:41,220 --> 00:07:43,140
+Well, this might
+be a view from
+
+224
+00:07:43,140 --> 00:07:44,680
+the services team perspective
+
+225
+00:07:44,685 --> 00:07:47,745
+Managing all of
+those connections,
+
+226
+00:07:47,885 --> 00:07:49,265
+all of those
+client dependencies
+
+227
+00:07:50,045 --> 00:07:51,105
+is time consuming.
+
+228
+00:07:51,960 --> 00:07:53,420
+Managing the different
+versions,
+
+229
+00:07:53,480 --> 00:07:55,000
+convincing clients to upgrade
+
+230
+00:07:55,000 --> 00:07:56,920
+to new ones, or hopefully to
+
+231
+00:07:56,920 --> 00:07:59,660
+deprecate and move
+off very old ones,
+
+232
+00:07:59,880 --> 00:08:01,100
+it's all overhead.
+
+233
+00:08:02,575 --> 00:08:04,415
+Not to mention requests from
+
+234
+00:08:04,415 --> 00:08:05,955
+enterprise architecture teams
+
+235
+00:08:06,975 --> 00:08:10,230
+or IT to unify on,
+say, an API gateway.
+
+236
+00:08:11,430 --> 00:08:12,790
+It can feel very
+overwhelming,
+
+237
+00:08:12,790 --> 00:08:14,650
+and it leaves very little time
+
+238
+00:08:14,710 --> 00:08:16,070
+to focus on improving their
+
+239
+00:08:16,070 --> 00:08:18,170
+services'
+underlying functionality
+
+240
+00:08:18,310 --> 00:08:18,970
+or performance,
+
+241
+00:08:19,575 --> 00:08:21,655
+let alone the cost
+of the occasional
+
+242
+00:08:21,655 --> 00:08:23,815
+need to architect completely
+
+243
+00:08:23,815 --> 00:08:24,555
+their service.
+
+244
+00:08:25,655 --> 00:08:26,795
+But what's worse,
+
+245
+00:08:26,855 --> 00:08:29,200
+even if they do these things,
+
+246
+00:08:29,820 --> 00:08:31,840
+it still pushes all
+that complexity
+
+247
+00:08:31,980 --> 00:08:33,180
+down to each client where it
+
+248
+00:08:33,180 --> 00:08:34,000
+gets duplicated.
+
+249
+00:08:35,485 --> 00:08:37,165
+So many teams have built front
+
+250
+00:08:37,165 --> 00:08:39,805
+end APIs in the back end for
+
+251
+00:08:39,805 --> 00:08:41,725
+front end pattern to simplify
+
+252
+00:08:41,725 --> 00:08:47,113
+the complexity Steam quickly
+
+253
+00:08:51,205 --> 00:08:54,085
+Steam quickly. So
+more human problems.
+
+254
+00:08:54,085 --> 00:08:55,925
+We've got version
+and API endpoint
+
+255
+00:08:55,925 --> 00:08:57,705
+management,
+direct coordination
+
+256
+00:08:57,765 --> 00:08:59,760
+between apps and
+service teams,
+
+257
+00:08:59,760 --> 00:09:00,980
+duplication of logic,
+
+258
+00:09:01,280 --> 00:09:02,260
+slowing experimentation,
+
+259
+00:09:02,960 --> 00:09:04,180
+and new feature rollout.
+
+260
+00:09:05,600 --> 00:09:07,040
+So let's briefly turn to how
+
+261
+00:09:07,040 --> 00:09:08,560
+GraphQL addresses these very
+
+262
+00:09:08,560 --> 00:09:10,325
+real real and very
+human problems.
+
+263
+00:09:11,025 --> 00:09:11,825
+First on the left,
+
+264
+00:09:11,825 --> 00:09:14,325
+it's an API built for
+building products.
+
+265
+00:09:14,945 --> 00:09:16,385
+It's freed from
+managing service
+
+266
+00:09:16,385 --> 00:09:17,445
+endpoints and orchestration.
+
+267
+00:09:18,040 --> 00:09:19,800
+App development
+teams can focus
+
+268
+00:09:19,800 --> 00:09:21,980
+on experiences,
+not integration.
+
+269
+00:09:23,320 --> 00:09:24,920
+Second, it's a query language
+
+270
+00:09:24,920 --> 00:09:26,655
+that's tailored for use.
+
+271
+00:09:27,135 --> 00:09:29,375
+Apps pick what they need from
+
+272
+00:09:29,375 --> 00:09:30,675
+a shared common contract,
+
+273
+00:09:31,455 --> 00:09:32,815
+optimizing performance and
+
+274
+00:09:32,815 --> 00:09:34,415
+removing complexity from each
+
+275
+00:09:34,415 --> 00:09:37,640
+application. Third,
+in the middle,
+
+276
+00:09:37,640 --> 00:09:39,240
+the unified representation of
+
+277
+00:09:39,240 --> 00:09:41,240
+your services, data,
+
+278
+00:09:41,240 --> 00:09:43,555
+and digital capabilities
+is created,
+
+279
+00:09:44,095 --> 00:09:46,015
+each capability
+is expressed as
+
+280
+00:09:46,015 --> 00:09:47,775
+declarative abstract contract
+
+281
+00:09:47,775 --> 00:09:50,195
+via schema and
+unified together
+
+282
+00:09:52,000 --> 00:09:55,940
+into a composed
+super graph schema.
+
+283
+00:09:56,880 --> 00:09:59,520
+Now an insulating
+layer is the fourth
+
+284
+00:09:59,520 --> 00:10:01,475
+step. On the service side,
+
+285
+00:10:01,475 --> 00:10:02,535
+on the right side,
+
+286
+00:10:02,755 --> 00:10:04,675
+decoupled from
+those direct app
+
+287
+00:10:04,675 --> 00:10:05,975
+client dependencies,
+
+288
+00:10:06,355 --> 00:10:08,060
+service teams can focus on
+
+289
+00:10:08,220 --> 00:10:09,420
+optimizing their capabilities
+
+290
+00:10:09,420 --> 00:10:10,620
+and architecture without fear
+
+291
+00:10:10,620 --> 00:10:11,260
+of breaking changes,
+
+292
+00:10:11,260 --> 00:10:12,560
+and they can even reimplement
+
+293
+00:10:12,700 --> 00:10:14,540
+their architecture
+behind a safe
+
+294
+00:10:14,540 --> 00:10:16,220
+typed contract without even
+
+295
+00:10:16,220 --> 00:10:17,355
+letting their clients know.
+
+296
+00:10:19,595 --> 00:10:21,055
+And that
+technical architecture
+
+297
+00:10:21,195 --> 00:10:22,875
+empowers new
+collaboration models
+
+298
+00:10:22,875 --> 00:10:24,155
+as well. On the left,
+
+299
+00:10:24,155 --> 00:10:25,810
+app teams bring
+their understanding
+
+300
+00:10:25,810 --> 00:10:27,090
+of the customer problem,
+
+301
+00:10:27,090 --> 00:10:28,230
+the customer experience,
+
+302
+00:10:28,610 --> 00:10:30,150
+and what's needed
+to build it.
+
+303
+00:10:30,370 --> 00:10:32,130
+On the right, service teams
+
+304
+00:10:32,130 --> 00:10:33,595
+bring their domain
+declarative,
+
+305
+00:10:33,975 --> 00:10:41,780
+strongly strongly
+
+306
+00:10:41,780 --> 00:10:43,800
+typed, abstract
+schema contract
+
+307
+00:10:44,180 --> 00:10:46,180
+that once built
+allows each team
+
+308
+00:10:46,180 --> 00:10:48,040
+to focus on what
+they do best.
+
+309
+00:10:48,745 --> 00:10:50,185
+And then revising the schema
+
+310
+00:10:50,185 --> 00:10:52,765
+contract as needed
+in a lightweight,
+
+311
+00:10:53,225 --> 00:10:54,845
+backwards compatible manner,
+
+312
+00:10:55,225 --> 00:10:56,985
+thanks to automatic schema and
+
+313
+00:10:56,985 --> 00:10:59,000
+composition checks offered by
+
+314
+00:10:59,000 --> 00:11:00,300
+Apollo's graph platform.
+
+315
+00:11:01,160 --> 00:11:03,080
+Now this sounds
+fantastic. No?
+
+316
+00:11:03,080 --> 00:11:04,440
+Everyone's working together to
+
+317
+00:11:04,440 --> 00:11:06,600
+leverage a new
+API paradigm and
+
+318
+00:11:06,600 --> 00:11:09,055
+technology to get
+more done with
+
+319
+00:11:09,055 --> 00:11:09,875
+less hassle.
+
+320
+00:11:10,575 --> 00:11:12,355
+But it's a big
+change, isn't it?
+
+321
+00:11:13,215 --> 00:11:14,335
+Service teams and front end
+
+322
+00:11:14,335 --> 00:11:15,760
+teams coming together design
+
+323
+00:11:16,080 --> 00:11:18,500
+an API doesn't
+happen overnight.
+
+324
+00:11:18,720 --> 00:11:22,480
+So let's let's
+see what changes
+
+325
+00:11:22,480 --> 00:11:23,380
+that that provokes.
+
+326
+00:11:25,040 --> 00:11:26,215
+And As much as we'd like to
+
+327
+00:11:26,215 --> 00:11:27,915
+think that we're hyperrational
+
+328
+00:11:28,135 --> 00:11:29,895
+beings who evaluate the merits
+
+329
+00:11:29,895 --> 00:11:33,115
+of each new technology,
+logically,
+
+330
+00:11:33,730 --> 00:11:36,310
+it turns out we're
+people. We're human.
+
+331
+00:11:37,650 --> 00:11:39,830
+And humans have
+an innate tendency
+
+332
+00:11:40,130 --> 00:11:43,425
+to minimize threats
+and seek safety.
+
+333
+00:11:43,425 --> 00:11:45,585
+And, commonly,
+we see major tech
+
+334
+00:11:45,585 --> 00:11:48,165
+changes like GraphQL provoke
+
+335
+00:11:48,385 --> 00:11:50,930
+some of these
+triggers. Fairness.
+
+336
+00:11:51,950 --> 00:11:53,230
+My hard fought skills,
+
+337
+00:11:53,230 --> 00:11:54,770
+are they gonna be
+made obsolete?
+
+338
+00:11:55,710 --> 00:11:57,090
+Is everything changing?
+
+339
+00:11:57,150 --> 00:11:58,210
+I have no certainty.
+
+340
+00:11:58,665 --> 00:12:00,045
+Am I losing control?
+
+341
+00:12:00,665 --> 00:12:02,105
+Are others now telling me what
+
+342
+00:12:02,105 --> 00:12:05,465
+my service what my
+team should be doing,
+
+343
+00:12:05,465 --> 00:12:06,525
+what good is?
+
+344
+00:12:07,340 --> 00:12:08,960
+That affects my
+sense of autonomy.
+
+345
+00:12:10,300 --> 00:12:12,300
+Now in the recent
+roundtable I hosted,
+
+346
+00:12:12,300 --> 00:12:14,160
+Steven Spalding
+of Netflix noted
+
+347
+00:12:14,300 --> 00:12:16,080
+that these triggers
+are actually
+
+348
+00:12:16,220 --> 00:12:17,965
+biological in nature. Nature.
+
+349
+00:12:17,965 --> 00:12:19,825
+They're identified
+by our amygdala
+
+350
+00:12:19,885 --> 00:12:21,425
+as a survival mechanism.
+
+351
+00:12:22,525 --> 00:12:24,765
+And our lizard bean
+brain actually
+
+352
+00:12:24,765 --> 00:12:27,260
+tells us to run away from some
+
+353
+00:12:27,260 --> 00:12:28,860
+of these proposed
+tactical changes
+
+354
+00:12:28,860 --> 00:12:30,620
+before a rational engineering
+
+355
+00:12:30,620 --> 00:12:32,620
+mind has even gotten a chance
+
+356
+00:12:32,620 --> 00:12:35,175
+to consider them, or worse,
+
+357
+00:12:35,315 --> 00:12:37,075
+to fight back with
+every argument
+
+358
+00:12:37,075 --> 00:12:37,895
+we can find.
+
+359
+00:12:39,315 --> 00:12:40,675
+Now it's perfectly natural to
+
+360
+00:12:40,675 --> 00:12:42,270
+think that we can
+just dispassionately
+
+361
+00:12:42,410 --> 00:12:44,170
+compare the benefits
+of a query
+
+362
+00:12:44,170 --> 00:12:47,150
+language or a new
+server architecture.
+
+363
+00:12:47,610 --> 00:12:49,225
+But it turns out we need to
+
+364
+00:12:49,225 --> 00:12:50,985
+identify and address the human
+
+365
+00:12:50,985 --> 00:12:52,285
+triggers that are happening
+
+366
+00:12:52,425 --> 00:12:53,325
+along the way.
+
+367
+00:12:54,185 --> 00:12:56,425
+And that's not
+intuitive, is it?
+
+368
+00:12:56,425 --> 00:12:58,445
+Because as an evangelist
+of an innovation
+
+369
+00:12:59,290 --> 00:13:01,850
+, when I trigger
+a fight or flight
+
+370
+00:13:01,850 --> 00:13:03,290
+response in someone I'm trying
+
+371
+00:13:03,290 --> 00:13:05,230
+to convince, what
+what's my response?
+
+372
+00:13:05,610 --> 00:13:08,075
+Well, it's only
+to push harder,
+
+373
+00:13:08,075 --> 00:13:10,175
+to fight back with
+fresh arguments
+
+374
+00:13:10,235 --> 00:13:11,375
+or to give chase,
+
+375
+00:13:11,835 --> 00:13:14,075
+essentially
+attacking them with
+
+376
+00:13:14,075 --> 00:13:15,615
+believe me, believe me.
+
+377
+00:13:16,260 --> 00:13:17,800
+And that just makes it worse.
+
+378
+00:13:17,860 --> 00:13:19,800
+That just creates
+more triggers.
+
+379
+00:13:21,060 --> 00:13:23,700
+So if change
+necessarily triggers
+
+380
+00:13:23,700 --> 00:13:26,055
+base emotions in those we seek
+
+381
+00:13:26,055 --> 00:13:27,255
+to convince, what can we do?
+
+382
+00:13:27,255 --> 00:13:28,695
+Is there a way to avoid this
+
+383
+00:13:28,695 --> 00:13:30,635
+conflict and avoid
+these triggers?
+
+384
+00:13:31,895 --> 00:13:33,415
+Well, I wish I
+could say I believe
+
+385
+00:13:33,415 --> 00:13:34,770
+there was, but we
+discussed this
+
+386
+00:13:34,770 --> 00:13:35,910
+topic in the roundtable,
+
+387
+00:13:36,130 --> 00:13:38,230
+and we all came to
+the same conclusion.
+
+388
+00:13:39,410 --> 00:13:41,090
+Friction or conflict is just
+
+389
+00:13:41,090 --> 00:13:42,470
+another word for interaction.
+
+390
+00:13:43,745 --> 00:13:46,145
+All big leaps come
+from a controlled
+
+391
+00:13:46,145 --> 00:13:48,085
+amount of struggle
+and friction.
+
+392
+00:13:49,185 --> 00:13:50,705
+And second,
+diversity of thought
+
+393
+00:13:50,705 --> 00:13:52,325
+is the source of insight.
+
+394
+00:13:52,650 --> 00:13:54,350
+It's not to be avoided.
+
+395
+00:13:55,290 --> 00:13:56,730
+Knowing where your
+blind spots are,
+
+396
+00:13:56,730 --> 00:13:57,930
+knowing what you
+don't even know
+
+397
+00:13:57,930 --> 00:13:59,690
+you don't know is crucial to
+
+398
+00:13:59,690 --> 00:14:00,670
+making discoveries.
+
+399
+00:14:02,125 --> 00:14:04,525
+And third, avoiding
+conflict via
+
+400
+00:14:04,525 --> 00:14:07,245
+path of least resistance isn't
+
+401
+00:14:07,245 --> 00:14:08,225
+healthy in relationships,
+
+402
+00:14:08,285 --> 00:14:10,465
+and it's not healthy
+in system design.
+
+403
+00:14:11,010 --> 00:14:12,930
+It leads to extra layers and
+
+404
+00:14:12,930 --> 00:14:15,010
+complexity being
+built to avoid
+
+405
+00:14:15,010 --> 00:14:17,250
+the need to come together and
+
+406
+00:14:17,250 --> 00:14:19,075
+reconcile those differences.
+
+407
+00:14:21,295 --> 00:14:24,415
+So, again, great.
+What do we do then?
+
+408
+00:14:24,415 --> 00:14:25,935
+If friction and conflict are
+
+409
+00:14:25,935 --> 00:14:27,295
+inevitable and they're not to
+
+410
+00:14:27,295 --> 00:14:29,680
+be avoided, what can or what
+
+411
+00:14:29,680 --> 00:14:31,040
+should we do to manage that
+
+412
+00:14:31,040 --> 00:14:32,480
+change and the reactions that
+
+413
+00:14:32,480 --> 00:14:33,220
+come about?
+
+414
+00:14:34,720 --> 00:14:36,375
+Well, let's talk about a few
+
+415
+00:14:36,375 --> 00:14:38,875
+tools that you can
+use to promote
+
+416
+00:14:38,935 --> 00:14:40,855
+that positive friction that we
+
+417
+00:14:40,855 --> 00:14:41,595
+talk about.
+
+418
+00:14:42,900 --> 00:14:43,700
+Broadly speaking,
+
+419
+00:14:43,700 --> 00:14:44,820
+there's four that I'll share
+
+420
+00:14:44,820 --> 00:14:47,960
+with you today. The
+first is empathy.
+
+421
+00:14:48,740 --> 00:14:50,420
+Rather than forcing a solution
+
+422
+00:14:50,420 --> 00:14:52,040
+on others because
+it's technically
+
+423
+00:14:52,100 --> 00:14:54,495
+better, try adopting a product
+
+424
+00:14:54,495 --> 00:14:56,895
+mindset and work to figure out
+
+425
+00:14:56,895 --> 00:14:58,275
+your customer's problems,
+
+426
+00:14:58,895 --> 00:15:00,275
+the problem that the adopting
+
+427
+00:15:00,335 --> 00:15:01,140
+teams have.
+
+428
+00:15:02,180 --> 00:15:03,860
+By thinking and
+talking in terms
+
+429
+00:15:03,860 --> 00:15:05,160
+of other people's interests,
+
+430
+00:15:05,380 --> 00:15:07,960
+what they care about,
+we gain empathy,
+
+431
+00:15:08,020 --> 00:15:09,320
+and that leads to trust.
+
+432
+00:15:09,845 --> 00:15:11,845
+And trust is what we need to
+
+433
+00:15:11,845 --> 00:15:13,525
+encourage change
+and work through
+
+434
+00:15:13,525 --> 00:15:14,665
+fear and doubt.
+
+435
+00:15:16,165 --> 00:15:20,080
+Second, shift
+attention to common
+
+436
+00:15:20,220 --> 00:15:22,780
+outcomes. The best way to find
+
+437
+00:15:22,780 --> 00:15:24,320
+common ground is
+not to technically
+
+438
+00:15:24,585 --> 00:15:26,105
+crush any doubt or push back
+
+439
+00:15:26,105 --> 00:15:27,945
+with the awesome force of your
+
+440
+00:15:27,945 --> 00:15:28,845
+will and persuasion.
+
+441
+00:15:29,465 --> 00:15:31,085
+That energy only increases
+
+442
+00:15:31,145 --> 00:15:32,410
+resistance to new ideas.
+
+443
+00:15:33,130 --> 00:15:33,950
+But rather,
+
+444
+00:15:34,490 --> 00:15:37,050
+redirect to
+discussion of common
+
+445
+00:15:37,050 --> 00:15:38,670
+outcomes that you all seek.
+
+446
+00:15:39,370 --> 00:15:40,890
+It's very difficult
+to align on
+
+447
+00:15:40,890 --> 00:15:41,975
+approach if you don't have
+
+448
+00:15:41,975 --> 00:15:43,275
+alignment on your goals,
+
+449
+00:15:43,655 --> 00:15:45,435
+and the more agreement
+on outcomes,
+
+450
+00:15:46,135 --> 00:15:47,495
+the easier it is to explore
+
+451
+00:15:47,495 --> 00:15:48,955
+solutions that
+meet those needs.
+
+452
+00:15:50,430 --> 00:15:53,570
+Third, demonstrate
+versus scold.
+
+453
+00:15:53,790 --> 00:15:54,990
+When we want new behavior,
+
+454
+00:15:54,990 --> 00:15:55,790
+we can demand it,
+
+455
+00:15:55,790 --> 00:15:57,410
+we can criticize noncompliance
+
+456
+00:15:57,630 --> 00:15:59,985
+or resistance, or
+we can demonstrate
+
+457
+00:16:00,365 --> 00:16:01,905
+and show its value.
+
+458
+00:16:02,445 --> 00:16:04,365
+And often, this means actually
+
+459
+00:16:04,365 --> 00:16:05,725
+rolling up your sleeves and
+
+460
+00:16:05,725 --> 00:16:07,425
+working with those
+adopting teams.
+
+461
+00:16:07,720 --> 00:16:09,160
+Putting skin in the game not
+
+462
+00:16:09,160 --> 00:16:11,500
+only shows your
+commitment to outcomes,
+
+463
+00:16:11,880 --> 00:16:13,740
+but helps you understand where
+
+464
+00:16:13,800 --> 00:16:15,320
+changes are needed
+to your current
+
+465
+00:16:15,320 --> 00:16:17,705
+approach. So
+adopting a show and
+
+466
+00:16:17,705 --> 00:16:19,065
+tell approach
+with the emphasis
+
+467
+00:16:19,065 --> 00:16:21,965
+on show is a practical
+tool you can use.
+
+468
+00:16:22,665 --> 00:16:24,985
+And finally, and perhaps most
+
+469
+00:16:24,985 --> 00:16:27,590
+importantly, embrace
+new mindsets.
+
+470
+00:16:28,770 --> 00:16:30,210
+At Apollo, we've seen many
+
+471
+00:16:30,210 --> 00:16:32,290
+companies adopt
+GraphQL at scale
+
+472
+00:16:32,290 --> 00:16:33,270
+across our organization,
+
+473
+00:16:33,305 --> 00:16:35,865
+and we've observed
+a very natural
+
+474
+00:16:35,865 --> 00:16:38,265
+instinct to see
+the new in terms
+
+475
+00:16:38,265 --> 00:16:38,925
+of the familiar.
+
+476
+00:16:39,865 --> 00:16:41,465
+I mean, we've been doing APIs
+
+477
+00:16:41,465 --> 00:16:43,550
+as a community, right,
+for a long time.
+
+478
+00:16:44,010 --> 00:16:46,010
+So adding a query
+language across
+
+479
+00:16:46,010 --> 00:16:47,630
+multiple APIs, that's great,
+
+480
+00:16:48,010 --> 00:16:49,690
+but the shape and the purpose
+
+481
+00:16:49,690 --> 00:16:51,305
+of every API,
+that doesn't need
+
+482
+00:16:51,305 --> 00:16:52,365
+to change, does it?
+
+483
+00:16:53,385 --> 00:16:55,545
+Well, our experience has been
+
+484
+00:16:55,545 --> 00:16:56,905
+that when you take
+that approach,
+
+485
+00:16:56,905 --> 00:16:58,425
+when you try to
+fit the new into
+
+486
+00:16:58,425 --> 00:16:58,910
+the old,
+
+487
+00:16:59,470 --> 00:17:02,510
+you often miss out on much of
+
+488
+00:17:02,510 --> 00:17:03,730
+the value of the change.
+
+489
+00:17:04,510 --> 00:17:05,810
+And in the case of APIs,
+
+490
+00:17:06,670 --> 00:17:08,430
+there's a strong consensus now
+
+491
+00:17:08,430 --> 00:17:10,205
+about the power and importance
+
+492
+00:17:10,205 --> 00:17:12,385
+of designing with
+an API first mindset.
+
+493
+00:17:12,445 --> 00:17:14,785
+Right? But if we look
+a little deeper,
+
+494
+00:17:15,325 --> 00:17:17,245
+if those APIs are designed for
+
+495
+00:17:17,245 --> 00:17:18,760
+each service by each service
+
+496
+00:17:18,820 --> 00:17:20,900
+team independently and they
+
+497
+00:17:20,900 --> 00:17:22,340
+reflect only the view point of
+
+498
+00:17:22,340 --> 00:17:23,380
+view of the service owner,
+
+499
+00:17:23,380 --> 00:17:25,300
+then they're in a sense thrown
+
+500
+00:17:25,300 --> 00:17:26,705
+over the wall to
+the front end.
+
+501
+00:17:26,785 --> 00:17:28,465
+And while consuming
+multiple of
+
+502
+00:17:28,465 --> 00:17:29,745
+them in a single query is
+
+503
+00:17:29,745 --> 00:17:30,885
+mechanically better,
+
+504
+00:17:31,585 --> 00:17:34,005
+it doesn't really
+address the complexity
+
+505
+00:17:34,145 --> 00:17:36,580
+problem. Whereas,
+
+506
+00:17:37,040 --> 00:17:38,560
+if we adopt a true customer
+
+507
+00:17:38,560 --> 00:17:39,700
+mindset for APIs,
+
+508
+00:17:39,920 --> 00:17:42,340
+we see we need
+a connected set of APIs,
+
+509
+00:17:42,560 --> 00:17:45,945
+a graph shaped for
+use by its clients,
+
+510
+00:17:46,885 --> 00:17:48,745
+not its underlying services.
+
+511
+00:17:49,765 --> 00:17:51,705
+And designing such
+an interconnected
+
+512
+00:17:51,765 --> 00:17:53,840
+graph requires a much deeper
+
+513
+00:17:53,840 --> 00:17:55,700
+level of collaboration,
+doesn't it?
+
+514
+00:17:55,920 --> 00:17:57,520
+And that pulls our
+teams together
+
+515
+00:17:57,520 --> 00:18:00,020
+to build something
+that truly captures,
+
+516
+00:18:00,785 --> 00:18:01,685
+something long lasting,
+
+517
+00:18:01,825 --> 00:18:02,725
+something durable.
+
+518
+00:18:03,425 --> 00:18:05,025
+And that's an evolving API
+
+519
+00:18:05,025 --> 00:18:07,105
+contract that offers a unified
+
+520
+00:18:07,105 --> 00:18:08,545
+and interconnected set of data
+
+521
+00:18:08,545 --> 00:18:11,870
+and capabilities
+built upon but
+
+522
+00:18:11,870 --> 00:18:13,810
+abstracted away
+from the underlying
+
+523
+00:18:13,870 --> 00:18:14,990
+service and data laters.
+
+524
+00:18:14,990 --> 00:18:16,530
+And that's just more valuable
+
+525
+00:18:17,070 --> 00:18:18,370
+than enabling queries.
+
+526
+00:18:21,305 --> 00:18:22,505
+So let's talk about a few
+
+527
+00:18:22,505 --> 00:18:24,825
+takeaways to
+summarize the topics
+
+528
+00:18:24,825 --> 00:18:26,045
+that we've covered today.
+
+529
+00:18:27,225 --> 00:18:30,470
+First, tech
+adoption is a human
+
+530
+00:18:30,470 --> 00:18:32,490
+endeavor. If your organization
+
+531
+00:18:32,630 --> 00:18:33,770
+is adopting GraphQL,
+
+532
+00:18:34,070 --> 00:18:35,770
+your people are
+dealing with change.
+
+533
+00:18:36,625 --> 00:18:37,925
+And along with the benefits,
+
+534
+00:18:38,305 --> 00:18:39,685
+the value of new technologies
+
+535
+00:18:39,745 --> 00:18:40,565
+such as GraphQL,
+
+536
+00:18:40,945 --> 00:18:43,605
+change often triggers
+resistance.
+
+537
+00:18:44,740 --> 00:18:46,740
+Constructive
+friction is needed
+
+538
+00:18:46,740 --> 00:18:48,600
+to advance, to
+make the leaps.
+
+539
+00:18:49,300 --> 00:18:52,665
+To avoid change is a siren's
+
+540
+00:18:52,665 --> 00:18:53,805
+call to the rocks.
+
+541
+00:18:54,025 --> 00:18:56,285
+It sounds attractive
+to avoid it,
+
+542
+00:18:56,985 --> 00:18:58,605
+but, ultimately,
+it's destructive.
+
+543
+00:18:59,810 --> 00:19:02,310
+Rather, by
+practicing empathy,
+
+544
+00:19:02,930 --> 00:19:06,070
+shifting focus,
+demonstrating success,
+
+545
+00:19:06,770 --> 00:19:08,150
+and adopting new mindsets,
+
+546
+00:19:08,195 --> 00:19:09,315
+you can create a healthy space
+
+547
+00:19:09,315 --> 00:19:10,775
+for change and
+healthy conflict.
+
+548
+00:19:11,635 --> 00:19:12,455
+And, ultimately,
+
+549
+00:19:13,315 --> 00:19:15,875
+and this is borne
+out over across
+
+550
+00:19:15,875 --> 00:19:17,655
+a hundred or so companies that
+
+551
+00:19:17,700 --> 00:19:19,720
+we've talked to about
+GraphQL adoption.
+
+552
+00:19:20,260 --> 00:19:22,920
+Human factors
+affect the success
+
+553
+00:19:23,380 --> 00:19:25,300
+of tech adoption more than
+
+554
+00:19:25,300 --> 00:19:29,055
+tactical factors do.
+
+555
+00:19:29,055 --> 00:19:30,895
+And that's the end
+of our talk today.
+
+556
+00:19:30,895 --> 00:19:32,415
+I wanna thank Connected Data
+
+557
+00:19:32,415 --> 00:19:33,695
+World for this opportunity to
+
+558
+00:19:33,695 --> 00:19:34,975
+reach you today and to you for
+
+559
+00:19:34,975 --> 00:19:35,955
+watching the presentation.
+
+560
+00:19:37,040 --> 00:19:38,980
+For more content on GraphQL,
+
+561
+00:19:39,280 --> 00:19:40,420
+the unified graph,
+
+562
+00:19:41,040 --> 00:19:42,500
+Apollo's graph platform,
+
+563
+00:19:43,200 --> 00:19:45,120
+and more about
+how companies can
+
+564
+00:19:45,120 --> 00:19:46,795
+get the most value
+out of adopting
+
+565
+00:19:46,795 --> 00:19:49,055
+GraphQL, please
+visit our site,
+
+566
+00:19:49,595 --> 00:19:50,655
+our YouTube channel.
+
+567
+00:19:51,035 --> 00:19:52,735
+And if you wanna continue
+the conversation
+
+568
+00:19:52,875 --> 00:19:53,755
+directly with me,
+
+569
+00:19:53,755 --> 00:19:55,690
+please reach out
+via Twitter or
+
+570
+00:19:55,690 --> 00:19:58,270
+the email addresses
+here. And thank you.
+

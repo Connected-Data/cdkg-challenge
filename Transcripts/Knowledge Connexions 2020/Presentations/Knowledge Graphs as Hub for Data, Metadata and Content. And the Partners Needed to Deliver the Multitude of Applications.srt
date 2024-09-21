@@ -1,0 +1,4804 @@
+1
+00:00:00,460 --> 00:00:03,200
+It's my great pleasure
+to introduce,
+
+2
+00:00:04,155 --> 00:00:08,175
+Naso Kiriakov and
+Vasil Momchev from,
+
+3
+00:00:08,555 --> 00:00:10,015
+our good friends, OntoText.
+
+4
+00:00:11,340 --> 00:00:13,260
+OntoText have been
+in this space
+
+5
+00:00:13,260 --> 00:00:14,080
+a long time,
+
+6
+00:00:14,940 --> 00:00:16,780
+and really looking forward to
+
+7
+00:00:16,780 --> 00:00:18,300
+finding out the latest kind of
+
+8
+00:00:18,300 --> 00:00:21,915
+direction of the,
+the the product that,
+
+9
+00:00:21,955 --> 00:00:23,175
+they've they've developed.
+
+10
+00:00:24,435 --> 00:00:26,355
+And I'll be moderating
+this session.
+
+11
+00:00:26,355 --> 00:00:28,535
+Please, say hello,
+introduce yourselves,
+
+12
+00:00:29,155 --> 00:00:30,455
+tell us where you're from,
+
+13
+00:00:30,990 --> 00:00:32,510
+and also don't hesitate to,
+
+14
+00:00:32,750 --> 00:00:34,430
+answer any questions,
+and we'll,
+
+15
+00:00:34,670 --> 00:00:36,750
+we'll cover those
+at the end. Great.
+
+16
+00:00:36,750 --> 00:00:38,590
+Welcome, Naso and, Vasil,
+
+17
+00:00:38,590 --> 00:00:41,275
+and and over to
+you. Thank you.
+
+18
+00:00:41,275 --> 00:00:42,655
+Thank you very much, James.
+
+19
+00:00:43,435 --> 00:00:45,215
+It's indeed a great
+pleasure to,
+
+20
+00:00:46,875 --> 00:00:48,700
+yeah, to be to
+be again part of
+
+21
+00:00:49,180 --> 00:00:49,840
+this conference.
+
+22
+00:00:50,220 --> 00:00:51,980
+We have fresh
+memories from one
+
+23
+00:00:51,980 --> 00:00:53,200
+year ago in London.
+
+24
+00:00:53,860 --> 00:00:56,735
+So, it will be
+myself presenting
+
+25
+00:00:57,115 --> 00:01:00,335
+and and OntoTech's,
+CTO, Vasil Mamcheff.
+
+26
+00:01:02,235 --> 00:01:04,650
+So I I I will I will entertain
+
+27
+00:01:04,790 --> 00:01:07,110
+you with a bit of
+introduction of,
+
+28
+00:01:07,430 --> 00:01:08,250
+who we are,
+
+29
+00:01:09,190 --> 00:01:11,590
+and then I'll share our vision
+
+30
+00:01:11,590 --> 00:01:13,385
+on on the market for knowledge
+
+31
+00:01:13,385 --> 00:01:14,585
+gap technology and different
+
+32
+00:01:14,585 --> 00:01:17,005
+applications and how,
+
+33
+00:01:17,465 --> 00:01:20,720
+semantic metadata
+are the key to put,
+
+34
+00:01:21,180 --> 00:01:22,700
+to for quite a number
+of different
+
+35
+00:01:22,700 --> 00:01:24,720
+applications and
+how how they,
+
+36
+00:01:25,260 --> 00:01:27,100
+can improve both
+data management
+
+37
+00:01:27,100 --> 00:01:28,140
+and content management,
+
+38
+00:01:28,140 --> 00:01:29,500
+and and actually put data and
+
+39
+00:01:29,500 --> 00:01:32,565
+content together.
+
+40
+00:01:32,925 --> 00:01:34,945
+Then, I'll hand over to Vasil
+
+41
+00:01:35,005 --> 00:01:38,440
+to share with you, yeah,
+
+42
+00:01:38,440 --> 00:01:39,480
+few updates about,
+
+43
+00:01:39,720 --> 00:01:42,600
+Onstext platform
+and and and our
+
+44
+00:01:42,600 --> 00:01:44,300
+database engine, Graph DB,
+
+45
+00:01:45,675 --> 00:01:48,735
+and to to to basically
+walk you through,
+
+46
+00:01:48,955 --> 00:01:51,835
+the different aspects of what
+
+47
+00:01:51,835 --> 00:01:54,120
+it takes to to get
+data in a graph
+
+48
+00:01:54,120 --> 00:01:57,480
+database, to to
+transform them,
+
+49
+00:01:57,480 --> 00:01:59,405
+to make a proper
+graph out of it,
+
+50
+00:01:59,485 --> 00:02:01,565
+and then to consume
+them either
+
+51
+00:02:01,565 --> 00:02:03,325
+from whatever tool all the way
+
+52
+00:02:03,325 --> 00:02:05,665
+from BI tool,
+
+53
+00:02:06,125 --> 00:02:08,625
+that access data
+to a JDBC driver
+
+54
+00:02:09,060 --> 00:02:11,140
+to another
+application that use
+
+55
+00:02:11,140 --> 00:02:13,380
+use it through, say,
+
+56
+00:02:13,380 --> 00:02:15,320
+GraphQL or other APIs.
+
+57
+00:02:15,940 --> 00:02:17,720
+And then we'll finish off with
+
+58
+00:02:18,765 --> 00:02:20,045
+an overview of our partner
+
+59
+00:02:20,045 --> 00:02:21,025
+ecosystem because,
+
+60
+00:02:22,045 --> 00:02:26,045
+with the those wide range of
+
+61
+00:02:26,045 --> 00:02:27,505
+applications of
+these technologies,
+
+62
+00:02:27,910 --> 00:02:30,090
+there is no single
+vendor, at least,
+
+63
+00:02:31,110 --> 00:02:32,550
+no no no none of these,
+
+64
+00:02:33,590 --> 00:02:35,610
+specialized technology
+providers,
+
+65
+00:02:36,615 --> 00:02:38,475
+who who can deliver
+all the applications
+
+66
+00:02:38,615 --> 00:02:38,855
+to you.
+
+67
+00:02:38,855 --> 00:02:41,275
+So we built a partner
+ecosystem,
+
+68
+00:02:42,215 --> 00:02:44,155
+to to to to be able to,
+
+69
+00:02:44,800 --> 00:02:46,160
+put the right technology stack
+
+70
+00:02:46,160 --> 00:02:48,900
+in place and to be able to to
+
+71
+00:02:48,960 --> 00:02:50,980
+to also deliver
+it at at scale.
+
+72
+00:02:51,760 --> 00:02:55,365
+So let's get started
+with the introduction
+
+73
+00:02:56,465 --> 00:03:00,465
+. So on to take this, yeah,
+
+74
+00:03:00,465 --> 00:03:01,505
+we started with,
+
+75
+00:03:01,745 --> 00:03:03,345
+what was back then
+semantic weapon,
+
+76
+00:03:03,345 --> 00:03:05,330
+semantic technology
+in year two
+
+77
+00:03:05,330 --> 00:03:07,010
+thousand. And we
+had the chance
+
+78
+00:03:07,010 --> 00:03:10,130
+to to to be to be
+part of the avant
+
+79
+00:03:10,130 --> 00:03:11,815
+garde in this technology and
+
+80
+00:03:11,815 --> 00:03:13,275
+went to the all the evolution
+
+81
+00:03:13,335 --> 00:03:15,275
+to link to open
+data, nowadays,
+
+82
+00:03:15,415 --> 00:03:16,235
+knowledge gaps.
+
+83
+00:03:17,735 --> 00:03:21,810
+And, well, nowadays,
+we are, like,
+
+84
+00:03:21,810 --> 00:03:23,030
+most of our clients,
+
+85
+00:03:23,570 --> 00:03:24,850
+are are the total leaders in
+
+86
+00:03:24,850 --> 00:03:26,310
+different industries
+and markets,
+
+87
+00:03:26,930 --> 00:03:28,470
+like multinational companies.
+
+88
+00:03:29,725 --> 00:03:31,725
+Still, if we have
+to to to come
+
+89
+00:03:31,725 --> 00:03:34,385
+to where where their
+headquarters are,
+
+90
+00:03:34,605 --> 00:03:36,945
+it's quite an even
+split between
+
+91
+00:03:37,245 --> 00:03:40,910
+UK where where we got
+our first clients,
+
+92
+00:03:41,310 --> 00:03:43,410
+big clients in stories
+ten years ago,
+
+93
+00:03:44,670 --> 00:03:47,685
+and, then US has
+a growing area,
+
+94
+00:03:47,685 --> 00:03:51,145
+Asia also, and main,
+mainland Europe.
+
+95
+00:03:52,245 --> 00:03:53,365
+Up until a year ago,
+
+96
+00:03:53,365 --> 00:03:54,930
+it was easy to say Europe.
+
+97
+00:03:55,010 --> 00:03:57,110
+Now you gotta say
+Europe and UK.
+
+98
+00:03:58,530 --> 00:04:00,870
+But, anyway so,
+
+99
+00:04:02,595 --> 00:04:05,415
+you see some selection
+of our clients.
+
+100
+00:04:06,755 --> 00:04:09,015
+I'll talk a bit more
+about the verticals
+
+101
+00:04:10,640 --> 00:04:12,240
+, But, yeah, you see that most
+
+102
+00:04:12,240 --> 00:04:14,400
+of them are
+precisely this type
+
+103
+00:04:14,400 --> 00:04:16,100
+of really big enterprises.
+
+104
+00:04:16,560 --> 00:04:18,160
+We we are not
+allowed to mention
+
+105
+00:04:18,160 --> 00:04:20,045
+some of them,
+but that's that's
+
+106
+00:04:20,105 --> 00:04:21,005
+the way it is.
+
+107
+00:04:22,265 --> 00:04:24,745
+We being being part of this
+
+108
+00:04:24,745 --> 00:04:26,425
+industry and part of the this
+
+109
+00:04:26,425 --> 00:04:28,480
+community that is,
+
+110
+00:04:29,580 --> 00:04:31,020
+developing the trends
+and setting
+
+111
+00:04:31,020 --> 00:04:33,500
+the standards, we we do this
+
+112
+00:04:33,500 --> 00:04:35,520
+through through
+a number of, yeah,
+
+113
+00:04:35,580 --> 00:04:37,895
+organizations, worldwide web
+
+114
+00:04:37,895 --> 00:04:40,635
+that we would see,
+being the main one,
+
+115
+00:04:41,255 --> 00:04:42,635
+which not only standardizes
+
+116
+00:04:44,500 --> 00:04:46,360
+World Wide Web, HTML, HTP,
+
+117
+00:04:46,420 --> 00:04:48,340
+and all these
+standards on which
+
+118
+00:04:48,340 --> 00:04:49,880
+the World Wide Web is built,
+
+119
+00:04:49,940 --> 00:04:53,275
+but they are also
+the ones that
+
+120
+00:04:53,275 --> 00:04:55,215
+standardized RDS, Fargo, OWL,
+
+121
+00:04:55,435 --> 00:04:56,315
+and the stack of,
+
+122
+00:04:56,475 --> 00:04:57,835
+the stack of standards that we
+
+123
+00:04:57,835 --> 00:04:59,540
+we build our technology on.
+
+124
+00:05:00,580 --> 00:05:01,860
+And we have we
+had the chance,
+
+125
+00:05:01,860 --> 00:05:04,200
+and we we are still
+very happy to,
+
+126
+00:05:04,660 --> 00:05:06,920
+to keep pushing
+our research to
+
+127
+00:05:07,405 --> 00:05:08,365
+a collaborative project.
+
+128
+00:05:08,365 --> 00:05:09,565
+So we are we are very,
+
+129
+00:05:09,565 --> 00:05:11,725
+very well interconnected with
+
+130
+00:05:11,725 --> 00:05:13,565
+those sorts of academic groups
+
+131
+00:05:13,565 --> 00:05:14,865
+in this field in Europe.
+
+132
+00:05:15,510 --> 00:05:18,090
+Our best, our most
+popular product is,
+
+133
+00:05:19,190 --> 00:05:20,310
+Onstead's Graph DB.
+
+134
+00:05:20,310 --> 00:05:22,570
+We're getting, I don't
+know, probably,
+
+135
+00:05:23,110 --> 00:05:25,685
+thousand or a bit
+more downloads,
+
+136
+00:05:26,705 --> 00:05:28,565
+of, Graph DB per month.
+
+137
+00:05:29,665 --> 00:05:32,145
+And, yeah, we have an active
+
+138
+00:05:32,145 --> 00:05:34,400
+user community of more than
+
+139
+00:05:34,400 --> 00:05:36,020
+thirty thousand
+deployed instances.
+
+140
+00:05:37,280 --> 00:05:38,820
+So there are plenty
+of statistics
+
+141
+00:05:38,960 --> 00:05:40,400
+like that, and and we're happy
+
+142
+00:05:40,400 --> 00:05:43,625
+that we also see
+recognition among,
+
+143
+00:05:44,025 --> 00:05:47,245
+yeah, different,
+market analysts.
+
+144
+00:05:47,865 --> 00:05:51,140
+So, OnSpace GovDB
+is seen as as
+
+145
+00:05:51,140 --> 00:05:52,900
+one one of the one
+of the leading
+
+146
+00:05:52,900 --> 00:05:54,280
+engines in this field.
+
+147
+00:05:56,180 --> 00:05:57,540
+On top of this engine,
+
+148
+00:05:57,540 --> 00:06:00,425
+we actually have
+a bigger set of,
+
+149
+00:06:01,045 --> 00:06:02,025
+a bigger platform,
+
+150
+00:06:02,805 --> 00:06:03,945
+knowledge graph platform,
+
+151
+00:06:04,725 --> 00:06:06,155
+called you wouldn't
+guess it on
+
+152
+00:06:06,155 --> 00:06:07,225
+the text platform,
+
+153
+00:06:08,260 --> 00:06:09,780
+which extends what we get out
+
+154
+00:06:09,780 --> 00:06:11,640
+of Graph DB with,
+
+155
+00:06:12,820 --> 00:06:14,440
+analytics services
+and infrastructure
+
+156
+00:06:15,035 --> 00:06:15,995
+for text analysis,
+
+157
+00:06:15,995 --> 00:06:17,375
+for data quality management,
+
+158
+00:06:17,435 --> 00:06:18,895
+and quite a few other things.
+
+159
+00:06:19,755 --> 00:06:25,230
+So, this platform,
+yeah, helps you yeah.
+
+160
+00:06:25,230 --> 00:06:27,630
+It makes it much easier
+to to to deploy,
+
+161
+00:06:27,630 --> 00:06:29,970
+to to make knowledge
+center solutions.
+
+162
+00:06:31,185 --> 00:06:32,785
+But we'll talk about
+the platform,
+
+163
+00:06:33,025 --> 00:06:34,325
+later on in this
+presentation.
+
+164
+00:06:34,945 --> 00:06:37,285
+So stop here. On
+the right hand side,
+
+165
+00:06:37,505 --> 00:06:39,910
+you see, yeah,
+
+166
+00:06:40,050 --> 00:06:42,130
+a business case or
+or or the typical
+
+167
+00:06:42,130 --> 00:06:44,690
+solutions, that we offer and
+
+168
+00:06:44,690 --> 00:06:46,210
+that we can customize across
+
+169
+00:06:46,210 --> 00:06:47,510
+across different industries.
+
+170
+00:06:48,065 --> 00:06:48,785
+Like, historically,
+
+171
+00:06:48,785 --> 00:06:50,145
+we started with media
+and publishing,
+
+172
+00:06:50,145 --> 00:06:52,805
+then we went to
+financial services.
+
+173
+00:06:53,745 --> 00:06:55,265
+Life science and
+health care is
+
+174
+00:06:55,265 --> 00:06:56,805
+a is a strong one too.
+
+175
+00:06:57,860 --> 00:07:00,120
+So to finish off
+with the intro,
+
+176
+00:07:00,180 --> 00:07:01,620
+what makes us unique is this
+
+177
+00:07:01,620 --> 00:07:03,300
+combination of the graph graph
+
+178
+00:07:03,300 --> 00:07:04,280
+database engine,
+
+179
+00:07:05,705 --> 00:07:07,865
+which is suited for all all
+
+180
+00:07:07,865 --> 00:07:09,465
+kinds of use cases for for
+
+181
+00:07:09,465 --> 00:07:10,365
+knowledge graphs.
+
+182
+00:07:11,785 --> 00:07:13,545
+And the combination of this
+
+183
+00:07:13,545 --> 00:07:15,720
+database with text analysis,
+
+184
+00:07:16,980 --> 00:07:19,080
+services and
+infrastructure tools,
+
+185
+00:07:19,460 --> 00:07:20,680
+like curation tools,
+
+186
+00:07:21,780 --> 00:07:23,220
+and manual
+annotation tools and
+
+187
+00:07:23,220 --> 00:07:26,425
+so on and so forth
+that can use
+
+188
+00:07:26,485 --> 00:07:28,325
+and are tuned to
+use big knowledge
+
+189
+00:07:28,325 --> 00:07:30,985
+graphs for, text analysis.
+
+190
+00:07:32,510 --> 00:07:33,970
+As I said,
+the entire portfolio
+
+191
+00:07:34,030 --> 00:07:37,150
+is based on, the double
+two c stack of,
+
+192
+00:07:37,470 --> 00:07:40,115
+standards. And there is also
+
+193
+00:07:40,115 --> 00:07:42,115
+what if open source tooling as
+
+194
+00:07:42,115 --> 00:07:44,535
+part of this this
+environment.
+
+195
+00:07:44,675 --> 00:07:46,515
+So the entire front end of our
+
+196
+00:07:46,515 --> 00:07:48,070
+database engine
+is open source.
+
+197
+00:07:48,070 --> 00:07:49,190
+You can get it for kit,
+
+198
+00:07:49,190 --> 00:07:50,730
+use it for everything
+you want.
+
+199
+00:07:52,150 --> 00:07:55,110
+Then the the plug in
+API is open source.
+
+200
+00:07:55,110 --> 00:07:57,530
+We are supporter of
+one of the leading
+
+201
+00:07:58,045 --> 00:07:59,805
+open source projects
+in this space.
+
+202
+00:07:59,805 --> 00:08:01,345
+The probably
+the biggest supporter
+
+203
+00:08:01,405 --> 00:08:03,505
+historically, are the four j,
+
+204
+00:08:03,645 --> 00:08:07,220
+also for text
+analysis platforms,
+
+205
+00:08:07,280 --> 00:08:08,500
+and so on and so forth.
+
+206
+00:08:10,400 --> 00:08:12,560
+So we had the chance to to to
+
+207
+00:08:12,960 --> 00:08:14,495
+and I had the chance to gather
+
+208
+00:08:14,495 --> 00:08:17,095
+a team with a very,
+very diverse set of,
+
+209
+00:08:18,775 --> 00:08:21,415
+skills and and
+expertise across
+
+210
+00:08:21,415 --> 00:08:22,850
+different types of technology
+
+211
+00:08:22,990 --> 00:08:25,170
+and and science and
+and verticals.
+
+212
+00:08:25,310 --> 00:08:27,550
+I'm not going to
+list them because
+
+213
+00:08:27,550 --> 00:08:28,990
+that's not the purpose of this
+
+214
+00:08:28,990 --> 00:08:29,730
+this presentation.
+
+215
+00:08:31,995 --> 00:08:35,115
+Well, over time,
+we realized that,
+
+216
+00:08:35,115 --> 00:08:36,735
+actually, the biggest
+the biggest
+
+217
+00:08:36,875 --> 00:08:38,255
+asset and the most important
+
+218
+00:08:38,315 --> 00:08:39,435
+thing that we have is this
+
+219
+00:08:39,435 --> 00:08:42,120
+ecosystem of partners, which,
+
+220
+00:08:43,880 --> 00:08:45,400
+two years came to trust on to
+
+221
+00:08:45,400 --> 00:08:47,560
+text technology and work with
+
+222
+00:08:47,560 --> 00:08:49,160
+us in in in different ways.
+
+223
+00:08:49,160 --> 00:08:50,345
+So we have all all sorts of
+
+224
+00:08:50,505 --> 00:08:52,045
+consultants and OEM partners,
+
+225
+00:08:52,345 --> 00:08:54,285
+and we partner
+with quite a few,
+
+226
+00:08:55,465 --> 00:08:56,285
+tool providers.
+
+227
+00:08:57,305 --> 00:08:58,505
+And and many of
+these people are
+
+228
+00:08:58,505 --> 00:09:00,025
+actually present on
+this conference.
+
+229
+00:09:00,025 --> 00:09:02,030
+So Symantecweb
+company, MetaFacts,
+
+230
+00:09:02,570 --> 00:09:04,030
+and and and few others.
+
+231
+00:09:05,050 --> 00:09:08,650
+So, this was all in terms of
+
+232
+00:09:08,650 --> 00:09:11,385
+introduction. So
+now let's talk
+
+233
+00:09:11,385 --> 00:09:12,285
+about the market.
+
+234
+00:09:13,145 --> 00:09:15,965
+If I gotta talk to to
+to the investors,
+
+235
+00:09:16,265 --> 00:09:20,220
+the positive
+message is, well,
+
+236
+00:09:20,280 --> 00:09:21,880
+this market is
+doing very well.
+
+237
+00:09:21,880 --> 00:09:23,000
+If Gartner is saying that it
+
+238
+00:09:23,000 --> 00:09:24,520
+will be doubling
+for another two
+
+239
+00:09:24,520 --> 00:09:25,500
+years two years,
+
+240
+00:09:26,105 --> 00:09:27,725
+That's that's just great.
+
+241
+00:09:29,625 --> 00:09:30,985
+And if you look at these,
+
+242
+00:09:31,305 --> 00:09:32,845
+hype cycles and curves,
+
+243
+00:09:34,720 --> 00:09:36,160
+you see knowledge graphs are
+
+244
+00:09:36,160 --> 00:09:38,020
+still still still going up,
+
+245
+00:09:39,040 --> 00:09:41,920
+so on the this peak of,
+
+246
+00:09:42,320 --> 00:09:43,460
+inflated expectations.
+
+247
+00:09:43,760 --> 00:09:46,225
+So, luckily, we're
+still getting
+
+248
+00:09:46,225 --> 00:09:47,665
+people to who who are calling
+
+249
+00:09:47,665 --> 00:09:49,025
+us just because
+knowledge graphs
+
+250
+00:09:49,025 --> 00:09:49,605
+are hot.
+
+251
+00:09:50,625 --> 00:09:52,165
+But we also see that,
+
+252
+00:09:53,690 --> 00:09:55,050
+and and and in this case,
+
+253
+00:09:55,450 --> 00:09:57,470
+I can agree with
+with Gartner.
+
+254
+00:09:57,690 --> 00:09:59,550
+We see that, this trend,
+
+255
+00:10:00,665 --> 00:10:03,325
+is just about to to, yeah,
+
+256
+00:10:03,385 --> 00:10:06,185
+go go down to the yeah.
+
+257
+00:10:06,185 --> 00:10:07,645
+What what they
+call disillusionment
+
+258
+00:10:08,025 --> 00:10:10,210
+because, yeah,
+
+259
+00:10:10,210 --> 00:10:12,230
+what is important
+now is to see,
+
+260
+00:10:13,250 --> 00:10:15,670
+really a mature ways,
+mature patterns,
+
+261
+00:10:16,050 --> 00:10:16,790
+best practices,
+
+262
+00:10:16,930 --> 00:10:18,690
+and and and tools which can be
+
+263
+00:10:18,690 --> 00:10:21,175
+used to deliver to
+deliver value.
+
+264
+00:10:23,955 --> 00:10:25,255
+So on the bigger picture,
+
+265
+00:10:25,315 --> 00:10:27,330
+knowledge graphs
+are the adoption
+
+266
+00:10:27,330 --> 00:10:28,610
+of this technology is slower
+
+267
+00:10:28,610 --> 00:10:30,930
+than what my investors would
+
+268
+00:10:30,930 --> 00:10:31,750
+want to see,
+
+269
+00:10:32,530 --> 00:10:34,710
+and probably yours
+and and and,
+
+270
+00:10:35,820 --> 00:10:38,115
+everybody. The
+fundamental reason
+
+271
+00:10:38,115 --> 00:10:39,715
+is that, well,
+
+272
+00:10:39,715 --> 00:10:41,715
+that this technology
+is quite complex.
+
+273
+00:10:41,715 --> 00:10:42,755
+If you make it small,
+
+274
+00:10:42,755 --> 00:10:45,155
+if you just convert a piece of
+
+275
+00:10:45,155 --> 00:10:48,120
+data into into RDF,
+
+276
+00:10:49,340 --> 00:10:51,420
+or you convert the taxonomy in
+
+277
+00:10:51,420 --> 00:10:55,325
+and represent its
+cost, very likely,
+
+278
+00:10:55,385 --> 00:10:57,145
+you'll you'll not
+you'll not be
+
+279
+00:10:57,145 --> 00:10:58,185
+able to deliver on all these
+
+280
+00:10:58,185 --> 00:11:00,025
+promises of all
+these knowledge
+
+281
+00:11:00,025 --> 00:11:01,010
+graph magic does.
+
+282
+00:11:01,490 --> 00:11:03,250
+So you you you have to use,
+
+283
+00:11:03,730 --> 00:11:05,170
+and make big knowledge graphs
+
+284
+00:11:05,170 --> 00:11:06,930
+that can really
+provide provide
+
+285
+00:11:06,930 --> 00:11:08,940
+some context and
+allow better better,
+
+286
+00:11:10,875 --> 00:11:12,075
+interpretation of the data and
+
+287
+00:11:12,075 --> 00:11:14,075
+bet better, like,
+
+288
+00:11:14,075 --> 00:11:16,155
+cap better capabilities for
+
+289
+00:11:16,155 --> 00:11:17,055
+linking data.
+
+290
+00:11:17,435 --> 00:11:19,280
+And once we get there, well,
+
+291
+00:11:19,280 --> 00:11:21,220
+it's not as as easy.
+
+292
+00:11:22,240 --> 00:11:23,360
+It takes a while,
+
+293
+00:11:23,680 --> 00:11:25,200
+a while to do it
+to get the right
+
+294
+00:11:25,200 --> 00:11:27,200
+tooling and
+the infrastructure to do it.
+
+295
+00:11:27,200 --> 00:11:29,515
+That's why it's it's,
+
+296
+00:11:30,215 --> 00:11:30,955
+our interpretation,
+
+297
+00:11:31,175 --> 00:11:32,555
+why it's slower
+than expected.
+
+298
+00:11:32,615 --> 00:11:34,775
+We we others this by, yeah,
+
+299
+00:11:34,775 --> 00:11:36,535
+having prepackaged
+solutions and
+
+300
+00:11:36,535 --> 00:11:38,040
+and partnering with,
+
+301
+00:11:38,920 --> 00:11:40,600
+other vendors who who have
+
+302
+00:11:40,600 --> 00:11:42,680
+solutions also.
+
+303
+00:11:42,680 --> 00:11:45,320
+So the short story
+here is that,
+
+304
+00:11:45,560 --> 00:11:47,420
+well, there is no
+single techno.
+
+305
+00:11:47,595 --> 00:11:50,415
+It's not a single,
+single market.
+
+306
+00:11:51,515 --> 00:11:52,715
+Knowledge graph technology is
+
+307
+00:11:52,715 --> 00:11:54,235
+in the middle of other number
+
+308
+00:11:54,235 --> 00:11:55,195
+of different applications.
+
+309
+00:11:55,195 --> 00:11:57,680
+And, actually,
+there is no mature
+
+310
+00:11:57,740 --> 00:12:00,220
+market for it now
+because there
+
+311
+00:12:00,220 --> 00:12:01,420
+is no critical mass of such
+
+312
+00:12:01,420 --> 00:12:03,340
+applications. We we gotta make
+
+313
+00:12:03,340 --> 00:12:03,980
+the applications.
+
+314
+00:12:03,980 --> 00:12:06,315
+We gotta find our way to to to
+
+315
+00:12:06,315 --> 00:12:07,455
+to the end customers,
+
+316
+00:12:08,395 --> 00:12:10,315
+to to really
+demonstrate the value
+
+317
+00:12:10,315 --> 00:12:11,295
+behind the hype.
+
+318
+00:12:12,395 --> 00:12:14,880
+And then five years from now,
+
+319
+00:12:15,580 --> 00:12:18,160
+we we we we we can
+expect to see,
+
+320
+00:12:19,260 --> 00:12:20,800
+a a critical mass
+of applications
+
+321
+00:12:20,940 --> 00:12:23,525
+that generates
+a critical level
+
+322
+00:12:23,525 --> 00:12:24,985
+of demand for the technology.
+
+323
+00:12:27,445 --> 00:12:30,840
+So, it's clear that with all
+
+324
+00:12:30,840 --> 00:12:32,920
+the diversity of
+what's possible
+
+325
+00:12:32,920 --> 00:12:34,060
+to do with this technology,
+
+326
+00:12:34,920 --> 00:12:36,920
+no no no single company of,
+
+327
+00:12:37,400 --> 00:12:39,400
+our size can can
+deal with it.
+
+328
+00:12:39,400 --> 00:12:41,385
+Even much bigger
+companies cannot
+
+329
+00:12:41,385 --> 00:12:42,925
+deal with this this scale.
+
+330
+00:12:44,425 --> 00:12:47,405
+So, again, our approach
+to this is to,
+
+331
+00:12:48,790 --> 00:12:50,810
+have a have a ecosystem
+of partners,
+
+332
+00:12:51,990 --> 00:12:54,150
+that can, that have the right
+
+333
+00:12:54,150 --> 00:12:55,430
+vision for
+the specific type of
+
+334
+00:12:55,430 --> 00:12:57,495
+applications, and and and have
+
+335
+00:12:57,495 --> 00:12:58,775
+the engineering talent to
+
+336
+00:12:58,775 --> 00:12:59,675
+implement them,
+
+337
+00:12:59,815 --> 00:13:01,595
+taking into account
+all the specifics
+
+338
+00:13:01,735 --> 00:13:03,595
+and the capacity to deliver.
+
+339
+00:13:04,260 --> 00:13:05,720
+That's quite often
+a combination
+
+340
+00:13:05,780 --> 00:13:06,760
+of different players.
+
+341
+00:13:07,700 --> 00:13:10,820
+So, that's, yeah,
+
+342
+00:13:10,820 --> 00:13:13,505
+our mind map of
+knowledge graph
+
+343
+00:13:13,505 --> 00:13:17,825
+applications. So, to to us,
+
+344
+00:13:17,825 --> 00:13:19,745
+knowledge graph is knowledge
+
+345
+00:13:19,745 --> 00:13:21,820
+graphs are on
+the bigger picture
+
+346
+00:13:21,820 --> 00:13:23,120
+part of the bigger metadata
+
+347
+00:13:23,180 --> 00:13:24,400
+management story,
+
+348
+00:13:25,340 --> 00:13:28,975
+and the applications
+go into, yeah,
+
+349
+00:13:29,195 --> 00:13:30,955
+equally between
+data management
+
+350
+00:13:30,955 --> 00:13:32,015
+and content management.
+
+351
+00:13:33,595 --> 00:13:35,035
+There are plenty of knowledge
+
+352
+00:13:35,035 --> 00:13:37,440
+management tools
+which also use
+
+353
+00:13:37,440 --> 00:13:38,180
+this technology,
+
+354
+00:13:38,800 --> 00:13:41,360
+and that's a big part of our
+
+355
+00:13:41,360 --> 00:13:43,815
+best partners, like,
+
+356
+00:13:44,695 --> 00:13:46,475
+Symantec Web Company
+and Synoptica.
+
+357
+00:13:47,335 --> 00:13:49,335
+They are in in part of their
+
+358
+00:13:49,335 --> 00:13:50,695
+offerings are in the space of
+
+359
+00:13:50,695 --> 00:13:54,260
+enterprise taxonomies,
+and and and,
+
+360
+00:13:55,680 --> 00:13:57,540
+vocabulary and this
+kind of technology,
+
+361
+00:13:58,480 --> 00:14:00,980
+this time based
+on on on on on,
+
+362
+00:14:01,040 --> 00:14:02,755
+yeah, knowledge gaps.
+
+363
+00:14:03,535 --> 00:14:05,635
+Quite often, these taxonomies
+
+364
+00:14:05,855 --> 00:14:06,515
+and vocabularies,
+
+365
+00:14:06,655 --> 00:14:08,175
+they are actually
+used for better
+
+366
+00:14:08,175 --> 00:14:09,075
+content management.
+
+367
+00:14:10,150 --> 00:14:12,470
+This is
+the the the the the applications
+
+368
+00:14:12,470 --> 00:14:14,250
+that you see on
+the right hand side.
+
+369
+00:14:14,390 --> 00:14:16,810
+That's what Google
+calls inside engines.
+
+370
+00:14:17,905 --> 00:14:20,225
+So so it's it's
+all about being
+
+371
+00:14:20,225 --> 00:14:22,325
+able to do cool
+things with content,
+
+372
+00:14:22,785 --> 00:14:24,305
+to to search, to recommend,
+
+373
+00:14:24,305 --> 00:14:26,325
+to to to re if
+you're a publisher,
+
+374
+00:14:27,370 --> 00:14:28,910
+for instance, to to repackage
+
+375
+00:14:28,970 --> 00:14:31,370
+it and to to to
+better deliver it,
+
+376
+00:14:31,610 --> 00:14:33,070
+to extract information,
+
+377
+00:14:33,130 --> 00:14:34,750
+to extract data from it,
+
+378
+00:14:35,935 --> 00:14:37,315
+and so on and so forth.
+
+379
+00:14:38,895 --> 00:14:43,600
+Nowadays, probably
+the most, yeah,
+
+380
+00:14:43,600 --> 00:14:45,540
+the the the most
+popular application,
+
+381
+00:14:46,160 --> 00:14:48,020
+although probably not the most
+
+382
+00:14:48,640 --> 00:14:50,020
+often delivered one,
+
+383
+00:14:50,275 --> 00:14:51,555
+is in data management.
+
+384
+00:14:51,555 --> 00:14:54,295
+So using using
+knowledge graphs for,
+
+385
+00:14:55,235 --> 00:14:56,615
+data integration analytics.
+
+386
+00:14:58,070 --> 00:14:59,070
+And that's what,
+
+387
+00:14:59,510 --> 00:15:01,130
+Gartner called data fabrics.
+
+388
+00:15:02,310 --> 00:15:04,070
+That's that's
+the whole story of,
+
+389
+00:15:04,685 --> 00:15:06,365
+what was the data warehouse in
+
+390
+00:15:06,365 --> 00:15:08,465
+the past and how you
+can use them to,
+
+391
+00:15:09,645 --> 00:15:11,645
+yeah, do better
+better business
+
+392
+00:15:11,645 --> 00:15:13,665
+intelligence and better
+decision making.
+
+393
+00:15:15,020 --> 00:15:16,960
+Data management is
+not just that.
+
+394
+00:15:17,100 --> 00:15:18,700
+It's actually much
+more than this.
+
+395
+00:15:18,700 --> 00:15:20,860
+You have, a range of data
+
+396
+00:15:20,860 --> 00:15:22,720
+governance and cataloging
+applications,
+
+397
+00:15:23,825 --> 00:15:25,425
+And quite a a big number of
+
+398
+00:15:25,425 --> 00:15:27,445
+these projects are are about,
+
+399
+00:15:28,385 --> 00:15:31,080
+dealing with big, databases,
+
+400
+00:15:32,100 --> 00:15:33,540
+like master and reference data
+
+401
+00:15:33,540 --> 00:15:37,595
+management tasks,
+so that, yeah,
+
+402
+00:15:37,595 --> 00:15:39,275
+you can aid improve your
+
+403
+00:15:39,275 --> 00:15:41,435
+transactional systems either,
+
+404
+00:15:41,435 --> 00:15:42,495
+like in our case,
+
+405
+00:15:43,195 --> 00:15:44,715
+we we have many projects where
+
+406
+00:15:44,715 --> 00:15:46,950
+we use big volumes
+of reference data,
+
+407
+00:15:46,950 --> 00:15:49,750
+master data for better text
+
+408
+00:15:49,750 --> 00:15:51,770
+analysis and content
+content analytics.
+
+409
+00:15:52,710 --> 00:15:55,125
+So you see that, yeah,
+
+410
+00:15:55,125 --> 00:15:56,425
+the the range of applications
+
+411
+00:15:56,485 --> 00:15:57,385
+is quite different.
+
+412
+00:15:57,925 --> 00:15:59,385
+Essentially, each of these,
+
+413
+00:15:59,925 --> 00:16:02,265
+are already some
+mature markets.
+
+414
+00:16:02,700 --> 00:16:08,160
+So, we we we have
+to find a way
+
+415
+00:16:08,460 --> 00:16:10,940
+in which this, technology in
+
+416
+00:16:10,940 --> 00:16:14,435
+the middle can
+contribute to to to,
+
+417
+00:16:14,995 --> 00:16:16,695
+to to making more efficient
+
+418
+00:16:16,835 --> 00:16:19,415
+specific applications
+in this market,
+
+419
+00:16:20,590 --> 00:16:23,330
+and find a way to to, yeah,
+
+420
+00:16:23,550 --> 00:16:26,350
+gently disrupt them
+and and and and,
+
+421
+00:16:26,910 --> 00:16:29,375
+offer you you you
+value there.
+
+422
+00:16:29,855 --> 00:16:32,755
+So that's enough about it.
+
+423
+00:16:35,375 --> 00:16:37,215
+So to summarize the role of,
+
+424
+00:16:37,790 --> 00:16:39,570
+how we see the role
+of knowledge graphs,
+
+425
+00:16:40,350 --> 00:16:41,950
+the main thing is
+that they they
+
+426
+00:16:41,950 --> 00:16:43,810
+they essentially
+put it in context,
+
+427
+00:16:44,190 --> 00:16:46,290
+and and and they do
+it in two ways.
+
+428
+00:16:47,025 --> 00:16:48,645
+One thing is, linking.
+
+429
+00:16:49,185 --> 00:16:51,125
+So by
+interlinking descriptions
+
+430
+00:16:51,185 --> 00:16:52,165
+of different things,
+
+431
+00:16:52,385 --> 00:16:54,440
+you you basically
+help help help
+
+432
+00:16:54,440 --> 00:16:55,800
+different pieces contribute to
+
+433
+00:16:55,800 --> 00:16:56,780
+each other's description.
+
+434
+00:16:56,920 --> 00:16:58,200
+And then the other the other
+
+435
+00:16:58,200 --> 00:16:59,500
+thing is semantic metadata.
+
+436
+00:16:59,960 --> 00:17:02,040
+So semantic metadata
+is is king.
+
+437
+00:17:02,040 --> 00:17:04,695
+So you you have better formal
+
+438
+00:17:04,695 --> 00:17:06,135
+descriptions of
+everything that's
+
+439
+00:17:06,135 --> 00:17:09,755
+that's in there.
+What is that value?
+
+440
+00:17:09,895 --> 00:17:13,270
+Well, someone gets
+better better
+
+441
+00:17:13,270 --> 00:17:15,290
+insights, better
+results, better,
+
+442
+00:17:17,110 --> 00:17:18,870
+discoveries, through,
+
+443
+00:17:20,375 --> 00:17:21,355
+through the capability,
+
+444
+00:17:22,295 --> 00:17:24,935
+by by by being able to have
+
+445
+00:17:24,935 --> 00:17:28,050
+unified view, on
+diverse data.
+
+446
+00:17:28,130 --> 00:17:29,890
+Diverse databases
+be being able
+
+447
+00:17:29,890 --> 00:17:30,710
+to combine,
+
+448
+00:17:32,370 --> 00:17:34,150
+structured data from
+different sources,
+
+449
+00:17:34,530 --> 00:17:36,290
+being able to also
+put in the mix
+
+450
+00:17:36,290 --> 00:17:38,475
+text documents and
+other content.
+
+451
+00:17:40,215 --> 00:17:42,055
+And, well, quite often,
+
+452
+00:17:42,055 --> 00:17:44,535
+what we see is that to to get
+
+453
+00:17:44,535 --> 00:17:45,835
+the right level of analytics,
+
+454
+00:17:46,320 --> 00:17:47,600
+enterprises should combine
+
+455
+00:17:47,600 --> 00:17:49,920
+proprietary data with publicly
+
+456
+00:17:49,920 --> 00:17:52,080
+available data, with
+with global data,
+
+457
+00:17:53,285 --> 00:17:54,565
+to combine their wisdom and
+
+458
+00:17:54,565 --> 00:17:56,085
+understanding of
+the market with
+
+459
+00:17:56,085 --> 00:17:57,145
+background knowledge,
+
+460
+00:17:57,765 --> 00:17:59,125
+which can serve for better
+
+461
+00:17:59,125 --> 00:18:01,225
+interpretation. That's
+that's what we,
+
+462
+00:18:02,500 --> 00:18:03,800
+deliver most of the time.
+
+463
+00:18:04,340 --> 00:18:07,940
+So, we combine, master data,
+
+464
+00:18:07,940 --> 00:18:09,140
+reference data from different
+
+465
+00:18:09,300 --> 00:18:10,600
+with the different sources,
+
+466
+00:18:10,715 --> 00:18:12,475
+what you see on the right hand
+
+467
+00:18:12,475 --> 00:18:13,915
+side in a knowledge graph,
+
+468
+00:18:13,915 --> 00:18:15,035
+and then we use this knowledge
+
+469
+00:18:15,035 --> 00:18:16,335
+graph to analyze documents.
+
+470
+00:18:17,195 --> 00:18:18,255
+Analyzing documents,
+
+471
+00:18:18,315 --> 00:18:19,435
+we produce metadata,
+
+472
+00:18:19,435 --> 00:18:21,000
+which becomes part
+of the knowledge
+
+473
+00:18:21,000 --> 00:18:22,940
+graph. And this
+way, we we put,
+
+474
+00:18:23,400 --> 00:18:25,420
+different kinds
+of databases and
+
+475
+00:18:25,640 --> 00:18:26,780
+content together.
+
+476
+00:18:28,175 --> 00:18:29,455
+Obviously, there are plenty of
+
+477
+00:18:29,455 --> 00:18:32,095
+applications, and and benefits
+
+478
+00:18:32,095 --> 00:18:33,695
+of doing this both
+on the content
+
+479
+00:18:33,695 --> 00:18:35,795
+management side and
+and data management.
+
+480
+00:18:37,230 --> 00:18:39,170
+So metadata is king.
+
+481
+00:18:39,390 --> 00:18:40,690
+Metadata is everything.
+
+482
+00:18:41,230 --> 00:18:42,830
+If you listen to to Gartner,
+
+483
+00:18:42,830 --> 00:18:47,545
+metadata is, at
+the middle of the,
+
+484
+00:18:47,765 --> 00:18:50,725
+yeah, next generation data
+
+485
+00:18:50,725 --> 00:18:51,785
+integration applications,
+
+486
+00:18:52,245 --> 00:18:53,705
+what they call data fabric.
+
+487
+00:18:54,540 --> 00:18:56,140
+So it's about
+gathering different
+
+488
+00:18:56,140 --> 00:18:57,760
+types of, metadata,
+
+489
+00:18:57,900 --> 00:18:59,340
+putting them together,
+structuring them,
+
+490
+00:18:59,340 --> 00:19:01,340
+interlinking them,
+activating them,
+
+491
+00:19:01,340 --> 00:19:02,165
+and so on.
+
+492
+00:19:03,525 --> 00:19:05,065
+The important thing to realize
+
+493
+00:19:05,125 --> 00:19:07,065
+here is
+the the diversity that,
+
+494
+00:19:09,205 --> 00:19:11,340
+you everything could be could
+
+495
+00:19:11,340 --> 00:19:12,780
+be metadata. It could be,
+
+496
+00:19:13,180 --> 00:19:15,440
+everything from
+from the schema
+
+497
+00:19:15,500 --> 00:19:18,035
+of your your database to all
+
+498
+00:19:18,035 --> 00:19:19,975
+sorts of catalogs
+or taxonomies
+
+499
+00:19:20,275 --> 00:19:24,215
+or reference data, tagging,
+
+500
+00:19:24,275 --> 00:19:25,575
+annotations of content,
+
+501
+00:19:26,080 --> 00:19:26,960
+operational logs,
+
+502
+00:19:26,960 --> 00:19:27,920
+and so on and so forth.
+
+503
+00:19:27,920 --> 00:19:29,060
+So it's really diverse.
+
+504
+00:19:30,080 --> 00:19:31,840
+You quite often need several,
+
+505
+00:19:32,160 --> 00:19:34,420
+many types of
+metadata combined
+
+506
+00:19:34,560 --> 00:19:36,745
+from from different systems to
+
+507
+00:19:36,745 --> 00:19:39,065
+be able to to to
+make a flexible
+
+508
+00:19:39,065 --> 00:19:41,065
+data integration platform or
+
+509
+00:19:41,065 --> 00:19:41,885
+content management.
+
+510
+00:19:42,650 --> 00:19:44,810
+I'm not going to read and,
+
+511
+00:19:45,130 --> 00:19:48,510
+through all these,
+citations of Gartner.
+
+512
+00:19:49,050 --> 00:19:51,125
+The baseline is that the only
+
+513
+00:19:51,125 --> 00:19:53,205
+way to manage
+this metadata and
+
+514
+00:19:53,205 --> 00:19:54,905
+to put it together is
+a knowledge graph.
+
+515
+00:19:56,405 --> 00:19:58,725
+And, it is it is a semantic
+
+516
+00:19:58,725 --> 00:19:59,125
+knowledge graph.
+
+517
+00:19:59,125 --> 00:20:00,610
+The semantic approach having
+
+518
+00:20:00,610 --> 00:20:01,810
+formal descriptions of,
+
+519
+00:20:02,130 --> 00:20:04,850
+this metadata that
+helps you put
+
+520
+00:20:04,850 --> 00:20:06,230
+data and content together.
+
+521
+00:20:08,050 --> 00:20:11,055
+So the RDS tech
+web technologies
+
+522
+00:20:11,435 --> 00:20:14,175
+allows you to do
+all this, in well.
+
+523
+00:20:15,835 --> 00:20:18,750
+And there there are several
+
+524
+00:20:18,750 --> 00:20:20,030
+features of the standards in
+
+525
+00:20:20,030 --> 00:20:22,190
+this tech which contribute to
+
+526
+00:20:22,190 --> 00:20:23,470
+this all the way from having
+
+527
+00:20:23,470 --> 00:20:24,370
+global identifiers,
+
+528
+00:20:24,430 --> 00:20:25,730
+which is key for
+interoperability.
+
+529
+00:20:26,835 --> 00:20:28,275
+Formal semantics is really
+
+530
+00:20:28,275 --> 00:20:29,255
+important because,
+
+531
+00:20:29,955 --> 00:20:32,515
+it it allows sharing
+meaning and and,
+
+532
+00:20:32,995 --> 00:20:34,615
+interpretation
+without ambiguities
+
+533
+00:20:35,250 --> 00:20:37,670
+and and and, basically
+enables enables,
+
+534
+00:20:39,650 --> 00:20:41,970
+much much better analytics and
+
+535
+00:20:41,970 --> 00:20:44,070
+combining different
+analytic techniques.
+
+536
+00:20:45,395 --> 00:20:47,815
+Standardization is, yeah,
+
+537
+00:20:48,595 --> 00:20:50,035
+someone that everyone in in
+
+538
+00:20:50,035 --> 00:20:51,315
+enterprise data management,
+
+539
+00:20:51,315 --> 00:20:52,615
+enterprise content
+management,
+
+540
+00:20:54,110 --> 00:20:55,950
+needs and wants
+unless you want
+
+541
+00:20:55,950 --> 00:20:57,410
+to stick with
+a single vendor.
+
+542
+00:20:58,270 --> 00:21:00,830
+And, yeah, at
+the end of the day,
+
+543
+00:21:00,830 --> 00:21:02,245
+it's always about quality and
+
+544
+00:21:02,245 --> 00:21:03,865
+being able to
+maintain quality.
+
+545
+00:21:04,245 --> 00:21:08,005
+So, also so all
+means for, like,
+
+546
+00:21:08,005 --> 00:21:09,845
+RDF shapes and
+other techniques
+
+547
+00:21:09,845 --> 00:21:11,545
+for validation are
+very important.
+
+548
+00:21:13,400 --> 00:21:14,940
+All these things are missing
+
+549
+00:21:15,160 --> 00:21:16,600
+with the property
+graph standard.
+
+550
+00:21:16,600 --> 00:21:20,280
+So, they they do
+great great job
+
+551
+00:21:20,280 --> 00:21:21,580
+for for graph analytics,
+
+552
+00:21:22,985 --> 00:21:24,425
+but there is essentially no
+
+553
+00:21:24,425 --> 00:21:26,025
+standardization, and there is
+
+554
+00:21:26,025 --> 00:21:27,145
+no notion of semantics.
+
+555
+00:21:27,145 --> 00:21:29,405
+There is even no
+notion of schema.
+
+556
+00:21:29,950 --> 00:21:31,650
+There is no data
+schema language.
+
+557
+00:21:32,430 --> 00:21:35,630
+So it's obvious
+that RDF is much
+
+558
+00:21:35,630 --> 00:21:37,390
+much better suited
+for knowledge gaps,
+
+559
+00:21:37,390 --> 00:21:38,930
+and that's what we hear from,
+
+560
+00:21:39,995 --> 00:21:41,935
+our clients
+being predominantly
+
+561
+00:21:42,235 --> 00:21:44,095
+enterprise date
+data architects.
+
+562
+00:21:46,475 --> 00:21:47,855
+We have built the methodology
+
+563
+00:21:48,235 --> 00:21:51,000
+of everything that
+that it takes to,
+
+564
+00:21:52,220 --> 00:21:54,300
+build in a and and
+if of knowledge
+
+565
+00:21:54,300 --> 00:21:55,760
+graph all the way
+from requirement
+
+566
+00:21:55,820 --> 00:21:57,340
+analysis, data gathering,
+
+567
+00:21:57,340 --> 00:21:58,960
+and so on and so forth to,
+
+568
+00:22:00,255 --> 00:22:03,635
+putting together
+semantic data model,
+
+569
+00:22:05,695 --> 00:22:06,815
+integrating the data,
+
+570
+00:22:06,815 --> 00:22:10,780
+reconciling the data,
+cleaning the data,
+
+571
+00:22:11,800 --> 00:22:13,820
+and then being able to store,
+
+572
+00:22:14,040 --> 00:22:16,140
+index them, enrich them,
+
+573
+00:22:16,585 --> 00:22:19,885
+make them accessible,
+and, unable,
+
+574
+00:22:21,705 --> 00:22:23,465
+updates and be
+able to maintain
+
+575
+00:22:23,465 --> 00:22:24,310
+this knowledge graph.
+
+576
+00:22:24,790 --> 00:22:27,130
+Once once you come
+with such a complex
+
+577
+00:22:27,190 --> 00:22:28,090
+phenomenon, it's,
+
+578
+00:22:29,270 --> 00:22:31,270
+not a piece of cake to keep it
+
+579
+00:22:31,270 --> 00:22:32,710
+in good shape and good quality
+
+580
+00:22:32,710 --> 00:22:34,855
+and be able to make
+all the updates
+
+581
+00:22:34,855 --> 00:22:35,675
+that are necessary.
+
+582
+00:22:36,615 --> 00:22:38,555
+So we introduced
+the On-tech platform,
+
+583
+00:22:39,735 --> 00:22:41,815
+which supports
+quite quite a big
+
+584
+00:22:41,815 --> 00:22:43,035
+fraction of this tech.
+
+585
+00:22:44,410 --> 00:22:46,010
+Everything that is about,
+
+586
+00:22:46,730 --> 00:22:49,450
+allowing data architects and
+
+587
+00:22:49,450 --> 00:22:51,870
+everyone who who data
+management people,
+
+588
+00:22:52,485 --> 00:22:54,085
+to collaborate with content
+
+589
+00:22:54,085 --> 00:22:55,365
+management people and deliver
+
+590
+00:22:55,365 --> 00:22:58,325
+value for the business
+users and
+
+591
+00:22:58,325 --> 00:22:59,205
+the data scientists,
+
+592
+00:22:59,205 --> 00:23:01,000
+which are quite
+often the consumers
+
+593
+00:23:01,000 --> 00:23:01,980
+of this technology,
+
+594
+00:23:04,200 --> 00:23:06,280
+as part of
+downstream models or
+
+595
+00:23:06,280 --> 00:23:08,360
+people who train
+specific machine
+
+596
+00:23:08,360 --> 00:23:12,815
+machine learning,
+models on it.
+
+597
+00:23:13,675 --> 00:23:15,595
+Quite important to all here is
+
+598
+00:23:15,595 --> 00:23:17,435
+dedicated to to
+business analysts
+
+599
+00:23:17,435 --> 00:23:18,815
+and subject matter experts.
+
+600
+00:23:19,170 --> 00:23:21,590
+So, part part for offering,
+
+601
+00:23:22,530 --> 00:23:24,630
+is a set of tools
+that that allows,
+
+602
+00:23:25,890 --> 00:23:28,130
+defining APIs and
+interfaces and
+
+603
+00:23:28,130 --> 00:23:32,185
+specifying, views
+on this on this,
+
+604
+00:23:32,725 --> 00:23:34,105
+knowledge graph in the middle
+
+605
+00:23:34,645 --> 00:23:36,885
+by experts, by
+business analysts.
+
+606
+00:23:36,885 --> 00:23:40,310
+So so you don't
+don't need a a big
+
+607
+00:23:40,310 --> 00:23:41,050
+team of,
+
+608
+00:23:41,990 --> 00:23:44,250
+programmers to to
+code middleware.
+
+609
+00:23:46,055 --> 00:23:46,715
+With this,
+
+610
+00:23:47,495 --> 00:23:49,515
+I'll finish my part
+of the presentation.
+
+611
+00:23:50,375 --> 00:23:53,720
+I want to hand
+over to Vasil to
+
+612
+00:23:53,720 --> 00:23:55,160
+tell you some updates about
+
+613
+00:23:55,160 --> 00:23:57,660
+the OnText platform
+and and Graph DB.
+
+614
+00:23:58,680 --> 00:24:00,940
+I'll stop sharing
+so that Vasil
+
+615
+00:24:01,400 --> 00:24:02,300
+can take over.
+
+616
+00:24:04,055 --> 00:24:05,975
+Thanks for
+the excellent market
+
+617
+00:24:05,975 --> 00:24:09,080
+overview and giving
+us all the complexity
+
+618
+00:24:09,300 --> 00:24:11,220
+of the market of
+around the knowledge
+
+619
+00:24:11,220 --> 00:24:12,580
+graphs and how we can deliver
+
+620
+00:24:12,580 --> 00:24:13,720
+these type of solutions.
+
+621
+00:24:14,580 --> 00:24:15,880
+As database provider,
+
+622
+00:24:16,625 --> 00:24:17,745
+when we meet clients,
+
+623
+00:24:17,745 --> 00:24:19,765
+often we are asked, okay.
+
+624
+00:24:19,985 --> 00:24:21,745
+I understand the concept of
+
+625
+00:24:21,745 --> 00:24:23,285
+agreeing cohort
+shared identifiers
+
+626
+00:24:23,585 --> 00:24:25,960
+for classes, instances,
+
+627
+00:24:26,020 --> 00:24:27,000
+and some predicates,
+
+628
+00:24:27,540 --> 00:24:29,220
+which identify the meaning of
+
+629
+00:24:29,220 --> 00:24:31,160
+our organizational data.
+
+630
+00:24:31,780 --> 00:24:33,300
+But could you tell
+me how should
+
+631
+00:24:33,300 --> 00:24:35,705
+I put the data in Gravity,
+
+632
+00:24:35,705 --> 00:24:36,665
+in your database,
+
+633
+00:24:36,665 --> 00:24:38,445
+and how I should
+really develop
+
+634
+00:24:38,665 --> 00:24:40,205
+applications on top of it?
+
+635
+00:24:40,425 --> 00:24:41,945
+And this is probably the most
+
+636
+00:24:41,945 --> 00:24:43,465
+frequent question we get from
+
+637
+00:24:43,465 --> 00:24:45,660
+our clients when they expect
+
+638
+00:24:45,660 --> 00:24:47,180
+really some sort of a mature
+
+639
+00:24:47,180 --> 00:24:48,800
+tooling around the technology
+
+640
+00:24:49,260 --> 00:24:51,600
+in order to quickly
+develop solutions.
+
+641
+00:24:52,575 --> 00:24:53,775
+In this my presentation,
+
+642
+00:24:53,775 --> 00:24:55,855
+I'm going to share five key
+
+643
+00:24:55,855 --> 00:24:57,315
+highlights which has happened
+
+644
+00:24:57,455 --> 00:24:58,835
+this year of twenty twenty,
+
+645
+00:24:59,430 --> 00:25:01,030
+And these are really the major
+
+646
+00:25:01,030 --> 00:25:03,030
+developments and
+tools we which
+
+647
+00:25:03,030 --> 00:25:05,750
+we enable our
+clients to develop
+
+648
+00:25:05,750 --> 00:25:07,065
+and partners, of course,
+
+649
+00:25:07,145 --> 00:25:08,905
+to develop faster and better
+
+650
+00:25:08,905 --> 00:25:09,965
+knowledge graph solutions.
+
+651
+00:25:10,505 --> 00:25:12,505
+So the first one
+is really the data
+
+652
+00:25:12,505 --> 00:25:14,025
+virtualization,
+which gives you
+
+653
+00:25:14,025 --> 00:25:16,190
+a virtual sparkle
+endpoint access
+
+654
+00:25:16,190 --> 00:25:17,250
+to the different databases.
+
+655
+00:25:18,990 --> 00:25:20,670
+Then we enable
+the mapping with
+
+656
+00:25:20,670 --> 00:25:23,070
+the mapping new
+mapping UI subject
+
+657
+00:25:23,070 --> 00:25:24,975
+matter export
+with no coding to
+
+658
+00:25:24,975 --> 00:25:26,735
+generate RDF
+models around some
+
+659
+00:25:26,735 --> 00:25:28,735
+skimmers. Then I will speak
+
+660
+00:25:28,735 --> 00:25:30,035
+about the data
+reconciliation,
+
+661
+00:25:30,255 --> 00:25:31,715
+how you really
+need to integrate
+
+662
+00:25:32,270 --> 00:25:33,170
+multiple datasets,
+
+663
+00:25:33,310 --> 00:25:34,990
+which speaks about
+the same type
+
+664
+00:25:34,990 --> 00:25:35,650
+of entities.
+
+665
+00:25:37,390 --> 00:25:39,730
+Then we we go to
+the consumption
+
+666
+00:25:39,790 --> 00:25:41,470
+of the data. Once we
+have the knowledge
+
+667
+00:25:41,470 --> 00:25:43,455
+graph, how you
+can let your data
+
+668
+00:25:43,455 --> 00:25:44,815
+scientists and
+business analysts
+
+669
+00:25:44,815 --> 00:25:45,795
+to consume the data.
+
+670
+00:25:46,175 --> 00:25:47,455
+And last but not least,
+
+671
+00:25:47,455 --> 00:25:49,075
+I'm going to
+introduce the GraphQL
+
+672
+00:25:49,215 --> 00:25:51,270
+platform, which
+gives you a really
+
+673
+00:25:51,270 --> 00:25:53,450
+fantastic way how
+you can design
+
+674
+00:25:53,670 --> 00:25:55,690
+APIs also for your application
+
+675
+00:25:55,830 --> 00:25:56,810
+solution developers,
+
+676
+00:25:57,115 --> 00:25:58,635
+and there is an automatic way
+
+677
+00:25:58,635 --> 00:25:59,915
+to interact with the knowledge
+
+678
+00:25:59,915 --> 00:26:02,335
+graph with really
+minimal calling.
+
+679
+00:26:03,515 --> 00:26:04,795
+Okay. First thing first,
+
+680
+00:26:04,795 --> 00:26:05,615
+data virtualization.
+
+681
+00:26:08,080 --> 00:26:10,080
+Nearly all enterprise data is
+
+682
+00:26:10,080 --> 00:26:11,940
+still stored in
+relational databases,
+
+683
+00:26:12,480 --> 00:26:14,855
+and there is a good
+reason there
+
+684
+00:26:14,855 --> 00:26:16,875
+because these are
+transactional systems,
+
+685
+00:26:17,175 --> 00:26:18,555
+master reference records,
+
+686
+00:26:19,015 --> 00:26:20,955
+where the information
+is primarily
+
+687
+00:26:21,015 --> 00:26:23,170
+stored. The most
+logical question
+
+688
+00:26:23,170 --> 00:26:25,970
+is how I can move
+the data from
+
+689
+00:26:25,970 --> 00:26:28,690
+relational databases
+into a knowledge
+
+690
+00:26:28,690 --> 00:26:29,430
+graph, basically.
+
+691
+00:26:30,295 --> 00:26:32,615
+And we give you two
+type of use cases.
+
+692
+00:26:32,615 --> 00:26:34,555
+The first type of use case is
+
+693
+00:26:34,935 --> 00:26:36,715
+I want to make a decorative
+
+694
+00:26:36,935 --> 00:26:38,235
+transformation of
+the relational
+
+695
+00:26:38,295 --> 00:26:39,515
+database into RDF,
+
+696
+00:26:40,120 --> 00:26:42,200
+or I want to access
+the database
+
+697
+00:26:42,200 --> 00:26:44,360
+on the file. In
+order to enable
+
+698
+00:26:44,360 --> 00:26:45,960
+this use case, Graphvini nine
+
+699
+00:26:45,960 --> 00:26:47,320
+dot five integrates
+with the on
+
+700
+00:26:47,320 --> 00:26:49,605
+top framework, which supports
+
+701
+00:26:49,825 --> 00:26:52,865
+decorative, descriptors like
+
+702
+00:26:52,865 --> 00:26:54,645
+the and the OBDA,
+
+703
+00:26:54,705 --> 00:26:56,325
+which are part of the On top
+
+704
+00:26:56,385 --> 00:26:58,800
+project to give
+you all the fly
+
+705
+00:26:58,800 --> 00:27:00,960
+access to a wide range of
+
+706
+00:27:00,960 --> 00:27:02,660
+relational models
+like Postgres,
+
+707
+00:27:02,800 --> 00:27:04,180
+DRAMU Oracle, MySQL,
+
+708
+00:27:04,400 --> 00:27:05,860
+Microsoft SQL Server,
+
+709
+00:27:05,920 --> 00:27:08,085
+really a big range
+of technologies.
+
+710
+00:27:09,345 --> 00:27:11,585
+In order the design
+decision we
+
+711
+00:27:11,585 --> 00:27:14,065
+took was to expose
+every virtual
+
+712
+00:27:14,145 --> 00:27:16,320
+every relational
+database as its
+
+713
+00:27:16,320 --> 00:27:18,640
+own virtual
+repository in order
+
+714
+00:27:18,640 --> 00:27:20,240
+to make the data locality very
+
+715
+00:27:20,240 --> 00:27:21,620
+transparent for the users.
+
+716
+00:27:21,920 --> 00:27:23,760
+This made the users
+fully aware
+
+717
+00:27:23,760 --> 00:27:25,040
+that they are
+accessing different
+
+718
+00:27:25,040 --> 00:27:27,105
+type systems. However,
+
+719
+00:27:27,105 --> 00:27:28,785
+in order to optimize
+the performance,
+
+720
+00:27:28,785 --> 00:27:30,305
+we implement
+the highly efficient
+
+721
+00:27:30,305 --> 00:27:31,125
+internal federation,
+
+722
+00:27:31,585 --> 00:27:33,320
+where if you federate two
+
+723
+00:27:33,320 --> 00:27:35,080
+endpoints which are located on
+
+724
+00:27:35,080 --> 00:27:36,380
+the same CloudDB Server,
+
+725
+00:27:36,600 --> 00:27:38,140
+you use a highly efficient
+
+726
+00:27:38,200 --> 00:27:40,540
+internal protocol
+for data exchange.
+
+727
+00:27:41,385 --> 00:27:43,065
+The benefit is that you get to
+
+728
+00:27:43,065 --> 00:27:44,745
+this on top integration also
+
+729
+00:27:44,745 --> 00:27:46,265
+integrated with
+all the security
+
+730
+00:27:46,265 --> 00:27:48,610
+features and the the Graph DB
+
+731
+00:27:48,770 --> 00:27:50,610
+security model,
+single sign on,
+
+732
+00:27:50,610 --> 00:27:51,990
+and all these type
+of functionalities.
+
+733
+00:27:52,930 --> 00:27:54,950
+So the second
+feature is really
+
+734
+00:27:55,010 --> 00:27:55,910
+mapping UI,
+
+735
+00:27:56,185 --> 00:27:57,945
+how you can let your subject
+
+736
+00:27:57,945 --> 00:27:59,305
+matter experts and the people
+
+737
+00:27:59,305 --> 00:28:01,645
+knowing the data
+without coding
+
+738
+00:28:02,185 --> 00:28:03,720
+to populate
+the knowledge graph.
+
+739
+00:28:03,800 --> 00:28:05,180
+How many of your organizations
+
+740
+00:28:05,960 --> 00:28:07,960
+have most of the critical data
+
+741
+00:28:07,960 --> 00:28:09,340
+in some sort of
+a spreadsheet,
+
+742
+00:28:09,640 --> 00:28:11,480
+CSV file, or
+something which is
+
+743
+00:28:11,480 --> 00:28:12,940
+used as a reference model?
+
+744
+00:28:14,025 --> 00:28:16,265
+Using the open refine tool,
+
+745
+00:28:16,265 --> 00:28:17,785
+which is nicely
+integrated with
+
+746
+00:28:17,785 --> 00:28:20,265
+open with Graph
+DB and Graph DB
+
+747
+00:28:20,265 --> 00:28:23,590
+Workbench, you
+can transform any
+
+748
+00:28:23,590 --> 00:28:25,190
+type of structure that you are
+
+749
+00:28:25,190 --> 00:28:28,230
+form of JSON, XML,
+CSVs, g files,
+
+750
+00:28:28,230 --> 00:28:29,370
+whatever you have,
+
+751
+00:28:29,575 --> 00:28:31,015
+and it gives you an efficient
+
+752
+00:28:31,015 --> 00:28:33,195
+way to clean and
+cluster the data.
+
+753
+00:28:33,415 --> 00:28:34,935
+Usually, once you
+start with any
+
+754
+00:28:34,935 --> 00:28:36,955
+type of CSV or Excel files,
+
+755
+00:28:37,415 --> 00:28:39,100
+there is a really
+sort some type
+
+756
+00:28:39,100 --> 00:28:40,940
+of cleaning. This is nicely
+
+757
+00:28:40,940 --> 00:28:42,460
+integrated with CloudDB so you
+
+758
+00:28:42,460 --> 00:28:44,300
+can create a project
+with the table
+
+759
+00:28:44,300 --> 00:28:46,060
+of data. On the right side,
+
+760
+00:28:46,060 --> 00:28:48,240
+you can see the new
+mapping interface,
+
+761
+00:28:48,755 --> 00:28:50,355
+which checks what are the word
+
+762
+00:28:50,355 --> 00:28:51,655
+ontologies in the repository,
+
+763
+00:28:52,035 --> 00:28:54,035
+and it can guide the user what
+
+764
+00:28:54,035 --> 00:28:55,715
+are the product predicates and
+
+765
+00:28:55,715 --> 00:28:57,395
+the properties sorry,
+
+766
+00:28:57,395 --> 00:28:59,290
+the types to use in order to
+
+767
+00:28:59,290 --> 00:29:00,350
+generate a mapping,
+
+768
+00:29:00,730 --> 00:29:03,450
+which is then transformed
+into RDF file.
+
+769
+00:29:03,450 --> 00:29:04,990
+So from this table or data,
+
+770
+00:29:05,130 --> 00:29:06,730
+you can really record this as
+
+771
+00:29:06,730 --> 00:29:08,725
+a structure. You you basically
+
+772
+00:29:08,865 --> 00:29:10,945
+say how you
+transgenerate the RDA
+
+773
+00:29:10,945 --> 00:29:12,465
+values and how
+these values are
+
+774
+00:29:12,465 --> 00:29:15,490
+connected. As a next step,
+
+775
+00:29:16,110 --> 00:29:17,470
+it supports two modes.
+
+776
+00:29:17,470 --> 00:29:18,830
+One is really the interactive
+
+777
+00:29:18,830 --> 00:29:20,110
+mode where the user can,
+
+778
+00:29:21,545 --> 00:29:23,465
+preview the information,
+clean it,
+
+779
+00:29:23,465 --> 00:29:24,925
+check what we
+would the output.
+
+780
+00:29:25,065 --> 00:29:26,665
+But, also, it
+supports the tool
+
+781
+00:29:26,665 --> 00:29:28,445
+supports to batch everything,
+
+782
+00:29:28,585 --> 00:29:29,885
+to record
+the transformations,
+
+783
+00:29:30,300 --> 00:29:32,060
+and really to
+make it sound and
+
+784
+00:29:32,060 --> 00:29:34,240
+transparent using
+a batch script.
+
+785
+00:29:34,620 --> 00:29:36,540
+Also, the API
+supports streaming
+
+786
+00:29:36,700 --> 00:29:38,140
+data streaming where you can
+
+787
+00:29:38,140 --> 00:29:40,095
+batch really big
+files and process
+
+788
+00:29:40,095 --> 00:29:41,155
+them on demand.
+
+789
+00:29:43,055 --> 00:29:44,655
+The third big
+feature is the data
+
+790
+00:29:44,655 --> 00:29:46,175
+reconciliation, and this is
+
+791
+00:29:46,175 --> 00:29:47,295
+the case when you have to
+
+792
+00:29:47,295 --> 00:29:48,915
+integrate multiple datasets
+
+793
+00:29:49,320 --> 00:29:51,020
+sharing the same identifiers.
+
+794
+00:29:51,720 --> 00:29:53,240
+Once again, our focus is to
+
+795
+00:29:53,240 --> 00:29:55,160
+subject matter experts and how
+
+796
+00:29:55,160 --> 00:29:57,320
+without code to
+perform the entity
+
+797
+00:29:57,320 --> 00:29:59,635
+resolution. The
+data resolution
+
+798
+00:29:59,635 --> 00:30:01,395
+is the entity resolution is
+
+799
+00:30:01,395 --> 00:30:03,735
+actually matching
+entities into
+
+800
+00:30:04,355 --> 00:30:06,170
+different type of, tables.
+
+801
+00:30:06,630 --> 00:30:08,950
+And we say this
+is a mapping of
+
+802
+00:30:08,950 --> 00:30:09,850
+string two things.
+
+803
+00:30:10,630 --> 00:30:12,250
+By using
+the graph connectivity
+
+804
+00:30:12,550 --> 00:30:13,450
+and the schema,
+
+805
+00:30:13,670 --> 00:30:15,210
+this gives you really a power
+
+806
+00:30:15,415 --> 00:30:17,995
+of subject matter
+experts in a stepwise
+
+807
+00:30:18,135 --> 00:30:19,655
+process to say how you can
+
+808
+00:30:19,655 --> 00:30:20,635
+reconcile the data.
+
+809
+00:30:20,695 --> 00:30:21,495
+On your screen,
+
+810
+00:30:21,495 --> 00:30:23,990
+you see some
+American US banks,
+
+811
+00:30:24,130 --> 00:30:25,810
+and the task is really to find
+
+812
+00:30:25,810 --> 00:30:27,670
+the right ID in dataset,
+
+813
+00:30:27,810 --> 00:30:29,830
+like QuickiData or whatever.
+
+814
+00:30:30,795 --> 00:30:32,555
+So why this is
+an efficient work
+
+815
+00:30:32,555 --> 00:30:34,475
+process and it
+requires no calling?
+
+816
+00:30:34,475 --> 00:30:36,075
+Because the subject
+matter experts
+
+817
+00:30:36,075 --> 00:30:37,995
+can start reconciling
+the state.
+
+818
+00:30:37,995 --> 00:30:39,295
+Like you see on the diagram,
+
+819
+00:30:39,600 --> 00:30:41,520
+the reconciling the US states
+
+820
+00:30:41,520 --> 00:30:42,880
+is an easy task because there
+
+821
+00:30:42,880 --> 00:30:43,940
+is no big community.
+
+822
+00:30:44,080 --> 00:30:45,440
+Then you can go to the cities
+
+823
+00:30:45,440 --> 00:30:46,480
+by using the state,
+
+824
+00:30:46,480 --> 00:30:47,600
+which should use the,
+
+825
+00:30:48,000 --> 00:30:49,295
+in the because the,
+
+826
+00:30:49,615 --> 00:30:51,315
+cities are connected
+to the states.
+
+827
+00:30:51,615 --> 00:30:53,055
+Later on, at the final step,
+
+828
+00:30:53,055 --> 00:30:54,415
+you need to really reconcile
+
+829
+00:30:54,415 --> 00:30:56,415
+the organization
+and pick the right
+
+830
+00:30:56,415 --> 00:30:56,915
+organization.
+
+831
+00:31:00,220 --> 00:31:02,140
+Next, let's imagine that you
+
+832
+00:31:02,140 --> 00:31:03,580
+have the knowledge
+graph and you
+
+833
+00:31:03,580 --> 00:31:05,020
+passed all the hurdles to put
+
+834
+00:31:05,020 --> 00:31:06,915
+the data in a knowledge graph
+
+835
+00:31:06,995 --> 00:31:08,375
+and the RDL databases.
+
+836
+00:31:08,755 --> 00:31:10,855
+But the next
+question is, hey.
+
+837
+00:31:11,155 --> 00:31:13,635
+I have a big data
+scientist and
+
+838
+00:31:13,635 --> 00:31:14,935
+knowledge engineer team,
+
+839
+00:31:15,710 --> 00:31:17,490
+and none of them knows Parco.
+
+840
+00:31:17,630 --> 00:31:19,330
+They're really
+good with business
+
+841
+00:31:19,950 --> 00:31:21,650
+BA type of tools
+like Tableau,
+
+842
+00:31:23,310 --> 00:31:24,770
+Microsoft Power BI.
+
+843
+00:31:25,195 --> 00:31:27,215
+Could you just export
+me a spreadsheet
+
+844
+00:31:27,355 --> 00:31:29,855
+and a table in where
+I can analyze it?
+
+845
+00:31:30,075 --> 00:31:31,855
+No. This is really a forward
+
+846
+00:31:31,995 --> 00:31:33,675
+approach because if you you'll
+
+847
+00:31:33,675 --> 00:31:36,160
+be replicating data,
+which is wrong.
+
+848
+00:31:36,540 --> 00:31:38,940
+Now browDB comes with
+the JDB access,
+
+849
+00:31:38,940 --> 00:31:41,660
+which enables all
+type of tools
+
+850
+00:31:41,660 --> 00:31:43,760
+which supports JDBC
+like Tableau,
+
+851
+00:31:43,820 --> 00:31:45,265
+Microsoft BI,
+
+852
+00:31:45,965 --> 00:31:47,905
+to directly interact
+with the data
+
+853
+00:31:48,045 --> 00:31:48,945
+and to connect,
+
+854
+00:31:49,005 --> 00:31:50,625
+investigate what
+are the tables.
+
+855
+00:31:50,845 --> 00:31:52,465
+And you can directly visualize
+
+856
+00:31:52,685 --> 00:31:54,990
+and take the data out
+of the database.
+
+857
+00:31:55,450 --> 00:31:57,050
+The way how we do this is we
+
+858
+00:31:57,050 --> 00:31:58,970
+define SQL views,
+
+859
+00:31:58,970 --> 00:32:00,830
+which are basically
+SPARQL results.
+
+860
+00:32:01,055 --> 00:32:02,175
+In these SPARQL results,
+
+861
+00:32:02,175 --> 00:32:03,935
+there is a nice user interface
+
+862
+00:32:03,935 --> 00:32:05,535
+where you put your
+SPARQL query,
+
+863
+00:32:05,535 --> 00:32:07,615
+you say what is
+the SQL table name,
+
+864
+00:32:07,615 --> 00:32:08,495
+and the interface,
+
+865
+00:32:08,495 --> 00:32:10,195
+depending on the data
+distribution,
+
+866
+00:32:10,770 --> 00:32:13,410
+guides you how to
+use this right
+
+867
+00:32:13,410 --> 00:32:15,510
+SQL types in order
+to get the results.
+
+868
+00:32:16,930 --> 00:32:19,625
+At the end so below
+you see a one
+
+869
+00:32:19,625 --> 00:32:21,785
+technicality is
+that this driver
+
+870
+00:32:21,785 --> 00:32:23,705
+will also try to push as much
+
+871
+00:32:23,705 --> 00:32:25,165
+as possible of the complexity
+
+872
+00:32:25,465 --> 00:32:26,525
+down to the database.
+
+873
+00:32:26,585 --> 00:32:28,370
+So if you have work logs in
+
+874
+00:32:28,370 --> 00:32:30,530
+the SQL query,
+it will be pushed
+
+875
+00:32:30,530 --> 00:32:32,370
+down to the sparkle
+in order to
+
+876
+00:32:32,370 --> 00:32:34,130
+minimize the exchange between
+
+877
+00:32:34,130 --> 00:32:36,790
+the SQL engine and
+the RTL database.
+
+878
+00:32:38,405 --> 00:32:39,685
+Last but not least,
+
+879
+00:32:39,685 --> 00:32:41,465
+this is really
+a very big topic.
+
+880
+00:32:41,685 --> 00:32:43,865
+Autotech invested
+in a platform
+
+881
+00:32:44,005 --> 00:32:44,985
+based on GraphQL,
+
+882
+00:32:45,205 --> 00:32:47,800
+how you can really expose how
+
+883
+00:32:47,800 --> 00:32:49,480
+you can expose
+knowledge graphs
+
+884
+00:32:49,480 --> 00:32:51,580
+and quickly build
+and generate APIs.
+
+885
+00:32:52,520 --> 00:32:54,280
+One of the main challenges is
+
+886
+00:32:54,280 --> 00:32:56,520
+once you design any
+type of a system
+
+887
+00:32:56,520 --> 00:32:58,625
+is that you need to
+plan for the APIs,
+
+888
+00:32:58,925 --> 00:33:00,525
+and these APIs needs to be
+
+889
+00:33:00,525 --> 00:33:01,805
+synchronized with
+the scheme of
+
+890
+00:33:01,805 --> 00:33:02,465
+the model.
+
+891
+00:33:03,005 --> 00:33:04,790
+Now the Graph DB and the now
+
+892
+00:33:04,790 --> 00:33:06,390
+the auto text
+platform can read
+
+893
+00:33:06,390 --> 00:33:08,710
+the data with using this auto
+
+894
+00:33:08,710 --> 00:33:09,770
+text platform workbench,
+
+895
+00:33:10,070 --> 00:33:11,930
+the schema of the of
+the graph database,
+
+896
+00:33:12,070 --> 00:33:14,135
+and automatically
+generate the Graph
+
+897
+00:33:14,215 --> 00:33:15,595
+QL API for you.
+
+898
+00:33:15,815 --> 00:33:17,435
+Using this GraphQL API,
+
+899
+00:33:17,575 --> 00:33:19,175
+you can select what are only
+
+900
+00:33:19,175 --> 00:33:21,515
+the required
+permitted operations
+
+901
+00:33:21,895 --> 00:33:23,255
+in order to control the access
+
+902
+00:33:23,255 --> 00:33:24,075
+to the data.
+
+903
+00:33:26,360 --> 00:33:28,620
+By for bridging
+the GraphQL to RDF,
+
+904
+00:33:28,680 --> 00:33:30,600
+Autotext develops some really
+
+905
+00:33:30,600 --> 00:33:32,925
+key features. One
+is really a highly
+
+906
+00:33:32,925 --> 00:33:34,865
+efficient graph to
+sparkle translation.
+
+907
+00:33:35,325 --> 00:33:36,765
+This seems as an easy task,
+
+908
+00:33:36,765 --> 00:33:38,705
+but in order to get
+the full complexity,
+
+909
+00:33:39,220 --> 00:33:41,540
+we have tweak the semantic
+the semantics
+
+910
+00:33:41,540 --> 00:33:43,400
+of SPARQL and having a special
+
+911
+00:33:43,540 --> 00:33:44,580
+execution mode,
+
+912
+00:33:44,580 --> 00:33:46,120
+which makes this
+really efficient.
+
+913
+00:33:46,825 --> 00:33:48,125
+Also, this is a bidirectional
+
+914
+00:33:48,345 --> 00:33:50,105
+mapping where we're
+using mutations,
+
+915
+00:33:50,105 --> 00:33:51,485
+which can be
+also automatically
+
+916
+00:33:51,545 --> 00:33:53,145
+generated. You
+can interact with
+
+917
+00:33:53,145 --> 00:33:54,845
+the data and modify it,
+
+918
+00:33:55,490 --> 00:33:57,030
+directly from the GraphQL.
+
+919
+00:33:57,410 --> 00:33:59,010
+This is really
+very good if you
+
+920
+00:33:59,010 --> 00:34:01,090
+have UI applications who need
+
+921
+00:34:01,090 --> 00:34:02,850
+some which needs some sort of
+
+922
+00:34:02,850 --> 00:34:05,505
+data validation or
+access control,
+
+923
+00:34:06,045 --> 00:34:08,465
+which is also supported
+over the schema.
+
+924
+00:34:10,845 --> 00:34:12,060
+What's point here is,
+
+925
+00:34:12,780 --> 00:34:14,540
+this I'm not sure how many of
+
+926
+00:34:14,540 --> 00:34:16,060
+you are familiar
+with the GraphQL
+
+927
+00:34:16,060 --> 00:34:17,820
+ecosystem, but
+there is another
+
+928
+00:34:17,820 --> 00:34:18,620
+excellent feature,
+
+929
+00:34:18,620 --> 00:34:20,160
+which is the GraphQL
+federation,
+
+930
+00:34:20,300 --> 00:34:22,315
+which allows
+the integration of
+
+931
+00:34:22,315 --> 00:34:23,375
+third party services.
+
+932
+00:34:23,755 --> 00:34:25,535
+This is a service
+level integration
+
+933
+00:34:25,915 --> 00:34:27,375
+of the acquired data
+visualization,
+
+934
+00:34:27,595 --> 00:34:29,295
+but for other type
+of services.
+
+935
+00:34:29,850 --> 00:34:31,610
+Since this is
+a very broad topic
+
+936
+00:34:31,610 --> 00:34:33,630
+and I don't have time
+to go in details,
+
+937
+00:34:34,010 --> 00:34:35,850
+I really invite you to join
+
+938
+00:34:35,850 --> 00:34:36,890
+the later session,
+
+939
+00:34:36,890 --> 00:34:39,125
+which will be led
+by Jim Rayfield,
+
+940
+00:34:39,425 --> 00:34:41,285
+our chief solution, Arhite,
+
+941
+00:34:41,505 --> 00:34:42,945
+who can give you in the deep
+
+942
+00:34:42,945 --> 00:34:44,405
+technicalities of GraphQL
+
+943
+00:34:44,465 --> 00:34:45,910
+federation and
+knowledge graphs
+
+944
+00:34:46,070 --> 00:34:47,670
+and how you can control your
+
+945
+00:34:47,670 --> 00:34:49,690
+knowledge graph
+via the GraphQL
+
+946
+00:34:49,910 --> 00:34:51,670
+APIs and how you
+open the spectral
+
+947
+00:34:51,670 --> 00:34:54,155
+chaos. Okay. Thank you.
+
+948
+00:34:54,155 --> 00:34:56,555
+I give it now back to Naso to
+
+949
+00:34:56,555 --> 00:34:57,755
+continue with the partner
+
+950
+00:34:57,755 --> 00:34:59,835
+ecosystem and how all these
+
+951
+00:34:59,835 --> 00:35:01,710
+tooling and key features we
+
+952
+00:35:01,710 --> 00:35:03,630
+develop as
+a successful business
+
+953
+00:35:03,630 --> 00:35:05,330
+model using our partners.
+
+954
+00:35:06,830 --> 00:35:07,570
+Thank you, Vasil.
+
+955
+00:35:08,030 --> 00:35:09,645
+Although, yeah,
+
+956
+00:35:09,645 --> 00:35:11,885
+we we we have a very capable
+
+957
+00:35:11,885 --> 00:35:13,405
+database engine, and we have,
+
+958
+00:35:13,725 --> 00:35:15,565
+a platform on top of it that
+
+959
+00:35:15,565 --> 00:35:17,905
+that provides a lot
+of infrastructure
+
+960
+00:35:17,965 --> 00:35:18,545
+and technology,
+
+961
+00:35:19,340 --> 00:35:21,660
+we still cannot
+cover everything
+
+962
+00:35:21,660 --> 00:35:22,860
+that you may want to do with
+
+963
+00:35:22,860 --> 00:35:24,860
+the knowledge graph, and,
+
+964
+00:35:26,220 --> 00:35:28,080
+before start speaking
+of applications.
+
+965
+00:35:28,300 --> 00:35:31,805
+So, to address this, we have,
+
+966
+00:35:33,945 --> 00:35:35,885
+a range of portfolio
+partners,
+
+967
+00:35:37,410 --> 00:35:39,330
+which are companies
+like Symantec
+
+968
+00:35:39,330 --> 00:35:41,430
+Web Company,
+Synaptica, MetaFacts,
+
+969
+00:35:41,570 --> 00:35:46,265
+the sensor, Omni,
+Memotix, Workbench,
+
+970
+00:35:46,565 --> 00:35:49,285
+quite a number of partners who
+
+971
+00:35:49,285 --> 00:35:51,065
+provide tools and platforms
+
+972
+00:35:51,205 --> 00:35:53,465
+which integrate Graph DB.
+
+973
+00:35:55,230 --> 00:35:57,310
+And and and, this way,
+
+974
+00:35:57,310 --> 00:35:59,170
+we complement each
+other's portfolio,
+
+975
+00:35:59,310 --> 00:36:01,710
+and we can much
+better add the the
+
+976
+00:36:01,710 --> 00:36:05,325
+full stack of needs
+for this technology.
+
+977
+00:36:06,745 --> 00:36:07,545
+Beyond that,
+
+978
+00:36:07,945 --> 00:36:10,445
+we we we work
+quite a lot with,
+
+979
+00:36:11,840 --> 00:36:13,600
+different kind of
+consulting partners.
+
+980
+00:36:13,600 --> 00:36:16,180
+So we work with,
+some of the biggest,
+
+981
+00:36:16,640 --> 00:36:18,960
+IT service,
+providers and system
+
+982
+00:36:18,960 --> 00:36:20,205
+integrators on Earth.
+
+983
+00:36:20,365 --> 00:36:21,965
+On the list there,
+you have, like,
+
+984
+00:36:21,965 --> 00:36:23,905
+Infosys, WIPO,
+Auto SentiData,
+
+985
+00:36:24,365 --> 00:36:26,525
+Fujitsu. These are
+five of the top
+
+986
+00:36:26,525 --> 00:36:28,365
+ten biggest IT
+services companies,
+
+987
+00:36:28,365 --> 00:36:30,950
+and, they they
+are familiar with
+
+988
+00:36:30,950 --> 00:36:32,550
+the technology and and and
+
+989
+00:36:32,550 --> 00:36:34,310
+delivery to to to big clients
+
+990
+00:36:34,310 --> 00:36:35,750
+all the way from government to
+
+991
+00:36:35,750 --> 00:36:37,050
+to pharma and back.
+
+992
+00:36:38,355 --> 00:36:42,035
+We also have, much, yes,
+
+993
+00:36:42,035 --> 00:36:42,855
+more specialized,
+
+994
+00:36:43,395 --> 00:36:45,095
+let's call them
+boutique consulting
+
+995
+00:36:45,475 --> 00:36:48,170
+and delivery partners, like,
+
+996
+00:36:48,630 --> 00:36:50,950
+data language in in UK and
+
+997
+00:36:50,950 --> 00:36:53,725
+enterprise knowledge
+in in US,
+
+998
+00:36:55,165 --> 00:36:56,545
+Southworks in Korea,
+
+999
+00:36:56,685 --> 00:36:58,145
+and and and many others.
+
+1000
+00:36:58,525 --> 00:37:01,725
+So, this is an ecosystem that
+
+1001
+00:37:01,725 --> 00:37:04,770
+currently consists
+of more than
+
+1002
+00:37:04,770 --> 00:37:05,750
+fifty partners.
+
+1003
+00:37:06,370 --> 00:37:08,950
+So, we will not try
+to list all of them,
+
+1004
+00:37:09,570 --> 00:37:11,725
+and we took care to to to put
+
+1005
+00:37:11,725 --> 00:37:14,585
+it right on for all kinds of,
+
+1006
+00:37:15,085 --> 00:37:16,605
+agreements to to make to make
+
+1007
+00:37:16,605 --> 00:37:18,865
+this ecosystem
+operate, properly.
+
+1008
+00:37:19,650 --> 00:37:21,330
+So, yeah,
+
+1009
+00:37:21,330 --> 00:37:23,090
+we're looking forward to join
+
+1010
+00:37:23,090 --> 00:37:24,470
+other partners to complement
+
+1011
+00:37:24,530 --> 00:37:25,510
+the even further,
+
+1012
+00:37:26,130 --> 00:37:27,995
+the ecosystem with either
+
+1013
+00:37:28,235 --> 00:37:29,615
+consulting delivery skills,
+
+1014
+00:37:29,675 --> 00:37:32,575
+either a a a, yeah, tools.
+
+1015
+00:37:33,915 --> 00:37:35,610
+And this this good point,
+
+1016
+00:37:36,090 --> 00:37:37,870
+to to invite you
+to the webinar.
+
+1017
+00:37:38,890 --> 00:37:40,910
+Vasu, if you can go
+to the next slide.
+
+1018
+00:37:41,690 --> 00:37:43,770
+The the the the webinar that,
+
+1019
+00:37:44,010 --> 00:37:45,965
+will take place in
+twenty minutes.
+
+1020
+00:37:45,965 --> 00:37:47,645
+That's part of
+the promotion to
+
+1021
+00:37:47,645 --> 00:37:49,325
+party eight of our partner,
+
+1022
+00:37:49,325 --> 00:37:50,385
+Semantic Web Company.
+
+1023
+00:37:51,885 --> 00:37:55,050
+You see that Vasil
+is having a very
+
+1024
+00:37:55,050 --> 00:37:56,190
+intensive day today.
+
+1025
+00:37:56,570 --> 00:37:57,930
+So he'll finish here,
+
+1026
+00:37:57,930 --> 00:37:59,130
+and he'll be part of,
+
+1027
+00:37:59,290 --> 00:38:01,530
+the webinar that
+starts in twenty
+
+1028
+00:38:01,530 --> 00:38:04,035
+minute with minutes
+with Pu party eight.
+
+1029
+00:38:06,035 --> 00:38:11,015
+So, it will be it
+will essentially
+
+1030
+00:38:11,315 --> 00:38:12,440
+show how, yeah, yeah,
+
+1031
+00:38:12,440 --> 00:38:13,960
+the integration between pool
+
+1032
+00:38:13,960 --> 00:38:15,640
+party eight and
+and and and and
+
+1033
+00:38:15,640 --> 00:38:18,360
+Gravity makes pool party much
+
+1034
+00:38:18,360 --> 00:38:19,560
+better performant and,
+
+1035
+00:38:20,040 --> 00:38:22,175
+improves on on
+the scalability side.
+
+1036
+00:38:23,535 --> 00:38:25,535
+And we also
+demonstrate, Vasil,
+
+1037
+00:38:25,535 --> 00:38:26,895
+I think you gotta press next
+
+1038
+00:38:26,895 --> 00:38:28,435
+because there is
+some animation.
+
+1039
+00:38:28,575 --> 00:38:30,995
+Okay. Part of this
+demo will be,
+
+1040
+00:38:32,210 --> 00:38:34,390
+well, we have a we
+we we have a,
+
+1041
+00:38:35,010 --> 00:38:36,950
+new stacking
+service scope now,
+
+1042
+00:38:37,170 --> 00:38:38,930
+and it works with
+giant technology
+
+1043
+00:38:38,930 --> 00:38:41,195
+graph derived from
+Wikidata, geo names,
+
+1044
+00:38:41,195 --> 00:38:42,255
+Wikipedia, whatever.
+
+1045
+00:38:42,955 --> 00:38:45,455
+And we use it to
+analyze news articles.
+
+1046
+00:38:46,475 --> 00:38:48,860
+So part of this
+service will be
+
+1047
+00:38:48,860 --> 00:38:50,720
+a demonstration
+of how you can,
+
+1048
+00:38:52,060 --> 00:38:53,200
+tune the performance,
+
+1049
+00:38:54,060 --> 00:38:56,460
+the the the the behavior
+of this,
+
+1050
+00:38:58,265 --> 00:39:02,185
+very sophisticated natural
+
+1051
+00:39:02,185 --> 00:39:03,645
+language processing
+text analysis
+
+1052
+00:39:03,705 --> 00:39:05,520
+pipeline by,
+
+1053
+00:39:06,060 --> 00:39:07,580
+doing small
+corrections to this
+
+1054
+00:39:07,580 --> 00:39:09,020
+knowledge graph
+with pool party
+
+1055
+00:39:09,020 --> 00:39:10,620
+eight and immediately see
+
+1056
+00:39:10,620 --> 00:39:11,660
+improvement of results.
+
+1057
+00:39:11,660 --> 00:39:13,280
+In this way, we we show how
+
+1058
+00:39:13,655 --> 00:39:15,335
+voice management
+and tailor made
+
+1059
+00:39:15,335 --> 00:39:17,115
+vocabularies, and and,
+
+1060
+00:39:17,655 --> 00:39:21,230
+expert work can
+can can combine
+
+1061
+00:39:21,230 --> 00:39:23,250
+and can deliver
+value in combination
+
+1062
+00:39:23,550 --> 00:39:24,990
+with very big
+knowledge graphs.
+
+1063
+00:39:24,990 --> 00:39:26,510
+So it's it's
+a work with them.
+
+1064
+00:39:26,510 --> 00:39:28,945
+We've been and we're I've been
+
+1065
+00:39:28,945 --> 00:39:30,625
+working half half life to make
+
+1066
+00:39:30,625 --> 00:39:32,625
+this possible,
+so you you still
+
+1067
+00:39:32,625 --> 00:39:34,885
+have a chance to join
+in twenty minutes.
+
+1068
+00:39:36,140 --> 00:39:37,760
+And that's just one
+of our partners.
+
+1069
+00:39:38,380 --> 00:39:40,220
+We are very happy with our
+
+1070
+00:39:40,220 --> 00:39:42,080
+partnership with
+Symantec Web company.
+
+1071
+00:39:43,260 --> 00:39:45,905
+So join the webinar
+if you wanna pursue,
+
+1072
+00:39:45,965 --> 00:39:48,765
+and, the the people
+from Semantic
+
+1073
+00:39:48,765 --> 00:39:51,025
+Web Company tell
+you more about it.
+
+1074
+00:39:52,685 --> 00:39:54,065
+That's everything from us.
+
+1075
+00:39:55,630 --> 00:39:57,170
+Thank you very much for your
+
+1076
+00:39:57,390 --> 00:39:59,410
+time and attention.
+
+1077
+00:40:00,990 --> 00:40:03,890
+Massive, thanks to
+Naso and, Vasil.
+
+1078
+00:40:03,950 --> 00:40:05,975
+It's really
+interesting to see.
+

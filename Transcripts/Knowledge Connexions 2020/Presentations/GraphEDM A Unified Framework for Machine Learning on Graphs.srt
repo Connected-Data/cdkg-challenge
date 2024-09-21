@@ -1,0 +1,4132 @@
+1
+00:00:05,280 --> 00:00:06,260
+Hello, everyone,
+
+2
+00:00:06,400 --> 00:00:08,730
+and welcome to our third,
+
+3
+00:00:09,425 --> 00:00:11,665
+session in
+the innovators track
+
+4
+00:00:11,665 --> 00:00:13,765
+for knowledge connections
+twenty twenty.
+
+5
+00:00:14,625 --> 00:00:16,705
+It's been really
+interesting so far,
+
+6
+00:00:16,705 --> 00:00:19,470
+and we're pretty
+sure, you'll be,
+
+7
+00:00:19,930 --> 00:00:22,810
+satisfied with, this
+talk, as well from,
+
+8
+00:00:23,050 --> 00:00:23,950
+Ines Sami,
+
+9
+00:00:24,330 --> 00:00:27,130
+who's a PhD researcher
+in Stanford
+
+10
+00:00:27,130 --> 00:00:29,985
+University. Ines
+will be sharing
+
+11
+00:00:30,045 --> 00:00:32,145
+with us today, Graph EDM,
+
+12
+00:00:32,205 --> 00:00:34,205
+which is a framework that,
+
+13
+00:00:34,685 --> 00:00:37,570
+they have developed
+with her colleagues.
+
+14
+00:00:38,670 --> 00:00:40,670
+And it's about graph machine
+
+15
+00:00:40,670 --> 00:00:42,990
+learning and neural
+networks and
+
+16
+00:00:42,990 --> 00:00:43,970
+different classifications.
+
+17
+00:00:47,920 --> 00:00:50,480
+Hello, everyone. My
+name is Ines Chami.
+
+18
+00:00:50,480 --> 00:00:52,080
+I'm a PhD student
+at Stanford,
+
+19
+00:00:52,080 --> 00:00:53,760
+and today I will
+present a recent
+
+20
+00:00:53,760 --> 00:00:55,440
+framework for
+buffer presentation
+
+21
+00:00:55,440 --> 00:00:57,495
+learning. This is a joint work
+
+22
+00:00:57,495 --> 00:00:59,255
+with my collaborators
+from Google
+
+23
+00:00:59,255 --> 00:00:59,995
+and Stanford.
+
+24
+00:01:03,690 --> 00:01:05,450
+So this talk will
+be split into
+
+25
+00:01:05,450 --> 00:01:06,190
+three sections.
+
+26
+00:01:06,250 --> 00:01:07,450
+I'll first start by reviewing
+
+27
+00:01:07,450 --> 00:01:08,810
+the problem setup for graph
+
+28
+00:01:08,810 --> 00:01:10,490
+representation learning and
+
+29
+00:01:10,490 --> 00:01:11,790
+discuss different variations.
+
+30
+00:01:12,435 --> 00:01:13,715
+I'll then introduce our graph
+
+31
+00:01:13,715 --> 00:01:15,715
+EDM framework and use it to
+
+32
+00:01:15,715 --> 00:01:17,015
+describe some
+graph representation
+
+33
+00:01:17,235 --> 00:01:18,055
+learning methods,
+
+34
+00:01:18,275 --> 00:01:19,895
+both supervised
+and unsupervised.
+
+35
+00:01:23,380 --> 00:01:24,980
+So let's first
+start by reviewing
+
+36
+00:01:24,980 --> 00:01:26,500
+the graph
+representation learning
+
+37
+00:01:26,500 --> 00:01:27,400
+problem setup.
+
+38
+00:01:29,405 --> 00:01:30,685
+As you probably know,
+
+39
+00:01:30,685 --> 00:01:32,285
+graphs are a universal data
+
+40
+00:01:32,285 --> 00:01:35,005
+structure used to store
+relational data.
+
+41
+00:01:35,005 --> 00:01:35,905
+In this representation,
+
+42
+00:01:36,780 --> 00:01:38,380
+node represents objects and
+
+43
+00:01:38,380 --> 00:01:39,680
+edges represent relationships
+
+44
+00:01:39,820 --> 00:01:41,580
+between them. These graphs are
+
+45
+00:01:41,580 --> 00:01:43,020
+prevalent in many real world
+
+46
+00:01:43,020 --> 00:01:44,380
+applications. So
+for instance,
+
+47
+00:01:44,380 --> 00:01:46,160
+knowledge bases
+such as Wikidata,
+
+48
+00:01:46,220 --> 00:01:48,545
+which contains,
+the Wikipedia,
+
+49
+00:01:49,325 --> 00:01:51,005
+data store knowledge
+about the world
+
+50
+00:01:51,005 --> 00:01:52,705
+in the form of
+the knowledge graph.
+
+51
+00:01:52,925 --> 00:01:54,980
+Form nodes are world entities
+
+52
+00:01:54,980 --> 00:01:56,760
+and edges represent
+the relationships
+
+53
+00:01:56,900 --> 00:01:57,720
+between them.
+
+54
+00:01:58,420 --> 00:02:00,280
+Molecules can also
+be represented
+
+55
+00:02:00,420 --> 00:02:01,860
+as graphs where
+nodes represent
+
+56
+00:02:01,860 --> 00:02:04,055
+atoms and edges chemical
+
+57
+00:02:04,275 --> 00:02:05,655
+interactions between them.
+
+58
+00:02:06,915 --> 00:02:08,535
+And another
+important application
+
+59
+00:02:08,595 --> 00:02:10,295
+is in the domain of biology
+
+60
+00:02:10,355 --> 00:02:12,055
+where the study
+of evolutionary
+
+61
+00:02:12,760 --> 00:02:14,760
+relatedness between species is
+
+62
+00:02:14,760 --> 00:02:16,620
+done using
+phylogenetic trees.
+
+63
+00:02:17,160 --> 00:02:18,520
+Note that there are many other
+
+64
+00:02:18,520 --> 00:02:20,360
+applications not
+listed in this slide,
+
+65
+00:02:20,360 --> 00:02:22,460
+such as web and
+Internet graphs,
+
+66
+00:02:22,875 --> 00:02:23,935
+recommendation systems,
+
+67
+00:02:23,995 --> 00:02:25,935
+economic and
+transportation networks.
+
+68
+00:02:26,395 --> 00:02:27,835
+And so the summary
+here is that
+
+69
+00:02:27,835 --> 00:02:29,595
+these graphs can be
+used as a shared
+
+70
+00:02:29,595 --> 00:02:31,215
+vocabulary between fields.
+
+71
+00:02:31,480 --> 00:02:33,000
+And if we can develop methods
+
+72
+00:02:33,000 --> 00:02:34,840
+that operate on graph
+structured data,
+
+73
+00:02:34,840 --> 00:02:36,860
+then we can have potentially
+
+74
+00:02:37,080 --> 00:02:38,860
+impact on many important
+applications.
+
+75
+00:02:41,395 --> 00:02:43,075
+To apply machine
+learning methods
+
+76
+00:02:43,075 --> 00:02:44,275
+and neural networks on graph
+
+77
+00:02:44,275 --> 00:02:44,995
+structured data,
+
+78
+00:02:44,995 --> 00:02:46,915
+we need representations
+that a machine
+
+79
+00:02:46,915 --> 00:02:48,615
+learning model
+can operate on,
+
+80
+00:02:48,700 --> 00:02:50,480
+and these are usually
+feature vectors.
+
+81
+00:02:51,100 --> 00:02:52,400
+This is the goal of GRL,
+
+82
+00:02:52,540 --> 00:02:54,160
+which aims at
+learning representations
+
+83
+00:02:54,380 --> 00:02:55,980
+for each vertex
+in a graph while
+
+84
+00:02:55,980 --> 00:02:57,440
+preserving the graph
+information.
+
+85
+00:02:58,025 --> 00:02:58,745
+So for instance,
+
+86
+00:02:58,745 --> 00:03:00,265
+if two users have many friends
+
+87
+00:03:00,265 --> 00:03:01,885
+in common in
+a social network,
+
+88
+00:03:02,105 --> 00:03:03,705
+then good
+representations should
+
+89
+00:03:03,705 --> 00:03:05,065
+preserve this information by
+
+90
+00:03:05,065 --> 00:03:06,445
+making
+the known representations
+
+91
+00:03:07,180 --> 00:03:08,880
+similar in
+the embedding space.
+
+92
+00:03:09,260 --> 00:03:10,540
+And these representations can
+
+93
+00:03:10,540 --> 00:03:12,060
+then be used as input features
+
+94
+00:03:12,060 --> 00:03:13,340
+in downstream machine learning
+
+95
+00:03:13,340 --> 00:03:16,615
+applications. However,
+
+96
+00:03:16,675 --> 00:03:18,195
+graphs are sparse, discrete,
+
+97
+00:03:18,195 --> 00:03:19,395
+and high dimensional objects,
+
+98
+00:03:19,395 --> 00:03:21,155
+and so it's not
+clear how to get
+
+99
+00:03:21,155 --> 00:03:22,755
+a mapping from
+a graph to a low
+
+100
+00:03:22,755 --> 00:03:23,635
+dimensional, dense,
+
+101
+00:03:23,635 --> 00:03:25,460
+and continuous
+feature representation
+
+102
+00:03:26,160 --> 00:03:27,920
+while preserving
+all the important
+
+103
+00:03:27,920 --> 00:03:28,720
+graph information.
+
+104
+00:03:28,720 --> 00:03:30,160
+And so we'll see next how to
+
+105
+00:03:30,160 --> 00:03:31,840
+design models that solve these
+
+106
+00:03:31,840 --> 00:03:34,405
+challenges. So there are two
+
+107
+00:03:34,405 --> 00:03:35,685
+main learning scenarios for
+
+108
+00:03:35,685 --> 00:03:37,145
+graph representation
+learning,
+
+109
+00:03:37,605 --> 00:03:38,905
+supervised and unsupervised.
+
+110
+00:03:39,285 --> 00:03:40,725
+In the unsupervised case,
+
+111
+00:03:40,725 --> 00:03:42,330
+all we have is the input graph
+
+112
+00:03:42,330 --> 00:03:42,970
+structured data,
+
+113
+00:03:42,970 --> 00:03:44,270
+and we wanna
+get representations
+
+114
+00:03:44,490 --> 00:03:46,030
+that preserve the graph
+information.
+
+115
+00:03:46,890 --> 00:03:48,570
+Examples of unsupervised tasks
+
+116
+00:03:48,570 --> 00:03:49,790
+include link prediction,
+
+117
+00:03:50,165 --> 00:03:51,365
+where we wanna predict whether
+
+118
+00:03:51,365 --> 00:03:53,285
+two nodes are likely to become
+
+119
+00:03:53,285 --> 00:03:54,425
+connected in the future.
+
+120
+00:03:54,805 --> 00:03:56,165
+For instance, in
+social network,
+
+121
+00:03:56,165 --> 00:03:57,445
+we may wanna predict future
+
+122
+00:03:57,445 --> 00:03:58,345
+friendship relations.
+
+123
+00:03:59,140 --> 00:04:00,660
+Other examples include graph
+
+124
+00:04:00,660 --> 00:04:03,060
+visualization and
+graph clustering,
+
+125
+00:04:03,060 --> 00:04:04,420
+where we wanna put vertices in
+
+126
+00:04:04,420 --> 00:04:05,860
+a graph into
+different clusters,
+
+127
+00:04:05,860 --> 00:04:07,400
+for instance, to
+detect communities
+
+128
+00:04:07,540 --> 00:04:08,280
+in a graph.
+
+129
+00:04:09,385 --> 00:04:10,505
+In the supervised setting,
+
+130
+00:04:10,505 --> 00:04:11,705
+the goal is slightly
+different.
+
+131
+00:04:11,705 --> 00:04:13,225
+And while we do wanna get some
+
+132
+00:04:13,225 --> 00:04:14,365
+vertex representations,
+
+133
+00:04:15,065 --> 00:04:16,950
+the goal here is to get
+
+134
+00:04:16,950 --> 00:04:18,470
+representations
+that are predictive
+
+135
+00:04:18,470 --> 00:04:19,850
+of some graph properties.
+
+136
+00:04:20,310 --> 00:04:20,950
+So for instance,
+
+137
+00:04:20,950 --> 00:04:22,470
+in node classification task,
+
+138
+00:04:22,470 --> 00:04:23,830
+we wanna predict
+the attributes
+
+139
+00:04:23,830 --> 00:04:25,015
+about nodes in the graph.
+
+140
+00:04:25,335 --> 00:04:26,535
+For instance, we could try to
+
+141
+00:04:26,535 --> 00:04:28,295
+predict fake
+accounts in a social
+
+142
+00:04:28,295 --> 00:04:30,615
+network. And note
+that in contrast
+
+143
+00:04:30,615 --> 00:04:31,895
+with the clustering task,
+
+144
+00:04:31,895 --> 00:04:33,595
+node classification
+is supervised
+
+145
+00:04:33,770 --> 00:04:35,290
+in the sense that we do need
+
+146
+00:04:35,290 --> 00:04:36,830
+the label classes beforehand,
+
+147
+00:04:37,610 --> 00:04:39,290
+and we need some training data
+
+148
+00:04:39,290 --> 00:04:40,350
+to train the model.
+
+149
+00:04:41,155 --> 00:04:42,515
+Finally, another important
+
+150
+00:04:42,515 --> 00:04:44,115
+supervised task is graph class
+
+151
+00:04:44,355 --> 00:04:45,395
+classification where we may
+
+152
+00:04:45,395 --> 00:04:46,995
+wanna predict
+an attribute about
+
+153
+00:04:46,995 --> 00:04:48,010
+the entire graph.
+
+154
+00:04:48,090 --> 00:04:49,530
+So for instance,
+in chemistry,
+
+155
+00:04:49,530 --> 00:04:50,650
+we may want to predict whether
+
+156
+00:04:50,650 --> 00:04:52,590
+a molecule is toxic or not,
+
+157
+00:04:52,650 --> 00:04:54,110
+and this is
+a graph classification
+
+158
+00:04:54,250 --> 00:04:57,825
+problem. So let's
+now introduce
+
+159
+00:04:57,825 --> 00:04:59,905
+our GraphiDM
+framework to describe
+
+160
+00:04:59,905 --> 00:05:01,345
+methods for unsupervised graph
+
+161
+00:05:01,345 --> 00:05:02,485
+representation learning.
+
+162
+00:05:04,920 --> 00:05:06,860
+The input in unsupervised URL
+
+163
+00:05:06,920 --> 00:05:08,680
+is a graph, which is
+simply a collection
+
+164
+00:05:08,680 --> 00:05:09,900
+of nodes and edges,
+
+165
+00:05:10,215 --> 00:05:11,735
+and we store
+the edge information
+
+166
+00:05:11,735 --> 00:05:13,255
+in the form of a sparse matrix
+
+167
+00:05:13,255 --> 00:05:14,295
+with zero and ones,
+
+168
+00:05:14,295 --> 00:05:15,735
+which is basically
+the edges in
+
+169
+00:05:15,735 --> 00:05:17,895
+the matrix. We may also have
+
+170
+00:05:17,895 --> 00:05:19,790
+node features
+representing the vertices
+
+171
+00:05:19,790 --> 00:05:21,070
+in our graph, and we'll talk
+
+172
+00:05:21,070 --> 00:05:22,350
+about these in more details in
+
+173
+00:05:22,350 --> 00:05:23,890
+the supervised learning step.
+
+174
+00:05:24,910 --> 00:05:26,350
+In unsupervised GRL,
+
+175
+00:05:26,350 --> 00:05:27,870
+we set mappings from vertices
+
+176
+00:05:27,870 --> 00:05:29,525
+in the graph to
+vector representation
+
+177
+00:05:29,745 --> 00:05:31,425
+such that graph
+similarities are
+
+178
+00:05:31,425 --> 00:05:33,125
+preserved in
+the embedding space,
+
+179
+00:05:33,345 --> 00:05:34,785
+and we'll see next
+how to define
+
+180
+00:05:34,785 --> 00:05:35,445
+these similarities.
+
+181
+00:05:37,940 --> 00:05:39,640
+So let's now describe
+our GraphiDM
+
+182
+00:05:39,780 --> 00:05:41,460
+framework. As we've
+mentioned before,
+
+183
+00:05:41,460 --> 00:05:43,460
+the input to GRL
+models is a graph
+
+184
+00:05:43,460 --> 00:05:45,140
+that comes in the form
+of an adjacency
+
+185
+00:05:45,140 --> 00:05:47,195
+matrix decoded to
+construct an embedding
+
+186
+00:05:47,195 --> 00:05:48,095
+similarity matrix.
+
+187
+00:05:53,270 --> 00:05:54,550
+And these embeddings are then
+
+188
+00:05:54,550 --> 00:05:56,150
+decoded to construct
+an embedding
+
+189
+00:05:56,150 --> 00:05:57,370
+similarity matrix.
+
+190
+00:05:58,230 --> 00:06:00,150
+Decoder network
+can be as simple
+
+191
+00:06:00,150 --> 00:06:01,715
+as taking outer products of
+
+192
+00:06:01,715 --> 00:06:02,995
+the embeddings or be a more
+
+193
+00:06:02,995 --> 00:06:04,215
+complex neural network.
+
+194
+00:06:06,595 --> 00:06:07,955
+The parameters of the encoder
+
+195
+00:06:07,955 --> 00:06:09,780
+and decoder are
+then learned via
+
+196
+00:06:09,780 --> 00:06:11,560
+gradient descent
+using an unsupervised
+
+197
+00:06:11,700 --> 00:06:12,580
+objective function,
+
+198
+00:06:12,580 --> 00:06:14,020
+which essentially
+tries to make
+
+199
+00:06:14,020 --> 00:06:15,780
+the embedding
+similarity matrix
+
+200
+00:06:15,780 --> 00:06:17,460
+as close as possible
+to the graph
+
+201
+00:06:17,460 --> 00:06:18,600
+similarity matrix.
+
+202
+00:06:19,415 --> 00:06:21,015
+The graph similarity
+matrix can
+
+203
+00:06:21,015 --> 00:06:22,535
+be defined in many
+different ways,
+
+204
+00:06:22,535 --> 00:06:23,895
+which gives rise to different
+
+205
+00:06:23,895 --> 00:06:24,875
+embedding methods.
+
+206
+00:06:25,095 --> 00:06:25,815
+So for instance,
+
+207
+00:06:25,815 --> 00:06:27,255
+some methods may
+wanna preserve
+
+208
+00:06:27,255 --> 00:06:28,940
+the first order
+graph proximity,
+
+209
+00:06:28,940 --> 00:06:30,620
+namely the AGSNC structure,
+
+210
+00:06:30,620 --> 00:06:31,900
+while other methods want to
+
+211
+00:06:31,900 --> 00:06:33,020
+preserve higher order graph
+
+212
+00:06:33,020 --> 00:06:35,520
+similarities. After
+optimization,
+
+213
+00:06:35,740 --> 00:06:37,340
+we can extract
+the word embeddings
+
+214
+00:06:37,340 --> 00:06:38,685
+and use them as features for
+
+215
+00:06:38,685 --> 00:06:40,145
+downstream machine
+learning tasks.
+
+216
+00:06:42,685 --> 00:06:44,685
+Let's now go over
+a simple example
+
+217
+00:06:44,685 --> 00:06:46,820
+of encoders, namely
+the shallow encoder,
+
+218
+00:06:46,820 --> 00:06:48,680
+which is a simple
+embedding lookup.
+
+219
+00:06:49,940 --> 00:06:51,780
+We can get the embedding
+of a specific
+
+220
+00:06:51,780 --> 00:06:53,560
+node by doing
+a matrix multiplication
+
+221
+00:06:53,780 --> 00:06:55,595
+of the embedding
+matrix by the one
+
+222
+00:06:55,595 --> 00:06:57,615
+hot vector of
+the corresponding node.
+
+223
+00:06:58,315 --> 00:07:00,155
+The parameters in
+shallow encoders
+
+224
+00:07:00,155 --> 00:07:01,515
+are the embeddings
+themselves,
+
+225
+00:07:01,515 --> 00:07:02,735
+and there are no functions
+
+226
+00:07:02,795 --> 00:07:04,415
+computed on top of
+these embeddings.
+
+227
+00:07:05,180 --> 00:07:05,900
+In other words,
+
+228
+00:07:05,900 --> 00:07:07,340
+a shallow encoder is a simple
+
+229
+00:07:07,340 --> 00:07:08,940
+vocabulary lookup which stores
+
+230
+00:07:08,940 --> 00:07:10,880
+a single vector per
+node in the graph.
+
+231
+00:07:12,325 --> 00:07:13,525
+Note that there are many other
+
+232
+00:07:13,525 --> 00:07:15,045
+possible encoders
+such as graph
+
+233
+00:07:15,045 --> 00:07:15,785
+neural networks,
+
+234
+00:07:16,085 --> 00:07:17,525
+which we will
+describe later in
+
+235
+00:07:17,525 --> 00:07:18,185
+this talk.
+
+236
+00:07:20,130 --> 00:07:21,750
+So let's now look
+at an example.
+
+237
+00:07:22,530 --> 00:07:24,070
+We focus on
+the graph factorization
+
+238
+00:07:24,290 --> 00:07:25,810
+model, which is
+a popular graph
+
+239
+00:07:25,810 --> 00:07:27,250
+embedding method
+that preserves
+
+240
+00:07:27,250 --> 00:07:29,075
+first order proximity
+in the graph
+
+241
+00:07:29,155 --> 00:07:30,595
+by learning
+essentially a lower
+
+242
+00:07:30,595 --> 00:07:32,295
+rank factorization
+of the adjacency
+
+243
+00:07:32,435 --> 00:07:35,475
+matrix. In this model,
+
+244
+00:07:35,475 --> 00:07:37,075
+the encoder is
+a simple embedding
+
+245
+00:07:37,075 --> 00:07:38,760
+lookup as we've seen
+in the previous
+
+246
+00:07:38,760 --> 00:07:40,840
+slide, and the decoder takes
+
+247
+00:07:40,840 --> 00:07:42,280
+the outer product
+of the embedding
+
+248
+00:07:42,280 --> 00:07:43,640
+matrix. That is,
+
+249
+00:07:43,640 --> 00:07:45,160
+the embedding
+similarity between
+
+250
+00:07:45,160 --> 00:07:47,260
+two nodes is simply
+their inner product.
+
+251
+00:07:49,385 --> 00:07:50,985
+The embeddings are
+then optimized
+
+252
+00:07:50,985 --> 00:07:52,445
+by minimizing an unsupervised
+
+253
+00:07:52,585 --> 00:07:53,965
+loss function,
+which encourages
+
+254
+00:07:54,025 --> 00:07:55,465
+adjacent nodes to have a high
+
+255
+00:07:55,465 --> 00:07:57,620
+embedding similarity and non
+
+256
+00:07:57,620 --> 00:07:59,060
+adjacent nodes to have a lower
+
+257
+00:07:59,060 --> 00:08:00,120
+similarity score.
+
+258
+00:08:02,340 --> 00:08:03,780
+Note that taking
+the embedding's
+
+259
+00:08:03,780 --> 00:08:05,400
+outer product
+defines a symmetric
+
+260
+00:08:05,460 --> 00:08:07,415
+similarity function,
+which may have,
+
+261
+00:08:07,955 --> 00:08:09,475
+which may be
+a limiting assumption
+
+262
+00:08:09,475 --> 00:08:11,155
+when working with
+directed graphs
+
+263
+00:08:11,155 --> 00:08:12,675
+as some nodes can be strongly
+
+264
+00:08:12,675 --> 00:08:14,435
+connected in one direction and
+
+265
+00:08:14,435 --> 00:08:16,135
+disconnected in
+the other direction.
+
+266
+00:08:17,140 --> 00:08:18,340
+There have been
+follow-up works
+
+267
+00:08:18,340 --> 00:08:19,620
+for directed graphs which
+
+268
+00:08:19,620 --> 00:08:21,140
+basically define
+two embeddings
+
+269
+00:08:21,140 --> 00:08:23,400
+per node, a source and
+target embedding,
+
+270
+00:08:23,460 --> 00:08:24,660
+depending on the direction of
+
+271
+00:08:24,660 --> 00:08:26,405
+the relation it appears in.
+
+272
+00:08:28,645 --> 00:08:30,165
+Another line of work seeks to
+
+273
+00:08:30,165 --> 00:08:31,625
+preserve higher
+order similarity
+
+274
+00:08:31,845 --> 00:08:33,205
+in the embedding space using
+
+275
+00:08:33,205 --> 00:08:34,185
+random walks.
+
+276
+00:08:34,790 --> 00:08:36,170
+In skip gram GRL,
+
+277
+00:08:36,630 --> 00:08:38,150
+the decoder function is also
+
+278
+00:08:38,150 --> 00:08:39,670
+an outer product but the graph
+
+279
+00:08:39,670 --> 00:08:41,510
+regularization
+term is computed
+
+280
+00:08:41,510 --> 00:08:43,165
+over random walks
+in the graph.
+
+281
+00:08:43,565 --> 00:08:44,365
+So for instance,
+
+282
+00:08:44,365 --> 00:08:46,285
+DeepWalk draws
+analogies between
+
+283
+00:08:46,285 --> 00:08:47,985
+graphs and language
+by generating
+
+284
+00:08:48,125 --> 00:08:50,365
+sequences of nodes
+visited during
+
+285
+00:08:50,365 --> 00:08:52,250
+random walks and treating them
+
+286
+00:08:52,410 --> 00:08:54,090
+as words in
+the sentence to get
+
+287
+00:08:54,090 --> 00:08:56,170
+representations. All these
+
+288
+00:08:56,170 --> 00:08:57,290
+extensions are described in
+
+289
+00:08:57,290 --> 00:08:59,790
+detail using GraphiDM
+in our paper.
+
+290
+00:09:01,785 --> 00:09:03,305
+So let's now move
+to supervised
+
+291
+00:09:03,305 --> 00:09:04,205
+URL methods.
+
+292
+00:09:06,585 --> 00:09:07,965
+In supervised URL,
+
+293
+00:09:08,025 --> 00:09:09,560
+the input data is the same as
+
+294
+00:09:09,560 --> 00:09:10,780
+in the previous case,
+
+295
+00:09:11,000 --> 00:09:12,440
+but the goal is now to learn
+
+296
+00:09:12,440 --> 00:09:13,980
+representations
+that are predictive
+
+297
+00:09:14,040 --> 00:09:15,820
+of some vertex or
+graph properties.
+
+298
+00:09:16,645 --> 00:09:17,365
+In this setting,
+
+299
+00:09:17,365 --> 00:09:19,205
+we have some
+additional information
+
+300
+00:09:19,205 --> 00:09:19,925
+about the graph,
+
+301
+00:09:19,925 --> 00:09:21,865
+namely vertex or
+graph labels,
+
+302
+00:09:22,005 --> 00:09:23,365
+and we want to learn mappings
+
+303
+00:09:23,365 --> 00:09:24,725
+from vertices in the graph to
+
+304
+00:09:24,725 --> 00:09:27,230
+some target label space.
+
+305
+00:09:27,230 --> 00:09:28,750
+One possibility is to apply
+
+306
+00:09:28,750 --> 00:09:30,510
+unsupervised URL
+methods to get
+
+307
+00:09:30,510 --> 00:09:31,870
+representations and then use
+
+308
+00:09:31,870 --> 00:09:33,630
+them as input in
+a simple neural
+
+309
+00:09:33,630 --> 00:09:35,045
+network. However,
+
+310
+00:09:35,045 --> 00:09:36,565
+an important
+limitation of this
+
+311
+00:09:36,565 --> 00:09:37,765
+two step approach is that
+
+312
+00:09:37,765 --> 00:09:38,985
+unsupervised representations
+
+313
+00:09:39,285 --> 00:09:40,565
+might not preserve important
+
+314
+00:09:40,565 --> 00:09:42,380
+information about
+the graph that
+
+315
+00:09:42,380 --> 00:09:44,240
+would have been useful
+for the downstream
+
+316
+00:09:44,300 --> 00:09:45,200
+supervised task.
+
+317
+00:09:46,620 --> 00:09:48,460
+Supervised URL
+methods overcome
+
+318
+00:09:48,460 --> 00:09:50,375
+this limitation by learning
+
+319
+00:09:50,375 --> 00:09:51,655
+representations and solving
+
+320
+00:09:51,655 --> 00:09:53,595
+the predicted
+task end to end.
+
+321
+00:09:55,095 --> 00:09:56,775
+Finally, note that
+node features
+
+322
+00:09:56,775 --> 00:09:58,535
+play play a critical role for
+
+323
+00:09:58,535 --> 00:09:59,500
+predictive tasks.
+
+324
+00:09:59,820 --> 00:10:00,540
+So for instance,
+
+325
+00:10:00,540 --> 00:10:02,380
+in citation networks
+where nodes
+
+326
+00:10:02,380 --> 00:10:03,740
+represent papers and edges
+
+327
+00:10:03,740 --> 00:10:05,740
+represent the citations
+between them,
+
+328
+00:10:05,740 --> 00:10:08,135
+we could have had
+feature vectors
+
+329
+00:10:08,135 --> 00:10:09,735
+representing the paper such as
+
+330
+00:10:09,735 --> 00:10:11,895
+what you're making
+for all the words
+
+331
+00:10:11,895 --> 00:10:12,955
+in a given paper.
+
+332
+00:10:13,255 --> 00:10:14,615
+And this information can be
+
+333
+00:10:14,615 --> 00:10:16,215
+critical in some
+supervised settings.
+
+334
+00:10:16,215 --> 00:10:16,830
+So for instance,
+
+335
+00:10:16,830 --> 00:10:19,230
+if we wanted to predict
+a paper topic,
+
+336
+00:10:19,230 --> 00:10:20,670
+then knowing that
+some keywords
+
+337
+00:10:20,670 --> 00:10:22,510
+are mentioned in a paper can
+
+338
+00:10:22,510 --> 00:10:24,290
+significantly improve
+the classification
+
+339
+00:10:24,510 --> 00:10:28,675
+accuracy. For
+supervised methods,
+
+340
+00:10:28,675 --> 00:10:30,035
+we need to add an additional
+
+341
+00:10:30,035 --> 00:10:31,795
+branch in
+the GraphoDEM framework
+
+342
+00:10:31,795 --> 00:10:33,495
+to account for
+the label supervision.
+
+343
+00:10:34,740 --> 00:10:36,520
+Essentially, we add
+another decoder,
+
+344
+00:10:36,580 --> 00:10:38,340
+which predicts labels
+from embeddings,
+
+345
+00:10:38,340 --> 00:10:39,880
+and we still keep
+the unsupervised
+
+346
+00:10:40,100 --> 00:10:41,460
+decoder, which can be used to
+
+347
+00:10:41,460 --> 00:10:42,900
+regularize the embedding and
+
+348
+00:10:42,900 --> 00:10:44,865
+account for
+the graph structure
+
+349
+00:10:44,865 --> 00:10:46,245
+in the embedding space.
+
+350
+00:10:46,865 --> 00:10:48,625
+But note that some
+methods discard
+
+351
+00:10:48,625 --> 00:10:50,065
+this unsupervised decoder,
+
+352
+00:10:50,065 --> 00:10:51,845
+and we'll see next
+some examples.
+
+353
+00:10:54,670 --> 00:10:56,430
+So let's first talk
+about the label
+
+354
+00:10:56,430 --> 00:10:57,490
+propagation model.
+
+355
+00:10:58,430 --> 00:11:00,270
+Given a graph that is
+partially labeled,
+
+356
+00:11:00,270 --> 00:11:01,745
+we want to infer labels for
+
+357
+00:11:01,745 --> 00:11:03,185
+the other nodes in the graph
+
+358
+00:11:03,185 --> 00:11:04,885
+based on the connectivity
+pattern.
+
+359
+00:11:05,665 --> 00:11:06,465
+And, essentially,
+
+360
+00:11:06,465 --> 00:11:07,665
+if two nodes are connected,
+
+361
+00:11:07,665 --> 00:11:09,025
+then they are likely to share
+
+362
+00:11:09,025 --> 00:11:09,925
+the same label.
+
+363
+00:11:10,930 --> 00:11:12,610
+The labeled
+propagation algorithm
+
+364
+00:11:12,610 --> 00:11:14,050
+uses the graph Laplacian to
+
+365
+00:11:14,050 --> 00:11:15,750
+propagate labels
+in the graph.
+
+366
+00:11:16,050 --> 00:11:17,590
+And to provide
+more intuition,
+
+367
+00:11:17,730 --> 00:11:19,250
+the graph Laplacian
+can be thought
+
+368
+00:11:19,250 --> 00:11:21,375
+of as a discrete
+analog of the Laplace
+
+369
+00:11:21,375 --> 00:11:23,215
+operator, which
+happens to model
+
+370
+00:11:23,215 --> 00:11:24,495
+the propagation of the heat
+
+371
+00:11:24,495 --> 00:11:26,595
+equation in
+the Euclidean space.
+
+372
+00:11:27,400 --> 00:11:28,840
+In some sense, labels can be
+
+373
+00:11:28,840 --> 00:11:30,440
+thought of as heat
+sources on the graph,
+
+374
+00:11:30,440 --> 00:11:32,140
+and applying
+different iterations
+
+375
+00:11:32,200 --> 00:11:33,980
+of label propagation diffuses
+
+376
+00:11:34,040 --> 00:11:36,620
+the heat or labels
+to unlabeled nodes.
+
+377
+00:11:39,195 --> 00:11:40,815
+While label prop
+is an iterative
+
+378
+00:11:40,875 --> 00:11:42,555
+algorithm, it can also be
+
+379
+00:11:42,555 --> 00:11:45,050
+equivalently written
+as a an optimization
+
+380
+00:11:45,110 --> 00:11:46,630
+based method, which allows us
+
+381
+00:11:46,630 --> 00:11:48,550
+to describe labelprop in graph
+
+382
+00:11:48,550 --> 00:11:49,450
+EDM terms.
+
+383
+00:11:50,550 --> 00:11:52,455
+Here the encoder
+is shallow and
+
+384
+00:11:52,455 --> 00:11:53,735
+embeddings are
+directly learned
+
+385
+00:11:53,735 --> 00:11:54,855
+in the label space,
+
+386
+00:11:54,855 --> 00:11:56,535
+so the label decoder is simply
+
+387
+00:11:56,535 --> 00:11:57,915
+the identity function.
+
+388
+00:11:59,310 --> 00:12:00,750
+The supervised loss term is
+
+389
+00:12:00,750 --> 00:12:02,190
+simply the l two distance to
+
+390
+00:12:02,190 --> 00:12:04,210
+the labels of labeled nodes,
+
+391
+00:12:04,830 --> 00:12:06,430
+and the unsupervised decoder
+
+392
+00:12:06,430 --> 00:12:08,110
+uses l two distances between
+
+393
+00:12:08,110 --> 00:12:10,975
+labeled vectors
+to compare pairs
+
+394
+00:12:10,975 --> 00:12:12,755
+of nodes. And the unsupervised
+
+395
+00:12:12,895 --> 00:12:14,335
+regularization loss compares
+
+396
+00:12:14,335 --> 00:12:15,615
+these distances to the true
+
+397
+00:12:15,615 --> 00:12:17,075
+graph aj s and c matrix.
+
+398
+00:12:17,910 --> 00:12:19,450
+Minimizing this
+graph organization
+
+399
+00:12:19,590 --> 00:12:21,130
+term essentially
+will encourage
+
+400
+00:12:21,190 --> 00:12:22,470
+adjacent nodes to have their
+
+401
+00:12:22,470 --> 00:12:24,410
+labels closed in
+the embedding space.
+
+402
+00:12:25,825 --> 00:12:27,265
+And we can show
+that minimizing
+
+403
+00:12:27,265 --> 00:12:28,625
+the sum of the supervised and
+
+404
+00:12:28,625 --> 00:12:30,705
+unsupervised losses recovers
+
+405
+00:12:30,705 --> 00:12:32,625
+the iterative solution from
+
+406
+00:12:32,625 --> 00:12:33,685
+the previous slide.
+
+407
+00:12:36,620 --> 00:12:38,140
+Finally, let's
+look at a recent
+
+408
+00:12:38,140 --> 00:12:39,580
+and very popular approach for
+
+409
+00:12:39,580 --> 00:12:40,400
+graph embedding.
+
+410
+00:12:41,275 --> 00:12:42,395
+All the methods we've covered
+
+411
+00:12:42,395 --> 00:12:44,395
+so far used shallow
+encoders and
+
+412
+00:12:44,395 --> 00:12:46,095
+were therefore inherently
+transductive,
+
+413
+00:12:46,155 --> 00:12:47,275
+in the sense that they could
+
+414
+00:12:47,275 --> 00:12:48,795
+only get representations for
+
+415
+00:12:48,795 --> 00:12:50,075
+nodes that were present at
+
+416
+00:12:50,075 --> 00:12:50,975
+training time.
+
+417
+00:12:51,590 --> 00:12:53,110
+The graph convolution model
+
+418
+00:12:53,110 --> 00:12:54,550
+generalizes convolutions to
+
+419
+00:12:54,550 --> 00:12:55,910
+graph by learning parametric
+
+420
+00:12:55,910 --> 00:12:57,610
+encoders using node features.
+
+421
+00:12:58,345 --> 00:12:59,785
+The total number of parameters
+
+422
+00:12:59,785 --> 00:13:01,545
+in this model is
+independent of
+
+423
+00:13:01,545 --> 00:13:03,085
+the number of nodes
+in the graph,
+
+424
+00:13:03,225 --> 00:13:05,065
+and the learned
+encoder networks
+
+425
+00:13:05,065 --> 00:13:06,850
+can be used to
+get representations
+
+426
+00:13:07,070 --> 00:13:08,670
+for many input
+graphs that have
+
+427
+00:13:08,670 --> 00:13:10,290
+the same input
+feature domain.
+
+428
+00:13:10,750 --> 00:13:12,450
+And this is basically
+the inductive
+
+429
+00:13:12,510 --> 00:13:14,415
+setting where the models can
+
+430
+00:13:14,415 --> 00:13:16,275
+generalize across
+different graphs.
+
+431
+00:13:18,175 --> 00:13:19,615
+One challenge in designing
+
+432
+00:13:19,615 --> 00:13:21,055
+convolutional neural networks
+
+433
+00:13:21,055 --> 00:13:22,670
+for graphs is that graphs have
+
+434
+00:13:22,670 --> 00:13:23,630
+arbitrary structures,
+
+435
+00:13:23,630 --> 00:13:25,150
+while usual neural network
+
+436
+00:13:25,150 --> 00:13:27,310
+architectures
+operate on regular
+
+437
+00:13:27,310 --> 00:13:29,330
+data such as
+sequences or images.
+
+438
+00:13:29,915 --> 00:13:31,675
+So for instance, in
+computer vision,
+
+439
+00:13:31,675 --> 00:13:33,915
+CNNs are used for automatic
+
+440
+00:13:33,915 --> 00:13:35,435
+feature extraction by applying
+
+441
+00:13:35,435 --> 00:13:37,115
+small localized features which
+
+442
+00:13:37,115 --> 00:13:38,930
+activate in the presence of
+
+443
+00:13:38,930 --> 00:13:39,830
+relevant panels.
+
+444
+00:13:40,370 --> 00:13:41,810
+And due to
+the regular structure
+
+445
+00:13:41,810 --> 00:13:43,570
+of images, these
+filters can be
+
+446
+00:13:43,570 --> 00:13:45,010
+shared across many different
+
+447
+00:13:45,010 --> 00:13:46,390
+locations in the image,
+
+448
+00:13:46,635 --> 00:13:48,715
+making CNNs
+computationally very
+
+449
+00:13:48,715 --> 00:13:51,755
+efficient. With graphs,
+
+450
+00:13:51,755 --> 00:13:52,975
+this is much more challenging
+
+451
+00:13:53,035 --> 00:13:54,235
+because graphs don't have this
+
+452
+00:13:54,235 --> 00:13:55,370
+regular grid structure.
+
+453
+00:13:55,370 --> 00:13:56,010
+So for instance,
+
+454
+00:13:56,010 --> 00:13:57,370
+the number of neighbors varies
+
+455
+00:13:57,370 --> 00:13:58,830
+from one vertex to another.
+
+456
+00:13:59,370 --> 00:14:00,730
+And so to solve
+this challenge,
+
+457
+00:14:00,730 --> 00:14:02,350
+GCNs make many simplifying
+
+458
+00:14:02,490 --> 00:14:04,005
+assumptions by
+adding some weight
+
+459
+00:14:04,085 --> 00:14:05,705
+sharing constraints
+in the model
+
+460
+00:14:05,925 --> 00:14:07,685
+and also letting
+nodes interact
+
+461
+00:14:07,685 --> 00:14:09,445
+with their direct neighbors in
+
+462
+00:14:09,445 --> 00:14:10,505
+these small filters.
+
+463
+00:14:13,020 --> 00:14:14,540
+So this is basically
+the message
+
+464
+00:14:14,540 --> 00:14:16,780
+passing framework
+where at each step,
+
+465
+00:14:16,780 --> 00:14:18,460
+nodes aggregate
+information from
+
+466
+00:14:18,460 --> 00:14:20,145
+the neighbors. And as these
+
+467
+00:14:20,145 --> 00:14:21,585
+iterations progress,
+
+468
+00:14:21,585 --> 00:14:22,865
+each node embedding contains
+
+469
+00:14:22,865 --> 00:14:24,225
+more and more information from
+
+470
+00:14:24,225 --> 00:14:25,685
+further nodes in the graph.
+
+471
+00:14:26,385 --> 00:14:27,970
+This message passing allows to
+
+472
+00:14:27,970 --> 00:14:29,570
+preserve both
+structural properties
+
+473
+00:14:29,570 --> 00:14:31,170
+of the graph, since nodes
+
+474
+00:14:31,170 --> 00:14:32,850
+communicate only with
+their neighbors,
+
+475
+00:14:32,850 --> 00:14:34,470
+but also feature information
+
+476
+00:14:34,610 --> 00:14:36,370
+since these messages
+are computed
+
+477
+00:14:36,370 --> 00:14:37,510
+from input features.
+
+478
+00:14:38,935 --> 00:14:40,855
+The GCN model can also be
+
+479
+00:14:40,855 --> 00:14:42,075
+described using GraphiDM.
+
+480
+00:14:43,495 --> 00:14:44,375
+In this scenario,
+
+481
+00:14:44,375 --> 00:14:46,235
+the encoder uses
+both the adjacency
+
+482
+00:14:46,375 --> 00:14:47,920
+matrix and node features,
+
+483
+00:14:48,300 --> 00:14:50,460
+and no unsupervised
+decoding is
+
+484
+00:14:50,460 --> 00:14:51,760
+needed since the structural
+
+485
+00:14:51,820 --> 00:14:53,580
+information is
+already leveraged
+
+486
+00:14:53,580 --> 00:14:54,960
+in the encoding step.
+
+487
+00:14:55,715 --> 00:14:57,075
+The label decoder is simply
+
+488
+00:14:57,075 --> 00:14:59,315
+the identity
+mapping as GCNs map
+
+489
+00:14:59,315 --> 00:15:01,235
+input features
+directly to the label
+
+490
+00:15:01,235 --> 00:15:03,715
+space. And
+the encoder functions
+
+491
+00:15:03,715 --> 00:15:05,650
+can be written in matrix form
+
+492
+00:15:05,650 --> 00:15:07,330
+using the adjacency matrix and
+
+493
+00:15:07,330 --> 00:15:08,310
+the degree matrix.
+
+494
+00:15:08,930 --> 00:15:10,870
+It first transforms
+input features
+
+495
+00:15:10,930 --> 00:15:12,725
+to compute messages and then
+
+496
+00:15:12,725 --> 00:15:14,405
+aggregates messages via the
+
+497
+00:15:14,405 --> 00:15:15,865
+graph ID as in its structure.
+
+498
+00:15:17,525 --> 00:15:19,445
+Finally, GCN stack
+many of these
+
+499
+00:15:19,445 --> 00:15:21,700
+layers using
+nonlinearities and
+
+500
+00:15:21,700 --> 00:15:23,060
+the model parameters
+are learned
+
+501
+00:15:23,060 --> 00:15:24,660
+by minimizing
+the cross entropy
+
+502
+00:15:24,660 --> 00:15:26,200
+loss over the labeled data.
+
+503
+00:15:27,540 --> 00:15:28,900
+This is the end of this talk.
+
+504
+00:15:28,900 --> 00:15:30,900
+If you'd like to learn
+more about GRL,
+
+505
+00:15:30,900 --> 00:15:32,725
+feel free to check out
+our silver paper,
+
+506
+00:15:32,725 --> 00:15:34,165
+which has many more detailed
+
+507
+00:15:34,165 --> 00:15:36,025
+descriptions of
+the different methods.
+
+508
+00:15:36,645 --> 00:15:38,325
+In particular,
+I mostly focused
+
+509
+00:15:38,325 --> 00:15:39,865
+on methods that
+learn presentations
+
+510
+00:15:40,005 --> 00:15:41,180
+in occlusion spaces,
+
+511
+00:15:41,180 --> 00:15:42,940
+but note that it
+is also possible
+
+512
+00:15:42,940 --> 00:15:44,780
+to embed graphs
+into non occlusion
+
+513
+00:15:44,780 --> 00:15:46,620
+spaces to better
+match the graph
+
+514
+00:15:46,620 --> 00:15:48,355
+geometry. And so if you're
+
+515
+00:15:48,355 --> 00:15:49,555
+interested about this topic
+
+516
+00:15:49,635 --> 00:15:50,835
+topic is perfect to reach out
+
+517
+00:15:50,835 --> 00:15:52,375
+to me or check out our first.
+
+518
+00:15:53,475 --> 00:15:54,455
+Thank you for listening.
+
+519
+00:16:00,130 --> 00:16:03,415
+K. Great.
+
+520
+00:16:03,955 --> 00:16:05,415
+Thanks thanks for
+the presentation,
+
+521
+00:16:05,555 --> 00:16:08,535
+Ines. And, good to have you,
+
+522
+00:16:08,915 --> 00:16:11,590
+here with us in
+the flesh as it were,
+
+523
+00:16:11,830 --> 00:16:12,790
+even though, you know,
+
+524
+00:16:12,790 --> 00:16:13,990
+it's it's the closest,
+
+525
+00:16:14,150 --> 00:16:15,510
+it's the next
+next best thing,
+
+526
+00:16:15,510 --> 00:16:20,165
+actually. So Thank
+you. Our pleasure.
+
+527
+00:16:20,305 --> 00:16:22,385
+I see that people are just now
+
+528
+00:16:22,385 --> 00:16:24,225
+starting to to
+type in some some
+
+529
+00:16:24,225 --> 00:16:26,625
+questions. So, I'll
+give them some time.
+
+530
+00:16:26,625 --> 00:16:28,930
+And, I have actually written
+
+531
+00:16:28,930 --> 00:16:31,250
+down a few of my
+own until we have,
+
+532
+00:16:31,490 --> 00:16:32,610
+some from the people.
+
+533
+00:16:33,710 --> 00:16:35,150
+So one question for me.
+
+534
+00:16:35,390 --> 00:16:37,230
+You mentioned at some point
+
+535
+00:16:37,230 --> 00:16:39,010
+towards the end of
+the presentation
+
+536
+00:16:39,150 --> 00:16:41,245
+that one issue that,
+
+537
+00:16:41,565 --> 00:16:43,805
+you have when
+using graph neural
+
+538
+00:16:43,805 --> 00:16:45,325
+networks as opposed to,
+
+539
+00:16:46,285 --> 00:16:47,965
+the the classic
+ones that says,
+
+540
+00:16:48,205 --> 00:16:50,180
+precisely the lack
+of structure,
+
+541
+00:16:51,280 --> 00:16:54,080
+and that forces you to you you
+
+542
+00:16:54,080 --> 00:16:55,700
+some some some
+tricks, basically.
+
+543
+00:16:56,080 --> 00:16:57,520
+Could you expand a little bit
+
+544
+00:16:57,520 --> 00:16:58,365
+on on that?
+
+545
+00:16:59,005 --> 00:17:01,485
+What does the what
+precisely is
+
+546
+00:17:01,485 --> 00:17:02,445
+the issue that the lack of
+
+547
+00:17:02,445 --> 00:17:03,565
+structure causes?
+
+548
+00:17:03,565 --> 00:17:04,545
+Because, you know,
+
+549
+00:17:05,645 --> 00:17:07,885
+this is not in any way my my
+
+550
+00:17:07,885 --> 00:17:09,680
+expert graph
+machine learning,
+
+551
+00:17:09,680 --> 00:17:11,220
+but based on on the cube,
+
+552
+00:17:11,760 --> 00:17:13,200
+my the little knowledge I had
+
+553
+00:17:13,200 --> 00:17:14,560
+I had the impression one of
+
+554
+00:17:14,560 --> 00:17:16,480
+the benefits of using that is
+
+555
+00:17:16,480 --> 00:17:17,700
+precisely the ability,
+
+556
+00:17:18,865 --> 00:17:20,625
+to to add more
+information and,
+
+557
+00:17:21,585 --> 00:17:23,985
+represents all kinds
+of data structures,
+
+558
+00:17:23,985 --> 00:17:26,070
+basically. So can
+you expand can
+
+559
+00:17:26,070 --> 00:17:27,270
+you explain a little bit what
+
+560
+00:17:27,270 --> 00:17:29,610
+we what that issue
+causes, basically?
+
+561
+00:17:30,150 --> 00:17:31,510
+So just to make
+sure I understand
+
+562
+00:17:31,510 --> 00:17:32,790
+correctly, because the network
+
+563
+00:17:32,790 --> 00:17:34,125
+is is breaking a little bit,
+
+564
+00:17:34,365 --> 00:17:37,085
+are you asking
+about the lack of,
+
+565
+00:17:37,325 --> 00:17:38,925
+regular structure
+in graphs and,
+
+566
+00:17:39,085 --> 00:17:40,385
+how it makes this issue?
+
+567
+00:17:41,240 --> 00:17:43,320
+So if you think
+about an image,
+
+568
+00:17:43,320 --> 00:17:45,000
+it can be part
+of it as a graph
+
+569
+00:17:45,000 --> 00:17:47,160
+in some sense, which
+is a grid graph.
+
+570
+00:17:47,160 --> 00:17:49,455
+So just, two directions where
+
+571
+00:17:49,455 --> 00:17:51,215
+every node is connected to its
+
+572
+00:17:51,215 --> 00:17:53,475
+top left and bottom
+right, neighbors.
+
+573
+00:17:54,495 --> 00:17:55,935
+So this structure is very
+
+574
+00:17:55,935 --> 00:17:57,520
+irregular in the sense that if
+
+575
+00:17:57,520 --> 00:17:58,900
+I move and I translate,
+
+576
+00:18:00,160 --> 00:18:01,920
+do some translation
+along the image,
+
+577
+00:18:01,920 --> 00:18:03,440
+then
+the neighborhood structure
+
+578
+00:18:03,440 --> 00:18:05,220
+is gonna be exactly the same
+
+579
+00:18:05,280 --> 00:18:07,455
+wherever I go. So each node is
+
+580
+00:18:07,455 --> 00:18:08,735
+gonna have, again,
+a top left,
+
+581
+00:18:08,735 --> 00:18:09,795
+bottom right neighbor.
+
+582
+00:18:10,175 --> 00:18:11,695
+And so because of this regular
+
+583
+00:18:11,695 --> 00:18:13,615
+structure,
+convolutional neural
+
+584
+00:18:13,615 --> 00:18:14,675
+networks on images,
+
+585
+00:18:15,030 --> 00:18:17,030
+can do many
+simplifying assumptions
+
+586
+00:18:17,030 --> 00:18:19,270
+like, sharing filter weights
+
+587
+00:18:19,270 --> 00:18:21,290
+across different
+locations in the image,
+
+588
+00:18:21,430 --> 00:18:23,075
+which makes them
+very computationally
+
+589
+00:18:23,295 --> 00:18:24,895
+efficient, but
+also allows them
+
+590
+00:18:24,895 --> 00:18:27,295
+to extract, local features at
+
+591
+00:18:27,295 --> 00:18:28,195
+different locations.
+
+592
+00:18:29,510 --> 00:18:31,350
+With graph, if we wanted to do
+
+593
+00:18:31,510 --> 00:18:33,110
+with a general graph,
+
+594
+00:18:33,270 --> 00:18:34,390
+not necessarily a grid,
+
+595
+00:18:34,390 --> 00:18:37,485
+if we wanted to do
+a similar method,
+
+596
+00:18:37,485 --> 00:18:39,085
+we would have to design a way
+
+597
+00:18:39,085 --> 00:18:41,105
+to translate those
+little features
+
+598
+00:18:41,485 --> 00:18:43,025
+across different
+graph locations.
+
+599
+00:18:43,085 --> 00:18:44,650
+And because these graphs have
+
+600
+00:18:44,970 --> 00:18:46,350
+an arbitrary structure,
+
+601
+00:18:46,570 --> 00:18:48,570
+so one node may
+be connected to
+
+602
+00:18:48,570 --> 00:18:50,010
+three other nodes and another
+
+603
+00:18:50,010 --> 00:18:51,530
+node may be connected to only
+
+604
+00:18:51,530 --> 00:18:52,430
+one other node,
+
+605
+00:18:52,725 --> 00:18:54,565
+it's unclear how to move those
+
+606
+00:18:54,565 --> 00:18:56,645
+filters across locations
+in the graph.
+
+607
+00:18:56,645 --> 00:18:58,645
+So that's essentially
+the challenge
+
+608
+00:18:58,645 --> 00:19:00,690
+in designing methods
+that operate
+
+609
+00:19:00,690 --> 00:19:02,130
+on these graphs, for,
+
+610
+00:19:02,450 --> 00:19:04,130
+feature extraction and pattern
+
+611
+00:19:04,130 --> 00:19:06,130
+recognition. And
+so, essentially,
+
+612
+00:19:06,130 --> 00:19:07,250
+the GCN makes,
+
+613
+00:19:07,815 --> 00:19:09,335
+some simplifying assumptions.
+
+614
+00:19:09,335 --> 00:19:11,275
+So for instance, the weights,
+
+615
+00:19:11,575 --> 00:19:14,375
+that are gonna
+interact, from,
+
+616
+00:19:14,615 --> 00:19:16,055
+different neighboring
+nodes are
+
+617
+00:19:16,055 --> 00:19:17,930
+all gonna be cool,
+whereas in,
+
+618
+00:19:18,170 --> 00:19:20,590
+standard CNNs, we
+have the flexibility
+
+619
+00:19:20,730 --> 00:19:22,250
+to have different weights for
+
+620
+00:19:22,250 --> 00:19:23,950
+different neighbor
+interactions.
+
+621
+00:19:24,090 --> 00:19:26,285
+So we usually make
+those simplifying
+
+622
+00:19:26,345 --> 00:19:27,545
+assumption to make these,
+
+623
+00:19:27,785 --> 00:19:30,525
+CNNs work on arbitrary
+graph structures.
+
+624
+00:19:30,905 --> 00:19:32,105
+So I'm not sure if that under
+
+625
+00:19:32,265 --> 00:19:34,130
+that answers
+the question. Yeah.
+
+626
+00:19:34,130 --> 00:19:35,410
+Yeah. Yeah. It does. It does.
+
+627
+00:19:35,730 --> 00:19:37,970
+It also brings up
+a follow-up question,
+
+628
+00:19:37,970 --> 00:19:39,750
+actually. So these precise,
+
+629
+00:19:40,450 --> 00:19:41,750
+assumptions that
+you mentioned,
+
+630
+00:19:42,930 --> 00:19:45,475
+how do you make them explicit
+
+631
+00:19:45,475 --> 00:19:47,955
+in some way, or
+should you perhaps
+
+632
+00:19:47,955 --> 00:19:49,635
+make make them
+explicit in some way,
+
+633
+00:19:49,635 --> 00:19:51,655
+like adding some
+kind of metadata
+
+634
+00:19:51,875 --> 00:19:52,755
+basically to,
+
+635
+00:19:53,650 --> 00:19:55,170
+to to your network
+so that you know,
+
+636
+00:19:55,170 --> 00:19:56,770
+like, okay. This
+is my assumption
+
+637
+00:19:56,770 --> 00:19:58,950
+and this is the basis
+I'm operating on.
+
+638
+00:20:00,290 --> 00:20:01,890
+The assumption about sharing
+
+639
+00:20:01,890 --> 00:20:03,635
+the weight constraints,
+is that,
+
+640
+00:20:03,875 --> 00:20:06,115
+what you're asking
+about? Yeah.
+
+641
+00:20:06,115 --> 00:20:08,035
+Yeah. Yeah. Exactly. Yeah.
+
+642
+00:20:08,035 --> 00:20:10,355
+So when we design
+the models, we,
+
+643
+00:20:10,780 --> 00:20:12,860
+explicitly have those
+inductive biases.
+
+644
+00:20:12,860 --> 00:20:14,880
+And so we're gonna design,
+
+645
+00:20:15,420 --> 00:20:17,100
+convolutional
+layers that account
+
+646
+00:20:17,100 --> 00:20:17,980
+for these assumptions.
+
+647
+00:20:17,980 --> 00:20:20,125
+So, yes, when we
+design the models,
+
+648
+00:20:20,125 --> 00:20:21,645
+all these assumptions
+are taken
+
+649
+00:20:21,645 --> 00:20:23,425
+into account, in
+the implementation,
+
+650
+00:20:24,525 --> 00:20:26,145
+so that they can
+work in practice
+
+651
+00:20:26,205 --> 00:20:28,660
+on on real graphs. Okay.
+
+652
+00:20:29,520 --> 00:20:31,280
+We have a question
+from the audience
+
+653
+00:20:31,280 --> 00:20:32,260
+here from Roberta,
+
+654
+00:20:32,560 --> 00:20:34,080
+who's asking if you can please
+
+655
+00:20:34,080 --> 00:20:35,680
+contrast the impact between
+
+656
+00:20:35,680 --> 00:20:37,385
+shallow and deep
+neural networks.
+
+657
+00:20:37,785 --> 00:20:38,585
+In other words,
+
+658
+00:20:38,585 --> 00:20:40,445
+what drives to increase
+the complexity
+
+659
+00:20:40,505 --> 00:20:41,865
+and number of layers and
+
+660
+00:20:41,865 --> 00:20:43,645
+convolutions of the network?
+
+661
+00:20:43,785 --> 00:20:45,725
+The kinds of problems
+or the accuracy?
+
+662
+00:20:48,410 --> 00:20:51,070
+So I think there
+are two threat of,
+
+663
+00:20:51,610 --> 00:20:53,550
+like, research progress
+in this field.
+
+664
+00:20:53,690 --> 00:20:55,835
+One is more driven about state
+
+665
+00:20:55,835 --> 00:20:57,675
+of the art. So we
+have some datasets,
+
+666
+00:20:57,675 --> 00:20:59,615
+and we wanna improve the,
+
+667
+00:20:59,995 --> 00:21:01,355
+as as Roberto said,
+
+668
+00:21:01,355 --> 00:21:02,715
+the accuracy on
+these datasets.
+
+669
+00:21:02,715 --> 00:21:04,260
+And so in this dataset,
+
+670
+00:21:04,260 --> 00:21:05,100
+it's really driven by,
+
+671
+00:21:05,140 --> 00:21:06,740
+architecture choices,
+
+672
+00:21:06,740 --> 00:21:08,260
+and we're gonna
+make small tweaks
+
+673
+00:21:08,260 --> 00:21:08,900
+to see whether,
+
+674
+00:21:10,805 --> 00:21:12,085
+architectural change can make
+
+675
+00:21:12,085 --> 00:21:13,285
+improvement. And then I think
+
+676
+00:21:13,285 --> 00:21:14,745
+there's the practice where,
+
+677
+00:21:16,005 --> 00:21:17,705
+maybe those
+architectural changes
+
+678
+00:21:17,765 --> 00:21:19,840
+are gonna give some
+small improvements.
+
+679
+00:21:19,900 --> 00:21:20,880
+But then in complexity,
+
+680
+00:21:21,020 --> 00:21:23,440
+they're adding
+a significant overhead.
+
+681
+00:21:23,740 --> 00:21:25,420
+And so we're gonna
+go for simpler
+
+682
+00:21:25,420 --> 00:21:27,955
+methods that, can work
+in practice and,
+
+683
+00:21:28,275 --> 00:21:29,015
+work efficiently.
+
+684
+00:21:29,555 --> 00:21:30,995
+So there are those
+two threads.
+
+685
+00:21:30,995 --> 00:21:32,675
+And depending on whether we're
+
+686
+00:21:32,675 --> 00:21:35,120
+trying to get
+a paper and, like,
+
+687
+00:21:35,440 --> 00:21:36,880
+make some research progress or
+
+688
+00:21:36,880 --> 00:21:38,480
+whether we're trying to use
+
+689
+00:21:38,480 --> 00:21:40,020
+these GCNs in applications,
+
+690
+00:21:41,295 --> 00:21:43,295
+to do some prediction
+about real data,
+
+691
+00:21:43,295 --> 00:21:44,415
+then we're gonna be,
+
+692
+00:21:44,655 --> 00:21:46,515
+choosing one method
+or the other.
+
+693
+00:21:47,215 --> 00:21:48,740
+Okay. Okay. That's
+that's actually
+
+694
+00:21:48,740 --> 00:21:51,000
+something I also wanted
+to to ask about.
+
+695
+00:21:52,260 --> 00:21:54,840
+If there are if you
+you, specifically,
+
+696
+00:21:54,980 --> 00:21:56,520
+personally are working on
+
+697
+00:21:57,135 --> 00:21:58,095
+applications like,
+
+698
+00:21:58,415 --> 00:21:59,695
+industrial or real world
+
+699
+00:21:59,695 --> 00:22:02,115
+applications of,
+of this framework.
+
+700
+00:22:05,390 --> 00:22:06,910
+So we've been working,
+
+701
+00:22:07,150 --> 00:22:09,250
+with knowledge graphs, a lot.
+
+702
+00:22:10,030 --> 00:22:11,390
+So knowledge graphs are,
+
+703
+00:22:11,710 --> 00:22:13,425
+specific type of graphs where
+
+704
+00:22:13,425 --> 00:22:15,825
+the relationships
+have, edge types.
+
+705
+00:22:15,825 --> 00:22:17,585
+And so the application we're
+
+706
+00:22:17,585 --> 00:22:19,025
+considering is link prediction
+
+707
+00:22:19,025 --> 00:22:19,745
+in knowledge graphs.
+
+708
+00:22:19,745 --> 00:22:21,150
+So how can we use the,
+
+709
+00:22:22,110 --> 00:22:23,470
+how can we use the knowledge
+
+710
+00:22:23,470 --> 00:22:25,150
+graph structure to
+predict missing
+
+711
+00:22:25,150 --> 00:22:26,990
+links, about, entities?
+
+712
+00:22:26,990 --> 00:22:29,305
+And so for instance,
+in Wikipedia,
+
+713
+00:22:29,525 --> 00:22:30,805
+I guess people are familiar,
+
+714
+00:22:31,125 --> 00:22:32,665
+in the context of
+this conference.
+
+715
+00:22:32,965 --> 00:22:34,485
+But so, like,
+trying to predict
+
+716
+00:22:34,485 --> 00:22:37,500
+missing facts in,
+in knowledge basis,
+
+717
+00:22:38,200 --> 00:22:40,280
+to complete, the the knowledge
+
+718
+00:22:40,280 --> 00:22:41,100
+graph structure,
+
+719
+00:22:41,640 --> 00:22:43,480
+and we're also using them for
+
+720
+00:22:43,480 --> 00:22:44,915
+natural language processing
+
+721
+00:22:44,915 --> 00:22:46,515
+applications. So because these
+
+722
+00:22:46,515 --> 00:22:47,815
+knowledge graphs have,
+
+723
+00:22:48,275 --> 00:22:49,715
+a lot of knowledge about real
+
+724
+00:22:49,715 --> 00:22:50,515
+world entities,
+
+725
+00:22:50,515 --> 00:22:52,115
+we can get
+representations that
+
+726
+00:22:52,115 --> 00:22:53,175
+capture this knowledge,
+
+727
+00:22:53,460 --> 00:22:55,860
+and they can be
+used, as input to,
+
+728
+00:22:56,100 --> 00:22:57,700
+neural networks that do any
+
+729
+00:22:57,700 --> 00:22:59,560
+language task like
+question answering.
+
+730
+00:22:59,780 --> 00:23:00,900
+So we're working in this.
+
+731
+00:23:00,900 --> 00:23:01,620
+Like, for instance,
+
+732
+00:23:01,620 --> 00:23:02,680
+name entity disambiguation.
+
+733
+00:23:03,605 --> 00:23:05,285
+We have, we may have, like,
+
+734
+00:23:05,285 --> 00:23:07,065
+many entities in
+the sentence that,
+
+735
+00:23:07,525 --> 00:23:08,565
+conflict with each other,
+
+736
+00:23:08,565 --> 00:23:10,680
+and we wanna know which entity
+
+737
+00:23:11,080 --> 00:23:12,440
+sentence is referring to.
+
+738
+00:23:12,440 --> 00:23:14,060
+So having these
+knowledge graph,
+
+739
+00:23:14,840 --> 00:23:16,040
+embeddings that give us,
+
+740
+00:23:16,360 --> 00:23:18,175
+some more additional context
+
+741
+00:23:18,175 --> 00:23:19,535
+about entities can be,
+
+742
+00:23:19,775 --> 00:23:21,215
+useful in in those natural
+
+743
+00:23:21,215 --> 00:23:23,375
+language task. Okay.
+
+744
+00:23:23,375 --> 00:23:24,255
+That's that's interesting.
+
+745
+00:23:24,255 --> 00:23:25,715
+Actually, I just recently,
+
+746
+00:23:26,450 --> 00:23:28,370
+so discussion,
+
+747
+00:23:28,370 --> 00:23:30,050
+which seems very
+relevant to to
+
+748
+00:23:30,050 --> 00:23:30,690
+what you're saying.
+
+749
+00:23:30,690 --> 00:23:32,550
+And it's been
+actually an ongoing,
+
+750
+00:23:33,330 --> 00:23:34,725
+a long standing, let's say,
+
+751
+00:23:35,205 --> 00:23:36,565
+issue in the in the knowledge
+
+752
+00:23:36,565 --> 00:23:38,565
+graph board,
+precisely what you
+
+753
+00:23:38,565 --> 00:23:40,405
+described. So being able to
+
+754
+00:23:40,405 --> 00:23:43,285
+infer additional,
+additional links,
+
+755
+00:23:43,285 --> 00:23:44,730
+basically, between these these
+
+756
+00:23:44,730 --> 00:23:45,530
+different entities.
+
+757
+00:23:45,530 --> 00:23:47,450
+And so far,
+
+758
+00:23:47,690 --> 00:23:49,210
+the the general assumption has
+
+759
+00:23:49,210 --> 00:23:51,725
+been that doing that
+is is a good thing.
+
+760
+00:23:51,725 --> 00:23:53,885
+But, recently, I
+saw a discussion
+
+761
+00:23:53,885 --> 00:23:55,325
+with people some people,
+
+762
+00:23:55,805 --> 00:23:58,145
+including actually,
+one of my mentors,
+
+763
+00:23:58,685 --> 00:24:00,045
+Frank van Harveen, like,
+
+764
+00:24:00,045 --> 00:24:02,610
+one of the leading scholars in
+
+765
+00:24:02,670 --> 00:24:04,590
+his domain, was was kind of
+
+766
+00:24:04,590 --> 00:24:05,550
+questioning this notion.
+
+767
+00:24:05,550 --> 00:24:07,950
+Like, the the idea
+was and some
+
+768
+00:24:07,950 --> 00:24:08,990
+people were agreeing.
+
+769
+00:24:08,990 --> 00:24:10,495
+Actually, the idea
+was that, well,
+
+770
+00:24:11,695 --> 00:24:13,695
+it it all depends
+on on, you know,
+
+771
+00:24:13,695 --> 00:24:16,495
+how how accurate you
+can be in this,
+
+772
+00:24:16,815 --> 00:24:18,195
+link, prediction.
+
+773
+00:24:18,990 --> 00:24:20,670
+If if it's not accurate enough
+
+774
+00:24:20,670 --> 00:24:22,830
+or even if it's not
+very, very accurate,
+
+775
+00:24:23,070 --> 00:24:24,830
+you may be doing
+more harm than
+
+776
+00:24:24,830 --> 00:24:27,615
+good with with this
+section. Yeah.
+
+777
+00:24:27,755 --> 00:24:29,375
+Yeah. I guess this
+is the precision
+
+778
+00:24:29,435 --> 00:24:30,315
+recall trade off.
+
+779
+00:24:30,315 --> 00:24:31,835
+So the model is gonna return
+
+780
+00:24:31,835 --> 00:24:33,195
+many answers, and we have to
+
+781
+00:24:33,195 --> 00:24:34,015
+choose a cutoff,
+
+782
+00:24:34,475 --> 00:24:37,630
+for when we consider
+the answers are,
+
+783
+00:24:37,870 --> 00:24:39,250
+not confident enough.
+
+784
+00:24:39,790 --> 00:24:41,710
+So, yeah, this is
+probably a challenge
+
+785
+00:24:41,710 --> 00:24:43,470
+with these link
+prediction, models.
+
+786
+00:24:43,470 --> 00:24:44,510
+Like, we don't know when,
+
+787
+00:24:45,565 --> 00:24:47,085
+when to stop adding links in
+
+788
+00:24:47,085 --> 00:24:48,065
+the in the network.
+
+789
+00:24:49,485 --> 00:24:51,085
+Is there are you
+aware of any,
+
+790
+00:24:52,930 --> 00:24:55,170
+any methods that
+you can you can
+
+791
+00:24:55,170 --> 00:24:57,650
+set this this this boundary to
+
+792
+00:24:57,650 --> 00:24:59,110
+to be just about right?
+
+793
+00:25:00,905 --> 00:25:02,585
+I'm not sure because
+in my work,
+
+794
+00:25:02,585 --> 00:25:04,285
+I haven't worked with, like,
+
+795
+00:25:04,425 --> 00:25:05,885
+explicitly the completion.
+
+796
+00:25:05,945 --> 00:25:08,240
+So we use completion to get
+
+797
+00:25:08,240 --> 00:25:11,200
+representations,
+but then, like,
+
+798
+00:25:11,200 --> 00:25:12,960
+during test time,
+we don't actually,
+
+799
+00:25:13,600 --> 00:25:14,720
+complete the knowledge graph,
+
+800
+00:25:14,720 --> 00:25:15,925
+but we just get the,
+
+801
+00:25:16,085 --> 00:25:17,945
+representations
+that we've learned
+
+802
+00:25:18,085 --> 00:25:19,365
+for other machine
+learning tasks
+
+803
+00:25:19,365 --> 00:25:20,485
+that require the knowledge.
+
+804
+00:25:20,485 --> 00:25:21,945
+So we don't have to make those
+
+805
+00:25:22,245 --> 00:25:23,845
+explicit choices for when,
+
+806
+00:25:24,085 --> 00:25:26,070
+to stop adding links
+in the knowledge
+
+807
+00:25:26,070 --> 00:25:28,570
+graph. Okay. But
+that's the interesting
+
+808
+00:25:28,590 --> 00:25:30,330
+point. Okay. Yeah.
+Fair enough.
+
+809
+00:25:30,790 --> 00:25:32,070
+We have another question from
+
+810
+00:25:32,070 --> 00:25:33,510
+Matt who's asking how are
+
+811
+00:25:33,510 --> 00:25:35,585
+different meta
+features on Edge
+
+812
+00:25:35,585 --> 00:25:38,405
+data managed in
+the adjacency matrix?
+
+813
+00:25:38,545 --> 00:25:40,705
+For example, has a or belongs
+
+814
+00:25:40,705 --> 00:25:42,545
+to or is a in
+a knowledge graph.
+
+815
+00:25:42,545 --> 00:25:43,925
+Quite relevant question.
+
+816
+00:25:47,250 --> 00:25:49,490
+In the talk that I
+presented here,
+
+817
+00:25:49,490 --> 00:25:51,490
+I only considered graphs that
+
+818
+00:25:51,490 --> 00:25:52,710
+don't have edge types.
+
+819
+00:25:52,850 --> 00:25:55,125
+These were only whether two
+
+820
+00:25:55,125 --> 00:25:56,665
+nodes are connected or not.
+
+821
+00:25:57,925 --> 00:25:59,205
+In the general knowledge,
+
+822
+00:25:59,445 --> 00:26:01,145
+graph application
+that I mentioned,
+
+823
+00:26:01,765 --> 00:26:02,965
+we've worked with graphs that
+
+824
+00:26:02,965 --> 00:26:03,865
+have edge types.
+
+825
+00:26:04,100 --> 00:26:06,260
+So, usually, the edge
+types are just,
+
+826
+00:26:06,500 --> 00:26:08,340
+categories. So we know that,
+
+827
+00:26:09,220 --> 00:26:11,060
+has or belongs
+to our different
+
+828
+00:26:11,060 --> 00:26:13,325
+categories. We haven't tried,
+
+829
+00:26:13,645 --> 00:26:15,565
+adding edge features
+in the model,
+
+830
+00:26:15,565 --> 00:26:17,505
+but I know this is
+something that,
+
+831
+00:26:17,965 --> 00:26:19,085
+people have worked on.
+
+832
+00:26:19,085 --> 00:26:20,650
+So, like,
+
+833
+00:26:20,650 --> 00:26:22,090
+maybe some relationships are
+
+834
+00:26:22,090 --> 00:26:23,370
+very similar to each other,
+
+835
+00:26:23,370 --> 00:26:24,990
+and so having
+some representations
+
+836
+00:26:25,450 --> 00:26:27,210
+for the relations rather than
+
+837
+00:26:27,210 --> 00:26:28,590
+treating them as completely
+
+838
+00:26:28,855 --> 00:26:29,755
+different categories,
+
+839
+00:26:30,295 --> 00:26:32,155
+can improve
+the model's quality.
+
+840
+00:26:33,335 --> 00:26:35,495
+But, I haven't
+worked with edge
+
+841
+00:26:35,495 --> 00:26:38,520
+features, in in
+my work. Okay.
+
+842
+00:26:39,540 --> 00:26:42,360
+Would that be perhaps
+one, future,
+
+843
+00:26:42,980 --> 00:26:44,680
+future direction
+for this research?
+
+844
+00:26:45,205 --> 00:26:45,865
+Yeah. Definitely.
+
+845
+00:26:46,005 --> 00:26:48,325
+And even in the just
+in the graph,
+
+846
+00:26:48,645 --> 00:26:49,925
+neural network area,
+
+847
+00:26:49,925 --> 00:26:51,525
+I think there's been a lot of
+
+848
+00:26:51,525 --> 00:26:53,045
+work in trying to incorporate
+
+849
+00:26:53,045 --> 00:26:53,925
+those edge features.
+
+850
+00:26:53,925 --> 00:26:56,510
+So, essentially,
+the GCN update,
+
+851
+00:26:57,390 --> 00:26:59,230
+aggregates messages
+from the neighbors.
+
+852
+00:26:59,230 --> 00:27:02,085
+And, in the work in the talk I
+
+853
+00:27:02,085 --> 00:27:04,085
+presented, the aggregation is
+
+854
+00:27:04,085 --> 00:27:04,985
+just an average,
+
+855
+00:27:05,445 --> 00:27:06,965
+of messages from
+the neighbors,
+
+856
+00:27:06,965 --> 00:27:09,125
+but we can also extend that to
+
+857
+00:27:09,125 --> 00:27:10,405
+incorporate edge features.
+
+858
+00:27:10,405 --> 00:27:12,380
+So when we aggregate
+information,
+
+859
+00:27:12,600 --> 00:27:14,300
+we also have
+some transformation
+
+860
+00:27:14,520 --> 00:27:16,440
+that accounts for the type of
+
+861
+00:27:16,440 --> 00:27:17,880
+relation that the message is
+
+862
+00:27:17,880 --> 00:27:19,400
+coming from. So these
+are definitely,
+
+863
+00:27:20,355 --> 00:27:21,715
+ongoing research directions,
+
+864
+00:27:21,955 --> 00:27:22,935
+especially for,
+
+865
+00:27:23,315 --> 00:27:25,075
+knowledge graphs that
+have, different,
+
+866
+00:27:25,315 --> 00:27:27,335
+edge relations. Okay.
+
+867
+00:27:27,715 --> 00:27:29,315
+Other future
+directions for for
+
+868
+00:27:29,315 --> 00:27:29,940
+your work?
+
+869
+00:27:31,460 --> 00:27:33,620
+So my personal
+research is mostly
+
+870
+00:27:33,620 --> 00:27:36,280
+focused on, nonaclegian
+representation.
+
+871
+00:27:36,580 --> 00:27:38,525
+So I've, briefly
+mentioned that
+
+872
+00:27:38,525 --> 00:27:40,065
+at the end of the,
+the presentation.
+
+873
+00:27:40,285 --> 00:27:42,605
+Essentially, all
+the all the methods
+
+874
+00:27:42,605 --> 00:27:44,285
+I've, talked about in the in
+
+875
+00:27:44,285 --> 00:27:46,045
+the talk were, occlusion in
+
+876
+00:27:46,045 --> 00:27:48,100
+the sense that
+the representation
+
+877
+00:27:48,320 --> 00:27:50,320
+slide in occlusion
+vector spaces
+
+878
+00:27:50,320 --> 00:27:52,000
+where we can take
+inner product
+
+879
+00:27:52,000 --> 00:27:52,900
+l two distances.
+
+880
+00:27:53,600 --> 00:27:55,040
+And my research is focused on
+
+881
+00:27:55,040 --> 00:27:57,575
+nonacledian
+representation learning.
+
+882
+00:27:57,575 --> 00:27:58,315
+So, essentially,
+
+883
+00:27:59,015 --> 00:28:01,175
+here the representations
+lie in,
+
+884
+00:28:01,575 --> 00:28:03,015
+curved spaces. And so these
+
+885
+00:28:03,015 --> 00:28:04,615
+spaces don't have
+a vector space
+
+886
+00:28:04,615 --> 00:28:06,520
+structure, so we
+can't just take
+
+887
+00:28:06,520 --> 00:28:07,820
+two points and add them.
+
+888
+00:28:08,360 --> 00:28:09,080
+So for instance,
+
+889
+00:28:09,080 --> 00:28:10,280
+if you think about a sphere,
+
+890
+00:28:10,280 --> 00:28:12,360
+it's also it's
+a space of positive
+
+891
+00:28:12,360 --> 00:28:13,935
+curvature. And if you have two
+
+892
+00:28:13,935 --> 00:28:15,295
+points on the sphere
+and you do
+
+893
+00:28:15,295 --> 00:28:16,415
+the Euclidean addition,
+
+894
+00:28:16,415 --> 00:28:17,955
+then the points are gonna lie
+
+895
+00:28:18,175 --> 00:28:21,280
+within the sphere,
+which is not valid,
+
+896
+00:28:21,740 --> 00:28:23,200
+does not respect the geometry
+
+897
+00:28:23,260 --> 00:28:24,460
+of the space, which is this
+
+898
+00:28:24,460 --> 00:28:25,200
+curved surface.
+
+899
+00:28:25,580 --> 00:28:28,700
+And so the challenge
+is in, with this,
+
+900
+00:28:29,100 --> 00:28:31,235
+with this, spaces
+is to design,
+
+901
+00:28:31,635 --> 00:28:33,015
+operations that can,
+
+902
+00:28:33,795 --> 00:28:35,155
+that are valid in these,
+
+903
+00:28:35,475 --> 00:28:36,835
+in these curved spaces to,
+
+904
+00:28:37,690 --> 00:28:39,770
+do machine learning
+in, so for instance,
+
+905
+00:28:39,770 --> 00:28:41,390
+hyperbolic spherical spaces.
+
+906
+00:28:41,850 --> 00:28:43,530
+So this is the focus
+on my research.
+
+907
+00:28:43,530 --> 00:28:45,390
+And the high level motivation
+
+908
+00:28:45,530 --> 00:28:46,010
+is because,
+
+909
+00:28:47,025 --> 00:28:48,805
+tree like data and hierarchies
+
+910
+00:28:48,865 --> 00:28:50,725
+in general can be represented
+
+911
+00:28:50,865 --> 00:28:53,285
+much better in
+hyperbolic spaces
+
+912
+00:28:53,425 --> 00:28:55,400
+than in occlusion
+spaces because
+
+913
+00:28:55,400 --> 00:28:56,840
+the hyperbolic space is like
+
+914
+00:28:56,840 --> 00:28:58,360
+some sort of
+continuous version
+
+915
+00:28:58,360 --> 00:29:00,540
+of trees, and it
+has a polynomial
+
+916
+00:29:00,760 --> 00:29:03,000
+volume growth. And so because
+
+917
+00:29:03,000 --> 00:29:05,385
+it has this growing
+structure,
+
+918
+00:29:05,385 --> 00:29:07,165
+it's more suitable
+to represent,
+
+919
+00:29:07,945 --> 00:29:08,905
+your archical data.
+
+920
+00:29:08,905 --> 00:29:09,865
+And so that's why,
+
+921
+00:29:10,185 --> 00:29:11,520
+we've been working
+with those,
+
+922
+00:29:12,160 --> 00:29:13,840
+alternate geometries
+to represent
+
+923
+00:29:13,840 --> 00:29:16,260
+your archival data. Okay.
+
+924
+00:29:16,720 --> 00:29:17,840
+Thank you very much.
+
+925
+00:29:18,240 --> 00:29:20,665
+It seems, we don't really have
+
+926
+00:29:20,825 --> 00:29:21,885
+many more questions.
+
+927
+00:29:22,055 --> 00:29:23,835
+Thank you so much
+for having me.
+
+928
+00:29:24,615 --> 00:29:27,275
+Thank you very much.
+Bye bye. Bye.
+

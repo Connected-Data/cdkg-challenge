@@ -1,0 +1,4963 @@
+1
+00:00:01,100 --> 00:00:03,180
+Welcome to the final
+session of
+
+2
+00:00:03,180 --> 00:00:05,440
+the morning, before
+the lunch break,
+
+3
+00:00:05,980 --> 00:00:08,755
+with, Vanessa Lopez of IBM
+
+4
+00:00:08,755 --> 00:00:09,975
+Research Ireland.
+
+5
+00:00:11,475 --> 00:00:13,930
+Vanessa's research
+interests are
+
+6
+00:00:13,930 --> 00:00:15,610
+to investigate and envision
+
+7
+00:00:15,610 --> 00:00:17,150
+technologies to
+better understand
+
+8
+00:00:17,290 --> 00:00:19,370
+human needs and support us as
+
+9
+00:00:19,370 --> 00:00:21,630
+a society to target complex
+
+10
+00:00:21,825 --> 00:00:23,345
+problems in
+the health and social
+
+11
+00:00:23,345 --> 00:00:25,505
+care domain, in
+particular using
+
+12
+00:00:25,505 --> 00:00:26,885
+a combination of semantic,
+
+13
+00:00:27,025 --> 00:00:27,925
+natural language,
+
+14
+00:00:28,145 --> 00:00:29,985
+and learning technologies
+to capture,
+
+15
+00:00:29,985 --> 00:00:31,260
+integrate, search,
+
+16
+00:00:31,420 --> 00:00:34,620
+and query diverse
+data and apply
+
+17
+00:00:34,620 --> 00:00:36,000
+it to solve real challenges,
+
+18
+00:00:36,060 --> 00:00:37,580
+like for integrated care,
+
+19
+00:00:37,580 --> 00:00:39,435
+to support the care
+of the most
+
+20
+00:00:39,435 --> 00:00:40,575
+vulnerable citizens,
+
+21
+00:00:40,795 --> 00:00:42,655
+and to ultimately obtain,
+
+22
+00:00:43,115 --> 00:00:43,855
+better outcomes.
+
+23
+00:00:44,715 --> 00:00:46,235
+And Vanessa is the,
+
+24
+00:00:46,475 --> 00:00:48,575
+research scientist
+and manager,
+
+25
+00:00:49,580 --> 00:00:50,380
+within the,
+
+26
+00:00:50,860 --> 00:00:53,280
+AI for health and
+social care,
+
+27
+00:00:53,580 --> 00:00:54,640
+area of IBM.
+
+28
+00:00:55,500 --> 00:00:57,685
+So a a very warm welcome to,
+
+29
+00:00:58,065 --> 00:01:00,565
+Vanessa and, and over to you.
+
+30
+00:01:01,265 --> 00:01:03,105
+Hi, everybody.
+Thank you so much
+
+31
+00:01:03,105 --> 00:01:04,270
+for the nice intro.
+
+32
+00:01:04,350 --> 00:01:06,110
+So, yeah, I am a resource
+
+33
+00:01:06,110 --> 00:01:08,530
+scientist and
+manager for the last
+
+34
+00:01:08,590 --> 00:01:10,750
+eight years at IBM Research in
+
+35
+00:01:10,750 --> 00:01:11,730
+the lab in Ireland.
+
+36
+00:01:12,115 --> 00:01:13,075
+And people here have,
+
+37
+00:01:13,395 --> 00:01:15,175
+lots of different
+backgrounds.
+
+38
+00:01:15,235 --> 00:01:16,695
+Mine is actually academic.
+
+39
+00:01:16,755 --> 00:01:18,775
+I used to be in
+the Open University
+
+40
+00:01:19,075 --> 00:01:21,020
+in KMI. But,
+
+41
+00:01:21,400 --> 00:01:24,360
+since I am in IBM
+in our team,
+
+42
+00:01:24,360 --> 00:01:26,600
+we have done a lot of work on
+
+43
+00:01:26,600 --> 00:01:28,695
+applying research
+to the integrated
+
+44
+00:01:28,915 --> 00:01:30,615
+health and social
+care domain.
+
+45
+00:01:31,155 --> 00:01:32,675
+So I'm really glad to be here
+
+46
+00:01:32,675 --> 00:01:34,195
+to share with you
+this research
+
+47
+00:01:34,195 --> 00:01:35,895
+work that we have done jointly
+
+48
+00:01:36,280 --> 00:01:37,240
+with my team at,
+
+49
+00:01:37,560 --> 00:01:39,880
+IBM Research Europe
+and with IBM
+
+50
+00:01:39,880 --> 00:01:41,640
+Watson Health. Both teams are
+
+51
+00:01:41,640 --> 00:01:42,780
+collocated in Dublin,
+
+52
+00:01:43,160 --> 00:01:45,260
+and we have a mighty
+common mission,
+
+53
+00:01:45,365 --> 00:01:47,525
+which is to bring AI to help
+
+54
+00:01:47,525 --> 00:01:49,285
+transform how the health care
+
+55
+00:01:49,285 --> 00:01:51,145
+systems of the future
+will grow.
+
+56
+00:01:51,445 --> 00:01:53,280
+The group peak
+here is obviously
+
+57
+00:01:53,340 --> 00:01:55,100
+from the old days
+where we could
+
+58
+00:01:55,100 --> 00:01:56,400
+get together in person.
+
+59
+00:01:57,340 --> 00:01:58,800
+And here, I'll talk,
+
+60
+00:01:59,340 --> 00:02:01,120
+miss mostly about
+my experience
+
+61
+00:02:01,260 --> 00:02:03,565
+and perspective
+perspectives on
+
+62
+00:02:03,565 --> 00:02:05,805
+using knowledge
+graph to address
+
+63
+00:02:05,805 --> 00:02:07,565
+significant societal problems
+
+64
+00:02:07,565 --> 00:02:09,645
+in the health care industry in
+
+65
+00:02:09,645 --> 00:02:11,890
+two projects. One that we work
+
+66
+00:02:11,890 --> 00:02:13,730
+on for almost three years to
+
+67
+00:02:13,730 --> 00:02:14,770
+combat fraud, waste,
+
+68
+00:02:14,770 --> 00:02:16,770
+and abuse to protect people
+
+69
+00:02:16,770 --> 00:02:17,910
+public health problems,
+
+70
+00:02:18,285 --> 00:02:19,825
+and a second new
+or exploratory
+
+71
+00:02:20,045 --> 00:02:21,645
+one to understand
+the impact of
+
+72
+00:02:21,645 --> 00:02:23,665
+social problems
+to drive positive
+
+73
+00:02:23,805 --> 00:02:27,340
+health. There are not yet AI
+
+74
+00:02:27,560 --> 00:02:29,320
+strong offerings in the human
+
+75
+00:02:29,320 --> 00:02:31,020
+and health services space.
+
+76
+00:02:31,400 --> 00:02:33,340
+And this is because
+while everyone
+
+77
+00:02:33,400 --> 00:02:35,355
+thinks that this is a real
+
+78
+00:02:35,355 --> 00:02:36,495
+competitive differentiator,
+
+79
+00:02:37,115 --> 00:02:39,375
+bringing AI innovations
+is really hard.
+
+80
+00:02:39,675 --> 00:02:42,100
+And embedding AI
+requires longer
+
+81
+00:02:42,100 --> 00:02:43,940
+efforts than classical product
+
+82
+00:02:43,940 --> 00:02:45,960
+timelines. It
+requires validating
+
+83
+00:02:46,020 --> 00:02:47,080
+what is feasible,
+
+84
+00:02:47,300 --> 00:02:48,740
+what is the impact of false
+
+85
+00:02:48,740 --> 00:02:50,280
+negatives and false positive,
+
+86
+00:02:50,945 --> 00:02:52,545
+understand
+the customization effort,
+
+87
+00:02:52,545 --> 00:02:54,465
+and the time to
+market to market
+
+88
+00:02:54,465 --> 00:02:56,705
+assistance. So it
+requires a little
+
+89
+00:02:56,705 --> 00:02:58,225
+bit less, and it needs to be
+
+90
+00:02:58,225 --> 00:03:00,085
+driven very much
+by the expertise
+
+91
+00:03:00,320 --> 00:03:02,480
+from the subject
+matter experts.
+
+92
+00:03:02,480 --> 00:03:03,620
+Those are our SMEs.
+
+93
+00:03:04,320 --> 00:03:05,860
+And our SMEs in particular,
+
+94
+00:03:05,920 --> 00:03:07,220
+they work with
+the government,
+
+95
+00:03:07,685 --> 00:03:08,965
+and they bring experience from
+
+96
+00:03:08,965 --> 00:03:10,425
+the Medicare and the Medicaid
+
+97
+00:03:10,565 --> 00:03:12,265
+health programs in the US.
+
+98
+00:03:13,365 --> 00:03:15,065
+So before I deep dive,
+
+99
+00:03:15,205 --> 00:03:17,450
+one may ask why
+Knowledge Graph.
+
+100
+00:03:18,090 --> 00:03:20,810
+So health care and program
+
+101
+00:03:20,810 --> 00:03:21,930
+integrity in particular,
+
+102
+00:03:21,930 --> 00:03:23,450
+they are very complex domains
+
+103
+00:03:23,450 --> 00:03:25,450
+where science and
+AI can really
+
+104
+00:03:25,450 --> 00:03:26,270
+make a difference.
+
+105
+00:03:26,685 --> 00:03:29,325
+It has a direct impact
+on people's life,
+
+106
+00:03:29,325 --> 00:03:31,325
+and huge amounts of money are
+
+107
+00:03:31,325 --> 00:03:32,225
+spent globally.
+
+108
+00:03:33,085 --> 00:03:34,660
+There have been actually lots
+
+109
+00:03:35,060 --> 00:03:36,500
+of advancements
+on the scientific
+
+110
+00:03:36,500 --> 00:03:39,000
+community by building
+models of disease,
+
+111
+00:03:39,380 --> 00:03:40,840
+progression, and outcomes.
+
+112
+00:03:41,460 --> 00:03:43,615
+However, the impact of those
+
+113
+00:03:43,615 --> 00:03:45,715
+models has been
+somehow limited.
+
+114
+00:03:46,015 --> 00:03:47,935
+Maybe maybe because the models
+
+115
+00:03:47,935 --> 00:03:49,955
+are silo in
+the source of data,
+
+116
+00:03:50,095 --> 00:03:51,555
+they are silo in the specific
+
+117
+00:03:51,615 --> 00:03:54,960
+use case or in
+a specific disease,
+
+118
+00:03:55,260 --> 00:03:57,420
+and isolated models provide
+
+119
+00:03:57,420 --> 00:03:58,560
+isolated predictions.
+
+120
+00:03:59,075 --> 00:04:01,315
+And they do not support very
+
+121
+00:04:01,315 --> 00:04:03,575
+well
+the comprehensive insights
+
+122
+00:04:03,875 --> 00:04:05,235
+that you need behind complex
+
+123
+00:04:05,235 --> 00:04:07,610
+decisions and
+the best practice
+
+124
+00:04:07,610 --> 00:04:09,370
+patterns among health care
+
+125
+00:04:09,370 --> 00:04:11,690
+providers and
+payers that remain
+
+126
+00:04:11,690 --> 00:04:12,750
+hidden in the data.
+
+127
+00:04:13,425 --> 00:04:16,005
+So analyst graph
+emerge as a unifying
+
+128
+00:04:16,065 --> 00:04:18,165
+technology that may facilitate
+
+129
+00:04:18,385 --> 00:04:20,085
+creating interconnected models
+
+130
+00:04:20,260 --> 00:04:21,800
+so we get better
+at characterizing
+
+131
+00:04:22,020 --> 00:04:22,760
+and predicting.
+
+132
+00:04:23,540 --> 00:04:26,440
+Our long term goal
+is to empower
+
+133
+00:04:26,500 --> 00:04:28,500
+care professionals
+with augmented
+
+134
+00:04:28,500 --> 00:04:31,725
+AI so they can
+ultimately improve
+
+135
+00:04:31,725 --> 00:04:34,365
+patient outcomes at
+a sustainable cost,
+
+136
+00:04:34,365 --> 00:04:36,045
+which is a very
+ambitious goal.
+
+137
+00:04:36,045 --> 00:04:37,905
+And this talk is
+about our journey
+
+138
+00:04:38,045 --> 00:04:39,105
+at IBM Research.
+
+139
+00:04:39,750 --> 00:04:40,870
+And as a spoiler,
+
+140
+00:04:40,870 --> 00:04:42,710
+we are still far from solving
+
+141
+00:04:42,710 --> 00:04:43,690
+many of the challenges,
+
+142
+00:04:43,910 --> 00:04:45,430
+starting with proving how well
+
+143
+00:04:45,430 --> 00:04:47,270
+it can scale in a real world
+
+144
+00:04:47,270 --> 00:04:50,865
+environment. So a top priority
+
+145
+00:04:51,005 --> 00:04:52,625
+by the World
+Health Organization
+
+146
+00:04:53,405 --> 00:04:55,565
+is to reduce disparities on
+
+147
+00:04:55,565 --> 00:04:57,440
+the delivery of
+health care and
+
+148
+00:04:57,440 --> 00:04:59,940
+to ensure a fair
+distribution of funds,
+
+149
+00:05:00,080 --> 00:05:01,520
+that there is
+enough for everyone
+
+150
+00:05:01,520 --> 00:05:03,600
+in need to get
+the services that
+
+151
+00:05:03,600 --> 00:05:04,820
+they are entitled for.
+
+152
+00:05:05,315 --> 00:05:06,835
+Even more at this COVID time
+
+153
+00:05:06,835 --> 00:05:08,755
+when the needs
+are so great and
+
+154
+00:05:08,755 --> 00:05:09,975
+the funding is stretched,
+
+155
+00:05:10,675 --> 00:05:12,435
+it is key that
+the money intended
+
+156
+00:05:12,435 --> 00:05:14,055
+for vital public
+health programs
+
+157
+00:05:14,370 --> 00:05:16,310
+are not great by intentional
+
+158
+00:05:16,450 --> 00:05:18,150
+fraud or by unintentionally
+
+159
+00:05:18,690 --> 00:05:20,450
+providing services that are
+
+160
+00:05:20,450 --> 00:05:22,550
+unnecessary or they
+are inconsistent
+
+161
+00:05:22,610 --> 00:05:24,595
+with good medical practices or
+
+162
+00:05:24,595 --> 00:05:25,735
+in the worst case,
+
+163
+00:05:25,955 --> 00:05:27,415
+even harmful to patients.
+
+164
+00:05:28,675 --> 00:05:30,855
+So just to make
+clear that program
+
+165
+00:05:30,995 --> 00:05:33,735
+integrity is not about
+limiting funding.
+
+166
+00:05:33,875 --> 00:05:35,940
+It is about making sure that
+
+167
+00:05:35,940 --> 00:05:37,320
+the money goes where needed.
+
+168
+00:05:38,260 --> 00:05:39,940
+At to combat fraud, waste,
+
+169
+00:05:39,940 --> 00:05:41,720
+and abuse is a huge market.
+
+170
+00:05:41,755 --> 00:05:42,975
+In the US alone,
+
+171
+00:05:43,195 --> 00:05:44,635
+health care fraud
+losses are in
+
+172
+00:05:44,635 --> 00:05:47,055
+the tens of billions
+each year.
+
+173
+00:05:47,195 --> 00:05:49,355
+These are shocking
+amounts because
+
+174
+00:05:49,355 --> 00:05:51,375
+of bus toasters and
+bus providers,
+
+175
+00:05:51,740 --> 00:05:54,000
+and these numbers
+indicate a significant
+
+176
+00:05:54,780 --> 00:05:55,840
+market opportunity.
+
+177
+00:05:56,780 --> 00:05:57,920
+So in this scenario,
+
+178
+00:05:58,780 --> 00:06:01,085
+the providers
+rendering services
+
+179
+00:06:01,085 --> 00:06:02,845
+to patient submit claims to
+
+180
+00:06:02,845 --> 00:06:04,145
+the state health programs,
+
+181
+00:06:04,445 --> 00:06:05,985
+such as Medicare and Medicaid
+
+182
+00:06:06,125 --> 00:06:07,505
+so they can get reimbursed.
+
+183
+00:06:08,380 --> 00:06:10,380
+And the payers know how much
+
+184
+00:06:10,380 --> 00:06:11,840
+the providers are spending,
+
+185
+00:06:11,980 --> 00:06:13,980
+but they don't know if this is
+
+186
+00:06:13,980 --> 00:06:15,440
+in compliance to regulations
+
+187
+00:06:15,660 --> 00:06:17,440
+which are described in policy
+
+188
+00:06:18,335 --> 00:06:21,135
+or how much is lost
+to fraud, waste,
+
+189
+00:06:21,135 --> 00:06:21,795
+and abuse.
+
+190
+00:06:22,415 --> 00:06:24,115
+So the investigation units,
+
+191
+00:06:24,175 --> 00:06:26,220
+they validate the integrity of
+
+192
+00:06:26,220 --> 00:06:27,420
+these claims submitted by
+
+193
+00:06:27,420 --> 00:06:29,840
+providers so they can recover
+
+194
+00:06:30,300 --> 00:06:32,140
+overpayments for claims that
+
+195
+00:06:32,140 --> 00:06:33,200
+infringe policy.
+
+196
+00:06:34,045 --> 00:06:37,245
+This is a labor
+intense and an error
+
+197
+00:06:37,245 --> 00:06:39,585
+prone task. To build a case,
+
+198
+00:06:39,725 --> 00:06:41,485
+the investigators
+had to review
+
+199
+00:06:41,485 --> 00:06:43,420
+the policy, and then they had
+
+200
+00:06:43,420 --> 00:06:44,860
+to talk to the data analyst to
+
+201
+00:06:44,860 --> 00:06:46,320
+query the claim data,
+
+202
+00:06:46,380 --> 00:06:48,300
+and they go back
+and forth till
+
+203
+00:06:48,300 --> 00:06:49,760
+they find what they need.
+
+204
+00:06:50,060 --> 00:06:51,945
+They manually encode some
+
+205
+00:06:51,945 --> 00:06:54,285
+algorithms on top
+of the claim data,
+
+206
+00:06:54,585 --> 00:06:57,165
+but most of the stuff
+in the policy,
+
+207
+00:06:57,225 --> 00:06:58,445
+it doesn't get automated.
+
+208
+00:06:58,990 --> 00:07:00,670
+So due to
+the overwhelming volume
+
+209
+00:07:00,670 --> 00:07:02,210
+of policies and claims,
+
+210
+00:07:02,510 --> 00:07:04,430
+most of the systematic
+fraud or
+
+211
+00:07:04,430 --> 00:07:06,610
+waste is never surfaced.
+
+212
+00:07:08,605 --> 00:07:11,485
+So the policy is written down
+
+213
+00:07:11,485 --> 00:07:13,265
+in very large text documents
+
+214
+00:07:13,325 --> 00:07:15,265
+that is describing
+what the providers
+
+215
+00:07:15,565 --> 00:07:16,385
+should be doing,
+
+216
+00:07:16,890 --> 00:07:18,890
+And all information about what
+
+217
+00:07:18,890 --> 00:07:20,730
+providers are
+actually doing is
+
+218
+00:07:20,730 --> 00:07:22,590
+in the structured claim data.
+
+219
+00:07:23,210 --> 00:07:25,315
+So state of the art
+fraud, waste,
+
+220
+00:07:25,315 --> 00:07:27,315
+and abuse detection is data
+
+221
+00:07:27,315 --> 00:07:29,575
+driven on top of
+the structured claims,
+
+222
+00:07:29,875 --> 00:07:31,635
+for example, to
+identify providers
+
+223
+00:07:31,635 --> 00:07:33,015
+with anomalous patterns.
+
+224
+00:07:33,620 --> 00:07:35,220
+But being another
+layer does not
+
+225
+00:07:35,220 --> 00:07:37,160
+always mean a provider
+is fraudulent.
+
+226
+00:07:37,780 --> 00:07:38,660
+And even if so,
+
+227
+00:07:38,660 --> 00:07:40,340
+it is not enough
+to know a provider
+
+228
+00:07:40,340 --> 00:07:42,245
+is fraudulent. Investigators
+
+229
+00:07:42,465 --> 00:07:44,705
+need to tie
+the clients for this
+
+230
+00:07:44,705 --> 00:07:46,485
+provider to
+the policy legislation
+
+231
+00:07:46,625 --> 00:07:47,605
+to build a case.
+
+232
+00:07:47,905 --> 00:07:49,345
+And these efforts
+are not always
+
+233
+00:07:49,345 --> 00:07:51,450
+successful. The
+policy may turn
+
+234
+00:07:51,450 --> 00:07:53,450
+out to be too vague
+to be enforced,
+
+235
+00:07:53,450 --> 00:07:55,530
+and providers are
+confused about
+
+236
+00:07:55,530 --> 00:07:57,005
+what they should be doing on
+
+237
+00:07:57,005 --> 00:07:58,785
+the recoverables recoverable
+
+238
+00:07:58,925 --> 00:08:00,445
+amounts too little to warrant
+
+239
+00:08:00,445 --> 00:08:02,045
+any action. So we thought it
+
+240
+00:08:02,045 --> 00:08:03,645
+will be very powerful to bring
+
+241
+00:08:03,645 --> 00:08:05,485
+this together, and
+we are the first
+
+242
+00:08:05,485 --> 00:08:07,840
+ones to automate
+the process of
+
+243
+00:08:07,840 --> 00:08:09,920
+identifying claims
+at risk based
+
+244
+00:08:09,920 --> 00:08:11,220
+on policy text.
+
+245
+00:08:12,080 --> 00:08:13,680
+So the unique value lies first
+
+246
+00:08:13,680 --> 00:08:16,615
+on using NLP and AI
+for the automatic
+
+247
+00:08:16,675 --> 00:08:18,775
+extraction of the actionable
+
+248
+00:08:18,835 --> 00:08:20,055
+knowledge from the policy.
+
+249
+00:08:20,675 --> 00:08:22,435
+It converts
+the policy text into
+
+250
+00:08:22,435 --> 00:08:23,815
+a knowledge base of benefits
+
+251
+00:08:23,875 --> 00:08:26,410
+rules that can be
+directly applied
+
+252
+00:08:26,410 --> 00:08:28,590
+to review claims
+against policy.
+
+253
+00:08:29,290 --> 00:08:30,810
+And these human and machine
+
+254
+00:08:30,810 --> 00:08:31,905
+consumable rules,
+
+255
+00:08:31,985 --> 00:08:33,525
+they provide
+a common interpretation
+
+256
+00:08:33,665 --> 00:08:35,425
+of the policy, which can be
+
+257
+00:08:35,425 --> 00:08:36,625
+shared across the team and
+
+258
+00:08:36,625 --> 00:08:39,320
+investigators. And that that
+
+259
+00:08:39,320 --> 00:08:41,100
+allows a more thorough,
+transparent,
+
+260
+00:08:41,160 --> 00:08:43,020
+and consistent review.
+
+261
+00:08:44,120 --> 00:08:46,760
+So this benefit benefit rules
+
+262
+00:08:46,760 --> 00:08:48,300
+that are extracted
+from policies,
+
+263
+00:08:48,775 --> 00:08:50,855
+they are reviewed
+by the SMEs,
+
+264
+00:08:50,855 --> 00:08:52,315
+our subject matter experts,
+
+265
+00:08:52,775 --> 00:08:54,615
+before they execute
+the mobile claims.
+
+266
+00:08:54,615 --> 00:08:55,835
+And this is a significant
+
+267
+00:08:55,895 --> 00:08:58,050
+differentiator. It empowers
+
+268
+00:08:58,110 --> 00:09:00,590
+the investigators to size and
+
+269
+00:09:00,590 --> 00:09:01,890
+prioritize the investigations
+
+270
+00:09:02,190 --> 00:09:04,770
+they may follow based
+on the evidence
+
+271
+00:09:04,910 --> 00:09:06,450
+and on the likelihood
+of recovery
+
+272
+00:09:07,125 --> 00:09:09,305
+from funds and as
+well on the policy
+
+273
+00:09:09,445 --> 00:09:11,605
+by executing those
+policy rules
+
+274
+00:09:11,605 --> 00:09:12,585
+on top of the claims.
+
+275
+00:09:12,645 --> 00:09:13,925
+And a second big piece is
+
+276
+00:09:13,925 --> 00:09:16,810
+explainability.
+Each label claim
+
+277
+00:09:16,950 --> 00:09:18,970
+at risk is linked
+to the benefit
+
+278
+00:09:19,030 --> 00:09:20,630
+rule alongside the natural
+
+279
+00:09:20,630 --> 00:09:22,230
+language part from the policy
+
+280
+00:09:22,230 --> 00:09:24,810
+text that explains
+what is the violation
+
+281
+00:09:25,815 --> 00:09:27,595
+. So there are many challenges
+
+282
+00:09:27,975 --> 00:09:29,595
+behind automating the claim
+
+283
+00:09:29,735 --> 00:09:31,915
+processing from
+policy at the scale.
+
+284
+00:09:32,910 --> 00:09:35,010
+And a core challenge
+is to capture
+
+285
+00:09:35,150 --> 00:09:37,630
+the knowledge
+from the text and
+
+286
+00:09:37,630 --> 00:09:38,850
+to model the domain.
+
+287
+00:09:39,310 --> 00:09:42,095
+So at the center,
+there is an ontology,
+
+288
+00:09:42,635 --> 00:09:44,555
+which is an evolving
+asset that
+
+289
+00:09:44,555 --> 00:09:46,495
+we created manually with our
+
+290
+00:09:46,875 --> 00:09:49,680
+experts to bring
+to bridge this
+
+291
+00:09:49,680 --> 00:09:51,600
+conceptualization gap on how
+
+292
+00:09:51,600 --> 00:09:53,300
+the experts think
+about the policy
+
+293
+00:09:53,440 --> 00:09:56,340
+and how the data is
+storing the claims.
+
+294
+00:09:56,880 --> 00:09:58,740
+The ontology captures
+the terminology,
+
+295
+00:09:59,265 --> 00:10:00,965
+and it makes explicit complex
+
+296
+00:10:01,025 --> 00:10:03,105
+relations that we
+are interested on,
+
+297
+00:10:03,105 --> 00:10:04,405
+so it guides destruction.
+
+298
+00:10:05,505 --> 00:10:07,610
+Another challenge is that we
+
+299
+00:10:07,610 --> 00:10:09,290
+didn't have any label data to
+
+300
+00:10:09,290 --> 00:10:11,790
+start with. So an important
+
+301
+00:10:11,930 --> 00:10:13,930
+achievement was engagement and
+
+302
+00:10:13,930 --> 00:10:15,550
+the validation with the users
+
+303
+00:10:15,850 --> 00:10:16,830
+early in the development.
+
+304
+00:10:17,425 --> 00:10:20,465
+So we build basic UI tools to
+
+305
+00:10:20,465 --> 00:10:22,305
+interact and gather
+feedback and
+
+306
+00:10:22,305 --> 00:10:23,925
+ground truth data
+from the experts
+
+307
+00:10:24,545 --> 00:10:26,485
+and to learn from
+that human feedback.
+
+308
+00:10:27,210 --> 00:10:28,970
+Lastly, we need to
+connect the policy
+
+309
+00:10:28,970 --> 00:10:30,250
+information to the structured
+
+310
+00:10:30,250 --> 00:10:32,090
+claim data in order to reason
+
+311
+00:10:32,090 --> 00:10:33,550
+over claims, to quantify,
+
+312
+00:10:33,610 --> 00:10:34,910
+and explain the violations.
+
+313
+00:10:35,795 --> 00:10:38,035
+So, overall, this is a new way
+
+314
+00:10:38,035 --> 00:10:39,875
+that we are
+proposing to consume
+
+315
+00:10:39,875 --> 00:10:40,855
+rules from policy.
+
+316
+00:10:41,555 --> 00:10:43,110
+And to do so, we have to work
+
+317
+00:10:43,190 --> 00:10:45,450
+very closely with our
+policy as person.
+
+318
+00:10:45,830 --> 00:10:47,270
+What are the type
+of rules most
+
+319
+00:10:47,270 --> 00:10:49,030
+suitable and of high value?
+
+320
+00:10:49,030 --> 00:10:50,470
+And this is just here a simple
+
+321
+00:10:50,470 --> 00:10:53,045
+example from
+a dental policy on
+
+322
+00:10:53,045 --> 00:10:54,485
+a service limitation type of
+
+323
+00:10:54,485 --> 00:10:56,965
+rule on the number
+of units a provider
+
+324
+00:10:56,965 --> 00:10:59,365
+can bill for
+a given service on
+
+325
+00:10:59,365 --> 00:11:01,545
+a given patient over
+a period of times.
+
+326
+00:11:02,000 --> 00:11:04,080
+So there are many ways ways in
+
+327
+00:11:04,080 --> 00:11:06,000
+which the policy
+text may describe
+
+328
+00:11:06,000 --> 00:11:06,740
+this criteria,
+
+329
+00:11:07,280 --> 00:11:09,220
+but with the with the same
+
+330
+00:11:09,280 --> 00:11:10,580
+underlying semantics.
+
+331
+00:11:11,195 --> 00:11:13,695
+So after ingesting
+the PDF policy,
+
+332
+00:11:14,315 --> 00:11:16,175
+the second step is
+to automatically
+
+333
+00:11:16,395 --> 00:11:17,995
+identify the concepts and
+
+334
+00:11:17,995 --> 00:11:19,355
+relations that are expressing
+
+335
+00:11:19,355 --> 00:11:21,380
+the sentence and to abstract
+
+336
+00:11:21,380 --> 00:11:23,320
+that into common
+reusable patterns
+
+337
+00:11:23,540 --> 00:11:26,180
+or structure
+templates of benefits
+
+338
+00:11:26,180 --> 00:11:27,960
+rules as they are
+modeling the ontology,
+
+339
+00:11:28,340 --> 00:11:30,040
+like capturing for
+which services,
+
+340
+00:11:30,645 --> 00:11:32,245
+whether they
+qualify in eligible
+
+341
+00:11:32,245 --> 00:11:33,865
+members, whether the limits,
+
+342
+00:11:33,925 --> 00:11:35,785
+are there any
+other requirements
+
+343
+00:11:36,005 --> 00:11:36,745
+or exclusions.
+
+344
+00:11:37,750 --> 00:11:40,410
+A knowledge graph is then
+
+345
+00:11:40,550 --> 00:11:42,230
+automatically populated with
+
+346
+00:11:42,230 --> 00:11:43,690
+this knowledge funded policy.
+
+347
+00:11:44,790 --> 00:11:47,635
+And because
+automatic knowledge
+
+348
+00:11:47,635 --> 00:11:50,135
+extraction is really
+far from perfect,
+
+349
+00:11:50,675 --> 00:11:53,335
+human AI collaboration
+is crucial
+
+350
+00:11:53,875 --> 00:11:56,690
+for experts to
+review and validate
+
+351
+00:11:56,750 --> 00:11:58,430
+the strategic rules.
+
+352
+00:11:58,430 --> 00:11:59,570
+Once that's done,
+
+353
+00:11:59,790 --> 00:12:02,190
+the last step
+connects the policy
+
+354
+00:12:02,190 --> 00:12:03,810
+information to the structured
+
+355
+00:12:03,870 --> 00:12:04,575
+claim data.
+
+356
+00:12:05,055 --> 00:12:07,235
+This is a mapping
+and configurable
+
+357
+00:12:07,615 --> 00:12:09,375
+step that maps conditions and
+
+358
+00:12:09,375 --> 00:12:11,695
+values from the ontology to
+
+359
+00:12:11,695 --> 00:12:13,315
+column values on the claims.
+
+360
+00:12:13,730 --> 00:12:15,410
+So it can execute on top of
+
+361
+00:12:15,410 --> 00:12:17,650
+claims and label
+the claims that
+
+362
+00:12:17,650 --> 00:12:19,650
+are valid or at risk depending
+
+363
+00:12:19,650 --> 00:12:20,790
+on the type of rule.
+
+364
+00:12:21,835 --> 00:12:24,155
+So this is just
+to impress with
+
+365
+00:12:24,155 --> 00:12:25,595
+some boxes, but no worries.
+
+366
+00:12:25,595 --> 00:12:27,755
+I won't go into detail. Yes.
+
+367
+00:12:27,755 --> 00:12:29,355
+To give a flavor
+here that there
+
+368
+00:12:29,355 --> 00:12:32,010
+are lots of moving
+parts behind
+
+369
+00:12:32,010 --> 00:12:34,250
+an AI system. And these are
+
+370
+00:12:34,250 --> 00:12:35,930
+components that
+we build on top
+
+371
+00:12:35,930 --> 00:12:36,990
+of existing technology,
+
+372
+00:12:37,530 --> 00:12:39,390
+which combines NLP,
+
+373
+00:12:39,945 --> 00:12:42,105
+Now let's reason
+in so we cannot
+
+374
+00:12:42,105 --> 00:12:44,125
+put the knowledge
+base of benefits
+
+375
+00:12:44,185 --> 00:12:46,025
+rules from the policy and that
+
+376
+00:12:46,025 --> 00:12:47,245
+the users can review.
+
+377
+00:12:47,385 --> 00:12:49,550
+And from them, we we can learn
+
+378
+00:12:49,550 --> 00:12:51,310
+from that feedback
+based on deep
+
+379
+00:12:51,310 --> 00:12:52,210
+learning approaches.
+
+380
+00:12:52,270 --> 00:12:54,850
+So the instruction
+improves over time.
+
+381
+00:12:56,430 --> 00:12:59,445
+Here, as a sample
+on the knowledge
+
+382
+00:12:59,445 --> 00:13:01,385
+extraction, this is built on
+
+383
+00:13:01,445 --> 00:13:03,625
+complementary different
+technologies,
+
+384
+00:13:04,085 --> 00:13:07,600
+assistant to perform
+various NLP tasks,
+
+385
+00:13:07,600 --> 00:13:08,980
+like post tagging,
+
+386
+00:13:09,280 --> 00:13:10,580
+ontology based annotations,
+
+387
+00:13:11,440 --> 00:13:13,220
+and to strat
+functional dependencies
+
+388
+00:13:13,360 --> 00:13:15,545
+in text. We you
+we do that based
+
+389
+00:13:15,545 --> 00:13:17,325
+on semantic role
+labeling functionality,
+
+390
+00:13:17,705 --> 00:13:19,005
+like what is the action,
+
+391
+00:13:19,465 --> 00:13:20,345
+who is the agent,
+
+392
+00:13:20,345 --> 00:13:21,565
+the theme of the context,
+
+393
+00:13:21,865 --> 00:13:23,565
+and also dependency trees.
+
+394
+00:13:23,800 --> 00:13:25,820
+These are very
+useful representations
+
+395
+00:13:25,880 --> 00:13:27,560
+for relation
+extraction as they
+
+396
+00:13:27,560 --> 00:13:29,340
+collect entities in a sentence
+
+397
+00:13:29,400 --> 00:13:30,655
+through label edges.
+
+398
+00:13:31,855 --> 00:13:33,635
+In some, different strategies
+
+399
+00:13:33,695 --> 00:13:35,455
+are used to extract those
+
+400
+00:13:35,455 --> 00:13:37,215
+potentially relevant
+textual pot
+
+401
+00:13:37,375 --> 00:13:39,700
+patterns and expose predicate
+
+402
+00:13:39,700 --> 00:13:41,640
+argument structures
+from the sentence.
+
+403
+00:13:42,020 --> 00:13:42,580
+And from those,
+
+404
+00:13:42,580 --> 00:13:44,580
+we build a semantic
+graph based
+
+405
+00:13:44,580 --> 00:13:46,425
+not just of concurrency of
+
+406
+00:13:46,425 --> 00:13:47,465
+entities in the sentence,
+
+407
+00:13:47,465 --> 00:13:49,165
+but how the terms
+are linguistically
+
+408
+00:13:49,465 --> 00:13:50,845
+and semantically connected.
+
+409
+00:13:51,945 --> 00:13:55,200
+So all domain information is
+
+410
+00:13:55,200 --> 00:13:56,100
+inside ontology,
+
+411
+00:13:56,640 --> 00:13:59,760
+and this is a a sample
+of the subset
+
+412
+00:13:59,760 --> 00:14:01,805
+of the ontology
+that represents
+
+413
+00:14:01,865 --> 00:14:03,865
+the scheme of
+the rule described
+
+414
+00:14:03,865 --> 00:14:06,025
+in the sample, which is meant
+
+415
+00:14:06,025 --> 00:14:08,345
+to model a maximum reimburse
+
+416
+00:14:08,345 --> 00:14:10,620
+amount for a service
+for certain
+
+417
+00:14:10,620 --> 00:14:12,640
+members during
+a certain period.
+
+418
+00:14:13,260 --> 00:14:14,640
+And OA is flexible.
+
+419
+00:14:15,180 --> 00:14:17,345
+It does not impose
+a fixed template,
+
+420
+00:14:17,345 --> 00:14:18,865
+but the main
+constraints can be
+
+421
+00:14:18,865 --> 00:14:20,725
+defined to ensure semantically
+
+422
+00:14:20,865 --> 00:14:22,245
+meaningful benefit rules.
+
+423
+00:14:22,305 --> 00:14:23,185
+Like, for example,
+
+424
+00:14:23,505 --> 00:14:25,445
+this joint constraint
+that tells
+
+425
+00:14:25,930 --> 00:14:27,930
+that a service cannot be both
+
+426
+00:14:27,930 --> 00:14:30,090
+a cover applicable service and
+
+427
+00:14:30,090 --> 00:14:32,090
+an excluded service
+in the same
+
+428
+00:14:32,090 --> 00:14:33,150
+benefit rule.
+
+429
+00:14:34,415 --> 00:14:37,135
+So the goal is to
+populate the ontology
+
+430
+00:14:37,135 --> 00:14:38,975
+with a knowledge graph with
+
+431
+00:14:38,975 --> 00:14:40,755
+the benefit rules, if any,
+
+432
+00:14:41,135 --> 00:14:43,235
+extracted from the text.
+
+433
+00:14:43,710 --> 00:14:45,150
+So after matching at the level
+
+434
+00:14:45,150 --> 00:14:47,810
+of entities to
+classes, instances,
+
+435
+00:14:48,190 --> 00:14:49,970
+properties, or data types,
+
+436
+00:14:50,270 --> 00:14:51,950
+the system search for matches
+
+437
+00:14:51,950 --> 00:14:53,225
+at the level of patterns,
+
+438
+00:14:53,865 --> 00:14:55,225
+transforming the text all
+
+439
+00:14:55,225 --> 00:14:57,225
+dependencies into
+graph patterns
+
+440
+00:14:57,225 --> 00:14:58,365
+in a knowledge graph.
+
+441
+00:14:58,585 --> 00:14:59,965
+By reasoning over
+the anthology,
+
+442
+00:15:00,185 --> 00:15:02,890
+it can infer
+implicit relations
+
+443
+00:15:02,950 --> 00:15:04,810
+and a path connecting
+the entities.
+
+444
+00:15:05,030 --> 00:15:06,470
+And this is a simple example
+
+445
+00:15:06,470 --> 00:15:08,730
+where we have
+thousand dollars,
+
+446
+00:15:08,790 --> 00:15:11,050
+which is annotated as
+a monetary amount,
+
+447
+00:15:11,625 --> 00:15:14,125
+and up to, which
+matches an ontological
+
+448
+00:15:14,745 --> 00:15:16,505
+property, which expected range
+
+449
+00:15:16,505 --> 00:15:17,725
+is monetary amount.
+
+450
+00:15:17,865 --> 00:15:18,925
+So they are linguistically
+
+451
+00:15:19,145 --> 00:15:20,445
+connected in the sentence,
+
+452
+00:15:20,650 --> 00:15:22,650
+and we can also
+find a path that
+
+453
+00:15:22,650 --> 00:15:24,250
+semantically connects them to
+
+454
+00:15:24,250 --> 00:15:25,630
+build a knowledge graph.
+
+455
+00:15:25,690 --> 00:15:27,950
+So that's the idea
+behind. Right?
+
+456
+00:15:28,090 --> 00:15:30,375
+And the results is an olive
+
+457
+00:15:30,375 --> 00:15:32,075
+graph that in all information
+
+458
+00:15:32,215 --> 00:15:34,075
+needed for these benefit rules
+
+459
+00:15:34,695 --> 00:15:35,995
+attached to this sentence.
+
+460
+00:15:36,615 --> 00:15:38,880
+Now the goal is not
+just a distraction,
+
+461
+00:15:38,880 --> 00:15:40,420
+but to empower
+the investigators
+
+462
+00:15:40,800 --> 00:15:42,560
+to interact with the tool and
+
+463
+00:15:42,560 --> 00:15:44,420
+to build trust in the AI.
+
+464
+00:15:44,795 --> 00:15:46,495
+So we needed to
+hide the complexity
+
+465
+00:15:46,635 --> 00:15:48,235
+behind this
+knowledge graph and
+
+466
+00:15:48,235 --> 00:15:49,755
+present an unambiguous flat
+
+467
+00:15:49,755 --> 00:15:51,935
+representation of
+a benefit rule.
+
+468
+00:15:52,200 --> 00:15:53,480
+And on top of those,
+
+469
+00:15:53,480 --> 00:15:55,020
+that user friendly
+representation,
+
+470
+00:15:55,720 --> 00:15:57,660
+the user can correct
+any errors.
+
+471
+00:15:57,800 --> 00:15:59,100
+And through these
+validations,
+
+472
+00:15:59,560 --> 00:16:01,180
+they are
+incrementally building
+
+473
+00:16:01,845 --> 00:16:03,225
+institutionally institutional
+
+474
+00:16:03,365 --> 00:16:04,985
+knowledge based
+on policy rules
+
+475
+00:16:05,285 --> 00:16:07,445
+that we can also
+use as a ground
+
+476
+00:16:07,445 --> 00:16:10,090
+truth for evaluation purposes
+
+477
+00:16:10,090 --> 00:16:11,790
+on one hand. So
+we can evaluate
+
+478
+00:16:11,850 --> 00:16:13,530
+in terms of
+precision and recall
+
+479
+00:16:13,530 --> 00:16:15,310
+and publish results
+in conferences.
+
+480
+00:16:16,535 --> 00:16:17,195
+But, also,
+
+481
+00:16:17,655 --> 00:16:20,535
+as we work with
+SMEs and as this
+
+482
+00:16:20,535 --> 00:16:22,075
+shared knowledge
+base is created,
+
+483
+00:16:22,375 --> 00:16:23,515
+the question becomes,
+
+484
+00:16:23,895 --> 00:16:25,735
+how can we learn
+from this human
+
+485
+00:16:25,735 --> 00:16:27,980
+feedback to predict benefit
+
+486
+00:16:28,040 --> 00:16:30,460
+rules in
+a nondeterministic way?
+
+487
+00:16:31,560 --> 00:16:33,240
+So we use the ground
+truth data
+
+488
+00:16:33,240 --> 00:16:35,715
+to fine tune transfer language
+
+489
+00:16:35,775 --> 00:16:37,235
+models such as PERT.
+
+490
+00:16:37,695 --> 00:16:39,215
+Now learning from
+a small grown
+
+491
+00:16:39,375 --> 00:16:41,075
+small ground truth
+data is challenging,
+
+492
+00:16:41,375 --> 00:16:43,200
+so we combine knowledge graph
+
+493
+00:16:43,200 --> 00:16:44,820
+with this deep
+learning approaches,
+
+494
+00:16:45,840 --> 00:16:47,540
+enhanced with
+semantic embeddings
+
+495
+00:16:47,920 --> 00:16:48,800
+with two goals.
+
+496
+00:16:48,800 --> 00:16:51,105
+One is classifying
+with greater
+
+497
+00:16:51,105 --> 00:16:53,345
+accuracy the sections
+in the policy
+
+498
+00:16:53,345 --> 00:16:54,945
+that are most likely relevant
+
+499
+00:16:54,945 --> 00:16:57,025
+with the benefit rule and also
+
+500
+00:16:57,025 --> 00:16:59,525
+to predict the spans
+in a benefit rule.
+
+501
+00:16:59,680 --> 00:17:01,940
+So to be able to
+annotate unseen
+
+502
+00:17:02,080 --> 00:17:04,100
+mentions of entities
+and relations
+
+503
+00:17:04,720 --> 00:17:05,920
+and to annotate them directly
+
+504
+00:17:05,920 --> 00:17:07,220
+with relevant relation.
+
+505
+00:17:07,645 --> 00:17:09,745
+So it is not just
+saying that,
+
+506
+00:17:10,125 --> 00:17:11,825
+let's say, an oral evaluation
+
+507
+00:17:11,885 --> 00:17:13,985
+in the sample is a service,
+
+508
+00:17:14,045 --> 00:17:15,565
+but to say that in the context
+
+509
+00:17:15,565 --> 00:17:18,230
+of this sentence,
+it has two roles.
+
+510
+00:17:18,230 --> 00:17:20,010
+It can be
+an applicable service
+
+511
+00:17:20,390 --> 00:17:22,490
+payable once every
+three years,
+
+512
+00:17:22,870 --> 00:17:24,250
+or it can be a nonreimbursable
+
+513
+00:17:24,790 --> 00:17:26,455
+service if given at the same
+
+514
+00:17:26,455 --> 00:17:28,555
+date and other
+listed reimbursable
+
+515
+00:17:28,615 --> 00:17:30,395
+services. So you
+can see here,
+
+516
+00:17:30,935 --> 00:17:32,715
+the structure is
+quite complex.
+
+517
+00:17:33,730 --> 00:17:34,850
+So it is the learning.
+
+518
+00:17:34,850 --> 00:17:36,050
+So this is work in progress,
+
+519
+00:17:36,050 --> 00:17:37,910
+but we are getting
+preliminary,
+
+520
+00:17:38,530 --> 00:17:39,750
+potentially good results.
+
+521
+00:17:40,690 --> 00:17:43,165
+So now to combat
+fraud, waste,
+
+522
+00:17:43,165 --> 00:17:45,505
+and abuse is a huge market,
+
+523
+00:17:45,965 --> 00:17:48,785
+and it is hard for
+humans to scale.
+
+524
+00:17:49,260 --> 00:17:51,180
+But machines can do it if we
+
+525
+00:17:51,180 --> 00:17:52,700
+capture the right
+knowledge and
+
+526
+00:17:52,700 --> 00:17:54,400
+the sophistication
+in the models.
+
+527
+00:17:55,100 --> 00:17:56,940
+So to prove
+the feasibility and
+
+528
+00:17:56,940 --> 00:17:58,160
+validate the results,
+
+529
+00:17:58,525 --> 00:18:00,045
+we build call to
+standards with
+
+530
+00:18:00,045 --> 00:18:00,865
+our investigators.
+
+531
+00:18:01,725 --> 00:18:03,245
+They manually
+select it and hand
+
+532
+00:18:03,245 --> 00:18:05,505
+coded a set of
+twenty representative
+
+533
+00:18:05,725 --> 00:18:08,210
+algorithms that correspond to
+
+534
+00:18:08,210 --> 00:18:09,830
+some of our policy rules.
+
+535
+00:18:10,050 --> 00:18:11,890
+It is a very
+limited set for now
+
+536
+00:18:11,890 --> 00:18:13,590
+because encoding its algorithm
+
+537
+00:18:14,105 --> 00:18:15,305
+to build the voltage
+standard,
+
+538
+00:18:15,305 --> 00:18:17,005
+it takes
+precious investigations
+
+539
+00:18:17,545 --> 00:18:18,845
+investigators' time.
+
+540
+00:18:19,705 --> 00:18:21,465
+As for those, the system can
+
+541
+00:18:21,465 --> 00:18:23,165
+automatically take
+the validated
+
+542
+00:18:23,305 --> 00:18:25,370
+rules to label
+claims and quantify
+
+543
+00:18:25,510 --> 00:18:27,770
+funds at risk with
+the same accuracy,
+
+544
+00:18:27,990 --> 00:18:29,750
+same precision recall of our
+
+545
+00:18:29,750 --> 00:18:32,730
+SMEs on top of a hundred
+million claims.
+
+546
+00:18:33,895 --> 00:18:35,655
+And this validates
+the semantics
+
+547
+00:18:35,655 --> 00:18:36,635
+behind the model.
+
+548
+00:18:36,775 --> 00:18:37,675
+See, for example,
+
+549
+00:18:38,135 --> 00:18:39,835
+rule seven on the table,
+
+550
+00:18:40,590 --> 00:18:43,310
+it has a relatively
+small number
+
+551
+00:18:43,310 --> 00:18:44,530
+of claims at risk,
+
+552
+00:18:44,590 --> 00:18:46,190
+but they accounted for very
+
+553
+00:18:46,190 --> 00:18:48,270
+large amounts of
+money and funds
+
+554
+00:18:48,270 --> 00:18:49,410
+potentially recoverable.
+
+555
+00:18:50,165 --> 00:18:52,405
+In fact, out of
+a hundred million
+
+556
+00:18:52,405 --> 00:18:55,125
+claims, we can identify almost
+
+557
+00:18:55,125 --> 00:18:57,625
+five hundred thousand
+claims at risk.
+
+558
+00:18:57,830 --> 00:18:59,670
+That is point
+zero five percent
+
+559
+00:18:59,670 --> 00:19:02,150
+of the claims for a total of
+
+560
+00:19:02,150 --> 00:19:03,770
+twenty nine million value.
+
+561
+00:19:04,390 --> 00:19:06,470
+This is pulling needles out of
+
+562
+00:19:06,470 --> 00:19:08,615
+a haystack. This twenty nine
+
+563
+00:19:08,615 --> 00:19:10,615
+million is from a small set of
+
+564
+00:19:10,615 --> 00:19:13,115
+rules selected for
+evaluation purposes,
+
+565
+00:19:13,655 --> 00:19:15,210
+but we have hundreds
+of policies
+
+566
+00:19:15,690 --> 00:19:17,610
+containing hundreds of rules
+
+567
+00:19:17,610 --> 00:19:19,630
+across areas like
+physical therapy,
+
+568
+00:19:19,850 --> 00:19:20,830
+medical equipment,
+
+569
+00:19:21,370 --> 00:19:23,390
+behavioral and mental
+health, vaccines,
+
+570
+00:19:24,010 --> 00:19:25,935
+you name it. So the good thing
+
+571
+00:19:25,935 --> 00:19:27,715
+is that the execution
+of claims
+
+572
+00:19:27,855 --> 00:19:29,555
+is configurable
+and transferable.
+
+573
+00:19:30,815 --> 00:19:32,735
+So there is no need
+to write a unique
+
+574
+00:19:32,735 --> 00:19:34,755
+algorithm to cover each rule.
+
+575
+00:19:34,960 --> 00:19:36,560
+Given the same
+claims as schema,
+
+576
+00:19:36,560 --> 00:19:38,580
+the rule is executed
+on the same
+
+577
+00:19:38,640 --> 00:19:40,260
+way across benefit rules.
+
+578
+00:19:41,040 --> 00:19:42,800
+And that's another
+advantage. Yes.
+
+579
+00:19:42,800 --> 00:19:45,325
+So the investigators
+can approach
+
+580
+00:19:45,325 --> 00:19:47,185
+investigation from
+multiple angles.
+
+581
+00:19:47,325 --> 00:19:48,785
+They can search the policy,
+
+582
+00:19:49,565 --> 00:19:51,405
+relating to suspiciously high
+
+583
+00:19:51,405 --> 00:19:53,740
+bill services,
+and they can see
+
+584
+00:19:53,740 --> 00:19:55,100
+the payment rules
+that have been
+
+585
+00:19:55,100 --> 00:19:57,200
+extracted on what
+policy says.
+
+586
+00:19:57,420 --> 00:19:58,860
+And they can review them and
+
+587
+00:19:58,860 --> 00:20:00,240
+publish them into a dashboard
+
+588
+00:20:01,095 --> 00:20:02,935
+to immediately
+visual visualize
+
+589
+00:20:02,935 --> 00:20:04,935
+how the data looks like based
+
+590
+00:20:04,935 --> 00:20:06,375
+on those rules and the impact
+
+591
+00:20:06,375 --> 00:20:07,975
+in terms of invalid claims and
+
+592
+00:20:07,975 --> 00:20:08,875
+amount of money.
+
+593
+00:20:09,335 --> 00:20:11,900
+And underneath all
+that, the ontology,
+
+594
+00:20:12,280 --> 00:20:14,200
+what it does, it
+provides a shared
+
+595
+00:20:14,200 --> 00:20:16,280
+interpretation of
+the policy and
+
+596
+00:20:16,280 --> 00:20:17,560
+makes this process of rule
+
+597
+00:20:17,560 --> 00:20:19,105
+creation more transparent and
+
+598
+00:20:19,345 --> 00:20:21,365
+comprehensible for
+machine and humans.
+
+599
+00:20:21,665 --> 00:20:22,965
+This increases
+the productivity,
+
+600
+00:20:23,745 --> 00:20:26,865
+basically. It also
+provides an abstraction
+
+601
+00:20:26,865 --> 00:20:28,660
+that allow us to reuse what we
+
+602
+00:20:28,660 --> 00:20:30,180
+learn in one place
+to somewhere
+
+603
+00:20:30,180 --> 00:20:33,640
+else and minimizes
+the gap between
+
+604
+00:20:33,700 --> 00:20:35,865
+the policy intent with inter
+
+605
+00:20:35,865 --> 00:20:37,625
+protection interpretation and
+
+606
+00:20:37,625 --> 00:20:39,705
+the execution, which increase
+
+607
+00:20:39,705 --> 00:20:41,305
+the confidence
+in the rules and
+
+608
+00:20:41,305 --> 00:20:43,390
+the consistency of how
+they are playing.
+
+609
+00:20:43,790 --> 00:20:45,950
+So we are aiming
+to capture more
+
+610
+00:20:45,950 --> 00:20:47,470
+and more diverse
+rules over time
+
+611
+00:20:47,470 --> 00:20:49,150
+and to interpret more complex
+
+612
+00:20:49,150 --> 00:20:50,590
+requirements,
+like if a service
+
+613
+00:20:50,590 --> 00:20:52,530
+was medical
+medically necessary
+
+614
+00:20:52,885 --> 00:20:54,505
+that requires linking health
+
+615
+00:20:54,725 --> 00:20:55,865
+records to claims.
+
+616
+00:20:56,165 --> 00:20:57,385
+And there are
+many opportunities
+
+617
+00:20:57,525 --> 00:20:58,965
+to apply this technology in
+
+618
+00:20:58,965 --> 00:20:59,705
+other scenarios,
+
+619
+00:21:00,405 --> 00:21:02,085
+perhaps to assist pro assist
+
+620
+00:21:02,085 --> 00:21:03,750
+providers to know
+what they need
+
+621
+00:21:03,750 --> 00:21:05,830
+to attach to claims before
+
+622
+00:21:05,830 --> 00:21:07,510
+submission so they don't get
+
+623
+00:21:07,510 --> 00:21:08,950
+rejected by the payers because
+
+624
+00:21:08,950 --> 00:21:10,825
+of missing information or to
+
+625
+00:21:10,825 --> 00:21:12,905
+identify gaps in policy so we
+
+626
+00:21:12,905 --> 00:21:14,125
+can improve the communication
+
+627
+00:21:14,345 --> 00:21:15,725
+between payers and providers.
+
+628
+00:21:16,985 --> 00:21:19,090
+And now let me
+just briefly move
+
+629
+00:21:19,090 --> 00:21:21,170
+to other cool exploratory work
+
+630
+00:21:21,170 --> 00:21:23,090
+in progress. This is on using
+
+631
+00:21:23,090 --> 00:21:24,630
+knowledge graph
+as a foundation
+
+632
+00:21:25,170 --> 00:21:26,610
+for understanding
+the impact of
+
+633
+00:21:26,610 --> 00:21:28,275
+social determinants of class.
+
+634
+00:21:28,595 --> 00:21:30,275
+This is a use
+case example that
+
+635
+00:21:30,275 --> 00:21:32,195
+we published very recently on
+
+636
+00:21:32,195 --> 00:21:33,795
+exploring social drivers of
+
+637
+00:21:33,795 --> 00:21:36,360
+health during COVID
+by leveraging
+
+638
+00:21:36,740 --> 00:21:39,000
+knowledge graph and
+population trends.
+
+639
+00:21:39,620 --> 00:21:41,800
+But first, what are
+social determinants?
+
+640
+00:21:42,475 --> 00:21:44,075
+So those are all
+the things that
+
+641
+00:21:44,075 --> 00:21:45,855
+are in the fringe
+of the traditional
+
+642
+00:21:45,995 --> 00:21:47,055
+health care system,
+
+643
+00:21:47,355 --> 00:21:48,955
+but that have
+a major influence
+
+644
+00:21:48,955 --> 00:21:51,600
+on health and are
+hugely important
+
+645
+00:21:51,820 --> 00:21:54,140
+to determine
+the treatments with
+
+646
+00:21:54,140 --> 00:21:55,120
+successful outcomes.
+
+647
+00:21:55,580 --> 00:21:57,600
+Take, for example,
+homeless of poverty.
+
+648
+00:21:58,675 --> 00:21:59,875
+So they have an impact on
+
+649
+00:21:59,875 --> 00:22:02,455
+admissions to hospital
+and the complications
+
+650
+00:22:02,515 --> 00:22:05,015
+of a disease and
+are often a hidden
+
+651
+00:22:05,235 --> 00:22:07,335
+driver of cost
+behind vulnerable
+
+652
+00:22:07,475 --> 00:22:08,990
+population. There are many
+
+653
+00:22:08,990 --> 00:22:10,210
+examples in the news.
+
+654
+00:22:10,830 --> 00:22:12,610
+Here is million
+dollar married.
+
+655
+00:22:12,910 --> 00:22:15,150
+He was a homeless
+alcoholic man
+
+656
+00:22:15,150 --> 00:22:17,445
+in Nevada. And for ten years,
+
+657
+00:22:17,505 --> 00:22:18,885
+he was on the streets,
+
+658
+00:22:19,185 --> 00:22:21,665
+and he ran a medical
+bill larger
+
+659
+00:22:21,665 --> 00:22:22,965
+than anyone in Nevada.
+
+660
+00:22:23,320 --> 00:22:25,560
+And it is one of
+the samples why
+
+661
+00:22:25,560 --> 00:22:27,580
+social problems may be cheaper
+
+662
+00:22:27,640 --> 00:22:28,860
+to solve than to ignore.
+
+663
+00:22:29,000 --> 00:22:31,000
+It costs one
+million dollars not
+
+664
+00:22:31,000 --> 00:22:32,540
+to do something
+about malware.
+
+665
+00:22:33,415 --> 00:22:35,815
+And despite research showing
+
+666
+00:22:35,815 --> 00:22:37,175
+this strong link between
+
+667
+00:22:37,175 --> 00:22:38,715
+understanding
+social determinants
+
+668
+00:22:39,015 --> 00:22:39,995
+and health outcomes,
+
+669
+00:22:40,135 --> 00:22:42,210
+there is a gap in
+the market for
+
+670
+00:22:42,210 --> 00:22:43,570
+orphanings that work with
+
+671
+00:22:43,570 --> 00:22:45,410
+unstructured tests and that
+
+672
+00:22:45,410 --> 00:22:47,510
+cover social
+determinants of health.
+
+673
+00:22:48,850 --> 00:22:51,075
+Our goal, not there yet,
+
+674
+00:22:51,075 --> 00:22:52,355
+but in the past too,
+
+675
+00:22:52,355 --> 00:22:54,435
+is to bring understanding and
+
+676
+00:22:54,435 --> 00:22:56,455
+evidence on what is the impact
+
+677
+00:22:56,515 --> 00:22:58,880
+of tackling social aspects to
+
+678
+00:22:58,880 --> 00:23:01,120
+improve health outcomes and to
+
+679
+00:23:01,120 --> 00:23:03,780
+reduce the cost on
+populations at risk.
+
+680
+00:23:04,400 --> 00:23:06,580
+Now when when we
+think about COVID,
+
+681
+00:23:06,640 --> 00:23:08,500
+we first think
+about the disease,
+
+682
+00:23:09,425 --> 00:23:10,965
+the symptoms, how it spread,
+
+683
+00:23:11,265 --> 00:23:12,785
+how to cure it,
+
+684
+00:23:12,785 --> 00:23:14,805
+or even the global
+economic crisis.
+
+685
+00:23:15,345 --> 00:23:17,200
+But there are also significant
+
+686
+00:23:17,500 --> 00:23:18,880
+societal consequences.
+
+687
+00:23:19,740 --> 00:23:21,660
+COVID basically
+escalates the need
+
+688
+00:23:21,660 --> 00:23:23,040
+of the vulnerable
+populations,
+
+689
+00:23:23,755 --> 00:23:25,355
+and the social
+problems are made
+
+690
+00:23:25,355 --> 00:23:26,655
+worse because of it.
+
+691
+00:23:26,875 --> 00:23:28,235
+So what we are looking at here
+
+692
+00:23:28,235 --> 00:23:30,955
+is perhaps the less
+study social
+
+693
+00:23:30,955 --> 00:23:32,495
+and other health concerns
+
+694
+00:23:32,980 --> 00:23:34,040
+surrounding the pandemic.
+
+695
+00:23:34,740 --> 00:23:35,960
+Take food insecurity.
+
+696
+00:23:36,820 --> 00:23:37,620
+You may think of,
+
+697
+00:23:38,420 --> 00:23:40,500
+several areas
+where people have
+
+698
+00:23:40,500 --> 00:23:42,040
+not access to food,
+
+699
+00:23:42,315 --> 00:23:43,915
+or you have you have a Spanish
+
+700
+00:23:43,915 --> 00:23:45,115
+mama that will tell you about
+
+701
+00:23:45,115 --> 00:23:47,375
+children in Africa
+at every meal time.
+
+702
+00:23:47,835 --> 00:23:50,230
+But in the US, food insecurity
+
+703
+00:23:50,530 --> 00:23:51,990
+is also a big issue.
+
+704
+00:23:52,690 --> 00:23:55,170
+People that may live in food
+
+705
+00:23:55,170 --> 00:23:56,930
+deserts where they only have
+
+706
+00:23:56,930 --> 00:23:59,835
+access to McDonald's
+and fresh,
+
+707
+00:23:59,835 --> 00:24:01,615
+healthy, real food
+is unaffordable
+
+708
+00:24:01,915 --> 00:24:04,095
+for them. So our contribution
+
+709
+00:24:04,155 --> 00:24:06,640
+in this paper was
+to build a proof
+
+710
+00:24:06,640 --> 00:24:08,740
+of concept where we monitor
+
+711
+00:24:08,800 --> 00:24:10,720
+concerning trends in social
+
+712
+00:24:10,720 --> 00:24:12,240
+determinants that are arising
+
+713
+00:24:12,240 --> 00:24:13,840
+from COVID and link them to
+
+714
+00:24:13,840 --> 00:24:15,600
+other potential
+health and social
+
+715
+00:24:15,600 --> 00:24:18,225
+issues to identify
+those populations
+
+716
+00:24:18,225 --> 00:24:20,705
+that are vulnerable
+or that are
+
+717
+00:24:20,705 --> 00:24:22,405
+at risk of becoming vulnerable
+
+718
+00:24:22,865 --> 00:24:23,765
+during the pandemic.
+
+719
+00:24:25,020 --> 00:24:26,540
+Now differently from clinical
+
+720
+00:24:26,540 --> 00:24:28,700
+data where we have
+many standards
+
+721
+00:24:28,700 --> 00:24:29,360
+and terminology,
+
+722
+00:24:29,900 --> 00:24:32,220
+there is not yet
+a taxonomy for
+
+723
+00:24:32,220 --> 00:24:33,775
+social determinants
+of health,
+
+724
+00:24:34,175 --> 00:24:35,715
+but there is
+an ongoing processes.
+
+725
+00:24:36,415 --> 00:24:37,855
+It is really a big
+effort because
+
+726
+00:24:37,855 --> 00:24:39,475
+the domain is really broad.
+
+727
+00:24:40,255 --> 00:24:42,270
+So for this purpose,
+
+728
+00:24:42,270 --> 00:24:44,910
+for evidence
+discovery relation
+
+729
+00:24:44,910 --> 00:24:45,810
+evidence discovery,
+
+730
+00:24:46,270 --> 00:24:48,590
+we structured
+associations from
+
+731
+00:24:48,590 --> 00:24:50,815
+PubMed between
+social and clinical
+
+732
+00:24:51,035 --> 00:24:53,275
+terms, and we mined those
+
+733
+00:24:53,275 --> 00:24:55,055
+relations into
+a knowledge graph.
+
+734
+00:24:55,595 --> 00:24:56,575
+To start with,
+
+735
+00:24:56,890 --> 00:24:58,670
+we look at
+the social determinants
+
+736
+00:24:58,810 --> 00:25:00,410
+that were trending high and
+
+737
+00:25:00,410 --> 00:25:02,650
+which ones are trending higher
+
+738
+00:25:02,650 --> 00:25:04,385
+when COVID. In particular,
+
+739
+00:25:04,385 --> 00:25:06,385
+we look at Google
+Trends to get
+
+740
+00:25:06,385 --> 00:25:08,145
+a glimpse of
+the social concerns
+
+741
+00:25:08,145 --> 00:25:10,005
+on people's mind
+during COVID.
+
+742
+00:25:10,465 --> 00:25:12,650
+We found trends like jobless,
+
+743
+00:25:12,870 --> 00:25:14,570
+food insecurity,
+and shortage,
+
+744
+00:25:14,950 --> 00:25:16,550
+which coincides
+with the lockdown
+
+745
+00:25:16,550 --> 00:25:18,330
+and thus hardly surprising.
+
+746
+00:25:18,950 --> 00:25:20,410
+So in a second step,
+
+747
+00:25:20,815 --> 00:25:22,415
+we look at for those social
+
+748
+00:25:22,415 --> 00:25:23,455
+trends of interest,
+
+749
+00:25:23,455 --> 00:25:25,475
+like food insecurity
+in scientific
+
+750
+00:25:25,535 --> 00:25:27,295
+literature, particularly in
+
+751
+00:25:27,295 --> 00:25:28,115
+PubMed abstract,
+
+752
+00:25:28,450 --> 00:25:29,890
+to mine the evidence that they
+
+753
+00:25:29,890 --> 00:25:31,350
+could affect people's health.
+
+754
+00:25:31,970 --> 00:25:33,490
+So we tag the text in this
+
+755
+00:25:33,490 --> 00:25:34,850
+abstract with a tool called
+
+756
+00:25:34,850 --> 00:25:36,690
+MetaMap to highlight concepts
+
+757
+00:25:36,930 --> 00:25:37,990
+clinical concepts.
+
+758
+00:25:38,915 --> 00:25:40,855
+And once we have
+those sentences
+
+759
+00:25:41,075 --> 00:25:42,855
+containing both
+food insecurity
+
+760
+00:25:43,315 --> 00:25:45,075
+and other clinical or social
+
+761
+00:25:45,075 --> 00:25:45,975
+related issue,
+
+762
+00:25:46,690 --> 00:25:48,950
+we use a birth
+based classifier
+
+763
+00:25:49,170 --> 00:25:51,090
+to annotate the sentence as is
+
+764
+00:25:51,090 --> 00:25:53,590
+it it has
+a positive association
+
+765
+00:25:53,730 --> 00:25:55,830
+or a negative one
+or no correlation
+
+766
+00:25:56,050 --> 00:25:57,655
+or something more complex.
+
+767
+00:25:57,955 --> 00:25:58,755
+So for example,
+
+768
+00:25:58,755 --> 00:26:00,455
+food insecurity is positively
+
+769
+00:26:00,595 --> 00:26:03,075
+associated with h b a one c.
+
+770
+00:26:03,075 --> 00:26:05,370
+That is one of the markets
+for diabetes.
+
+771
+00:26:05,990 --> 00:26:07,510
+So we capture those
+into a knowledge
+
+772
+00:26:07,510 --> 00:26:09,450
+graph to build our
+first catalog.
+
+773
+00:26:09,590 --> 00:26:11,270
+And this is this is a graph
+
+774
+00:26:11,270 --> 00:26:12,710
+between food insecurity and
+
+775
+00:26:12,710 --> 00:26:14,515
+unemployment with the most
+
+776
+00:26:14,515 --> 00:26:16,535
+relevant neighbors,
+like anxiety,
+
+777
+00:26:16,995 --> 00:26:18,215
+obesity, depression,
+
+778
+00:26:18,675 --> 00:26:20,135
+and a bit of noise too.
+
+779
+00:26:20,595 --> 00:26:22,275
+So we verify some
+of these terms
+
+780
+00:26:22,275 --> 00:26:23,920
+like obesity and coping,
+
+781
+00:26:23,980 --> 00:26:25,660
+and we also find higher trends
+
+782
+00:26:25,660 --> 00:26:26,540
+in Google Earth,
+
+783
+00:26:26,540 --> 00:26:28,380
+which show that we are able to
+
+784
+00:26:28,380 --> 00:26:30,140
+capture relevant
+relations between
+
+785
+00:26:30,140 --> 00:26:31,440
+the social and the health.
+
+786
+00:26:31,835 --> 00:26:34,235
+Now, current and
+future work is
+
+787
+00:26:34,235 --> 00:26:35,755
+to keep improving
+this relation
+
+788
+00:26:35,755 --> 00:26:37,355
+identification to catch more
+
+789
+00:26:37,355 --> 00:26:39,670
+complex relations
+and not ratios
+
+790
+00:26:39,730 --> 00:26:41,750
+so we can assign
+weight to the ages.
+
+791
+00:26:42,290 --> 00:26:43,890
+And the value of
+this knowledge
+
+792
+00:26:43,890 --> 00:26:45,545
+graph is, in fact,
+
+793
+00:26:45,545 --> 00:26:47,325
+to bring it together
+with clinical
+
+794
+00:26:47,465 --> 00:26:49,245
+records or population records
+
+795
+00:26:49,785 --> 00:26:51,465
+to create foundations for new
+
+796
+00:26:51,465 --> 00:26:53,385
+analytic offerings
+offerings and
+
+797
+00:26:53,385 --> 00:26:55,325
+to be able to do
+further research
+
+798
+00:26:55,900 --> 00:26:57,740
+as to quantify the impact of
+
+799
+00:26:57,740 --> 00:26:59,980
+these relations in clinical
+
+800
+00:26:59,980 --> 00:27:02,620
+outcomes and to
+improve current
+
+801
+00:27:02,620 --> 00:27:04,225
+test risk models
+and identify,
+
+802
+00:27:04,445 --> 00:27:05,725
+for example, what kind of
+
+803
+00:27:05,725 --> 00:27:07,405
+interventions we
+could have for
+
+804
+00:27:07,405 --> 00:27:08,685
+those high cost high needs
+
+805
+00:27:08,685 --> 00:27:09,905
+segments of the population.
+
+806
+00:27:10,900 --> 00:27:12,040
+In my experience,
+
+807
+00:27:12,340 --> 00:27:14,260
+using ontologies and
+knowledge graph,
+
+808
+00:27:14,260 --> 00:27:16,260
+they help us really to develop
+
+809
+00:27:16,260 --> 00:27:18,100
+technologies that are able to
+
+810
+00:27:18,100 --> 00:27:19,800
+work with an open
+set of features
+
+811
+00:27:20,075 --> 00:27:22,395
+and that they can
+be reused and
+
+812
+00:27:22,395 --> 00:27:24,315
+they can scale to broad domain
+
+813
+00:27:24,315 --> 00:27:26,575
+knowledge such as including
+
+814
+00:27:26,635 --> 00:27:28,075
+health records, claims,
+
+815
+00:27:28,075 --> 00:27:30,320
+social determinants,
+and so on.
+
+816
+00:27:30,320 --> 00:27:32,000
+So we can build
+models that are
+
+817
+00:27:32,000 --> 00:27:34,400
+more human understandable and
+
+818
+00:27:34,400 --> 00:27:35,380
+machine consumable.
+
+819
+00:27:36,160 --> 00:27:37,200
+And just to finish,
+
+820
+00:27:37,200 --> 00:27:39,200
+I hope I convinced you that
+
+821
+00:27:39,200 --> 00:27:40,465
+health care is one of those
+
+822
+00:27:40,465 --> 00:27:42,225
+areas where AI
+and knowledge can
+
+823
+00:27:42,225 --> 00:27:43,905
+really have major impact and
+
+824
+00:27:43,905 --> 00:27:45,105
+that there are lots of open
+
+825
+00:27:45,105 --> 00:27:47,285
+challenges to keep
+researchers happy.
+
+826
+00:27:47,930 --> 00:27:50,350
+But it is in particular time
+
+827
+00:27:50,490 --> 00:27:52,650
+that we had
+a conversation about
+
+828
+00:27:52,650 --> 00:27:55,530
+what real benefits users final
+
+829
+00:27:55,530 --> 00:27:57,230
+users get from the AI systems
+
+830
+00:27:57,690 --> 00:27:59,355
+and to start designing system
+
+831
+00:27:59,355 --> 00:28:01,435
+for the users rather
+than assuming
+
+832
+00:28:01,435 --> 00:28:03,595
+that a high accuracy
+is sufficient
+
+833
+00:28:03,595 --> 00:28:05,435
+for them. We need
+to define and
+
+834
+00:28:05,435 --> 00:28:06,335
+measure impact,
+
+835
+00:28:07,130 --> 00:28:09,130
+and that requires finding this
+
+836
+00:28:09,130 --> 00:28:10,650
+wow moment where you are able
+
+837
+00:28:10,650 --> 00:28:12,570
+to go to a user
+and tell the story
+
+838
+00:28:12,570 --> 00:28:14,810
+so you engage them
+since the early
+
+839
+00:28:14,810 --> 00:28:16,475
+stages. In my view,
+
+840
+00:28:16,475 --> 00:28:17,535
+there are many benefits,
+
+841
+00:28:17,595 --> 00:28:18,815
+at least in this domain.
+
+842
+00:28:19,035 --> 00:28:19,935
+Like, for example,
+
+843
+00:28:20,155 --> 00:28:21,775
+care professionals turnover
+
+844
+00:28:21,835 --> 00:28:23,295
+turnover is high,
+
+845
+00:28:23,650 --> 00:28:24,930
+knowledgeable experts are in
+
+846
+00:28:24,930 --> 00:28:26,930
+short supply, and
+there is a need
+
+847
+00:28:26,930 --> 00:28:29,250
+to share and scale
+expertise for
+
+848
+00:28:29,250 --> 00:28:31,270
+which knowledge
+is a good tool.
+
+849
+00:28:31,855 --> 00:28:33,615
+There is also an aspiration to
+
+850
+00:28:33,615 --> 00:28:35,475
+support the experts
+with explainable
+
+851
+00:28:35,855 --> 00:28:37,855
+and concise concise
+evidence on
+
+852
+00:28:37,855 --> 00:28:39,935
+the point of care to back up
+
+853
+00:28:39,935 --> 00:28:40,675
+their decisions.
+
+854
+00:28:41,400 --> 00:28:42,860
+Like, whatever it
+is recommending
+
+855
+00:28:43,080 --> 00:28:45,560
+interventions or whatever is
+
+856
+00:28:45,560 --> 00:28:47,400
+identifying ways or improving
+
+857
+00:28:47,400 --> 00:28:48,840
+policy to reduce health care
+
+858
+00:28:48,840 --> 00:28:52,005
+disparities. Like,
+for example,
+
+859
+00:28:52,005 --> 00:28:54,085
+you can give fifty blood text
+
+860
+00:28:54,085 --> 00:28:55,685
+analysis to someone per year,
+
+861
+00:28:55,685 --> 00:28:57,045
+but that won't
+make a difference
+
+862
+00:28:57,045 --> 00:28:58,110
+in any outcome.
+
+863
+00:28:58,110 --> 00:29:00,050
+And the evidence is
+there in the data.
+
+864
+00:29:00,750 --> 00:29:03,250
+But in some, it is not much
+
+865
+00:29:03,470 --> 00:29:05,650
+about what technology
+is underneath,
+
+866
+00:29:06,025 --> 00:29:07,705
+but about empowering
+the health
+
+867
+00:29:07,705 --> 00:29:09,885
+care agencies and
+the governments
+
+868
+00:29:10,025 --> 00:29:12,345
+to reboot society
+with a better
+
+869
+00:29:12,345 --> 00:29:14,260
+way to approach
+health care and
+
+870
+00:29:14,260 --> 00:29:16,580
+a more adaptive
+post COVID health
+
+871
+00:29:16,580 --> 00:29:20,100
+system. And that's the end of
+
+872
+00:29:20,100 --> 00:29:20,920
+my presentation.
+
+873
+00:29:22,220 --> 00:29:24,560
+I think, there's
+some questions
+
+874
+00:29:24,620 --> 00:29:25,840
+coming through at the moment.
+
+875
+00:29:25,900 --> 00:29:28,435
+I can see, a couple
+of people typing.
+
+876
+00:29:28,735 --> 00:29:30,515
+I'll just read
+the first one out.
+
+877
+00:29:30,655 --> 00:29:32,835
+It appears you use OWL,
+
+878
+00:29:33,455 --> 00:29:35,710
+and you have complex
+and explicit
+
+879
+00:29:36,010 --> 00:29:38,110
+SME rules. Question,
+
+880
+00:29:38,330 --> 00:29:40,590
+are you using OWL DL?
+
+881
+00:29:41,210 --> 00:29:43,390
+Which rules engine
+do you use?
+
+882
+00:29:43,895 --> 00:29:45,755
+How do you translate rules
+
+883
+00:29:45,815 --> 00:29:48,055
+implicit in the ontology to
+
+884
+00:29:48,055 --> 00:29:50,055
+those you run against
+the knowledge
+
+885
+00:29:50,055 --> 00:29:53,020
+graph? Question
+from people. Yeah.
+
+886
+00:29:53,020 --> 00:29:53,820
+Yeah. That that is,
+
+887
+00:29:54,060 --> 00:29:55,340
+that is a very good question.
+
+888
+00:29:55,340 --> 00:29:56,640
+I didn't cover that.
+
+889
+00:29:57,100 --> 00:30:00,320
+And, yes, we are
+using actually all,
+
+890
+00:30:00,855 --> 00:30:02,135
+behind, so that's how we are
+
+891
+00:30:02,135 --> 00:30:03,195
+defining the ontology.
+
+892
+00:30:04,775 --> 00:30:07,115
+But then what we
+do is transform
+
+893
+00:30:07,735 --> 00:30:10,560
+this knowledge
+graph into a flat
+
+894
+00:30:10,560 --> 00:30:12,560
+representation that we store
+
+895
+00:30:12,560 --> 00:30:15,120
+actually in a post
+in a Mongo,
+
+896
+00:30:15,120 --> 00:30:16,180
+sorry, in a MongoDB.
+
+897
+00:30:16,975 --> 00:30:18,355
+And it's
+a simple representation
+
+898
+00:30:18,495 --> 00:30:20,175
+where you show just
+the conditions
+
+899
+00:30:20,175 --> 00:30:22,195
+and the values
+so that the SMEs
+
+900
+00:30:22,335 --> 00:30:23,875
+can in a very easy way,
+
+901
+00:30:24,735 --> 00:30:26,560
+with their own
+terminology that
+
+902
+00:30:26,560 --> 00:30:28,100
+we actually define
+in ontology,
+
+903
+00:30:29,280 --> 00:30:31,300
+curate those those rules.
+
+904
+00:30:31,440 --> 00:30:33,760
+And then what happened is is
+
+905
+00:30:33,760 --> 00:30:35,745
+these conditions
+and these values,
+
+906
+00:30:35,745 --> 00:30:38,885
+they are mapped
+for to claims,
+
+907
+00:30:40,145 --> 00:30:42,650
+columns and to claims
+values. Right?
+
+908
+00:30:42,650 --> 00:30:44,010
+So and this is happening in
+
+909
+00:30:44,010 --> 00:30:44,970
+odontology as well.
+
+910
+00:30:44,970 --> 00:30:46,810
+That's domain
+knowledge that we
+
+911
+00:30:46,810 --> 00:30:48,970
+live in odontology
+saying, for example,
+
+912
+00:30:48,970 --> 00:30:51,185
+that the service about topical
+
+913
+00:30:51,185 --> 00:30:52,965
+fluoride describing the policy
+
+914
+00:30:53,585 --> 00:30:55,585
+corresponds to codes zero zero
+
+915
+00:30:55,585 --> 00:30:57,665
+one and codes zero zero two as
+
+916
+00:30:57,665 --> 00:30:58,965
+they are billed
+on the claims.
+
+917
+00:30:59,140 --> 00:31:00,920
+So those that
+linkage information
+
+918
+00:31:01,460 --> 00:31:02,600
+is behind the syntactology,
+
+919
+00:31:03,380 --> 00:31:05,480
+and we use that to basically
+
+920
+00:31:06,180 --> 00:31:07,480
+send a set of queries.
+
+921
+00:31:07,935 --> 00:31:10,275
+So we aggregate the claims.
+
+922
+00:31:10,895 --> 00:31:13,155
+We filter claims
+based on the service
+
+923
+00:31:13,375 --> 00:31:15,395
+or based on
+the period of time.
+
+924
+00:31:15,455 --> 00:31:17,295
+We apply some
+operators like you
+
+925
+00:31:17,295 --> 00:31:19,090
+have to be between this h and
+
+926
+00:31:19,090 --> 00:31:20,470
+this h and so on.
+
+927
+00:31:20,850 --> 00:31:22,710
+So then that executes,
+
+928
+00:31:22,930 --> 00:31:24,290
+and the selected claims,
+
+929
+00:31:24,290 --> 00:31:25,890
+they are marked as valid or as
+
+930
+00:31:25,890 --> 00:31:28,755
+invalid depending on
+the type of rule.
+
+931
+00:31:28,755 --> 00:31:30,855
+So it's it's
+a deterministic approach.
+
+932
+00:31:31,315 --> 00:31:32,695
+What we are now investigating
+
+933
+00:31:32,915 --> 00:31:35,790
+as well is to be to
+use a probabilistic
+
+934
+00:31:36,170 --> 00:31:37,310
+reasoning engine.
+
+935
+00:31:37,610 --> 00:31:40,730
+So to be able to execute that
+
+936
+00:31:40,730 --> 00:31:42,235
+knowledge even in the cases
+
+937
+00:31:42,375 --> 00:31:44,615
+where maybe we are not fully
+
+938
+00:31:44,615 --> 00:31:47,355
+sure or fully confident
+on the rule.
+
+939
+00:31:47,415 --> 00:31:48,855
+So there may be rules that we
+
+940
+00:31:48,855 --> 00:31:50,215
+have a very high
+confidence that
+
+941
+00:31:50,215 --> 00:31:51,450
+they are accurate because they
+
+942
+00:31:51,450 --> 00:31:54,110
+were validated with
+by the users,
+
+943
+00:31:54,410 --> 00:31:55,370
+all the stuff are not.
+
+944
+00:31:55,370 --> 00:31:57,130
+So a probabilistic engine will
+
+945
+00:31:57,130 --> 00:31:59,825
+be a good tool to to
+handle those cases,
+
+946
+00:31:59,825 --> 00:32:01,185
+but that's that's
+currently work
+
+947
+00:32:01,185 --> 00:32:03,665
+in progress. So
+integrating a rule
+
+948
+00:32:03,665 --> 00:32:05,505
+engine is is work
+in progress,
+
+949
+00:32:05,505 --> 00:32:07,445
+and we'll see what
+results we get.
+
+950
+00:32:10,080 --> 00:32:12,480
+Cool. Interesting.
+Thanks for that.
+
+951
+00:32:14,640 --> 00:32:16,320
+Whilst there's
+a couple of people
+
+952
+00:32:16,320 --> 00:32:20,515
+typing questions,
+Keith says thank you,
+
+953
+00:32:22,275 --> 00:32:23,495
+just whilst that's happening,
+
+954
+00:32:24,275 --> 00:32:25,795
+one of the questions
+that came up in,
+
+955
+00:32:26,115 --> 00:32:27,360
+some of the workshop
+shop sessions
+
+956
+00:32:27,360 --> 00:32:28,720
+was around I don't
+know whether
+
+957
+00:32:28,720 --> 00:32:30,740
+you you may be able
+to answer this is,
+
+958
+00:32:31,520 --> 00:32:34,000
+if someone was
+starting to look
+
+959
+00:32:34,000 --> 00:32:36,935
+at open source
+biomedical ontologies,
+
+960
+00:32:37,635 --> 00:32:39,335
+I guess, what
+common ontologies
+
+961
+00:32:39,395 --> 00:32:40,935
+there are that you
+would recommend
+
+962
+00:32:41,155 --> 00:32:43,690
+working with? Yeah.
+
+963
+00:32:43,750 --> 00:32:49,290
+So we have, work
+a lot with ICD ten.
+
+964
+00:32:51,385 --> 00:32:53,225
+It's a very medical medical
+
+965
+00:32:53,225 --> 00:32:55,385
+terminology for, you
+know, all these,
+
+966
+00:32:55,385 --> 00:32:57,920
+like, symptoms,
+diagnosis, and so on.
+
+967
+00:32:58,480 --> 00:33:00,580
+We work a lot as
+well with UMLS,
+
+968
+00:33:00,880 --> 00:33:03,360
+which is a unifying medical
+
+969
+00:33:03,360 --> 00:33:05,965
+language terminology
+that gives
+
+970
+00:33:05,965 --> 00:33:07,185
+you also a lot of information
+
+971
+00:33:07,245 --> 00:33:08,785
+about health care services,
+
+972
+00:33:09,565 --> 00:33:11,425
+a lot of information
+about diagnosis.
+
+973
+00:33:11,645 --> 00:33:12,625
+Like, for example,
+
+974
+00:33:12,685 --> 00:33:15,480
+you are a high risk of cancer
+
+975
+00:33:15,620 --> 00:33:17,400
+or highest risk of
+something else,
+
+976
+00:33:18,660 --> 00:33:20,920
+information about
+treatments and so on.
+
+977
+00:33:21,060 --> 00:33:22,920
+There are also ontologies for
+
+978
+00:33:23,300 --> 00:33:25,315
+procedure codes
+as they are bill
+
+979
+00:33:25,315 --> 00:33:27,175
+on the provider claims.
+
+980
+00:33:27,875 --> 00:33:29,155
+And those are the ones that we
+
+981
+00:33:29,155 --> 00:33:32,360
+are mostly working
+on, but, is,
+
+982
+00:33:32,820 --> 00:33:34,580
+yeah, it's it's
+great to see all
+
+983
+00:33:34,580 --> 00:33:35,860
+these anthologies that are
+
+984
+00:33:35,860 --> 00:33:37,620
+appearing there
+every every day,
+
+985
+00:33:37,620 --> 00:33:39,240
+basically. There
+are more and more.
+
+986
+00:33:42,125 --> 00:33:44,785
+Cool. Thanks, Vanessa.
+
+987
+00:33:44,845 --> 00:33:45,825
+That's really helpful.
+
+988
+00:33:47,325 --> 00:33:48,925
+So we'll just give
+it a second.
+
+989
+00:33:48,925 --> 00:33:53,390
+I can see Douglas
+Moore is typing.
+
+990
+00:33:53,390 --> 00:33:54,990
+So just to see if we can make
+
+991
+00:33:54,990 --> 00:33:57,075
+for his questions
+to come through.
+
+992
+00:33:58,275 --> 00:34:00,535
+And then if that
+doesn't come through,
+
+993
+00:34:00,835 --> 00:34:03,655
+then, we'll probably
+break for lunch.
+
+994
+00:34:03,795 --> 00:34:05,315
+Of course, any anyone that has
+
+995
+00:34:05,315 --> 00:34:08,620
+any follow-up
+questions, please do,
+
+996
+00:34:09,800 --> 00:34:11,560
+link up with Vanessa on the on
+
+997
+00:34:11,560 --> 00:34:12,440
+the Slack channel.
+
+998
+00:34:12,440 --> 00:34:14,165
+You can you can
+ask them there.
+
+999
+00:34:14,245 --> 00:34:18,245
+Here we are. Couple
+of questions.
+
+1000
+00:34:18,245 --> 00:34:20,825
+So was the claims processing,
+
+1001
+00:34:22,390 --> 00:34:25,530
+a point solution for
+validating claims,
+
+1002
+00:34:26,070 --> 00:34:28,310
+or has the effort
+to map source
+
+1003
+00:34:28,310 --> 00:34:29,850
+data to greater benefits?
+
+1004
+00:34:32,725 --> 00:34:37,605
+Not sure if So it seems to be
+
+1005
+00:34:37,605 --> 00:34:40,425
+a question about
+the claim processing.
+
+1006
+00:34:42,790 --> 00:34:45,590
+I'm not so sure
+if I'm not gonna
+
+1007
+00:34:45,590 --> 00:34:47,130
+answer this question
+correctly.
+
+1008
+00:34:47,750 --> 00:34:50,585
+But, so the claim
+processing is
+
+1009
+00:34:50,585 --> 00:34:52,445
+something that is happening
+
+1010
+00:34:52,585 --> 00:34:54,365
+already on the state
+of the art,
+
+1011
+00:34:54,905 --> 00:34:57,065
+and in particular
+for fraud, waste,
+
+1012
+00:34:57,065 --> 00:34:59,550
+and abuse detection
+approaches.
+
+1013
+00:34:59,610 --> 00:35:02,830
+Right? They look at outliers.
+
+1014
+00:35:03,370 --> 00:35:05,130
+They look at
+calculating the risk
+
+1015
+00:35:05,130 --> 00:35:06,725
+of providers and so on.
+
+1016
+00:35:06,805 --> 00:35:09,765
+So the claim data
+is usually in
+
+1017
+00:35:09,765 --> 00:35:11,545
+a very well
+structured format.
+
+1018
+00:35:12,165 --> 00:35:14,085
+Right? And in some cases,
+
+1019
+00:35:14,085 --> 00:35:15,925
+it's also linked with health
+
+1020
+00:35:15,925 --> 00:35:18,230
+records that give you
+extra information.
+
+1021
+00:35:18,230 --> 00:35:20,150
+Like, you can look at the care
+
+1022
+00:35:20,150 --> 00:35:22,230
+pathway of a person,
+the outcomes,
+
+1023
+00:35:22,230 --> 00:35:23,130
+and so on.
+
+1024
+00:35:23,590 --> 00:35:26,465
+What we try to
+do here is a bit
+
+1025
+00:35:26,465 --> 00:35:28,845
+different because we want to
+
+1026
+00:35:30,105 --> 00:35:31,245
+understand the claims,
+
+1027
+00:35:31,465 --> 00:35:33,725
+not by looking only
+at the claim data,
+
+1028
+00:35:33,865 --> 00:35:35,805
+but by understanding
+the policy.
+
+1029
+00:35:36,410 --> 00:35:37,850
+If the policy
+says you can't do
+
+1030
+00:35:37,850 --> 00:35:39,470
+this and you cannot do that,
+
+1031
+00:35:39,610 --> 00:35:42,250
+and then to see
+if we can execute
+
+1032
+00:35:42,250 --> 00:35:43,850
+that on the claim
+of data to see
+
+1033
+00:35:43,850 --> 00:35:45,315
+actually what
+claims they don't
+
+1034
+00:35:45,315 --> 00:35:46,535
+seem to be doing that.
+
+1035
+00:35:47,155 --> 00:35:49,155
+So that gives you
+an indication
+
+1036
+00:35:49,155 --> 00:35:51,095
+to the investigator
+to have a look
+
+1037
+00:35:51,155 --> 00:35:52,995
+and to explore more
+and to create.
+
+1038
+00:35:52,995 --> 00:35:54,515
+If that is the case that they
+
+1039
+00:35:54,515 --> 00:35:57,930
+are really,
+infringing policy,
+
+1040
+00:35:58,230 --> 00:35:59,530
+they can build a case.
+
+1041
+00:35:59,670 --> 00:36:01,270
+And in order to build a case,
+
+1042
+00:36:01,270 --> 00:36:02,410
+they had to tell.
+
+1043
+00:36:02,545 --> 00:36:04,405
+This is a policy
+lay legislation
+
+1044
+00:36:04,465 --> 00:36:05,925
+that these claims
+are breaking.
+
+1045
+00:36:08,465 --> 00:36:10,225
+I'm not sure if
+I answered that
+
+1046
+00:36:10,225 --> 00:36:13,970
+question well. Yeah.
+
+1047
+00:36:13,970 --> 00:36:16,630
+I think, I I think that that,
+
+1048
+00:36:17,330 --> 00:36:19,525
+answered that.
+And then there's
+
+1049
+00:36:20,005 --> 00:36:21,065
+another comment,
+
+1050
+00:36:21,525 --> 00:36:24,825
+from Frederick
+Frederick, Landquist,
+
+1051
+00:36:26,245 --> 00:36:30,530
+using mesh UMLS
+ICD, etcetera,
+
+1052
+00:36:30,590 --> 00:36:31,490
+medical vocabularies.
+
+1053
+00:36:33,390 --> 00:36:35,730
+But have you also created one
+
+1054
+00:36:36,030 --> 00:36:39,195
+context specific
+for the speaking
+
+1055
+00:36:39,655 --> 00:36:42,535
+about the domain
+and mapped this
+
+1056
+00:36:42,535 --> 00:36:44,235
+with the other large
+vocabularies?
+
+1057
+00:36:45,360 --> 00:36:46,960
+Yeah. Yeah. That's correct.
+
+1058
+00:36:46,960 --> 00:36:47,680
+That's the case.
+
+1059
+00:36:47,680 --> 00:36:51,620
+So we actually
+created an ontology
+
+1060
+00:36:51,920 --> 00:36:54,125
+manually with
+the domain as per us.
+
+1061
+00:36:54,525 --> 00:36:57,645
+So we can this
+ontology is the the
+
+1062
+00:36:57,645 --> 00:36:59,165
+one that is guiding
+the knowledge
+
+1063
+00:36:59,165 --> 00:37:01,960
+extraction, and it's basically
+
+1064
+00:37:01,960 --> 00:37:03,980
+focusing on things
+that are actionable.
+
+1065
+00:37:04,440 --> 00:37:06,040
+So I care about these entities
+
+1066
+00:37:06,040 --> 00:37:07,320
+and these relations because
+
+1067
+00:37:07,320 --> 00:37:09,055
+these are the things
+that I can
+
+1068
+00:37:09,055 --> 00:37:11,215
+then go to the claim data and
+
+1069
+00:37:11,215 --> 00:37:13,715
+see if something is
+compliant or not.
+
+1070
+00:37:13,935 --> 00:37:15,775
+So that ontology
+was direct was
+
+1071
+00:37:15,775 --> 00:37:17,075
+created within that schema.
+
+1072
+00:37:17,950 --> 00:37:19,010
+And then, however,
+
+1073
+00:37:19,070 --> 00:37:20,770
+there is a lot of
+instance data.
+
+1074
+00:37:21,310 --> 00:37:23,810
+And for that, we
+use other sources.
+
+1075
+00:37:24,590 --> 00:37:26,655
+There is a lot of
+tabular tabular data.
+
+1076
+00:37:26,815 --> 00:37:28,255
+For example, it thinks about
+
+1077
+00:37:28,255 --> 00:37:30,835
+describing places
+of service. Right?
+
+1078
+00:37:31,375 --> 00:37:32,975
+You can give this service in
+
+1079
+00:37:32,975 --> 00:37:34,275
+the of in the hospital,
+
+1080
+00:37:34,335 --> 00:37:36,095
+or you can give
+this service in
+
+1081
+00:37:36,095 --> 00:37:36,850
+this condition.
+
+1082
+00:37:36,850 --> 00:37:38,290
+So all those codes
+and all those
+
+1083
+00:37:38,290 --> 00:37:41,190
+sources, we list them
+into the ontology,
+
+1084
+00:37:41,970 --> 00:37:43,410
+just by creating some mappings
+
+1085
+00:37:43,410 --> 00:37:44,870
+as in as in fancy.
+
+1086
+00:37:45,365 --> 00:37:47,545
+And we also, through
+the ontology,
+
+1087
+00:37:47,685 --> 00:37:49,145
+links to those other
+terminologies.
+
+1088
+00:37:49,445 --> 00:37:50,405
+So for example,
+
+1089
+00:37:50,405 --> 00:37:51,545
+there may be an eligibility
+
+1090
+00:37:51,605 --> 00:37:53,065
+criteria that says,
+
+1091
+00:37:53,320 --> 00:37:55,400
+in order for you
+to get topical
+
+1092
+00:37:55,400 --> 00:37:57,400
+fluoride, you
+need to be a high
+
+1093
+00:37:57,400 --> 00:37:59,580
+risk of caries or cavities.
+
+1094
+00:38:00,365 --> 00:38:02,705
+So to extract this
+high risk of caries,
+
+1095
+00:38:02,845 --> 00:38:05,085
+we use UMLS. We
+say that we are
+
+1096
+00:38:05,085 --> 00:38:06,685
+expecting something there that
+
+1097
+00:38:06,685 --> 00:38:10,380
+may be a medical
+diagnosis. Right?
+
+1098
+00:38:10,840 --> 00:38:12,920
+And then that is the domain of
+
+1099
+00:38:12,920 --> 00:38:14,360
+that property, and that's some
+
+1100
+00:38:14,360 --> 00:38:15,820
+part of the eligibility
+criteria.
+
+1101
+00:38:16,005 --> 00:38:18,005
+So this is how we
+do the linking
+
+1102
+00:38:18,005 --> 00:38:18,905
+to UMLS.
+
+1103
+00:38:19,365 --> 00:38:20,885
+It's based also it's based
+
+1104
+00:38:20,885 --> 00:38:22,265
+basically on the semantic
+
+1105
+00:38:22,325 --> 00:38:24,345
+hierarchy that UMLS has.
+
+1106
+00:38:27,310 --> 00:38:28,510
+Perfect. Great.
+
+1107
+00:38:28,510 --> 00:38:30,270
+Thanks, thanks so
+much for that,
+
+1108
+00:38:30,270 --> 00:38:30,670
+Vanessa.
+
+1109
+00:38:30,810 --> 00:38:32,350
+Really fantastic talk.
+
+1110
+00:38:33,191 --> 00:38:35,451
+Thanks to you, and
+enjoy your lunch.
+
+1111
+00:38:36,711 --> 00:38:38,651
+You too. Thanks. Bye.
+

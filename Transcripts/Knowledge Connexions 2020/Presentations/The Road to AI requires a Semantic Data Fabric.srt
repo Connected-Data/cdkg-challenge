@@ -1,0 +1,4269 @@
+1
+00:00:01,665 --> 00:00:03,665
+Today, I would like to talk to
+
+2
+00:00:03,665 --> 00:00:04,485
+you about,
+
+3
+00:00:05,505 --> 00:00:08,085
+the concept of
+semantic data fabric.
+
+4
+00:00:08,625 --> 00:00:11,345
+And, so this
+session won't will
+
+5
+00:00:11,345 --> 00:00:13,365
+not be a lot
+around the product
+
+6
+00:00:14,465 --> 00:00:16,760
+of Poopati. It's more around
+
+7
+00:00:16,900 --> 00:00:18,900
+the concept of
+the semantic data fabric,
+
+8
+00:00:18,900 --> 00:00:19,540
+which, of course,
+
+9
+00:00:19,540 --> 00:00:21,400
+can be achieved by using tools
+
+10
+00:00:21,620 --> 00:00:24,200
+such as the Pool Party
+Semantic Suite,
+
+11
+00:00:24,740 --> 00:00:26,680
+which is a semantic
+middleware.
+
+12
+00:00:27,735 --> 00:00:29,415
+I'm working for
+the Semantic Web
+
+13
+00:00:29,415 --> 00:00:30,775
+Company, which
+is the vendor of
+
+14
+00:00:30,775 --> 00:00:32,315
+that product as Ellie said.
+
+15
+00:00:33,415 --> 00:00:35,255
+But I today want
+to talk to you
+
+16
+00:00:35,255 --> 00:00:36,775
+a little bit about
+this concept
+
+17
+00:00:36,775 --> 00:00:39,035
+of data fabric and
+semantic data fabric.
+
+18
+00:00:39,575 --> 00:00:41,415
+As you see in my
+first slide here,
+
+19
+00:00:41,655 --> 00:00:43,390
+there is another
+logo on on that,
+
+20
+00:00:43,630 --> 00:00:44,830
+which is data dot world.
+
+21
+00:00:44,830 --> 00:00:46,510
+You might have
+already attended
+
+22
+00:00:46,510 --> 00:00:47,710
+one or another session of,
+
+23
+00:00:47,870 --> 00:00:49,070
+the colleagues from data dot
+
+24
+00:00:49,070 --> 00:00:51,390
+world today. the reason why
+
+25
+00:00:51,390 --> 00:00:53,410
+there is this logo
+on that is that,
+
+26
+00:00:54,030 --> 00:00:55,470
+data dot world and pool party
+
+27
+00:00:55,470 --> 00:00:57,310
+teamed up to create a semantic
+
+28
+00:00:57,310 --> 00:00:59,155
+data fabric by
+combining the two
+
+29
+00:00:59,635 --> 00:01:03,155
+tools with using
+their features
+
+30
+00:01:03,155 --> 00:01:04,755
+to the best extent to provide
+
+31
+00:01:04,755 --> 00:01:05,955
+a Semantic Data Fabric.
+
+32
+00:01:05,955 --> 00:01:07,635
+But let me talk
+you through that
+
+33
+00:01:07,635 --> 00:01:09,715
+a little bit and I'll give you
+
+34
+00:01:09,715 --> 00:01:10,935
+some examples today.
+
+35
+00:01:11,480 --> 00:01:13,160
+I'll show you
+a demo of how this
+
+36
+00:01:13,160 --> 00:01:16,440
+can look like and
+I'll give you
+
+37
+00:01:16,440 --> 00:01:18,600
+some real world
+examples of how
+
+38
+00:01:18,600 --> 00:01:20,860
+a semantic data fabric
+can be applied.
+
+39
+00:01:21,880 --> 00:01:23,020
+So let's get started.
+
+40
+00:01:23,480 --> 00:01:25,715
+The first question always is,
+
+41
+00:01:26,095 --> 00:01:27,535
+why should you
+care about this?
+
+42
+00:01:27,535 --> 00:01:29,295
+Why is that
+an important topic?
+
+43
+00:01:29,295 --> 00:01:31,135
+Why is Semantic Data
+Fabric an important
+
+44
+00:01:31,135 --> 00:01:33,375
+topic? And because
+we are talking
+
+45
+00:01:33,375 --> 00:01:35,475
+here and then,
+in an environment
+
+46
+00:01:35,695 --> 00:01:37,375
+of people working
+in that field,
+
+47
+00:01:37,375 --> 00:01:38,995
+I think that's
+not new for you.
+
+48
+00:01:39,410 --> 00:01:40,850
+IT systems are
+getting more and
+
+49
+00:01:40,850 --> 00:01:43,190
+more complex, data
+volumes growing,
+
+50
+00:01:43,250 --> 00:01:45,830
+and at the same time,
+our customers or,
+
+51
+00:01:47,010 --> 00:01:49,670
+decision makers are
+demanding simpler,
+
+52
+00:01:49,730 --> 00:01:51,030
+faster decision making,
+
+53
+00:01:51,570 --> 00:01:53,010
+very often based on insights
+
+54
+00:01:53,010 --> 00:01:54,790
+that are automatically
+discovered.
+
+55
+00:01:55,305 --> 00:01:56,905
+So to do that we
+need some kind
+
+56
+00:01:56,905 --> 00:01:58,425
+of tools, to do that we need
+
+57
+00:01:58,425 --> 00:02:00,825
+some kind of help
+and the semantic
+
+58
+00:02:00,825 --> 00:02:03,085
+data fabric can
+help with this.
+
+59
+00:02:05,065 --> 00:02:06,745
+I would like to start this
+
+60
+00:02:06,745 --> 00:02:10,860
+presentation with
+an example Yeah?
+
+61
+00:02:11,160 --> 00:02:12,680
+Because I think
+it's always more
+
+62
+00:02:12,680 --> 00:02:14,780
+relatable if you
+have some examples,
+
+63
+00:02:15,480 --> 00:02:17,320
+to to show on how this,
+
+64
+00:02:19,000 --> 00:02:20,680
+theoretical concept
+can be applied.
+
+65
+00:02:20,680 --> 00:02:23,100
+And today, I'd like
+to take an example
+
+66
+00:02:23,160 --> 00:02:25,480
+from the HR, field
+from the human
+
+67
+00:02:25,480 --> 00:02:26,825
+resource sector.
+
+68
+00:02:26,825 --> 00:02:28,025
+Human resource leaders,
+
+69
+00:02:28,425 --> 00:02:29,945
+very much face an increasing
+
+70
+00:02:29,945 --> 00:02:31,545
+pressure to drive
+business value
+
+71
+00:02:31,545 --> 00:02:32,585
+and optimize costs,
+
+72
+00:02:32,585 --> 00:02:34,185
+especially at times like this
+
+73
+00:02:34,185 --> 00:02:36,685
+with the corona
+situation and so on.
+
+74
+00:02:37,545 --> 00:02:39,100
+they feel that
+pressure a lot.
+
+75
+00:02:39,500 --> 00:02:41,500
+But optimizing
+costs in HR should
+
+76
+00:02:41,500 --> 00:02:43,340
+never be a one off exercise.
+
+77
+00:02:43,340 --> 00:02:44,860
+It should always be an ongoing
+
+78
+00:02:44,860 --> 00:02:46,460
+discipline and it should look
+
+79
+00:02:46,460 --> 00:02:48,460
+beyond just cost
+cutting to find,
+
+80
+00:02:49,340 --> 00:02:51,660
+should, just look beyond cost
+
+81
+00:02:51,660 --> 00:02:54,325
+cutting to find
+real efficiency
+
+82
+00:02:54,325 --> 00:02:56,085
+gains while not risking long
+
+83
+00:02:56,085 --> 00:02:58,745
+term business performance and
+
+84
+00:02:58,965 --> 00:03:00,985
+have a negative impact there.
+
+85
+00:03:01,925 --> 00:03:04,405
+Well, that we all
+know is easier
+
+86
+00:03:04,405 --> 00:03:08,120
+said than done. So
+taking that example.
+
+87
+00:03:09,460 --> 00:03:11,460
+One issue that
+might be that not
+
+88
+00:03:11,460 --> 00:03:12,980
+seeing the full
+picture of your
+
+89
+00:03:12,980 --> 00:03:14,680
+employees skills and expertise
+
+90
+00:03:14,820 --> 00:03:16,500
+can actually cost you a lot of
+
+91
+00:03:16,500 --> 00:03:17,960
+time and money in
+your company.
+
+92
+00:03:18,805 --> 00:03:20,645
+an employee might be spending
+
+93
+00:03:20,645 --> 00:03:22,505
+time to solve a problem slowly
+
+94
+00:03:22,725 --> 00:03:25,225
+or using very expensive
+consultants.
+
+95
+00:03:25,765 --> 00:03:27,045
+When on the other hand side,
+
+96
+00:03:27,205 --> 00:03:28,645
+he or she could solve it much
+
+97
+00:03:28,645 --> 00:03:30,165
+faster and affordably
+by working
+
+98
+00:03:30,165 --> 00:03:31,605
+with a colleague
+who has already
+
+99
+00:03:31,605 --> 00:03:33,310
+that relevant experience
+and knowledge,
+
+100
+00:03:33,550 --> 00:03:34,770
+in that problem space.
+
+101
+00:03:35,470 --> 00:03:37,230
+So one essential component is
+
+102
+00:03:37,230 --> 00:03:38,990
+always to see the full picture
+
+103
+00:03:38,990 --> 00:03:40,930
+of your employees'
+skills and expertise.
+
+104
+00:03:41,710 --> 00:03:42,990
+And again, that
+sounds simple,
+
+105
+00:03:42,990 --> 00:03:44,510
+but it requires
+a lot of different
+
+106
+00:03:44,510 --> 00:03:45,870
+things, especially in in in
+
+107
+00:03:45,870 --> 00:03:46,610
+large companies.
+
+108
+00:03:47,175 --> 00:03:48,795
+It requires to have
+the possibility
+
+109
+00:03:49,015 --> 00:03:50,535
+to connect and reuse data from
+
+110
+00:03:50,535 --> 00:03:51,995
+various different
+data sources.
+
+111
+00:03:52,375 --> 00:03:55,495
+It requires to put
+data in a semantic
+
+112
+00:03:55,495 --> 00:03:57,895
+context. It's not just enough
+
+113
+00:03:57,895 --> 00:03:59,335
+to have access to the data but
+
+114
+00:03:59,335 --> 00:04:00,695
+you really need to be able to
+
+115
+00:04:00,695 --> 00:04:02,215
+connect the data
+in a meaningful
+
+116
+00:04:02,215 --> 00:04:04,590
+way and I'll show
+you in a second
+
+117
+00:04:04,590 --> 00:04:07,330
+on how this can be
+done in this example.
+
+118
+00:04:08,670 --> 00:04:09,790
+You will need to be able to
+
+119
+00:04:09,790 --> 00:04:10,990
+react fast and be Agile.
+
+120
+00:04:10,990 --> 00:04:12,930
+I mean, we all
+know that that's
+
+121
+00:04:12,990 --> 00:04:14,350
+what we always need to do,
+
+122
+00:04:14,350 --> 00:04:17,310
+what we need to
+provide and that
+
+123
+00:04:17,310 --> 00:04:19,455
+means there isn't often not
+
+124
+00:04:19,675 --> 00:04:21,515
+enough time to
+just start another
+
+125
+00:04:21,515 --> 00:04:23,115
+big project to set up another
+
+126
+00:04:23,115 --> 00:04:25,035
+system to build
+a new data model
+
+127
+00:04:25,035 --> 00:04:27,055
+and so on.
+
+128
+00:04:27,915 --> 00:04:30,555
+And so typically the challenge
+
+129
+00:04:30,555 --> 00:04:32,155
+that we have here
+is that the data
+
+130
+00:04:32,155 --> 00:04:33,435
+and information that you need
+
+131
+00:04:33,435 --> 00:04:35,110
+for this is siloed
+in disconnected
+
+132
+00:04:35,170 --> 00:04:37,890
+systems. poor data quality is
+
+133
+00:04:37,890 --> 00:04:39,190
+very often the unintended
+
+134
+00:04:39,330 --> 00:04:42,130
+consequence of data silos and
+
+135
+00:04:42,130 --> 00:04:43,650
+also
+the unintended consequence
+
+136
+00:04:43,650 --> 00:04:45,430
+of poor data and
+analytics governance.
+
+137
+00:04:46,225 --> 00:04:47,925
+So by combining
+this unstructured
+
+138
+00:04:48,065 --> 00:04:48,865
+and structured data,
+
+139
+00:04:48,865 --> 00:04:51,345
+let's think about
+the HR use case again.
+
+140
+00:04:51,505 --> 00:04:53,125
+that might be HR databases,
+
+141
+00:04:53,425 --> 00:04:54,965
+resumes on file servers,
+
+142
+00:04:55,105 --> 00:04:56,885
+assignment lists to projects,
+
+143
+00:04:57,905 --> 00:04:59,505
+articles written by your staff
+
+144
+00:04:59,505 --> 00:05:00,820
+members and so on.
+
+145
+00:05:00,900 --> 00:05:03,320
+So by combining
+these structured
+
+146
+00:05:03,460 --> 00:05:05,380
+and unstructured
+data you really
+
+147
+00:05:05,380 --> 00:05:06,980
+can start optimize costs and
+
+148
+00:05:06,980 --> 00:05:07,720
+boost productivity.
+
+149
+00:05:08,260 --> 00:05:10,120
+by better matching your people
+
+150
+00:05:10,340 --> 00:05:11,700
+to the problems and the tasks
+
+151
+00:05:11,700 --> 00:05:13,380
+and by helping them to team up
+
+152
+00:05:13,380 --> 00:05:14,580
+with other people who already
+
+153
+00:05:14,580 --> 00:05:17,045
+solved that task or who have
+
+154
+00:05:17,045 --> 00:05:18,265
+expertise in this.
+
+155
+00:05:20,245 --> 00:05:22,485
+This example I'm using also in
+
+156
+00:05:22,485 --> 00:05:23,865
+at the end of
+that presentation
+
+157
+00:05:24,005 --> 00:05:25,685
+in a small demo that I'm going
+
+158
+00:05:25,685 --> 00:05:27,845
+to show you. but now let's get
+
+159
+00:05:27,845 --> 00:05:30,005
+back to the concept
+of the Semantic
+
+160
+00:05:30,005 --> 00:05:30,660
+Data Fabric.
+
+161
+00:05:30,660 --> 00:05:32,520
+So what is the Semantic
+Data Fabric?
+
+162
+00:05:33,860 --> 00:05:35,940
+Well, the essential
+of a Semantic
+
+163
+00:05:35,940 --> 00:05:38,100
+Data Fabric is
+it's always built
+
+164
+00:05:38,100 --> 00:05:40,020
+on existing
+investments in data
+
+165
+00:05:40,020 --> 00:05:42,040
+infrastructure.
+It can leverage
+
+166
+00:05:42,100 --> 00:05:43,780
+the existing data assets like
+
+167
+00:05:43,780 --> 00:05:44,760
+your data warehouse,
+
+168
+00:05:45,300 --> 00:05:47,675
+your data lakes
+and all the things
+
+169
+00:05:47,675 --> 00:05:49,195
+that your organization
+has already
+
+170
+00:05:49,195 --> 00:05:51,275
+built. When you think about
+
+171
+00:05:51,275 --> 00:05:52,795
+the concept of
+the Semantic Data
+
+172
+00:05:52,795 --> 00:05:54,635
+Fabric you always start by
+
+173
+00:05:54,635 --> 00:05:56,175
+cataloging your data assets.
+
+174
+00:05:56,395 --> 00:05:58,575
+By making an inventory
+of the metadata
+
+175
+00:05:58,715 --> 00:06:00,700
+that describes your data and
+
+176
+00:06:00,700 --> 00:06:02,540
+making that catalog available
+
+177
+00:06:02,540 --> 00:06:03,360
+to the organization.
+
+178
+00:06:03,420 --> 00:06:04,880
+That's the very first step.
+
+179
+00:06:06,300 --> 00:06:07,740
+For that, the data
+warehouse and
+
+180
+00:06:07,740 --> 00:06:09,580
+the data lakes are
+very important
+
+181
+00:06:09,580 --> 00:06:11,340
+here because we
+need a place to
+
+182
+00:06:11,340 --> 00:06:12,060
+store the data.
+
+183
+00:06:12,060 --> 00:06:13,500
+We need a place to govern it,
+
+184
+00:06:13,500 --> 00:06:15,440
+to run our jobs, and so on.
+
+185
+00:06:15,975 --> 00:06:18,215
+The Data Catalog is
+then the jumping
+
+186
+00:06:18,215 --> 00:06:19,735
+off point for providing access
+
+187
+00:06:19,735 --> 00:06:20,875
+to that data resources.
+
+188
+00:06:21,335 --> 00:06:23,255
+And from there
+you can start to
+
+189
+00:06:23,255 --> 00:06:24,695
+harvest the knowledge of your
+
+190
+00:06:24,695 --> 00:06:26,555
+organization to
+answer the questions
+
+191
+00:06:26,615 --> 00:06:28,535
+about what is contained within
+
+192
+00:06:28,535 --> 00:06:30,475
+these data sets,
+in the catalog.
+
+193
+00:06:31,380 --> 00:06:32,500
+What do they mean?
+
+194
+00:06:32,500 --> 00:06:33,640
+How are they connected?
+
+195
+00:06:34,020 --> 00:06:35,480
+And this is where
+the semantics
+
+196
+00:06:35,540 --> 00:06:37,080
+of the Semantic Data Fabric
+
+197
+00:06:37,380 --> 00:06:38,680
+really comes into play.
+
+198
+00:06:38,980 --> 00:06:40,760
+It's about
+capturing organizational
+
+199
+00:06:40,900 --> 00:06:42,600
+knowledge in
+a structured fashion
+
+200
+00:06:42,980 --> 00:06:45,460
+with using linked
+data as an essential
+
+201
+00:06:45,460 --> 00:06:47,065
+piece of that semantic data
+
+202
+00:06:47,065 --> 00:06:47,805
+fabric concept.
+
+203
+00:06:48,745 --> 00:06:50,665
+This semantic layer that I'm
+
+204
+00:06:50,665 --> 00:06:52,585
+talking about here is always
+
+205
+00:06:52,585 --> 00:06:54,765
+formed by an enterprise
+knowledge graph,
+
+206
+00:06:55,065 --> 00:06:57,385
+which creates a uniform and
+
+207
+00:06:57,385 --> 00:06:58,845
+unified data environment.
+
+208
+00:06:59,730 --> 00:07:00,950
+And because that enterprise
+
+209
+00:07:01,010 --> 00:07:02,530
+knowledge graph is
+such an important
+
+210
+00:07:02,530 --> 00:07:04,770
+component of the semantic
+data fabric,
+
+211
+00:07:04,770 --> 00:07:06,690
+I would like to go
+into the theory
+
+212
+00:07:06,690 --> 00:07:08,930
+of that a little bit to talk
+
+213
+00:07:08,930 --> 00:07:10,690
+about what is that enterprise
+
+214
+00:07:10,690 --> 00:07:11,395
+knowledge graph.
+
+215
+00:07:12,195 --> 00:07:13,655
+So as I said it's
+a centerpiece
+
+216
+00:07:13,715 --> 00:07:15,575
+component of the semantic
+data fabric.
+
+217
+00:07:16,355 --> 00:07:18,215
+In order to build
+robust systems,
+
+218
+00:07:18,755 --> 00:07:20,035
+that are really accurate and
+
+219
+00:07:20,035 --> 00:07:21,235
+manageable in the long term,
+
+220
+00:07:21,235 --> 00:07:22,595
+what we need to
+have is we need
+
+221
+00:07:22,595 --> 00:07:24,275
+to have a layer
+between the actual
+
+222
+00:07:24,275 --> 00:07:27,080
+data and the content
+and the application
+
+223
+00:07:27,300 --> 00:07:28,980
+which allows you to query and
+
+224
+00:07:28,980 --> 00:07:30,420
+join the data from various
+
+225
+00:07:30,420 --> 00:07:31,640
+different sources easily.
+
+226
+00:07:31,940 --> 00:07:33,220
+So when you look at the model
+
+227
+00:07:33,220 --> 00:07:34,840
+on the right hand
+of that slide,
+
+228
+00:07:35,380 --> 00:07:36,980
+that you have in front of you
+
+229
+00:07:36,980 --> 00:07:38,440
+and you start
+from the bottom,
+
+230
+00:07:38,785 --> 00:07:40,705
+You can see that
+we start off,
+
+231
+00:07:41,025 --> 00:07:43,105
+with the existing,
+data sources,
+
+232
+00:07:43,105 --> 00:07:45,185
+which are very often as set in
+
+233
+00:07:45,185 --> 00:07:46,245
+unconnected silos.
+
+234
+00:07:47,185 --> 00:07:47,985
+Above that layer,
+
+235
+00:07:47,985 --> 00:07:49,905
+there is an additional virtual
+
+236
+00:07:49,905 --> 00:07:51,985
+data layer that links
+all your data.
+
+237
+00:07:51,985 --> 00:07:53,685
+Let it be structured
+or unstructured
+
+238
+00:07:53,745 --> 00:07:56,070
+data. This is
+basically a graph
+
+239
+00:07:56,070 --> 00:07:57,750
+version of
+the existing data and
+
+240
+00:07:57,750 --> 00:07:59,690
+represents the relationships
+
+241
+00:08:00,070 --> 00:08:01,770
+between your
+database content,
+
+242
+00:08:01,910 --> 00:08:03,130
+your document repositories,
+
+243
+00:08:03,990 --> 00:08:07,185
+your datasets, and so on.
+
+244
+00:08:07,185 --> 00:08:08,625
+And then there
+comes the domain
+
+245
+00:08:08,625 --> 00:08:09,985
+model of your knowledge domain
+
+246
+00:08:09,985 --> 00:08:11,425
+in place and this is very very
+
+247
+00:08:11,425 --> 00:08:12,805
+important part of this.
+
+248
+00:08:13,025 --> 00:08:14,545
+This is the third
+layer in this
+
+249
+00:08:14,545 --> 00:08:16,065
+four layered architecture and
+
+250
+00:08:16,065 --> 00:08:18,325
+it is the so called
+conceptual model.
+
+251
+00:08:18,960 --> 00:08:20,820
+We also refer to
+that very often
+
+252
+00:08:21,600 --> 00:08:23,600
+as ontology and you have heard
+
+253
+00:08:23,600 --> 00:08:25,040
+that today definitely already
+
+254
+00:08:25,040 --> 00:08:25,780
+several times.
+
+255
+00:08:25,920 --> 00:08:27,600
+As well as
+the linguistic model
+
+256
+00:08:27,600 --> 00:08:28,980
+referred to as
+the taxonomies.
+
+257
+00:08:30,240 --> 00:08:32,755
+So by the combination of that
+
+258
+00:08:32,755 --> 00:08:34,135
+conceptual and the linguistic
+
+259
+00:08:34,275 --> 00:08:36,855
+model and the virtual
+data graph
+
+260
+00:08:37,395 --> 00:08:39,255
+really represents
+this enterprise
+
+261
+00:08:39,315 --> 00:08:41,175
+knowledge graph as we call it
+
+262
+00:08:41,395 --> 00:08:43,335
+and as we have it
+here as a centerpiece
+
+263
+00:08:43,990 --> 00:08:48,710
+of the Semantic
+Data Fabric and
+
+264
+00:08:48,710 --> 00:08:50,710
+the applications that we build
+
+265
+00:08:50,710 --> 00:08:52,570
+are really sitting
+on top of that.
+
+266
+00:08:55,830 --> 00:08:59,525
+So let me make
+a quick, quick,
+
+267
+00:08:59,765 --> 00:09:02,165
+excuse into a topic that I
+
+268
+00:09:02,165 --> 00:09:04,165
+personally find is a very,
+
+269
+00:09:04,165 --> 00:09:05,765
+very important
+one when we talk
+
+270
+00:09:05,765 --> 00:09:08,165
+about this. We call
+it the Knowledge
+
+271
+00:09:08,165 --> 00:09:09,145
+Graph Life Cycle.
+
+272
+00:09:09,765 --> 00:09:11,890
+Why am I mentioning it here?
+
+273
+00:09:11,890 --> 00:09:13,250
+Because it's very important to
+
+274
+00:09:13,250 --> 00:09:14,850
+understand how
+such a knowledge
+
+275
+00:09:14,850 --> 00:09:16,370
+graph is actually built.
+
+276
+00:09:16,370 --> 00:09:17,490
+How is it maintained?
+
+277
+00:09:17,490 --> 00:09:18,470
+How is it improved?
+
+278
+00:09:19,490 --> 00:09:20,850
+The most important thing here
+
+279
+00:09:20,850 --> 00:09:22,705
+is that a knowledge
+graph always
+
+280
+00:09:22,705 --> 00:09:24,225
+means that humans and machines
+
+281
+00:09:24,225 --> 00:09:25,665
+need to be able
+to work together
+
+282
+00:09:25,665 --> 00:09:26,705
+in an agile way.
+
+283
+00:09:26,705 --> 00:09:28,385
+We call this
+the human in the loop
+
+284
+00:09:28,385 --> 00:09:28,885
+principle.
+
+285
+00:09:29,265 --> 00:09:31,025
+So you see here
+we have a we we
+
+286
+00:09:31,025 --> 00:09:33,265
+think that the human is a very
+
+287
+00:09:33,265 --> 00:09:34,625
+important component of this.
+
+288
+00:09:34,625 --> 00:09:36,620
+It's not just all about fully
+
+289
+00:09:36,620 --> 00:09:38,480
+automatic automatizing
+everything.
+
+290
+00:09:38,620 --> 00:09:40,540
+It is about the combination of
+
+291
+00:09:40,540 --> 00:09:42,560
+the human and and
+the machine.
+
+292
+00:09:43,660 --> 00:09:45,180
+So the development
+of a knowledge
+
+293
+00:09:45,180 --> 00:09:46,460
+graph is always an endeavor
+
+294
+00:09:46,460 --> 00:09:47,920
+involving several stakeholders
+
+295
+00:09:47,980 --> 00:09:49,675
+and it's important to map them
+
+296
+00:09:49,675 --> 00:09:51,115
+out and we try to do this here
+
+297
+00:09:51,115 --> 00:09:52,255
+in this in this picture.
+
+298
+00:09:53,275 --> 00:09:54,555
+there are three loops that are
+
+299
+00:09:54,555 --> 00:09:55,835
+always working
+together and that
+
+300
+00:09:55,835 --> 00:09:56,495
+are interlinked.
+
+301
+00:09:56,715 --> 00:09:58,235
+Let me start with
+the first one
+
+302
+00:09:58,235 --> 00:09:59,535
+in orange on top.
+
+303
+00:09:59,595 --> 00:10:01,180
+This is the so
+called user loop.
+
+304
+00:10:01,660 --> 00:10:03,500
+Here in this loop
+business users
+
+305
+00:10:03,500 --> 00:10:05,180
+and data scientists interact
+
+306
+00:10:05,180 --> 00:10:06,860
+with the data.
+They are not only
+
+307
+00:10:06,860 --> 00:10:09,120
+data consumers but
+also data producers.
+
+308
+00:10:10,620 --> 00:10:12,700
+Then in second loop,
+the blue one,
+
+309
+00:10:13,340 --> 00:10:15,340
+bottom left, is the so called
+
+310
+00:10:15,340 --> 00:10:16,240
+expert loop.
+
+311
+00:10:16,525 --> 00:10:17,565
+In the expert loop,
+
+312
+00:10:17,565 --> 00:10:18,625
+the knowledge engineers,
+
+313
+00:10:18,685 --> 00:10:20,285
+the subject matter experts are
+
+314
+00:10:20,285 --> 00:10:21,425
+modeling your knowledge,
+
+315
+00:10:22,045 --> 00:10:23,165
+your domain knowledge,
+
+316
+00:10:23,165 --> 00:10:26,205
+and they work on that,
+conceptual layer.
+
+317
+00:10:26,205 --> 00:10:28,225
+So the taxonomies
+and the ontologies.
+
+318
+00:10:29,990 --> 00:10:32,310
+And then you have
+the third loop,
+
+319
+00:10:32,790 --> 00:10:34,330
+on bottom right,
+
+320
+00:10:34,950 --> 00:10:36,390
+which is the automation loop.
+
+321
+00:10:36,390 --> 00:10:37,510
+In the automation loop,
+
+322
+00:10:37,510 --> 00:10:39,130
+the data engineers
+are involved,
+
+323
+00:10:39,750 --> 00:10:41,690
+they do data cleaning,
+transforming,
+
+324
+00:10:41,910 --> 00:10:44,185
+enriching of data
+and all these
+
+325
+00:10:44,265 --> 00:10:45,005
+three loops,
+
+326
+00:10:45,385 --> 00:10:49,305
+really work together
+and the working
+
+327
+00:10:49,305 --> 00:10:50,745
+together is really
+supported by
+
+328
+00:10:50,745 --> 00:10:52,665
+the machine. So the aim,
+
+329
+00:10:52,985 --> 00:10:54,345
+of this Knowledge Graph life
+
+330
+00:10:54,345 --> 00:10:56,125
+cycle is always
+to have a balance
+
+331
+00:10:56,185 --> 00:10:57,785
+between these three
+most important
+
+332
+00:10:57,785 --> 00:10:59,485
+perspectives of
+a Knowledge Graph.
+
+333
+00:10:59,760 --> 00:11:01,860
+First one is we
+want to represent
+
+334
+00:11:02,080 --> 00:11:03,540
+the domain knowledge
+accurately.
+
+335
+00:11:04,000 --> 00:11:06,480
+Second one is we want to link
+
+336
+00:11:06,480 --> 00:11:08,400
+company data and the third one
+
+337
+00:11:08,400 --> 00:11:10,560
+is we want to enrich it with
+
+338
+00:11:10,560 --> 00:11:11,460
+user context.
+
+339
+00:11:12,975 --> 00:11:14,415
+So but now let's get back to
+
+340
+00:11:14,415 --> 00:11:16,015
+the concept of
+the Semantic Data
+
+341
+00:11:16,015 --> 00:11:17,855
+Fabric itself.
+This one is a very
+
+342
+00:11:17,855 --> 00:11:19,935
+important thing
+to just keep and
+
+343
+00:11:19,935 --> 00:11:21,215
+remember when working with
+
+344
+00:11:21,215 --> 00:11:22,735
+knowledge graphs but let's go
+
+345
+00:11:22,735 --> 00:11:24,995
+back to the Semantic
+Data Fabric itself.
+
+346
+00:11:26,940 --> 00:11:28,220
+If you think of the semantic
+
+347
+00:11:28,220 --> 00:11:30,860
+data fabric a bit as a data
+
+348
+00:11:30,860 --> 00:11:32,160
+catalog meets semantics,
+
+349
+00:11:33,020 --> 00:11:35,200
+then certain themes
+start to arise.
+
+350
+00:11:35,820 --> 00:11:37,040
+it's all about discovery,
+
+351
+00:11:37,980 --> 00:11:39,180
+sharing and finding all sorts
+
+352
+00:11:39,180 --> 00:11:41,100
+of metadata and the data they
+
+353
+00:11:41,100 --> 00:11:43,505
+describe and doing so based on
+
+354
+00:11:43,505 --> 00:11:45,025
+semantic models that refer to
+
+355
+00:11:45,025 --> 00:11:46,645
+real world entities
+and relationships.
+
+356
+00:11:48,145 --> 00:11:49,905
+it's so it's when
+we talk about
+
+357
+00:11:49,905 --> 00:11:51,345
+the data there it's not solely
+
+358
+00:11:51,345 --> 00:11:52,785
+based on the physical location
+
+359
+00:11:52,785 --> 00:11:54,065
+and the layout of the data but
+
+360
+00:11:54,065 --> 00:11:55,265
+it's always about the meaning
+
+361
+00:11:55,265 --> 00:11:56,005
+of the data.
+
+362
+00:11:58,110 --> 00:11:59,630
+When using the Semantic Data
+
+363
+00:11:59,630 --> 00:12:01,410
+Fabric concept you can always
+
+364
+00:12:01,790 --> 00:12:03,330
+also leverage natural language
+
+365
+00:12:03,390 --> 00:12:05,170
+techniques to
+process unstructured
+
+366
+00:12:05,310 --> 00:12:06,830
+data and synthesize it with
+
+367
+00:12:06,830 --> 00:12:08,050
+structured data sources.
+
+368
+00:12:08,190 --> 00:12:09,295
+It's It's a very important
+
+369
+00:12:09,355 --> 00:12:11,115
+component because you start to
+
+370
+00:12:11,115 --> 00:12:13,275
+be able to link structured and
+
+371
+00:12:13,275 --> 00:12:16,175
+unstructured content
+and understand
+
+372
+00:12:16,315 --> 00:12:17,695
+the content of
+the unstructured
+
+373
+00:12:17,755 --> 00:12:18,495
+data sources.
+
+374
+00:12:20,475 --> 00:12:22,080
+Then the knowledge you capture
+
+375
+00:12:22,080 --> 00:12:23,760
+is always linked
+together in a knowledge
+
+376
+00:12:23,760 --> 00:12:25,040
+graph and I mentioned
+that before
+
+377
+00:12:25,040 --> 00:12:27,360
+and I think I
+emphasized already
+
+378
+00:12:27,360 --> 00:12:28,880
+quite a lot how important that
+
+379
+00:12:28,880 --> 00:12:30,020
+central piece is.
+
+380
+00:12:30,560 --> 00:12:32,080
+And as a last
+point I would like
+
+381
+00:12:32,080 --> 00:12:33,940
+to mention that you always can
+
+382
+00:12:35,120 --> 00:12:37,415
+use machine learning
+to automate
+
+383
+00:12:37,415 --> 00:12:39,015
+or enhance data integration on
+
+384
+00:12:39,015 --> 00:12:40,475
+top of that strong foundation
+
+385
+00:12:41,175 --> 00:12:43,275
+that the semantic models and
+
+386
+00:12:43,495 --> 00:12:44,875
+the semantic infrastructure
+
+387
+00:12:44,935 --> 00:12:47,355
+metadata catalog
+has already built.
+
+388
+00:12:48,840 --> 00:12:50,760
+So let me guide
+you step by step
+
+389
+00:12:50,760 --> 00:12:52,600
+through how a semantic data
+
+390
+00:12:52,600 --> 00:12:53,580
+fabric is built.
+
+391
+00:12:53,800 --> 00:12:55,720
+Let's start with
+the first step here.
+
+392
+00:12:55,720 --> 00:12:56,600
+And you see again,
+
+393
+00:12:56,600 --> 00:12:57,560
+there are the two logos,
+
+394
+00:12:57,560 --> 00:12:58,920
+this pool party and
+data to world.
+
+395
+00:12:58,920 --> 00:13:00,940
+So this is now built
+on the capabilities
+
+396
+00:13:01,160 --> 00:13:02,760
+of the two tools and how they
+
+397
+00:13:02,760 --> 00:13:03,500
+work together.
+
+398
+00:13:05,045 --> 00:13:07,145
+All of it starts
+as I said with
+
+399
+00:13:07,205 --> 00:13:08,505
+what you've already built.
+
+400
+00:13:08,725 --> 00:13:11,145
+The data fabric is
+never a greenfield
+
+401
+00:13:11,205 --> 00:13:12,105
+type of deployment.
+
+402
+00:13:12,245 --> 00:13:14,325
+It's essentially
+always deployed
+
+403
+00:13:14,325 --> 00:13:17,465
+in an active and
+heavy populated
+
+404
+00:13:17,685 --> 00:13:18,505
+data environment.
+
+405
+00:13:18,885 --> 00:13:21,220
+So, the pattern is actually
+
+406
+00:13:21,220 --> 00:13:22,420
+designed to be something that
+
+407
+00:13:22,420 --> 00:13:24,260
+can be integrated
+into an existing
+
+408
+00:13:24,260 --> 00:13:26,900
+environment. and
+you catalog and
+
+409
+00:13:26,900 --> 00:13:28,260
+connect what's already there,
+
+410
+00:13:28,260 --> 00:13:29,480
+what's already in existence.
+
+411
+00:13:30,500 --> 00:13:32,360
+and that can include
+data sources
+
+412
+00:13:32,500 --> 00:13:33,960
+like I said, data warehouses,
+
+413
+00:13:34,100 --> 00:13:35,975
+data lakes that
+can include web
+
+414
+00:13:35,975 --> 00:13:38,315
+services, APIs, file shares,
+
+415
+00:13:38,375 --> 00:13:40,875
+knowledge bases,
+data analytics,
+
+416
+00:13:40,935 --> 00:13:43,195
+data visualization
+platforms, and so on.
+
+417
+00:13:43,895 --> 00:13:45,735
+The assets to be cataloged are
+
+418
+00:13:45,735 --> 00:13:47,950
+the tables, the columns,
+the files,
+
+419
+00:13:47,950 --> 00:13:49,490
+the notebooks,
+the dashboards,
+
+420
+00:13:49,550 --> 00:13:50,530
+the data dictionaries,
+
+421
+00:13:50,830 --> 00:13:51,810
+business cursories,
+
+422
+00:13:51,950 --> 00:13:53,550
+taxonomies and so on that are
+
+423
+00:13:53,550 --> 00:13:55,330
+already represented
+in those systems.
+
+424
+00:13:55,710 --> 00:13:57,170
+So this is the real foundation
+
+425
+00:13:57,950 --> 00:13:59,150
+and it's really important to
+
+426
+00:13:59,150 --> 00:14:01,865
+note that the data
+and the analysis
+
+427
+00:14:02,005 --> 00:14:04,505
+are critical to catalog
+and understand.
+
+428
+00:14:04,725 --> 00:14:06,245
+The dashboards and the queries
+
+429
+00:14:06,245 --> 00:14:07,685
+and other bits of existing
+
+430
+00:14:07,685 --> 00:14:09,365
+analysis often
+contain the most
+
+431
+00:14:09,365 --> 00:14:10,805
+important knowledge about what
+
+432
+00:14:10,805 --> 00:14:11,705
+the data means,
+
+433
+00:14:12,080 --> 00:14:13,440
+how it's been used
+in the past,
+
+434
+00:14:13,440 --> 00:14:14,640
+and how it might be leveraged
+
+435
+00:14:14,640 --> 00:14:16,000
+in the future. So it's really
+
+436
+00:14:16,000 --> 00:14:17,860
+important to understand
+what's there.
+
+437
+00:14:19,200 --> 00:14:20,640
+Then as a second step,
+
+438
+00:14:20,640 --> 00:14:22,560
+there are several
+components to
+
+439
+00:14:22,560 --> 00:14:24,865
+an active, data
+catalog building
+
+440
+00:14:24,865 --> 00:14:26,465
+towards a data fabric that is
+
+441
+00:14:26,465 --> 00:14:28,565
+built on top of
+that, foundation.
+
+442
+00:14:29,265 --> 00:14:30,705
+There are catalog agents to
+
+443
+00:14:30,705 --> 00:14:32,705
+automate the process
+of extracting
+
+444
+00:14:32,705 --> 00:14:34,225
+metadata from the systems.
+
+445
+00:14:34,225 --> 00:14:35,905
+Data can be integrated into
+
+446
+00:14:35,905 --> 00:14:37,925
+the data catalog
+via ETL processes
+
+447
+00:14:38,520 --> 00:14:40,360
+or it can be virtualized data
+
+448
+00:14:40,360 --> 00:14:41,820
+can be integrated
+in virtualized
+
+449
+00:14:41,960 --> 00:14:45,260
+fashion as if
+the data would be
+
+450
+00:14:45,320 --> 00:14:46,220
+in those systems.
+
+451
+00:14:47,240 --> 00:14:49,020
+And the key of all of
+this is semantics.
+
+452
+00:14:49,320 --> 00:14:51,080
+Again, we want to integrate
+
+453
+00:14:51,080 --> 00:14:52,680
+the data into fabric based on
+
+454
+00:14:52,680 --> 00:14:54,295
+what the data
+means in terms of
+
+455
+00:14:54,295 --> 00:14:55,675
+the real world relationships,
+
+456
+00:14:56,215 --> 00:14:57,595
+not based on the technology
+
+457
+00:14:57,655 --> 00:14:59,575
+choices made about
+how to store
+
+458
+00:14:59,575 --> 00:15:00,555
+and manage data.
+
+459
+00:15:02,135 --> 00:15:04,455
+And to do that, your
+system needs to,
+
+460
+00:15:04,775 --> 00:15:06,235
+one very important component
+
+461
+00:15:06,880 --> 00:15:08,720
+that both data dot world and
+
+462
+00:15:08,720 --> 00:15:10,160
+pool party are built upon.
+
+463
+00:15:10,160 --> 00:15:12,420
+And that is
+the knowledge graph.
+
+464
+00:15:12,720 --> 00:15:14,260
+And here we come to
+this centerpiece
+
+465
+00:15:14,320 --> 00:15:16,080
+again. The knowledge graph is
+
+466
+00:15:16,080 --> 00:15:17,760
+really the centerpiece
+of the semantic
+
+467
+00:15:17,760 --> 00:15:18,580
+data fabric.
+
+468
+00:15:20,055 --> 00:15:22,055
+It is the part that allows you
+
+469
+00:15:22,055 --> 00:15:23,575
+to bring in your
+domain knowledge
+
+470
+00:15:23,575 --> 00:15:25,255
+to link your assets and enrich
+
+471
+00:15:25,255 --> 00:15:26,715
+it with Semantic Context.
+
+472
+00:15:27,975 --> 00:15:30,295
+So now having
+said having built
+
+473
+00:15:30,295 --> 00:15:32,215
+that foundation we can put
+
+474
+00:15:32,215 --> 00:15:33,430
+something on top of that.
+
+475
+00:15:33,670 --> 00:15:34,310
+On top of that,
+
+476
+00:15:34,310 --> 00:15:36,230
+we can put
+a semantic middleware
+
+477
+00:15:36,230 --> 00:15:38,170
+such as the Pool Party
+Semantic Suite,
+
+478
+00:15:38,230 --> 00:15:39,590
+which will allow you to enrich
+
+479
+00:15:39,590 --> 00:15:40,330
+your data.
+
+480
+00:15:40,710 --> 00:15:42,650
+so for example
+semantic standards.
+
+481
+00:15:43,030 --> 00:15:44,310
+Just to name some examples,
+
+482
+00:15:44,310 --> 00:15:45,750
+you can also use artificial
+
+483
+00:15:45,750 --> 00:15:47,370
+intelligence and
+machine learning
+
+484
+00:15:47,715 --> 00:15:50,215
+to achieve, active
+metadata management.
+
+485
+00:15:50,275 --> 00:15:52,135
+And of course,
+you can leverage
+
+486
+00:15:52,195 --> 00:15:53,635
+natural language
+processing and
+
+487
+00:15:53,635 --> 00:15:55,635
+deep text analytics,
+for example,
+
+488
+00:15:55,635 --> 00:15:57,015
+to process your unstructured
+
+489
+00:15:57,155 --> 00:15:59,175
+data and bring
+the unstructured
+
+490
+00:15:59,315 --> 00:16:00,835
+data into context with your
+
+491
+00:16:00,835 --> 00:16:01,815
+structured data.
+
+492
+00:16:04,540 --> 00:16:06,140
+Finally, what you
+obviously need
+
+493
+00:16:06,140 --> 00:16:07,580
+is an efficient data delivery
+
+494
+00:16:07,580 --> 00:16:09,100
+and data integration component
+
+495
+00:16:09,100 --> 00:16:10,860
+to make all this enriched data
+
+496
+00:16:10,860 --> 00:16:12,620
+available to the users and to
+
+497
+00:16:12,620 --> 00:16:13,440
+other applications.
+
+498
+00:16:13,980 --> 00:16:15,660
+This is what a smart
+data catalog
+
+499
+00:16:15,660 --> 00:16:17,260
+such as data.
+World can provide
+
+500
+00:16:17,260 --> 00:16:19,455
+as part of the semantic
+data fabric.
+
+501
+00:16:19,755 --> 00:16:21,835
+So this component and and just
+
+502
+00:16:21,835 --> 00:16:23,595
+ensures you have
+efficient ways
+
+503
+00:16:23,595 --> 00:16:25,355
+to present your
+enriched content
+
+504
+00:16:25,355 --> 00:16:27,035
+to the users. And here we talk
+
+505
+00:16:27,035 --> 00:16:28,975
+about the well
+known things like
+
+506
+00:16:29,035 --> 00:16:31,055
+powerful search, user
+friendly browsing,
+
+507
+00:16:32,290 --> 00:16:34,470
+access for other
+systems via APIs,
+
+508
+00:16:34,530 --> 00:16:35,990
+webhooks, and so on.
+
+509
+00:16:37,010 --> 00:16:38,870
+So with the semantic
+data fabric,
+
+510
+00:16:39,010 --> 00:16:39,910
+just to summarize,
+
+511
+00:16:40,450 --> 00:16:42,210
+you can connect your data,
+
+512
+00:16:42,210 --> 00:16:43,990
+make your data visible
+and findable.
+
+513
+00:16:44,985 --> 00:16:46,425
+You ensure that your data can
+
+514
+00:16:46,425 --> 00:16:47,645
+be understood and
+interpreted.
+
+515
+00:16:48,425 --> 00:16:50,445
+You ensure easy
+access to the data.
+
+516
+00:16:50,585 --> 00:16:52,185
+You can offer smart tools for
+
+517
+00:16:52,185 --> 00:16:54,265
+data curation, and you will be
+
+518
+00:16:54,265 --> 00:16:56,185
+able to gain
+insights and create
+
+519
+00:16:56,185 --> 00:16:58,445
+impactful outcomes
+from the data.
+
+520
+00:16:59,160 --> 00:17:00,680
+And now I would
+like to show you
+
+521
+00:17:00,680 --> 00:17:01,980
+just a quick example.
+
+522
+00:17:02,440 --> 00:17:04,360
+We have built
+a demo to showcase
+
+523
+00:17:04,360 --> 00:17:06,440
+this based on the two tools
+
+524
+00:17:06,440 --> 00:17:07,320
+mentioned Data.
+
+525
+00:17:07,320 --> 00:17:08,920
+To2world as a data catalog and
+
+526
+00:17:08,920 --> 00:17:10,860
+Poopati as the semantic
+middleware.
+
+527
+00:17:11,935 --> 00:17:13,695
+And we thought about what is
+
+528
+00:17:13,695 --> 00:17:15,555
+the best use case
+to show it and
+
+529
+00:17:15,775 --> 00:17:17,775
+we are using a real
+world use case,
+
+530
+00:17:17,775 --> 00:17:19,375
+a business case
+that is that we
+
+531
+00:17:19,375 --> 00:17:21,135
+actually very regularly hear
+
+532
+00:17:21,135 --> 00:17:22,675
+from our customers
+and partners.
+
+533
+00:17:23,055 --> 00:17:25,890
+It's about semantic
+matchmaking again,
+
+534
+00:17:25,890 --> 00:17:27,670
+in that, HR field.
+
+535
+00:17:28,450 --> 00:17:29,890
+So the business
+case here really
+
+536
+00:17:29,890 --> 00:17:32,050
+is a consulting company wants
+
+537
+00:17:32,050 --> 00:17:33,730
+to quickly find
+the best consultant
+
+538
+00:17:33,730 --> 00:17:35,350
+to be assigned to
+a new project,
+
+539
+00:17:35,730 --> 00:17:37,170
+and they want to do that based
+
+540
+00:17:37,170 --> 00:17:39,090
+on skills and
+expertise matching
+
+541
+00:17:39,090 --> 00:17:39,830
+to the project.
+
+542
+00:17:40,835 --> 00:17:42,615
+The challenge that you very
+
+543
+00:17:42,675 --> 00:17:43,875
+regularly have,
+
+544
+00:17:44,195 --> 00:17:46,755
+in in in that
+setting is that,
+
+545
+00:17:46,755 --> 00:17:48,995
+again, data is held
+in various places,
+
+546
+00:17:48,995 --> 00:17:51,315
+data silos, and in various
+
+547
+00:17:51,315 --> 00:17:52,135
+different formats,
+
+548
+00:17:52,195 --> 00:17:53,335
+structured and unstructured.
+
+549
+00:17:53,860 --> 00:17:55,220
+And the matching is therefore
+
+550
+00:17:55,220 --> 00:17:56,580
+often done based on personal
+
+551
+00:17:56,580 --> 00:17:58,520
+preferences or on insufficient
+
+552
+00:17:58,580 --> 00:17:59,400
+data quality.
+
+553
+00:18:00,820 --> 00:18:03,060
+So what we have
+here as a solution
+
+554
+00:18:03,060 --> 00:18:04,740
+is we are using the semantic
+
+555
+00:18:04,740 --> 00:18:07,060
+data fabric approach
+to access the data,
+
+556
+00:18:07,060 --> 00:18:08,580
+to enrich it based on semantic
+
+557
+00:18:08,580 --> 00:18:10,415
+context and use the enriched
+
+558
+00:18:10,415 --> 00:18:11,555
+data for an application.
+
+559
+00:18:11,615 --> 00:18:13,055
+So let me take
+you through this
+
+560
+00:18:13,055 --> 00:18:14,415
+step by step and
+then I'll show
+
+561
+00:18:14,415 --> 00:18:16,895
+you the demo. First,
+
+562
+00:18:16,895 --> 00:18:19,075
+we have data from
+various sources:
+
+563
+00:18:19,535 --> 00:18:21,795
+CVs, timesheets of
+the consultants,
+
+564
+00:18:22,300 --> 00:18:25,340
+project descriptions
+in just a text
+
+565
+00:18:25,340 --> 00:18:25,840
+format.
+
+566
+00:18:27,500 --> 00:18:29,340
+As a second step we
+use the strength
+
+567
+00:18:29,340 --> 00:18:31,820
+of data. World
+in Pool Party to
+
+568
+00:18:31,820 --> 00:18:32,720
+do four things:
+
+569
+00:18:32,780 --> 00:18:34,620
+we access the data
+in an augmented
+
+570
+00:18:34,620 --> 00:18:36,685
+data catalog can
+be in virtualized
+
+571
+00:18:37,385 --> 00:18:39,545
+manner. We ensure that we have
+
+572
+00:18:39,545 --> 00:18:40,665
+efficient data delivery and
+
+573
+00:18:40,665 --> 00:18:42,445
+dynamic data integration
+capabilities,
+
+574
+00:18:43,625 --> 00:18:45,325
+again via the data catalog.
+
+575
+00:18:45,785 --> 00:18:47,225
+And then we are
+using the semantic
+
+576
+00:18:47,225 --> 00:18:50,345
+middleware to
+utilize the tools
+
+577
+00:18:50,345 --> 00:18:53,090
+and features for
+semantics based
+
+578
+00:18:53,090 --> 00:18:54,230
+on a knowledge graph.
+
+579
+00:18:54,530 --> 00:18:56,530
+And we also use
+natural language
+
+580
+00:18:56,530 --> 00:18:58,370
+processing techniques
+to process
+
+581
+00:18:58,370 --> 00:18:59,670
+the unstructured data.
+
+582
+00:18:59,890 --> 00:19:01,890
+And all of this leads
+into a semantic
+
+583
+00:19:01,890 --> 00:19:03,430
+data fabric
+powered application
+
+584
+00:19:03,970 --> 00:19:05,830
+that allows us to
+do the matchmaking
+
+585
+00:19:06,210 --> 00:19:07,225
+as we need it.
+
+586
+00:19:07,865 --> 00:19:10,925
+So let me show you
+that example here.
+
+587
+00:19:12,265 --> 00:19:14,445
+I'm just looking at
+you can see that.
+
+588
+00:19:15,065 --> 00:19:16,905
+this is our semantic
+matchmaker demo.
+
+589
+00:19:16,905 --> 00:19:18,185
+You will find
+the link at the end
+
+590
+00:19:18,185 --> 00:19:19,005
+of the presentation.
+
+591
+00:19:19,065 --> 00:19:20,365
+You can try it out yourself.
+
+592
+00:19:20,860 --> 00:19:22,140
+What we have done here is,
+
+593
+00:19:22,380 --> 00:19:24,080
+here you find a list
+of projects.
+
+594
+00:19:24,380 --> 00:19:26,220
+They are just
+imported from an open
+
+595
+00:19:26,220 --> 00:19:27,980
+data source of
+the European Union.
+
+596
+00:19:27,980 --> 00:19:29,660
+This is real life project
+
+597
+00:19:29,660 --> 00:19:31,260
+descriptions we
+have just imported
+
+598
+00:19:31,260 --> 00:19:32,640
+from an open data source.
+
+599
+00:19:32,940 --> 00:19:35,420
+So I just click on one random
+
+600
+00:19:35,420 --> 00:19:36,480
+one of this list.
+
+601
+00:19:37,075 --> 00:19:38,835
+What I get here is
+I get the project
+
+602
+00:19:38,835 --> 00:19:41,075
+description, in raw text.
+
+603
+00:19:41,075 --> 00:19:42,695
+So that was
+the project discrete
+
+604
+00:19:42,835 --> 00:19:44,435
+description we got from that
+
+605
+00:19:44,435 --> 00:19:45,575
+open data portal.
+
+606
+00:19:46,195 --> 00:19:47,155
+As a first step,
+
+607
+00:19:47,155 --> 00:19:48,675
+I can create a so
+called semantic
+
+608
+00:19:48,675 --> 00:19:50,355
+footprint. So
+what we are using
+
+609
+00:19:50,355 --> 00:19:52,455
+here is we are using
+a knowledge graph,
+
+610
+00:19:52,650 --> 00:19:54,090
+which has over
+twenty one thousand
+
+611
+00:19:54,090 --> 00:19:56,110
+concepts of skills,
+occupation,
+
+612
+00:19:56,490 --> 00:19:58,650
+topics, and so on,
+which is, by the way,
+
+613
+00:19:58,650 --> 00:20:00,890
+also built by
+the European Union and,
+
+614
+00:20:01,370 --> 00:20:02,510
+available for free.
+
+615
+00:20:02,730 --> 00:20:04,110
+And we use that classification
+
+616
+00:20:04,490 --> 00:20:06,590
+to build a footprint
+of that project.
+
+617
+00:20:06,855 --> 00:20:08,375
+So Pool Party has now created
+
+618
+00:20:08,375 --> 00:20:09,835
+a footprint of that project
+
+619
+00:20:10,855 --> 00:20:11,995
+based on the description.
+
+620
+00:20:13,095 --> 00:20:14,315
+And in the next step,
+
+621
+00:20:14,535 --> 00:20:15,835
+we match it with consultants.
+
+622
+00:20:16,215 --> 00:20:17,515
+So we are now taking,
+
+623
+00:20:18,455 --> 00:20:19,675
+data from consultants,
+
+624
+00:20:19,815 --> 00:20:21,415
+and I'm just
+clicking on one of
+
+625
+00:20:21,415 --> 00:20:22,155
+them here.
+
+626
+00:20:22,810 --> 00:20:24,970
+We have in the data,
+data catalog,
+
+627
+00:20:24,970 --> 00:20:26,510
+we have data from
+the consultants.
+
+628
+00:20:27,050 --> 00:20:29,530
+They are CVs free
+to so again,
+
+629
+00:20:29,530 --> 00:20:30,670
+unstructured text.
+
+630
+00:20:30,810 --> 00:20:32,250
+We're creating same system.
+
+631
+00:20:32,250 --> 00:20:33,930
+We're creating a footprint of
+
+632
+00:20:33,930 --> 00:20:35,390
+these c of these people,
+
+633
+00:20:35,865 --> 00:20:37,225
+and we are matching them to
+
+634
+00:20:37,225 --> 00:20:38,505
+the projects. And what you see
+
+635
+00:20:38,505 --> 00:20:40,185
+here is a just one
+to one matching.
+
+636
+00:20:40,185 --> 00:20:41,545
+So we are matching
+footprint to
+
+637
+00:20:41,545 --> 00:20:44,345
+footprint. That's
+the first step,
+
+638
+00:20:44,345 --> 00:20:46,345
+but we can go much
+further than that.
+
+639
+00:20:46,345 --> 00:20:48,345
+We can enrich
+that footprint or
+
+640
+00:20:48,345 --> 00:20:50,105
+we can enrich that
+matching with
+
+641
+00:20:50,105 --> 00:20:51,760
+using the information
+in a knowledge
+
+642
+00:20:52,320 --> 00:20:53,700
+graph. So all the relations,
+
+643
+00:20:53,760 --> 00:20:54,960
+all the knowledge that's built
+
+644
+00:20:54,960 --> 00:20:56,240
+in the knowledge graph can be
+
+645
+00:20:56,240 --> 00:20:58,240
+used to further refine that.
+
+646
+00:20:58,240 --> 00:21:00,000
+And now you get
+much more precise
+
+647
+00:21:00,000 --> 00:21:02,240
+results because
+we're using all
+
+648
+00:21:02,240 --> 00:21:03,840
+the knowledge that
+is in the knowledge
+
+649
+00:21:03,840 --> 00:21:05,745
+graph to make
+that matching not
+
+650
+00:21:05,745 --> 00:21:07,605
+just based on a one
+to one matching,
+
+651
+00:21:07,825 --> 00:21:09,905
+but based on the meaning of,
+
+652
+00:21:10,145 --> 00:21:11,605
+the data that was extracted.
+
+653
+00:21:12,705 --> 00:21:14,385
+And finally, what you can do
+
+654
+00:21:14,385 --> 00:21:17,345
+also is you can, use
+structured data.
+
+655
+00:21:17,345 --> 00:21:18,640
+In that case, we say,
+
+656
+00:21:18,800 --> 00:21:20,080
+consider experience
+level based
+
+657
+00:21:20,080 --> 00:21:20,880
+on structured data,
+
+658
+00:21:20,880 --> 00:21:22,660
+which basically
+only means that,
+
+659
+00:21:23,200 --> 00:21:27,520
+we had assignment sheets,
+
+660
+00:21:27,520 --> 00:21:29,920
+how much time
+consultants spend
+
+661
+00:21:29,920 --> 00:21:31,060
+on specific projects.
+
+662
+00:21:31,305 --> 00:21:32,665
+You're using that structured
+
+663
+00:21:32,665 --> 00:21:34,685
+data to further
+enrich the result.
+
+664
+00:21:35,705 --> 00:21:37,145
+And I'll leave
+it at that point
+
+665
+00:21:37,145 --> 00:21:39,625
+because that, is
+just giving you
+
+666
+00:21:39,625 --> 00:21:41,145
+a quick walk
+through on how you
+
+667
+00:21:41,145 --> 00:21:43,465
+can build a semantic
+AI based,
+
+668
+00:21:43,785 --> 00:21:46,290
+application of semantic data
+
+669
+00:21:46,290 --> 00:21:47,510
+fabric based application,
+
+670
+00:21:48,610 --> 00:21:50,850
+that immediately
+gives you much
+
+671
+00:21:50,850 --> 00:21:53,510
+better results for
+such a matchmaking
+
+672
+00:21:53,570 --> 00:21:57,030
+project and that
+uses all the data
+
+673
+00:21:57,410 --> 00:21:59,425
+structured and unstructured in
+
+674
+00:21:59,425 --> 00:22:00,625
+a very easy manner.
+
+675
+00:22:00,625 --> 00:22:02,225
+You just can upload new data,
+
+676
+00:22:02,225 --> 00:22:04,325
+you just can integrate
+new data sources,
+
+677
+00:22:04,625 --> 00:22:06,545
+and this application will do
+
+678
+00:22:06,545 --> 00:22:08,785
+the matchmaking and
+provide results,
+
+679
+00:22:09,105 --> 00:22:10,885
+for you on a day
+to day basis.
+
+680
+00:22:12,500 --> 00:22:13,780
+Because I know that time is
+
+681
+00:22:13,780 --> 00:22:16,120
+already quite, advanced,
+
+682
+00:22:16,420 --> 00:22:18,260
+I'll skip my two examples and
+
+683
+00:22:18,260 --> 00:22:19,400
+I'll leave it with this.
+
+684
+00:22:20,340 --> 00:22:22,760
+if you're interested
+in that concept,
+
+685
+00:22:22,900 --> 00:22:24,820
+please feel free to
+reach out to us.
+
+686
+00:22:25,060 --> 00:22:26,660
+there is a white paper that we
+
+687
+00:22:26,660 --> 00:22:27,755
+have written together,
+
+688
+00:22:27,755 --> 00:22:29,775
+data dot world and, Popati.
+
+689
+00:22:31,035 --> 00:22:32,415
+feel free to download it.
+
+690
+00:22:32,875 --> 00:22:34,315
+you can try the demo that I've
+
+691
+00:22:34,315 --> 00:22:35,355
+just shown you briefly.
+
+692
+00:22:35,355 --> 00:22:36,315
+And if you want,
+
+693
+00:22:36,555 --> 00:22:37,995
+to have an a more detailed
+
+694
+00:22:37,995 --> 00:22:39,775
+conversation with
+us on that topic,
+
+695
+00:22:39,960 --> 00:22:42,200
+reach out to us,
+also in Slack,
+
+696
+00:22:42,200 --> 00:22:43,960
+of course, and
+I'll be happy to
+
+697
+00:22:43,960 --> 00:22:45,020
+answer your questions.
+
+698
+00:22:45,720 --> 00:22:46,780
+Thank you very much.
+
+699
+00:22:54,625 --> 00:22:56,865
+Fabulous. Thank you,
+Florian. Yes.
+
+700
+00:22:56,865 --> 00:22:59,345
+There is a booth for Symantec
+
+701
+00:22:59,345 --> 00:23:00,945
+Web Company at the Slack,
+
+702
+00:23:00,945 --> 00:23:01,825
+which you can access,
+
+703
+00:23:01,825 --> 00:23:02,785
+and he'll be there.
+
+704
+00:23:02,785 --> 00:23:03,985
+And just to let you
+know, Florian,
+
+705
+00:23:03,985 --> 00:23:06,225
+we do go until ten
+past the hour,
+
+706
+00:23:06,225 --> 00:23:08,325
+so we have about
+fifteen minutes left.
+
+707
+00:23:09,370 --> 00:23:12,170
+okay. We have a few
+people typing
+
+708
+00:23:12,170 --> 00:23:13,370
+in the chat, but if you want,
+
+709
+00:23:13,370 --> 00:23:14,490
+while we're waiting
+for the first
+
+710
+00:23:14,490 --> 00:23:15,770
+questions, you
+could maybe share
+
+711
+00:23:15,770 --> 00:23:18,510
+those two examples.
+I'm happy to.
+
+712
+00:23:19,210 --> 00:23:20,890
+let me just go back to my
+
+713
+00:23:20,890 --> 00:23:22,030
+presentation then.
+
+714
+00:23:24,735 --> 00:23:26,175
+So I just wanted
+to give you two
+
+715
+00:23:26,175 --> 00:23:27,775
+other examples because I only
+
+716
+00:23:27,775 --> 00:23:30,575
+talked about, the,
+the, HI use case.
+
+717
+00:23:30,575 --> 00:23:31,775
+But of course, there are other
+
+718
+00:23:31,775 --> 00:23:33,855
+use cases or other business
+
+719
+00:23:33,855 --> 00:23:36,035
+cases where the semantic
+data fabric,
+
+720
+00:23:36,655 --> 00:23:39,280
+concept can really,
+really help.
+
+721
+00:23:39,840 --> 00:23:41,760
+One could be you can predict
+
+722
+00:23:41,760 --> 00:23:43,620
+equipment failure
+more accurately.
+
+723
+00:23:44,240 --> 00:23:47,300
+So this is for example,
+
+724
+00:23:47,520 --> 00:23:50,100
+when you work in oil fields,
+
+725
+00:23:50,400 --> 00:23:52,955
+replacing equipment
+like an oil
+
+726
+00:23:52,955 --> 00:23:54,635
+field pump can easily cost
+
+727
+00:23:54,635 --> 00:23:55,695
+millions of dollars.
+
+728
+00:23:56,075 --> 00:23:57,515
+And therefore,
+you need to really
+
+729
+00:23:57,515 --> 00:23:59,195
+anticipate when
+it will fail in
+
+730
+00:23:59,195 --> 00:24:00,895
+order to provide
+life extending
+
+731
+00:24:00,955 --> 00:24:02,955
+maintenance and to plan for
+
+732
+00:24:02,955 --> 00:24:04,510
+the placement in time.
+
+733
+00:24:05,230 --> 00:24:07,150
+and to accurately
+predict that failure,
+
+734
+00:24:07,150 --> 00:24:08,350
+you need data from various
+
+735
+00:24:08,350 --> 00:24:10,610
+different observations,
+from reporting,
+
+736
+00:24:10,670 --> 00:24:12,050
+from different systems.
+
+737
+00:24:12,510 --> 00:24:13,870
+This is again an example where
+
+738
+00:24:13,870 --> 00:24:15,490
+semantic data
+fabric integration
+
+739
+00:24:15,630 --> 00:24:17,570
+can help can help
+a lot because,
+
+740
+00:24:18,705 --> 00:24:20,385
+for example, you
+have all field
+
+741
+00:24:20,385 --> 00:24:22,465
+engineers very
+often enter their
+
+742
+00:24:22,465 --> 00:24:24,225
+observations into
+maintenance logs.
+
+743
+00:24:24,225 --> 00:24:26,405
+This is again
+unstructured text,
+
+744
+00:24:26,465 --> 00:24:28,465
+but that contains
+the very crucial
+
+745
+00:24:28,465 --> 00:24:30,145
+context that needs
+to be matched
+
+746
+00:24:30,145 --> 00:24:31,585
+with the with the structured
+
+747
+00:24:31,585 --> 00:24:33,380
+data from other systems to be
+
+748
+00:24:33,380 --> 00:24:36,600
+able to predict,
+such, such failures,
+
+749
+00:24:37,060 --> 00:24:37,960
+in in time.
+
+750
+00:24:38,500 --> 00:24:40,760
+So a data solution
+that understands
+
+751
+00:24:40,900 --> 00:24:42,500
+and links the text from that
+
+752
+00:24:42,500 --> 00:24:45,000
+unstructured, maintenance logs
+
+753
+00:24:45,185 --> 00:24:47,105
+with the other data
+across the different
+
+754
+00:24:47,105 --> 00:24:48,545
+sources can really improve
+
+755
+00:24:48,545 --> 00:24:50,305
+predictions here
+and easily save
+
+756
+00:24:50,305 --> 00:24:51,685
+millions, actually.
+
+757
+00:24:52,785 --> 00:24:54,785
+And then very obvious one is,
+
+758
+00:24:55,585 --> 00:24:57,825
+around customer experience and
+
+759
+00:24:57,825 --> 00:24:58,785
+customer knowledge.
+
+760
+00:24:59,185 --> 00:25:00,960
+when you have
+customer calls in
+
+761
+00:25:00,960 --> 00:25:03,440
+a call center, you always need
+
+762
+00:25:03,440 --> 00:25:04,960
+to solve problems very fast.
+
+763
+00:25:04,960 --> 00:25:06,800
+You need to keep
+your customers
+
+764
+00:25:06,800 --> 00:25:08,560
+certified. You need to retain
+
+765
+00:25:08,560 --> 00:25:09,300
+their business.
+
+766
+00:25:10,240 --> 00:25:11,920
+and the information you have
+
+767
+00:25:11,920 --> 00:25:13,460
+about them in your database,
+
+768
+00:25:13,520 --> 00:25:15,145
+in the single
+database that you
+
+769
+00:25:15,145 --> 00:25:16,425
+have in front of you might not
+
+770
+00:25:16,425 --> 00:25:18,505
+be sufficient.
+But you can find
+
+771
+00:25:18,505 --> 00:25:19,885
+very valuable unstructured
+
+772
+00:25:20,025 --> 00:25:21,485
+information about
+your customer
+
+773
+00:25:21,785 --> 00:25:23,225
+on the web, in social media,
+
+774
+00:25:23,225 --> 00:25:24,125
+in other channels,
+
+775
+00:25:24,425 --> 00:25:25,865
+and you can easily start to
+
+776
+00:25:25,865 --> 00:25:27,385
+augment your understanding of
+
+777
+00:25:27,385 --> 00:25:29,050
+the customer and the problem
+
+778
+00:25:29,050 --> 00:25:30,030
+that they're experiencing.
+
+779
+00:25:30,890 --> 00:25:32,510
+And so this enriched view,
+
+780
+00:25:33,130 --> 00:25:35,050
+that you can create
+here can really,
+
+781
+00:25:35,530 --> 00:25:37,050
+provide your
+employees that are
+
+782
+00:25:37,050 --> 00:25:38,730
+working in the call
+center with
+
+783
+00:25:38,730 --> 00:25:40,375
+a much better understanding of
+
+784
+00:25:41,015 --> 00:25:43,495
+what problem solutions
+they can offer,
+
+785
+00:25:43,495 --> 00:25:44,875
+what cross
+selling opportunities
+
+786
+00:25:45,015 --> 00:25:46,075
+are there, what upselling
+
+787
+00:25:46,135 --> 00:25:47,355
+opportunities are there,
+
+788
+00:25:47,655 --> 00:25:49,755
+and which ones
+will most likely
+
+789
+00:25:50,215 --> 00:25:51,835
+succeed with
+a given customer.
+
+790
+00:25:51,895 --> 00:25:53,175
+So I just wanted to bring in
+
+791
+00:25:53,175 --> 00:25:54,535
+these two other examples here
+
+792
+00:25:54,535 --> 00:25:56,140
+because we focused
+on the AI example,
+
+793
+00:25:56,140 --> 00:25:57,980
+which is quite obvious one.
+
+794
+00:25:57,980 --> 00:26:00,380
+But, I think we can find in in
+
+795
+00:26:00,380 --> 00:26:02,320
+every domain, we
+can find an example
+
+796
+00:26:02,620 --> 00:26:03,660
+when we think about,
+
+797
+00:26:04,060 --> 00:26:05,900
+possible applications
+of a semantic
+
+798
+00:26:05,900 --> 00:26:08,220
+data fabric. I'm really glad
+
+799
+00:26:08,220 --> 00:26:10,060
+that we had time
+for those because
+
+800
+00:26:10,060 --> 00:26:11,485
+I agree that, you know,
+
+801
+00:26:11,885 --> 00:26:13,965
+concrete use case examples are
+
+802
+00:26:13,965 --> 00:26:16,845
+very easy for people to wrap
+
+803
+00:26:16,845 --> 00:26:18,125
+their heads around
+and and begin
+
+804
+00:26:18,125 --> 00:26:20,445
+to understand what
+this powerful
+
+805
+00:26:20,445 --> 00:26:22,465
+connected data can do.
+
+806
+00:26:22,765 --> 00:26:23,885
+And especially when we talk
+
+807
+00:26:23,885 --> 00:26:25,665
+about oil and gas
+pump replacements,
+
+808
+00:26:25,725 --> 00:26:26,845
+I've heard about this before,
+
+809
+00:26:26,845 --> 00:26:28,660
+and someone has told me an oil
+
+810
+00:26:28,660 --> 00:26:30,040
+and gas engineer has said,
+
+811
+00:26:30,180 --> 00:26:32,260
+if you hear
+the pump that makes
+
+812
+00:26:32,260 --> 00:26:33,620
+no noise, this is
+the one that's
+
+813
+00:26:33,620 --> 00:26:34,580
+gonna blow. Right?
+
+814
+00:26:34,580 --> 00:26:36,180
+And so if you know that this
+
+815
+00:26:36,180 --> 00:26:37,300
+costs millions of dollars,
+
+816
+00:26:37,300 --> 00:26:38,740
+it's a it's
+a little bit easier
+
+817
+00:26:38,740 --> 00:26:40,440
+to begin to explain the value
+
+818
+00:26:40,500 --> 00:26:41,960
+of this kind of investment.
+
+819
+00:26:42,685 --> 00:26:44,765
+So we have, one question to
+
+820
+00:26:44,765 --> 00:26:45,885
+begin with in the chat.
+
+821
+00:26:45,885 --> 00:26:47,325
+Thank you, by
+the way, Florian,
+
+822
+00:26:47,325 --> 00:26:48,545
+for the excellent
+presentation.
+
+823
+00:26:48,925 --> 00:26:50,765
+Many compliments are coming in
+
+824
+00:26:50,765 --> 00:26:51,745
+for you as well.
+
+825
+00:26:52,285 --> 00:26:53,885
+Pallavi's question is,
+
+826
+00:26:53,885 --> 00:26:55,565
+would she would
+like to know how
+
+827
+00:26:55,565 --> 00:26:57,745
+domain knowledge
+goes into graphs.
+
+828
+00:26:58,150 --> 00:26:59,670
+Human intervention is required
+
+829
+00:26:59,670 --> 00:27:01,430
+to make hidden
+domain knowledge
+
+830
+00:27:01,430 --> 00:27:03,590
+explicit in unstructured text
+
+831
+00:27:03,590 --> 00:27:05,130
+or documents. Is
+that correct?
+
+832
+00:27:06,070 --> 00:27:07,930
+Yeah. I I I said it's both.
+
+833
+00:27:08,150 --> 00:27:09,990
+It's, of course, on
+the one hand side,
+
+834
+00:27:09,990 --> 00:27:11,510
+it's the people who
+have the domain
+
+835
+00:27:11,510 --> 00:27:13,735
+knowledge. so one
+of the things
+
+836
+00:27:13,735 --> 00:27:15,735
+that we are really,
+
+837
+00:27:15,735 --> 00:27:17,435
+really that is
+really important
+
+838
+00:27:17,735 --> 00:27:19,815
+when we develop pool party is
+
+839
+00:27:19,815 --> 00:27:21,835
+that the component that allows
+
+840
+00:27:22,295 --> 00:27:23,815
+the subject matter experts to
+
+841
+00:27:23,815 --> 00:27:25,415
+build a knowledge
+graph is very
+
+842
+00:27:25,415 --> 00:27:27,290
+user friendly. So we thought
+
+843
+00:27:27,290 --> 00:27:28,170
+from the beginning,
+
+844
+00:27:28,170 --> 00:27:29,930
+what is really necessary is to
+
+845
+00:27:29,930 --> 00:27:30,990
+enable the domain,
+
+846
+00:27:31,050 --> 00:27:33,150
+the subject matter experts to
+
+847
+00:27:33,290 --> 00:27:34,670
+build that knowledge graph.
+
+848
+00:27:34,810 --> 00:27:35,930
+Because you don't want to have
+
+849
+00:27:35,930 --> 00:27:37,770
+to explain all the things that
+
+850
+00:27:37,770 --> 00:27:39,565
+you know about the domain to
+
+851
+00:27:39,565 --> 00:27:41,805
+an IT person that then write
+
+852
+00:27:41,805 --> 00:27:43,885
+some kind of code based on,
+
+853
+00:27:44,125 --> 00:27:45,485
+on what you described. No.
+
+854
+00:27:45,485 --> 00:27:46,925
+What you want to be able to do
+
+855
+00:27:46,925 --> 00:27:49,165
+is you want to be
+able to develop
+
+856
+00:27:49,165 --> 00:27:50,385
+that knowledge graph,
+
+857
+00:27:51,485 --> 00:27:53,245
+in an easy way
+and it should be
+
+858
+00:27:53,245 --> 00:27:55,025
+developed by the subject
+matter experts.
+
+859
+00:27:55,380 --> 00:27:56,760
+So that's the people part.
+
+860
+00:27:57,300 --> 00:27:58,980
+But then, I also
+said that it's
+
+861
+00:27:58,980 --> 00:28:00,260
+always important to combine
+
+862
+00:28:00,260 --> 00:28:02,680
+the human part
+with the machine
+
+863
+00:28:03,140 --> 00:28:04,600
+and there you
+have possibilities
+
+864
+00:28:05,060 --> 00:28:07,380
+to automatically
+create knowledge
+
+865
+00:28:07,380 --> 00:28:08,740
+graphs or parts of knowledge
+
+866
+00:28:08,740 --> 00:28:10,580
+graphs or to enrich existing
+
+867
+00:28:10,580 --> 00:28:12,245
+knowledge graphs with certain
+
+868
+00:28:12,245 --> 00:28:14,025
+technologies. So
+in pool party,
+
+869
+00:28:14,325 --> 00:28:17,125
+you have features like linked
+
+870
+00:28:17,125 --> 00:28:18,725
+data harvesting, for example,
+
+871
+00:28:18,725 --> 00:28:19,545
+where you can,
+
+872
+00:28:20,885 --> 00:28:22,325
+have this linked data sources
+
+873
+00:28:22,325 --> 00:28:24,720
+and automatically
+create a first
+
+874
+00:28:24,720 --> 00:28:26,320
+knowledge graph for you based
+
+875
+00:28:26,320 --> 00:28:28,400
+on on a specific
+topic that for
+
+876
+00:28:28,400 --> 00:28:30,020
+example is already
+done Wikipedia.
+
+877
+00:28:30,720 --> 00:28:32,180
+Or you can use existing,
+
+878
+00:28:32,960 --> 00:28:34,560
+knowledge graphs like the one
+
+879
+00:28:34,560 --> 00:28:36,560
+that I we used
+in the demo from
+
+880
+00:28:36,560 --> 00:28:38,240
+the European Union
+on skills and
+
+881
+00:28:38,240 --> 00:28:38,740
+occupations.
+
+882
+00:28:39,375 --> 00:28:40,815
+You can use that pre existing
+
+883
+00:28:40,815 --> 00:28:42,755
+ones and amend them
+for your needs,
+
+884
+00:28:43,135 --> 00:28:44,495
+so you don't have
+to start from
+
+885
+00:28:44,495 --> 00:28:45,555
+scratch every time.
+
+886
+00:28:46,335 --> 00:28:48,095
+And then the third
+part what you
+
+887
+00:28:48,095 --> 00:28:49,615
+can do is and
+that's talking to
+
+888
+00:28:49,615 --> 00:28:51,775
+the unstructured data that was
+
+889
+00:28:51,775 --> 00:28:54,130
+mentioned is there
+is something
+
+890
+00:28:54,130 --> 00:28:55,170
+in the tool which is called
+
+891
+00:28:55,170 --> 00:28:56,770
+the corpus analysis where you
+
+892
+00:28:56,770 --> 00:28:58,610
+can upload thousands
+and thousands
+
+893
+00:28:58,610 --> 00:29:01,170
+of documents and
+based on those
+
+894
+00:29:01,170 --> 00:29:02,870
+documents the system creates
+
+895
+00:29:03,170 --> 00:29:05,410
+suggestions on how
+you can improve
+
+896
+00:29:05,410 --> 00:29:06,850
+and demand and extend your
+
+897
+00:29:06,850 --> 00:29:08,725
+knowledge graph
+because it starts
+
+898
+00:29:08,725 --> 00:29:10,165
+to understand the concepts,
+
+899
+00:29:10,485 --> 00:29:11,625
+in in that document.
+
+900
+00:29:12,085 --> 00:29:13,285
+So it's, as I said,
+
+901
+00:29:13,285 --> 00:29:15,045
+always the combination
+of the people,
+
+902
+00:29:15,045 --> 00:29:17,705
+the human beings that
+have the knowledge
+
+903
+00:29:17,925 --> 00:29:19,525
+and the machine
+supporting them
+
+904
+00:29:19,525 --> 00:29:21,445
+to to create
+knowledge graphs,
+
+905
+00:29:21,685 --> 00:29:24,620
+efficiently. And
+the right tools.
+
+906
+00:29:24,620 --> 00:29:25,020
+Right?
+
+907
+00:29:25,020 --> 00:29:26,620
+Because it's it's much easier
+
+908
+00:29:26,620 --> 00:29:28,560
+to do this in
+pool party versus
+
+909
+00:29:28,700 --> 00:29:31,280
+pen and paper or
+even web protege
+
+910
+00:29:31,340 --> 00:29:33,740
+or something like
+this. So thank you.
+
+911
+00:29:33,740 --> 00:29:35,420
+Kindly answer. We have another
+
+912
+00:29:35,420 --> 00:29:36,720
+question here from.
+
+913
+00:29:37,645 --> 00:29:39,745
+How is
+the seamless integration
+
+914
+00:29:40,045 --> 00:29:41,485
+with the data dot world and
+
+915
+00:29:41,485 --> 00:29:43,965
+the data catalog
+connected through
+
+916
+00:29:43,965 --> 00:29:46,065
+the semantic models
+in pool party?
+
+917
+00:29:46,365 --> 00:29:50,080
+And how is the front
+end endpoints?
+
+918
+00:29:50,140 --> 00:29:51,120
+How are they bridged?
+
+919
+00:29:52,220 --> 00:29:54,060
+So what we have built here for
+
+920
+00:29:54,060 --> 00:29:55,900
+that specific case
+is that there
+
+921
+00:29:55,900 --> 00:29:57,580
+is an integration
+built between,
+
+922
+00:29:57,900 --> 00:29:59,520
+Data. World and Pool Party,
+
+923
+00:30:00,060 --> 00:30:00,880
+which integrates,
+
+924
+00:30:02,060 --> 00:30:04,300
+the Pool Party extractor into
+
+925
+00:30:04,300 --> 00:30:05,280
+the data catalog.
+
+926
+00:30:05,475 --> 00:30:07,155
+That means that the demo that
+
+927
+00:30:07,155 --> 00:30:08,835
+I've shown, what you can do
+
+928
+00:30:08,835 --> 00:30:10,195
+there is you have your data
+
+929
+00:30:10,195 --> 00:30:12,055
+represented in
+the data catalog,
+
+930
+00:30:12,115 --> 00:30:13,555
+can be uploaded to the data
+
+931
+00:30:13,555 --> 00:30:16,215
+catalog or accessed
+via virtualization.
+
+932
+00:30:17,315 --> 00:30:19,015
+And then we have
+done an integration
+
+933
+00:30:19,315 --> 00:30:20,900
+into the pool
+party extractor.
+
+934
+00:30:20,900 --> 00:30:22,820
+That means that you can just
+
+935
+00:30:22,820 --> 00:30:23,640
+press a button,
+
+936
+00:30:24,420 --> 00:30:25,620
+send all the data
+that you have
+
+937
+00:30:25,620 --> 00:30:28,900
+in the data catalog to to use
+
+938
+00:30:28,900 --> 00:30:30,520
+its text
+extraction capabilities
+
+939
+00:30:31,700 --> 00:30:32,360
+as analyze,
+
+940
+00:30:32,900 --> 00:30:35,000
+and assess
+the unstructured data,
+
+941
+00:30:35,115 --> 00:30:37,695
+and Poopali sends back
+all the annotated
+
+942
+00:30:38,075 --> 00:30:39,995
+, and enriched data to
+the data catalog,
+
+943
+00:30:39,995 --> 00:30:43,055
+and that's again
+stored in, our,
+
+944
+00:30:43,435 --> 00:30:45,215
+startup formats
+in RDF format.
+
+945
+00:30:46,155 --> 00:30:47,595
+the enriched data
+is stored back
+
+946
+00:30:47,595 --> 00:30:48,715
+into the data catalog.
+
+947
+00:30:48,715 --> 00:30:50,430
+So it's a seamless integration
+
+948
+00:30:50,490 --> 00:30:51,630
+between the two tools.
+
+949
+00:30:51,930 --> 00:30:53,130
+The modeling of the Knowledge
+
+950
+00:30:53,130 --> 00:30:55,050
+Graph happens, in that case in
+
+951
+00:30:55,050 --> 00:30:56,730
+pool party, the data is stored
+
+952
+00:30:56,730 --> 00:30:58,670
+in the Data Catalog
+and the integration
+
+953
+00:30:58,730 --> 00:31:01,310
+between the two tools is done
+
+954
+00:31:01,465 --> 00:31:03,305
+so that you can easily submit
+
+955
+00:31:03,305 --> 00:31:04,825
+the data from the data catalog
+
+956
+00:31:04,825 --> 00:31:06,345
+to the extract and get back
+
+957
+00:31:06,345 --> 00:31:07,965
+the enriched, data.
+
