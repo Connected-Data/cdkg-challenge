@@ -16,7 +16,7 @@ The [Connected Data]([url](https://connecteddataworld.com)) platform provides a 
 
   
 
-Over the years, we have organized numerous events big and small, with our flagship London conference attracting thousands of attendees.
+Over the years, we have organized numerous events big and small, with our [flagship London conference]([url](https://www.connected-data.london/)) attracting thousands of attendees.
 
   
 
@@ -32,7 +32,7 @@ The collective knowledge of the leaders and innovators who have honored us with 
 
   
 
-This is why we are launching the Connected Data Knowledge Graph Challenge. 
+This is why we are launching the [Connected Data Knowledge Graph Challenge]([url](https://github.com/Connected-Data/cdkg-challenge)). 
 
   
 
@@ -92,7 +92,7 @@ Focusing on the Knowledge Graph creation, which is the most interesting part: it
 
 ## Our vision
 
-Based on this learning experience and the very positive feedback it generated, we would like to embark on the next steps in this journey.
+Based on this learning experience and the very positive feedback it generated, we are embarking on the next steps in this journey.
 
   
 
@@ -112,7 +112,7 @@ We envision making the Connected Data Knowledge Graph available for querying and
 
   
 
-We would also like to use the Connected Data Knowledge Graph to power downstream applications. We are inspired by the work Jay Yu has been doing using Epsilla to make content created by people such as Kurt Cagle, Mike Dillinger, and Tony Seale accessible.
+We would also like to use the Connected Data Knowledge Graph to power downstream applications.
 
 ## The Connected Data Knowledge Graph Challenge
 
@@ -175,9 +175,9 @@ Calling out Connected Data enthusiasts, seasoned professionals and solution prov
 
 - The team will be led by George Anadiotis and Prashanth Rao. 
     
-- Work in progress will be organized via an open source repository.
+- Work in progress will be organized via an [open source repository]([url](https://github.com/Connected-Data/cdkg-challenge)).
     
-- Outcomes will be made available as they are generated, and presented in a session in the upcoming Connected Data London 2024 conference.
+- Outcomes will be made available as they are generated, and presented in a session in the upcoming [Connected Data London 2024 conference]([url](https://www.connected-data.london/)).
     
 
 ### Connected Data enthusiasts: Volunteer
@@ -199,9 +199,7 @@ Are you able to help with any of these tasks?
       
 
 Then click [here]([url](https://www.connected-data.london/contact-us)) to join our team of volunteers. 
-  
 
-This role involves committing to contributing some hours per week and attending brief meetings every couple of weeks.
 
 ### Connected Data professionals: Consult
 
@@ -220,13 +218,11 @@ Are you able to help with any of these tasks?
 - Content, documentation and public speaking
   
 
-Then click [here]([url](https://www.connected-data.london/contact-us)) to get in touch with George and Prashanth. Contributions for this role will be made on an ad-hoc basis and mostly offline. 
+Then click [here]([url](https://www.connected-data.london/contact-us)) to get in touch with George and Prashanth.
 
 ### Connected Data solution providers: Create
 
 Connected Data solution providers are invited to help with steps 6 - 7 in the process: Offering a visualization layer and a natural language interface for the Knowledge Graph.
-
-  
 
 Are you able to offer easy to set up and configure, publicly accessible solutions for the following at no or low cost?
 
@@ -236,8 +232,6 @@ Are you able to offer easy to set up and configure, publicly accessible solution
     
 - Tooling to query the Knowledge Graph using natural language
     
-
-  
 
 Then simply browse our open source repository, or get in touch with George and Prashanth. Solution provider contributions for this role will be developed independently and may be showcased alongside the project.
 
