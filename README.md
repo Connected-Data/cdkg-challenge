@@ -8,7 +8,7 @@
 
   
 
-The [Connected Data]([url](https://connecteddataworld.com)) platform provides a Community, Events, and Thought Leadership for those who use the Relationships, Meaning and Context in Data to achieve great things.
+The [Connected Data](https://connecteddataworld.com) platform provides a Community, Events, and Thought Leadership for those who use the Relationships, Meaning and Context in Data to achieve great things.
 
   
 
@@ -16,7 +16,7 @@ The [Connected Data]([url](https://connecteddataworld.com)) platform provides a 
 
   
 
-Over the years, we have organized numerous events big and small, with our [flagship London conference]([url](https://www.connected-data.london/)) attracting thousands of attendees.
+Over the years, we have organized numerous events big and small, with our [flagship London conference](https://www.connected-data.london/) attracting thousands of attendees.
 
   
 
@@ -32,7 +32,7 @@ The collective knowledge of the leaders and innovators who have honored us with 
 
   
 
-This is why we are launching the [Connected Data Knowledge Graph Challenge]([url](https://github.com/Connected-Data/cdkg-challenge)). 
+This is why we are launching the [Connected Data Knowledge Graph Challenge](https://github.com/Connected-Data/cdkg-challenge). 
 
   
 
@@ -46,7 +46,7 @@ To do that, we will combine our greatest strengths: community, knowledge, and te
 
 ## The Problem
 
-- There are 150+ expert and practical talks on Knowledge Graphs, Graph AI / Analytics / Data Science and Semantic Technology from previous [Connected Data Conferences on YouTube]([url](https://www.youtube.com/@ConnectedData)).
+- There are 150+ expert and practical talks on Knowledge Graphs, Graph AI / Analytics / Data Science and Semantic Technology from previous [Connected Data Conferences on YouTube](https://www.youtube.com/@ConnectedData).
     
 - People have little time to watch videos to learn and gather knowledge from experts and don’t know how to find the right videos. Thus, they miss opportunities to turn these great insights and best practices into something valuable.
     
@@ -175,9 +175,9 @@ Calling out Connected Data enthusiasts, seasoned professionals and solution prov
 
 - The team will be led by George Anadiotis and Prashanth Rao. 
     
-- Work in progress will be organized via an [open source repository]([url](https://github.com/Connected-Data/cdkg-challenge)).
+- Work in progress will be organized via an [open source repository](https://github.com/Connected-Data/cdkg-challenge).
     
-- Outcomes will be made available as they are generated, and presented in a session in the upcoming [Connected Data London 2024 conference]([url](https://www.connected-data.london/)).
+- Outcomes will be made available as they are generated, and presented in a session in the upcoming [Connected Data London 2024 conference](https://www.connected-data.london/).
     
 
 ### Connected Data enthusiasts: Volunteer
@@ -198,7 +198,7 @@ Are you able to help with any of these tasks?
 - Graph tool setup and operation
       
 
-Then click [here]([url](https://www.connected-data.london/contact-us)) to join our team of volunteers. 
+Then click [here](https://www.connected-data.london/contact-us) to join our team of volunteers, or simply browse the [open source repository](https://github.com/Connected-Data/cdkg-challenge) and see if there are open tasks available.
 
 
 ### Connected Data professionals: Consult
@@ -218,7 +218,7 @@ Are you able to help with any of these tasks?
 - Content, documentation and public speaking
   
 
-Then click [here]([url](https://www.connected-data.london/contact-us)) to get in touch with George and Prashanth.
+Then click [here](https://www.connected-data.london/contact-us) to get in touch with George and Prashanth.
 
 ### Connected Data solution providers: Create
 
@@ -233,5 +233,5 @@ Are you able to offer easy to set up and configure, publicly accessible solution
 - Tooling to query the Knowledge Graph using natural language
     
 
-Then simply browse our open source repository, or get in touch with George and Prashanth. Solution provider contributions for this role will be developed independently and may be showcased alongside the project.
+Then simply browse our [open source repository](https://github.com/Connected-Data/cdkg-challenge), or get in touch with George and Prashanth. Solution provider contributions for this role will be developed independently and may be showcased alongside the project.
 
