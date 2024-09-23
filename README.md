@@ -116,6 +116,8 @@ We would also like to use the Connected Data Knowledge Graph to power downstream
 
 ## The Connected Data Knowledge Graph Challenge
 
+<img width="790" alt="CDKG_Logo" src="https://github.com/user-attachments/assets/fc8a4038-c8c9-4f42-8168-179850f5239e">
+
 We at Connected Data are launching the Connected Data Knowledge Graph Challenge as an open source project. 
   
 
