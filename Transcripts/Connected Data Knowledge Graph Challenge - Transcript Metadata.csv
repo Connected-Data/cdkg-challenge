@@ -35,7 +35,12 @@
 
  Knowledge Mesh, a recent product delivered by BlackSwan Technologies, is an implementation of the data fabric architecture, consisting of domain-driven metadata and (meta)data management and integration tools aimed to maximize the effectiveness of data utilization in knowledge graph applications in different domains.
 
- In this presentation we will:"
+ In this presentation we will:
+
+ - Introduce BlackSwan Technologies with its core technology vision and offering
+ - Describe the challenges involved in 360-degree entity view use-cases at Global 2000 enterprises
+ - Explain how enterprise knowledge graphs (EKG) help addressing these challenges
+ - Introduce the concept of data fabric via its implementation as Knowledge Mesh, and argue for its capabilities of scaling and automating EKG development in multiple domains"
 "Thrill-K: Rethinking knowledge layering and construction for higher machine cognition","Gadi Singer","/Transcripts/Connected Data World 2021/Presentations/Gadi Singer - Thrill-K_ Rethinking knowledge layering and construction for higher machine cognition.srt","Connected Data World 2021","03/12/2021","Presentation","Knowledge Graphs"," https://www.youtube.com/watch?v=akCuZ1UYlWw","https://pod.co/the-connected-data-podcast/thrill-k-rethinking-knowledge-layering-and-construction-for-higher-machine-cognition","https://2021.connecteddataworld.com/talks/gadi-singer-thrill-k-rethinking-knowledge-layering-and-construction-for-higher-machine-cognition/","The AI industry is now facing its next big challenge.
 
  What are the necessary properties of representational structures that could allow vast amounts of data become meaningful in the human sense of the word? How can knowledge architectures be constructed in a way that allows for both the efficiency and effectiveness of models they support?
@@ -130,7 +135,13 @@ This approach has been refined through business use cases in industrial AI for f
 
  In this talk, we will compare and contrast these two approaches (spoiler: often complexity vs precision) in real-world scenarios. What factors should you consider when choosing one over the other and when do you even have a choice?
 Join this talk to learn about exciting new developments in Graph ML, as the  graph techniques on which they are based."
-"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing","Keshav Pingali","/Transcripts/Connected Data World 2021/Presentations/Keshav Pingali - Knowledge Graphs, Graph AI, & the Need for High-performance Graph Computing _ CDW21.srt","Connected Data World 2021","03/12/2021","Presentation","Graph AI","https://www.youtube.com/watch?v=q5DDKKx15so","","https://2021.connecteddataworld.com/talks/knowledge-graphs-graph-ai-and-the-need-for-high-performance-graph-computing/","Learn how to extract actionable insights from massive datasets using a Graph Intelligence Platform."
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing","Keshav Pingali","/Transcripts/Connected Data World 2021/Presentations/Keshav Pingali - Knowledge Graphs, Graph AI, & the Need for High-performance Graph Computing _ CDW21.srt","Connected Data World 2021","03/12/2021","Presentation","Graph AI","https://www.youtube.com/watch?v=q5DDKKx15so","","https://2021.connecteddataworld.com/talks/knowledge-graphs-graph-ai-and-the-need-for-high-performance-graph-computing/","Learn how to extract actionable insights from massive datasets using a Graph Intelligence Platform.
+
+ - The need for Graph Intelligence
+ - The next era of graph computing
+ - Platform overview
+ - Use cases in Life Sciences, Financial Services, and Information Security
+ - Benchmarks and proof points"
 "Knowledge Graphs: Moving Beyond RDF","Kurt Cagle","/Transcripts/Connected Data World 2021/Presentations/Knowledge Graphs_ Moving Beyond RDF _ Kurt Cagle _ Connected Data World 2021 Presentation.srt","Connected Data World 2021","03/12/2021","Presentation","Knowledge Graphs","https://www.youtube.com/watch?v=lBvnxItuou4","","https://2021.connecteddataworld.com/talks/knowledge-graphs-moving-beyond-rdf/","The Semantic Web is twenty years old, and like many twenty-year-old technologies, many of the original concepts that drove the technology have become increasingly outdated even as the need for a compelling graph technology story has only become greater.
 
  Several technologies have arisen in the last few years, including JSON, machine learning systems, GraphQL, Lambdas, and others.
@@ -169,6 +180,11 @@ Join this talk to learn about exciting new developments in Graph ML, as the  gra
  It is essential to re-evaluate your connected data strategies in the context of alternative approaches to knowledge organization."
 "UBS Helix Knowledge Graph: The Power of Information","Natasa Varytimou","/Transcripts/Connected Data World 2021/Presentations/Natasa+recording.srt","Connected Data World 2021","03/12/2021","Presentation","Knowledge Graphs","https://www.youtube.com/watch?v=cod2Al7ooZs","","https://2021.connecteddataworld.com/talks/natasa-varytimou-ubs-helix-knowledge-graph-the-power-of-information/","UBS Helix Knowledge Graph was created to unify and streamline the information about our technical estate to maximize the impact of our technology spend :
 
+ - Break the silos of our applications
+ - Reduce redundancies and duplications in the structure and vocabulary of our applications
+ - Enable a 360o view of technical assets.
+ - Reduce complexity and eradicate undocumented data definitions
+ - Make it easier to rapidly answer questions about our technical estate
  Enable a 360o view of technical assets.
 
  Reduce complexity and eradicate undocumented data definitions
@@ -177,6 +193,14 @@ Join this talk to learn about exciting new developments in Graph ML, as the  gra
 
  Helix provides Business, IT Managers and every single user of data, the power of knowledge by answering questions common not only in a financial institution but in every organization that has an IT Department:
 
+ - How many application do I have?
+ - What infrastructure do they leverage?
+ - Where do I have Technical Debt and how can I reduce it;
+ - Where do I invest my money?
+ - What does an application cost me?
+ - For which business capability am I spending the most dollars/have the most opportunity for consolidation?
+ - Where am I spending too much money on applications I should be decommissioning?
+ - What data do each of my system has and how does it flow?
  How many application do I have?
 
  What infrastructure do they leverage?
@@ -200,7 +224,18 @@ Join this talk to learn about exciting new developments in Graph ML, as the  gra
  No more spreadsheets, no more predefined APIs and reports that need programmatical effort.
 
  UBS Helix Knowledge Graph is the new generation and the technical landscape is only the beginning."
-"The Enterprise Knowledge Graph","Omar Khan and David Newman","/Transcripts/Connected Data World 2021/Presentations/Omar Khan and David Newman - The Enterprise Knowledge Graph _ CDW21 Presentation.srt","Connected Data World 2021","03/12/2021","Presentation","Knowledge Graphs","https://www.youtube.com/watch?v=fNz_aWgtIuA","","https://2021.connecteddataworld.com/talks/the-enterprise-knowledge-graph/","In this talk we’ll canvas the Enterprise Knowledge Graph, and how you can apply it using its cornerstones of:"
+"The Enterprise Knowledge Graph","Omar Khan and David Newman","/Transcripts/Connected Data World 2021/Presentations/Omar Khan and David Newman - The Enterprise Knowledge Graph _ CDW21 Presentation.srt","Connected Data World 2021","03/12/2021","Presentation","Knowledge Graphs","https://www.youtube.com/watch?v=fNz_aWgtIuA","","https://2021.connecteddataworld.com/talks/the-enterprise-knowledge-graph/","In this talk we’ll canvas the Enterprise Knowledge Graph, and how you can apply it using its cornerstones of:
+
+ - Foundational building blocks
+ - Information model expressivity
+ - Machine understandable representations
+ - Transcending the relational model
+ - How an EKG expands on a graph and a knowledge graph
+ - Provides an infrastructure for Machine Learning
+ - Contrasting an unlinked with linked data environment
+ - Question and answering model emergence
+ - Semantic similarity & embedding
+ - Focused UI"
 "Graph Abstractions Matter","Ora Lassila","/Transcripts/Connected Data World 2021/Presentations/Ora Lassila - Graph Abstractions Matter _ CDW21 Presentations.srt","Connected Data World 2021","03/12/2021","Presentation","Semantic Technology","https://www.youtube.com/watch?v=-3fRKaz94WI","https://pod.co/the-connected-data-podcast/graph-abstractions-matter-ora-lassila","https://2021.connecteddataworld.com/talks/graph-abstractions-matter/","While mathematicians have used graph theory since the 18th century to solve problems, the software patterns for graph data are new to most developers. To enable ""mass adoption"" of graph technology, we need to establish the right abstractions, access APIs, and data models.
 
  RDF triples, while of paramount importance in establishing RDF graph semantics, are a low-level abstraction, much like using assembly language. For practical and productive “graph programming” we need something different.
@@ -221,6 +256,8 @@ Join this talk to learn about exciting new developments in Graph ML, as the  gra
 
  For many years, two main advantages of labeled property graphs (LPG) have been pointed out: they can deal with properties on edges in the graph and they are good for graph traversal. They are gone now, given that the leading triplestores support:
 
+ - RDF-star, which offers a simple and efficient mechanism to attach metadata to the edges of a graph, e.g. weights, access restrictions and provenance information.
+ - SPARQL extensions that allow for exploration of multi-hop relationships in graphs.
  The support for these extensions of the RDF and SPARQL is not implemented as a patch allowing us to check the box. RDF-star is already used by tools downstream and evaluations that prove efficiency improvement in managing Wikidata. RDF-star goes beyond the expressivity of LPG offering not just key-value pairs, but rather the full flexibility of making statements about statements.
 
  Ever since version 1.1 SPARQL property paths support graph traversal, allowing you to discover relationships between resources through arbitrary length patterns. Property paths uncover the start and end nodes of a specific path, but not the intermediate ones. There are standard complaint extensions of SPARQL now, which offer exploration of the paths and support all the different variants of the task, e.g. shortest path vs. all paths. And there are RDF engines that take advantage of their reasoning capabilities to score well at the LDBC Social Network Benchmark.
@@ -294,6 +331,11 @@ Join this talk to learn about exciting new developments in Graph ML, as the  gra
 
  We will mindmap the markets and the applications where knowledge graphs add value:
 
+ - Decision making: derive profound insights from richer and better interconnected data.
+ - Search and discovery: get more relevant results and connect the dots in less time.
+ - Publishing: repackage and better monetize content and data.
+ - Data governance: automation of updates and data quality management.
+ - Operations: infrastructure monitoring and configuration management.
  We will present how Ontotext puts together the technology stack and the partner ecosystem needed to deliver all these applications.
 
  Finally, we will show how the JDBC driver and the data virtualization, recently added to GraphDB, make it easier to transform your data into a graph, mapp them to a big ontology (e.g. FIBO) and access them from a BI tool."
