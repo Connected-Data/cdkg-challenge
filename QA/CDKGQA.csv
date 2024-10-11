@@ -1,0 +1,28 @@
+Question,Baseline answer,Last updated
+What is Connected Data?,Connected Data is an umbrella term used to describe technologies that deal with connections in data as first class citizens. The term was coined and popularized by the eponymous event.,11/10/24
+What types of technologies does Connected Data include?,"Connected Data is a technological space at the intersection of Semantic Technology, Knowledge Graphs, Graph Databases, and Graph Analytics, AI, and Data Science.",11/10/24
+What are the origins of Connected Data?,"As an event, Connected Data first started as a series of London-based Meetups in 2016. On the same year, the first Connected Data London conference was held.
+
+As a technological space, the various strands of Connected Data have existed in one form or another for a very long time. Graph theory, for example, dates back to the 17th century. However, they were all brought together conceptually by the Connected Data London event.",11/10/24
+What types of use cases is Connected Data suitable for?,"Use cases in which relationships and / or semantics are important. Some use cases provided by Connected Data speakers are Knowledge representation in the publishing industry, application integration, data integration, supply chain analytics, regulatory compliance, cybersecurity, document management for legal firms, data catalogs, metadata and content management, sales, healthcare, data visualization, art and scientific data management.",11/10/24
+What are the latest developments in Connected Data?,"Some of the most innovative approaches presented by Connected Data speakers are Neural Algorithmic Reasoning, the Thrill-K architecture for Rethinking knowledge layering and construction for higher machine cognition, an outline for Systems that learn and reason, and Graphcore’s IPU architecture for large scale GNN compute.",11/10/24
+"I am a Human Resources Director at a multinational corporation. I am interested in increasing the efficiency of the hiring process in my organization, while adhering to regulatory requirements about transparency and explainability. Which technologies should i be looking at?",Transparency and explainability are typically associated with Semantic Technology and Knowledge Graphs.,11/10/24
+"I am a Human Resources Director at a multinational corporation. I am interested in increasing the efficiency of the hiring process in my organization, while adhering to regulatory requirements about transparency and explainability. What contributors should i follow to learn more?","Some prominent contributors on the above topics from the Connected Data community are Kurt Cagle, Mike Dillinger, Frank van Harmelen and Ora Lassila.",11/10/24
+What are the most popular topics in the last 2 years [other interval] ?,"The most popular topic, based on the number of references in the talks, seems to be Knowledge Graphs.",11/10/24
+Can i have a list of Ora Lassila's [other speaker] talks in Connected Data [in the last X years] ?,Ora Lassila has given one talk in Connected Data [in the last X years]: Graph Abstractions Matter,11/10/24
+I need a summary of Ora Lassila's [other speaker] talks in Connected Data [in the last X years],"Ora Lassila talks about what we can do to unify the currently somewhat fragmented world of graphs. After summarizing the history of graphs from ancient times to today, he goes into the current state of affairs.
+
+He talks about the two kinds of graphs, RDF graphs and labeled property graphs, focusing more on RDF. He warns against trying to map trees to graphs, as there are examples of how that causes confusion. 
+
+He claims that syntax does not matter and it should not matter. His focus is on abstractions. He wonders whether there could be something like an object graph mapping.
+
+Graph queries, he claims, are about traversals. Using path patterns for traversing a graph is a little bit like pattern matching the graph itself. SPARQL, RDF’s query language, while powerful, is oftentimes not the right solution for that type of query.
+
+He goes on to emphasize problems with both RDF and LPG – too many ways to model things, and no way of modeling things, respectively. He also provides a comparison of the two. But maybe the most important problem, he says, is that: how do you take models of your graph data and map those to whatever it is that you have to do when you're writing code?
+
+His proposed solution is to support ontologies with some kind of predefined software library that 
+encapsulates some of the knowledge about an ontology. He calls these ontology engines, which is ongoing work, and describes different types of reasoning.
+
+His thesis is that graphs really could be an overarching logical abstraction for all the data that we manipulate.",11/10/24
+I am interested in building an enterprise knowledge graph. What are some good resources to get started?,The closest matches would be Omar Khan and David Newman’s “The Enterprise Knowledge Graph” and Eran Avidan’s “Sales AI: Building and maintaining a knowledge graph”. Mike Dillinger’s “Taxonomies: Connecting Data with Duct Tape” may help too. Taxonomies can be a good starting point for enterprise knowledge graphs.,11/10/24
+"I am interested in building an enterprise knowledge graph. Should i be using OWL or SHACL? What are some arguments for and against each option, and who has given them?",Veronika Heimsbakk’s “Modelling regulation requirements using SHACL” talks about how to use  SHACL. But I can’t find a talk that describes how to use OWL. So I can’t comment on their relative strengths and weaknesses.,11/10/24
