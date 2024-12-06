@@ -61,7 +61,7 @@ python 01_extract_topics.py
 This outputs an `entities.json` file in the `data` directory, which contains topic keywords associated
 with each talk's transcript. An example is shown below:
 
-```
+```json
 [
   {
     "filename": "Graph Thinking _ Paco Nathan _ Connected Data World 2021.txt",
