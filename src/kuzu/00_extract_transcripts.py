@@ -1,5 +1,5 @@
-import re
 import glob
+import re
 from pathlib import Path
 
 output_path = Path("./data")
@@ -10,7 +10,7 @@ def convert_srt_to_text(srt_content):
     # Remove timestamps and subtitle numbers
     pattern = r"\d+\n\d{2}:\d{2}:\d{2},\d{3}\s-->\s\d{2}:\d{2}:\d{2},\d{3}\n(.*?)\n\n"
     matches = re.finditer(pattern, srt_content + "\n\n", re.DOTALL)
-    
+
     # Extract and join the text portions
     text_parts = [match.group(1).replace("\n", " ").strip() for match in matches]
     return " ".join(text_parts)
@@ -29,7 +29,7 @@ def process_srt_files():
             # Read the .srt file
             with open(srt_path, "r", encoding="utf-8") as f:
                 srt_content = f.read()
-            
+
             # Convert to plain text
             plain_text = convert_srt_to_text(srt_content)
 
@@ -38,7 +38,7 @@ def process_srt_files():
                 f.write(plain_text)
 
             print(f"Converted {srt_path} -> {txt_path}")
-                
+
         except Exception as e:
             print(f"Error processing {srt_path}: {str(e)}")
 

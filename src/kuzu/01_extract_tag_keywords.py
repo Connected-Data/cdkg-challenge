@@ -1,9 +1,10 @@
-import os
 import json
+import os
+from pathlib import Path
+
+import ell
 from dotenv import load_dotenv
 from openai import OpenAI
-from pathlib import Path
-import ell
 
 load_dotenv()
 
@@ -18,6 +19,7 @@ SEED = 42
 
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
+
 @ell.simple(model=MODEL_NAME, temperature=0.0, client=openai_client, seed=SEED)
 def get_entities(text: str) -> str:
     """
@@ -29,7 +31,7 @@ def get_entities(text: str) -> str:
     Here is an example JSON schema:
 
     {
-        "topic": ["GraphQL", "RDF", "Apollo"]
+        "tag": ["GraphQL", "RDF", "Apollo"]
     }
 
     Strictly follow the JSON schema provided. Do not return anything other than valid JSON.
@@ -38,12 +40,13 @@ def get_entities(text: str) -> str:
     Task: Extract useful entities from the following presentation transcript as JSON.
 
     Instructions:
-      1. Only include technologies or tools/frameworks as a list of "topic" names.
-      2. Always lowercase the names of the topics (e.g. "GraphQL" should be "graphql").
+      1. Only include technologies or tools/frameworks as a list of "tag" keywords.
+      2. Always lowercase the names of the tags (e.g. "GraphQL" should be "graphql").
 
     Presentation transcript:
     {text}
     """
+
 
 # Initialize empty list at the start
 all_entities = []
@@ -55,11 +58,8 @@ with open("entities.json", "w") as f:
 
         entities = json.loads(get_entities(text))
         # Append each result to the list
-        all_entities.append({
-            "filename": filename,
-            "entities": entities
-        })
+        all_entities.append({"filename": filename, "entities": entities})
         print(f"Finished processing file {filename}")
-    
+
     # Write the entire list at once
     json.dump(all_entities, f, indent=2)

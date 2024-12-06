@@ -1,6 +1,7 @@
 """
 Graph Retrieval Augmented Generation from a Kùzu database.
 """
+
 import os
 
 import ell
@@ -145,7 +146,7 @@ class GraphRAG:
 if __name__ == "__main__":
     graph_rag = GraphRAG("./cdl_db")
 
-    question = "What are the names of speakers who discussed the topic rdf? Return the names as a numbered list in ascending order."
+    question = "Who are the speakers whose talks have the tag 'rdf'? Return the speaker names as a numbered list."
     response = graph_rag.run(question)
     print(f"Q1: {question}\n\n{response}")
 
@@ -156,3 +157,7 @@ if __name__ == "__main__":
     question = "What did Paco Nathan speak about? Use the description property."
     response = graph_rag.run(question)
     print(f"---\nQ3: {question}\n\n{response}")
+
+    question = "Can you tell me more about the event Connected Data World 2021?"
+    response = graph_rag.run(question)
+    print(f"---\nQ4: {question}\n\n{response}")
