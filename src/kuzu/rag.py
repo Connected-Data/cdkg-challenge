@@ -154,7 +154,7 @@ if __name__ == "__main__":
     response = graph_rag.run(question)
     print(f"---\nQ2: {question}\n\n{response}")
 
-    question = "What did Paco Nathan speak about? Use the description property."
+    question = "What was discussed in the talk by Paco Nathan?"
     response = graph_rag.run(question)
     print(f"---\nQ3: {question}\n\n{response}")
 

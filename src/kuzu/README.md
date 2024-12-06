@@ -36,7 +36,7 @@ python 00_extract_transcripts.py
 python 01_extract_tag_keywords.py
 python 02_domain_graph.py
 python 03_content_graph.py
-python 04_rag.py
+python rag
 ```
 
 ### Extract transcripts
@@ -105,16 +105,29 @@ python 03_content_graph.py
 
 ### 4. Query the graph and run Graph RAG
 
-We are now ready to query the graph and run Graph RAG! This is done in the `04_rag.py` script. We use
+We are now ready to query the graph and run Graph RAG! This is done in the `rag` script. We use
 an LLM to translate the given natural language questions into Kùzu Cypher queries, following which
 the retrieved results are passed as context to an LLM to answer the questions in natural language.
 
 ```bash
-python 04_rag.py
+python rag
 ```
 
 Feel free to modify the prompts in the script and to experiment with different data models to
 answer a broader variety of questions!
+
+### 5. Run the Streamlit app
+
+A simple Streamlit app is provided to easily interact with the graph through a chat interface. You
+can also see the Cypher queries generated for each question.
+
+```bash
+streamlit run app.py
+```
+
+Any prior questions and answers are saved in the chat history, so you can refer back to them.
+
+![](./assets/rag_demo.gif)
 
 ## Visualization
 
