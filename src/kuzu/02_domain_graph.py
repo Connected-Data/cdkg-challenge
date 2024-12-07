@@ -100,7 +100,7 @@ def create_tables(conn: kuzu.Connection):
     )
     conn.execute("CREATE NODE TABLE IF NOT EXISTS Category (name STRING, PRIMARY KEY (name))")
     # Relationships
-    conn.execute("CREATE REL TABLE IF NOT EXISTS HAS_SPEAKER (FROM Talk TO Speaker, date DATE)")
+    conn.execute("CREATE REL TABLE IF NOT EXISTS GIVES_TALK (FROM Speaker TO Talk, date DATE)")
     conn.execute("CREATE REL TABLE IF NOT EXISTS IS_PART_OF (FROM Talk TO Event)")
     conn.execute("CREATE REL TABLE IF NOT EXISTS IS_CATEGORIZED_AS (FROM Talk TO Category)")
 
@@ -182,8 +182,8 @@ if __name__ == "__main__":
     is_part_of_df = get_talk_event_relationships(df)
 
     # Subset specific DataFrames
-    has_speaker_df = speaker_talk_category_df.select("talk", "speaker", "date").rename(
-        {"talk": "from", "speaker": "to", "date": "date"}
+    gives_talk_df = speaker_talk_category_df.select("speaker", "talk", "date").rename(
+        {"speaker": "from", "talk": "to", "date": "date"}
     )
     relates_to_df = speaker_talk_category_df.select("talk", "category").rename(
         {"talk": "from", "category": "to"}
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     conn.execute("COPY Event(name) FROM events_df")
     conn.execute("COPY Category FROM categories_df")
     # Insert relationships
-    conn.execute("COPY HAS_SPEAKER FROM has_speaker_df")
+    conn.execute("COPY GIVES_TALK FROM gives_talk_df")
     conn.execute("COPY IS_PART_OF FROM is_part_of_df")
     conn.execute("COPY IS_CATEGORIZED_AS FROM is_categorized_as_df")
 

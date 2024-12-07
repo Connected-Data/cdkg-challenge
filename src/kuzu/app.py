@@ -34,8 +34,8 @@ if question:
         # Append the question and answer to the history
         st.session_state.messages.append({"question": question, "answer": response})
 
-# Display history (add before the input box)
+# Display history
 for msg in st.session_state.messages:
-    st.write("**Q:** " + msg["question"])
-    st.write("**A:** " + msg["answer"])
-    st.divider()
+    with st.container(border=True):
+        st.write("**Q:** " + msg["question"])
+        st.write("**A:** " + msg["answer"])

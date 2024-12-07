@@ -27,7 +27,24 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Run the code
+## Workflow
+
+
+### Schema definition
+
+The modelling approach has two levels:
+1. Domain graph (expert-based): Captures the relationships between speakers, talks, events, and
+categories
+1. Content graph (automated, typically via LLMs): Captures the relationships between speakers and
+the tags they discuss in their talks. The tags are typically extracted from the talk transcripts or
+other scraped data using an LLM or other automated methods.
+
+Ths schema used for this graph is shown below. The entities that are part of the domain graph are
+clearly separated from the content (also known as "lexical") graph.
+
+![](./assets/cdl-schema.png)
+
+### Run the code
 
 The scripts have been numbered sequentially, so they can be run in order.
 
@@ -36,7 +53,7 @@ python 00_extract_transcripts.py
 python 01_extract_tag_keywords.py
 python 02_domain_graph.py
 python 03_content_graph.py
-python rag
+python rag.py
 ```
 
 ### Extract transcripts
@@ -87,7 +104,10 @@ this graph comes from real-world data curation and human knowledge.
 python 02_domain_graph.py
 ```
 
-This will create the domain graph and store it in a Kùzu database. The database is at the `cdl_db` directory.
+This creates the domain graph of speakers, categories, events and talks, and stores it in a Kùzu database.
+The database is at the `cdl_db` directory.
+
+![](./assets/domain_graph.png)
 
 ### 3. Construct the content graph
 
@@ -103,14 +123,18 @@ which is more abstract and captures relationships between higher-level concepts 
 python 03_content_graph.py
 ```
 
+The full graph consisting of the tags that are connected to the existing domain graph is shown below.
+
+![](./assets/full_graph.png)
+
 ### 4. Query the graph and run Graph RAG
 
-We are now ready to query the graph and run Graph RAG! This is done in the `rag` script. We use
+We are now ready to query the graph and run Graph RAG! This is done in the `rag.py` script. We use
 an LLM to translate the given natural language questions into Kùzu Cypher queries, following which
 the retrieved results are passed as context to an LLM to answer the questions in natural language.
 
 ```bash
-python rag
+python rag.py
 ```
 
 Feel free to modify the prompts in the script and to experiment with different data models to
