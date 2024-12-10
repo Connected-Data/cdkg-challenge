@@ -1,0 +1,945 @@
+[
+  {
+    "filename": "Illuminating the Last Vestiges of Dark Data - Speech Recognition for Knowledge Graphs.txt",
+    "entities": {
+      "tag": [
+        "allegrograph",
+        "nlp",
+        "speech technology",
+        "text analytics",
+        "google assistant",
+        "siri",
+        "amazon",
+        "ibm watson",
+        "cortana",
+        "apache tika",
+        "smart logic",
+        "pool party"
+      ]
+    }
+  },
+  {
+    "filename": "How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management _ Marcus N\u00f6lke.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "data analytics",
+        "rdf",
+        "sparkle",
+        "api",
+        "denodo",
+        "sap",
+        "oracle",
+        "redshift",
+        "excel",
+        "tripisstorm",
+        "metafactory",
+        "tableau",
+        "qedt",
+        "fibo",
+        "iso"
+      ]
+    }
+  },
+  {
+    "filename": "From discovering data to trusting data.txt",
+    "entities": {
+      "tag": [
+        "amazon",
+        "stemma",
+        "lyft",
+        "spark",
+        "cloudera",
+        "apache",
+        "airflow",
+        "hive",
+        "neo4j",
+        "neptune",
+        "apache atlas",
+        "elasticsearch",
+        "jira",
+        "superset",
+        "snowflake",
+        "google dlp api",
+        "amundsen"
+      ]
+    }
+  },
+  {
+    "filename": "Introducing D3FEND_ A Knowledge Graph of Cybersecurity Countermeasures _ Peter Kaloroumakis _ CDW21.txt",
+    "entities": {
+      "tag": [
+        "mitre",
+        "defend",
+        "att&ck",
+        "owl2"
+      ]
+    }
+  },
+  {
+    "filename": "Knowledge Graphs The Frontier.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "ai",
+        "nlp",
+        "semantic web",
+        "rdf",
+        "graph analytics",
+        "neo4j",
+        "wikidata",
+        "google knowledge graph",
+        "amazon product graph",
+        "linkedin graph",
+        "deep learning",
+        "machine learning",
+        "iot"
+      ]
+    }
+  },
+  {
+    "filename": "Knowledge Graphs as Hub for Data, Metadata and Content. And the Partners Needed to Deliver the Multitude of Applications.txt",
+    "entities": {
+      "tag": [
+        "ontotext",
+        "graph db",
+        "rdf",
+        "graphql",
+        "bi",
+        "jdbc",
+        "semantic web",
+        "owl",
+        "html",
+        "http",
+        "data virtualization",
+        "open refine",
+        "sparkle"
+      ]
+    }
+  },
+  {
+    "filename": "Applying Semantic Web Standards for Knowledge Representation at Elsevier _ Veronique Moore.txt",
+    "entities": {
+      "tag": [
+        "linked data",
+        "rdf",
+        "scos",
+        "scosxl",
+        "shackle",
+        "prov",
+        "pav",
+        "sparql",
+        "mendeley",
+        "scopus",
+        "sciencedirect",
+        "hyaxis",
+        "omniscience"
+      ]
+    }
+  },
+  {
+    "filename": "Natasa+recording.txt",
+    "entities": {
+      "tag": [
+        "ubsknowledgegraph",
+        "federatedarchitecture",
+        "microservices",
+        "shackle",
+        "uml",
+        "dublincore",
+        "fibo",
+        "prov",
+        "tcat",
+        "datacube",
+        "sdmx",
+        "http",
+        "uri",
+        "dcat",
+        "elasticsearch"
+      ]
+    }
+  },
+  {
+    "filename": "Victor_Lee_graph_alg_and_graph_ML_making_sense_Recording_1920x1050.txt",
+    "entities": {
+      "tag": [
+        "tigergraph",
+        "graph algorithms",
+        "knowledge graphs",
+        "graph data science",
+        "graph embeddings",
+        "graph neural networks",
+        "machine learning",
+        "unsupervised machine learning",
+        "supervised learning",
+        "reinforcement learning",
+        "decision trees",
+        "entity resolution",
+        "cosine similarity",
+        "page rank",
+        "louvain",
+        "diameter estimation",
+        "graph convolutional neural network",
+        "pytorch",
+        "tensorflow",
+        "dgl"
+      ]
+    }
+  },
+  {
+    "filename": "RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits_ Standards, Semantics & Interoperability.txt",
+    "entities": {
+      "tag": [
+        "rdf",
+        "graphdb",
+        "sparql",
+        "sparkle",
+        "semantic web",
+        "knowledge graphs",
+        "property graphs"
+      ]
+    }
+  },
+  {
+    "filename": "Hybridization of Machine Learning and Operational Research is the future of AI _ Nikolaj van Omme.txt",
+    "entities": {
+      "tag": [
+        "ml",
+        "or",
+        "operations research",
+        "machine learning",
+        "graph theory",
+        "big data",
+        "artificial intelligence",
+        "graph neural networks"
+      ]
+    }
+  },
+  {
+    "filename": "Leveraging Graphcore\u2019s IPU architecture for large scale GNN compute _ Carlo Luschi _ Connected Data.txt",
+    "entities": {
+      "tag": [
+        "graphcore",
+        "ipu",
+        "gnn",
+        "deep learning",
+        "temporal graph networks"
+      ]
+    }
+  },
+  {
+    "filename": "Graph stories How stories and metaphors can help you promote Enterprise Knowledge Graphs (1).txt",
+    "entities": {
+      "tag": [
+        "knowledge graphs",
+        "graph databases",
+        "ai",
+        "fpga",
+        "tigergraph",
+        "graphcore",
+        "intel",
+        "hadoop",
+        "data lakes",
+        "machine learning",
+        "deep learning",
+        "graph convolutional neural networks",
+        "embedded systems",
+        "relational databases",
+        "semantic web",
+        "data engineering",
+        "data science"
+      ]
+    }
+  },
+  {
+    "filename": "Van Gogh Worldwide -- constructing and searching a knowledge graph of linked art.txt",
+    "entities": {
+      "tag": [
+        "spink",
+        "knowledge graph",
+        "schema.org",
+        "elasticsearch",
+        "solr",
+        "linked art",
+        "cdoc crm",
+        "probabilistic graph database"
+      ]
+    }
+  },
+  {
+    "filename": "Kirell_Benzi_Secret Knowledge_ Visualizing Complexity.txt",
+    "entities": {
+      "tag": [
+        "slido",
+        "data art",
+        "data visualization",
+        "neural networks",
+        "tableau",
+        "power bi",
+        "click",
+        "generative adversarial networks",
+        "gan",
+        "knowledge graph",
+        "fractal art",
+        "mandelbrot set"
+      ]
+    }
+  },
+  {
+    "filename": "Ora Lassila - Graph Abstractions Matter _ CDW21 Presentations.txt",
+    "entities": {
+      "tag": [
+        "rdf",
+        "owl",
+        "sparql",
+        "gremlin",
+        "cypher",
+        "neptune",
+        "semantic web",
+        "knowledge graphs",
+        "property graphs"
+      ]
+    }
+  },
+  {
+    "filename": "Mike Dillinger - Taxonomies_ Connecting Data with Duct Tape _ CDW21 Presentation.txt",
+    "entities": {
+      "tag": [
+        "taxonomy",
+        "ai",
+        "knowledge graph",
+        "semantic technologies",
+        "hybrid intelligence",
+        "neurosymbolic systems",
+        "concept catalogs",
+        "feature space"
+      ]
+    }
+  },
+  {
+    "filename": "Leveraging the Semantics of Adverse Childhood Experiences for Explainable AI Recommendations.txt",
+    "entities": {
+      "tag": [
+        "google dialogflow",
+        "google cloud platform",
+        "neo4j",
+        "ontologies",
+        "knowledge graphs",
+        "semantic web technologies"
+      ]
+    }
+  },
+  {
+    "filename": "Systems that learn and reason _ Frank van Harmelen _ Connected Data World 2021.txt",
+    "entities": {
+      "tag": [
+        "ai",
+        "machine learning",
+        "symbolic ai",
+        "statistical ai",
+        "knowledge graph",
+        "neural networks",
+        "inductive logic programming",
+        "deepmind",
+        "nvidia"
+      ]
+    }
+  },
+  {
+    "filename": "J\u00f6rg Schad - Graph Analytics vs Graph Machine Learning _ CDW21 Presentation.txt",
+    "entities": {
+      "tag": [
+        "graph",
+        "graphml",
+        "graph analytics",
+        "graph machine learning",
+        "graph neural networks",
+        "graph embeddings",
+        "graph databases",
+        "graph algorithms",
+        "deepmind",
+        "uber",
+        "gpus",
+        "homophily"
+      ]
+    }
+  },
+  {
+    "filename": "DBpedia Databus - A platform to evolve knowledge and AI from versioned web files.txt",
+    "entities": {
+      "tag": [
+        "dbpedia",
+        "sparkle",
+        "linked data",
+        "fair",
+        "docker",
+        "rdf",
+        "json",
+        "xml",
+        "maven",
+        "npm",
+        "scala",
+        "apt"
+      ]
+    }
+  },
+  {
+    "filename": "Powering the Connected Enterprise in a Hybrid, Multicloud World.txt",
+    "entities": {
+      "tag": [
+        "stardog",
+        "knowledge graph",
+        "ai",
+        "cloud",
+        "kubernetes",
+        "aws",
+        "azure",
+        "gcp",
+        "oracle",
+        "rdf",
+        "sparkle",
+        "shackle"
+      ]
+    }
+  },
+  {
+    "filename": "Rebooting AI Adding Knowledge to Deep Learning.txt",
+    "entities": {
+      "tag": [
+        "deep learning",
+        "gpt",
+        "alpha fold",
+        "machine learning",
+        "knowledge representation",
+        "neural networks",
+        "hybrid models",
+        "probabilistic learning",
+        "genetic algorithms",
+        "knowledge graphs"
+      ]
+    }
+  },
+  {
+    "filename": "Unprecedented Products in Commercial Real Estate with Automated Generation of Large Knowledge Graphs.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "ml",
+        "ai",
+        "graph database",
+        "relational database"
+      ]
+    }
+  },
+  {
+    "filename": "Supporting Ontology and Knowledge Graph Development on the Web.txt",
+    "entities": {
+      "tag": [
+        "protege",
+        "web protege",
+        "owl",
+        "neo4j",
+        "rdf"
+      ]
+    }
+  },
+  {
+    "filename": "Implementing Informed Consent with Knowledge Graphs _ Anelia Kurteva _ Connected Data World 2021.txt",
+    "entities": {
+      "tag": [
+        "knowledge graphs",
+        "gdpr",
+        "semantic web",
+        "flutter",
+        "d3"
+      ]
+    }
+  },
+  {
+    "filename": "Humans and the Graph - Inspiring and empowering GraphQL adoption _ Dan Boerner _ Connected Data Worl.txt",
+    "entities": {
+      "tag": [
+        "graphql",
+        "apollo",
+        "cloud native computing",
+        "containerization",
+        "reactive programming"
+      ]
+    }
+  },
+  {
+    "filename": "Gadi Singer - Thrill-K_ Rethinking knowledge layering and construction for higher machine cognition.txt",
+    "entities": {
+      "tag": [
+        "ai",
+        "deep learning",
+        "neural networks",
+        "symbolic representation",
+        "symbolic reasoning",
+        "language models",
+        "knowledge graph",
+        "gpt-3",
+        "t5",
+        "ram",
+        "rag",
+        "infusion",
+        "decoder",
+        "nlp",
+        "multimodality",
+        "common sense reasoning",
+        "neuromorphic computing"
+      ]
+    }
+  },
+  {
+    "filename": "The Business Case for Data Management _ Mike Atkin _ Connected Data World 2021.txt",
+    "entities": {
+      "tag": [
+        "semantic data management",
+        "relational technologies",
+        "triple store",
+        "ontologies",
+        "semantic standards",
+        "data governance"
+      ]
+    }
+  },
+  {
+    "filename": "BizDevOps Aligning the Business and IT with a Graph Knowledge Base.txt",
+    "entities": {
+      "tag": [
+        "enterpriseweb",
+        "ipaas",
+        "cloud native",
+        "okta",
+        "amazon lambda",
+        "graphql",
+        "kubernetes",
+        "json",
+        "rdf",
+        "uml",
+        "xml",
+        "ai",
+        "ml"
+      ]
+    }
+  },
+  {
+    "filename": "KG Enterprise Adoption Roundtable Summary.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "semantic technologies",
+        "data integration",
+        "graph database",
+        "graphql",
+        "gremlin",
+        "cloud",
+        "data management",
+        "data governance"
+      ]
+    }
+  },
+  {
+    "filename": "Sales AI - Building and maintaining a knowledge graph.txt",
+    "entities": {
+      "tag": [
+        "intel",
+        "machine learning",
+        "knowledge graph",
+        "sales ai",
+        "microservices",
+        "kafka",
+        "neo4j",
+        "cypher",
+        "graph algorithms"
+      ]
+    }
+  },
+  {
+    "filename": "Graph algorithms over data lakes and warehouses.txt",
+    "entities": {
+      "tag": [
+        "timber",
+        "networkx",
+        "rapids cu graph",
+        "apache spark"
+      ]
+    }
+  },
+  {
+    "filename": "Omar Khan and David Newman - The Enterprise Knowledge Graph _ CDW21 Presentation.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "dna sequencing",
+        "mRNA",
+        "graph databases",
+        "virtual graph databases",
+        "data catalogs",
+        "data fabrics",
+        "graph algorithms",
+        "graph neural networks",
+        "machine learning",
+        "deep learning",
+        "natural language processing",
+        "rdfowl",
+        "sparql",
+        "graphql"
+      ]
+    }
+  },
+  {
+    "filename": "Modelling regulation requirements using SHACL.txt",
+    "entities": {
+      "tag": [
+        "shackle",
+        "owl",
+        "rdf",
+        "sparkle",
+        "nlp",
+        "java",
+        "c",
+        "csharp",
+        "python",
+        "jena",
+        "rdfj",
+        "stardog",
+        "topquadrant"
+      ]
+    }
+  },
+  {
+    "filename": "Deep Learning on Graphs_ Past, Present, And Future.txt",
+    "entities": {
+      "tag": [
+        "machine learning",
+        "deep learning",
+        "multilayer perceptrons",
+        "convolutional neural networks",
+        "cnn",
+        "graph neural networks",
+        "geometric deep learning",
+        "temporal graph networks",
+        "dgl",
+        "pytorch geometric"
+      ]
+    }
+  },
+  {
+    "filename": "Data Observability_ How to Eliminate Data Downtime and Start Trusting Your Data _ Barr Moses.txt",
+    "entities": {
+      "tag": [
+        "monte carlo",
+        "gainsight",
+        "snowflake",
+        "looker",
+        "pagerduty",
+        "splunk",
+        "new relic",
+        "datadog"
+      ]
+    }
+  },
+  {
+    "filename": "Big Graphs & Machine Learning & Rich Interactions the recipe for the future of search.txt",
+    "entities": {
+      "tag": [
+        "datavise",
+        "knowle",
+        "pubmed",
+        "scopus",
+        "google",
+        "google scholar",
+        "microsoft academic",
+        "lens",
+        "umap",
+        "hdbscan",
+        "nlp"
+      ]
+    }
+  },
+  {
+    "filename": "David Amzallag & Szymon Klarman - Knowledge Mesh_ From Data Silos to Data Fabric at Global 2000 EPs.txt",
+    "entities": {
+      "tag": [
+        "black swan technologies",
+        "data lake",
+        "knowledge graph",
+        "knowledge mesh",
+        "graphql",
+        "etl",
+        "nlp",
+        "sql"
+      ]
+    }
+  },
+  {
+    "filename": "Legal Knowledge Graphs _ Vaishali Raghvani _ Connected Data World.txt",
+    "entities": {
+      "tag": [
+        "knowledge graphs",
+        "sparkle",
+        "rule based reasoning",
+        "legislate"
+      ]
+    }
+  },
+  {
+    "filename": "The Road to AI requires a Semantic Data Fabric.txt",
+    "entities": {
+      "tag": [
+        "semantic data fabric",
+        "pool party semantic suite",
+        "data dot world",
+        "enterprise knowledge graph",
+        "knowledge graph",
+        "natural language processing",
+        "machine learning",
+        "data catalog"
+      ]
+    }
+  },
+  {
+    "filename": "The game plan for your Knowledge Graph-driven FAIR data platform.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "fair",
+        "rdf",
+        "sparkle",
+        "owl",
+        "shackle",
+        "dcad",
+        "provo",
+        "scos",
+        "meta factory",
+        "collibra",
+        "git"
+      ]
+    }
+  },
+  {
+    "filename": "(DataCatalog)_-[poweredBy]-_(KnowledgeGraph).txt",
+    "entities": {
+      "tag": [
+        "data catalog",
+        "knowledge graph",
+        "semantic web",
+        "data governance",
+        "data virtualization",
+        "data federation",
+        "metadata management",
+        "data quality",
+        "data lineage",
+        "data security",
+        "data preparation",
+        "data integration",
+        "graph database",
+        "dcap",
+        "dublin core",
+        "provo",
+        "skos"
+      ]
+    }
+  },
+  {
+    "filename": "Reinforcement Learning for Knowledge Graph Reasoning.txt",
+    "entities": {
+      "tag": [
+        "knowledge graph",
+        "reinforcement learning",
+        "sparkle",
+        "knowledge graph embeddings",
+        "path ranking algorithms",
+        "sequential decision making",
+        "convolutional networks",
+        "policy gradient",
+        "deepass",
+        "minerva"
+      ]
+    }
+  },
+  {
+    "filename": "Knowledge Graphs_ Moving Beyond RDF _ Kurt Cagle _ Connected Data World 2021 Presentation.txt",
+    "entities": {
+      "tag": [
+        "rdf",
+        "owl",
+        "sparql",
+        "turtle",
+        "json",
+        "json ld",
+        "gremlin",
+        "opencypher",
+        "shackle",
+        "graphql"
+      ]
+    }
+  },
+  {
+    "filename": "Data-Centric Security.txt",
+    "entities": {
+      "tag": [
+        "flurry",
+        "cryptography",
+        "ai",
+        "machine learning",
+        "verifiable credentials",
+        "blockchain",
+        "decentralized identifiers",
+        "json ld",
+        "sparql",
+        "sql",
+        "graphql",
+        "rdf",
+        "owl",
+        "shackle"
+      ]
+    }
+  },
+  {
+    "filename": "GraphEDM A Unified Framework for Machine Learning on Graphs.txt",
+    "entities": {
+      "tag": [
+        "graph edm",
+        "graph representation learning",
+        "neural networks",
+        "graph neural networks",
+        "gcn",
+        "knowledge graphs",
+        "link prediction",
+        "deepwalk"
+      ]
+    }
+  },
+  {
+    "filename": "Graph Thinking _ Paco Nathan _ Connected Data World 2021.txt",
+    "entities": {
+      "tag": [
+        "graph",
+        "relational database",
+        "data warehouse",
+        "data lake",
+        "business intelligence",
+        "cynefin",
+        "network medicine",
+        "drug discovery",
+        "graph algorithms",
+        "graph technologies",
+        "rdf",
+        "spark",
+        "dask",
+        "ray",
+        "rapids",
+        "apache arrow",
+        "apache parquet",
+        "pyvis",
+        "matplotlib",
+        "graphistry",
+        "networkx",
+        "igraph",
+        "cugraph",
+        "pytorch geometric"
+      ]
+    }
+  },
+  {
+    "filename": "Keshav Pingali - Knowledge Graphs, Graph AI, & the Need for High-performance Graph Computing _ CDW21.txt",
+    "entities": {
+      "tag": [
+        "katana graph",
+        "graph ai",
+        "high performance graph computing",
+        "cusp",
+        "galois",
+        "gluon",
+        "open cypher",
+        "gql",
+        "gcn",
+        "gtn",
+        "aws",
+        "google cloud",
+        "fpga",
+        "louvain clustering",
+        "page rank",
+        "medical knowledge graph",
+        "knowledge graph",
+        "graph intelligence platform"
+      ]
+    }
+  },
+  {
+    "filename": "Protecting vital public health programs with AI and Knowledge Graphs.txt",
+    "entities": {
+      "tag": [
+        "ibm",
+        "watson",
+        "nlp",
+        "ai",
+        "knowledge graph",
+        "ontology",
+        "deep learning",
+        "semantic role labeling",
+        "mongodb",
+        "icd",
+        "umls"
+      ]
+    }
+  },
+  {
+    "filename": "Andreea Deac - Neural Algorithmic Reasoning_ Combining Classical Algorithms and Neural Networks.txt",
+    "entities": {
+      "tag": [
+        "neural networks",
+        "dynamic programming",
+        "graph neural networks",
+        "reinforcement learning",
+        "value iteration",
+        "markov decision process",
+        "contrastive learning",
+        "bellman ford",
+        "excelvin",
+        "gqn",
+        "neural algorithmic reasoning"
+      ]
+    }
+  },
+  {
+    "filename": "Dave Duggal - One graph to bind them all! Linking data & apps for event-driven interoperability.txt",
+    "entities": {
+      "tag": [
+        "enterprise web",
+        "graph",
+        "no code",
+        "cloud native",
+        "boal",
+        "sap",
+        "json",
+        "rdf",
+        "xml",
+        "kafka",
+        "mariadb"
+      ]
+    }
+  },
+  {
+    "filename": "Peter Crocker - Reasoning for the Answer_ Who is the Greatest Formula 1 Driver of all Time_ _ CDW21.txt",
+    "entities": {
+      "tag": [
+        "audiofox",
+        "rdfox",
+        "c++",
+        "sparql",
+        "owl",
+        "shackle",
+        "datalog",
+        "solr",
+        "docker",
+        "aws",
+        "google cloud platform",
+        "azure"
+      ]
+    }
+  }
+]
