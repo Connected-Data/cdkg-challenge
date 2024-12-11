@@ -56,7 +56,8 @@ Version: 0.1
    1. RDF-based KG  
    2. Property Graph-based KG
 
-![][image1]
+![image](https://github.com/user-attachments/assets/d0541e6e-d6cd-492b-a2f5-6a0329ca6f5a)
+
 
 Figure 1\. KG creation workflow
 
@@ -220,7 +221,8 @@ Talk \- hasPublicationMedium \-\> PublicationMedium
 
 This is the metamodel. It is meant to be the central domain reference from which RDF- or LPG-based implementations can be based on. Specific implementations will adapt their modeling accordingly.
 
-![][image2]
+![image](https://github.com/user-attachments/assets/178250f9-ca1c-4c6e-bcde-4245d3af5926)
+
 
 Figure 2\. Metamodel: Entities, attributes, and relationships the domain consists of.
 
@@ -234,7 +236,8 @@ The two main approaches to building a KG include RDF and Property Graphs. As par
 
 * [Graph Data Modeling: Categorical Variables](https://medium.com/neo4j/graph-data-modeling-categorical-variables-dd8a2845d5e0)
 
-![][image3]
+![image](https://github.com/user-attachments/assets/2d9f7320-f704-43bc-9f19-aeaa0e1bb0fa)
+
 
 Figure 3\. Adopting the metamodel for the Property Graph data representation
 
