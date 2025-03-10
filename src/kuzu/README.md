@@ -1,34 +1,36 @@
 # Construct and query the Knowledge Graph using Kuzu
 
-This directory contains the code used to construct and query the Knowledge Graph using [Kùzu](https://kuzudb.com/),
+This directory contains the code used to construct and query the Knowledge Graph using [Kuzu](https://kuzudb.com/),
 an embedded, highly scalable graph database that supports the property graph data model through a convenient Cypher query language interface.
 
-## Why Kùzu?
+## Why Kuzu?
 
-As a modern embedded graph database, Kùzu offers the following benefits:
+As a modern embedded graph database, Kuzu offers the following benefits:
 
-- Kùzu is designed to be embedded into your application, so you can easily begin building with minimum hassles (no servers or DB admin)
+- Kuzu is designed to be embedded into your application, so you can easily begin building with minimum hassles (no servers or DB admin)
 - Permissively licensed (MIT license)
-- **Interoperability**: Graphs are typically constructed from a variety of structured & unstructured sources. Kùzu allows you to seamlessly transform data between various formats while iterating on your graph data model
+- **Interoperability**: Graphs are typically constructed from a variety of structured & unstructured sources. Kuzu allows you to seamlessly transform data between various formats while iterating on your graph data model
 - **Structured property graph** data model, with strict types and more control over the schema
 - Add a persistent graph layer to advanced Graph RAG methods for larger-than-memory graph applications
-- Where many existing implementations of Graph RAG utilize NetworkX, an in-memory graph library, Kùzu can serve as a persistent backend for larger-than-memory graph applications (all graph traversals are performed on disk, so it can easily handle graphs that are too large to fit in memory)
-- Kùzu seamlessly interoperates with NetworkX, so you can use NetworkX for your graph algorithms, and Kùzu for data storage
-- Kùzu can also serve as a PyTorch Geometric backend for more advanced graph neural network (GNN) use cases that involve node embeddings and graph machine learning (GNNs)
-- Fast! Although retrieval latency is typically a small fraction of overall RAG application latency, Kùzu is designed to be performant and can handle large (1B node/edge) graphs, so you can move from PoC to production without worries.
+- Where many existing implementations of Graph RAG utilize NetworkX, an in-memory graph library, Kuzu can serve as a persistent backend for larger-than-memory graph applications (all graph traversals are performed on disk, so it can easily handle graphs that are too large to fit in memory)
+- Kuzu seamlessly interoperates with NetworkX, so you can use NetworkX for your graph algorithms, and Kuzu for data storage
+- Kuzu can also serve as a PyTorch Geometric backend for more advanced graph neural network (GNN) use cases that involve node embeddings and graph machine learning (GNNs)
+- Fast! Although retrieval latency is typically a small fraction of overall RAG application latency, Kuzu is designed to be performant and can handle large (1B node/edge) graphs, so you can move from PoC to production without worries.
 
 ## Setup
 
 Set up a virtual environment and install the dependencies:
 
 ```bash
-python -m venv .venv
+# Install the uv package manager:
+# https://docs.astral.sh/uv/getting-started/installation/
+# Create a virtual environment and install the dependencies
+uv venv
 source .venv/bin/activate
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ## Workflow
-
 
 ### Schema definition
 
@@ -49,11 +51,11 @@ clearly separated from the content (also known as "lexical") graph.
 The scripts have been numbered sequentially, so they can be run in order.
 
 ```bash
-python 00_extract_transcripts.py
-python 01_extract_tag_keywords.py
-python 02_domain_graph.py
-python 03_content_graph.py
-python rag.py
+uv run 00_extract_transcripts.py
+uv run 01_extract_tag_keywords.py
+uv run 02_domain_graph.py
+uv run 03_content_graph.py
+uv run rag.py
 ```
 
 ### Extract transcripts
@@ -62,7 +64,7 @@ The `00_extract_transcripts.py` script extracts the transcripts from the `.srt` 
 in the `Transcripts` directory at the root of the repository.
 
 ```bash
-python 00_extract_transcripts.py
+uv run 00_extract_transcripts.py
 ```
 
 This will output each transcript file in `.txt` format in the `data` directory.
@@ -72,7 +74,7 @@ This will output each transcript file in `.txt` format in the `data` directory.
 The `01_extract_tag_keywords.py` script extracts the tags from the transcripts using an LLM.
 
 ```bash
-python 01_extract_tag_keywords.py
+uv run 01_extract_tag_keywords.py
 ```
 
 This outputs an `entities.json` file in the `data` directory, which contains tag keywords associated
@@ -101,10 +103,10 @@ A "domain graph" is a top-level graph that captures the relationships between sp
 this graph comes from real-world data curation and human knowledge.
 
 ```bash
-python 02_domain_graph.py
+uv run 02_domain_graph.py
 ```
 
-This creates the domain graph of speakers, categories, events and talks, and stores it in a Kùzu database.
+This creates the domain graph of speakers, categories, events and talks, and stores it in a Kuzu database.
 The database is at the `cdl_db` directory.
 
 ![](./assets/domain_graph.png)
@@ -120,7 +122,7 @@ captures the relationships between entities inside the actual data (unlike the d
 which is more abstract and captures relationships between higher-level concepts at the domain level).
 
 ```bash
-python 03_content_graph.py
+uv run 03_content_graph.py
 ```
 
 The full graph consisting of the tags that are connected to the existing domain graph is shown below.
@@ -130,11 +132,11 @@ The full graph consisting of the tags that are connected to the existing domain 
 ### 4. Query the graph and run Graph RAG
 
 We are now ready to query the graph and run Graph RAG! This is done in the `rag.py` script. We use
-an LLM to translate the given natural language questions into Kùzu Cypher queries, following which
+an LLM to translate the given natural language questions into Kuzu Cypher queries, following which
 the retrieved results are passed as context to an LLM to answer the questions in natural language.
 
 ```bash
-python rag.py
+uv run rag.py
 ```
 
 Feel free to modify the prompts in the script and to experiment with different data models to
@@ -146,7 +148,7 @@ A simple Streamlit app is provided to easily interact with the graph through a c
 can also see the Cypher queries generated for each question.
 
 ```bash
-streamlit run app.py
+uv run streamlit run app.py
 ```
 
 Any prior questions and answers are saved in the chat history, so you can refer back to them.
@@ -156,9 +158,9 @@ Any prior questions and answers are saved in the chat history, so you can refer 
 ## Visualization
 
 Graph visualization is a great method to understand the structure and the "connectedness" of your data.
-We will be visualizing graphs in Kùzu using its browser-based UI,
-[Kùzu Explorer](https://docs.kuzudb.com/visualization/). Docker is required to run Kùzu Explorer.
-You can run the latest version of Kùzu Explorer by pulling the image from DockerHub provided using
+We will be visualizing graphs in Kuzu using its browser-based UI,
+[Kuzu Explorer](https://docs.kuzudb.com/visualization/). Docker is required to run Kuzu Explorer.
+You can run the latest version of Kuzu Explorer by pulling the image from DockerHub provided using
 the provided `docker-compose.yml` file.
 
 Run the following command in this directory that uses the provided `docker-compose.yml`:
@@ -176,7 +178,7 @@ docker run -p 8000:8000 \
            --rm kuzudb/explorer:0.7.0
 ```
 
-This will download and run the required Kùzu Explorer image, and you can access the UI at `http://localhost:8000`.
+This will download and run the required Kuzu Explorer image, and you can access the UI at `http://localhost:8000`.
 
 Enter the following Cypher query in the shell editor to visualize the graph:
 
