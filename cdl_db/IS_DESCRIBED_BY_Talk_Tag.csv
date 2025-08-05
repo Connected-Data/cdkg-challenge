@@ -1,0 +1,563 @@
+a.title,b.keyword
+Graph Thinking,graph thinking
+Graph Thinking,Cynefin framework
+Graph Thinking,network medicine
+Graph Thinking,non negative matrix factorization
+Graph Thinking,adjacency matrix
+Graph Thinking,tensor
+Graph Thinking,graphBLAST
+Graph Thinking,KGLab
+Graph Thinking,Apache Arrow
+Graph Thinking,Apache Parquet
+Graph Thinking,pyvis
+Graph Thinking,Cairo
+Graph Thinking,Matplotlib
+Graph Thinking,Graphistry
+Graph Thinking,network x
+Graph Thinking,iGraph
+Graph Thinking,cuGraph
+Graph Thinking,PyTorch geometric
+Graph Thinking,statistical relational learning
+Graph Thinking,probabilistic graphs
+Graph Thinking,OWL
+Graph Thinking,RDFS
+Graph Thinking,deep learning graph neural networks
+Graph Thinking,shackle
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,defend
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,mitre corporation
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,mitre att and ck
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,knowledge graph
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,ontology
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,digital artifact ontology
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,patent corpus
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,defensive countermeasures
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,offensive techniques
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,cybersecurity
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,process code segment verification
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,user behavior analysis
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,process analysis
+Introducing D3FEND: A Knowledge Graph of Cybersecurity Countermeasures,adaptive analytics
+"Knowledge Graphs as Hub for Data, Metadata and Content",naso kiriakov
+"Knowledge Graphs as Hub for Data, Metadata and Content",vasil momchev
+"Knowledge Graphs as Hub for Data, Metadata and Content",james
+"Knowledge Graphs as Hub for Data, Metadata and Content",vasil mamcheff
+Sales AI: Building and maintaining a knowledge graph,neo4j
+Sales AI: Building and maintaining a knowledge graph,kafka
+Sales AI: Building and maintaining a knowledge graph,cypher
+Sales AI: Building and maintaining a knowledge graph,mobileye
+Sales AI: Building and maintaining a knowledge graph,stream processing
+Sales AI: Building and maintaining a knowledge graph,microservice architecture
+Sales AI: Building and maintaining a knowledge graph,knowledge graph
+Sales AI: Building and maintaining a knowledge graph,message bus
+Sales AI: Building and maintaining a knowledge graph,transformers
+Sales AI: Building and maintaining a knowledge graph,extractors
+Sales AI: Building and maintaining a knowledge graph,graph builder
+Sales AI: Building and maintaining a knowledge graph,refreshers
+Sales AI: Building and maintaining a knowledge graph,sales assist
+Sales AI: Building and maintaining a knowledge graph,yaml
+Sales AI: Building and maintaining a knowledge graph,dsl
+Sales AI: Building and maintaining a knowledge graph,deep learning
+Sales AI: Building and maintaining a knowledge graph,machine learning
+One graph to bind them all! Linking data & apps for event-driven interoperability,graph
+One graph to bind them all! Linking data & apps for event-driven interoperability,no code platform
+One graph to bind them all! Linking data & apps for event-driven interoperability,enterprise web
+One graph to bind them all! Linking data & apps for event-driven interoperability,distributed systems
+One graph to bind them all! Linking data & apps for event-driven interoperability,cloud native
+One graph to bind them all! Linking data & apps for event-driven interoperability,middleware
+One graph to bind them all! Linking data & apps for event-driven interoperability,data fabric
+One graph to bind them all! Linking data & apps for event-driven interoperability,data mesh
+One graph to bind them all! Linking data & apps for event-driven interoperability,graph object in action language
+One graph to bind them all! Linking data & apps for event-driven interoperability,boal
+One graph to bind them all! Linking data & apps for event-driven interoperability,xml
+One graph to bind them all! Linking data & apps for event-driven interoperability,rdf
+One graph to bind them all! Linking data & apps for event-driven interoperability,json
+One graph to bind them all! Linking data & apps for event-driven interoperability,uml
+One graph to bind them all! Linking data & apps for event-driven interoperability,sap
+One graph to bind them all! Linking data & apps for event-driven interoperability,bpmn
+One graph to bind them all! Linking data & apps for event-driven interoperability,action logs
+One graph to bind them all! Linking data & apps for event-driven interoperability,reliable messaging
+One graph to bind them all! Linking data & apps for event-driven interoperability,transaction guarantees
+One graph to bind them all! Linking data & apps for event-driven interoperability,state management
+One graph to bind them all! Linking data & apps for event-driven interoperability,serverless patterns
+One graph to bind them all! Linking data & apps for event-driven interoperability,event driven processes
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,graphcore
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,ipu architecture
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,graph neural networks
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,message passing algorithm
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,GNN layers
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,message function
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,update function
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,node classification
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,link prediction
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,graph classification
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,heterogeneous graphs
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,dynamic graphs
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,deep learning
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,GC200
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,IPU M2000
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,FastIP Link
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,BSP programming model
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,mini batch training
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,shallow sampling
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,graph clustering
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,data parallelism
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,pipeline parallelism
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,low precision number formats
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,temporal graph networks
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,GRU
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,temporal graph attention network
+Leveraging Graphcore’s IPU architecture for large scale GNN compute,temporal graph sum networks
+Protecting vital public health programs with AI and Knowledge Graphs,semantic technologies
+Protecting vital public health programs with AI and Knowledge Graphs,natural language processing
+Protecting vital public health programs with AI and Knowledge Graphs,learning technologies
+Protecting vital public health programs with AI and Knowledge Graphs,knowledge graphs
+Protecting vital public health programs with AI and Knowledge Graphs,AI
+Protecting vital public health programs with AI and Knowledge Graphs,deep learning
+Protecting vital public health programs with AI and Knowledge Graphs,ontologies
+Protecting vital public health programs with AI and Knowledge Graphs,NLP
+Protecting vital public health programs with AI and Knowledge Graphs,UMLS
+Protecting vital public health programs with AI and Knowledge Graphs,ICD ten
+Protecting vital public health programs with AI and Knowledge Graphs,MongoDB
+Protecting vital public health programs with AI and Knowledge Graphs,MetaMap
+Protecting vital public health programs with AI and Knowledge Graphs,PERT
+Legal Knowledge Graphs,knowledge graphs
+Legal Knowledge Graphs,data management
+Legal Knowledge Graphs,sparkle
+Legal Knowledge Graphs,rule based reasoning
+Legal Knowledge Graphs,contracts
+Legal Knowledge Graphs,legal documents
+Legal Knowledge Graphs,metrics
+Legal Knowledge Graphs,smart folders
+Legal Knowledge Graphs,visualization
+Legal Knowledge Graphs,insights
+Legal Knowledge Graphs,data extraction
+Humans and the Graph - Inspiring and empowering GraphQL adoption,graphql
+Humans and the Graph - Inspiring and empowering GraphQL adoption,apollo
+Humans and the Graph - Inspiring and empowering GraphQL adoption,sql
+Humans and the Graph - Inspiring and empowering GraphQL adoption,schema definition language
+Humans and the Graph - Inspiring and empowering GraphQL adoption,SDL
+Humans and the Graph - Inspiring and empowering GraphQL adoption,api gateway
+Humans and the Graph - Inspiring and empowering GraphQL adoption,containerization
+Humans and the Graph - Inspiring and empowering GraphQL adoption,reactive programming
+Humans and the Graph - Inspiring and empowering GraphQL adoption,unified graph
+Humans and the Graph - Inspiring and empowering GraphQL adoption,design system
+Humans and the Graph - Inspiring and empowering GraphQL adoption,component architecture
+Humans and the Graph - Inspiring and empowering GraphQL adoption,back end for front end
+Humans and the Graph - Inspiring and empowering GraphQL adoption,api first mindset
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,mihir
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,michel
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,vincent
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,verhoeff
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,van gogh
+Van Gogh Worldwide: Constructing and searching a knowledge graph of linked art,goulain
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,data lake
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,knowledge graphs
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,knowledge mesh
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,ETL pipeline
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,GraphQL
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,NLP algorithms
+Knowledge Mesh: From Data Silos to Data Fabric at Global 2000 Enterprises,metadata
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,audiofox
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,rdfox
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,c plus plus
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,sparkle
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,datalog
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,owl
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,shackle
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,swell
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,nlp
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,docker
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,aws
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,google cloud platform
+Reasoning for the Answer: Who is the Greatest Formula 1 Driver of all Time?,azure
+Implementing Informed Consent with Knowledge Graphs,anelioa kurteva
+Implementing Informed Consent with Knowledge Graphs,rosa finn
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",katana graph
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",cusp
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",galois graph computing engine
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",gluon communication engine
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",openCypher
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",gql
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",graph neural networks
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",graph transformer networks
+"Knowledge Graphs, Graph AI, & the Need for High performance Graph Computing",rdkit
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,monte carlo
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,gainsight
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,snowflake
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,looker
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,pagerduty
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,splunk
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,new relic
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,datadog
+Data Observability: How to Eliminate Data Downtime and Start Trusting Your Data,oreilly
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,dbpedia
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,sparkle
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,shackle
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,fair
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,github
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,docker
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,maven
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,apt
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,npm
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,scala
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,spit
+DBpedia Databus: A platform to evolve knowledge and AI from versioned web files,wiki data
+Systems that learn and reason,machine learning
+Systems that learn and reason,symbolic AI
+Systems that learn and reason,statistical AI
+Systems that learn and reason,neural networks
+Systems that learn and reason,knowledge bases
+Systems that learn and reason,knowledge graphs
+Systems that learn and reason,inductive logic programming
+Systems that learn and reason,semantic loss functions
+Systems that learn and reason,AnyBurl
+Systems that learn and reason,Nvidia
+Systems that learn and reason,AlphaGo
+Systems that learn and reason,DeepMind
+Systems that learn and reason,reinforcement learning
+Systems that learn and reason,ontological knowledge
+Secret Knowledge: Visualizing Complexity,data visualization
+Secret Knowledge: Visualizing Complexity,data art
+Secret Knowledge: Visualizing Complexity,graphs
+Secret Knowledge: Visualizing Complexity,slido
+Secret Knowledge: Visualizing Complexity,tableau
+Secret Knowledge: Visualizing Complexity,power bi
+Secret Knowledge: Visualizing Complexity,click
+Secret Knowledge: Visualizing Complexity,neural networks
+Secret Knowledge: Visualizing Complexity,Andy Kirk
+Secret Knowledge: Visualizing Complexity,Montreux Jazz Festival
+Secret Knowledge: Visualizing Complexity,ethnomusicology
+Secret Knowledge: Visualizing Complexity,AI
+Secret Knowledge: Visualizing Complexity,generative adversarial networks
+Secret Knowledge: Visualizing Complexity,NLP
+Secret Knowledge: Visualizing Complexity,Mandelbrot set
+Secret Knowledge: Visualizing Complexity,fractals
+Secret Knowledge: Visualizing Complexity,knowledge graph
+Graph Abstractions Matter,amazon neptune
+Graph Abstractions Matter,rdf
+Graph Abstractions Matter,semantic web
+Graph Abstractions Matter,erdos number
+Graph Abstractions Matter,sparql
+Graph Abstractions Matter,gremlin
+Graph Abstractions Matter,cypher
+Graph Abstractions Matter,owl
+Graph Abstractions Matter,shacl
+Graph Abstractions Matter,object graph mapping
+Graph Abstractions Matter,json ld
+Graph Abstractions Matter,ontology engines
+Graph Abstractions Matter,rdf star
+Graph Abstractions Matter,knowledge graphs
+The Business Case for Data Management,semantic data management
+The Business Case for Data Management,data management
+The Business Case for Data Management,ontologies
+The Business Case for Data Management,triples
+The Business Case for Data Management,executive business rules
+The Business Case for Data Management,data hygiene
+The Business Case for Data Management,resource identifier
+The Business Case for Data Management,resource locator
+The Business Case for Data Management,cloud
+The Business Case for Data Management,data inventory
+The Business Case for Data Management,data flow
+The Business Case for Data Management,data lineage
+The Business Case for Data Management,auditing
+The Business Case for Data Management,centralized repository
+The Business Case for Data Management,technical debt
+The Business Case for Data Management,proprietary data models
+The Business Case for Data Management,business processes
+The Business Case for Data Management,semantic standards
+The Business Case for Data Management,data governance
+The Business Case for Data Management,contextual data environments
+The Business Case for Data Management,data centric
+The Business Case for Data Management,automation
+The Business Case for Data Management,data quality
+The Business Case for Data Management,data privacy
+The Business Case for Data Management,data transformation
+The Business Case for Data Management,machine executable
+The Business Case for Data Management,data janitorial work
+Hybridization of Machine Learning and Operational Research is the future of AI ,ml
+Hybridization of Machine Learning and Operational Research is the future of AI ,or
+Hybridization of Machine Learning and Operational Research is the future of AI ,operations research
+Hybridization of Machine Learning and Operational Research is the future of AI ,machine learning
+Hybridization of Machine Learning and Operational Research is the future of AI ,graph theory
+Hybridization of Machine Learning and Operational Research is the future of AI ,big data
+Hybridization of Machine Learning and Operational Research is the future of AI ,data science
+Hybridization of Machine Learning and Operational Research is the future of AI ,prescriptive analysis
+Hybridization of Machine Learning and Operational Research is the future of AI ,descriptive analysis
+Hybridization of Machine Learning and Operational Research is the future of AI ,diagnostic analysis
+Hybridization of Machine Learning and Operational Research is the future of AI ,predictive analysis
+Hybridization of Machine Learning and Operational Research is the future of AI ,tsp
+Hybridization of Machine Learning and Operational Research is the future of AI ,reinforcement learning
+Hybridization of Machine Learning and Operational Research is the future of AI ,graph neural networks
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,knowledge graph
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,data analytics
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,ontologies
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,RDFox
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,ISO
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Fibo ontology
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Denodo
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,ODBC
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,SAP
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Oracle
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Redshift
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Excel
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,TRIPISSTORM
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,performance pricing
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,Metafactory
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,sparkle
+How a Knowledge Graph Can Support Advanced Price Analytics in Supply Chain Management,statistical analytics
+Graph Analytics vs Graph Machine Learning,graph analytics
+Graph Analytics vs Graph Machine Learning,GraphML
+Graph Analytics vs Graph Machine Learning,graph machine learning
+Graph Analytics vs Graph Machine Learning,GraphSAGE
+Graph Analytics vs Graph Machine Learning,graph neural networks
+Graph Analytics vs Graph Machine Learning,graph embeddings
+Graph Analytics vs Graph Machine Learning,deep neural networks
+Graph Analytics vs Graph Machine Learning,support vector machines
+Graph Analytics vs Graph Machine Learning,breadth first search
+Graph Analytics vs Graph Machine Learning,depth first search
+Graph Analytics vs Graph Machine Learning,centrality
+Graph Analytics vs Graph Machine Learning,degree centrality
+Graph Analytics vs Graph Machine Learning,closeness centrality
+Graph Analytics vs Graph Machine Learning,betweenness centrality
+Graph Analytics vs Graph Machine Learning,cycle detection
+Graph Analytics vs Graph Machine Learning,community detection
+Graph Analytics vs Graph Machine Learning,homophily
+Graph Analytics vs Graph Machine Learning,Uber
+Graph Analytics vs Graph Machine Learning,DeepMind
+Graph Analytics vs Graph Machine Learning,RankoDB
+Graph Analytics vs Graph Machine Learning,Gartner trends
+Graph Analytics vs Graph Machine Learning,fraud detection
+Graph Analytics vs Graph Machine Learning,recommendation systems
+Graph Analytics vs Graph Machine Learning,supply chain management
+Graph Analytics vs Graph Machine Learning,computational chemistry
+Graph Analytics vs Graph Machine Learning,health care
+Graph Analytics vs Graph Machine Learning,telecommunication networks
+Graph Analytics vs Graph Machine Learning,money laundering
+Graph Analytics vs Graph Machine Learning,Data AI Summit
+Graph Analytics vs Graph Machine Learning,Stanford
+Graph Analytics vs Graph Machine Learning,graph databases
+UBS Helix Knowledge Graph: The Power of Information,ubs knowledge graph
+UBS Helix Knowledge Graph: The Power of Information,federated architecture
+UBS Helix Knowledge Graph: The Power of Information,model driven layered architecture
+UBS Helix Knowledge Graph: The Power of Information,enterprise agreed model
+UBS Helix Knowledge Graph: The Power of Information,shackle models
+UBS Helix Knowledge Graph: The Power of Information,dublin core
+UBS Helix Knowledge Graph: The Power of Information,fibo
+UBS Helix Knowledge Graph: The Power of Information,prov
+UBS Helix Knowledge Graph: The Power of Information,dcat
+UBS Helix Knowledge Graph: The Power of Information,datacube
+UBS Helix Knowledge Graph: The Power of Information,sdmx
+UBS Helix Knowledge Graph: The Power of Information,http protocol
+UBS Helix Knowledge Graph: The Power of Information,uri
+UBS Helix Knowledge Graph: The Power of Information,sparkle
+UBS Helix Knowledge Graph: The Power of Information,elastic search
+UBS Helix Knowledge Graph: The Power of Information,dataset registry
+UBS Helix Knowledge Graph: The Power of Information,metadata repositories
+UBS Helix Knowledge Graph: The Power of Information,metadata registries
+UBS Helix Knowledge Graph: The Power of Information,dataset catalog
+UBS Helix Knowledge Graph: The Power of Information,data dictionaries
+The game plan for your Knowledge Graph-driven FAIR data platform,sebastian schmidt
+The game plan for your Knowledge Graph-driven FAIR data platform,george
+The game plan for your Knowledge Graph-driven FAIR data platform,peter hasso
+The Enterprise Knowledge Graph,knowledge graph
+The Enterprise Knowledge Graph,ontologies
+The Enterprise Knowledge Graph,graph databases
+The Enterprise Knowledge Graph,virtual graph databases
+The Enterprise Knowledge Graph,knowledge driven data catalogs
+The Enterprise Knowledge Graph,data fabrics
+The Enterprise Knowledge Graph,graph algorithms
+The Enterprise Knowledge Graph,graph neural networks
+The Enterprise Knowledge Graph,machine learning
+The Enterprise Knowledge Graph,deep learning
+The Enterprise Knowledge Graph,natural language processing
+The Enterprise Knowledge Graph,knowledge graph completion
+The Enterprise Knowledge Graph,RDFOWL
+The Enterprise Knowledge Graph,semantic web
+The Enterprise Knowledge Graph,SPARQL
+The Enterprise Knowledge Graph,GraphQL
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,darpa
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,yoshua bengio
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,kanban
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,t five
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,gpt three
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,atomic
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,ram
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,rag
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,infusion
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,decoder
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,nlp
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,visual comic leaderboard
+Thrill-K: Rethinking knowledge layering and construction for higher machine cognition,interlapse
+Knowledge Graphs: Moving Beyond RDF,rdf
+Knowledge Graphs: Moving Beyond RDF,json ld
+Knowledge Graphs: Moving Beyond RDF,sparql
+Knowledge Graphs: Moving Beyond RDF,turtle
+Knowledge Graphs: Moving Beyond RDF,owl
+Knowledge Graphs: Moving Beyond RDF,xml
+Knowledge Graphs: Moving Beyond RDF,json
+Knowledge Graphs: Moving Beyond RDF,shackle
+Knowledge Graphs: Moving Beyond RDF,gremlin
+Knowledge Graphs: Moving Beyond RDF,opencypher
+Knowledge Graphs: Moving Beyond RDF,graphql
+Modelling regulation requirements using SHACL,shackle
+Modelling regulation requirements using SHACL,owl
+Modelling regulation requirements using SHACL,sparql
+Modelling regulation requirements using SHACL,rdf
+Modelling regulation requirements using SHACL,json
+Modelling regulation requirements using SHACL,java
+Modelling regulation requirements using SHACL,c
+Modelling regulation requirements using SHACL,python
+Modelling regulation requirements using SHACL,jena
+Modelling regulation requirements using SHACL,rdf4j
+Modelling regulation requirements using SHACL,nlp
+Modelling regulation requirements using SHACL,prolog
+Modelling regulation requirements using SHACL,shackle core
+Modelling regulation requirements using SHACL,shackle advanced features
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,neural algorithmic reasoning
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,classical algorithms
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,neural networks
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,dynamic programming
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,bellman ford
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,graph neural networks
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,trunk supervision
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,multiple task learning
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,value iteration
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,markov decision process
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,contrastive learning
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,neural execution of graph algorithms
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,excelvin
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,value prediction networks
+Neural Algorithmic Reasoning: Combining Classical Algorithms and Neural Networks,pretrained executor
+Taxonomies: Connecting Data with Duct Tape,taxonomies
+Taxonomies: Connecting Data with Duct Tape,semantic technologies
+Taxonomies: Connecting Data with Duct Tape,artificial intelligence
+Taxonomies: Connecting Data with Duct Tape,knowledge graphs
+Taxonomies: Connecting Data with Duct Tape,cognitive computing
+Taxonomies: Connecting Data with Duct Tape,machine learning
+Taxonomies: Connecting Data with Duct Tape,deep learning
+Taxonomies: Connecting Data with Duct Tape,concept catalogs
+Taxonomies: Connecting Data with Duct Tape,feature spaces
+Taxonomies: Connecting Data with Duct Tape,epistemological assumptions
+Taxonomies: Connecting Data with Duct Tape,next generation knowledge graphs
+Taxonomies: Connecting Data with Duct Tape,hybrid intelligence
+Taxonomies: Connecting Data with Duct Tape,collaborative AI
+Taxonomies: Connecting Data with Duct Tape,explainable AI
+Taxonomies: Connecting Data with Duct Tape,reciprocal learning
+Taxonomies: Connecting Data with Duct Tape,adaptive machine translation
+"Deep Learning on Graphs: Past, Present, And Future",machine learning
+"Deep Learning on Graphs: Past, Present, And Future",pattern recognition
+"Deep Learning on Graphs: Past, Present, And Future",graph learning
+"Deep Learning on Graphs: Past, Present, And Future",deep learning
+"Deep Learning on Graphs: Past, Present, And Future",multilayer perceptrons
+"Deep Learning on Graphs: Past, Present, And Future",convolutional neural networks
+"Deep Learning on Graphs: Past, Present, And Future",CNNs
+"Deep Learning on Graphs: Past, Present, And Future",geometric deep learning
+"Deep Learning on Graphs: Past, Present, And Future",graph neural networks
+"Deep Learning on Graphs: Past, Present, And Future",message passing
+"Deep Learning on Graphs: Past, Present, And Future",temporal graph networks
+"Deep Learning on Graphs: Past, Present, And Future",graph substructure networks
+"Deep Learning on Graphs: Past, Present, And Future",open graph benchmark
+"Deep Learning on Graphs: Past, Present, And Future",DGL
+"Deep Learning on Graphs: Past, Present, And Future",PyTorch Geometric
+"Deep Learning on Graphs: Past, Present, And Future",dynamic graph CNNs
+"Deep Learning on Graphs: Past, Present, And Future",manifold learning
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),jozana diotis
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),juan sequeira
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),brian jacob
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),george
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),rubin
+(DataCatalog)_-[poweredBy]-_(KnowledgeGraph),sally
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph edm
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph machine learning
+GraphEDM: A Unified Framework for Machine Learning on Graphs,neural networks
+GraphEDM: A Unified Framework for Machine Learning on Graphs,buffer presentation learning
+GraphEDM: A Unified Framework for Machine Learning on Graphs,supervised learning
+GraphEDM: A Unified Framework for Machine Learning on Graphs,unsupervised learning
+GraphEDM: A Unified Framework for Machine Learning on Graphs,link prediction
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph visualization
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph clustering
+GraphEDM: A Unified Framework for Machine Learning on Graphs,node classification
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph class classification
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph factorization
+GraphEDM: A Unified Framework for Machine Learning on Graphs,deepwalk
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph convolution model
+GraphEDM: A Unified Framework for Machine Learning on Graphs,shallow encoder
+GraphEDM: A Unified Framework for Machine Learning on Graphs,label propagation model
+GraphEDM: A Unified Framework for Machine Learning on Graphs,graph neural networks
+GraphEDM: A Unified Framework for Machine Learning on Graphs,node features
+GraphEDM: A Unified Framework for Machine Learning on Graphs,knowledge graphs
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",rdf
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",property graphs
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",graphdb
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",sparkle
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",rdf star
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",sparco
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",inference
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",semantic technology
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",knowledge graphs
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",link data benchmarking councils
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",social network benchmark
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",neo4j
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",ontotext
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",text analysis
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",data analysis
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",machine learning
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",metadata
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",vocabulary management
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",taxonomy management
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",graph traversal
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",enterprise knowledge
+"RDF Leveled the Advantages of LPG and Keeps 3 Key Benefits: Standards, Semantics & Interoperability",data integration
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph algorithms
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,knowledge graphs
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph data science
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph embeddings
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph neural networks
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,unsupervised machine learning
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,supervised learning
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,deep learning
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,neural networks
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,decision trees
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,reinforcement learning
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,entity resolution
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,similarity algorithms
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,cosine similarity
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,community detection algorithms
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,Louvain
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,page rank
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,LCC
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,diameter estimation
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph convolutional neural network
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,attention networks
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,recurrent networks
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,PyTorch
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,TensorFlow
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,DGL deep graph learning
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph embedding
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph database
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph algorithm library
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,graph query language
+Graph Algorithms & Graph Machine Learning: Making Sense of Today's Choices,in database machine learning
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,linked data
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,semantic web standards
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,taxonomy development
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,data analytics
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Mendeley
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Scopus
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,ScienceDirect
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,HyAxis
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Sharepath
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Clinical Key
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Omnisciences
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,DBpedia
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,shackle
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,PROV
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,PAV
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,SCOS
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,SCOS Excel
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,web annotation data model
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,Elsevier data model
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,triple store
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,RDF
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,SPARQL
+Applying Semantic Web Standards for Knowledge Representation at Elsevier,pandas

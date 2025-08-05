@@ -1,4 +1,4 @@
-import shutil
+from pathlib import Path
 
 import kuzu
 import polars as pl
@@ -12,7 +12,7 @@ def load_data(filepath: str) -> pl.DataFrame:
     )
 
 
-def extract_speakers(df: pl.DataFrame) -> list[str]:
+def extract_speakers(df: pl.DataFrame) -> pl.DataFrame:
     """Extract unique speaker names from dataframe"""
     speakers_df = (
         df.select("Speaker")
@@ -161,9 +161,10 @@ def write_knowledge_connexions_description(conn: kuzu.Connection, event_name: st
 
 if __name__ == "__main__":
     # Create the domain graph first - ensure we start with a clean database
-    shutil.rmtree("cdl_db", ignore_errors=True)
+    DB_NAME = "cdl_db.kuzu"
+    Path(DB_NAME).unlink(missing_ok=True)
 
-    db = kuzu.Database("cdl_db")
+    db = kuzu.Database(DB_NAME)
     conn = kuzu.Connection(db)
 
     # Load data

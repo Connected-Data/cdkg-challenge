@@ -1,9 +1,10 @@
 services:
   explorer:
-    image: kuzudb/explorer:0.8.2
+    image: kuzudb/explorer:0.11.1
     environment:
       - MODE=READ_ONLY
+      - KUZU_FILE=cdl_db.kuzu
     ports:
       - 8000:8000
     volumes:
-      - ./cdl_db:/database
+      - ./:/database

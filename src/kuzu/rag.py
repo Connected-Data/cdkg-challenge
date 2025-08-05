@@ -7,12 +7,10 @@ import os
 import kuzu
 from dotenv import load_dotenv
 
-from baml_client import b, reset_baml_env_vars, types
+from baml_client import b, types
 
 load_dotenv()
 os.environ["BAML_LOG"] = "WARN"
-reset_baml_env_vars(dict(os.environ))
-
 
 def get_schema_dict(conn: kuzu.Connection) -> dict[str, list[dict]]:
     # Get schema for LLM
@@ -24,8 +22,8 @@ def get_schema_dict(conn: kuzu.Connection) -> dict[str, list[dict]]:
     for node in nodes:
         node_schema = {"label": node, "properties": []}
         node_properties = conn.execute(f"CALL TABLE_INFO('{node}') RETURN *;")
-        while node_properties.has_next():
-            row = node_properties.get_next()
+        while node_properties.has_next():  # type: ignore
+            row = node_properties.get_next()  # type: ignore
             node_schema["properties"].append({"name": row[1], "type": row[2]})
         schema["nodes"].append(node_schema)
 
@@ -37,8 +35,8 @@ def get_schema_dict(conn: kuzu.Connection) -> dict[str, list[dict]]:
             "properties": [],
         }
         rel_properties = conn.execute(f"""CALL TABLE_INFO('{rel["name"]}') RETURN *;""")
-        while rel_properties.has_next():
-            row = rel_properties.get_next()
+        while rel_properties.has_next():  # type: ignore
+            row = rel_properties.get_next()  # type: ignore
             edge["properties"].append({"name": row[1], "type": row[2]})
         schema["edges"].append(edge)
 
@@ -77,7 +75,7 @@ def get_schema_baml(conn: kuzu.Connection) -> str:
 class GraphRAG:
     def __init__(self, db_path="cdl_db"):
         self.db_path = db_path
-        self.db = kuzu.Database(db_path)
+        self.db = kuzu.Database(db_path, read_only=True)
         self.conn = kuzu.Connection(self.db)
         self.baml_schema = get_schema_baml(self.conn)
 
@@ -85,8 +83,8 @@ class GraphRAG:
         """Use the generated Cypher statement to query the graph database."""
         response = self.conn.execute(cypher)
         result = []
-        while response.has_next():
-            item = response.get_next()
+        while response.has_next():  # type: ignore
+            item = response.get_next()  # type: ignore
             if item not in result:
                 result.extend(item)
 
@@ -115,7 +113,7 @@ class GraphRAG:
 
 
 if __name__ == "__main__":
-    graph_rag = GraphRAG(db_path="cdl_db")
+    graph_rag = GraphRAG(db_path="cdl_db.kuzu")
 
     question = "Who are the speakers whose talks have the tag 'rdf'? Return the speaker names as a numbered list."
     response = graph_rag.run(question)
