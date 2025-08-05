@@ -10,7 +10,8 @@ from pathlib import Path
 import kuzu
 import polars as pl
 
-db = kuzu.Database("cdl_db")
+DB_NAME = "cdl_db.kuzu"
+db = kuzu.Database(DB_NAME)
 conn = kuzu.Connection(db)
 
 

@@ -5,14 +5,10 @@ from pathlib import Path
 # Updated imports using the src package
 from dotenv import load_dotenv
 
-from baml_client import b, reset_baml_env_vars
+from baml_client import b
 
-
-def setup_environment():
-    """Set up environment variables and BAML configuration."""
-    load_dotenv()
-    os.environ["BAML_LOG"] = "WARN"
-    reset_baml_env_vars(dict(os.environ))
+load_dotenv()
+os.environ["BAML_LOG"] = "WARN"
 
 
 def get_filenames(directory_path):
@@ -53,8 +49,6 @@ def save_entities_to_json(entities, output_file):
 
 def main():
     """Main function to orchestrate the entity extraction process."""
-    setup_environment()
-
     directory_path = "./data"
     output_file = "entities.json"
 
