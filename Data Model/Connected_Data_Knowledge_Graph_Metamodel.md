@@ -62,9 +62,11 @@ Version: 0.1
 
 Figure 1\. KG creation workflow
 
-# Entities {#entities}
+<a name="entities"></a>
+# Entities
 
-## Talk {#talk}
+<a name="talk"></a>
+## Talk
 
 **Attributes**
 
@@ -101,7 +103,8 @@ Figure 1\. KG creation workflow
   * category: subject  
   * …
 
-## Speaker {#speaker}
+<a name="speaker"></a>
+## Speaker
 
 **Attributes**
 
@@ -123,13 +126,15 @@ Figure 1\. KG creation workflow
 * Schema.org: …  
 * DCAT, …
 
-## Organization {#organization}
+<a name="organization"></a>
+## Organization
 
 **Attributes**
 
 * name
 
-## Event  {#event}
+<a name="event"></a>
+## Event
 
 **Attributes**
 
@@ -153,9 +158,11 @@ Figure 1\. KG creation workflow
   * Talk: type of Schema.Event  
   * …
 
-# Modeling notes {#modeling-notes}
+<a name="modeling-notes"></a>
+# Modeling notes
 
-## Vocabularies to consider {#vocabularies-to-consider}
+<a name="vocabularies-to-consider"></a>
+## Vocabularies to consider
 
 * Conference ontology: [http://www.scholarlydata.org/ontology/doc/](http://www.scholarlydata.org/ontology/doc/)   
   * Originally created for academic conferences, but covers non-academic as well. Elaborate, specific, uses design patterns for temporal relations  
@@ -166,7 +173,8 @@ Figure 1\. KG creation workflow
 * DCAT: [https://www.w3.org/TR/vocab-dcat-3/](https://www.w3.org/TR/vocab-dcat-3/)   
   * Catalog metadata
 
-## Talk {#talk-1}
+<a name="talk-1"></a>
+## Talk
 
 * The Talk transcript is available via a corresponding attribute. Downstream apps could use it (published on the project repository) for different other (Information Extraction) tasks to further enrich the KG.  
 * In principle, there could be Talk instances that don't have either a video or a podcast URL. That would be the case of adding a talk that has not yet been given, or has not yet been released  
@@ -177,17 +185,20 @@ Figure 1\. KG creation workflow
   * type: Use Cases & Application, Innovation & Research (enumeration)  
   * topic: The terms that describe the topic of the talk.
 
-## Speaker {#speaker-1}
+<a name="speaker-1"></a>
+## Speaker
 
 Removed the “bio” attribute. However, this information cen be retrieved from the web site as well as the talk’s YouTube version.
 
-## Podcast {#podcast}
+<a name="podcast"></a>
+## Podcast
 
 Podcast versions of a talk feature the exact same content. It's just the publishing medium (audio-only) and channel that are different.
 
 In case more information gets added to the podcast page, we could consider treating it as an entity. Until then, we will keep the YouTube and Podcast as two attributes of a talk.
 
-## Category {#category}
+<a name="category"></a>
+## Category
 
 Categories are in practice typically handled by CMSs in the same way as talk types. Conceptually, however, categories can be used for any type of categorization.
 
@@ -203,11 +214,13 @@ Note that these will be used in the 2024 event. They do not necessarily apply to
 * Have past talks annotated with those categories  
 * Retrieve those annotations
 
-## Organization {#organization-1}
+<a name="organization-1"></a>
+## Organization
 
 We decided to keep most of the organization-related information out of the scope of the metamodel.
 
-## Relationships {#relationships}
+<a name="relationships"></a>
+## Relationships
 
 Speaker \- gives \-\> Talk  
 Speaker \- isAffiliatedWith \-\> Organization  
@@ -218,7 +231,8 @@ Talk \- hasPublicationMedium \-\> PublicationMedium
 - PublicationMedium can be of many types: {Video, Podcast, Presentation, etc.}  
 - PublicationMedium can be modeled according to Schema.org.
 
-# Metamodel {#metamodel}
+<a name="metamodel"></a>
+# Metamodel
 
 This is the metamodel. It is meant to be the central domain reference from which RDF- or LPG-based implementations can be based on. Specific implementations will adapt their modeling accordingly.
 
@@ -227,13 +241,16 @@ This is the metamodel. It is meant to be the central domain reference from which
 
 Figure 2\. Metamodel: Entities, attributes, and relationships the domain consists of.
 
-# Implementation approaches {#implementation-approaches}
+<a name="implementation-approaches"></a>
+# Implementation approaches
 
 The two main approaches to building a KG include RDF and Property Graphs. As part of the challenge, we provide a sample representation of the metamodel based on these two approaches. This could help those interested to focus on the IE aspects and populate the KG accordingly.
 
-## RDF-based {#rdf-based}
+<a name="rdf-based"></a>
+## RDF-based
 
-## Property Graph-based {#property-graph-based}
+<a name="property-graph-based"></a>
+## Property Graph-based
 
 * [Graph Data Modeling: Categorical Variables](https://medium.com/neo4j/graph-data-modeling-categorical-variables-dd8a2845d5e0)
 
