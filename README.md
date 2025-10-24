@@ -4,7 +4,7 @@
 
 
 
-**Let’s build a curated Knowledge Graph based on the collective wisdom of 260+ experts**
+**Let’s build a curated Knowledge Graph based on the collective wisdom of 300+ experts**
 
   
 
@@ -42,8 +42,17 @@ The goal is to make our collective knowledge easy to discover, explore, digest, 
 
 To do that, we combine our greatest strengths: community, knowledge, and technology.
 
+### Table of contents
+
+- [The Connected Data Knowledge Graph](https://github.com/Connected-Data/cdkg-challenge/tree/main#the-connected-data-knowledge-graph)
+- [Problem statement](https://github.com/Connected-Data/cdkg-challenge/tree/main#problem-statement)
+- [Background](https://github.com/Connected-Data/cdkg-challenge/tree/main#background)
+- [Vision](https://github.com/Connected-Data/cdkg-challenge/tree/main#vision)
+- [The Connected Data Knowledge Graph Challenge](https://github.com/Connected-Data/cdkg-challenge/tree/main#the-connected-data-knowledge-graph-challenge-1)
+- [Contributing](https://github.com/Connected-Data/cdkg-challenge/tree/main?tab=readme-ov-file#how-you-can-can-help)
+
 ## The Connected Data Knowledge Graph
-This what is included in the first release of the CDKG:
+This what is included in the first release of the Connected Data Knowledge Graph project:
 
 - [Domain Metamodel](https://github.com/Connected-Data/cdkg-challenge/blob/main/Data%20Model/README.md): Technology agnostic, simple graph of entities and relationships
 - [Raw data](https://github.com/Connected-Data/cdkg-challenge/tree/main/Transcripts): Session transcripts 
@@ -54,14 +63,14 @@ This what is included in the first release of the CDKG:
 - [Knowledge Graph](https://github.com/Connected-Data/cdkg-challenge/tree/main/cdl_db): Data on Categories, Events, Speakers, Talks, Tags and their relationships
 
 
-## The Problem
+## Problem statement
 
 - There are 150+ expert and practical talks on Knowledge Graphs, Graph AI / Analytics / Data Science and Semantic Technology from previous [Connected Data Conferences on YouTube](https://www.youtube.com/@ConnectedData).
     
 - People have little time to watch videos to learn and gather knowledge from experts and don’t know how to find the right videos. Thus, they miss opportunities to turn these great insights and best practices into something valuable.
     
 
-## What we are doing about it
+## Background
 
 Recently, [we started experimenting](https://www.linkedin.com/feed/update/urn:li:activity:7214552580541059072/) with tools and a workflow that would enable easier access to this treasure trove of collective knowledge.
 
@@ -100,7 +109,7 @@ Focusing on the Knowledge Graph creation, which is the most interesting part: it
 
   
 
-## Our vision
+## Vision
 
 Based on this learning experience and the very positive feedback it generated, we are embarking on the next steps in this journey.
 
