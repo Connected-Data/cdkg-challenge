@@ -72,7 +72,7 @@ This what is included in the first release of the Connected Data Knowledge Graph
 
 ## Background
 
-Recently, [we started experimenting](https://www.linkedin.com/feed/update/urn:li:activity:7214552580541059072/) with tools and a workflow that would enable easier access to this treasure trove of collective knowledge.
+In 2024, [we started experimenting](https://www.linkedin.com/feed/update/urn:li:activity:7214552580541059072/) with tools and a workflow that would enable easier access to this treasure trove of collective knowledge.
 
   
 
@@ -119,7 +119,7 @@ We are calling the community to work with us on building the Connected Data Know
 
   
 
-The Connected Data Knowledge Graph will act as a gateway to the collective wisdom 260+ experts have contributed to the Connected Data platform since 2016.
+The Connected Data Knowledge Graph will act as a gateway to the collective wisdom 300+ experts have contributed to the Connected Data platform since 2016.
 
   
 
@@ -127,20 +127,22 @@ This curated Knowledge Graph will make it easier to discover, explore, digest, c
 
   
 
-We envision making the Connected Data Knowledge Graph available for querying and exploration.
+The Connected Data Knowledge Graph is available for querying and exploration.
 
   
 
-We would also like to use the Connected Data Knowledge Graph to power downstream applications.
+We are looking forward to seeing how the community can use the Connected Data Knowledge Graph to power downstream applications.
 
 ## The Connected Data Knowledge Graph Challenge
 
 <img width="790" alt="CDKG_Logo" src="https://github.com/user-attachments/assets/fc8a4038-c8c9-4f42-8168-179850f5239e">
 
-We at Connected Data are launching the Connected Data Knowledge Graph Challenge as an open source project. 
+We at Connected Data have launched the Connected Data Knowledge Graph Challenge as an open source project. 
   
 
-The goal is to build the Connected Data Knowledge Graph based on the Connected Data treasure trove and make it available under a permissive open source license.
+After releasing the initial version of the Connected Data Knowledge Graph based on the Connected Data treasure trove and making it available under a permissive open source license, our goal is two-fold:
+- To make the CDKG available to the community
+- To keep building and improving the CDKG
   
 
 Here is what we are offering:
