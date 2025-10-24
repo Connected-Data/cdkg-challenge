@@ -45,13 +45,13 @@ To do that, we combine our greatest strengths: community, knowledge, and technol
 ## The Connected Data Knowledge Graph
 This what is included in the first release of the CDKG:
 
-- 'Domain Metamodel': Technology agnostic, simple graph of entities and relationships
-- 'Property Graph Schema': Domain graph and Lexical graph
-- 'Metadata': Speakers and Sessions 
-- 'Raw data': Session transcripts 
-- 'Knowledge Graph': Data on Categories, Events, Speakers, Talks, Tags and their relationships
-- 'Evaluation data': Baseline questions and answers on the data included in the CDKG 
-- 'Source code': Code used to construct and query the Knowledge Graph using Kuzu.
+- `Domain Metamodel`: Technology agnostic, simple graph of entities and relationships
+- `Property Graph Schema`: Domain graph and Lexical graph
+- `Metadata`: Speakers and Sessions 
+- `Raw data`: Session transcripts 
+- `Knowledge Graph`: Data on Categories, Events, Speakers, Talks, Tags and their relationships
+- `Evaluation data`: Baseline questions and answers on the data included in the CDKG 
+- `Source code`: Code used to construct and query the Knowledge Graph using Kuzu.
 
 
 ## The Problem
