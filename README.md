@@ -45,7 +45,7 @@ To do that, we combine our greatest strengths: community, knowledge, and technol
 ## The Connected Data Knowledge Graph
 This what is included in the first release of the CDKG:
 
-- `[Domain Metamodel]`(https://github.com/Connected-Data/cdkg-challenge/blob/main/Data%20Model/README.md): Technology agnostic, simple graph of entities and relationships
+- [Domain Metamodel]([url](https://github.com/Connected-Data/cdkg-challenge/blob/main/Data%20Model/README.md)): Technology agnostic, simple graph of entities and relationships
 - `Property Graph Schema`: Domain graph and Lexical graph
 - `Metadata`: Speakers and Sessions 
 - `Raw data`: Session transcripts 
